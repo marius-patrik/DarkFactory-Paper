@@ -1,5 +1,5 @@
 {
-  "commit": "77369d3eb111a9d884351125d8d37028523fe89a",
+  "commit": "b9c0686a92b7e07bb51921e5e0a4ff22ed2322cd",
   "work_title": "Agentické inženýrství a design harnessu pro automatizovaný softwarový vývoj",
   "default_template": "gjkt-odborna-prace",
   "templates": [
@@ -40,8 +40,16 @@
     }
   ],
   "viewer": {
-    "engine": "PDF.js",
+    "engine": "React + PDF.js",
     "pdfjs_version": "6.3.289",
-    "entrypoint": "viewer.html"
+    "entrypoint": "viewer.html",
+    "stack": [
+      "React",
+      "TypeScript",
+      "shadcn/ui",
+      "Motion",
+      "Dagre",
+      "PDF.js"
+    ]
   }
 }
