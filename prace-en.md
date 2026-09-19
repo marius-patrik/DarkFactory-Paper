@@ -4,7 +4,7 @@ Patrik Marius · Gymnázium J. K. Tyla · 2026
 
 ## Annotation
 
-[EN] This thesis examines the principles of agentic engineering: effective engineering practices for development with artificial intelligence through agentic systems and the architecture of these systems. The practical contribution of the thesis is the design and implementation of DarkFactory — an agentic harness installable as a GitHub App. The system aims to maximize automation of the development lifecycle, from interpreting requirements in GitHub Issues, through planning, to code development and pull request delivery. The thesis reflects that current agentic systems cannot be regarded as fully autonomous: language models require deterministic guardrails against becoming stuck in infinite loops, context management, and human involvement through approval gates (*Human-in-the-loop*).
+[EN] This thesis examines the principles of agentic engineering: effective engineering practices for development with artificial intelligence through agentic systems and the architecture of these systems. The practical contribution of the thesis is the design and implementation of DarkFactory — an agentic harness installable as a GitHub App. The system aims to maximize automation of the development lifecycle, from interpreting requirements in GitHub Issues, through planning, to code development and merging changes. The thesis reflects that current agentic systems cannot be regarded as fully autonomous: language models require deterministic guardrails, context management, and human involvement (*Human-in-the-loop*).
 
 ## Keywords
 
