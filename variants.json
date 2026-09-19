@@ -1,5 +1,5 @@
 {
-  "commit": "a7a6b77a99f6ab5efa048f08356faa04497569ac",
+  "commit": "082bfcae7ff396b574e4ad25d55dcaba9362c3cd",
   "work_title": "Agentické inženýrství a design harnessu pro automatizovaný softwarový vývoj",
   "default_template": "gjkt-odborna-prace",
   "templates": [
@@ -12,6 +12,18 @@
       "subtitle": "Czech body, canonical English technical terms, bilingual annotation and keywords",
       "final": "prace.pdf",
       "review": "prace-review.pdf",
+      "artifacts": {
+        "final": {
+          "pdf": "prace.pdf",
+          "markdown": "prace.md",
+          "html": "prace.html"
+        },
+        "review": {
+          "pdf": "prace-review.pdf",
+          "markdown": "prace-review.md",
+          "html": "prace-review.html"
+        }
+      },
       "recommended": true
     },
     {
@@ -20,6 +32,18 @@
       "subtitle": "Czech projection with Czech terminology where bilingual helpers are used",
       "final": "prace-cs.pdf",
       "review": "prace-cs-review.pdf",
+      "artifacts": {
+        "final": {
+          "pdf": "prace-cs.pdf",
+          "markdown": "prace-cs.md",
+          "html": "prace-cs.html"
+        },
+        "review": {
+          "pdf": "prace-cs-review.pdf",
+          "markdown": "prace-cs-review.md",
+          "html": "prace-cs-review.html"
+        }
+      },
       "recommended": false
     },
     {
@@ -28,6 +52,18 @@
       "subtitle": "English projection; source sections not yet bilingual remain in their source language",
       "final": "prace-en.pdf",
       "review": "prace-en-review.pdf",
+      "artifacts": {
+        "final": {
+          "pdf": "prace-en.pdf",
+          "markdown": "prace-en.md",
+          "html": "prace-en.html"
+        },
+        "review": {
+          "pdf": "prace-en-review.pdf",
+          "markdown": "prace-en-review.md",
+          "html": "prace-en-review.html"
+        }
+      },
       "recommended": false
     },
     {
@@ -36,11 +72,28 @@
       "subtitle": "Merged bilingual projection; bilingual source blocks render both language versions",
       "final": "prace-bilingual.pdf",
       "review": "prace-bilingual-review.pdf",
+      "artifacts": {
+        "final": {
+          "pdf": "prace-bilingual.pdf",
+          "markdown": "prace-bilingual.md",
+          "html": "prace-bilingual.html"
+        },
+        "review": {
+          "pdf": "prace-bilingual-review.pdf",
+          "markdown": "prace-bilingual-review.md",
+          "html": "prace-bilingual-review.html"
+        }
+      },
       "recommended": false
     }
   ],
   "viewer": {
-    "engine": "React + PDF.js",
+    "engine": "React + PDF.js + compiled Typst HTML/Markdown",
+    "formats": [
+      "pdf",
+      "markdown",
+      "html"
+    ],
     "pdfjs_version": "6.3.289",
     "entrypoint": "viewer.html",
     "stack": [
