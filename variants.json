@@ -1,5 +1,5 @@
 {
-  "commit": "376ecad9739e3fbd900690eded5c663018fd1344",
+  "commit": "6b5bfccd1e74b63ece92aebaf130bdb6fe52da52",
   "default_template": "gjkt-odborna-prace",
   "templates": [
     "gjkt-odborna-prace"
@@ -37,5 +37,10 @@
       "review": "prace-bilingual-review.pdf",
       "recommended": false
     }
-  ]
+  ],
+  "viewer": {
+    "engine": "PDF.js",
+    "pdfjs_version": "6.3.289",
+    "entrypoint": "viewer.html"
+  }
 }

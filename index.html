@@ -6,13 +6,13 @@
   <title>DarkFactory-Paper - publikované verze</title>
   <style>
     :root {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color-scheme: light dark;
     }
     body { margin: 0; background: Canvas; color: CanvasText; }
     main { width: min(1080px, calc(100% - 32px)); margin: 48px auto; }
     h1 { margin-bottom: 8px; }
-    .intro { max-width: 800px; opacity: .78; margin-bottom: 32px; line-height: 1.5; }
+    .intro { max-width: 820px; opacity: .78; margin-bottom: 32px; line-height: 1.55; }
     .template-section { margin-top: 34px; }
     .template-section h2 { display: flex; align-items: center; gap: 10px; }
     .template-default, .badge {
@@ -34,13 +34,14 @@
     }
     .card h3 { font-size: 1.04rem; margin: 0; }
     .card p { line-height: 1.45; opacity: .78; min-height: 3.8em; }
-    .actions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
     a {
       color: inherit; text-decoration: none;
       border: 1px solid color-mix(in srgb, CanvasText 30%, transparent);
       border-radius: 8px; padding: 8px 10px;
     }
     a.primary { font-weight: 650; }
+    a.quiet { opacity: .7; border-color: transparent; }
     footer { margin-top: 36px; opacity: .65; font-size: .9rem; }
   </style>
 </head>
@@ -49,8 +50,9 @@
     <h1>Odborná práce / Thesis</h1>
     <p class="intro">
       Všechny varianty vznikají z jednoho rukopisu. Výstup je určen kombinací
-      dokumentové šablony, publikačního profilu a final/review režimu. Odkazy míří
-      přímo na PDF a otevírají se v nativním PDF vieweru prohlížeče.
+      dokumentové šablony, publikačního profilu a final/review režimu. Primární
+      odkazy otevírají vlastní webový viewer s přesnou PDF sazbou z Typstu;
+      přímé PDF zůstává dostupné pro stažení a jako fallback.
     </p>
     
         <section class="template-section">
@@ -64,8 +66,9 @@
               </div>
               <p>Czech body, canonical English technical terms, bilingual annotation and keywords</p>
               <div class="actions">
-                <a class="primary" href="prace.pdf">Open final PDF</a>
-                <a href="prace-review.pdf">Open review PDF</a>
+                <a class="primary" href="viewer.html?file=prace.pdf&amp;title=%C5%A0koln%C3%AD+%C4%8Desk%C3%A1+verze&amp;mode=final&amp;peer=prace-review.pdf&amp;peer_label=Review">View final</a>
+                <a href="viewer.html?file=prace-review.pdf&amp;title=%C5%A0koln%C3%AD+%C4%8Desk%C3%A1+verze&amp;mode=review&amp;peer=prace.pdf&amp;peer_label=Final">Review</a>
+                <a class="quiet" href="prace.pdf" download>PDF</a>
               </div>
             </article>
             
@@ -76,8 +79,9 @@
               </div>
               <p>Czech projection with Czech terminology where bilingual helpers are used</p>
               <div class="actions">
-                <a class="primary" href="prace-cs.pdf">Open final PDF</a>
-                <a href="prace-cs-review.pdf">Open review PDF</a>
+                <a class="primary" href="viewer.html?file=prace-cs.pdf&amp;title=%C4%8Cist%C4%9B+%C4%8Desk%C3%A1+verze&amp;mode=final&amp;peer=prace-cs-review.pdf&amp;peer_label=Review">View final</a>
+                <a href="viewer.html?file=prace-cs-review.pdf&amp;title=%C4%8Cist%C4%9B+%C4%8Desk%C3%A1+verze&amp;mode=review&amp;peer=prace-cs.pdf&amp;peer_label=Final">Review</a>
+                <a class="quiet" href="prace-cs.pdf" download>PDF</a>
               </div>
             </article>
             
@@ -88,8 +92,9 @@
               </div>
               <p>English projection; source sections not yet bilingual remain in their source language</p>
               <div class="actions">
-                <a class="primary" href="prace-en.pdf">Open final PDF</a>
-                <a href="prace-en-review.pdf">Open review PDF</a>
+                <a class="primary" href="viewer.html?file=prace-en.pdf&amp;title=English+version&amp;mode=final&amp;peer=prace-en-review.pdf&amp;peer_label=Review">View final</a>
+                <a href="viewer.html?file=prace-en-review.pdf&amp;title=English+version&amp;mode=review&amp;peer=prace-en.pdf&amp;peer_label=Final">Review</a>
+                <a class="quiet" href="prace-en.pdf" download>PDF</a>
               </div>
             </article>
             
@@ -100,8 +105,9 @@
               </div>
               <p>Merged bilingual projection; bilingual source blocks render both language versions</p>
               <div class="actions">
-                <a class="primary" href="prace-bilingual.pdf">Open final PDF</a>
-                <a href="prace-bilingual-review.pdf">Open review PDF</a>
+                <a class="primary" href="viewer.html?file=prace-bilingual.pdf&amp;title=%C4%8Cesky+%2B+English&amp;mode=final&amp;peer=prace-bilingual-review.pdf&amp;peer_label=Review">View final</a>
+                <a href="viewer.html?file=prace-bilingual-review.pdf&amp;title=%C4%8Cesky+%2B+English&amp;mode=review&amp;peer=prace-bilingual.pdf&amp;peer_label=Final">Review</a>
+                <a class="quiet" href="prace-bilingual.pdf" download>PDF</a>
               </div>
             </article>
             
@@ -109,7 +115,8 @@
         </section>
         
     <footer>
-      Build commit: 376ecad9739e
+      Build commit: 6b5bfccd1e74
+      · Viewer: PDF.js 6.3.289
     </footer>
   </main>
 </body>
