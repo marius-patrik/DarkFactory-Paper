@@ -1032,16 +1032,40 @@
               "type": "directory",
               "children": [
                 {
+                  "name": "evaluation-limitations.typ",
+                  "path": "DarkFactory/manuscript/results/evaluation-limitations.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/results/evaluation-limitations.typ"
+                },
+                {
+                  "name": "evaluation-snapshot.typ",
+                  "path": "DarkFactory/manuscript/results/evaluation-snapshot.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/results/evaluation-snapshot.typ"
+                },
+                {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/results/index.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/manuscript/results/index.typ"
                 },
                 {
+                  "name": "research-question-evaluation.typ",
+                  "path": "DarkFactory/manuscript/results/research-question-evaluation.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/results/research-question-evaluation.typ"
+                },
+                {
                   "name": "results.typ",
                   "path": "DarkFactory/manuscript/results/results.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/manuscript/results/results.typ"
+                },
+                {
+                  "name": "verified-implementation-state.typ",
+                  "path": "DarkFactory/manuscript/results/verified-implementation-state.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/results/verified-implementation-state.typ"
                 }
               ]
             }
