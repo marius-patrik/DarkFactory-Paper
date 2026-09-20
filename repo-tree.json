@@ -1141,6 +1141,12 @@
           "source": "repository/scripts/fetch_external_assets.py"
         },
         {
+          "name": "migrate_concepts.py",
+          "path": "scripts/migrate_concepts.py",
+          "type": "file",
+          "source": "repository/scripts/migrate_concepts.py"
+        },
+        {
           "name": "preview_server.py",
           "path": "scripts/preview_server.py",
           "type": "file",
