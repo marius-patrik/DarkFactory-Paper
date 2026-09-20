@@ -129,64 +129,69 @@
             "anchor": "loc-26"
           },
           {
-            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-27"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-31"
+            "anchor": "loc-30"
           },
           {
-            "title": "2.3.4 Dovednosti [ Skills ]",
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.5 Dovednosti [ Skills ]",
             "level": 4,
             "anchor": "loc-33"
           },
           {
+            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-34"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-34"
+            "anchor": "loc-35"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-35"
+            "anchor": "loc-36"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-36"
+            "anchor": "loc-37"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-38"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-39"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-42"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -346,89 +351,94 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
-            "anchor": "loc-39"
+            "anchor": "loc-38"
           },
           {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.4 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-41"
+            "anchor": "loc-40"
           },
           {
-            "title": "2.3.5 Sandbox",
+            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "title": "2.3.6 Sandbox",
             "level": 4,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.7 Dovednosti [ Skills ]",
+            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
             "level": 4,
             "anchor": "loc-44"
           },
           {
-            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "title": "2.3.8 Dovednosti [ Skills ]",
             "level": 4,
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
             "level": 4,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
-            "title": "2.3.10 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
             "level": 4,
             "anchor": "loc-48"
           },
           {
+            "title": "2.3.11 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "loc-49"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-49"
+            "anchor": "loc-50"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-50"
+            "anchor": "loc-51"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-51"
+            "anchor": "loc-52"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-53"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-54"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-61"
+            "anchor": "loc-62"
           }
         ]
       },
@@ -560,64 +570,69 @@
             "anchor": "loc-26"
           },
           {
-            "title": "2.3 Agentické inženýrství a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-27"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentické inženýrství — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 Smyčka ReAct ( Agent Loop )",
+            "title": "2.3.2 Agentní harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.3 Smyčka ReAct ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-31"
+            "anchor": "loc-30"
           },
           {
-            "title": "2.3.4 Dovednosti",
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.5 Dovednosti",
             "level": 4,
             "anchor": "loc-33"
           },
           {
+            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-34"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-34"
+            "anchor": "loc-35"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-35"
+            "anchor": "loc-36"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-36"
+            "anchor": "loc-37"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-38"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-39"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-42"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -777,89 +792,94 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.3 Agentické inženýrství a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentické inženýrství — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Agentní harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 Smyčka ReAct ( Agent Loop )",
+            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
-            "anchor": "loc-39"
+            "anchor": "loc-38"
           },
           {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.4 Smyčka ReAct ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-41"
+            "anchor": "loc-40"
           },
           {
-            "title": "2.3.5 Sandbox",
+            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "title": "2.3.6 Sandbox",
             "level": 4,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.7 Dovednosti",
+            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
             "level": 4,
             "anchor": "loc-44"
           },
           {
-            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "title": "2.3.8 Dovednosti",
             "level": 4,
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
             "level": 4,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
-            "title": "2.3.10 Zapojení člověka do smyčky ( HITL )",
+            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
             "level": 4,
             "anchor": "loc-48"
           },
           {
+            "title": "2.3.11 Zapojení člověka do smyčky ( HITL )",
+            "level": 4,
+            "anchor": "loc-49"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-49"
+            "anchor": "loc-50"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-50"
+            "anchor": "loc-51"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-51"
+            "anchor": "loc-52"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-53"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-54"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-61"
+            "anchor": "loc-62"
           }
         ]
       },
@@ -991,64 +1011,69 @@
             "anchor": "loc-26"
           },
           {
-            "title": "2.3 Agentic Engineering a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-27"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentic Engineering — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 ReAct Loop ( Agent Loop )",
+            "title": "2.3.2 Agent Harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.3 ReAct Loop ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-31"
+            "anchor": "loc-30"
           },
           {
-            "title": "2.3.4 Skills",
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.5 Skills",
             "level": 4,
             "anchor": "loc-33"
           },
           {
+            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-34"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-34"
+            "anchor": "loc-35"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-35"
+            "anchor": "loc-36"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-36"
+            "anchor": "loc-37"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-38"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-39"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-42"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -1208,89 +1233,94 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.3 Agentic Engineering a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentic Engineering — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Agent Harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 ReAct Loop ( Agent Loop )",
+            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
-            "anchor": "loc-39"
+            "anchor": "loc-38"
           },
           {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.4 ReAct Loop ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-41"
+            "anchor": "loc-40"
           },
           {
-            "title": "2.3.5 Sandbox",
+            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "title": "2.3.6 Sandbox",
             "level": 4,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.7 Skills",
+            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
             "level": 4,
             "anchor": "loc-44"
           },
           {
-            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "title": "2.3.8 Skills",
             "level": 4,
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
             "level": 4,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
-            "title": "2.3.10 Human-in-the-loop ( HITL )",
+            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
             "level": 4,
             "anchor": "loc-48"
           },
           {
+            "title": "2.3.11 Human-in-the-loop ( HITL )",
+            "level": 4,
+            "anchor": "loc-49"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-49"
+            "anchor": "loc-50"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-50"
+            "anchor": "loc-51"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-51"
+            "anchor": "loc-52"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-53"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-54"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-61"
+            "anchor": "loc-62"
           }
         ]
       },
@@ -1422,64 +1452,69 @@
             "anchor": "loc-26"
           },
           {
-            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-27"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-31"
+            "anchor": "loc-30"
           },
           {
-            "title": "2.3.4 Dovednosti [ Skills ]",
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.5 Dovednosti [ Skills ]",
             "level": 4,
             "anchor": "loc-33"
           },
           {
+            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-34"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-34"
+            "anchor": "loc-35"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-35"
+            "anchor": "loc-36"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-36"
+            "anchor": "loc-37"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-38"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-39"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-42"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -1639,89 +1674,94 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "title": "2.3 Agentic Systems (Agentické systémy)",
             "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
             "level": 4,
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
-            "anchor": "loc-39"
+            "anchor": "loc-38"
           },
           {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.4 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
-            "anchor": "loc-41"
+            "anchor": "loc-40"
           },
           {
-            "title": "2.3.5 Sandbox",
+            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "title": "2.3.6 Sandbox",
             "level": 4,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.7 Dovednosti [ Skills ]",
+            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
             "level": 4,
             "anchor": "loc-44"
           },
           {
-            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "title": "2.3.8 Dovednosti [ Skills ]",
             "level": 4,
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
             "level": 4,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
-            "title": "2.3.10 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
             "level": 4,
             "anchor": "loc-48"
           },
           {
+            "title": "2.3.11 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "loc-49"
+          },
+          {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-49"
+            "anchor": "loc-50"
           },
           {
             "title": "3.1 Git a GitHub",
             "level": 3,
-            "anchor": "loc-50"
+            "anchor": "loc-51"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-51"
+            "anchor": "loc-52"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-53"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-54"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-61"
+            "anchor": "loc-62"
           }
         ]
       }
