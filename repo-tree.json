@@ -522,6 +522,18 @@
           "type": "directory",
           "children": [
             {
+              "name": "appendices",
+              "path": "concepts/manuscript/appendices",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "index.typ",
+                  "path": "concepts/manuscript/appendices/index.typ",
+                  "type": "file"
+                }
+              ]
+            },
+            {
               "name": "conclusion",
               "path": "concepts/manuscript/conclusion",
               "type": "directory",
@@ -778,43 +790,6 @@
         {
           "name": "vector-embedding-queen.svg",
           "path": "img/vector-embedding-queen.svg",
-          "type": "file"
-        }
-      ]
-    },
-    {
-      "name": "kapitoly",
-      "path": "kapitoly",
-      "type": "directory",
-      "children": [
-        {
-          "name": "01-uvod.typ",
-          "path": "kapitoly/01-uvod.typ",
-          "type": "file"
-        },
-        {
-          "name": "02-teoreticka-cast.typ",
-          "path": "kapitoly/02-teoreticka-cast.typ",
-          "type": "file"
-        },
-        {
-          "name": "03-prakticka-cast.typ",
-          "path": "kapitoly/03-prakticka-cast.typ",
-          "type": "file"
-        },
-        {
-          "name": "04-vysledky.typ",
-          "path": "kapitoly/04-vysledky.typ",
-          "type": "file"
-        },
-        {
-          "name": "05-zaver.typ",
-          "path": "kapitoly/05-zaver.typ",
-          "type": "file"
-        },
-        {
-          "name": "06-prilohy.typ",
-          "path": "kapitoly/06-prilohy.typ",
           "type": "file"
         }
       ]
