@@ -24,75 +24,75 @@ This thesis examines the current use of agentic artificial intelligence in softw
 2. [Anotace](#loc-2)
 3. [Abstract](#loc-3)
 4. [Keywords (Klíčová slova)](#loc-4)
-5. [1 Introduction (Úvod)](#concept-thesis_introduction)
-  1. [1.1 Motivation and Problem Definition (Motivace a vymezení problému)](#concept-motivation_problem_definition)
-    1. [1.1.1 Global Generative AI Adoption (Globální adopce generativní AI)](#concept-global_ai_diffusion_figure)
-  2. [1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)](#concept-thesis_objectives_research_questions)
-    1. [1.2.1 Main Goal (Hlavní cíl)](#concept-main_goal)
-    2. [1.2.2 Sub-goals (Dílčí cíle)](#concept-subgoals)
-    3. [1.2.3 Research Questions (Výzkumné otázky)](#concept-research_questions)
-  3. [1.3 Methodology (Metodika práce)](#concept-methodology)
-6. [2 Development Environment and Practices (Vývojové prostředí a praxe)](#concept-development_environment)
+5. [1 Úvod](#concept-thesis_introduction)
+  1. [1.1 Motivace a vymezení problému](#concept-motivation_problem_definition)
+    1. [1.1.1 Globální adopce generativní AI](#concept-global_ai_diffusion_figure)
+  2. [1.2 Cíl práce a výzkumné otázky](#concept-thesis_objectives_research_questions)
+    1. [1.2.1 Hlavní cíl](#concept-main_goal)
+    2. [1.2.2 Dílčí cíle](#concept-subgoals)
+    3. [1.2.3 Výzkumné otázky](#concept-research_questions)
+  3. [1.3 Metodika práce](#concept-methodology)
+6. [2 Vývojové prostředí a praxe](#concept-development_environment)
   1. [2.1 GitHub](#concept-github)
   2. [2.2 Runtime (Běhové prostředí) [Runtime Environment]](#concept-runtime)
-  3. [2.3 Software Engineering (Softwarové inženýrství)](#concept-software_engineering)
-    1. [2.3.1 Planning (Plánování)](#concept-planning)
+  3. [2.3 Softwarové inženýrství](#concept-software_engineering)
+    1. [2.3.1 Plánování](#concept-planning)
     2. [2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
-    3. [2.3.3 Version control (Správa verzí)](#concept-version_control)
+    3. [2.3.3 Správa verzí](#concept-version_control)
       1. [2.3.3.1 Git](#concept-git)
         1. [2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]](#concept-branch)
         2. [2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]](#concept-merge)
         3. [2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]](#concept-squash)
         4. [2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]](#concept-github_issue)
         5. [2.3.3.1.5 Pull Request (Požadavek na sloučení)](#concept-pull_request)
-        6. [2.3.3.1.6 Required Checks (Požadované kontroly)](#concept-required_checks)
-        7. [2.3.3.1.7 Branch Protection (Ochrana větví)](#concept-branch_protection)
+        6. [2.3.3.1.6 Požadované kontroly](#concept-required_checks)
+        7. [2.3.3.1.7 Ochrana větví](#concept-branch_protection)
   4. [2.4 CI (Průběžná integrace) [Continuous Integration]](#concept-continuous_integration)
     1. [2.4.1 Actions (GitHub Actions)](#concept-github_actions)
     2. [2.4.2 Container (Softwarový kontejner) [Software Container]](#concept-container)
     3. [2.4.3 Flaky Test (Nestálý test)](#concept-flaky_test)
-7. [3 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)](#concept-language_models)
+7. [3 Jazykové modely, chatboti a agenti](#concept-language_models)
   1. [3.1 Chatbot](#concept-chatbot)
     1. [3.1.1 ChatGPT](#concept-chatgpt)
-      1. [3.1.1.1 ChatGPT App Interface (Rozhraní aplikace ChatGPT)](#concept-chatgpt_interface_image)
+      1. [3.1.1.1 Rozhraní aplikace ChatGPT](#concept-chatgpt_interface_image)
   2. [3.2 Agent](#concept-agent)
   3. [3.3 LLM (Velký jazykový model) [Large Language Model]](#concept-language_model)
     1. [3.3.1 GPT-5.6](#concept-gpt_5_6)
-      1. [3.3.1.1 GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)](#concept-gpt_5_6_image)
+      1. [3.3.1.1 Produktový vizuál GPT-5.6](#concept-gpt_5_6_image)
     2. [3.3.2 Claude Opus 5](#concept-claude_opus_5)
-      1. [3.3.2.1 Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)](#concept-claude_opus_5_image)
+      1. [3.3.2.1 Produktový vizuál Claude Opus 5](#concept-claude_opus_5_image)
     3. [3.3.3 DeepSeek-V4.1-Flash](#concept-deepseek_v4_1_flash)
-      1. [3.3.3.1 DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)](#concept-deepseek_v4_1_flash_image)
+      1. [3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash](#concept-deepseek_v4_1_flash_image)
     4. [3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]](#concept-transformer)
-    5. [3.3.5 Autoregressive Modeling (Autoregresivní modelování)](#concept-autoregression)
-    6. [3.3.6 Stochastic Decoding (Stochastické dekódování)](#concept-stochastic_decoding)
-    7. [3.3.7 Tokenizer (Tokenizér)](#concept-tokenizer)
+    5. [3.3.5 Autoregresivní modelování](#concept-autoregression)
+    6. [3.3.6 Stochastické dekódování](#concept-stochastic_decoding)
+    7. [3.3.7 Tokenizér](#concept-tokenizer)
     8. [3.3.8 Token](#concept-token)
     9. [3.3.9 Embedding (Vektorová reprezentace)](#concept-embedding)
-    10. [3.3.10 Context Window (Kontextové okno)](#concept-context_window)
+    10. [3.3.10 Kontextové okno](#concept-context_window)
     11. [3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]](#concept-kv_cache)
     12. [3.3.12 Turn (Tah interakce) [Interaction Turn]](#concept-turn)
-8. [4 Agentic Engineering (Agentické inženýrství)](#concept-agentic_engineering)
+8. [4 Agentické inženýrství](#concept-agentic_engineering)
   1. [4.1 Vibe Coding (Vibe coding)](#concept-vibe_coding)
   2. [4.2 Slop](#concept-slop)
-  3. [4.3 Prompt Engineering (Promptové inženýrství)](#concept-prompt_engineering)
-    1. [4.3.1 System Prompt (Systémový prompt)](#concept-system_prompt)
+  3. [4.3 Promptové inženýrství](#concept-prompt_engineering)
+    1. [4.3.1 Systémový prompt](#concept-system_prompt)
   4. [4.4 Agent Harness (Agentní harness)](#concept-harness)
     1. [4.4.1 Codex](#concept-codex)
-      1. [4.4.1.1 Codex App Interface (Rozhraní aplikace Codex)](#concept-codex_app_image)
+      1. [4.4.1.1 Rozhraní aplikace Codex](#concept-codex_app_image)
     2. [4.4.2 Claude Code](#concept-claude_code)
-      1. [4.4.2.1 Claude Code Interface (Rozhraní Claude Code)](#concept-claude_code_image)
+      1. [4.4.2.1 Rozhraní Claude Code](#concept-claude_code_image)
     3. [4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]](#concept-claude_desktop)
-      1. [4.4.3.1 Claude Desktop Interface (Rozhraní aplikace Claude)](#concept-claude_desktop_image)
+      1. [4.4.3.1 Rozhraní aplikace Claude](#concept-claude_desktop_image)
     4. [4.4.4 Sandbox (Izolované běhové prostředí)](#concept-sandbox)
     5. [4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]](#concept-guardrail)
     6. [4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]](#concept-human_in_the_loop)
     7. [4.4.7 Plugins (Rozšíření)](#concept-plugins)
     8. [4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]](#concept-agent_loop)
-      1. [4.4.8.1 ReAct Agent-loop Diagram (Schéma agentní smyčky ReAct)](#concept-react_loop_diagram)
-      2. [4.4.8.2 Agent Session (Agentní sezení)](#concept-agent_session)
+      1. [4.4.8.1 Schéma agentní smyčky ReAct](#concept-react_loop_diagram)
+      2. [4.4.8.2 Agentní sezení](#concept-agent_session)
       3. [4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]](#concept-loop_engineering)
-      4. [4.4.8.4 Agent Divergence Pathologies (Patologie divergence)](#concept-divergence)
+      4. [4.4.8.4 Patologie divergence](#concept-divergence)
     9. [4.4.9 Tool Calling (Vyvolávání nástrojů)](#concept-tool_calling)
       1. [4.4.9.1 JSON Schema Tool Calling (Vyvolávání nástrojů s JSON Schema)](#concept-json_schema_tool_calling)
       2. [4.4.9.2 Code Execution (Spouštění kódu)](#concept-code_execution)
@@ -100,26 +100,26 @@ This thesis examines the current use of agentic artificial intelligence in softw
     10. [4.4.10 Skills (Dovednosti)](#concept-skills)
       1. [4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]](#concept-skill_md_format)
       2. [4.4.10.2 Progressive Disclosure (Postupné zpřístupňování kontextu)](#concept-progressive_disclosure)
-      3. [4.4.10.3 Script (Skript)](#concept-script)
+      3. [4.4.10.3 Skript](#concept-script)
       4. [4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]](#concept-hook)
-    11. [4.4.11 Context Engineering (Kontextové inženýrství)](#concept-context_engineering)
+    11. [4.4.11 Kontextové inženýrství](#concept-context_engineering)
       1. [4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction)
       2. [4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag)
-      3. [4.4.11.3 Context Rot (Degradace kontextu)](#concept-context_rot)
-      4. [4.4.11.4 Semantic Drift (Sémantický posun)](#concept-semantic_drift)
+      3. [4.4.11.3 Degradace kontextu](#concept-context_rot)
+      4. [4.4.11.4 Sémantický posun](#concept-semantic_drift)
     12. [4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#concept-graph_engineering)
       1. [4.4.12.1 Subagent (Podřízený agent)](#concept-subagent)
-9. [5 Results and Discussion (Výsledky a diskuse)](#concept-results_discussion)
-  1. [5.1 Evaluation Snapshot (Evaluační snapshot)](#concept-evaluation_snapshot)
-  2. [5.2 Verified Implementation State (Ověřený stav implementace)](#concept-verified_implementation_state)
-  3. [5.3 Research Question Evaluation (Vyhodnocení výzkumných otázek)](#concept-research_question_evaluation)
-  4. [5.4 Evaluation Limitations (Omezení evaluace)](#concept-evaluation_limitations)
-10. [6 Conclusion (Závěr)](#concept-conclusion)
+9. [5 Výsledky a diskuse](#concept-results_discussion)
+  1. [5.1 Evaluační snapshot](#concept-evaluation_snapshot)
+  2. [5.2 Ověřený stav implementace](#concept-verified_implementation_state)
+  3. [5.3 Vyhodnocení výzkumných otázek](#concept-research_question_evaluation)
+  4. [5.4 Omezení evaluace](#concept-evaluation_limitations)
+10. [6 Závěr](#concept-conclusion)
 11. [Seznam zdrojů](#loc-44)
 12. [Seznam obrázků a tabulek](#loc-75)
 13. [Seznam příloh](#loc-76)
 
-## 1 Introduction (Úvod)
+## 1 Úvod
 
 Tato práce zkoumá, jak dnes účinně využívat agentní umělou inteligenci při vývoji softwaru.
 
@@ -127,7 +127,7 @@ Zaměřuje se na to, co současní agenti dokážou samostatně provést a jaké
 
 Praktickým příkladem je DarkFactory, na kterém jsou popsané principy převedeny do konkrétní architektury a vývojového procesu. Cílem úvodu je stručně vymezit, co práce zkoumá, proč je téma aktuální a podle čeho bude navržené řešení posuzováno.
 
-### 1.1 Motivation and Problem Definition (Motivace a vymezení problému)
+### 1.1 Motivace a vymezení problému
 
 Motivací práce je ukázat, jaké úlohy dokážou současné agentní systémy samostatně provádět a jaká technická vrstva umožňuje převést schopnost jazykového modelu do spolehlivého jednání nad skutečným softwarovým projektem.
 
@@ -137,7 +137,7 @@ V softwarovém inženýrství tento posun reprezentují například Codex a Clau
 
 Práce proto sleduje praktické využití těchto systémů při vývoji softwaru: jak jim zpřístupnit repozitář, nástroje a ověřování tak, aby dokázaly samostatně provádět užitečnou část vývojové práce a člověk si zachoval kontrolu nad důležitými rozhodnutími.
 
-#### 1.1.1 Global Generative AI Adoption (Globální adopce generativní AI)
+#### 1.1.1 Globální adopce generativní AI
 
 Grafický podklad dokumentuje rychlost, s níž se generativní AI rozšířila z experimentální technologie do běžného používání.
 
@@ -149,19 +149,19 @@ Microsoft AI Economy Institute uvádí pro druhé pololetí roku 2025 celosvěto
 
 Měřítko adopce neposuzuje schopnosti jednotlivých systémů, ale dokládá jejich rychlé rozšíření do reálného používání. Výchozím problémem je převést schopnosti současných modelů do opakovatelného a kontrolovatelného agentního vývojového procesu.
 
-### 1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)
+### 1.2 Cíl práce a výzkumné otázky
 
 Cíl práce a výzkumné otázky převádějí motivaci do konkrétního návrhového cíle, dílčích úkolů a otázek, podle nichž lze výsledný systém posoudit.
 
 Hlavní cíl určuje výsledný předmět návrhu. Dílčí cíle rozkládají práci na nezbytné oblasti a výzkumné otázky formulují problémy, které musí architektura a její evaluace zodpovědět. Tato struktura propojuje motivaci s metodikou a výsledky: každá část práce má být dohledatelná k některému cíli nebo výzkumné otázce.
 
-#### 1.2.1 Main Goal (Hlavní cíl)
+#### 1.2.1 Hlavní cíl
 
 Zjistit, jak lze současnou agentní AI účinně používat při vývoji softwaru, a navrhnout architekturu agent harnessu, která podporuje vysokou míru autonomie při zachování lidského dohledu v důležitých rozhodnutích.
 
 Cíl spojuje popis současných agentních postupů s návrhem konkrétního systému DarkFactory. Výsledná architektura má podporovat samostatné provádění vývojových úloh a současně zachovat jasná místa pro lidskou kontrolu. Výsledkem práce má být použitelný návrh agentního harnessu a popis principů, které umožňují současnou agentní AI efektivně zapojit do vývoje softwaru.
 
-#### 1.2.2 Sub-goals (Dílčí cíle)
+#### 1.2.2 Dílčí cíle
 
 - Vymezit infrastrukturu pro správu verzí a průběžné automatické ověřování změn.
 - Popsat limity modelového kontextu, jeho správu a mechanismy pro dlouhotrvající agentní úlohy.
@@ -170,7 +170,7 @@ Cíl spojuje popis současných agentních postupů s návrhem konkrétního sys
 
 Dílčí cíle rozkládají hlavní cíl na vývojové prostředí, práci s modelem a kontextem, řízení agentního běhu a lidskou kontrolu. Každá oblast je dále rozpracována jako samostatné koncepty. Splnění dílčích cílů vytváří podklady pro návrh DarkFactory a pro následné zodpovězení výzkumných otázek.
 
-#### 1.2.3 Research Questions (Výzkumné otázky)
+#### 1.2.3 Výzkumné otázky
 
 - VO1: Jak lze současný agentní systém zapojit do vývoje softwaru tak, aby samostatně prováděl co největší část běžné práce a člověk se soustředil na zadání, kontrolu a důležitá rozhodnutí?
 - VO2: Jaké mechanismy harnessu pomáhají rozpoznat a zastavit neproduktivní opakování, oscilaci nebo zacyklení během delší úlohy?
@@ -178,7 +178,7 @@ Dílčí cíle rozkládají hlavní cíl na vývojové prostředí, práci s mod
 
 Otázky soustřeďují hodnocení na praktickou míru samostatnosti, spolehlivost prováděcí smyčky a zachování potřebného pracovního kontextu. Výsledky práce se mají vztahovat k tomu, jak dobře navržená architektura podporuje samostatnou práci agenta, řízení problémového běhu a zachování správného kontextu.
 
-### 1.3 Methodology (Metodika práce)
+### 1.3 Metodika práce
 
 Práce porovnává veřejně popsané principy současných agentních systémů, rozděluje je do samostatných konceptů a používá je při návrhu DarkFactory.
 
@@ -188,7 +188,7 @@ Architektura kolem modelu je rozložena do samostatných konceptů, aby měl ka�
 
 Navržené principy jsou následně promítnuty do DarkFactory. Vlastnosti systému se mají posuzovat podle ověřitelných výstupů vývojového procesu, nikoli podle předem předpokládaných výsledků. Metodika postupuje od veřejných zdrojů a vymezení konceptů přes návrh konkrétní architektury až k ověření jejích vlastností na skutečných výstupech systému.
 
-## 2 Development Environment and Practices (Vývojové prostředí a praxe)
+## 2 Vývojové prostředí a praxe
 
 Vývojové prostředí a praxe tvoří soubor verzovacích, plánovacích, integračních a kontrolních postupů, které poskytují deterministický rámec pro agentní vývoj softwaru.
 
@@ -208,13 +208,13 @@ Pro agentní systém určuje runtime praktické hranice toho, co může během �
 
 Oddělení runtime od modelu je důležité také pro reprodukovatelnost: stejný model může v různých prostředích disponovat zcela odlišnými nástroji, soubory a systémovými možnostmi. Runtime převádí požadavek agenta na skutečně proveditelné operace a současně vymezuje technické hranice jejich provádění.
 
-### 2.3 Software Engineering (Softwarové inženýrství)
+### 2.3 Softwarové inženýrství
 
 Softwarové inženýrství je systematické uplatňování inženýrských principů na specifikaci, návrh, implementaci, ověřování, provoz a údržbu softwarových systémů.
 
 Pro agentní systémy je tento rámec důležitý proto, že generování kódu představuje pouze jednu část životního cyklu změny. Výsledek musí být zasazen do specifikace požadavku, řízeného procesu změn, automatického ověřování a následné revize. Agentní vývoj je podmnožinou softwarového inženýrství: kvalita výsledku se neposuzuje podle množství vygenerovaného kódu, ale podle splnění požadavků a ověřitelnosti změny.
 
-#### 2.3.1 Planning (Plánování)
+#### 2.3.1 Plánování
 
 Plánování je proces převodu požadavku na explicitní posloupnost kroků, závislostí a ověřovacích podmínek před prováděním změn.
 
@@ -226,7 +226,7 @@ Orientovaný acyklický graf (DAG) je orientovaný graf bez orientovaného cyklu
 
 V agentním workflow může DAG modelovat kroky jako uzly a jejich povinné závislosti jako hrany. Tím lze explicitně vyjádřit například posloupnost příjem požadavku → plán → implementace → testy → schválení a zabránit spuštění navazujícího kroku před splněním jeho předpokladů. DAG převádí implicitní pořadí vícefázové úlohy na kontrolovatelnou strukturu závislostí, v níž lze navazující krok spustit až po splnění jeho předpokladů.
 
-#### 2.3.3 Version control (Správa verzí)
+#### 2.3.3 Správa verzí
 
 Správa verzí je řízení a sledování změn zdrojových souborů a dalších verzovaných artefaktů tak, aby bylo možné změny bezpečně větvit, slučovat, auditovat a vracet.
 
@@ -291,7 +291,7 @@ Pull request soustřeďuje na jednom místě řádkový diff, popis změny, vazb
 
  Pull Request vytváří kontrolní hranici mezi samostatně připravenou změnou a jejím přijetím do hlavní historie projektu.
 
-###### 2.3.3.1.6 Required Checks (Požadované kontroly)
+###### 2.3.3.1.6 Požadované kontroly
 
 Požadované kontroly jsou automatizované kontroly, jejichž úspěšné dokončení je povinnou podmínkou pro přijetí nebo sloučení změny.
 
@@ -301,7 +301,7 @@ Mezi požadované kontroly mohou patřit statická analýza a linter, typová ko
 
  Required checks mění CI z informativní zpětné vazby na technicky vynucovanou podmínku integrace.
 
-###### 2.3.3.1.7 Branch Protection (Ochrana větví)
+###### 2.3.3.1.7 Ochrana větví
 
 Ochrana větví je sada pravidel repozitáře, která omezuje přímé změny chráněných větví a vynucuje schválení, kontroly nebo jiné podmínky před sloučením.
 
@@ -341,7 +341,7 @@ Nestálý test je test, který může nad stejným kódem střídavě projít a 
 
 Nestálé testy oslabují roli CI jako deterministické zpětné vazby. Agent může náhodné selhání mylně interpretovat jako regresi a začít měnit správný kód; proto je vhodné zdroje nedeterminismu omezovat a podezřelé běhy ověřovat opakováním v čistém prostředí. Nestálé testy snižují informační hodnotu CI a mohou agenta vést k opravám správného kódu; podezřelé selhání proto musí být reprodukovatelné nebo explicitně označené jako nedeterministické.
 
-## 3 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)
+## 3 Jazykové modely, chatboti a agenti
 
 Tato skupina konceptů rozlišuje samotný jazykový model od produktových rozhraní a agentních systémů, které model používají.
 
@@ -359,7 +359,7 @@ ChatGPT je konverzační produkt OpenAI zpřístupňující modely prostřednict
 
 Jako příklad chatbota odděluje modelovou vrstvu od uživatelského produktu: rozhraní přidává práci se soubory, obrazem, webem a dalšími nástroji, které samotný model neposkytuje.
 
-##### 3.1.1.1 ChatGPT App Interface (Rozhraní aplikace ChatGPT)
+##### 3.1.1.1 Rozhraní aplikace ChatGPT
 
 Oficiální snímek rozhraní aplikace ChatGPT pro macOS.
 
@@ -389,7 +389,7 @@ GPT-5.6 je modelová řada OpenAI vydaná v roce 2026 ve variantách Sol, Terra 
 
 Jde o příklad současného jazykového modelu, který je nasazován jako inferenční komponenta v produktech včetně ChatGPT a Codexu; aplikační schopnosti těchto produktů však vznikají až propojením modelu s jejich harnessy.
 
-##### 3.3.1.1 GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)
+##### 3.3.1.1 Produktový vizuál GPT-5.6
 
 Oficiální produktový vizuál modelové řady GPT-5.6.
 
@@ -407,7 +407,7 @@ Claude Opus 5 je model společnosti Anthropic vydaný v červenci 2026.
 
 Model je příkladem současné modelové vrstvy používané v širších agentních produktech. Samotný model není totožný s Claude Code ani desktopovou aplikací Claude; ty přidávají nástroje, stav a orchestrace.
 
-##### 3.3.2.1 Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)
+##### 3.3.2.1 Produktový vizuál Claude Opus 5
 
 Oficiální produktový vizuál modelu Claude Opus 5.
 
@@ -425,7 +425,7 @@ DeepSeek-V4.1-Flash je multimodální model DeepSeek vydaný v září 2026.
 
 Jde o příklad odlišné současné modelové architektury: DeepSeek jej popisuje jako 552B MoE s asymetrickým Causal Encoder–Decoder uspořádáním a nativním vizuálním vstupem.
 
-##### 3.3.3.1 DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)
+##### 3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash
 
 Oficiální produktový vizuál modelu DeepSeek-V4.1-Flash.
 
@@ -443,19 +443,19 @@ Transformer je architektura neuronových sítí založená na mechanismu pozorno
 
 Současné velké jazykové modely jsou typicky realizovány transformerovou architekturou. Pro generování textu se často používá dekodérové uspořádání, které nad dosavadní sekvencí vytváří reprezentace potřebné k odhadu následujícího tokenu. Pro tuto práci je podstatné, že transformer zpracovává tokenové reprezentace v omezeném kontextu a vytváří stav potřebný k postupnému odhadu dalších tokenů; detailní matematika trénování není předmětem práce.
 
-#### 3.3.5 Autoregressive Modeling (Autoregresivní modelování)
+#### 3.3.5 Autoregresivní modelování
 
 Autoregresivní modelování je sekvenční postup, při němž model odhaduje následující token podmíněně na předchozí tokeny v aktuální posloupnosti.
 
 Autoregresivní generování probíhá iterativně: model zpracuje dosavadní posloupnost tokenů, vypočítá distribuci pravděpodobnosti následujícího tokenu a po jeho výběru celý krok opakuje nad rozšířenou posloupností. Autoregrese vysvětluje, proč generování probíhá po jednotlivých krocích a proč každé nové pokračování závisí na dosavadním kontextu.
 
-#### 3.3.6 Stochastic Decoding (Stochastické dekódování)
+#### 3.3.6 Stochastické dekódování
 
 Stochastické dekódování je výběr výstupních tokenů z pravděpodobnostního rozdělení modelu způsobem, který může při stejném vstupu vést k různým platným pokračováním.
 
 Pravděpodobnostní dekódování znamená, že shodný vstup nemusí vždy vytvořit totožný výstup. V agentním systému proto nelze provozní spolehlivost opřít pouze o model; kritická pravidla a stavové přechody musí vynucovat deterministická vrstva harnessu. Nedeterminismus dekódování je jedním z důvodů, proč kritická provozní pravidla agentního systému musí vynucovat harness mimo model.
 
-#### 3.3.7 Tokenizer (Tokenizér)
+#### 3.3.7 Tokenizér
 
 Tokenizér je komponenta, která převádí text nebo jiný podporovaný vstup na posloupnost tokenů a jejich identifikátorů a provádí odpovídající zpětné dekódování.
 
@@ -481,7 +481,7 @@ Známým didaktickým příkladem je přibližný relační vztah mezi vektory s
 
 Embedding propojuje diskrétní vstupy s numerickým prostorem, v němž lze některé vztahy mezi reprezentacemi vyjádřit směrem a vzdáleností vektorů.
 
-#### 3.3.10 Context Window (Kontextové okno)
+#### 3.3.10 Kontextové okno
 
 Kontextové okno je maximální rozsah tokenové sekvence, kterou model při jednom inferenčním běhu dokáže zahrnout do aktivního kontextu.
 
@@ -499,7 +499,7 @@ Tah je jedna diskrétní jednotka interakce v konverzačním nebo agentním prot
 
 Agentní běh skládá sekvenci tahů, v níž se střídají vstupy prostředí, modelová rozhodnutí a výsledky provedených akcí. Historie těchto tahů tvoří část pracovního kontextu a harness rozhoduje, které z nich zůstávají modelu dostupné v dalších iteracích. Tah je protokolová jednotka agentní interakce; odděluje jednotlivé vstupy, rozhodnutí a pozorování, z nichž harness sestavuje další kontext.
 
-## 4 Agentic Engineering (Agentické inženýrství)
+## 4 Agentické inženýrství
 
 Agentické inženýrství je disciplína zaměřená na návrh, orchestraci a provoz agentních systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, mantinelů a lidského dohledu.
 
@@ -521,13 +521,13 @@ Cambridge Dictionary uvádí pojem AI slop pro nekvalitní digitální obsah vyt
 
 V kontextu softwaru lze stejný problém pozorovat jako rychle vytvořený výstup, který na první pohled splňuje zadání, ale obsahuje zbytečné vrstvy, duplicity, neověřené předpoklady nebo obtížně udržovatelný kód. Agentní workflow proto musí hodnotit výsledek podle testů, architektury a skutečného stavu repozitáře, ne podle množství vygenerovaného textu nebo kódu. Pojem Slop pojmenovává riziko, že vysoká rychlost generování vytvoří mnoho výstupu bez odpovídající kvality a ověření.
 
-### 4.3 Prompt Engineering (Promptové inženýrství)
+### 4.3 Promptové inženýrství
 
 Promptové inženýrství je systematický návrh a strukturování instrukcí, které vymezují požadované chování, kontext a provozní očekávání jazykového modelu nebo agenta.
 
 V agentním systému prompt určuje roli modelu, způsob práce s dostupným kontextem a očekávaný postup při používání nástrojů. Instrukce však nejsou technicky vynucovanou bezpečnostní hranicí: podmínky, jejichž porušení by mohlo poškodit stav systému nebo obejít procesní pravidla, musí zajišťovat deterministický [***Guardrail (Deterministický mantinel) [Deterministic Guardrail]***](#concept-guardrail)<sup>*</sup>. Základní dlouhodobé instrukce jsou soustředěny v [***System Prompt (Systémový prompt)***](#concept-system_prompt)<sup>*</sup>. Promptové inženýrství řídí model prostřednictvím instrukcí; kritická pravidla, která musí platit bez ohledu na modelový výstup, patří do kódu harnessu.
 
-#### 4.3.1 System Prompt (Systémový prompt)
+#### 4.3.1 Systémový prompt
 
 Systémový prompt je instrukční vrstva s vysokou prioritou, která vymezuje roli, chování, dostupné prostředky a provozní očekávání jazykového modelu nebo agenta.
 
@@ -547,7 +547,7 @@ Codex je agentní vývojový systém OpenAI určený pro samostatné plnění so
 
 Desktopová aplikace umožňuje řídit více agentů paralelně, oddělovat jejich práci do vláken a worktree, kontrolovat diffy a delegovat dlouhotrvající úlohy. Tím představuje praktický příklad harnessu, který rozšiřuje model o stav, nástroje, izolaci a pracovní postup.
 
-##### 4.4.1.1 Codex App Interface (Rozhraní aplikace Codex)
+##### 4.4.1.1 Rozhraní aplikace Codex
 
 Oficiální produktový snímek aplikace Codex.
 
@@ -565,7 +565,7 @@ Claude Code je agentní vývojové prostředí společnosti Anthropic dostupné 
 
 Systém může plánovat změny, číst a zapisovat soubory, spouštět příkazy a testy, používat Git a MCP a vytvářet pull requesty. Tyto schopnosti vznikají kombinací modelu s nástrojovou a stavovou vrstvou harnessu.
 
-##### 4.4.2.1 Claude Code Interface (Rozhraní Claude Code)
+##### 4.4.2.1 Rozhraní Claude Code
 
 Oficiální snímek rozhraní Claude Code při práci se zdrojovým kódem.
 
@@ -583,7 +583,7 @@ Claude Desktop je desktopová aplikační vrstva nad modely Claude, která propo
 
 Anthropic popisuje desktopovou aplikaci jako prostředí, v němž může Claude se souhlasem uživatele přímo číst, upravovat a ukládat soubory a pracovat s dalšími aplikacemi. Jde proto o širší příklad harnessu než samotný chatbot.
 
-##### 4.4.3.1 Claude Desktop Interface (Rozhraní aplikace Claude)
+##### 4.4.3.1 Rozhraní aplikace Claude
 
 Oficiální snímek aplikačního rozhraní Claude s pracovním artefaktem.
 
@@ -646,7 +646,7 @@ Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem 
 
 Kvalita a provozní spolehlivost celého systému tak závisí v prvé řadě na robustnosti architektury harnessu a spolehlivosti jeho agentní smyčky, nikoliv pouze na samotném jazykovém modelu.
 
-##### 4.4.8.1 ReAct Agent-loop Diagram (Schéma agentní smyčky ReAct)
+##### 4.4.8.1 Schéma agentní smyčky ReAct
 
 Schéma znázorňuje iterativní tok mezi uživatelem, aktivním kontextem, jazykovým modelem, voláním nástrojů a pozorováním výsledků v agentní smyčce ReAct.
 
@@ -658,7 +658,7 @@ Diagram odděluje modelové rozhodnutí od exekuce nástroje a zpětného vlože
 
 Vizuální tok ukazuje, že agentní běh je uzavřená iterace modelového rozhodnutí, externí akce a nového pozorování. <sup>(<a href="#loc-64" role="doc-biblioref">20</a>)</sup> Agentní smyčka koordinuje opakované rozhodování modelu s vykonáváním akcí; její provozní spolehlivost proto závisí na řízení stavu, nástrojů, rozpočtů a podmínek ukončení.
 
-##### 4.4.8.2 Agent Session (Agentní sezení)
+##### 4.4.8.2 Agentní sezení
 
 Agentní sezení je ohraničený běh agenta se sdíleným stavem, systémovými instrukcemi, pracovním kontextem, historií tahů a provozními rozpočty.
 
@@ -670,7 +670,7 @@ Inženýrství prováděcí smyčky je návrh a řízení stavových přechodů,
 
 Inženýrství prováděcí smyčky odděluje provozní řízení od samotného modelového rozhodování. Patří sem stavové přechody, podmínky ukončení, rozpočty běhu, opakování po selhání, detekce uvíznutí a pravidla pro eskalaci nebo lidské schválení. Loop engineering převádí otevřenou agentní iteraci na provozně ohraničený proces s explicitními pravidly pokračování, selhání a ukončení.
 
-##### 4.4.8.4 Agent Divergence Pathologies (Patologie divergence)
+##### 4.4.8.4 Patologie divergence
 
 Divergence je třída selhání agentní smyčky, při níž se iterativní běh vzdaluje cíli například perseverací, oscilací nebo nekontrolovanou spotřebou zdrojů.
 
@@ -768,7 +768,7 @@ Postupné zpřístupňování je strategie, při níž se do aktivního kontextu
 
 U dovedností snižuje postupné zpřístupňování kontextovou režii: základní prompt obsahuje pouze přehled dostupných dovedností a úplný obsah příslušného `SKILL.md` se načte až tehdy, když jej agent pro konkrétní úlohu potřebuje. Do aktivního kontextu se dostávají pouze právě potřebné instrukce, čímž se omezuje režie bez ztráty dostupnosti specializovaných postupů.
 
-##### 4.4.10.3 Script (Skript)
+##### 4.4.10.3 Skript
 
 Skript je soubor nebo posloupnost příkazů určených k automatizovanému vykonání interpretem, shellem nebo jiným běhovým prostředím.
 
@@ -780,7 +780,7 @@ Hook je definovaný bod životního cyklu nebo události, na který lze navázat
 
 Hook váže deterministickou logiku na konkrétní událost životního cyklu harnessu, například před spuštěním nástroje, po dokončení kroku nebo při změně stavu běhu. Hook umožňuje vynutit opakovatelné chování v přesně určeném okamžiku bez toho, aby model musel stejné pravidlo znovu odvozovat.
 
-#### 4.4.11 Context Engineering (Kontextové inženýrství)
+#### 4.4.11 Kontextové inženýrství
 
 Kontextové inženýrství je systematický návrh, výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu.
 
@@ -813,7 +813,7 @@ K hlavním přístupům patří:
 
 Díky tomu může agent kdykoliv obnovit přesný stav projektu bez závislosti na ztrátovém rekurzivním shrnování. RAG odděluje dlouhodobé uchování informací od omezeného aktivního kontextu a umožňuje načítat pouze data relevantní pro aktuální krok.
 
-##### 4.4.11.3 Context Rot (Degradace kontextu)
+##### 4.4.11.3 Degradace kontextu
 
 Degradace kontextu je pokles schopnosti modelu spolehlivě využívat informace v dlouhém, hlučném nebo vzájemně si konkurujícím kontextu.
 
@@ -826,7 +826,7 @@ V praxi se projevuje dvěma hlavními mechanismy:
 
 Při komplexním křížovém refaktoringu ve velkém kontextu proto model často přehlédne klíčové souvislosti, které by v menším a čistším okně zpracoval bez potíží. Nominálně větší kontextové okno samo o sobě nezaručuje lepší výkon; kvalita závisí na tom, zda model dokáže relevantní informace v kontextu skutečně najít a propojit.
 
-##### 4.4.11.4 Semantic Drift (Sémantický posun)
+##### 4.4.11.4 Sémantický posun
 
 Sémantický posun je postupné zkreslování významu a faktického stavu při opakovaném ztrátovém shrnování nebo transformaci kontextu.
 
@@ -861,13 +861,13 @@ Subagent je dočasná nebo specializovaná agentní instance, které nadřazený
 
 Při hierarchické dělbě práce hlavní orchestrátor rozděluje rozsáhlou úlohu a jednotlivé části deleguje specializovaným subagentům, například pro průzkum repozitáře, plánování nebo implementaci. Po dokončení dílčího běhu může nadřazený agent převzít pouze jeho výsledek namísto celé pracovní historie subagenta. Subagenti umožňují paralelní nebo specializovanou práci a současně omezují množství dílčí pracovní historie, které musí zůstat v kontextu hlavního orchestrátoru.
 
-## 5 Results and Discussion (Výsledky a diskuse)
+## 5 Výsledky a diskuse
 
 Výsledky a diskuse hodnotí, které části navržené architektury byly ve zvoleném snapshotu DarkFactory skutečně implementovány a ověřeny a které zůstávají pouze součástí dokončovaného návrhu.
 
 Evaluace je rozdělena do samostatných konceptů: reprodukovatelný snapshot, ověřený stav implementace, odpovědi na výzkumné otázky a omezení evaluace. Tím se oddělují pozorované výsledky od tvrzení, která by vyžadovala dosud neprovedenou koncovou akceptaci. DarkFactory poskytuje konkrétní implementační důkazy pro podstatnou část navrženého harnessu, ale aktuální evidence neopravňuje tvrdit dokončenou produkční autonomii ani uzavřenou flotilovou akceptaci.
 
-### 5.1 Evaluation Snapshot (Evaluační snapshot)
+### 5.1 Evaluační snapshot
 
 Evaluační snapshot je pevně určený stav implementačního repozitáře, vůči němuž jsou formulována tvrzení v této kapitole.
 
@@ -875,7 +875,7 @@ Hodnocení vychází z repozitáře DarkFactory <sup><span id="loc-43">(</span><
 
 Snapshot není prezentován jako finální vydání produktu. Jeho účelem je přesně vymezit, ke kterému stavu zdrojového kódu a GitHub řízení se vztahuje následující hodnocení. Výsledky jsou reprodukovatelně svázány s konkrétním commitem a jeho pozorovatelným CI/GitHub stavem.
 
-### 5.2 Verified Implementation State (Ověřený stav implementace)
+### 5.2 Ověřený stav implementace
 
 Ověřený stav implementace zahrnuje pouze vlastnosti doložené zdrojovým kódem, úspěšnými automatickými kontrolami nebo uzavřenými implementačními požadavky v evaluačním snapshotu.
 
@@ -885,7 +885,7 @@ Dokončena je také hranice `@darkfactory/auth` pro uživatelskou autentizaci p�
 
 Tyto výsledky ukazují, že navržené dělení odpovědností do detekce, capability vrstvy, deterministických akcí, autentizace, dokumentačního grafu a společných operátorských rozhraní není pouze teoretické. Jednotlivé části existují v produkčním stromu a procházejí automatizovanými kontrolami. Implementace prokazuje funkčnost několika klíčových stavebních bloků harnessu, nikoli však ještě úplný koncový životní cyklus požadavku.
 
-### 5.3 Research Question Evaluation (Vyhodnocení výzkumných otázek)
+### 5.3 Vyhodnocení výzkumných otázek
 
 Vyhodnocení výzkumných otázek porovnává navržené mechanismy s tím, co bylo ve snapshotu skutečně implementováno a ověřeno.
 
@@ -895,7 +895,7 @@ Vyhodnocení výzkumných otázek porovnává navržené mechanismy s tím, co b
 
 **VO3 — zachování kontextu.** Architektura uchovává doslovné zadání mimo modelový kontext v GitHub Issue, odděluje trvalý stav běhu od dočasného kontextového okna a používá strukturovaný stav, kompakci a cílené znovunačítání informací. Tím omezuje závislost dlouhé úlohy na jediném rostoucím promptu. Finální důkaz dlouhodobého zachování kontextu napříč přerušením a obnovením běhu je součástí dosud neuzavřené graph-native orchestrace a flotilové akceptace. Výzkumné otázky jsou zodpovězeny na úrovni architektonických mechanismů a částečně podpořeny implementací; nejsilnější tvrzení o plné autonomii, detekci zacyklení a dlouhodobém resume zůstávají omezená stavem nedokončené koncové akceptace.
 
-### 5.4 Evaluation Limitations (Omezení evaluace)
+### 5.4 Omezení evaluace
 
 Omezení evaluace určují, která tvrzení nelze ze zvoleného snapshotu spolehlivě odvodit.
 
@@ -905,7 +905,7 @@ Z toho vyplývají dvě omezení. Zaprvé, úspěšné CI a dílčí agentní b�
 
 Výsledky proto mají charakter architektonické a implementační validace. Nejsou tvrzením o dokončené produkční připravenosti ani o obecně platné výkonnostní převaze DarkFactory nad jinými agentními systémy. Nejsilnější neověřená tvrzení byla z výsledků záměrně vyloučena; k jejich doložení je nutné dokončit produkční engine, finální vydání a flotilovou akceptaci.
 
-## 6 Conclusion (Závěr)
+## 6 Závěr
 
 Práce zkoumala, jak lze současnou agentní AI účinně zapojit do vývoje softwaru a jakou architekturu musí mít agent harness, aby spojoval vysokou míru autonomie s pozorovatelnými účinky a lidským dohledem.
 
