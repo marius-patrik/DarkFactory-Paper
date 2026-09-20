@@ -28,7 +28,7 @@ Agent, Agentické inženýrství [ Agentic Engineering ] , Agentní harness [ Ag
     2. [1.2.2 Dílčí cíle](#loc-8)
     3. [1.2.3 Výzkumné otázky](#loc-9)
   3. [1.3 Metodika práce](#loc-10)
-5. [2 Teoretická část: Vymezení konceptu](#loc-11)
+5. [2 Agentické AI: Vymezení konceptů - Teoretická část](#loc-11)
   1. [2.1 Vývojové prostředí a praxe](#loc-12)
     1. [2.1.1 Správa verzí [Version Control]](#loc-13)
     2. [2.1.2 Git a GitHub](#loc-14)
@@ -48,7 +48,7 @@ Agent, Agentické inženýrství [ Agentic Engineering ] , Agentní harness [ Ag
     3. [2.3.3 Vyvolávání nástrojů [Tool Calling]](#loc-31)
     4. [2.3.4 Dovednosti [ Skills ]](#loc-32)
     5. [2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]](#loc-33)
-6. [3 DarkFactory - Praktická část: Architektura harnessu](#loc-34)
+6. [3 DarkFactory: Architektura harnessu - Praktická část](#loc-34)
   1. [3.1 Git a GitHub](#loc-35)
 7. [4 Výsledky a diskuse](#loc-36)
 8. [5 Závěr](#loc-37)
@@ -90,7 +90,7 @@ Postup práce sleduje strukturu inženýrského cyklu:
 -
   1. Kritické zhodnocení: Porovnání navržených principů s volnými agentními smyčkami a vymezení provozních limitů autonomního inženýrství.
 
-## 2 Teoretická část: Vymezení konceptu
+## 2 Agentické AI: Vymezení konceptů - Teoretická část
 
 Úvod
 
@@ -215,7 +215,7 @@ Kromě kontextových dovedností využívají pokročilé řídicí architektury
 
 Monolitická agentní smyčka selhává při řešení komplexních, vícefázových úloh. Pro spolehlivé škálování se v moderních systémech uplatňuje hierarchická dělba práce a formalizace procesu do podoby grafu.
 
-## 3 DarkFactory - Praktická část: Architektura harnessu
+## 3 DarkFactory: Architektura harnessu - Praktická část
 
 Úvod
 

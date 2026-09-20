@@ -26,7 +26,7 @@ Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu,
     2. [1.2.2 Dílčí cíle](#loc-8)
     3. [1.2.3 Výzkumné otázky](#loc-9)
   3. [1.3 Metodika práce](#loc-10)
-5. [2 Teoretická část: Vymezení konceptu](#loc-11)
+5. [2 Agentické AI: Vymezení konceptů - Teoretická část](#loc-11)
   1. [2.1 Vývojové prostředí a praxe](#loc-12)
     1. [2.1.1 Správa verzí [Version Control]](#loc-13)
     2. [2.1.2 Git a GitHub](#loc-14)
@@ -57,7 +57,7 @@ Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu,
     8. [2.3.8 Model Context Protocol ( MCP ) servery](#loc-45)
     9. [2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]](#loc-47)
     10. [2.3.10 Zapojení člověka do smyčky ( HITL )](#loc-48)
-6. [3 DarkFactory - Praktická část: Architektura harnessu](#loc-49)
+6. [3 DarkFactory: Architektura harnessu - Praktická část](#loc-49)
   1. [3.1 Git a GitHub](#loc-50)
 7. [4 Výsledky a diskuse](#loc-51)
 8. [5 Závěr](#loc-52)
@@ -121,7 +121,7 @@ Postup práce sleduje strukturu inženýrského cyklu:
 
 📐 **Strukturální upozornění:** Chybějící evaluační rámec v metodice: Metodika práce v současné podobě popisuje inženýrský postup, ale postrádá formální specifikaci evaluačního rámce: definici vzorku úloh pro ověření spolehlivosti (syntetické úlohy vs. reálné bugfixy), stanovení kontrolních metrik (úspěšnost na první pokus, spotřeba tokenů na úspěšný PR) a srovnávací baseline.
 
-## 2 Teoretická část: Vymezení konceptu
+## 2 Agentické AI: Vymezení konceptů - Teoretická část
 
 Úvod
 
@@ -439,7 +439,7 @@ Základním principem navrženého řešení není nekritická plná autonomie, 
 
 🔥 **Hloubková kritika / Oponentura:** Kognitivní limity lidské schvalovací brány (Review Fatigue): Spoléhání se na finální sémantickou kontrolu diffu v pull requestu naráží na lidské kognitivní limity. Výzkumy prokazují, že u rozsáhlých diffů (nad 300–400 řádků) dramaticky klesá hloubka lidské pozornosti — vývojář kód pouze zběžně prohlédne a spoléhá na zelenou fajfku z CI. Aby byla lidská brána efektivní, harness musí diffy rozkládat do sémanticky sevřených mikrokroků, generovat interaktivní vysvětlení netriviálních rozhodnutí a explicitně zvýrazňovat změny v kritických architektonických komponentách.
 
-## 3 DarkFactory - Praktická část: Architektura harnessu
+## 3 DarkFactory: Architektura harnessu - Praktická část
 
 Úvod
 
