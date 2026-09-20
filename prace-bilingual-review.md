@@ -508,7 +508,7 @@ Omezené běhové prostředí určené k oddělení prováděného kódu a jeho 
 
 #### 4.2.5 Deterministic Guardrail (Deterministický mantinel)
 
-Programově vynucené omezení nebo kontrola, která neponechává kritické provozní pravidlo pouze na pravděpodobnostním rozhodnutí modelu. | A programmatically enforced constraint or check that does not leave a critical operating rule solely to a model's probabilistic decision. Pokud samotná instrukce v promptu neposkytuje dostatečnou záruku, harness může pravidlo vynutit deterministicky, například omezením přístupových práv, validací parametrů nástroje nebo odmítnutím nepovoleného stavového přechodu.
+Guardrail je programově vynucené omezení nebo kontrola, která neponechává kritické provozní pravidlo pouze na pravděpodobnostním rozhodnutí modelu. Pokud samotná instrukce v promptu neposkytuje dostatečnou záruku, harness může pravidlo vynutit deterministicky, například omezením přístupových práv, validací parametrů nástroje nebo odmítnutím nepovoleného stavového přechodu. Kritická bezpečnostní a procesní pravidla patří do deterministicky vynucované vrstvy harnessu, nikoli pouze do textových instrukcí modelu.
 
 #### 4.2.6 Human-in-the-loop (Zapojení člověka do smyčky)
 
@@ -625,7 +625,7 @@ Definovaný bod životního cyklu nebo události, na který lze navázat vlastn�
 
 #### 4.2.11 Context Engineering (Kontextové inženýrství)
 
-Systematický návrh, výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu, včetně instrukcí, paměti, nástrojových výsledků a externě načtených dat. | The systematic design, selection, ordering, and lifecycle management of information made available to a model in active context, including instructions, memory, tool results, and externally retrieved data. <sup>(<a href="#loc-147" role="doc-biblioref">20</a>)</sup>
+Kontextové inženýrství je systematický návrh, výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu. Kontext zahrnuje systémové instrukce, pracovní historii, výsledky nástrojů, externě načtená data a další informace, které model používá při rozhodování. Návrh této vrstvy určuje, které informace jsou modelu dostupné, kdy se načítají, jak dlouho zůstávají aktivní a jak se nahrazují při omezené kapacitě kontextového okna. Kontextové inženýrství řídí informační prostředí modelu; cílem není maximalizovat objem kontextu, ale udržet relevantní, přesný a provozně použitelný stav.
 
 ##### 4.2.11.1 Context Compaction (Kompakce kontextu)
 
@@ -641,29 +641,29 @@ Kompakce prodlužuje běh za cenu ztráty informace, a proto musí být navržen
 
 ##### 4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)
 
-Architektura, v níž systém před generováním nebo během něj vyhledá relevantní informace z externího zdroje a vloží je do kontextu modelu, aby výstup mohl být založen na načtených datech. | An architecture in which a system retrieves relevant information from an external source before or during generation and places it into model context so the output can be grounded in the retrieved data. <sup><span id="loc-118">(</span><a href="#loc-161" role="doc-biblioref">34</a>)</sup> Aby se předešlo ztrátě informací způsobené kompakcí, moderní agentní architektury přesouvají část paměti mimo samotné kontextové okno. Namísto spoléhání se na jediný lineární textový kontext se uplatňují strukturovaná externí úložiště.
+Retrieval-Augmented Generation (RAG) je architektura, v níž systém před generováním nebo během něj vyhledá relevantní informace z externího zdroje a vloží je do kontextu modelu. Aby se předešlo ztrátě informací způsobené kompakcí, moderní agentní architektury přesouvají část paměti mimo samotné kontextové okno. Namísto spoléhání se na jediný lineární textový kontext se uplatňují strukturovaná externí úložiště.
 
 K hlavním přístupům patří:
 
-- - Hierarchická epizodická paměť (RAG) [+ ]Hierarchická epizodická paměť (RAG <sup>(<a href="#loc-161" role="doc-biblioref">34</a>)</sup>): Ukládání doslovných protokolů nástrojů a historie úloh do externí databáze; do kontextu se selektivně injektují pouze bezprostředně relevantní fragmenty.
+- - Hierarchická epizodická paměť (RAG) [+ ]Hierarchická epizodická paměť (RAG <sup><span id="loc-118">(</span><a href="#loc-161" role="doc-biblioref">34</a>)</sup>): Ukládání doslovných protokolů nástrojů a historie úloh do externí databáze; do kontextu se selektivně injektují pouze bezprostředně relevantní fragmenty.
 - Persistentní graf stavu projektu (*Project State Graph*): Udržování explicitního, strukturovaného přehledu o stavu repozitáře (seznam modifikovaných souborů, otevřené úkoly, výsledky testů a platné invarianty) mimo kontextové okno.
 
-Díky tomu může agent kdykoliv obnovit přesný stav projektu bez závislosti na ztrátovém rekurzivním shrnování.
+Díky tomu může agent kdykoliv obnovit přesný stav projektu bez závislosti na ztrátovém rekurzivním shrnování. RAG odděluje dlouhodobé uchování informací od omezeného aktivního kontextu a umožňuje načítat pouze data relevantní pro aktuální krok.
 
 ##### 4.2.11.3 Context Rot (Degradace kontextu)
 
-Degradace pozornosti a kvality logického uvažování modelu způsobená zaplněním kontextového okna dlouhou historií, šumem nebo vzájemně si konkurujícími informacemi, která vede k přehlížení instrukcí a ztrátě souvislostí. | Degradation in a model's attention and reasoning quality caused by long, noisy, or internally competing context, leading to missed instructions and loss of relationships between facts. <sup>(<a href="#loc-147" role="doc-biblioref">20</a>)</sup> Schopnost jazykového modelu pracovat s dlouhým kontextem nelze posuzovat pouze podle nominální velikosti okna. Ačkoliv moderní modely deklarují kapacitu statisíců tokenů, jejich schopnost efektivně vyhledávat a logicky propojovat fakta s rostoucí délkou kontextu výrazně klesá. Tento jev se označuje jako ******<sup>*</sup> — [CZ] Degradace pozornosti a kvality logického uvažování modelu způsobená zaplněním kontextového okna dlouhou historií, šumem nebo vzájemně si konkurujícími informacemi, která vede k přehlížení instrukcí a ztrátě souvislostí..
+Degradace kontextu je pokles schopnosti modelu spolehlivě využívat informace v dlouhém, hlučném nebo vzájemně si konkurujícím kontextu. Schopnost jazykového modelu pracovat s dlouhým kontextem nelze posuzovat pouze podle nominální velikosti okna. Ačkoliv moderní modely deklarují kapacitu statisíců tokenů, jejich schopnost efektivně vyhledávat a logicky propojovat fakta s rostoucí délkou kontextu výrazně klesá. Tento jev se označuje jako ******<sup>*</sup> — .
 
 V praxi se projevuje dvěma hlavními mechanismy:
 
 - Lost in the Middle <sup>(<a href="#loc-147" role="doc-biblioref">20</a>)</sup>: Pozornostní vrstvy transformeru spolehlivě vnímají informace na samém začátku a konci okna, zatímco fakta umístěná uprostřed dlouhého textu jsou často přehlížena.
 - Multi-Needle Reasoning: Schopnost logicky provázat několik na sobě závislých informací rozptýlených napříč různými soubory; s rostoucí délkou kontextu tato schopnost prudce klesá.
 
-Při komplexním křížovém refaktoringu ve velkém kontextu proto model často přehlédne klíčové souvislosti, které by v menším a čistším okně zpracoval bez potíží.
+Při komplexním křížovém refaktoringu ve velkém kontextu proto model často přehlédne klíčové souvislosti, které by v menším a čistším okně zpracoval bez potíží. Nominálně větší kontextové okno samo o sobě nezaručuje lepší výkon; kvalita závisí na tom, zda model dokáže relevantní informace v kontextu skutečně najít a propojit.
 
 ##### 4.2.11.4 Semantic Drift (Sémantický posun)
 
-Postupné zkreslování významu a faktického stavu při opakovaném ztrátovém shrnování nebo transformaci kontextu. | The gradual distortion of meaning and factual state through repeated lossy summarization or transformation of context. <sup>(<a href="#loc-147" role="doc-biblioref">20</a>)</sup> Opakovaná ztrátová komprese vede k závažné patologii známé jako sémantický posun (*Semantic Drift*). Pokud je historie sezení v dlouhém vývojovém běhu shrnována vícekrát po sobě, vzniká řetězec ztrátových transformací (
+Sémantický posun je postupné zkreslování významu a faktického stavu při opakovaném ztrátovém shrnování nebo transformaci kontextu. Pokud je historie sezení v dlouhém vývojovém běhu shrnována vícekrát po sobě, vzniká řetězec ztrátových transformací (
 
 <math><msub><mi>𝑆</mi><mrow><mi>𝑘</mi><mo lspace="0em" rspace="0em">+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>𝑓</mi><mrow><mo>(</mo><mrow><msub><mi>𝑆</mi><mi>𝑘</mi></msub><mo>,</mo><msub><mi mathvariant="normal">Δ</mi><mi>𝑘</mi></msub></mrow><mo>)</mo></mrow></math>
 
@@ -678,15 +678,15 @@ Rizika sémantického posunu spočívají v těchto jevech:
    přijata jako nezpochybnitelný historický fakt.
 - Divergence modelu od reality: Po několika cyklech komprese se vnitřní model reality agenta zcela rozejde se skutečným stavem zdrojového kódu v souborovém systému.
 
-Výsledkem je stav, kdy agent sebevědomě reportuje vyřešení úkolu, ačkoliv reálný kód zůstává v nefunkčním či neúplném stavu.
+Výsledkem je stav, kdy agent sebevědomě reportuje vyřešení úkolu, ačkoliv reálný kód zůstává v nefunkčním či neúplném stavu. Opakovaná komprese může změnit pracovní reprezentaci reality natolik, že další rozhodování vychází z chybných historických předpokladů.
 
 #### 4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)
 
-Návrh agentních nebo automatizačních pracovních postupů jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky. | The design of agentic or automation workflows as explicit graphs of nodes, dependencies, and transitions rather than as one unconstrained loop. <sup><span id="loc-122">(</span><a href="#loc-162" role="doc-biblioref">35</a>)</sup> Monolitická agentní smyčka selhává při řešení komplexních, vícefázových úloh. Pro spolehlivé škálování se v moderních systémech uplatňuje hierarchická dělba práce a formalizace procesu do podoby grafu.
+Inženýrství pracovních grafů je návrh agentních nebo automatizačních workflow jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky. Monolitická agentní smyčka selhává při řešení komplexních, vícefázových úloh. Pro spolehlivé škálování se v moderních systémech uplatňuje hierarchická dělba práce a formalizace procesu do podoby grafu.
 
 - Klíčové přístupy ke škálování zahrnují:
 
-- Subagenti (*Subagents* <sup>(<a href="#loc-162" role="doc-biblioref">35</a>)</sup>): Hlavní orchestrátor dekomponuje rozsáhlou úlohu a deleguje dílčí kroky na specializované agenty (např. průzkumník repozitáře, plánovač, kódovací dělník). Po dokončení je kontext subagenta zahozen a orchestrátor obdrží pouze čistý výsledek, což chrání primární kontext před znečištěním (*context pollution*).
+- Subagenti (*Subagents* <sup><span id="loc-122">(</span><a href="#loc-162" role="doc-biblioref">35</a>)</sup>): Hlavní orchestrátor dekomponuje rozsáhlou úlohu a deleguje dílčí kroky na specializované agenty (např. průzkumník repozitáře, plánovač, kódovací dělník). Po dokončení je kontext subagenta zahozen a orchestrátor obdrží pouze čistý výsledek, což chrání primární kontext před znečištěním (*context pollution*).
 - Pracovní postupy jako grafy ( DAG / Graph Engineering): Životní cyklus požadavku je modelován jako orientovaný acyklický graf (příjem
   <math><mo lspace="0em" rspace="0em" stretchy="false">→</mo></math>
    plán
@@ -696,15 +696,15 @@ Návrh agentních nebo automatizačních pracovních postupů jako explicitních
    testy
   <math><mo lspace="0em" rspace="0em" stretchy="false">→</mo></math>
    schválení). Hrany definují striktní závislosti (`needs`); selhání v libovolném uzlu okamžitě zastaví navazující kroky.
- [+ ]Škálování je dále rozloženo na dva samostatné koncepty: hierarchickou delegaci prostřednictvím ***Subagent***<sup>*</sup> a explicitní závislosti pracovního postupu prostřednictvím ***DAG***<sup>*</sup>.
+ [+ ]Škálování je dále rozloženo na dva samostatné koncepty: hierarchickou delegaci prostřednictvím ***Subagent***<sup>*</sup> a explicitní závislosti pracovního postupu prostřednictvím ***DAG***<sup>*</sup>. Grafová struktura umožňuje rozdělit složitou úlohu na kontrolovatelné kroky, oddělit jejich odpovědnosti a explicitně řídit závislosti mezi nimi.
 
 ##### 4.2.12.1 Subagent (Podřízený agent)
 
-Dočasná nebo specializovaná agentní instance, které nadřazený orchestrátor deleguje vymezenou dílčí úlohu a následně převezme její výsledek. | A temporary or specialized agent instance to which a parent orchestrator delegates a bounded subtask and from which it later receives the result. <sup>(<a href="#loc-162" role="doc-biblioref">35</a>)</sup> Při hierarchické dělbě práce hlavní orchestrátor rozděluje rozsáhlou úlohu a jednotlivé části deleguje specializovaným subagentům, například pro průzkum repozitáře, plánování nebo implementaci. Po dokončení dílčího běhu může nadřazený agent převzít pouze jeho výsledek namísto celé pracovní historie subagenta.
+Subagent je dočasná nebo specializovaná agentní instance, které nadřazený orchestrátor deleguje vymezenou dílčí úlohu a následně převezme její výsledek. Při hierarchické dělbě práce hlavní orchestrátor rozděluje rozsáhlou úlohu a jednotlivé části deleguje specializovaným subagentům, například pro průzkum repozitáře, plánování nebo implementaci. Po dokončení dílčího běhu může nadřazený agent převzít pouze jeho výsledek namísto celé pracovní historie subagenta. Subagenti umožňují paralelní nebo specializovanou práci a současně omezují množství dílčí pracovní historie, které musí zůstat v kontextu hlavního orchestrátoru.
 
 ##### 4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)
 
-Orientovaný graf bez orientovaného cyklu. V pracovních postupech umožňuje explicitně vyjádřit závislosti mezi kroky a pořadí, které z nich vyplývá. | A directed graph containing no directed cycle. In workflows it can explicitly represent dependencies among steps and the ordering implied by those dependencies. <sup>(<a href="#loc-162" role="doc-biblioref">35</a>)</sup> V agentním workflow může DAG modelovat kroky jako uzly a jejich povinné závislosti jako hrany. Tím lze explicitně vyjádřit například posloupnost příjem požadavku → plán → implementace → testy → schválení a zabránit spuštění navazujícího kroku před splněním jeho předpokladů.
+Orientovaný acyklický graf (DAG) je orientovaný graf bez orientovaného cyklu, který umožňuje explicitně vyjádřit závislosti a pořadí kroků pracovního postupu. V agentním workflow může DAG modelovat kroky jako uzly a jejich povinné závislosti jako hrany. Tím lze explicitně vyjádřit například posloupnost příjem požadavku → plán → implementace → testy → schválení a zabránit spuštění navazujícího kroku před splněním jeho předpokladů. DAG převádí implicitní pořadí vícefázové úlohy na kontrolovatelnou strukturu závislostí, v níž lze navazující krok spustit až po splnění jeho předpokladů.
 
 ## 5 Results and Discussion (Výsledky a diskuse)
 

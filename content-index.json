@@ -391,52 +391,52 @@
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-115"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-117"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-118"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-121"
+            "anchor": "loc-119"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-157"
+            "anchor": "loc-153"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-158"
+            "anchor": "loc-154"
           }
         ],
         "review": [
@@ -1267,52 +1267,52 @@
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-115"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-117"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-118"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-121"
+            "anchor": "loc-119"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-157"
+            "anchor": "loc-153"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-158"
+            "anchor": "loc-154"
           }
         ],
         "review": [
@@ -2143,52 +2143,52 @@
           {
             "title": "4.2.11.3 Context Rot",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-115"
           },
           {
             "title": "4.2.11.4 Semantic Drift",
             "level": 5,
-            "anchor": "loc-117"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering",
             "level": 4,
-            "anchor": "loc-118"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12.1 Subagent",
             "level": 5,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph",
             "level": 5,
-            "anchor": "loc-121"
+            "anchor": "loc-119"
           },
           {
             "title": "5 Results and Discussion",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "6 Conclusion",
             "level": 2,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-157"
+            "anchor": "loc-153"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-158"
+            "anchor": "loc-154"
           }
         ],
         "review": [
@@ -3019,52 +3019,52 @@
           {
             "title": "4.2.11.3 Context Rot (Degradace kontextu)",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-115"
           },
           {
             "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
             "level": 5,
-            "anchor": "loc-117"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 4,
-            "anchor": "loc-118"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12.1 Subagent (Podřízený agent)",
             "level": 5,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
             "level": 5,
-            "anchor": "loc-121"
+            "anchor": "loc-119"
           },
           {
             "title": "5 Results and Discussion (Výsledky a diskuse)",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "6 Conclusion (Závěr)",
             "level": 2,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-157"
+            "anchor": "loc-153"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-158"
+            "anchor": "loc-154"
           }
         ],
         "review": [
