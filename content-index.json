@@ -433,107 +433,107 @@
           {
             "title": "2.3.3.2 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "2.3.3.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
             "title": "2.3.3.3 Vyvolávání nástrojů [ Tool Calling ]",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "2.3.3.3.1 Úvod",
             "level": 6,
-            "anchor": "loc-51"
+            "anchor": "loc-50"
           },
           {
             "title": "2.3.3.4 Dovednosti [ Skills ]",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "2.3.3.4.1 Úvod",
             "level": 6,
-            "anchor": "loc-55"
+            "anchor": "loc-54"
           },
           {
             "title": "2.3.3.5 Kontextové inženýrství [ Context Engineering ]",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "2.3.3.5.1 Úvod",
             "level": 6,
-            "anchor": "loc-58"
+            "anchor": "loc-57"
           },
           {
             "title": "2.3.3.6 Inženýrství pracovních grafů [ Workflow-graph Engineering ] ( Graph Engineering )",
             "level": 5,
-            "anchor": "loc-61"
+            "anchor": "loc-60"
           },
           {
             "title": "2.3.3.6.1 Úvod",
             "level": 6,
-            "anchor": "loc-63"
+            "anchor": "loc-62"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-64"
+            "anchor": "loc-63"
           },
           {
             "title": "3.1 Vývojové prostředí a praxe [ Development Environment and Practices ]",
             "level": 3,
-            "anchor": "loc-65"
+            "anchor": "loc-64"
           },
           {
             "title": "3.1.1 Úvod",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-65"
           },
           {
             "title": "3.1.2 Správa verzí [ Version control ]",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-66"
           },
           {
             "title": "3.1.2.1 Úvod",
             "level": 5,
-            "anchor": "loc-68"
+            "anchor": "loc-67"
           },
           {
             "title": "3.1.2.2 Git",
             "level": 5,
-            "anchor": "loc-69"
+            "anchor": "loc-68"
           },
           {
             "title": "3.1.2.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-70"
+            "anchor": "loc-69"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-70"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-72"
+            "anchor": "loc-71"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-73"
+            "anchor": "loc-72"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-98"
+            "anchor": "loc-96"
           }
         ]
       },
@@ -969,107 +969,107 @@
           {
             "title": "2.3.3.2 Smyčka ReAct ( Agent Loop )",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "2.3.3.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
             "title": "2.3.3.3 Vyvolávání nástrojů",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "2.3.3.3.1 Úvod",
             "level": 6,
-            "anchor": "loc-51"
+            "anchor": "loc-50"
           },
           {
             "title": "2.3.3.4 Dovednosti",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "2.3.3.4.1 Úvod",
             "level": 6,
-            "anchor": "loc-55"
+            "anchor": "loc-54"
           },
           {
             "title": "2.3.3.5 Kontextové inženýrství",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "2.3.3.5.1 Úvod",
             "level": 6,
-            "anchor": "loc-58"
+            "anchor": "loc-57"
           },
           {
             "title": "2.3.3.6 Inženýrství pracovních grafů ( Graph Engineering )",
             "level": 5,
-            "anchor": "loc-61"
+            "anchor": "loc-60"
           },
           {
             "title": "2.3.3.6.1 Úvod",
             "level": 6,
-            "anchor": "loc-63"
+            "anchor": "loc-62"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-64"
+            "anchor": "loc-63"
           },
           {
             "title": "3.1 Vývojové prostředí a praxe",
             "level": 3,
-            "anchor": "loc-65"
+            "anchor": "loc-64"
           },
           {
             "title": "3.1.1 Úvod",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-65"
           },
           {
             "title": "3.1.2 Správa verzí",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-66"
           },
           {
             "title": "3.1.2.1 Úvod",
             "level": 5,
-            "anchor": "loc-68"
+            "anchor": "loc-67"
           },
           {
             "title": "3.1.2.2 Git",
             "level": 5,
-            "anchor": "loc-69"
+            "anchor": "loc-68"
           },
           {
             "title": "3.1.2.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-70"
+            "anchor": "loc-69"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-70"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-72"
+            "anchor": "loc-71"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-73"
+            "anchor": "loc-72"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-98"
+            "anchor": "loc-96"
           }
         ]
       },
@@ -1505,107 +1505,107 @@
           {
             "title": "2.3.3.2 ReAct Loop ( Agent Loop )",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "2.3.3.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
             "title": "2.3.3.3 Tool Calling",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "2.3.3.3.1 Úvod",
             "level": 6,
-            "anchor": "loc-51"
+            "anchor": "loc-50"
           },
           {
             "title": "2.3.3.4 Skills",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "2.3.3.4.1 Úvod",
             "level": 6,
-            "anchor": "loc-55"
+            "anchor": "loc-54"
           },
           {
             "title": "2.3.3.5 Context Engineering",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "2.3.3.5.1 Úvod",
             "level": 6,
-            "anchor": "loc-58"
+            "anchor": "loc-57"
           },
           {
             "title": "2.3.3.6 Workflow-graph Engineering ( Graph Engineering )",
             "level": 5,
-            "anchor": "loc-61"
+            "anchor": "loc-60"
           },
           {
             "title": "2.3.3.6.1 Úvod",
             "level": 6,
-            "anchor": "loc-63"
+            "anchor": "loc-62"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-64"
+            "anchor": "loc-63"
           },
           {
             "title": "3.1 Development Environment and Practices",
             "level": 3,
-            "anchor": "loc-65"
+            "anchor": "loc-64"
           },
           {
             "title": "3.1.1 Úvod",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-65"
           },
           {
             "title": "3.1.2 Version control",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-66"
           },
           {
             "title": "3.1.2.1 Úvod",
             "level": 5,
-            "anchor": "loc-68"
+            "anchor": "loc-67"
           },
           {
             "title": "3.1.2.2 Git",
             "level": 5,
-            "anchor": "loc-69"
+            "anchor": "loc-68"
           },
           {
             "title": "3.1.2.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-70"
+            "anchor": "loc-69"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-70"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-72"
+            "anchor": "loc-71"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-73"
+            "anchor": "loc-72"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-98"
+            "anchor": "loc-96"
           }
         ]
       },
@@ -2041,107 +2041,107 @@
           {
             "title": "2.3.3.2 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "2.3.3.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-47"
+            "anchor": "loc-46"
           },
           {
             "title": "2.3.3.3 Vyvolávání nástrojů [ Tool Calling ]",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "2.3.3.3.1 Úvod",
             "level": 6,
-            "anchor": "loc-51"
+            "anchor": "loc-50"
           },
           {
             "title": "2.3.3.4 Dovednosti [ Skills ]",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "2.3.3.4.1 Úvod",
             "level": 6,
-            "anchor": "loc-55"
+            "anchor": "loc-54"
           },
           {
             "title": "2.3.3.5 Kontextové inženýrství [ Context Engineering ]",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "2.3.3.5.1 Úvod",
             "level": 6,
-            "anchor": "loc-58"
+            "anchor": "loc-57"
           },
           {
             "title": "2.3.3.6 Inženýrství pracovních grafů [ Workflow-graph Engineering ] ( Graph Engineering )",
             "level": 5,
-            "anchor": "loc-61"
+            "anchor": "loc-60"
           },
           {
             "title": "2.3.3.6.1 Úvod",
             "level": 6,
-            "anchor": "loc-63"
+            "anchor": "loc-62"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-64"
+            "anchor": "loc-63"
           },
           {
             "title": "3.1 Vývojové prostředí a praxe [ Development Environment and Practices ]",
             "level": 3,
-            "anchor": "loc-65"
+            "anchor": "loc-64"
           },
           {
             "title": "3.1.1 Úvod",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-65"
           },
           {
             "title": "3.1.2 Správa verzí [ Version control ]",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-66"
           },
           {
             "title": "3.1.2.1 Úvod",
             "level": 5,
-            "anchor": "loc-68"
+            "anchor": "loc-67"
           },
           {
             "title": "3.1.2.2 Git",
             "level": 5,
-            "anchor": "loc-69"
+            "anchor": "loc-68"
           },
           {
             "title": "3.1.2.2.1 Úvod",
             "level": 6,
-            "anchor": "loc-70"
+            "anchor": "loc-69"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-70"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-72"
+            "anchor": "loc-71"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-73"
+            "anchor": "loc-72"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-98"
+            "anchor": "loc-96"
           }
         ]
       }

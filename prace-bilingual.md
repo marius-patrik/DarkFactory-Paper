@@ -211,7 +211,7 @@ Agentní harness — aplikační a orchestrační vrstva obklopující inferenč
 
 ##### 2.3.3.1 Úvod
 
-[CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku. Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; orchestraci, práci se soubory, správu stavu a bezpečnostní mantinely zajišťuje Agent Harness.
+Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; orchestraci, práci se soubory, správu stavu a bezpečnostní mantinely zajišťuje Agent Harness.
 
 Ústřední prováděcí funkcí, která v architektuře harnessu řídí iterativní koordinaci agenta v reálném vývojovém prostředí, je ***Smyčka ReAct [ ReAct Loop ] ( Agent Loop )****. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
 
@@ -254,7 +254,7 @@ Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v soub
 
 ###### 2.3.3.4.1 Úvod
 
-Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží ***Dovednosti [ Skills ]**** — [CZ] Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v souboru SKILL.md), procedurálních pravidel a volitelných pomocných skriptů či zdrojů, které harness dynamicky načítá do kontextu agenta podle povahy řešeného úkolu..
+Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží ***Dovednosti [ Skills ]****.
 
 Architektura dovedností staví na následujících principech:
 
