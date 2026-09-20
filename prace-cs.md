@@ -1,4 +1,4 @@
-## Agentické inženýrství a návrh řídicího systému pro automatizovaný softwarový vývoj
+## DarkFactory: Umělá inteligence v praxi – Agentické a harnessové inženýrství
 
 Patrik Marius · Gymnázium J. K. Tyla · 2026
 
@@ -12,7 +12,7 @@ Agent, Agentické inženýrství, Agentní harness, Chatbot, Dovednosti, Git, Gi
 
 ## Obsah
 
-1. [Agentické inženýrství a návrh řídicího systému pro automatizovaný softwarový vývoj](#loc-1)
+1. [DarkFactory: Umělá inteligence v praxi – Agentické a harnessové inženýrství](#loc-1)
 2. [Anotace](#loc-2)
 3. [Klíčová slova](#loc-3)
 4. [1 Úvod](#loc-4)
@@ -23,29 +23,31 @@ Agent, Agentické inženýrství, Agentní harness, Chatbot, Dovednosti, Git, Gi
     3. [1.2.3 Výzkumné otázky](#loc-9)
   3. [1.3 Metodika práce](#loc-10)
 5. [2 Teoretická část: Vymezení konceptu](#loc-11)
-  1. [2.1 Správa verzí [Version Control], Plánování [Planning], Kontinuální integrace [Continuous Integration] (CI a GitHub Actions) a Požadované kontroly [Required Checks]](#loc-12)
-    1. [2.1.1 Git a GitHub](#loc-13)
-    2. [2.1.2 Větve (Branches)](#loc-15)
-    3. [2.1.3 Pull Request](#loc-16)
-    4. [2.1.4 Slučování změn (Commit and Merge)](#loc-17)
-    5. [2.1.5 Kontinuální integrace (CI a GitHub Actions)](#loc-18)
-    6. [2.1.6 Požadované kontroly (Required Checks)](#loc-19)
-  2. [2.2 Large Language Model ( LLM ) , chatboti a agenti](#loc-20)
-    1. [2.2.1 Úvod](#loc-21)
-    2. [2.2.2 Agent vs. Chatbot](#loc-23)
-    3. [2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]](#loc-24)
-  3. [2.3 Agentické inženýrství a Agent Harness](#loc-25)
-    1. [2.3.1 Úvod](#loc-26)
-    2. [2.3.2 Vyvolávání nástrojů [Tool Calling]](#loc-27)
-    3. [2.3.3 Dovednosti](#loc-28)
-    4. [2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]](#loc-29)
-6. [3 DarkFactory - Praktická část: Architektura harnessu](#loc-30)
-  1. [3.1 Git a GitHub](#loc-31)
-7. [4 Výsledky a diskuse](#loc-32)
-8. [5 Závěr](#loc-33)
-9. [Seznam zdrojů](#loc-34)
-10. [Rejstřík](#loc-37)
-11. [Seznam příloh](#loc-38)
+  1. [2.1 Vývojové prostředí a praxe](#loc-12)
+    1. [2.1.1 Správa verzí [Version Control]](#loc-13)
+    2. [2.1.2 Git a GitHub](#loc-14)
+    3. [2.1.3 Větve (Branches)](#loc-16)
+    4. [2.1.4 Pull Request](#loc-17)
+    5. [2.1.5 Slučování změn (Commit and Merge)](#loc-18)
+    6. [2.1.6 Plánování [Planning]](#loc-19)
+    7. [2.1.7 Kontinuální integrace (CI a GitHub Actions)](#loc-20)
+    8. [2.1.8 Požadované kontroly (Required Checks)](#loc-21)
+  2. [2.2 Large Language Model ( LLM ) , chatboti a agenti](#loc-22)
+    1. [2.2.1 Úvod](#loc-23)
+    2. [2.2.2 Agent vs. Chatbot](#loc-25)
+    3. [2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]](#loc-26)
+  3. [2.3 Agentické inženýrství a Agent Harness](#loc-27)
+    1. [2.3.1 Úvod](#loc-28)
+    2. [2.3.2 Vyvolávání nástrojů [Tool Calling]](#loc-29)
+    3. [2.3.3 Dovednosti](#loc-30)
+    4. [2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]](#loc-31)
+6. [3 DarkFactory - Praktická část: Architektura harnessu](#loc-32)
+  1. [3.1 Git a GitHub](#loc-33)
+7. [4 Výsledky a diskuse](#loc-34)
+8. [5 Závěr](#loc-35)
+9. [Seznam zdrojů](#loc-36)
+10. [Rejstřík](#loc-39)
+11. [Seznam příloh](#loc-40)
 
 ## 1 Úvod
 
@@ -83,15 +85,19 @@ Postup práce sleduje strukturu inženýrského cyklu:
 
 ## 2 Teoretická část: Vymezení konceptu
 
-### 2.1 Správa verzí [Version Control], Plánování [Planning], Kontinuální integrace [Continuous Integration] (CI a GitHub Actions) a Požadované kontroly [Required Checks]
+Úvod
 
-#### 2.1.1 Git a GitHub
+### 2.1 Vývojové prostředí a praxe
+
+#### 2.1.1 Správa verzí [Version Control]
+
+#### 2.1.2 Git a GitHub
 
 Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém [***Git***](#kw-git)★ v kombinaci s platformou [***GitHub***](#kw-github)★.
 
 Klíčové komponenty infrastruktury zahrnují:
 
-- Distribuovaný systém Git ([1](#loc-35)): Ukládá kompletní historii projektu v podobě jednotlivých revizí (*commitů*). Vývojář i agent pracují s plnou lokální kopií repozitáře, což umožňuje provádět změny, přepínat větve a spouštět lokální testy zcela nezávisle na síťovém připojení.
+- Distribuovaný systém Git ([1](#loc-37)): Ukládá kompletní historii projektu v podobě jednotlivých revizí (*commitů*). Vývojář i agent pracují s plnou lokální kopií repozitáře, což umožňuje provádět změny, přepínat větve a spouštět lokální testy zcela nezávisle na síťovém připojení.
 - Platforma GitHub: Slouží jako centrální bod pro sdílení kódu, týmovou koordinaci a automatizaci:
   - Zadávání a sledování úkolů (Issues): Strukturovaná textová zadání požadavků a hlášení chyb, která agentovi slouží jako výchozí specifikace úlohy.
   - Revize změn (Pull Requests): Uživatelské rozhraní pro přehledné zobrazení diffu, diskusi nad kódem a formální schválení člověkem.
@@ -99,21 +105,23 @@ Klíčové komponenty infrastruktury zahrnují:
 
 Agent v tomto pojetí nevystupuje jako černá skříňka s proprietárním protokolem, nýbrž jako standardní přispěvatel, který plně respektuje běžné vývojářské zvyklosti a nástroje.
 
-#### 2.1.2 Větve (Branches)
+#### 2.1.3 Větve (Branches)
 
-#### 2.1.3 Pull Request
+#### 2.1.4 Pull Request
 
-#### 2.1.4 Slučování změn (Commit and Merge)
+#### 2.1.5 Slučování změn (Commit and Merge)
 
-#### 2.1.5 Kontinuální integrace (CI a GitHub Actions)
+#### 2.1.6 Plánování [Planning]
 
-#### 2.1.6 Požadované kontroly (Required Checks)
+#### 2.1.7 Kontinuální integrace (CI a GitHub Actions)
+
+#### 2.1.8 Požadované kontroly (Required Checks)
 
 ### 2.2 Large Language Model ( LLM ) , chatboti a agenti
 
 #### 2.2.1 Úvod
 
-V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek ([2](#loc-36)). Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
+V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek ([2](#loc-38)). Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
 
 Základní principy fungování modelu zahrnují:
 
@@ -175,6 +183,8 @@ Monolitická agentní smyčka selhává při řešení komplexních, vícefázov
 
 ## 3 DarkFactory - Praktická část: Architektura harnessu
 
+Úvod
+
 ### 3.1 Git a GitHub
 
 ## 4 Výsledky a diskuse
@@ -183,8 +193,8 @@ Monolitická agentní smyčka selhává při řešení komplexních, vícefázov
 
 ## Seznam zdrojů
 
-- [1.](#loc-14) CHACON, Scott a STRAUB, Ben. *Pro Git.*2. New York : Apress, 2014. ISBN 978-1-4842-0076-6.
-- [2.](#loc-22) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+- [1.](#loc-15) CHACON, Scott a STRAUB, Ben. *Pro Git.*2. New York : Apress, 2014. ISBN 978-1-4842-0076-6.
+- [2.](#loc-24) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
 - 3.  MARIUS, Patrik. DarkFactory: autonomous, governed software engineering pipelines. Online. 2026. [Accessed 8 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
 - 4.  HUMBLE, Jez a FARLEY, David. *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.*Boston : Addison-Wesley, 2010. ISBN 978-0-321-60191-9.
 - 5.  Deepseek Harness. *arXiv preprint arXiv:2608.25512.* Online. 2026. Available from: [https://arxiv.org/abs/2608.25512](https://arxiv.org/abs/2608.25512)
