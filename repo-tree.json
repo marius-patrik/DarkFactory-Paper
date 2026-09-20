@@ -1088,12 +1088,6 @@
               "path": "DarkFactory/templates/registry.typ",
               "type": "file",
               "source": "repository/DarkFactory/templates/registry.typ"
-            },
-            {
-              "name": "terms.typ",
-              "path": "DarkFactory/templates/terms.typ",
-              "type": "file",
-              "source": "repository/DarkFactory/templates/terms.typ"
             }
           ]
         },
