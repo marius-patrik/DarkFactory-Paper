@@ -1,0 +1,4070 @@
+{
+  "templates": {
+    "gjkt-odborna-prace": {
+      "school": {
+        "final": [
+          {
+            "title": "DarkFactory:Umělá inteligence v praxi -Agentické a harnessové inženýrství",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Anotace",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Klíčová slova",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Obsah",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-21"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "level": 3,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.3 Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-34"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "Seznam zdrojů",
+            "level": 2,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "Rejstřík",
+            "level": 2,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentické inženýrství [ Agentic Engineering ]",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agentní harness [ Agent Harness ]",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Degradace kontextu [ Context Rot ]",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Generování rozšířené vyhledáváním [ Retrieval-Augmented Generation ] ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Inženýrství pracovních grafů [ Workflow-graph Engineering ] ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Inženýrství prováděcí smyčky [ Execution-loop Engineering ] ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Jazykový model [ Large Language Model ] ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Kompakce kontextu [ Context Compaction ] ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Kontextové inženýrství [ Context Engineering ]",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Kontextové okno [ Context Window ]",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Mezipaměť klíčů a hodnot [ Key–Value Cache ] ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Orientovaný acyklický graf [ Directed Acyclic Graph ] ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Požadavek na sloučení [ Pull Request ]",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Promptové inženýrství [ Prompt Engineering ]",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Průběžná integrace [ Continuous Integration ] ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Rozšíření [ Plugins ]",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Skript [ Script ]",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Sloučení commitů [ Commit Squashing ] ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Sloučení větví [ Branch Merge ] ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Softwarové inženýrství [ Software Engineering ]",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Softwarový kontejner [ Software Container ] ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Správa verzí [ Version control ]",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Tah interakce [ Interaction Turn ] ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizér [ Tokenizer ]",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformerová architektura [ Transformer Architecture ] ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Událostní záchytný bod [ Event Hook ] ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Vektorová reprezentace [ Embedding ]",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Větev repozitáře [ Repository Branch ] ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "Seznam příloh",
+            "level": 2,
+            "anchor": "loc-40"
+          }
+        ],
+        "review": [
+          {
+            "title": "DarkFactory:Umělá inteligence v praxi -Agentické a harnessové inženýrství",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Anotace",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Klíčová slova",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Obsah",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.2.4 Tahy a správa KV cache",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.2.6 Sémantický posun (Semantic Drift)",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "2.2.8 Degradace kontextu [ Context Rot ]",
+            "level": 4,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "level": 3,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "2.3.2 Promptové inženýrství [ Prompt Engineering ] a negativní instrukce",
+            "level": 4,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "2.3.5 Sandbox",
+            "level": 4,
+            "anchor": "loc-42"
+          },
+          {
+            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "level": 4,
+            "anchor": "loc-43"
+          },
+          {
+            "title": "2.3.7 Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "loc-44"
+          },
+          {
+            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "level": 4,
+            "anchor": "loc-45"
+          },
+          {
+            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-47"
+          },
+          {
+            "title": "2.3.10 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "loc-48"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-49"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-50"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-52"
+          },
+          {
+            "title": "Seznam zdrojů",
+            "level": 2,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "Rejstřík",
+            "level": 2,
+            "anchor": "loc-61"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentické inženýrství [ Agentic Engineering ]",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agentní harness [ Agent Harness ]",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Degradace kontextu [ Context Rot ]",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Generování rozšířené vyhledáváním [ Retrieval-Augmented Generation ] ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Inženýrství pracovních grafů [ Workflow-graph Engineering ] ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Inženýrství prováděcí smyčky [ Execution-loop Engineering ] ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Jazykový model [ Large Language Model ] ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Kompakce kontextu [ Context Compaction ] ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Kontextové inženýrství [ Context Engineering ]",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Kontextové okno [ Context Window ]",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Mezipaměť klíčů a hodnot [ Key–Value Cache ] ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Orientovaný acyklický graf [ Directed Acyclic Graph ] ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Požadavek na sloučení [ Pull Request ]",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Promptové inženýrství [ Prompt Engineering ]",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Průběžná integrace [ Continuous Integration ] ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Rozšíření [ Plugins ]",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Skript [ Script ]",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Sloučení commitů [ Commit Squashing ] ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Sloučení větví [ Branch Merge ] ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Softwarové inženýrství [ Software Engineering ]",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Softwarový kontejner [ Software Container ] ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Správa verzí [ Version control ]",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Tah interakce [ Interaction Turn ] ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizér [ Tokenizer ]",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformerová architektura [ Transformer Architecture ] ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Událostní záchytný bod [ Event Hook ] ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Vektorová reprezentace [ Embedding ]",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Větev repozitáře [ Repository Branch ] ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "Seznam příloh",
+            "level": 2,
+            "anchor": "loc-62"
+          },
+          {
+            "title": "A Obsah přiloženého média",
+            "level": 2,
+            "anchor": "loc-63"
+          },
+          {
+            "title": "B Schéma konfiguračního manifestu darkfactory.json",
+            "level": 2,
+            "anchor": "loc-64"
+          },
+          {
+            "title": "C Sdílené workflow pro GitHub Actions",
+            "level": 2,
+            "anchor": "loc-65"
+          },
+          {
+            "title": "D Systémové prompty plánovacího a kódovacího agenta",
+            "level": 2,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "E Protokol revizních značek v sazebním systému Typst",
+            "level": 2,
+            "anchor": "loc-67"
+          },
+          {
+            "title": "E.1 Vizuální reprezentace jednotlivých prvků v sazbě",
+            "level": 3,
+            "anchor": "loc-68"
+          },
+          {
+            "title": "E.2 Ukázky textových zvýrazňovacích a srovnávacích funkcí v toku odstavce",
+            "level": 3,
+            "anchor": "loc-69"
+          },
+          {
+            "title": "E.3 Role značek v lidském dohledu",
+            "level": 3,
+            "anchor": "loc-70"
+          }
+        ]
+      },
+      "cs": {
+        "final": [
+          {
+            "title": "DarkFactory:Umělá inteligence v praxi -Agentické a harnessové inženýrství",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Anotace",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Klíčová slova",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Obsah",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-21"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3 Agentické inženýrství a Agent Harness",
+            "level": 3,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.3 Dovednosti",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-34"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "Seznam zdrojů",
+            "level": 2,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "Rejstřík",
+            "level": 2,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentické inženýrství",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agentní harness",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Degradace kontextu",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Dovednosti",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Generování rozšířené vyhledáváním ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Inženýrství pracovních grafů ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Inženýrství prováděcí smyčky ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Jazykový model ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Kompakce kontextu ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Kontextové inženýrství",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Kontextové okno",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Mezipaměť klíčů a hodnot ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Orientovaný acyklický graf ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Požadavek na sloučení",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Promptové inženýrství",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Průběžná integrace ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Rozšíření",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Skript",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Sloučení commitů ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Sloučení větví ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "Smyčka ReAct ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Softwarové inženýrství",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Softwarový kontejner ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Správa verzí",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Tah interakce ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizér",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformerová architektura ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Událostní záchytný bod ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Vektorová reprezentace",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Větev repozitáře ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Zapojení člověka do smyčky ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "Seznam příloh",
+            "level": 2,
+            "anchor": "loc-40"
+          }
+        ],
+        "review": [
+          {
+            "title": "DarkFactory:Umělá inteligence v praxi -Agentické a harnessové inženýrství",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Anotace",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Klíčová slova",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Obsah",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.2.4 Tahy a správa KV cache",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.2.6 Sémantický posun (Semantic Drift)",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "2.2.8 Degradace kontextu",
+            "level": 4,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "2.3 Agentické inženýrství a Agent Harness",
+            "level": 3,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "2.3.2 Promptové inženýrství a negativní instrukce",
+            "level": 4,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct ( Agent Loop )",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "2.3.5 Sandbox",
+            "level": 4,
+            "anchor": "loc-42"
+          },
+          {
+            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "level": 4,
+            "anchor": "loc-43"
+          },
+          {
+            "title": "2.3.7 Dovednosti",
+            "level": 4,
+            "anchor": "loc-44"
+          },
+          {
+            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "level": 4,
+            "anchor": "loc-45"
+          },
+          {
+            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-47"
+          },
+          {
+            "title": "2.3.10 Zapojení člověka do smyčky ( HITL )",
+            "level": 4,
+            "anchor": "loc-48"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-49"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-50"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-52"
+          },
+          {
+            "title": "Seznam zdrojů",
+            "level": 2,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "Rejstřík",
+            "level": 2,
+            "anchor": "loc-61"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentické inženýrství",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agentní harness",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Degradace kontextu",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Dovednosti",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Generování rozšířené vyhledáváním ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Inženýrství pracovních grafů ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Inženýrství prováděcí smyčky ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Jazykový model ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Kompakce kontextu ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Kontextové inženýrství",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Kontextové okno",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Mezipaměť klíčů a hodnot ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Orientovaný acyklický graf ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Požadavek na sloučení",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Promptové inženýrství",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Průběžná integrace ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Rozšíření",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Skript",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Sloučení commitů ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Sloučení větví ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "Smyčka ReAct ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Softwarové inženýrství",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Softwarový kontejner ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Správa verzí",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Tah interakce ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizér",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformerová architektura ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Událostní záchytný bod ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Vektorová reprezentace",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Větev repozitáře ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Zapojení člověka do smyčky ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "Seznam příloh",
+            "level": 2,
+            "anchor": "loc-62"
+          },
+          {
+            "title": "A Obsah přiloženého média",
+            "level": 2,
+            "anchor": "loc-63"
+          },
+          {
+            "title": "B Schéma konfiguračního manifestu darkfactory.json",
+            "level": 2,
+            "anchor": "loc-64"
+          },
+          {
+            "title": "C Sdílené workflow pro GitHub Actions",
+            "level": 2,
+            "anchor": "loc-65"
+          },
+          {
+            "title": "D Systémové prompty plánovacího a kódovacího agenta",
+            "level": 2,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "E Protokol revizních značek v sazebním systému Typst",
+            "level": 2,
+            "anchor": "loc-67"
+          },
+          {
+            "title": "E.1 Vizuální reprezentace jednotlivých prvků v sazbě",
+            "level": 3,
+            "anchor": "loc-68"
+          },
+          {
+            "title": "E.2 Ukázky textových zvýrazňovacích a srovnávacích funkcí v toku odstavce",
+            "level": 3,
+            "anchor": "loc-69"
+          },
+          {
+            "title": "E.3 Role značek v lidském dohledu",
+            "level": 3,
+            "anchor": "loc-70"
+          }
+        ]
+      },
+      "en": {
+        "final": [
+          {
+            "title": "DarkFactory: Artificial Intelligence in Practice – Agentic and Harness Engineering",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Annotation",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Keywords",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Contents",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-21"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3 Agentic Engineering a Agent Harness",
+            "level": 3,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.3 Skills",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-34"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "References",
+            "level": 2,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "Index",
+            "level": 2,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentic Engineering",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agent Harness",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Context Rot",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Skills",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Retrieval-Augmented Generation ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Workflow-graph Engineering ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Execution-loop Engineering ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Large Language Model ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Context Compaction ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Context Engineering",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Context Window",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Key–Value Cache ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Directed Acyclic Graph ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Pull Request",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Prompt Engineering",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Continuous Integration ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Plugins",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Script",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Commit Squashing ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Branch Merge ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "ReAct Loop ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Software Engineering",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Software Container ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Version control",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Interaction Turn ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizer",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformer Architecture ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Event Hook ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Embedding",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Repository Branch ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Human-in-the-loop ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "List of appendices",
+            "level": 2,
+            "anchor": "loc-40"
+          }
+        ],
+        "review": [
+          {
+            "title": "DarkFactory: Artificial Intelligence in Practice – Agentic and Harness Engineering",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Annotation",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Keywords",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Contents",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.2.4 Tahy a správa KV cache",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.2.6 Sémantický posun (Semantic Drift)",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "2.2.8 Context Rot",
+            "level": 4,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "2.3 Agentic Engineering a Agent Harness",
+            "level": 3,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "2.3.2 Prompt Engineering a negativní instrukce",
+            "level": 4,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]ReAct Loop ( Agent Loop )",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "2.3.5 Sandbox",
+            "level": 4,
+            "anchor": "loc-42"
+          },
+          {
+            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "level": 4,
+            "anchor": "loc-43"
+          },
+          {
+            "title": "2.3.7 Skills",
+            "level": 4,
+            "anchor": "loc-44"
+          },
+          {
+            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "level": 4,
+            "anchor": "loc-45"
+          },
+          {
+            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-47"
+          },
+          {
+            "title": "2.3.10 Human-in-the-loop ( HITL )",
+            "level": 4,
+            "anchor": "loc-48"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-49"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-50"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-52"
+          },
+          {
+            "title": "References",
+            "level": 2,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "Index",
+            "level": 2,
+            "anchor": "loc-61"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentic Engineering",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agent Harness",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Context Rot",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Skills",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Retrieval-Augmented Generation ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Workflow-graph Engineering ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Execution-loop Engineering ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Large Language Model ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Context Compaction ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Context Engineering",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Context Window",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Key–Value Cache ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Directed Acyclic Graph ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Pull Request",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Prompt Engineering",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Continuous Integration ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Plugins",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Script",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Commit Squashing ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Branch Merge ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "ReAct Loop ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Software Engineering",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Software Container ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Version control",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Interaction Turn ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizer",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformer Architecture ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Event Hook ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Embedding",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Repository Branch ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Human-in-the-loop ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "List of appendices",
+            "level": 2,
+            "anchor": "loc-62"
+          },
+          {
+            "title": "A Obsah přiloženého média",
+            "level": 2,
+            "anchor": "loc-63"
+          },
+          {
+            "title": "B Schéma konfiguračního manifestu darkfactory.json",
+            "level": 2,
+            "anchor": "loc-64"
+          },
+          {
+            "title": "C Sdílené workflow pro GitHub Actions",
+            "level": 2,
+            "anchor": "loc-65"
+          },
+          {
+            "title": "D Systémové prompty plánovacího a kódovacího agenta",
+            "level": 2,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "E Protokol revizních značek v sazebním systému Typst",
+            "level": 2,
+            "anchor": "loc-67"
+          },
+          {
+            "title": "E.1 Vizuální reprezentace jednotlivých prvků v sazbě",
+            "level": 3,
+            "anchor": "loc-68"
+          },
+          {
+            "title": "E.2 Ukázky textových zvýrazňovacích a srovnávacích funkcí v toku odstavce",
+            "level": 3,
+            "anchor": "loc-69"
+          },
+          {
+            "title": "E.3 Role značek v lidském dohledu",
+            "level": 3,
+            "anchor": "loc-70"
+          }
+        ]
+      },
+      "merged": {
+        "final": [
+          {
+            "title": "DarkFactory:Umělá inteligence v praxi -Agentické a harnessové inženýrství",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Anotace | Annotation",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Klíčová slova | Keywords",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Obsah | Contents",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-21"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "level": 3,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.3 Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-34"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "Seznam zdrojů | References",
+            "level": 2,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "Rejstřík | Index",
+            "level": 2,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentické inženýrství [ Agentic Engineering ]",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agentní harness [ Agent Harness ]",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Degradace kontextu [ Context Rot ]",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Generování rozšířené vyhledáváním [ Retrieval-Augmented Generation ] ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Inženýrství pracovních grafů [ Workflow-graph Engineering ] ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Inženýrství prováděcí smyčky [ Execution-loop Engineering ] ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Jazykový model [ Large Language Model ] ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Kompakce kontextu [ Context Compaction ] ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Kontextové inženýrství [ Context Engineering ]",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Kontextové okno [ Context Window ]",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Mezipaměť klíčů a hodnot [ Key–Value Cache ] ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Orientovaný acyklický graf [ Directed Acyclic Graph ] ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Požadavek na sloučení [ Pull Request ]",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Promptové inženýrství [ Prompt Engineering ]",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Průběžná integrace [ Continuous Integration ] ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Rozšíření [ Plugins ]",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Skript [ Script ]",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Sloučení commitů [ Commit Squashing ] ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Sloučení větví [ Branch Merge ] ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Softwarové inženýrství [ Software Engineering ]",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Softwarový kontejner [ Software Container ] ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Správa verzí [ Version control ]",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Tah interakce [ Interaction Turn ] ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizér [ Tokenizer ]",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformerová architektura [ Transformer Architecture ] ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Událostní záchytný bod [ Event Hook ] ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Vektorová reprezentace [ Embedding ]",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Větev repozitáře [ Repository Branch ] ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "Seznam příloh | List of appendices",
+            "level": 2,
+            "anchor": "loc-40"
+          }
+        ],
+        "review": [
+          {
+            "title": "DarkFactory:Umělá inteligence v praxi -Agentické a harnessové inženýrství",
+            "level": 2,
+            "anchor": "loc-1"
+          },
+          {
+            "title": "Anotace | Annotation",
+            "level": 2,
+            "anchor": "loc-2"
+          },
+          {
+            "title": "Klíčová slova | Keywords",
+            "level": 2,
+            "anchor": "loc-3"
+          },
+          {
+            "title": "Obsah | Contents",
+            "level": 2,
+            "anchor": ""
+          },
+          {
+            "title": "1 Úvod",
+            "level": 2,
+            "anchor": "loc-4"
+          },
+          {
+            "title": "1.1 Motivace a vymezení problému",
+            "level": 3,
+            "anchor": "loc-5"
+          },
+          {
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
+            "anchor": "loc-6"
+          },
+          {
+            "title": "1.2.1 Hlavní cíl",
+            "level": 4,
+            "anchor": "loc-7"
+          },
+          {
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
+            "anchor": "loc-8"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-9"
+          },
+          {
+            "title": "1.3 Metodika práce",
+            "level": 3,
+            "anchor": "loc-10"
+          },
+          {
+            "title": "2 Teoretická část: Vymezení konceptu",
+            "level": 2,
+            "anchor": "loc-11"
+          },
+          {
+            "title": "2.1 Vývojové prostředí a praxe",
+            "level": 3,
+            "anchor": "loc-12"
+          },
+          {
+            "title": "2.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-13"
+          },
+          {
+            "title": "2.1.2 Git a GitHub",
+            "level": 4,
+            "anchor": "loc-14"
+          },
+          {
+            "title": "2.1.3 Větve (Branches)",
+            "level": 4,
+            "anchor": "loc-16"
+          },
+          {
+            "title": "2.1.4 Pull Request",
+            "level": 4,
+            "anchor": "loc-17"
+          },
+          {
+            "title": "2.1.5 Slučování změn (Commit and Merge)",
+            "level": 4,
+            "anchor": "loc-18"
+          },
+          {
+            "title": "2.1.6 Plánování [Planning]",
+            "level": 4,
+            "anchor": "loc-19"
+          },
+          {
+            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "level": 4,
+            "anchor": "loc-20"
+          },
+          {
+            "title": "2.1.8 Požadované kontroly (Required Checks)",
+            "level": 4,
+            "anchor": "loc-22"
+          },
+          {
+            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
+            "level": 3,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.2.1 Úvod",
+            "level": 4,
+            "anchor": "loc-25"
+          },
+          {
+            "title": "2.2.2 Agent vs. Chatbot",
+            "level": 4,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
+            "level": 4,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.2.4 Tahy a správa KV cache",
+            "level": 4,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
+            "level": 4,
+            "anchor": "loc-30"
+          },
+          {
+            "title": "2.2.6 Sémantický posun (Semantic Drift)",
+            "level": 4,
+            "anchor": "loc-31"
+          },
+          {
+            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "2.2.8 Degradace kontextu [ Context Rot ]",
+            "level": 4,
+            "anchor": "loc-33"
+          },
+          {
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] a Agent Harness",
+            "level": 3,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.3.1 Úvod",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "2.3.2 Promptové inženýrství [ Prompt Engineering ] a negativní instrukce",
+            "level": 4,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
+            "level": 4,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "2.3.5 Sandbox",
+            "level": 4,
+            "anchor": "loc-42"
+          },
+          {
+            "title": "2.3.6 Patologie divergence: perseverace a oscilace",
+            "level": 4,
+            "anchor": "loc-43"
+          },
+          {
+            "title": "2.3.7 Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "loc-44"
+          },
+          {
+            "title": "2.3.8 Model Context Protocol ( MCP ) servery",
+            "level": 4,
+            "anchor": "loc-45"
+          },
+          {
+            "title": "2.3.9 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
+            "anchor": "loc-47"
+          },
+          {
+            "title": "2.3.10 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "loc-48"
+          },
+          {
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
+            "level": 2,
+            "anchor": "loc-49"
+          },
+          {
+            "title": "3.1 Git a GitHub",
+            "level": 3,
+            "anchor": "loc-50"
+          },
+          {
+            "title": "4 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-52"
+          },
+          {
+            "title": "Seznam zdrojů | References",
+            "level": 2,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "Rejstřík | Index",
+            "level": 2,
+            "anchor": "loc-61"
+          },
+          {
+            "title": "A",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Agent",
+            "level": 4,
+            "anchor": "kw-agent"
+          },
+          {
+            "title": "Agentické inženýrství [ Agentic Engineering ]",
+            "level": 4,
+            "anchor": "kw-agentic-engineering"
+          },
+          {
+            "title": "Agentní harness [ Agent Harness ]",
+            "level": 4,
+            "anchor": "kw-harness"
+          },
+          {
+            "title": "C",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Chatbot",
+            "level": 4,
+            "anchor": "kw-chatbot"
+          },
+          {
+            "title": "D",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Degradace kontextu [ Context Rot ]",
+            "level": 4,
+            "anchor": "kw-context-rot"
+          },
+          {
+            "title": "Dovednosti [ Skills ]",
+            "level": 4,
+            "anchor": "kw-skills"
+          },
+          {
+            "title": "G",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Generování rozšířené vyhledáváním [ Retrieval-Augmented Generation ] ( RAG )",
+            "level": 4,
+            "anchor": "kw-rag"
+          },
+          {
+            "title": "Git",
+            "level": 4,
+            "anchor": "kw-git"
+          },
+          {
+            "title": "GitHub",
+            "level": 4,
+            "anchor": "kw-github"
+          },
+          {
+            "title": "GitHub Actions ( Actions )",
+            "level": 4,
+            "anchor": "kw-github-actions"
+          },
+          {
+            "title": "I",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Inženýrství pracovních grafů [ Workflow-graph Engineering ] ( Graph Engineering )",
+            "level": 4,
+            "anchor": "kw-graph-engineering"
+          },
+          {
+            "title": "Inženýrství prováděcí smyčky [ Execution-loop Engineering ] ( Loop Engineering )",
+            "level": 4,
+            "anchor": "kw-loop-engineering"
+          },
+          {
+            "title": "J",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Jazykový model [ Large Language Model ] ( LLM )",
+            "level": 4,
+            "anchor": "kw-language-model"
+          },
+          {
+            "title": "K",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Kompakce kontextu [ Context Compaction ] ( Compaction )",
+            "level": 4,
+            "anchor": "kw-context-compaction"
+          },
+          {
+            "title": "Kontextové inženýrství [ Context Engineering ]",
+            "level": 4,
+            "anchor": "kw-context-engineering"
+          },
+          {
+            "title": "Kontextové okno [ Context Window ]",
+            "level": 4,
+            "anchor": "kw-context-window"
+          },
+          {
+            "title": "M",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Mezipaměť klíčů a hodnot [ Key–Value Cache ] ( KV Cache )",
+            "level": 4,
+            "anchor": "kw-kv-cache"
+          },
+          {
+            "title": "Model Context Protocol ( MCP )",
+            "level": 4,
+            "anchor": "kw-mcp"
+          },
+          {
+            "title": "O",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Orientovaný acyklický graf [ Directed Acyclic Graph ] ( DAG )",
+            "level": 4,
+            "anchor": "kw-dag"
+          },
+          {
+            "title": "P",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Požadavek na sloučení [ Pull Request ]",
+            "level": 4,
+            "anchor": "kw-pull-request"
+          },
+          {
+            "title": "Promptové inženýrství [ Prompt Engineering ]",
+            "level": 4,
+            "anchor": "kw-prompt-engineering"
+          },
+          {
+            "title": "Průběžná integrace [ Continuous Integration ] ( CI )",
+            "level": 4,
+            "anchor": "kw-continuous-integration"
+          },
+          {
+            "title": "R",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Rozšíření [ Plugins ]",
+            "level": 4,
+            "anchor": "kw-plugins"
+          },
+          {
+            "title": "S",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Skript [ Script ]",
+            "level": 4,
+            "anchor": "kw-script"
+          },
+          {
+            "title": "Sloučení commitů [ Commit Squashing ] ( Squash )",
+            "level": 4,
+            "anchor": "kw-squash"
+          },
+          {
+            "title": "Sloučení větví [ Branch Merge ] ( Merge )",
+            "level": 4,
+            "anchor": "kw-merge"
+          },
+          {
+            "title": "Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 4,
+            "anchor": "kw-agent-loop"
+          },
+          {
+            "title": "Softwarové inženýrství [ Software Engineering ]",
+            "level": 4,
+            "anchor": "kw-software-engineering"
+          },
+          {
+            "title": "Softwarový kontejner [ Software Container ] ( Container )",
+            "level": 4,
+            "anchor": "kw-container"
+          },
+          {
+            "title": "Správa verzí [ Version control ]",
+            "level": 4,
+            "anchor": "kw-version-control"
+          },
+          {
+            "title": "T",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Tah interakce [ Interaction Turn ] ( Turn )",
+            "level": 4,
+            "anchor": "kw-turn"
+          },
+          {
+            "title": "Token",
+            "level": 4,
+            "anchor": "kw-token"
+          },
+          {
+            "title": "Tokenizér [ Tokenizer ]",
+            "level": 4,
+            "anchor": "kw-tokenizer"
+          },
+          {
+            "title": "Transformerová architektura [ Transformer Architecture ] ( Transformer )",
+            "level": 4,
+            "anchor": "kw-transformer"
+          },
+          {
+            "title": "U",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Událostní záchytný bod [ Event Hook ] ( Hook )",
+            "level": 4,
+            "anchor": "kw-hook"
+          },
+          {
+            "title": "V",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Vektorová reprezentace [ Embedding ]",
+            "level": 4,
+            "anchor": "kw-embedding"
+          },
+          {
+            "title": "Větev repozitáře [ Repository Branch ] ( Branch )",
+            "level": 4,
+            "anchor": "kw-branch"
+          },
+          {
+            "title": "Z",
+            "level": 3,
+            "anchor": ""
+          },
+          {
+            "title": "Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
+            "level": 4,
+            "anchor": "kw-human-in-the-loop"
+          },
+          {
+            "title": "Seznam příloh | List of appendices",
+            "level": 2,
+            "anchor": "loc-62"
+          },
+          {
+            "title": "A Obsah přiloženého média",
+            "level": 2,
+            "anchor": "loc-63"
+          },
+          {
+            "title": "B Schéma konfiguračního manifestu darkfactory.json",
+            "level": 2,
+            "anchor": "loc-64"
+          },
+          {
+            "title": "C Sdílené workflow pro GitHub Actions",
+            "level": 2,
+            "anchor": "loc-65"
+          },
+          {
+            "title": "D Systémové prompty plánovacího a kódovacího agenta",
+            "level": 2,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "E Protokol revizních značek v sazebním systému Typst",
+            "level": 2,
+            "anchor": "loc-67"
+          },
+          {
+            "title": "E.1 Vizuální reprezentace jednotlivých prvků v sazbě",
+            "level": 3,
+            "anchor": "loc-68"
+          },
+          {
+            "title": "E.2 Ukázky textových zvýrazňovacích a srovnávacích funkcí v toku odstavce",
+            "level": 3,
+            "anchor": "loc-69"
+          },
+          {
+            "title": "E.3 Role značek v lidském dohledu",
+            "level": 3,
+            "anchor": "loc-70"
+          }
+        ]
+      }
+    }
+  }
+}

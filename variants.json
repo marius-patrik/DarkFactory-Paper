@@ -1,5 +1,5 @@
 {
-  "commit": "3b6c11458f906b3d1a47fa1cb1e15fc55a96082e",
+  "commit": "141adcc5034480b543cfd6f4bdb3755dea56b6d0",
   "work_title": "DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství",
   "default_template": "gjkt-odborna-prace",
   "templates": [
@@ -100,6 +100,7 @@
       "raw"
     ],
     "repo_tree": "repo-tree.json",
+    "content_index": "content-index.json",
     "repository_url": "https://github.com/marius-patrik/DarkFactory-Paper",
     "pdfjs_version": "6.3.289",
     "entrypoint": "viewer.html",
