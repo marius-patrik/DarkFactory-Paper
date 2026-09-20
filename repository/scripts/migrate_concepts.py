@@ -542,7 +542,7 @@ def rewrite_common() -> None:
     marker = "#let term-use-label"
     if marker not in text:
         raise ValueError("common.typ terminology marker missing")
-    text = text[:text.index(marker)] + COMMON_SUFFIX + "\n"
+    text = text[:text.index(marker)] + COMMON_SUFFIX.rstrip() + "\n"
     path.write_text(text, encoding="utf-8")
 
 def rewrite_schema() -> None:
@@ -559,7 +559,7 @@ def main() -> None:
     rewrite_schema()
     rewrite_common()
     registry = ROOT / "templates/registry.typ"
-    registry_text = registry.read_text(encoding="utf-8").replace("#let define-term = common.define-term\\n", "")
+    registry_text = registry.read_text(encoding="utf-8").replace("#let define-term = common.define-term\n", "")
     registry.write_text(registry_text, encoding="utf-8")
 
     stale = []
