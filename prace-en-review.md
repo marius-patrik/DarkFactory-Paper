@@ -10,7 +10,7 @@ This thesis examines the current use of agentic artificial intelligence in softw
 
 ## Keywords
 
-[Actions (GitHub Actions)](#concept-github_actions), [Agent](#concept-agent), [Agent Divergence Pathologies (Patologie divergence)](#concept-divergence), [Agent Harness (Agentní harness)](#concept-harness), [Agent Loop (Smyčka ReAct)](#concept-agent_loop), [Agent Session (Agentní sezení)](#concept-agent_session), [Agentic Engineering (Agentické inženýrství)](#concept-agentic_engineering), [Autoregressive Modeling (Autoregresivní modelování)](#concept-autoregression), [Branch (Větev repozitáře)](#concept-branch), [Branch Protection (Ochrana větví)](#concept-branch_protection), [Chatbot](#concept-chatbot), [ChatGPT](#concept-chatgpt), [ChatGPT App Interface (Rozhraní aplikace ChatGPT)](#concept-chatgpt_interface_image), [CI (Průběžná integrace)](#concept-continuous_integration), [Claude Code](#concept-claude_code), [Claude Code Interface (Rozhraní Claude Code)](#concept-claude_code_image), [Claude Desktop (Aplikace Claude pro desktop)](#concept-claude_desktop), [Claude Desktop Interface (Rozhraní aplikace Claude)](#concept-claude_desktop_image), [Claude Opus 5](#concept-claude_opus_5), [Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)](#concept-claude_opus_5_image), [Code Execution (Spouštění kódu)](#concept-code_execution), [Codex](#concept-codex), [Codex App Interface (Rozhraní aplikace Codex)](#concept-codex_app_image), [Compaction (Kompakce kontextu)](#concept-compaction), [Conclusion (Závěr)](#concept-conclusion), [Container (Softwarový kontejner)](#concept-container), [Context Engineering (Kontextové inženýrství)](#concept-context_engineering), [Context Rot (Degradace kontextu)](#concept-context_rot), [Context Window (Kontextové okno)](#concept-context_window), [DAG (Orientovaný acyklický graf)](#concept-dag), [DeepSeek-V4.1-Flash](#concept-deepseek_v4_1_flash), [DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)](#concept-deepseek_v4_1_flash_image), [Development Environment and Practices (Vývojové prostředí a praxe)](#concept-development_environment), [Embedding (Vektorová reprezentace)](#concept-embedding), [Flaky Test (Nestálý test)](#concept-flaky_test), [Git](#concept-git), [GitHub](#concept-github), [Global Generative AI Adoption (Globální adopce generativní AI)](#concept-global_ai_diffusion_figure), [GPT-5.6](#concept-gpt_5_6), [GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)](#concept-gpt_5_6_image), [Graph Engineering (Inženýrství pracovních grafů)](#concept-graph_engineering), [Guardrail (Deterministický mantinel)](#concept-guardrail), [HITL (Zapojení člověka do smyčky)](#concept-human_in_the_loop), [Hook (Událostní záchytný bod)](#concept-hook), [Introduction (Úvod)](#concept-thesis_introduction), [Issue (Úloha GitHubu)](#concept-github_issue), [JSON Schema Tool Calling (Vyvolávání nástrojů s JSON Schema)](#concept-json_schema_tool_calling), [KV Cache (Mezipaměť klíčů a hodnot)](#concept-kv_cache), [Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)](#concept-language_models), [LLM (Velký jazykový model)](#concept-language_model), [Loop Engineering (Inženýrství prováděcí smyčky)](#concept-loop_engineering), [Main Goal (Hlavní cíl)](#concept-main_goal), [MCP (Model Context Protocol)](#concept-mcp), [Merge (Sloučení větví)](#concept-merge), [Methodology (Metodika práce)](#concept-methodology), [Motivation and Problem Definition (Motivace a vymezení problému)](#concept-motivation_problem_definition), [Planning (Plánování)](#concept-planning), [Plugins (Rozšíření)](#concept-plugins), [Progressive Disclosure (Postupné zpřístupňování kontextu)](#concept-progressive_disclosure), [Prompt Engineering (Promptové inženýrství)](#concept-prompt_engineering), [Pull Request (Požadavek na sloučení)](#concept-pull_request), [RAG (Generování rozšířené vyhledáváním)](#concept-rag), [ReAct Agent-loop Diagram (Schéma agentní smyčky ReAct)](#concept-react_loop_diagram), [Required Checks (Požadované kontroly)](#concept-required_checks), [Research Questions (Výzkumné otázky)](#concept-research_questions), [Results and Discussion (Výsledky a diskuse)](#concept-results_discussion), [Runtime (Běhové prostředí)](#concept-runtime), [Sandbox (Izolované běhové prostředí)](#concept-sandbox), [Script (Skript)](#concept-script), [Semantic Drift (Sémantický posun)](#concept-semantic_drift), [SKILL.md (Formát SKILL.md)](#concept-skill_md_format), [Skills (Dovednosti)](#concept-skills), [Slop](#concept-slop), [Software Engineering (Softwarové inženýrství)](#concept-software_engineering), [Squash (Sloučení commitů)](#concept-squash), [Stochastic Decoding (Stochastické dekódování)](#concept-stochastic_decoding), [Sub-goals (Dílčí cíle)](#concept-subgoals), [Subagent (Podřízený agent)](#concept-subagent), [System Prompt (Systémový prompt)](#concept-system_prompt), [Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)](#concept-thesis_objectives_research_questions), [Token](#concept-token), [Tokenizer (Tokenizér)](#concept-tokenizer), [Tool Calling (Vyvolávání nástrojů)](#concept-tool_calling), [Transformer (Transformerová architektura)](#concept-transformer), [Turn (Tah interakce)](#concept-turn), [Version control (Správa verzí)](#concept-version_control), [Vibe Coding (Vibe coding)](#concept-vibe_coding)
+[Actions (GitHub Actions)](#concept-github_actions), [Agent](#concept-agent), [Agent Divergence Pathologies (Patologie divergence)](#concept-divergence), [Agent Harness (Agentní harness)](#concept-harness), [Agent Loop (Smyčka ReAct) [ReAct Loop]](#concept-agent_loop), [Agent Session (Agentní sezení)](#concept-agent_session), [Agentic Engineering (Agentické inženýrství)](#concept-agentic_engineering), [Autoregressive Modeling (Autoregresivní modelování)](#concept-autoregression), [Branch (Větev repozitáře) [Repository Branch]](#concept-branch), [Branch Protection (Ochrana větví)](#concept-branch_protection), [Chatbot](#concept-chatbot), [ChatGPT](#concept-chatgpt), [ChatGPT App Interface (Rozhraní aplikace ChatGPT)](#concept-chatgpt_interface_image), [CI (Průběžná integrace) [Continuous Integration]](#concept-continuous_integration), [Claude Code](#concept-claude_code), [Claude Code Interface (Rozhraní Claude Code)](#concept-claude_code_image), [Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]](#concept-claude_desktop), [Claude Desktop Interface (Rozhraní aplikace Claude)](#concept-claude_desktop_image), [Claude Opus 5](#concept-claude_opus_5), [Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)](#concept-claude_opus_5_image), [Code Execution (Spouštění kódu)](#concept-code_execution), [Codex](#concept-codex), [Codex App Interface (Rozhraní aplikace Codex)](#concept-codex_app_image), [Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction), [Conclusion (Závěr)](#concept-conclusion), [Container (Softwarový kontejner) [Software Container]](#concept-container), [Context Engineering (Kontextové inženýrství)](#concept-context_engineering), [Context Rot (Degradace kontextu)](#concept-context_rot), [Context Window (Kontextové okno)](#concept-context_window), [DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag), [DeepSeek-V4.1-Flash](#concept-deepseek_v4_1_flash), [DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)](#concept-deepseek_v4_1_flash_image), [Development Environment and Practices (Vývojové prostředí a praxe)](#concept-development_environment), [Embedding (Vektorová reprezentace)](#concept-embedding), [Flaky Test (Nestálý test)](#concept-flaky_test), [Git](#concept-git), [GitHub](#concept-github), [Global Generative AI Adoption (Globální adopce generativní AI)](#concept-global_ai_diffusion_figure), [GPT-5.6](#concept-gpt_5_6), [GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)](#concept-gpt_5_6_image), [Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#concept-graph_engineering), [Guardrail (Deterministický mantinel) [Deterministic Guardrail]](#concept-guardrail), [HITL (Zapojení člověka do smyčky) [Human-in-the-loop]](#concept-human_in_the_loop), [Hook (Událostní záchytný bod) [Event Hook]](#concept-hook), [Introduction (Úvod)](#concept-thesis_introduction), [Issue (Úloha GitHubu) [GitHub Issue]](#concept-github_issue), [JSON Schema Tool Calling (Vyvolávání nástrojů s JSON Schema)](#concept-json_schema_tool_calling), [KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]](#concept-kv_cache), [Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)](#concept-language_models), [LLM (Velký jazykový model) [Large Language Model]](#concept-language_model), [Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]](#concept-loop_engineering), [Main Goal (Hlavní cíl)](#concept-main_goal), [MCP (Model Context Protocol)](#concept-mcp), [Merge (Sloučení větví) [Branch Merge]](#concept-merge), [Methodology (Metodika práce)](#concept-methodology), [Motivation and Problem Definition (Motivace a vymezení problému)](#concept-motivation_problem_definition), [Planning (Plánování)](#concept-planning), [Plugins (Rozšíření)](#concept-plugins), [Progressive Disclosure (Postupné zpřístupňování kontextu)](#concept-progressive_disclosure), [Prompt Engineering (Promptové inženýrství)](#concept-prompt_engineering), [Pull Request (Požadavek na sloučení)](#concept-pull_request), [RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag), [ReAct Agent-loop Diagram (Schéma agentní smyčky ReAct)](#concept-react_loop_diagram), [Required Checks (Požadované kontroly)](#concept-required_checks), [Research Questions (Výzkumné otázky)](#concept-research_questions), [Results and Discussion (Výsledky a diskuse)](#concept-results_discussion), [Runtime (Běhové prostředí) [Runtime Environment]](#concept-runtime), [Sandbox (Izolované běhové prostředí)](#concept-sandbox), [Script (Skript)](#concept-script), [Semantic Drift (Sémantický posun)](#concept-semantic_drift), [SKILL.md (Formát SKILL.md) [SKILL.md Format]](#concept-skill_md_format), [Skills (Dovednosti)](#concept-skills), [Slop](#concept-slop), [Software Engineering (Softwarové inženýrství)](#concept-software_engineering), [Squash (Sloučení commitů) [Commit Squashing]](#concept-squash), [Stochastic Decoding (Stochastické dekódování)](#concept-stochastic_decoding), [Sub-goals (Dílčí cíle)](#concept-subgoals), [Subagent (Podřízený agent)](#concept-subagent), [System Prompt (Systémový prompt)](#concept-system_prompt), [Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)](#concept-thesis_objectives_research_questions), [Token](#concept-token), [Tokenizer (Tokenizér)](#concept-tokenizer), [Tool Calling (Vyvolávání nástrojů)](#concept-tool_calling), [Transformer (Transformerová architektura) [Transformer Architecture]](#concept-transformer), [Turn (Tah interakce) [Interaction Turn]](#concept-turn), [Version control (Správa verzí)](#concept-version_control), [Vibe Coding (Vibe coding)](#concept-vibe_coding)
 
 ## Contents
 
@@ -29,44 +29,44 @@ This thesis examines the current use of agentic artificial intelligence in softw
   3. [1.3 Methodology (Metodika práce)](#concept-methodology)
 5. [2 Development Environment and Practices (Vývojové prostředí a praxe)](#concept-development_environment)
   1. [2.1 GitHub](#concept-github)
-  2. [2.2 Runtime (Běhové prostředí)](#concept-runtime)
+  2. [2.2 Runtime (Běhové prostředí) [Runtime Environment]](#concept-runtime)
   3. [2.3 Software Engineering (Softwarové inženýrství)](#concept-software_engineering)
     1. [2.3.1 Planning (Plánování)](#concept-planning)
-    2. [2.3.2 DAG (Orientovaný acyklický graf)](#concept-dag)
+    2. [2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
     3. [2.3.3 Version control (Správa verzí)](#concept-version_control)
       1. [2.3.3.1 Git](#concept-git)
-        1. [2.3.3.1.1 Branch (Větev repozitáře)](#concept-branch)
-        2. [2.3.3.1.2 Merge (Sloučení větví)](#concept-merge)
-        3. [2.3.3.1.3 Squash (Sloučení commitů)](#concept-squash)
-        4. [2.3.3.1.4 Issue (Úloha GitHubu)](#concept-github_issue)
+        1. [2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]](#concept-branch)
+        2. [2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]](#concept-merge)
+        3. [2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]](#concept-squash)
+        4. [2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]](#concept-github_issue)
         5. [2.3.3.1.5 Pull Request (Požadavek na sloučení)](#concept-pull_request)
         6. [2.3.3.1.6 Required Checks (Požadované kontroly)](#concept-required_checks)
         7. [2.3.3.1.7 Branch Protection (Ochrana větví)](#concept-branch_protection)
-  4. [2.4 CI (Průběžná integrace)](#concept-continuous_integration)
+  4. [2.4 CI (Průběžná integrace) [Continuous Integration]](#concept-continuous_integration)
     1. [2.4.1 Actions (GitHub Actions)](#concept-github_actions)
-    2. [2.4.2 Container (Softwarový kontejner)](#concept-container)
+    2. [2.4.2 Container (Softwarový kontejner) [Software Container]](#concept-container)
     3. [2.4.3 Flaky Test (Nestálý test)](#concept-flaky_test)
 6. [3 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)](#concept-language_models)
   1. [3.1 Chatbot](#concept-chatbot)
     1. [3.1.1 ChatGPT](#concept-chatgpt)
       1. [3.1.1.1 ChatGPT App Interface (Rozhraní aplikace ChatGPT)](#concept-chatgpt_interface_image)
   2. [3.2 Agent](#concept-agent)
-  3. [3.3 LLM (Velký jazykový model)](#concept-language_model)
+  3. [3.3 LLM (Velký jazykový model) [Large Language Model]](#concept-language_model)
     1. [3.3.1 GPT-5.6](#concept-gpt_5_6)
       1. [3.3.1.1 GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)](#concept-gpt_5_6_image)
     2. [3.3.2 Claude Opus 5](#concept-claude_opus_5)
       1. [3.3.2.1 Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)](#concept-claude_opus_5_image)
     3. [3.3.3 DeepSeek-V4.1-Flash](#concept-deepseek_v4_1_flash)
       1. [3.3.3.1 DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)](#concept-deepseek_v4_1_flash_image)
-    4. [3.3.4 Transformer (Transformerová architektura)](#concept-transformer)
+    4. [3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]](#concept-transformer)
     5. [3.3.5 Autoregressive Modeling (Autoregresivní modelování)](#concept-autoregression)
     6. [3.3.6 Stochastic Decoding (Stochastické dekódování)](#concept-stochastic_decoding)
     7. [3.3.7 Tokenizer (Tokenizér)](#concept-tokenizer)
     8. [3.3.8 Token](#concept-token)
     9. [3.3.9 Embedding (Vektorová reprezentace)](#concept-embedding)
     10. [3.3.10 Context Window (Kontextové okno)](#concept-context_window)
-    11. [3.3.11 KV Cache (Mezipaměť klíčů a hodnot)](#concept-kv_cache)
-    12. [3.3.12 Turn (Tah interakce)](#concept-turn)
+    11. [3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]](#concept-kv_cache)
+    12. [3.3.12 Turn (Tah interakce) [Interaction Turn]](#concept-turn)
 7. [4 Agentic Engineering (Agentické inženýrství)](#concept-agentic_engineering)
   1. [4.1 Vibe Coding (Vibe coding)](#concept-vibe_coding)
   2. [4.2 Slop](#concept-slop)
@@ -77,32 +77,32 @@ This thesis examines the current use of agentic artificial intelligence in softw
       1. [4.4.1.1 Codex App Interface (Rozhraní aplikace Codex)](#concept-codex_app_image)
     2. [4.4.2 Claude Code](#concept-claude_code)
       1. [4.4.2.1 Claude Code Interface (Rozhraní Claude Code)](#concept-claude_code_image)
-    3. [4.4.3 Claude Desktop (Aplikace Claude pro desktop)](#concept-claude_desktop)
+    3. [4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]](#concept-claude_desktop)
       1. [4.4.3.1 Claude Desktop Interface (Rozhraní aplikace Claude)](#concept-claude_desktop_image)
     4. [4.4.4 Sandbox (Izolované běhové prostředí)](#concept-sandbox)
-    5. [4.4.5 Guardrail (Deterministický mantinel)](#concept-guardrail)
-    6. [4.4.6 HITL (Zapojení člověka do smyčky)](#concept-human_in_the_loop)
+    5. [4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]](#concept-guardrail)
+    6. [4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]](#concept-human_in_the_loop)
     7. [4.4.7 Plugins (Rozšíření)](#concept-plugins)
-    8. [4.4.8 Agent Loop (Smyčka ReAct)](#concept-agent_loop)
+    8. [4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]](#concept-agent_loop)
       1. [4.4.8.1 ReAct Agent-loop Diagram (Schéma agentní smyčky ReAct)](#concept-react_loop_diagram)
       2. [4.4.8.2 Agent Session (Agentní sezení)](#concept-agent_session)
-      3. [4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)](#concept-loop_engineering)
+      3. [4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]](#concept-loop_engineering)
       4. [4.4.8.4 Agent Divergence Pathologies (Patologie divergence)](#concept-divergence)
     9. [4.4.9 Tool Calling (Vyvolávání nástrojů)](#concept-tool_calling)
       1. [4.4.9.1 JSON Schema Tool Calling (Vyvolávání nástrojů s JSON Schema)](#concept-json_schema_tool_calling)
       2. [4.4.9.2 Code Execution (Spouštění kódu)](#concept-code_execution)
       3. [4.4.9.3 MCP (Model Context Protocol)](#concept-mcp)
     10. [4.4.10 Skills (Dovednosti)](#concept-skills)
-      1. [4.4.10.1 SKILL.md (Formát SKILL.md)](#concept-skill_md_format)
+      1. [4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]](#concept-skill_md_format)
       2. [4.4.10.2 Progressive Disclosure (Postupné zpřístupňování kontextu)](#concept-progressive_disclosure)
       3. [4.4.10.3 Script (Skript)](#concept-script)
-      4. [4.4.10.4 Hook (Událostní záchytný bod)](#concept-hook)
+      4. [4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]](#concept-hook)
     11. [4.4.11 Context Engineering (Kontextové inženýrství)](#concept-context_engineering)
-      1. [4.4.11.1 Compaction (Kompakce kontextu)](#concept-compaction)
-      2. [4.4.11.2 RAG (Generování rozšířené vyhledáváním)](#concept-rag)
+      1. [4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction)
+      2. [4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag)
       3. [4.4.11.3 Context Rot (Degradace kontextu)](#concept-context_rot)
       4. [4.4.11.4 Semantic Drift (Sémantický posun)](#concept-semantic_drift)
-    12. [4.4.12 Graph Engineering (Inženýrství pracovních grafů)](#concept-graph_engineering)
+    12. [4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#concept-graph_engineering)
       1. [4.4.12.1 Subagent (Podřízený agent)](#concept-subagent)
 8. [5 Results and Discussion (Výsledky a diskuse)](#concept-results_discussion)
 9. [6 Conclusion (Závěr)](#concept-conclusion)
@@ -173,7 +173,7 @@ Otázky soustřeďují hodnocení na praktickou míru samostatnosti, spolehlivos
 
 Práce porovnává veřejně popsané principy současných agentních systémů, rozděluje je do samostatných konceptů a používá je při návrhu DarkFactory.
 
-Předmětem práce není trénování neuronových sítí, optimalizace vah ani podrobná matematika modelového učení. [***LLM (Velký jazykový model)***](#concept-language_model)<sup>*</sup> je chápán jako hotová inferenční komponenta a je popsán pouze v rozsahu potřebném pro další části práce.
+Předmětem práce není trénování neuronových sítí, optimalizace vah ani podrobná matematika modelového učení. [***LLM (Velký jazykový model) [Large Language Model]***](#concept-language_model)<sup>*</sup> je chápán jako hotová inferenční komponenta a je popsán pouze v rozsahu potřebném pro další části práce.
 
 Architektura kolem modelu je rozložena do samostatných konceptů, aby měl každý mechanismus vlastní definici, popis a shrnutí a nebylo nutné stejné vysvětlení opakovat v několika kapitolách.
 
@@ -191,7 +191,7 @@ GitHub je cloudová platforma pro hosting gitových repozitářů a koordinaci v
 
 GitHub poskytuje nad gitovým repozitářem koordinační vrstvu pro zadání práce, revizi změn a automatizaci. Tyto odpovědnosti jsou v práci dále rozloženy mezi samostatné koncepty Issue, Pull Request a GitHub Actions. GitHub zde tvoří koordinační vrstvu nad Gitem, která propojuje zadání, revizi změn a automatizované kontroly.
 
-### 2.2 Runtime (Běhové prostředí)
+### 2.2 Runtime (Běhové prostředí) [Runtime Environment]
 
 Běhové prostředí je prostředí, ve kterém se program nebo agent skutečně vykonává a ve kterém má k dispozici procesy, souborový systém, proměnné prostředí, síť a další systémové prostředky.
 
@@ -211,7 +211,7 @@ Plánování je proces převodu požadavku na explicitní posloupnost kroků, z�
 
 V agentním vývoji plán omezuje okamžité přecházení od požadavku k úpravám kódu. Rozděluje práci na kontrolovatelné kroky a předem určuje, jak bude možné ověřit, že jednotlivé části i celek splnily zadání. Plánování vytváří kontrolovatelný mezistupeň mezi požadavkem a provedením a snižuje riziko, že agent optimalizuje lokální změny bez ohledu na celek.
 
-#### 2.3.2 DAG (Orientovaný acyklický graf)
+#### 2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]
 
 Orientovaný acyklický graf (DAG) je orientovaný graf bez orientovaného cyklu, který umožňuje explicitně vyjádřit závislosti a pořadí kroků pracovního postupu.
 
@@ -229,11 +229,11 @@ Git je distribuovaný systém správy verzí, který uchovává historii projekt
 
 Při agentním vývoji poskytuje správa verzí auditovatelnou historii změn a možnost bezpečně oddělit pracovní stav od stabilní linie projektu. Chybnou nebo neúspěšnou změnu lze porovnat, vrátit nebo zahodit bez závislosti na paměti modelu. Tato práce používá distribuovaný systém [***Git***](#concept-git)<sup>*</sup> v kombinaci s platformou [***GitHub***](#concept-github)<sup>*</sup>.
 
-Samotný [***Git***](#concept-git)<sup>*</sup> zde zůstává vymezen jako distribuovaný systém správy verzí. Hosting a koordinaci repozitáře popisuje [***GitHub***](#concept-github)<sup>*</sup>, zadání práce [***Issue (Úloha GitHubu)***](#concept-github_issue)<sup>*</sup>, revizní integraci [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> a automatizaci [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>.
+Samotný [***Git***](#concept-git)<sup>*</sup> zde zůstává vymezen jako distribuovaný systém správy verzí. Hosting a koordinaci repozitáře popisuje [***GitHub***](#concept-github)<sup>*</sup>, zadání práce [***Issue (Úloha GitHubu) [GitHub Issue]***](#concept-github_issue)<sup>*</sup>, revizní integraci [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> a automatizaci [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>.
 
  Git poskytuje agentnímu vývoji auditovatelnou historii a možnost bezpečně izolovat, porovnávat, slučovat nebo vracet změny bez závislosti na paměti modelu.
 
-###### 2.3.3.1.1 Branch (Větev repozitáře)
+###### 2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]
 
 Větev je pojmenovaná vývojová linie v systému správy verzí, která umožňuje provádět změny odděleně od jiné linie historie a později je porovnat nebo sloučit.
 
@@ -250,23 +250,23 @@ Pokud se hlavní větev během práce posune, pracovní větev se před integrac
 
  Samostatná pracovní větev izoluje mezistavy a chyby agentního běhu od stabilní hlavní linie a umožňuje celý neúspěšný pokus bezpečně zahodit.
 
-###### 2.3.3.1.2 Merge (Sloučení větví)
+###### 2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]
 
 Merge je operace správy verzí, která kombinuje změny nebo historii dvou vývojových linií do společného výsledného stavu; případné konflikty vyžadují explicitní vyřešení.
 
-Agent může během jednoho úkolu vytvářet více pracovních commitů při iterativním vývoji a opravách. V navrženém procesu DarkFactory se tato pracovní historie před začleněním do hlavní větve zjednoduší pomocí Squash (Sloučení commitů) <sup>(<a href="#loc-45" role="doc-biblioref">5</a>)</sup>.
+Agent může během jednoho úkolu vytvářet více pracovních commitů při iterativním vývoji a opravách. V navrženém procesu DarkFactory se tato pracovní historie před začleněním do hlavní větve zjednoduší pomocí Squash (Sloučení commitů) [Commit Squashing] <sup>(<a href="#loc-45" role="doc-biblioref">5</a>)</sup>.
 
 Výsledkem je jeden integrační commit odpovídající jednomu dokončenému úkolu. Pomocné mezikroky zůstávají v pracovní větvi, zatímco hlavní historie zachovává výslednou změnu jako jeden celek, který lze samostatně auditovat nebo případně vrátit.
 
  Způsob sloučení určuje, jak se pracovní historie agenta promítne do stabilní větve; před integrací je vhodné oddělit užitečný výsledný stav od experimentálních mezikroků.
 
-###### 2.3.3.1.3 Squash (Sloučení commitů)
+###### 2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]
 
 Squash je operace, při níž se více po sobě jdoucích commitů nahradí jedním souhrnným commitem, obvykle za účelem zjednodušení historie před integrací změn.
 
 V agentním běhu často vzniká více pomocných commitů během iterativního ladění. Před začleněním výsledné změny lze tyto mezikroky sloučit do jednoho logického záznamu odpovídajícího dokončenému úkolu. Squash odděluje experimentální průběh práce od dlouhodobé historie projektu a umožňuje uchovat jednu logickou změnu jako jeden auditovatelný commit.
 
-###### 2.3.3.1.4 Issue (Úloha GitHubu)
+###### 2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]
 
 GitHub Issue je strukturovaný záznam požadavku, úkolu nebo chyby v repozitáři, který může nést popis, diskusi, štítky, přiřazení a vazby na změny kódu.
 
@@ -276,7 +276,7 @@ V agentním vývojovém procesu může Issue fungovat jako explicitní vstupní 
 
 Pull Request je formální návrh na začlenění změn z jedné větve repozitáře do druhé a společné místo pro automatizované kontroly, lidskou revizi a diskusi nad navrženými úpravami.
 
-V navrženém procesu DarkFactory tvoří [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> kontrolní hranici mezi pracovní větví agenta a hlavní historií repozitáře <sup>(<a href="#loc-45" role="doc-biblioref">5</a>)</sup>. Agent připraví změnu, její souhrn a výsledky automatických kontrol; lidský revizor následně rozhodne o přijetí, přepracování nebo zamítnutí změny v souladu s principem [***HITL (Zapojení člověka do smyčky)***](#concept-human_in_the_loop)<sup>*</sup>.
+V navrženém procesu DarkFactory tvoří [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> kontrolní hranici mezi pracovní větví agenta a hlavní historií repozitáře <sup>(<a href="#loc-45" role="doc-biblioref">5</a>)</sup>. Agent připraví změnu, její souhrn a výsledky automatických kontrol; lidský revizor následně rozhodne o přijetí, přepracování nebo zamítnutí změny v souladu s principem [***HITL (Zapojení člověka do smyčky) [Human-in-the-loop]***](#concept-human_in_the_loop)<sup>*</sup>.
 
 Pull request soustřeďuje na jednom místě řádkový diff, popis změny, vazbu na původní zadání, výsledky automatických kontrol a revizní diskusi. Tím poskytuje společný bod pro strojové ověření i lidskou sémantickou kontrolu před integrací.
 
@@ -302,13 +302,13 @@ GitHub poskytuje pravidla ochrany větví *Branch Protection Rules* <sup>(<a hre
 
 Ochrana větví převádí procesní pravidla integrace do technicky vynucované bariéry, kterou agent ani člověk nemůže obejít běžným přímým zápisem.
 
-### 2.4 CI (Průběžná integrace)
+### 2.4 CI (Průběžná integrace) [Continuous Integration]
 
 Průběžná integrace (CI) je vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami.
 
 Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl úspěšně vygenerován. Kontinuální integrace proto poskytuje externí a opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek <sup>(<a href="#loc-46" role="doc-biblioref">6</a>)</sup>.
 
-Konkrétní automatizační platformu popisuje [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>, izolaci běhu [***Container (Softwarový kontejner)***](#concept-container)<sup>*</sup> a problematiku nedeterministických selhání [***Flaky Test (Nestálý test)***](#concept-flaky_test)<sup>*</sup>. Koncept CI zde zůstává zaměřen na integrační kontrakt a strojově ověřitelnou zpětnou vazbu.
+Konkrétní automatizační platformu popisuje [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>, izolaci běhu [***Container (Softwarový kontejner) [Software Container]***](#concept-container)<sup>*</sup> a problematiku nedeterministických selhání [***Flaky Test (Nestálý test)***](#concept-flaky_test)<sup>*</sup>. Koncept CI zde zůstává zaměřen na integrační kontrakt a strojově ověřitelnou zpětnou vazbu.
 
 Riziko nestálých testů je vyčleněno do samostatného konceptu [***Flaky Test (Nestálý test)***](#concept-flaky_test)<sup>*</sup>.
 
@@ -320,7 +320,7 @@ GitHub Actions je automatizační platforma GitHubu pro spouštění deklarovan�
 
 GitHub Actions spouští deklarovaná workflow v reakci na události repozitáře. V této práci představuje konkrétní automatizační prostředí, které realizuje CI kontroly a další repozitářové procesy. V této práci GitHub Actions představuje konkrétní prováděcí prostředí CI a repozitářové automatizace, nikoli samotný princip průběžné integrace.
 
-#### 2.4.2 Container (Softwarový kontejner)
+#### 2.4.2 Container (Softwarový kontejner) [Software Container]
 
 Softwarový kontejner je izolované uživatelské běhové prostředí, které balí aplikaci a její závislosti při sdílení jádra hostitelského operačního systému.
 
@@ -336,7 +336,7 @@ Nestálé testy oslabují roli CI jako deterministické zpětné vazby. Agent m�
 
 Tato skupina konceptů rozlišuje samotný jazykový model od produktových rozhraní a agentních systémů, které model používají.
 
-[***LLM (Velký jazykový model)***](#concept-language_model)<sup>*</sup>, [***Chatbot***](#concept-chatbot)<sup>*</sup> a [***Agent***](#concept-agent)<sup>*</sup> označují různé systémové vrstvy. Toto rozlišení zabraňuje zaměňování schopností modelu s funkcemi, které ve skutečnosti poskytuje aplikační nebo agentní harness. Další sekce proto popisují model, jeho bezprostřední inferenční mechanismy a nadřazené systémy odděleně.
+[***LLM (Velký jazykový model) [Large Language Model]***](#concept-language_model)<sup>*</sup>, [***Chatbot***](#concept-chatbot)<sup>*</sup> a [***Agent***](#concept-agent)<sup>*</sup> označují různé systémové vrstvy. Toto rozlišení zabraňuje zaměňování schopností modelu s funkcemi, které ve skutečnosti poskytuje aplikační nebo agentní harness. Další sekce proto popisují model, jeho bezprostřední inferenční mechanismy a nadřazené systémy odděleně.
 
 ### 3.1 Chatbot
 
@@ -368,9 +368,9 @@ Agent je softwarový systém řízený jazykovým modelem a vybavený nástroji,
 
 Rozdíl mezi [***Chatbot***](#concept-chatbot)<sup>*</sup> a agentem nespočívá nutně v použitém jazykovém modelu, ale v architektuře jeho zapojení do prostředí. Agent může číst stav repozitáře, provádět změny, spouštět nástroje a podle jejich výsledků pokračovat v další iteraci. Tuto schopnost zajišťuje nadřazená prováděcí a nástrojová vrstva, nikoli samotný model. Agent rozšiřuje model o řízené vícekrokové jednání nad skutečným prostředím; autonomii proto určuje celý agentní systém, ne pouze model.
 
-### 3.3 LLM (Velký jazykový model)
+### 3.3 LLM (Velký jazykový model) [Large Language Model]
 
-Velký jazykový model je neuronový model pro zpracování a generování posloupností tokenů; současné modely tohoto typu typicky používají [***Transformer (Transformerová architektura)***](#concept-transformer)<sup>*</sup>.
+Velký jazykový model je neuronový model pro zpracování a generování posloupností tokenů; současné modely tohoto typu typicky používají [***Transformer (Transformerová architektura) [Transformer Architecture]***](#concept-transformer)<sup>*</sup>.
 
 Při generování model opakovaně odhaduje další token na základě dosavadního kontextu. Samostatné koncepty dále popisují [***Autoregressive Modeling (Autoregresivní modelování)***](#concept-autoregression)<sup>*</sup>, tokenizaci, reprezentaci dat a omezení kontextu. Funkce jako práce se soubory, spouštění příkazů nebo správa úloh nejsou vlastnostmi jazykového modelu; poskytuje je nadřazený aplikační nebo agentní systém.
 
@@ -428,7 +428,7 @@ Obrazový podklad je převzat z oficiálního vydání společnosti DeepSeek.
 
 Vizuální identifikace příkladu jazykového modelu.<sup><span id="loc-18">(</span><a href="#loc-50" role="doc-biblioref">10</a>)</sup>Příklad ukazuje, že pojem jazykového modelu v agentním systému zahrnuje různé konkrétní modelové rodiny a architektury.<sup>(<a href="#loc-50" role="doc-biblioref">10</a>)</sup> Jazykový model je inferenční komponenta. V této práci je důležité především jeho rozhraní a omezení, protože provozní chování agenta vzniká až propojením modelu s harness-em.
 
-#### 3.3.4 Transformer (Transformerová architektura)
+#### 3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]
 
 Transformer je architektura neuronových sítí založená na mechanismu pozornosti, která modeluje vztahy mezi prvky sekvence a tvoří základ většiny současných velkých jazykových modelů.
 
@@ -478,13 +478,13 @@ Kontextové okno je maximální rozsah tokenové sekvence, kterou model při jed
 
 Do tohoto limitu se společně započítávají systémové instrukce, uživatelský vstup, historie běhu, výsledky nástrojů a další data předaná modelu. Omezení proto přímo ovlivňuje, kolik pracovního stavu může agent udržovat současně bez výběru, externí paměti nebo kompakce. Kontextové okno je konečný pracovní prostor inference; harness musí aktivně rozhodovat, které informace v něm zůstanou.
 
-#### 3.3.11 KV Cache (Mezipaměť klíčů a hodnot)
+#### 3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]
 
 KV Cache je mezipaměť dříve vypočtených vektorů klíčů a hodnot v pozornostních vrstvách transformeru, která při autoregresivním generování omezuje opakovaný výpočet předchozích tokenů.
 
 Při každém novém tokenu lze znovu použít klíče a hodnoty vytvořené pro předchozí část sekvence namísto jejich úplného přepočítání. Mezipaměť tím snižuje výpočetní režii generování, ale její velikost roste s délkou aktivní sekvence a představuje významnou část paměťových nároků inference. KV Cache urychluje autoregresivní inferenci výměnou výpočetní práce za paměť, jejíž spotřeba roste s kontextem.
 
-#### 3.3.12 Turn (Tah interakce)
+#### 3.3.12 Turn (Tah interakce) [Interaction Turn]
 
 Tah je jedna diskrétní jednotka interakce v konverzačním nebo agentním protokolu, například zpráva uživatele, výstup modelu nebo samostatně evidovaný výsledek nástroje.
 
@@ -516,7 +516,7 @@ V kontextu softwaru lze stejný problém pozorovat jako rychle vytvořený výst
 
 Promptové inženýrství je systematický návrh a strukturování instrukcí, které vymezují požadované chování, kontext a provozní očekávání jazykového modelu nebo agenta.
 
-V agentním systému prompt určuje roli modelu, způsob práce s dostupným kontextem a očekávaný postup při používání nástrojů. Instrukce však nejsou technicky vynucovanou bezpečnostní hranicí: podmínky, jejichž porušení by mohlo poškodit stav systému nebo obejít procesní pravidla, musí zajišťovat deterministický [***Guardrail (Deterministický mantinel)***](#concept-guardrail)<sup>*</sup>. Základní dlouhodobé instrukce jsou soustředěny v [***System Prompt (Systémový prompt)***](#concept-system_prompt)<sup>*</sup>. Promptové inženýrství řídí model prostřednictvím instrukcí; kritická pravidla, která musí platit bez ohledu na modelový výstup, patří do kódu harnessu.
+V agentním systému prompt určuje roli modelu, způsob práce s dostupným kontextem a očekávaný postup při používání nástrojů. Instrukce však nejsou technicky vynucovanou bezpečnostní hranicí: podmínky, jejichž porušení by mohlo poškodit stav systému nebo obejít procesní pravidla, musí zajišťovat deterministický [***Guardrail (Deterministický mantinel) [Deterministic Guardrail]***](#concept-guardrail)<sup>*</sup>. Základní dlouhodobé instrukce jsou soustředěny v [***System Prompt (Systémový prompt)***](#concept-system_prompt)<sup>*</sup>. Promptové inženýrství řídí model prostřednictvím instrukcí; kritická pravidla, která musí platit bez ohledu na modelový výstup, patří do kódu harnessu.
 
 #### 4.3.1 System Prompt (Systémový prompt)
 
@@ -530,7 +530,7 @@ Agentní harness je aplikační a orchestrační vrstva, která propojuje model 
 
 Harness sestavuje pracovní kontext, zpřístupňuje nástroje, spravuje stav úlohy, přijímá výsledky provedených akcí a určuje, kdy může agent pokračovat nebo kdy má běh skončit.
 
-Ústředním prováděcím mechanismem je [***Agent Loop (Smyčka ReAct)***](#concept-agent_loop)<sup>*</sup>.
+Ústředním prováděcím mechanismem je [***Agent Loop (Smyčka ReAct) [ReAct Loop]***](#concept-agent_loop)<sup>*</sup>.
 
 #### 4.4.1 Codex
 
@@ -568,7 +568,7 @@ Snímek zobrazuje čtení souboru, zápis změny a průběžný stav agentní ú
 
 Vizuální příklad nástrojově řízeného kódovacího agenta.<sup>(<a href="#loc-43" role="doc-biblioref">3</a>)</sup>Claude Code je konkrétní příklad agentního harnessu propojeného s reálným vývojovým prostředím.<sup>(<a href="#loc-43" role="doc-biblioref">3</a>)</sup>
 
-#### 4.4.3 Claude Desktop (Aplikace Claude pro desktop)
+#### 4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]
 
 Claude Desktop je desktopová aplikační vrstva nad modely Claude, která propojuje konverzaci s lokálními soubory, aplikacemi, webem a dalšími schopnostmi.
 
@@ -596,17 +596,17 @@ Přímé spouštění kódu (*Code Execution*) umožňuje agentovi generovat skr
 
 Bezpečné spouštění modelově generovaného kódu vyžaduje vynutitelnou izolaci procesů, souborů, oprávnění, tajností a sítě; běžný kontejner sám o sobě nemusí tvořit dostatečnou bezpečnostní hranici.
 
-#### 4.4.5 Guardrail (Deterministický mantinel)
+#### 4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]
 
 Guardrail je programově vynucené omezení nebo kontrola, která neponechává kritické provozní pravidlo pouze na pravděpodobnostním rozhodnutí modelu.
 
 Pokud samotná instrukce v promptu neposkytuje dostatečnou záruku, harness může pravidlo vynutit deterministicky, například omezením přístupových práv, validací parametrů nástroje nebo odmítnutím nepovoleného stavového přechodu. Kritická bezpečnostní a procesní pravidla patří do deterministicky vynucované vrstvy harnessu, nikoli pouze do textových instrukcí modelu.
 
-#### 4.4.6 HITL (Zapojení člověka do smyčky)
+#### 4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]
 
 Zapojení člověka do smyčky (HITL) je návrhový vzor, v němž lidský operátor zůstává součástí rozhodovacího procesu prostřednictvím explicitních schvalovacích bran, zejména před významnými nebo nevratnými operacemi.
 
-Základním principem navrženého řešení není nekritická plná autonomie, nýbrž efektivní kooperace člověka a stroje ( HITL (Zapojení člověka do smyčky) <sup><span id="loc-29">(</span><a href="#loc-57" role="doc-biblioref">17</a>)</sup>). Autonomnímu systému náleží mechanické a rutinní úkony, zatímco klíčová architektonická a nevratná rozhodnutí zůstávají plně pod kontrolou vývojáře.
+Základním principem navrženého řešení není nekritická plná autonomie, nýbrž efektivní kooperace člověka a stroje ( HITL (Zapojení člověka do smyčky) [Human-in-the-loop] <sup><span id="loc-29">(</span><a href="#loc-57" role="doc-biblioref">17</a>)</sup>). Autonomnímu systému náleží mechanické a rutinní úkony, zatímco klíčová architektonická a nevratná rozhodnutí zůstávají plně pod kontrolou vývojáře.
 
 Řízení lidského dohledu staví na těchto pilířích:
 
@@ -629,13 +629,13 @@ Plugin je programové rozšíření běžící přímo v prostředí harnessu, k
 
 Plugin rozšiřuje samotný harness programovým modulem. Na rozdíl od instrukční dovednosti tak může přidávat systémové adaptéry, ovladače nástrojů nebo deterministické zásahy přímo do běhové vrstvy. Plugin patří do exekuční vrstvy harnessu a používá se tehdy, když rozšíření vyžaduje programové chování namísto pouhých instrukcí pro model.
 
-#### 4.4.8 Agent Loop (Smyčka ReAct)
+#### 4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]
 
 Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (*Reasoning + Acting*), v němž model střídá rozhodování, volání nástrojů a vyhodnocování výsledků z běhového prostředí.
 
 Agentní smyčka (*Agent Loop*) představuje výkonné jádro celého agent harnessu. Zatímco pasivní konverzační chatbot jednorázově odpoví na uživatelský dotaz a čeká na další vstup, agentní smyčka autonomně udržuje kontinuální iterativní proces, v němž harness opakovaně vyhodnocuje stav repozitáře, volá jazykový model a vykonává požadované systémové akce.
 
-Provozní odpovědnosti smyčky jsou odděleny do samostatných konceptů: [***Agent Session (Agentní sezení)***](#concept-agent_session)<sup>*</sup>, [***Tool Calling (Vyvolávání nástrojů)***](#concept-tool_calling)<sup>*</sup>, [***Loop Engineering (Inženýrství prováděcí smyčky)***](#concept-loop_engineering)<sup>*</sup> a [***Guardrail (Deterministický mantinel)***](#concept-guardrail)<sup>*</sup>. Samotná agentní smyčka zde popisuje jejich iterativní koordinaci.
+Provozní odpovědnosti smyčky jsou odděleny do samostatných konceptů: [***Agent Session (Agentní sezení)***](#concept-agent_session)<sup>*</sup>, [***Tool Calling (Vyvolávání nástrojů)***](#concept-tool_calling)<sup>*</sup>, [***Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]***](#concept-loop_engineering)<sup>*</sup> a [***Guardrail (Deterministický mantinel) [Deterministic Guardrail]***](#concept-guardrail)<sup>*</sup>. Samotná agentní smyčka zde popisuje jejich iterativní koordinaci.
 
 Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem ReAct (*Reasoning + Acting*) <sup><span id="loc-30">(</span><a href="#loc-58" role="doc-biblioref">18</a>)</sup>, který propojuje rozvahu s přímým jednáním. Tento prováděcí cyklus sestává ze čtyř navazujících fází znázorněných na [Obrázek 10](#fig-react-loop):
 
@@ -664,7 +664,7 @@ Agentní sezení je ohraničený běh agenta se sdíleným stavem, systémovými
 
 Správa agentního sezení zahrnuje sestavení systémového promptu, načtení relevantního kontextu repozitáře, průběžné uchování stavu a sledování rozpočtů, například spotřeby tokenů nebo počtu iterací. Sezení poskytuje jednotku životního cyklu, ve které lze konzistentně spravovat stav, kontext a zdrojové limity jednoho agentního běhu.
 
-##### 4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)
+##### 4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]
 
 Inženýrství prováděcí smyčky je návrh a řízení stavových přechodů, podmínek ukončení, rozpočtů, opakování, eskalací a vazby mezi rozhodováním modelu a nástroji.
 
@@ -725,7 +725,7 @@ Otevřený formát Agent Skills používá adresář se souborem `SKILL.md`. Ten
 
 Smyslem je přesunout specializované postupy mimo základní systémový prompt. Agent tak může mít k dispozici větší množství schopností, aniž by musel jejich úplné instrukce držet v kontextu po celou dobu práce.
 
-##### 4.4.10.1 SKILL.md (Formát SKILL.md)
+##### 4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]
 
 `SKILL.md` je povinný definiční soubor Agent Skill. Podle specifikace obsahuje YAML frontmatter následovaný instrukcemi v Markdownu; povinnými poli frontmatteru jsou `name` a `description`. <sup>(<a href="#loc-64" role="doc-biblioref">24</a>)</sup>
 
@@ -774,7 +774,7 @@ Skript je soubor nebo posloupnost příkazů určených k automatizovanému vyko
 
 Skript poskytuje deterministickou exekuci pro úlohy, u nichž není vhodné znovu rozhodovat pomocí jazykového modelu, například pro opakovatelné transformace, validace nebo obslužné kroky dovednosti. Skripty přesouvají opakovatelné deterministické kroky mimo pravděpodobnostní rozhodování modelu.
 
-##### 4.4.10.4 Hook (Událostní záchytný bod)
+##### 4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]
 
 Hook je definovaný bod životního cyklu nebo události, na který lze navázat vlastní deterministickou logiku před, po nebo místo standardního chování systému.
 
@@ -786,7 +786,7 @@ Kontextové inženýrství je systematický návrh, výběr, pořadí a životn�
 
 Kontext zahrnuje systémové instrukce, pracovní historii, výsledky nástrojů, externě načtená data a další informace, které model používá při rozhodování. Návrh této vrstvy určuje, které informace jsou modelu dostupné, kdy se načítají, jak dlouho zůstávají aktivní a jak se nahrazují při omezené kapacitě kontextového okna. Kontextové inženýrství řídí informační prostředí modelu; cílem není maximalizovat objem kontextu, ale udržet relevantní, přesný a provozně použitelný stav.
 
-##### 4.4.11.1 Compaction (Kompakce kontextu)
+##### 4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]
 
 Kompakce kontextu je zmenšení aktivního kontextu výběrem, shrnutím nebo nahrazením starší historie kompaktnější reprezentací tak, aby se běh vešel do kontextového okna.
 
@@ -800,7 +800,7 @@ Tento proces však představuje destruktivní ztrátovou kompresi:
 
 Kompakce prodlužuje běh za cenu ztráty informace, a proto musí být navržena tak, aby neodstraňovala detaily nutné pro další rozhodování.
 
-##### 4.4.11.2 RAG (Generování rozšířené vyhledáváním)
+##### 4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]
 
 Retrieval-Augmented Generation (RAG) je architektura, v níž systém před generováním nebo během něj vyhledá relevantní informace z externího zdroje a vloží je do kontextu modelu.
 
@@ -847,13 +847,13 @@ Rizika sémantického posunu spočívají v těchto jevech:
 
 Výsledkem je stav, kdy agent sebevědomě reportuje vyřešení úkolu, ačkoliv reálný kód zůstává v nefunkčním či neúplném stavu. Opakovaná komprese může změnit pracovní reprezentaci reality natolik, že další rozhodování vychází z chybných historických předpokladů.
 
-#### 4.4.12 Graph Engineering (Inženýrství pracovních grafů)
+#### 4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]
 
 Inženýrství pracovních grafů je návrh agentních nebo automatizačních workflow jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky.
 
 Monolitická agentní smyčka selhává při řešení komplexních, vícefázových úloh. Pro spolehlivé škálování se v moderních systémech uplatňuje hierarchická dělba práce a formalizace procesu do podoby grafu.
 
-Škálování je dále rozloženo na dva samostatné koncepty: hierarchickou delegaci prostřednictvím [***Subagent (Podřízený agent)***](#concept-subagent)<sup>*</sup> a explicitní závislosti pracovního postupu prostřednictvím [***DAG (Orientovaný acyklický graf)***](#concept-dag)<sup>*</sup>. Grafová struktura umožňuje rozdělit složitou úlohu na kontrolovatelné kroky, oddělit jejich odpovědnosti a explicitně řídit závislosti mezi nimi.
+Škálování je dále rozloženo na dva samostatné koncepty: hierarchickou delegaci prostřednictvím [***Subagent (Podřízený agent)***](#concept-subagent)<sup>*</sup> a explicitní závislosti pracovního postupu prostřednictvím [***DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]***](#concept-dag)<sup>*</sup>. Grafová struktura umožňuje rozdělit složitou úlohu na kontrolovatelné kroky, oddělit jejich odpovědnosti a explicitně řídit závislosti mezi nimi.
 
 ##### 4.4.12.1 Subagent (Podřízený agent)
 

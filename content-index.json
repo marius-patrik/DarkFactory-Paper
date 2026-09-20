@@ -79,7 +79,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -94,7 +94,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -109,22 +109,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -144,7 +144,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -154,7 +154,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -189,7 +189,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -224,7 +224,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -259,12 +259,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -319,7 +319,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -334,12 +334,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -349,7 +349,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -364,7 +364,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -399,7 +399,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -414,7 +414,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -424,12 +424,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -444,7 +444,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
@@ -556,7 +556,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -571,7 +571,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -586,22 +586,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -621,7 +621,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -631,7 +631,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -666,7 +666,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -701,7 +701,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -736,12 +736,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -796,7 +796,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -811,12 +811,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -826,7 +826,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -841,7 +841,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -876,7 +876,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -891,7 +891,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -901,12 +901,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -921,7 +921,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
@@ -1030,7 +1030,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -1045,7 +1045,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -1060,22 +1060,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -1095,7 +1095,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -1105,7 +1105,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -1140,7 +1140,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -1175,7 +1175,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -1210,12 +1210,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -1270,7 +1270,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -1285,12 +1285,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -1300,7 +1300,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -1315,7 +1315,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -1350,7 +1350,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -1365,7 +1365,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -1375,12 +1375,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -1395,7 +1395,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
@@ -1502,7 +1502,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -1517,7 +1517,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -1532,22 +1532,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -1567,7 +1567,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -1577,7 +1577,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -1612,7 +1612,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -1647,7 +1647,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -1682,12 +1682,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -1742,7 +1742,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -1757,12 +1757,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -1772,7 +1772,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -1787,7 +1787,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -1822,7 +1822,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -1837,7 +1837,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -1847,12 +1847,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -1867,7 +1867,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
@@ -1976,7 +1976,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -1991,7 +1991,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -2006,22 +2006,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -2041,7 +2041,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -2051,7 +2051,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -2086,7 +2086,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -2121,7 +2121,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -2156,12 +2156,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -2216,7 +2216,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -2231,12 +2231,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -2246,7 +2246,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -2261,7 +2261,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -2296,7 +2296,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -2311,7 +2311,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -2321,12 +2321,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -2341,7 +2341,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
@@ -2448,7 +2448,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -2463,7 +2463,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -2478,22 +2478,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -2513,7 +2513,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -2523,7 +2523,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -2558,7 +2558,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -2593,7 +2593,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -2628,12 +2628,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -2688,7 +2688,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -2703,12 +2703,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -2718,7 +2718,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -2733,7 +2733,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -2768,7 +2768,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -2783,7 +2783,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -2793,12 +2793,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -2813,7 +2813,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
@@ -2927,7 +2927,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -2942,7 +2942,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -2957,22 +2957,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -2992,7 +2992,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -3002,7 +3002,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -3037,7 +3037,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -3072,7 +3072,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -3107,12 +3107,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -3167,7 +3167,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -3182,12 +3182,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -3197,7 +3197,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -3212,7 +3212,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -3247,7 +3247,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -3262,7 +3262,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -3272,12 +3272,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -3292,7 +3292,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
@@ -3404,7 +3404,7 @@
             "anchor": "concept-github"
           },
           {
-            "title": "2.2 Runtime (Běhové prostředí)",
+            "title": "2.2 Runtime (Běhové prostředí) [Runtime Environment]",
             "level": 3,
             "anchor": "concept-runtime"
           },
@@ -3419,7 +3419,7 @@
             "anchor": "concept-planning"
           },
           {
-            "title": "2.3.2 DAG (Orientovaný acyklický graf)",
+            "title": "2.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
             "level": 4,
             "anchor": "concept-dag"
           },
@@ -3434,22 +3434,22 @@
             "anchor": "concept-git"
           },
           {
-            "title": "2.3.3.1.1 Branch (Větev repozitáře)",
+            "title": "2.3.3.1.1 Branch (Větev repozitáře) [Repository Branch]",
             "level": 6,
             "anchor": "concept-branch"
           },
           {
-            "title": "2.3.3.1.2 Merge (Sloučení větví)",
+            "title": "2.3.3.1.2 Merge (Sloučení větví) [Branch Merge]",
             "level": 6,
             "anchor": "concept-merge"
           },
           {
-            "title": "2.3.3.1.3 Squash (Sloučení commitů)",
+            "title": "2.3.3.1.3 Squash (Sloučení commitů) [Commit Squashing]",
             "level": 6,
             "anchor": "concept-squash"
           },
           {
-            "title": "2.3.3.1.4 Issue (Úloha GitHubu)",
+            "title": "2.3.3.1.4 Issue (Úloha GitHubu) [GitHub Issue]",
             "level": 6,
             "anchor": "concept-github_issue"
           },
@@ -3469,7 +3469,7 @@
             "anchor": "concept-branch_protection"
           },
           {
-            "title": "2.4 CI (Průběžná integrace)",
+            "title": "2.4 CI (Průběžná integrace) [Continuous Integration]",
             "level": 3,
             "anchor": "concept-continuous_integration"
           },
@@ -3479,7 +3479,7 @@
             "anchor": "concept-github_actions"
           },
           {
-            "title": "2.4.2 Container (Softwarový kontejner)",
+            "title": "2.4.2 Container (Softwarový kontejner) [Software Container]",
             "level": 4,
             "anchor": "concept-container"
           },
@@ -3514,7 +3514,7 @@
             "anchor": "concept-agent"
           },
           {
-            "title": "3.3 LLM (Velký jazykový model)",
+            "title": "3.3 LLM (Velký jazykový model) [Large Language Model]",
             "level": 3,
             "anchor": "concept-language_model"
           },
@@ -3549,7 +3549,7 @@
             "anchor": "concept-deepseek_v4_1_flash_image"
           },
           {
-            "title": "3.3.4 Transformer (Transformerová architektura)",
+            "title": "3.3.4 Transformer (Transformerová architektura) [Transformer Architecture]",
             "level": 4,
             "anchor": "concept-transformer"
           },
@@ -3584,12 +3584,12 @@
             "anchor": "concept-context_window"
           },
           {
-            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot)",
+            "title": "3.3.11 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
             "level": 4,
             "anchor": "concept-kv_cache"
           },
           {
-            "title": "3.3.12 Turn (Tah interakce)",
+            "title": "3.3.12 Turn (Tah interakce) [Interaction Turn]",
             "level": 4,
             "anchor": "concept-turn"
           },
@@ -3644,7 +3644,7 @@
             "anchor": "concept-claude_code_image"
           },
           {
-            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop)",
+            "title": "4.4.3 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App]",
             "level": 4,
             "anchor": "concept-claude_desktop"
           },
@@ -3659,12 +3659,12 @@
             "anchor": "concept-sandbox"
           },
           {
-            "title": "4.4.5 Guardrail (Deterministický mantinel)",
+            "title": "4.4.5 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
             "level": 4,
             "anchor": "concept-guardrail"
           },
           {
-            "title": "4.4.6 HITL (Zapojení člověka do smyčky)",
+            "title": "4.4.6 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
             "level": 4,
             "anchor": "concept-human_in_the_loop"
           },
@@ -3674,7 +3674,7 @@
             "anchor": "concept-plugins"
           },
           {
-            "title": "4.4.8 Agent Loop (Smyčka ReAct)",
+            "title": "4.4.8 Agent Loop (Smyčka ReAct) [ReAct Loop]",
             "level": 4,
             "anchor": "concept-agent_loop"
           },
@@ -3689,7 +3689,7 @@
             "anchor": "concept-agent_session"
           },
           {
-            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
             "level": 5,
             "anchor": "concept-loop_engineering"
           },
@@ -3724,7 +3724,7 @@
             "anchor": "concept-skills"
           },
           {
-            "title": "4.4.10.1 SKILL.md (Formát SKILL.md)",
+            "title": "4.4.10.1 SKILL.md (Formát SKILL.md) [SKILL.md Format]",
             "level": 5,
             "anchor": "concept-skill_md_format"
           },
@@ -3739,7 +3739,7 @@
             "anchor": "concept-script"
           },
           {
-            "title": "4.4.10.4 Hook (Událostní záchytný bod)",
+            "title": "4.4.10.4 Hook (Událostní záchytný bod) [Event Hook]",
             "level": 5,
             "anchor": "concept-hook"
           },
@@ -3749,12 +3749,12 @@
             "anchor": "concept-context_engineering"
           },
           {
-            "title": "4.4.11.1 Compaction (Kompakce kontextu)",
+            "title": "4.4.11.1 Compaction (Kompakce kontextu) [Context Compaction]",
             "level": 5,
             "anchor": "concept-compaction"
           },
           {
-            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním)",
+            "title": "4.4.11.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
             "level": 5,
             "anchor": "concept-rag"
           },
@@ -3769,7 +3769,7 @@
             "anchor": "concept-semantic_drift"
           },
           {
-            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů)",
+            "title": "4.4.12 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
             "level": 4,
             "anchor": "concept-graph_engineering"
           },
