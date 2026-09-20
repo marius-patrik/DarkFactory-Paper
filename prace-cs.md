@@ -8,7 +8,7 @@ Patrik Marius · Gymnázium J. K. Tyla · 2026
 
 ## Klíčová slova
 
-Agent, Agentické inženýrství, Chatbot, Dovednosti, Git, GitHub, Jazykový model ( LLM ) , Smyčka ReAct ( Agent Loop ) , Vektorová reprezentace, Řídicí systém ( Harness )
+Agent, Agentické inženýrství, Agentní harness, Chatbot, Dovednosti, Git, GitHub, Jazykový model ( LLM ) , Smyčka ReAct ( Agent Loop ) , Vektorová reprezentace
 
 ## Obsah
 
@@ -20,26 +20,30 @@ Agent, Agentické inženýrství, Chatbot, Dovednosti, Git, GitHub, Jazykový mo
   2. [1.2 Cíl práce a výzkumné otázky](#loc-6)
     1. [1.2.1 Hlavní cíl](#loc-7)
     2. [1.2.2 Dílčí cíle](#loc-8)
-  3. [1.3 Metodika práce](#loc-9)
-5. [2 Teoretická část: Vymezení konceptu](#loc-10)
-  1. [2.1 Správa verzí [Version Control], Plánování [Planning], Kontinuální integrace [Continuous Integration] (CI a GitHub Actions) a Požadované kontroly [Required Checks]](#loc-11)
-    1. [2.1.1 Git a GitHub](#loc-12)
-    2. [2.1.2 Větve (Branches)](#loc-14)
-    3. [2.1.3 Pull Request](#loc-15)
-  2. [2.2 Large Language Model ( LLM ) , chatboti a agenti](#loc-16)
-    1. [2.2.1 Úvod](#loc-17)
-    2. [2.2.2 Agent vs. Chatbot](#loc-19)
-    3. [2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]](#loc-20)
-  3. [2.3 Agentické inženýrství a Control Harness ( Harness )](#loc-21)
-    1. [2.3.1 Úvod](#loc-22)
-    2. [2.3.2 Dovednosti](#loc-23)
-6. [3 Praktická část – Návrh architektury](#loc-24)
-  1. [3.1 Git a GitHub](#loc-25)
-7. [4 Výsledky a diskuse](#loc-26)
-8. [5 Závěr](#loc-27)
-9. [Seznam zdrojů](#loc-28)
-10. [Rejstřík](#loc-31)
-11. [Seznam příloh](#loc-32)
+    3. [1.2.3 Výzkumné otázky](#loc-9)
+  3. [1.3 Metodika práce](#loc-10)
+5. [2 Teoretická část: Vymezení konceptu](#loc-11)
+  1. [2.1 Správa verzí [Version Control], Plánování [Planning], Kontinuální integrace [Continuous Integration] (CI a GitHub Actions) a Požadované kontroly [Required Checks]](#loc-12)
+    1. [2.1.1 Git a GitHub](#loc-13)
+    2. [2.1.2 Větve (Branches)](#loc-15)
+    3. [2.1.3 Pull Request](#loc-16)
+    4. [2.1.4 Slučování změn (Commit and Merge)](#loc-17)
+    5. [2.1.5 Kontinuální integrace (CI a GitHub Actions)](#loc-18)
+    6. [2.1.6 Požadované kontroly (Required Checks)](#loc-19)
+  2. [2.2 Large Language Model ( LLM ) , chatboti a agenti](#loc-20)
+    1. [2.2.1 Úvod](#loc-21)
+    2. [2.2.2 Agent vs. Chatbot](#loc-23)
+    3. [2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]](#loc-24)
+  3. [2.3 Agentické inženýrství a Agent Harness](#loc-25)
+    1. [2.3.1 Úvod](#loc-26)
+    2. [2.3.2 Dovednosti](#loc-27)
+6. [3 Praktická část – Návrh architektury](#loc-28)
+  1. [3.1 Git a GitHub](#loc-29)
+7. [4 Výsledky a diskuse](#loc-30)
+8. [5 Závěr](#loc-31)
+9. [Seznam zdrojů](#loc-32)
+10. [Rejstřík](#loc-35)
+11. [Seznam příloh](#loc-36)
 
 ## 1 Úvod
 
@@ -51,14 +55,16 @@ Agent, Agentické inženýrství, Chatbot, Dovednosti, Git, GitHub, Jazykový mo
 
 #### 1.2.1 Hlavní cíl
 
-Vymezit teoretické principy agentického inženýrství (*agentic engineering*) a navrhnout modulární architekturu řídicího harnessu pro automatizovaný vývoj softwaru se zachováním lidského dohledu v klíčových rozhodovacích bodech.
+Vymezit teoretické principy agentického inženýrství (*agentic engineering*) a navrhnout modulární architekturu agent harnessu pro automatizovaný vývoj softwaru se zachováním lidského dohledu v klíčových rozhodovacích bodech.
 
 #### 1.2.2 Dílčí cíle
 
 - Vymezit infrastrukturu pro správu verzí (Git, GitHub a kontinuální integraci).
 - Analyzovat limity velkých jazykových modelů (dynamiku kontextového okna, jev Context Rot, ztrátovou kompresi a sémantický posun).
-- Navrhnout architekturu řídicího harnessu zahrnující nástrojové smyčky (ReAct), bezpečnostní pískoviště a hierarchickou orchestraci subagentů.
+- Navrhnout architekturu agent harnessu zahrnující nástrojové smyčky (ReAct), bezpečnostní pískoviště a hierarchickou orchestraci subagentů.
 - Formalizovat mechanismy zapojení člověka do smyčky (*Human-in-the-loop*), schvalovací brány a protokol revizních značek pro dohled nad textovými výstupy.
+
+#### 1.2.3 Výzkumné otázky
 
 ### 1.3 Metodika práce
 
@@ -67,7 +73,7 @@ Práce má teoreticko-architektonický a inženýrský charakter. Vzhledem k dyn
 Postup práce sleduje strukturu inženýrského cyklu:
 
 - **1. Analýza konceptu**: Systematické zmapování limitů autoregresivních modelů, dynamiky kontextového okna, jevu Context Rot a rozhraní nástrojů.
-- **2. Návrh architektury**: Formulace modulárního modelu řídicího harnessu, správy stavu, exekučního pískoviště, bezpečnostních pojistek a orchestrace subagentů.
+- **2. Návrh architektury**: Formulace modulárního modelu agent harnessu, správy stavu, exekučního pískoviště, bezpečnostních pojistek a orchestrace subagentů.
 - **3. Kritické zhodnocení**: Porovnání navržených principů s volnými agentními smyčkami a vymezení provozních limitů autonomního inženýrství.
 
 ## 2 Teoretická část: Vymezení konceptu
@@ -80,7 +86,7 @@ Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným
 
 Klíčové komponenty infrastruktury zahrnují:
 
-- **Distribuovaný systém Git** ([1](#loc-29)): Ukládá kompletní historii projektu v podobě jednotlivých revizí (*commitů*). Vývojář i agent pracují s plnou lokální kopií repozitáře, což umožňuje provádět změny, přepínat větve a spouštět lokální testy zcela nezávisle na síťovém připojení.
+- **Distribuovaný systém Git** ([1](#loc-33)): Ukládá kompletní historii projektu v podobě jednotlivých revizí (*commitů*). Vývojář i agent pracují s plnou lokální kopií repozitáře, což umožňuje provádět změny, přepínat větve a spouštět lokální testy zcela nezávisle na síťovém připojení.
 - **Platforma GitHub**: Slouží jako centrální bod pro sdílení kódu, týmovou koordinaci a automatizaci:
   - **Zadávání a sledování úkolů (Issues)**: Strukturovaná textová zadání požadavků a hlášení chyb, která agentovi slouží jako výchozí specifikace úlohy.
   - **Revize změn (Pull Requests)**: Uživatelské rozhraní pro přehledné zobrazení diffu, diskusi nad kódem a formální schválení člověkem.
@@ -92,16 +98,22 @@ Agent v tomto pojetí nevystupuje jako černá skříňka s proprietárním prot
 
 #### 2.1.3 Pull Request
 
+#### 2.1.4 Slučování změn (Commit and Merge)
+
+#### 2.1.5 Kontinuální integrace (CI a GitHub Actions)
+
+#### 2.1.6 Požadované kontroly (Required Checks)
+
 ### 2.2 Large Language Model ( LLM ) , chatboti a agenti
 
 #### 2.2.1 Úvod
 
-V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek ([2](#loc-30)). Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
+V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek ([2](#loc-34)). Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
 
 Základní principy fungování modelu zahrnují:
 
 - **Autoregresivní predikce**: Model zpracovává zadanou sekvenci textu a na jejím základě iterativně předpovídá nejpravděpodobnější následující symboly (tokeny).
-- **Stochastická povaha**: Vzhledem k pravděpodobnostnímu vzorkování může model na totožný vstup reagovat mírně odlišně, což vyžaduje deterministické mantinely v nadřazeném řídicím harnessu.
+- **Stochastická povaha**: Vzhledem k pravděpodobnostnímu vzorkování může model na totožný vstup reagovat mírně odlišně, což vyžaduje deterministické mantinely v nadřazeném agent harnessu.
 
 Pro efektivní nasazení modelu do vývojového cyklu je nezbytné porozumět způsobu, jakým reprezentuje informace a jaké fyzické limity vymezují jeho operační paměť.
 
@@ -134,11 +146,11 @@ Tento proces zahrnuje následující pojmy:
 
 Z inženýrského hlediska je proto žádoucí vést systémové prompty, technické plány i komunikaci mezi nástroji v angličtině, aby se šetřila kapacita kontextu a snížila latence inference.
 
-### 2.3 Agentické inženýrství a Control Harness ( Harness )
+### 2.3 Agentické inženýrství a Agent Harness
 
 #### 2.3.1 Úvod
 
-V terminologii agentického inženýrství používá tato práce pojem [***Řídicí systém ( Harness )***](#kw-harness)★. [CZ] Řídicí postroj — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.. Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; veškerou orchestraci, práci se soubory a řízení bezpečnosti zajišťuje harness.
+V terminologii agentického inženýrství používá tato práce pojem [***Agentní harness***](#kw-harness)★. [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.. Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; veškerou orchestraci, práci se soubory a řízení bezpečnosti zajišťuje harness.
 
 Ústřední komponentou a hlavní prováděcí funkcí, která v architektuře harnessu řídí samotný běh a iterativní koordinaci agenta v reálném vývojovém prostředí, je [***Smyčka ReAct ( Agent Loop )***](#kw-agent-loop)★. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
 
@@ -160,8 +172,8 @@ Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doméno
 
 ## Seznam zdrojů
 
-- [1.](#loc-13) CHACON, Scott a STRAUB, Ben. *Pro Git.*2. New York : Apress, 2014. ISBN 978-1-4842-0076-6.
-- [2.](#loc-18) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+- [1.](#loc-14) CHACON, Scott a STRAUB, Ben. *Pro Git.*2. New York : Apress, 2014. ISBN 978-1-4842-0076-6.
+- [2.](#loc-22) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
 - 3.  MARIUS, Patrik. DarkFactory: autonomous, governed software engineering pipelines. Online. 2026. [Accessed 8 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
 - 4.  HUMBLE, Jez a FARLEY, David. *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.*Boston : Addison-Wesley, 2010. ISBN 978-0-321-60191-9.
 - 5.  Deepseek Harness. *arXiv preprint arXiv:2608.25512.* Online. 2026. Available from: [https://arxiv.org/abs/2608.25512](https://arxiv.org/abs/2608.25512)
@@ -176,6 +188,7 @@ Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doméno
 
 [Agent](#kw-agent)
 [Agentické inženýrství](#kw-agentic-engineering)
+[Agentní harness](#kw-harness)
 [Chatbot](#kw-chatbot)
 [Degradace kontextu](#kw-context-rot)
 [Dovednosti](#kw-skills)
@@ -211,7 +224,6 @@ Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doméno
 [Vektorová reprezentace](#kw-embedding)
 [Větev repozitáře ( Branch )](#kw-branch)
 [Zapojení člověka do smyčky ( HITL )](#kw-human-in-the-loop)
-[Řídicí systém ( Harness )](#kw-harness)
 
 ### A
 
@@ -222,6 +234,10 @@ Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doméno
 #### Agentické inženýrství
 
 [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.
+
+#### Agentní harness
+
+[CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.
 
 ### C
 
@@ -392,11 +408,5 @@ Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doméno
 #### Zapojení člověka do smyčky ( HITL )
 
 [CZ] Návrhový vzor, v němž lidský operátor zůstává součástí rozhodovacího procesu systému prostřednictvím schvalovacích bran (Human Gates), zejména před významnými nebo nevratnými systémovými operacemi.
-
-### Ř
-
-#### Řídicí systém ( Harness )
-
-[CZ] Řídicí postroj — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.
 
 ## Seznam příloh
