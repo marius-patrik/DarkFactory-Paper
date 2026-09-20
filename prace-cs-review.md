@@ -10,7 +10,7 @@ Patrik Marius · Gymnázium J. K. Tyla · 2026
 
 ## Klíčová slova
 
-Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu, Dovednosti, Git, GitHub, GitHub Actions ( Actions ) , Inženýrství prováděcí smyčky ( Loop Engineering ) , Jazykový model ( LLM ) , Kontextové inženýrství, Kontextové okno, Mezipaměť klíčů a hodnot ( KV Cache ) , Model Context Protocol ( MCP ) , Orientovaný acyklický graf ( DAG ) , Požadavek na sloučení, Promptové inženýrství, Rozšíření, Skript, Sloučení commitů ( Squash ) , Smyčka ReAct ( Agent Loop ) , Softwarové inženýrství, Softwarový kontejner ( Container ) , Tokenizér, Transformerová architektura ( Transformer ) , Událostní záchytný bod ( Hook ) , Vektorová reprezentace, Zapojení člověka do smyčky ( HITL )
+Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu, Dovednosti, Git, GitHub, GitHub Actions ( Actions ) , Inženýrství prováděcí smyčky ( Loop Engineering ) , Jazykový model ( LLM ) , Kontextové inženýrství, Kontextové okno, Mezipaměť klíčů a hodnot ( KV Cache ) , Model Context Protocol ( MCP ) , Orientovaný acyklický graf ( DAG ) , Požadavek na sloučení, Promptové inženýrství, Rozšíření, Skript, Sloučení commitů ( Squash ) , Smyčka ReAct ( Agent Loop ) , Softwarové inženýrství, Softwarový kontejner ( Container ) , Systémový prompt, Tokenizér, Transformerová architektura ( Transformer ) , Událostní záchytný bod ( Hook ) , Vektorová reprezentace, Zapojení člověka do smyčky ( HITL )
 
 ## Obsah
 
@@ -320,7 +320,7 @@ V terminologii agentického inženýrství používá tato práce pojem ***Agent
 
 #### 2.3.2 Prompt Engineering (Promptové inženýrství)
 
-- Základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. [+ ]***Promptové inženýrství*** — [CZ] Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu. slouží k systematickému návrhu instrukcí, které řídí chování agenta. Základní instrukce jsou obvykle součástí systémového promptu ([5](#loc-58)), který vymezuje roli agenta, dostupné nástroje a provozní mantinely. Při formulaci těchto pravidel však vývojáři narážejí na specifickou vlastnost autoregresivních modelů — problematické zpracování zákazů a negativních instrukcí.
+- Základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. [+ ]***Promptové inženýrství*** — [CZ] Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu. slouží k systematickému návrhu instrukcí, které řídí chování agenta. Základní instrukce jsou obvykle součástí ***Systémový prompt*** — [CZ] Instrukční vrstva s vysokou prioritou, která vymezuje roli, chování, dostupné prostředky a provozní mantinely jazykového modelu nebo agenta. ([5](#loc-58)), který vymezuje roli agenta, dostupné nástroje a provozní mantinely. Při formulaci těchto pravidel však vývojáři narážejí na specifickou vlastnost autoregresivních modelů — problematické zpracování zákazů a negativních instrukcí.
 
 Příčiny a inženýrská řešení tohoto jevu:
 
@@ -389,7 +389,7 @@ Kromě kontextových dovedností využívají pokročilé řídicí architektury
 
 #### 2.3.8 Model Context Protocol ( MCP ) servery
 
-- Pro sjednocení rozhraní mezi jazykovými modely a externími nástroji či datovými zdroji vznikl otevřený standard Model Context Protocol (MCP) ([7](#loc-60)). Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP univerzální protokol. [+ ]Pro sjednocení rozhraní mezi AI aplikacemi a externími nástroji či datovými zdroji vznikl otevřený standard ***Model Context Protocol ( MCP )*** — [CZ] Model Context Protocol — otevřený standard původně navržený společností Anthropic pro standardizovanou komunikaci AI aplikací s externími nástroji, zdroji a daty prostřednictvím zpráv JSON-RPC. ([7](#loc-60)). Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP standardizovaný způsob komunikace.
+Pro sjednocení rozhraní mezi AI aplikacemi a externími nástroji či datovými zdroji vznikl otevřený standard ***Model Context Protocol ( MCP )*** — [CZ] Model Context Protocol — otevřený standard původně navržený společností Anthropic pro standardizovanou komunikaci AI aplikací s externími nástroji, zdroji a daty prostřednictvím zpráv JSON-RPC. ([7](#loc-60)). Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP standardizovaný způsob komunikace.
 
 Základní vlastnosti protokolu MCP:
 

@@ -346,6 +346,11 @@
               "type": "file"
             },
             {
+              "name": "system-prompt.typ",
+              "path": "concepts/03-agentic-engineering/system-prompt.typ",
+              "type": "file"
+            },
+            {
               "name": "tool-calling.typ",
               "path": "concepts/03-agentic-engineering/tool-calling.typ",
               "type": "file"
