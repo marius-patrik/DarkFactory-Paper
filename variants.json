@@ -1,5 +1,5 @@
 {
-  "commit": "542300f747bd267d8c72e99ae4dbc8679ac15bf6",
+  "commit": "86a07ee9518d8fa647dabca6db342f78a196835a",
   "book": "DarkFactory",
   "work_title": "DarkFactory",
   "default_template": "gjkt-odborna-prace",
@@ -101,6 +101,7 @@
       "raw"
     ],
     "repo_tree": "repo-tree.json",
+    "repository_source_root": "repository/",
     "content_index": "content-index.json",
     "repository_url": "https://github.com/marius-patrik/DarkFactory-Paper",
     "pdfjs_version": "6.3.289",

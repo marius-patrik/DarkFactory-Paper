@@ -1,0 +1,37 @@
+#import "/DarkFactory/templates/common.typ": define-term, translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
+#import "/DarkFactory/schema.typ": concept
+
+#let terminology = define-term(
+    id: "token",
+    proper: translation(cs: "Token", en: "Token"),
+    explanation_cs: "Diskrétní jednotka zpracovávaná jazykovým modelem. Token odpovídá položce slovníku tokenizéru a je reprezentován číselným identifikátorem; nemusí odpovídat celému slovu.",
+    explanation_en: "A discrete unit processed by a language model. A token corresponds to an entry in the tokenizer vocabulary and is represented by a numeric identifier; it need not correspond to a whole word.",
+    citation: bib.sennrich2016bpe,
+    source: bib.sennrich2016bpe,
+)
+
+#let item = concept(
+  key: "token",
+  term: terminology,
+  definition: none,
+  description: terms => [
+#finalized[
+Jazykový model nepracuje přímo se znaky ani slovy v lidském slova smyslu. Vstupní text je nejprve deterministickým algoritmem převeden na číselné reprezentace, se kterými následně počítají maticové vrstvy neuronové sítě.
+
+Tento proces zahrnuje následující pojmy:
+]
+- #finalized[Tokeny a tokenizér (#term(terms.tokenizer, language: "en", marker: false, linked: false, emphasized: false)): Token představuje základní diskrétní jednotku (celé slovo, slabiku či fragment znaků). Převod mezi textem a posloupností číselných tokenů zajišťuje tokenizér #diff[(nejčastěji na bázi algoritmu Byte Pair Encoding, BPE)][(nejčastěji na bázi algoritmu Byte Pair Encoding, BPE @sennrich2016bpe)].]
+- #finalized[#term(terms.embedding, render: "both", detail-language: "cs", detail-style: "inline") @mikolov2013word2vec (např. vektorová analogie $"král" - "muž" + "žena" approx "královna"$).]
+- #finalized[Jazyková asymetrie tokenizace: Vzhledem k trénovacím datům optimalizovaným primárně pro angličtinu spotřebovávají flektivní jazyky s bohatou diakritikou (včetně češtiny) 2× až 3× více tokenů pro vyjádření téhož významu.]
+
+#finalized[
+Z inženýrského hlediska je proto žádoucí vést systémové prompty, technické plány i komunikaci mezi nástroji v angličtině, aby se šetřila kapacita kontextu a snížila latence inference.
+]
+  ],
+  summary: none,
+  visual: none,
+  examples: (),
+  attachments: (),
+  citations: (),
+  relations: (),
+)

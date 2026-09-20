@@ -34,274 +34,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Cíl práce a výzkumné otázky",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Hlavní cíl",
+            "title": "1.1.1 Globální adopce generativní AI",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Dílčí cíle",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Výzkumné otázky",
+            "title": "1.2.1 Hlavní cíl",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Metodika práce",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentické AI",
+            "title": "2 Vývojové prostředí a praxe",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Softwarové inženýrství",
-            "level": 4,
+            "title": "2.2 Softwarové inženýrství",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Plánování",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Správa verzí",
-            "level": 4,
+            "title": "2.3 Správa verzí",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Větev repozitáře",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Sloučení větví",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Průběžná integrace",
-            "level": 4,
+            "title": "2.3.1.3 Sloučení commitů",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.4 Úloha GitHubu",
+            "level": 5,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.1.5 Požadavek na sloučení",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Jazykové modely, chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1.6 Požadované kontroly",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Ochrana větví",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Jazykový model",
-            "level": 4,
+            "title": "2.4 Průběžná integrace",
+            "level": 3,
             "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3 Agentické inženýrství",
-            "level": 3,
+            "title": "2.4.2 Softwarový kontejner",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.4.3 Nestálý test",
             "level": 4,
             "anchor": "loc-39"
           },
           {
-            "title": "2.3.2 Promptové inženýrství",
-            "level": 4,
+            "title": "3 Jazykové modely, chatboti a agenti",
+            "level": 2,
             "anchor": "loc-40"
           },
           {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.1 Chatbot",
+            "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.3 Agentní harness",
-            "level": 4,
+            "title": "3.1.1.1 Rozhraní aplikace ChatGPT",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.3.2 Smyčka ReAct",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3 Velký jazykový model",
+            "level": 3,
             "anchor": "loc-48"
           },
           {
-            "title": "2.3.3.3 Vyvolávání nástrojů",
-            "level": 5,
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
-            "anchor": "loc-51"
-          },
-          {
-            "title": "2.3.3.4 Dovednosti",
+            "title": "3.3.1.1 Produktový vizuál GPT-5.6",
             "level": 5,
-            "anchor": "loc-52"
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
+            "level": 5,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.5 Kontextové inženýrství",
-            "level": 5,
-            "anchor": "loc-55"
-          },
-          {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Inženýrství pracovních grafů",
+            "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
-            "anchor": "loc-60"
-          },
-          {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
-            "level": 2,
+            "title": "3.3.4 Transformerová architektura",
+            "level": 4,
             "anchor": "loc-61"
           },
           {
-            "title": "3.1 Vývojové prostředí a praxe",
-            "level": 3,
-            "anchor": "loc-62"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.5 Autoregresivní modelování",
             "level": 4,
             "anchor": "loc-63"
           },
           {
-            "title": "3.1.2 Správa verzí",
+            "title": "3.3.6 Stochastické dekódování",
             "level": 4,
             "anchor": "loc-64"
           },
           {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
+            "title": "3.3.7 Tokenizér",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-66"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-67"
           },
           {
-            "title": "4 Výsledky a diskuse",
-            "level": 2,
-            "anchor": "loc-68"
+            "title": "3.3.9 Vektorová reprezentace",
+            "level": 4,
+            "anchor": "loc-69"
           },
           {
-            "title": "5 Závěr",
+            "title": "3.3.10 Kontextové okno",
+            "level": 4,
+            "anchor": "loc-70"
+          },
+          {
+            "title": "3.3.11 Mezipaměť klíčů a hodnot",
+            "level": 4,
+            "anchor": "loc-72"
+          },
+          {
+            "title": "3.3.12 Tah interakce",
+            "level": 4,
+            "anchor": "loc-74"
+          },
+          {
+            "title": "4 Agentické inženýrství",
             "level": 2,
-            "anchor": "loc-69"
+            "anchor": "loc-76"
+          },
+          {
+            "title": "4.1 Promptové inženýrství",
+            "level": 3,
+            "anchor": "loc-78"
+          },
+          {
+            "title": "4.1.1 Systémový prompt",
+            "level": 4,
+            "anchor": "loc-80"
+          },
+          {
+            "title": "4.2 Agentní harness",
+            "level": 3,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1.1 Rozhraní aplikace Codex",
+            "level": 5,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-85"
+          },
+          {
+            "title": "4.2.2.1 Rozhraní Claude Code",
+            "level": 5,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.3 Aplikace Claude pro desktop",
+            "level": 4,
+            "anchor": "loc-88"
+          },
+          {
+            "title": "4.2.3.1 Rozhraní aplikace Claude",
+            "level": 5,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.4 Izolované běhové prostředí",
+            "level": 4,
+            "anchor": "loc-92"
+          },
+          {
+            "title": "4.2.5 Deterministický mantinel",
+            "level": 4,
+            "anchor": "loc-94"
+          },
+          {
+            "title": "4.2.6 Zapojení člověka do smyčky",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.7 Rozšíření",
+            "level": 4,
+            "anchor": "loc-97"
+          },
+          {
+            "title": "4.2.8 Smyčka ReAct",
+            "level": 4,
+            "anchor": "loc-99"
+          },
+          {
+            "title": "4.2.8.1 Agentní sezení",
+            "level": 5,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.3 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.9 Vyvolávání nástrojů",
+            "level": 4,
+            "anchor": "loc-104"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-106"
+          },
+          {
+            "title": "4.2.10 Dovednosti",
+            "level": 4,
+            "anchor": "loc-108"
+          },
+          {
+            "title": "4.2.10.1 Postupné zpřístupňování kontextu",
+            "level": 5,
+            "anchor": "loc-110"
+          },
+          {
+            "title": "4.2.10.2 Skript",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.3 Událostní záchytný bod",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.11 Kontextové inženýrství",
+            "level": 4,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11.1 Kompakce kontextu",
+            "level": 5,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.2 Generování rozšířené vyhledáváním",
+            "level": 5,
+            "anchor": "loc-116"
+          },
+          {
+            "title": "4.2.11.3 Degradace kontextu",
+            "level": 5,
+            "anchor": "loc-118"
+          },
+          {
+            "title": "4.2.11.4 Sémantický posun",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.12 Inženýrství pracovních grafů",
+            "level": 4,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12.1 Podřízený agent",
+            "level": 5,
+            "anchor": "loc-122"
+          },
+          {
+            "title": "4.2.12.2 Orientovaný acyklický graf",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "5 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "6 Závěr",
+            "level": 2,
+            "anchor": "loc-125"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-70"
+            "anchor": "loc-126"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-84"
+            "anchor": "loc-161"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-85"
+            "anchor": "loc-162"
           }
         ],
         "review": [
@@ -336,274 +471,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Cíl práce a výzkumné otázky",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Hlavní cíl",
+            "title": "1.1.1 Globální adopce generativní AI",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Dílčí cíle",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Výzkumné otázky",
+            "title": "1.2.1 Hlavní cíl",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Metodika práce",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentické AI",
+            "title": "2 Vývojové prostředí a praxe",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Softwarové inženýrství",
-            "level": 4,
+            "title": "2.2 Softwarové inženýrství",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Plánování",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Správa verzí",
-            "level": 4,
+            "title": "2.3 Správa verzí",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Větev repozitáře",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Sloučení větví",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Průběžná integrace",
-            "level": 4,
+            "title": "2.3.1.3 Sloučení commitů",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.1.4 Úloha GitHubu",
+            "level": 5,
             "anchor": "loc-29"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.5 Požadavek na sloučení",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Jazykové modely, chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1.6 Požadované kontroly",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Ochrana větví",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Jazykový model",
-            "level": 4,
-            "anchor": "loc-36"
+            "title": "2.4 Průběžná integrace",
+            "level": 3,
+            "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.4.2 Softwarový kontejner",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3 Agentické inženýrství",
+            "title": "2.4.3 Nestálý test",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "3 Jazykové modely, chatboti a agenti",
+            "level": 2,
+            "anchor": "loc-40"
+          },
+          {
+            "title": "3.1 Chatbot",
             "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.1 Úvod",
-            "level": 4,
+            "title": "3.1.1.1 Rozhraní aplikace ChatGPT",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.2 Promptové inženýrství",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3 Agentní harness",
-            "level": 4,
-            "anchor": "loc-47"
-          },
-          {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
+            "title": "3.3 Velký jazykový model",
+            "level": 3,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 Smyčka ReAct",
-            "level": 5,
-            "anchor": "loc-52"
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.1.1 Produktový vizuál GPT-5.6",
+            "level": 5,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.3 Vyvolávání nástrojů",
+            "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.4 Dovednosti",
+            "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
-            "anchor": "loc-60"
+            "anchor": "loc-59"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.4 Transformerová architektura",
+            "level": 4,
             "anchor": "loc-62"
           },
           {
-            "title": "2.3.3.5 Kontextové inženýrství",
-            "level": 5,
-            "anchor": "loc-63"
+            "title": "3.3.5 Autoregresivní modelování",
+            "level": 4,
+            "anchor": "loc-64"
           },
           {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.6 Stochastické dekódování",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Inženýrství pracovních grafů",
-            "level": 5,
+            "title": "3.3.7 Tokenizér",
+            "level": 4,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-68"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
+            "title": "3.3.9 Vektorová reprezentace",
+            "level": 4,
             "anchor": "loc-70"
           },
           {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
-            "level": 2,
+            "title": "3.3.10 Kontextové okno",
+            "level": 4,
             "anchor": "loc-71"
           },
           {
-            "title": "3.1 Vývojové prostředí a praxe",
-            "level": 3,
-            "anchor": "loc-72"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.11 Mezipaměť klíčů a hodnot",
             "level": 4,
             "anchor": "loc-73"
           },
           {
-            "title": "3.1.2 Správa verzí",
+            "title": "3.3.12 Tah interakce",
             "level": 4,
-            "anchor": "loc-74"
-          },
-          {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
             "anchor": "loc-75"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-76"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
-            "anchor": "loc-77"
-          },
-          {
-            "title": "4 Výsledky a diskuse",
+            "title": "4 Agentické inženýrství",
             "level": 2,
             "anchor": "loc-78"
           },
           {
-            "title": "5 Závěr",
-            "level": 2,
+            "title": "4.1 Promptové inženýrství",
+            "level": 3,
             "anchor": "loc-79"
+          },
+          {
+            "title": "4.1.1 Systémový prompt",
+            "level": 4,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2 Agentní harness",
+            "level": 3,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.1.1 Rozhraní aplikace Codex",
+            "level": 5,
+            "anchor": "loc-84"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.2.1 Rozhraní Claude Code",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
+            "title": "4.2.3 Aplikace Claude pro desktop",
+            "level": 4,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.3.1 Rozhraní aplikace Claude",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
+            "title": "4.2.4 Izolované běhové prostředí",
+            "level": 4,
+            "anchor": "loc-93"
+          },
+          {
+            "title": "4.2.5 Deterministický mantinel",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.6 Zapojení člověka do smyčky",
+            "level": 4,
+            "anchor": "loc-96"
+          },
+          {
+            "title": "4.2.7 Rozšíření",
+            "level": 4,
+            "anchor": "loc-98"
+          },
+          {
+            "title": "4.2.8 Smyčka ReAct",
+            "level": 4,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.1 Agentní sezení",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.8.3 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-103"
+          },
+          {
+            "title": "4.2.9 Vyvolávání nástrojů",
+            "level": 4,
+            "anchor": "loc-105"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-107"
+          },
+          {
+            "title": "4.2.10 Dovednosti",
+            "level": 4,
+            "anchor": "loc-109"
+          },
+          {
+            "title": "4.2.10.1 Postupné zpřístupňování kontextu",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.2 Skript",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.10.3 Událostní záchytný bod",
+            "level": 5,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11 Kontextové inženýrství",
+            "level": 4,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.1 Kompakce kontextu",
+            "level": 5,
+            "anchor": "loc-115"
+          },
+          {
+            "title": "4.2.11.2 Generování rozšířené vyhledáváním",
+            "level": 5,
+            "anchor": "loc-117"
+          },
+          {
+            "title": "4.2.11.3 Degradace kontextu",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.11.4 Sémantický posun",
+            "level": 5,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12 Inženýrství pracovních grafů",
+            "level": 4,
+            "anchor": "loc-121"
+          },
+          {
+            "title": "4.2.12.1 Podřízený agent",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "4.2.12.2 Orientovaný acyklický graf",
+            "level": 5,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "5 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-125"
+          },
+          {
+            "title": "6 Závěr",
+            "level": 2,
+            "anchor": "loc-126"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-80"
+            "anchor": "loc-127"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-163"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-164"
           }
         ]
       },
@@ -640,274 +910,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Cíl práce a výzkumné otázky",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Hlavní cíl",
+            "title": "1.1.1 Globální adopce generativní AI",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Dílčí cíle",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Výzkumné otázky",
+            "title": "1.2.1 Hlavní cíl",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Metodika práce",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentické AI",
+            "title": "2 Vývojové prostředí a praxe",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Softwarové inženýrství",
-            "level": 4,
+            "title": "2.2 Softwarové inženýrství",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Plánování",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Správa verzí",
-            "level": 4,
+            "title": "2.3 Správa verzí",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Větev repozitáře",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Sloučení větví",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Průběžná integrace",
-            "level": 4,
+            "title": "2.3.1.3 Sloučení commitů",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.4 Úloha GitHubu",
+            "level": 5,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.1.5 Požadavek na sloučení",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Jazykové modely, chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1.6 Požadované kontroly",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Ochrana větví",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Jazykový model",
-            "level": 4,
+            "title": "2.4 Průběžná integrace",
+            "level": 3,
             "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3 Agentické inženýrství",
-            "level": 3,
+            "title": "2.4.2 Softwarový kontejner",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.4.3 Nestálý test",
             "level": 4,
             "anchor": "loc-39"
           },
           {
-            "title": "2.3.2 Promptové inženýrství",
-            "level": 4,
+            "title": "3 Jazykové modely, chatboti a agenti",
+            "level": 2,
             "anchor": "loc-40"
           },
           {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.1 Chatbot",
+            "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.3 Agentní harness",
-            "level": 4,
+            "title": "3.1.1.1 Rozhraní aplikace ChatGPT",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.3.2 Smyčka ReAct",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3 Velký jazykový model",
+            "level": 3,
             "anchor": "loc-48"
           },
           {
-            "title": "2.3.3.3 Vyvolávání nástrojů",
-            "level": 5,
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
-            "anchor": "loc-51"
-          },
-          {
-            "title": "2.3.3.4 Dovednosti",
+            "title": "3.3.1.1 Produktový vizuál GPT-5.6",
             "level": 5,
-            "anchor": "loc-52"
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
+            "level": 5,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.5 Kontextové inženýrství",
-            "level": 5,
-            "anchor": "loc-55"
-          },
-          {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Inženýrství pracovních grafů",
+            "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
-            "anchor": "loc-60"
-          },
-          {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
-            "level": 2,
+            "title": "3.3.4 Transformerová architektura",
+            "level": 4,
             "anchor": "loc-61"
           },
           {
-            "title": "3.1 Vývojové prostředí a praxe",
-            "level": 3,
-            "anchor": "loc-62"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.5 Autoregresivní modelování",
             "level": 4,
             "anchor": "loc-63"
           },
           {
-            "title": "3.1.2 Správa verzí",
+            "title": "3.3.6 Stochastické dekódování",
             "level": 4,
             "anchor": "loc-64"
           },
           {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
+            "title": "3.3.7 Tokenizér",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-66"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-67"
           },
           {
-            "title": "4 Výsledky a diskuse",
-            "level": 2,
-            "anchor": "loc-68"
+            "title": "3.3.9 Vektorová reprezentace",
+            "level": 4,
+            "anchor": "loc-69"
           },
           {
-            "title": "5 Závěr",
+            "title": "3.3.10 Kontextové okno",
+            "level": 4,
+            "anchor": "loc-70"
+          },
+          {
+            "title": "3.3.11 Mezipaměť klíčů a hodnot",
+            "level": 4,
+            "anchor": "loc-72"
+          },
+          {
+            "title": "3.3.12 Tah interakce",
+            "level": 4,
+            "anchor": "loc-74"
+          },
+          {
+            "title": "4 Agentické inženýrství",
             "level": 2,
-            "anchor": "loc-69"
+            "anchor": "loc-76"
+          },
+          {
+            "title": "4.1 Promptové inženýrství",
+            "level": 3,
+            "anchor": "loc-78"
+          },
+          {
+            "title": "4.1.1 Systémový prompt",
+            "level": 4,
+            "anchor": "loc-80"
+          },
+          {
+            "title": "4.2 Agentní harness",
+            "level": 3,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1.1 Rozhraní aplikace Codex",
+            "level": 5,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-85"
+          },
+          {
+            "title": "4.2.2.1 Rozhraní Claude Code",
+            "level": 5,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.3 Aplikace Claude pro desktop",
+            "level": 4,
+            "anchor": "loc-88"
+          },
+          {
+            "title": "4.2.3.1 Rozhraní aplikace Claude",
+            "level": 5,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.4 Izolované běhové prostředí",
+            "level": 4,
+            "anchor": "loc-92"
+          },
+          {
+            "title": "4.2.5 Deterministický mantinel",
+            "level": 4,
+            "anchor": "loc-94"
+          },
+          {
+            "title": "4.2.6 Zapojení člověka do smyčky",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.7 Rozšíření",
+            "level": 4,
+            "anchor": "loc-97"
+          },
+          {
+            "title": "4.2.8 Smyčka ReAct",
+            "level": 4,
+            "anchor": "loc-99"
+          },
+          {
+            "title": "4.2.8.1 Agentní sezení",
+            "level": 5,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.3 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.9 Vyvolávání nástrojů",
+            "level": 4,
+            "anchor": "loc-104"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-106"
+          },
+          {
+            "title": "4.2.10 Dovednosti",
+            "level": 4,
+            "anchor": "loc-108"
+          },
+          {
+            "title": "4.2.10.1 Postupné zpřístupňování kontextu",
+            "level": 5,
+            "anchor": "loc-110"
+          },
+          {
+            "title": "4.2.10.2 Skript",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.3 Událostní záchytný bod",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.11 Kontextové inženýrství",
+            "level": 4,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11.1 Kompakce kontextu",
+            "level": 5,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.2 Generování rozšířené vyhledáváním",
+            "level": 5,
+            "anchor": "loc-116"
+          },
+          {
+            "title": "4.2.11.3 Degradace kontextu",
+            "level": 5,
+            "anchor": "loc-118"
+          },
+          {
+            "title": "4.2.11.4 Sémantický posun",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.12 Inženýrství pracovních grafů",
+            "level": 4,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12.1 Podřízený agent",
+            "level": 5,
+            "anchor": "loc-122"
+          },
+          {
+            "title": "4.2.12.2 Orientovaný acyklický graf",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "5 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "6 Závěr",
+            "level": 2,
+            "anchor": "loc-125"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-70"
+            "anchor": "loc-126"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-84"
+            "anchor": "loc-161"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-85"
+            "anchor": "loc-162"
           }
         ],
         "review": [
@@ -942,274 +1347,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Cíl práce a výzkumné otázky",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Hlavní cíl",
+            "title": "1.1.1 Globální adopce generativní AI",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Dílčí cíle",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Cíl práce a výzkumné otázky",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Výzkumné otázky",
+            "title": "1.2.1 Hlavní cíl",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Dílčí cíle",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Výzkumné otázky",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Metodika práce",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentické AI",
+            "title": "2 Vývojové prostředí a praxe",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Softwarové inženýrství",
-            "level": 4,
+            "title": "2.2 Softwarové inženýrství",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Plánování",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Správa verzí",
-            "level": 4,
+            "title": "2.3 Správa verzí",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Větev repozitáře",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Sloučení větví",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Průběžná integrace",
-            "level": 4,
+            "title": "2.3.1.3 Sloučení commitů",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.1.4 Úloha GitHubu",
+            "level": 5,
             "anchor": "loc-29"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.5 Požadavek na sloučení",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Jazykové modely, chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1.6 Požadované kontroly",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Ochrana větví",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Jazykový model",
-            "level": 4,
-            "anchor": "loc-36"
+            "title": "2.4 Průběžná integrace",
+            "level": 3,
+            "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.4.2 Softwarový kontejner",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3 Agentické inženýrství",
+            "title": "2.4.3 Nestálý test",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "3 Jazykové modely, chatboti a agenti",
+            "level": 2,
+            "anchor": "loc-40"
+          },
+          {
+            "title": "3.1 Chatbot",
             "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.1 Úvod",
-            "level": 4,
+            "title": "3.1.1.1 Rozhraní aplikace ChatGPT",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.2 Promptové inženýrství",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3 Agentní harness",
-            "level": 4,
-            "anchor": "loc-47"
-          },
-          {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
+            "title": "3.3 Velký jazykový model",
+            "level": 3,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 Smyčka ReAct",
-            "level": 5,
-            "anchor": "loc-52"
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.1.1 Produktový vizuál GPT-5.6",
+            "level": 5,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.3 Vyvolávání nástrojů",
+            "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.4 Dovednosti",
+            "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
-            "anchor": "loc-60"
+            "anchor": "loc-59"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.4 Transformerová architektura",
+            "level": 4,
             "anchor": "loc-62"
           },
           {
-            "title": "2.3.3.5 Kontextové inženýrství",
-            "level": 5,
-            "anchor": "loc-63"
+            "title": "3.3.5 Autoregresivní modelování",
+            "level": 4,
+            "anchor": "loc-64"
           },
           {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.6 Stochastické dekódování",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Inženýrství pracovních grafů",
-            "level": 5,
+            "title": "3.3.7 Tokenizér",
+            "level": 4,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-68"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
+            "title": "3.3.9 Vektorová reprezentace",
+            "level": 4,
             "anchor": "loc-70"
           },
           {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
-            "level": 2,
+            "title": "3.3.10 Kontextové okno",
+            "level": 4,
             "anchor": "loc-71"
           },
           {
-            "title": "3.1 Vývojové prostředí a praxe",
-            "level": 3,
-            "anchor": "loc-72"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.11 Mezipaměť klíčů a hodnot",
             "level": 4,
             "anchor": "loc-73"
           },
           {
-            "title": "3.1.2 Správa verzí",
+            "title": "3.3.12 Tah interakce",
             "level": 4,
-            "anchor": "loc-74"
-          },
-          {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
             "anchor": "loc-75"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-76"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
-            "anchor": "loc-77"
-          },
-          {
-            "title": "4 Výsledky a diskuse",
+            "title": "4 Agentické inženýrství",
             "level": 2,
             "anchor": "loc-78"
           },
           {
-            "title": "5 Závěr",
-            "level": 2,
+            "title": "4.1 Promptové inženýrství",
+            "level": 3,
             "anchor": "loc-79"
+          },
+          {
+            "title": "4.1.1 Systémový prompt",
+            "level": 4,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2 Agentní harness",
+            "level": 3,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.1.1 Rozhraní aplikace Codex",
+            "level": 5,
+            "anchor": "loc-84"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.2.1 Rozhraní Claude Code",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
+            "title": "4.2.3 Aplikace Claude pro desktop",
+            "level": 4,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.3.1 Rozhraní aplikace Claude",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
+            "title": "4.2.4 Izolované běhové prostředí",
+            "level": 4,
+            "anchor": "loc-93"
+          },
+          {
+            "title": "4.2.5 Deterministický mantinel",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.6 Zapojení člověka do smyčky",
+            "level": 4,
+            "anchor": "loc-96"
+          },
+          {
+            "title": "4.2.7 Rozšíření",
+            "level": 4,
+            "anchor": "loc-98"
+          },
+          {
+            "title": "4.2.8 Smyčka ReAct",
+            "level": 4,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.1 Agentní sezení",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.8.3 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-103"
+          },
+          {
+            "title": "4.2.9 Vyvolávání nástrojů",
+            "level": 4,
+            "anchor": "loc-105"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-107"
+          },
+          {
+            "title": "4.2.10 Dovednosti",
+            "level": 4,
+            "anchor": "loc-109"
+          },
+          {
+            "title": "4.2.10.1 Postupné zpřístupňování kontextu",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.2 Skript",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.10.3 Událostní záchytný bod",
+            "level": 5,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11 Kontextové inženýrství",
+            "level": 4,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.1 Kompakce kontextu",
+            "level": 5,
+            "anchor": "loc-115"
+          },
+          {
+            "title": "4.2.11.2 Generování rozšířené vyhledáváním",
+            "level": 5,
+            "anchor": "loc-117"
+          },
+          {
+            "title": "4.2.11.3 Degradace kontextu",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.11.4 Sémantický posun",
+            "level": 5,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12 Inženýrství pracovních grafů",
+            "level": 4,
+            "anchor": "loc-121"
+          },
+          {
+            "title": "4.2.12.1 Podřízený agent",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "4.2.12.2 Orientovaný acyklický graf",
+            "level": 5,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "5 Výsledky a diskuse",
+            "level": 2,
+            "anchor": "loc-125"
+          },
+          {
+            "title": "6 Závěr",
+            "level": 2,
+            "anchor": "loc-126"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-80"
+            "anchor": "loc-127"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-163"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-164"
           }
         ]
       },
@@ -1246,274 +1786,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Thesis Objective and Research Questions",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Main Goal",
+            "title": "1.1.1 Global Generative AI Adoption",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Sub-goals",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Thesis Objective and Research Questions",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions",
+            "title": "1.2.1 Main Goal",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Sub-goals",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Research Questions",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Methodology",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI",
+            "title": "2 Development Environment and Practices",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Software Engineering",
-            "level": 4,
+            "title": "2.2 Software Engineering",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Planning",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control",
-            "level": 4,
+            "title": "2.3 Version control",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Repository Branch",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Branch Merge",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Continuous Integration",
-            "level": 4,
+            "title": "2.3.1.3 Commit Squashing",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.4 GitHub Issue",
+            "level": 5,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.1.5 Pull Request",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents",
-            "level": 3,
+            "title": "2.3.1.6 Required Checks",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Branch Protection",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Large Language Model",
-            "level": 4,
+            "title": "2.4 Continuous Integration",
+            "level": 3,
             "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3 Agentic Engineering",
-            "level": 3,
+            "title": "2.4.2 Software Container",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.4.3 Flaky Test",
             "level": 4,
             "anchor": "loc-39"
           },
           {
-            "title": "2.3.2 Prompt Engineering",
-            "level": 4,
+            "title": "3 Language Models, Chatbots, and Agents",
+            "level": 2,
             "anchor": "loc-40"
           },
           {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.1 Chatbot",
+            "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.3 Agent Harness",
-            "level": 4,
+            "title": "3.1.1.1 ChatGPT App Interface",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.3.2 ReAct Loop",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3 Large Language Model",
+            "level": 3,
             "anchor": "loc-48"
           },
           {
-            "title": "2.3.3.3 Tool Calling",
-            "level": 5,
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
-            "anchor": "loc-51"
-          },
-          {
-            "title": "2.3.3.4 Skills",
+            "title": "3.3.1.1 GPT-5.6 Product Visual",
             "level": 5,
-            "anchor": "loc-52"
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "3.3.2.1 Claude Opus 5 Product Visual",
+            "level": 5,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.5 Context Engineering",
-            "level": 5,
-            "anchor": "loc-55"
-          },
-          {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Workflow-graph Engineering",
+            "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual",
             "level": 5,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
-            "anchor": "loc-60"
-          },
-          {
-            "title": "3 DarkFactory: Harness Architecture - Practical Part",
-            "level": 2,
+            "title": "3.3.4 Transformer Architecture",
+            "level": 4,
             "anchor": "loc-61"
           },
           {
-            "title": "3.1 Development Environment and Practices",
-            "level": 3,
-            "anchor": "loc-62"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.5 Autoregressive Modeling",
             "level": 4,
             "anchor": "loc-63"
           },
           {
-            "title": "3.1.2 Version control",
+            "title": "3.3.6 Stochastic Decoding",
             "level": 4,
             "anchor": "loc-64"
           },
           {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
+            "title": "3.3.7 Tokenizer",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-66"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-67"
           },
           {
-            "title": "4 Results and Discussion",
-            "level": 2,
-            "anchor": "loc-68"
+            "title": "3.3.9 Embedding",
+            "level": 4,
+            "anchor": "loc-69"
           },
           {
-            "title": "5 Conclusion",
+            "title": "3.3.10 Context Window",
+            "level": 4,
+            "anchor": "loc-70"
+          },
+          {
+            "title": "3.3.11 Key–Value Cache",
+            "level": 4,
+            "anchor": "loc-72"
+          },
+          {
+            "title": "3.3.12 Interaction Turn",
+            "level": 4,
+            "anchor": "loc-74"
+          },
+          {
+            "title": "4 Agentic Engineering",
             "level": 2,
-            "anchor": "loc-69"
+            "anchor": "loc-76"
+          },
+          {
+            "title": "4.1 Prompt Engineering",
+            "level": 3,
+            "anchor": "loc-78"
+          },
+          {
+            "title": "4.1.1 System Prompt",
+            "level": 4,
+            "anchor": "loc-80"
+          },
+          {
+            "title": "4.2 Agent Harness",
+            "level": 3,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1.1 Codex App Interface",
+            "level": 5,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-85"
+          },
+          {
+            "title": "4.2.2.1 Claude Code Interface",
+            "level": 5,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.3 Claude Desktop App",
+            "level": 4,
+            "anchor": "loc-88"
+          },
+          {
+            "title": "4.2.3.1 Claude Desktop Interface",
+            "level": 5,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.4 Sandbox",
+            "level": 4,
+            "anchor": "loc-92"
+          },
+          {
+            "title": "4.2.5 Deterministic Guardrail",
+            "level": 4,
+            "anchor": "loc-94"
+          },
+          {
+            "title": "4.2.6 Human-in-the-loop",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.7 Plugins",
+            "level": 4,
+            "anchor": "loc-97"
+          },
+          {
+            "title": "4.2.8 ReAct Loop",
+            "level": 4,
+            "anchor": "loc-99"
+          },
+          {
+            "title": "4.2.8.1 Agent Session",
+            "level": 5,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.2 Execution-loop Engineering",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.3 Agent Divergence Pathologies",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.9 Tool Calling",
+            "level": 4,
+            "anchor": "loc-104"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-106"
+          },
+          {
+            "title": "4.2.10 Skills",
+            "level": 4,
+            "anchor": "loc-108"
+          },
+          {
+            "title": "4.2.10.1 Progressive Disclosure",
+            "level": 5,
+            "anchor": "loc-110"
+          },
+          {
+            "title": "4.2.10.2 Script",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.3 Event Hook",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.11 Context Engineering",
+            "level": 4,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11.1 Context Compaction",
+            "level": 5,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.2 Retrieval-Augmented Generation",
+            "level": 5,
+            "anchor": "loc-116"
+          },
+          {
+            "title": "4.2.11.3 Context Rot",
+            "level": 5,
+            "anchor": "loc-118"
+          },
+          {
+            "title": "4.2.11.4 Semantic Drift",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.12 Workflow-graph Engineering",
+            "level": 4,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12.1 Subagent",
+            "level": 5,
+            "anchor": "loc-122"
+          },
+          {
+            "title": "4.2.12.2 Directed Acyclic Graph",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "5 Results and Discussion",
+            "level": 2,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "6 Conclusion",
+            "level": 2,
+            "anchor": "loc-125"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-70"
+            "anchor": "loc-126"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-84"
+            "anchor": "loc-161"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-85"
+            "anchor": "loc-162"
           }
         ],
         "review": [
@@ -1548,274 +2223,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Thesis Objective and Research Questions",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Main Goal",
+            "title": "1.1.1 Global Generative AI Adoption",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Sub-goals",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Thesis Objective and Research Questions",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions",
+            "title": "1.2.1 Main Goal",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Sub-goals",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Research Questions",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Methodology",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI",
+            "title": "2 Development Environment and Practices",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Software Engineering",
-            "level": 4,
+            "title": "2.2 Software Engineering",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Planning",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control",
-            "level": 4,
+            "title": "2.3 Version control",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Repository Branch",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Branch Merge",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Continuous Integration",
-            "level": 4,
+            "title": "2.3.1.3 Commit Squashing",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.1.4 GitHub Issue",
+            "level": 5,
             "anchor": "loc-29"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.5 Pull Request",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents",
-            "level": 3,
+            "title": "2.3.1.6 Required Checks",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Branch Protection",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Large Language Model",
-            "level": 4,
-            "anchor": "loc-36"
+            "title": "2.4 Continuous Integration",
+            "level": 3,
+            "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.4.2 Software Container",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3 Agentic Engineering",
+            "title": "2.4.3 Flaky Test",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "3 Language Models, Chatbots, and Agents",
+            "level": 2,
+            "anchor": "loc-40"
+          },
+          {
+            "title": "3.1 Chatbot",
             "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.1 Úvod",
-            "level": 4,
+            "title": "3.1.1.1 ChatGPT App Interface",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.2 Prompt Engineering",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3 Agent Harness",
-            "level": 4,
-            "anchor": "loc-47"
-          },
-          {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
+            "title": "3.3 Large Language Model",
+            "level": 3,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 ReAct Loop",
-            "level": 5,
-            "anchor": "loc-52"
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.1.1 GPT-5.6 Product Visual",
+            "level": 5,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.3 Tool Calling",
+            "title": "3.3.2.1 Claude Opus 5 Product Visual",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.4 Skills",
+            "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual",
             "level": 5,
-            "anchor": "loc-60"
+            "anchor": "loc-59"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.4 Transformer Architecture",
+            "level": 4,
             "anchor": "loc-62"
           },
           {
-            "title": "2.3.3.5 Context Engineering",
-            "level": 5,
-            "anchor": "loc-63"
+            "title": "3.3.5 Autoregressive Modeling",
+            "level": 4,
+            "anchor": "loc-64"
           },
           {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.6 Stochastic Decoding",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Workflow-graph Engineering",
-            "level": 5,
+            "title": "3.3.7 Tokenizer",
+            "level": 4,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-68"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
+            "title": "3.3.9 Embedding",
+            "level": 4,
             "anchor": "loc-70"
           },
           {
-            "title": "3 DarkFactory: Harness Architecture - Practical Part",
-            "level": 2,
+            "title": "3.3.10 Context Window",
+            "level": 4,
             "anchor": "loc-71"
           },
           {
-            "title": "3.1 Development Environment and Practices",
-            "level": 3,
-            "anchor": "loc-72"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.11 Key–Value Cache",
             "level": 4,
             "anchor": "loc-73"
           },
           {
-            "title": "3.1.2 Version control",
+            "title": "3.3.12 Interaction Turn",
             "level": 4,
-            "anchor": "loc-74"
-          },
-          {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
             "anchor": "loc-75"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-76"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
-            "anchor": "loc-77"
-          },
-          {
-            "title": "4 Results and Discussion",
+            "title": "4 Agentic Engineering",
             "level": 2,
             "anchor": "loc-78"
           },
           {
-            "title": "5 Conclusion",
-            "level": 2,
+            "title": "4.1 Prompt Engineering",
+            "level": 3,
             "anchor": "loc-79"
+          },
+          {
+            "title": "4.1.1 System Prompt",
+            "level": 4,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2 Agent Harness",
+            "level": 3,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.1.1 Codex App Interface",
+            "level": 5,
+            "anchor": "loc-84"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.2.1 Claude Code Interface",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
+            "title": "4.2.3 Claude Desktop App",
+            "level": 4,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.3.1 Claude Desktop Interface",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
+            "title": "4.2.4 Sandbox",
+            "level": 4,
+            "anchor": "loc-93"
+          },
+          {
+            "title": "4.2.5 Deterministic Guardrail",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.6 Human-in-the-loop",
+            "level": 4,
+            "anchor": "loc-96"
+          },
+          {
+            "title": "4.2.7 Plugins",
+            "level": 4,
+            "anchor": "loc-98"
+          },
+          {
+            "title": "4.2.8 ReAct Loop",
+            "level": 4,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.1 Agent Session",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.2 Execution-loop Engineering",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.8.3 Agent Divergence Pathologies",
+            "level": 5,
+            "anchor": "loc-103"
+          },
+          {
+            "title": "4.2.9 Tool Calling",
+            "level": 4,
+            "anchor": "loc-105"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-107"
+          },
+          {
+            "title": "4.2.10 Skills",
+            "level": 4,
+            "anchor": "loc-109"
+          },
+          {
+            "title": "4.2.10.1 Progressive Disclosure",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.2 Script",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.10.3 Event Hook",
+            "level": 5,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11 Context Engineering",
+            "level": 4,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.1 Context Compaction",
+            "level": 5,
+            "anchor": "loc-115"
+          },
+          {
+            "title": "4.2.11.2 Retrieval-Augmented Generation",
+            "level": 5,
+            "anchor": "loc-117"
+          },
+          {
+            "title": "4.2.11.3 Context Rot",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.11.4 Semantic Drift",
+            "level": 5,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12 Workflow-graph Engineering",
+            "level": 4,
+            "anchor": "loc-121"
+          },
+          {
+            "title": "4.2.12.1 Subagent",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "4.2.12.2 Directed Acyclic Graph",
+            "level": 5,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "5 Results and Discussion",
+            "level": 2,
+            "anchor": "loc-125"
+          },
+          {
+            "title": "6 Conclusion",
+            "level": 2,
+            "anchor": "loc-126"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-80"
+            "anchor": "loc-127"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-163"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-164"
           }
         ]
       },
@@ -1852,274 +2662,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.1.1 Global Generative AI Adoption (Globální adopce generativní AI)",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.1 Main Goal (Hlavní cíl)",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Sub-goals (Dílčí cíle)",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Research Questions (Výzkumné otázky)",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Methodology (Metodika práce)",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
-            "level": 4,
+            "title": "2.2 Software Engineering (Softwarové inženýrství)",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Planning (Plánování)",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
-            "level": 4,
+            "title": "2.3 Version control (Správa verzí)",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Repository Branch (Větev repozitáře)",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Branch Merge (Sloučení větví)",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Continuous Integration (Průběžná integrace)",
-            "level": 4,
+            "title": "2.3.1.3 Commit Squashing (Sloučení commitů)",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.4 GitHub Issue (Úloha GitHubu)",
+            "level": 5,
+            "anchor": "loc-29"
+          },
+          {
+            "title": "2.3.1.5 Pull Request (Požadavek na sloučení)",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
-            "level": 3,
+            "title": "2.3.1.6 Required Checks (Požadované kontroly)",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Branch Protection (Ochrana větví)",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Large Language Model (Jazykový model)",
-            "level": 4,
+            "title": "2.4 Continuous Integration (Průběžná integrace)",
+            "level": 3,
             "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
             "anchor": "loc-35"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
-            "level": 3,
+            "title": "2.4.2 Software Container (Softwarový kontejner)",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.1 Úvod",
+            "title": "2.4.3 Flaky Test (Nestálý test)",
             "level": 4,
             "anchor": "loc-39"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
-            "level": 4,
+            "title": "3 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 2,
             "anchor": "loc-40"
           },
           {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.1 Chatbot",
+            "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
-            "level": 4,
+            "title": "3.1.1.1 ChatGPT App Interface (Rozhraní aplikace ChatGPT)",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.3.2 ReAct Loop (Smyčka ReAct)",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3 Large Language Model (Velký jazykový model)",
+            "level": 3,
             "anchor": "loc-48"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
-            "level": 5,
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
-            "anchor": "loc-51"
-          },
-          {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "3.3.1.1 GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)",
             "level": 5,
-            "anchor": "loc-52"
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
+            "anchor": "loc-53"
+          },
+          {
+            "title": "3.3.2.1 Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)",
+            "level": 5,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
-            "level": 5,
-            "anchor": "loc-55"
-          },
-          {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Workflow-graph Engineering (Inženýrství pracovních grafů)",
+            "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)",
             "level": 5,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
-            "anchor": "loc-60"
-          },
-          {
-            "title": "3 DarkFactory: Harness Architecture (Architektura harnessu) - Practical Part (Praktická část)",
-            "level": 2,
+            "title": "3.3.4 Transformer Architecture (Transformerová architektura)",
+            "level": 4,
             "anchor": "loc-61"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
-            "level": 3,
-            "anchor": "loc-62"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.5 Autoregressive Modeling (Autoregresivní modelování)",
             "level": 4,
             "anchor": "loc-63"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.3.6 Stochastic Decoding (Stochastické dekódování)",
             "level": 4,
             "anchor": "loc-64"
           },
           {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
+            "title": "3.3.7 Tokenizer (Tokenizér)",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-66"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-67"
           },
           {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
-            "level": 2,
-            "anchor": "loc-68"
+            "title": "3.3.9 Embedding (Vektorová reprezentace)",
+            "level": 4,
+            "anchor": "loc-69"
           },
           {
-            "title": "5 Conclusion (Závěr)",
+            "title": "3.3.10 Context Window (Kontextové okno)",
+            "level": 4,
+            "anchor": "loc-70"
+          },
+          {
+            "title": "3.3.11 Key–Value Cache (Mezipaměť klíčů a hodnot)",
+            "level": 4,
+            "anchor": "loc-72"
+          },
+          {
+            "title": "3.3.12 Interaction Turn (Tah interakce)",
+            "level": 4,
+            "anchor": "loc-74"
+          },
+          {
+            "title": "4 Agentic Engineering (Agentické inženýrství)",
             "level": 2,
-            "anchor": "loc-69"
+            "anchor": "loc-76"
+          },
+          {
+            "title": "4.1 Prompt Engineering (Promptové inženýrství)",
+            "level": 3,
+            "anchor": "loc-78"
+          },
+          {
+            "title": "4.1.1 System Prompt (Systémový prompt)",
+            "level": 4,
+            "anchor": "loc-80"
+          },
+          {
+            "title": "4.2 Agent Harness (Agentní harness)",
+            "level": 3,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1.1 Codex App Interface (Rozhraní aplikace Codex)",
+            "level": 5,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-85"
+          },
+          {
+            "title": "4.2.2.1 Claude Code Interface (Rozhraní Claude Code)",
+            "level": 5,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.3 Claude Desktop App (Aplikace Claude pro desktop)",
+            "level": 4,
+            "anchor": "loc-88"
+          },
+          {
+            "title": "4.2.3.1 Claude Desktop Interface (Rozhraní aplikace Claude)",
+            "level": 5,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.4 Sandbox (Izolované běhové prostředí)",
+            "level": 4,
+            "anchor": "loc-92"
+          },
+          {
+            "title": "4.2.5 Deterministic Guardrail (Deterministický mantinel)",
+            "level": 4,
+            "anchor": "loc-94"
+          },
+          {
+            "title": "4.2.6 Human-in-the-loop (Zapojení člověka do smyčky)",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.7 Plugins (Rozšíření)",
+            "level": 4,
+            "anchor": "loc-97"
+          },
+          {
+            "title": "4.2.8 ReAct Loop (Smyčka ReAct)",
+            "level": 4,
+            "anchor": "loc-99"
+          },
+          {
+            "title": "4.2.8.1 Agent Session (Agentní sezení)",
+            "level": 5,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.2 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.3 Agent Divergence Pathologies (Patologie divergence)",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.9 Tool Calling (Vyvolávání nástrojů)",
+            "level": 4,
+            "anchor": "loc-104"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-106"
+          },
+          {
+            "title": "4.2.10 Skills (Dovednosti)",
+            "level": 4,
+            "anchor": "loc-108"
+          },
+          {
+            "title": "4.2.10.1 Progressive Disclosure (Postupné zpřístupňování kontextu)",
+            "level": 5,
+            "anchor": "loc-110"
+          },
+          {
+            "title": "4.2.10.2 Script (Skript)",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.3 Event Hook (Událostní záchytný bod)",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.11 Context Engineering (Kontextové inženýrství)",
+            "level": 4,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11.1 Context Compaction (Kompakce kontextu)",
+            "level": 5,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)",
+            "level": 5,
+            "anchor": "loc-116"
+          },
+          {
+            "title": "4.2.11.3 Context Rot (Degradace kontextu)",
+            "level": 5,
+            "anchor": "loc-118"
+          },
+          {
+            "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
+            "level": 4,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12.1 Subagent (Podřízený agent)",
+            "level": 5,
+            "anchor": "loc-122"
+          },
+          {
+            "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "5 Results and Discussion (Výsledky a diskuse)",
+            "level": 2,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "6 Conclusion (Závěr)",
+            "level": 2,
+            "anchor": "loc-125"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-70"
+            "anchor": "loc-126"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-84"
+            "anchor": "loc-161"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-85"
+            "anchor": "loc-162"
           }
         ],
         "review": [
@@ -2154,274 +3099,409 @@
             "anchor": "loc-5"
           },
           {
-            "title": "1.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-6"
-          },
-          {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
-            "level": 3,
-            "anchor": "loc-7"
-          },
-          {
-            "title": "1.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-8"
-          },
-          {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.1.1 Global Generative AI Adoption (Globální adopce generativní AI)",
             "level": 4,
             "anchor": "loc-9"
           },
           {
-            "title": "1.2.2.1 Úvod",
-            "level": 5,
-            "anchor": "loc-10"
-          },
-          {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
-            "level": 4,
-            "anchor": "loc-11"
-          },
-          {
-            "title": "1.2.3.1 Úvod",
-            "level": 5,
+            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.1 Main Goal (Hlavní cíl)",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "1.2.4.1 Úvod",
-            "level": 5,
+            "title": "1.2.2 Sub-goals (Dílčí cíle)",
+            "level": 4,
             "anchor": "loc-14"
+          },
+          {
+            "title": "1.2.3 Research Questions (Výzkumné otázky)",
+            "level": 4,
+            "anchor": "loc-15"
           },
           {
             "title": "1.3 Methodology (Metodika práce)",
             "level": 3,
-            "anchor": "loc-15"
-          },
-          {
-            "title": "1.3.1 Úvod",
-            "level": 4,
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 GitHub",
             "level": 3,
-            "anchor": "loc-18"
+            "anchor": "loc-19"
           },
           {
-            "title": "2.1.1 Úvod",
-            "level": 4,
-            "anchor": "loc-20"
-          },
-          {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
-            "level": 4,
+            "title": "2.2 Software Engineering (Softwarové inženýrství)",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.1.2.1 Úvod",
-            "level": 5,
+            "title": "2.2.1 Planning (Plánování)",
+            "level": 4,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
-            "level": 4,
+            "title": "2.3 Version control (Správa verzí)",
+            "level": 3,
             "anchor": "loc-23"
           },
           {
-            "title": "2.1.3.1 Úvod",
-            "level": 5,
+            "title": "2.3.1 Git",
+            "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.1.3.2 Git",
+            "title": "2.3.1.1 Repository Branch (Větev repozitáře)",
             "level": 5,
             "anchor": "loc-26"
           },
           {
-            "title": "2.1.3.2.1 Úvod",
-            "level": 6,
+            "title": "2.3.1.2 Branch Merge (Sloučení větví)",
+            "level": 5,
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 Continuous Integration (Průběžná integrace)",
-            "level": 4,
+            "title": "2.3.1.3 Commit Squashing (Sloučení commitů)",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.1.4 GitHub Issue (Úloha GitHubu)",
+            "level": 5,
             "anchor": "loc-29"
           },
           {
-            "title": "2.1.4.1 Úvod",
+            "title": "2.3.1.5 Pull Request (Požadavek na sloučení)",
             "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
-            "level": 3,
+            "title": "2.3.1.6 Required Checks (Požadované kontroly)",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.1 Úvod",
-            "level": 4,
+            "title": "2.3.1.7 Branch Protection (Ochrana větví)",
+            "level": 5,
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 Large Language Model (Jazykový model)",
-            "level": 4,
-            "anchor": "loc-36"
+            "title": "2.4 Continuous Integration (Průběžná integrace)",
+            "level": 3,
+            "anchor": "loc-34"
           },
           {
-            "title": "2.2.2.1 Úvod",
-            "level": 5,
+            "title": "2.4.1 GitHub Actions",
+            "level": 4,
+            "anchor": "loc-35"
+          },
+          {
+            "title": "2.4.2 Software Container (Softwarový kontejner)",
+            "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+            "title": "2.4.3 Flaky Test (Nestálý test)",
+            "level": 4,
+            "anchor": "loc-39"
+          },
+          {
+            "title": "3 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 2,
+            "anchor": "loc-40"
+          },
+          {
+            "title": "3.1 Chatbot",
             "level": 3,
+            "anchor": "loc-41"
+          },
+          {
+            "title": "3.1.1 ChatGPT",
+            "level": 4,
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.1 Úvod",
-            "level": 4,
+            "title": "3.1.1.1 ChatGPT App Interface (Rozhraní aplikace ChatGPT)",
+            "level": 5,
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.2.1 Úvod",
-            "level": 5,
+            "title": "3.2 Agent",
+            "level": 3,
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
-            "level": 4,
-            "anchor": "loc-47"
-          },
-          {
-            "title": "2.3.3.1 Úvod",
-            "level": 5,
+            "title": "3.3 Large Language Model (Velký jazykový model)",
+            "level": 3,
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 ReAct Loop (Smyčka ReAct)",
-            "level": 5,
-            "anchor": "loc-52"
+            "title": "3.3.1 GPT-5.6",
+            "level": 4,
+            "anchor": "loc-50"
           },
           {
-            "title": "2.3.3.2.1 Úvod",
-            "level": 6,
+            "title": "3.3.1.1 GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)",
+            "level": 5,
+            "anchor": "loc-51"
+          },
+          {
+            "title": "3.3.2 Claude Opus 5",
+            "level": 4,
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
+            "title": "3.3.2.1 Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)",
             "level": 5,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
-            "title": "2.3.3.3.1 Úvod",
-            "level": 6,
+            "title": "3.3.3 DeepSeek-V4.1-Flash",
+            "level": 4,
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)",
             "level": 5,
-            "anchor": "loc-60"
+            "anchor": "loc-59"
           },
           {
-            "title": "2.3.3.4.1 Úvod",
-            "level": 6,
+            "title": "3.3.4 Transformer Architecture (Transformerová architektura)",
+            "level": 4,
             "anchor": "loc-62"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
-            "level": 5,
-            "anchor": "loc-63"
+            "title": "3.3.5 Autoregressive Modeling (Autoregresivní modelování)",
+            "level": 4,
+            "anchor": "loc-64"
           },
           {
-            "title": "2.3.3.5.1 Úvod",
-            "level": 6,
+            "title": "3.3.6 Stochastic Decoding (Stochastické dekódování)",
+            "level": 4,
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Workflow-graph Engineering (Inženýrství pracovních grafů)",
-            "level": 5,
+            "title": "3.3.7 Tokenizer (Tokenizér)",
+            "level": 4,
+            "anchor": "loc-66"
+          },
+          {
+            "title": "3.3.8 Token",
+            "level": 4,
             "anchor": "loc-68"
           },
           {
-            "title": "2.3.3.6.1 Úvod",
-            "level": 6,
+            "title": "3.3.9 Embedding (Vektorová reprezentace)",
+            "level": 4,
             "anchor": "loc-70"
           },
           {
-            "title": "3 DarkFactory: Harness Architecture (Architektura harnessu) - Practical Part (Praktická část)",
-            "level": 2,
+            "title": "3.3.10 Context Window (Kontextové okno)",
+            "level": 4,
             "anchor": "loc-71"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
-            "level": 3,
-            "anchor": "loc-72"
-          },
-          {
-            "title": "3.1.1 Úvod",
+            "title": "3.3.11 Key–Value Cache (Mezipaměť klíčů a hodnot)",
             "level": 4,
             "anchor": "loc-73"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.3.12 Interaction Turn (Tah interakce)",
             "level": 4,
-            "anchor": "loc-74"
-          },
-          {
-            "title": "3.1.2.1 Úvod",
-            "level": 5,
             "anchor": "loc-75"
           },
           {
-            "title": "3.1.2.2 Git",
-            "level": 5,
-            "anchor": "loc-76"
-          },
-          {
-            "title": "3.1.2.2.1 Úvod",
-            "level": 6,
-            "anchor": "loc-77"
-          },
-          {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
+            "title": "4 Agentic Engineering (Agentické inženýrství)",
             "level": 2,
             "anchor": "loc-78"
           },
           {
-            "title": "5 Conclusion (Závěr)",
-            "level": 2,
+            "title": "4.1 Prompt Engineering (Promptové inženýrství)",
+            "level": 3,
             "anchor": "loc-79"
+          },
+          {
+            "title": "4.1.1 System Prompt (Systémový prompt)",
+            "level": 4,
+            "anchor": "loc-81"
+          },
+          {
+            "title": "4.2 Agent Harness (Agentní harness)",
+            "level": 3,
+            "anchor": "loc-82"
+          },
+          {
+            "title": "4.2.1 Codex",
+            "level": 4,
+            "anchor": "loc-83"
+          },
+          {
+            "title": "4.2.1.1 Codex App Interface (Rozhraní aplikace Codex)",
+            "level": 5,
+            "anchor": "loc-84"
+          },
+          {
+            "title": "4.2.2 Claude Code",
+            "level": 4,
+            "anchor": "loc-86"
+          },
+          {
+            "title": "4.2.2.1 Claude Code Interface (Rozhraní Claude Code)",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
+            "title": "4.2.3 Claude Desktop App (Aplikace Claude pro desktop)",
+            "level": 4,
+            "anchor": "loc-89"
+          },
+          {
+            "title": "4.2.3.1 Claude Desktop Interface (Rozhraní aplikace Claude)",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
+            "title": "4.2.4 Sandbox (Izolované běhové prostředí)",
+            "level": 4,
+            "anchor": "loc-93"
+          },
+          {
+            "title": "4.2.5 Deterministic Guardrail (Deterministický mantinel)",
+            "level": 4,
+            "anchor": "loc-95"
+          },
+          {
+            "title": "4.2.6 Human-in-the-loop (Zapojení člověka do smyčky)",
+            "level": 4,
+            "anchor": "loc-96"
+          },
+          {
+            "title": "4.2.7 Plugins (Rozšíření)",
+            "level": 4,
+            "anchor": "loc-98"
+          },
+          {
+            "title": "4.2.8 ReAct Loop (Smyčka ReAct)",
+            "level": 4,
+            "anchor": "loc-100"
+          },
+          {
+            "title": "4.2.8.1 Agent Session (Agentní sezení)",
+            "level": 5,
+            "anchor": "loc-101"
+          },
+          {
+            "title": "4.2.8.2 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
+            "level": 5,
+            "anchor": "loc-102"
+          },
+          {
+            "title": "4.2.8.3 Agent Divergence Pathologies (Patologie divergence)",
+            "level": 5,
+            "anchor": "loc-103"
+          },
+          {
+            "title": "4.2.9 Tool Calling (Vyvolávání nástrojů)",
+            "level": 4,
+            "anchor": "loc-105"
+          },
+          {
+            "title": "4.2.9.1 Model Context Protocol",
+            "level": 5,
+            "anchor": "loc-107"
+          },
+          {
+            "title": "4.2.10 Skills (Dovednosti)",
+            "level": 4,
+            "anchor": "loc-109"
+          },
+          {
+            "title": "4.2.10.1 Progressive Disclosure (Postupné zpřístupňování kontextu)",
+            "level": 5,
+            "anchor": "loc-111"
+          },
+          {
+            "title": "4.2.10.2 Script (Skript)",
+            "level": 5,
+            "anchor": "loc-112"
+          },
+          {
+            "title": "4.2.10.3 Event Hook (Událostní záchytný bod)",
+            "level": 5,
+            "anchor": "loc-113"
+          },
+          {
+            "title": "4.2.11 Context Engineering (Kontextové inženýrství)",
+            "level": 4,
+            "anchor": "loc-114"
+          },
+          {
+            "title": "4.2.11.1 Context Compaction (Kompakce kontextu)",
+            "level": 5,
+            "anchor": "loc-115"
+          },
+          {
+            "title": "4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)",
+            "level": 5,
+            "anchor": "loc-117"
+          },
+          {
+            "title": "4.2.11.3 Context Rot (Degradace kontextu)",
+            "level": 5,
+            "anchor": "loc-119"
+          },
+          {
+            "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
+            "level": 5,
+            "anchor": "loc-120"
+          },
+          {
+            "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
+            "level": 4,
+            "anchor": "loc-121"
+          },
+          {
+            "title": "4.2.12.1 Subagent (Podřízený agent)",
+            "level": 5,
+            "anchor": "loc-123"
+          },
+          {
+            "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
+            "level": 5,
+            "anchor": "loc-124"
+          },
+          {
+            "title": "5 Results and Discussion (Výsledky a diskuse)",
+            "level": 2,
+            "anchor": "loc-125"
+          },
+          {
+            "title": "6 Conclusion (Závěr)",
+            "level": 2,
+            "anchor": "loc-126"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-80"
+            "anchor": "loc-127"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-163"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-164"
           }
         ]
       }

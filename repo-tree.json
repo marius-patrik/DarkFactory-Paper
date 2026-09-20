@@ -13,29 +13,34 @@
             {
               "name": "agent.yml",
               "path": ".github/workflows/agent.yml",
-              "type": "file"
+              "type": "file",
+              "source": "repository/.github/workflows/agent.yml"
             },
             {
               "name": "ci.yml",
               "path": ".github/workflows/ci.yml",
-              "type": "file"
+              "type": "file",
+              "source": "repository/.github/workflows/ci.yml"
             },
             {
               "name": "deploy-docs.yml",
               "path": ".github/workflows/deploy-docs.yml",
-              "type": "file"
+              "type": "file",
+              "source": "repository/.github/workflows/deploy-docs.yml"
             },
             {
               "name": "release.yml",
               "path": ".github/workflows/release.yml",
-              "type": "file"
+              "type": "file",
+              "source": "repository/.github/workflows/release.yml"
             }
           ]
         },
         {
           "name": "darkfactory.json",
           "path": ".github/darkfactory.json",
-          "type": "file"
+          "type": "file",
+          "source": "repository/.github/darkfactory.json"
         }
       ]
     },
@@ -62,27 +67,32 @@
                     {
                       "name": "agent-loop.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/agent-loop.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/agent-loop.typ"
                     },
                     {
                       "name": "divergence.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/divergence.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/divergence.typ"
                     },
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/index.typ"
                     },
                     {
                       "name": "loop-engineering.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ"
                     },
                     {
                       "name": "session-management.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ"
                     }
                   ]
                 },
@@ -94,32 +104,81 @@
                     {
                       "name": "compaction.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/compaction.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/compaction.typ"
                     },
                     {
                       "name": "context-engineering.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-engineering.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/context-engineering.typ"
                     },
                     {
                       "name": "context-rot.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-rot.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/context-rot.typ"
                     },
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/index.typ"
                     },
                     {
                       "name": "rag.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/rag.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/rag.typ"
                     },
                     {
                       "name": "semantic-drift.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/semantic-drift.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/semantic-drift.typ"
+                    }
+                  ]
+                },
+                {
+                  "name": "examples",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/examples",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "claude-code-image.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/examples/claude-code-image.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/examples/claude-code-image.typ"
+                    },
+                    {
+                      "name": "claude-code.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/examples/claude-code.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/examples/claude-code.typ"
+                    },
+                    {
+                      "name": "claude-desktop-image.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/examples/claude-desktop-image.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/examples/claude-desktop-image.typ"
+                    },
+                    {
+                      "name": "claude-desktop.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/examples/claude-desktop.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/examples/claude-desktop.typ"
+                    },
+                    {
+                      "name": "codex-image.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/examples/codex-image.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/examples/codex-image.typ"
+                    },
+                    {
+                      "name": "codex.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/examples/codex.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/examples/codex.typ"
                     }
                   ]
                 },
@@ -131,22 +190,26 @@
                     {
                       "name": "dag.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/dag.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/dag.typ"
                     },
                     {
                       "name": "graph-engineering.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/graph-engineering.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/graph-engineering.typ"
                     },
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/index.typ"
                     },
                     {
                       "name": "subagent.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/subagent.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/subagent.typ"
                     }
                   ]
                 },
@@ -158,27 +221,32 @@
                     {
                       "name": "hook.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/hook.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/hook.typ"
                     },
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/index.typ"
                     },
                     {
                       "name": "progressive-disclosure.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/progressive-disclosure.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/progressive-disclosure.typ"
                     },
                     {
                       "name": "script.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/script.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/script.typ"
                     },
                     {
                       "name": "skills.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/skills.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/skills.typ"
                     }
                   ]
                 },
@@ -190,49 +258,58 @@
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/index.typ"
                     },
                     {
                       "name": "mcp.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/mcp.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/mcp.typ"
                     },
                     {
                       "name": "tool-calling.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/tool-calling.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/tool-calling.typ"
                     }
                   ]
                 },
                 {
                   "name": "agent-harness.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/agent-harness.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-harness.typ"
                 },
                 {
                   "name": "guardrail.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/guardrail.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/guardrail.typ"
                 },
                 {
                   "name": "human-in-the-loop.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/human-in-the-loop.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/human-in-the-loop.typ"
                 },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/index.typ"
                 },
                 {
                   "name": "plugins.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/plugins.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/plugins.typ"
                 },
                 {
                   "name": "sandbox.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/sandbox.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/sandbox.typ"
                 }
               ]
             },
@@ -244,29 +321,34 @@
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/agentic-engineering/prompt-engineering/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/prompt-engineering/index.typ"
                 },
                 {
                   "name": "prompt-engineering.typ",
                   "path": "DarkFactory/agentic-engineering/prompt-engineering/prompt-engineering.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/prompt-engineering/prompt-engineering.typ"
                 },
                 {
                   "name": "system-prompt.typ",
                   "path": "DarkFactory/agentic-engineering/prompt-engineering/system-prompt.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/prompt-engineering/system-prompt.typ"
                 }
               ]
             },
             {
               "name": "agentic-engineering.typ",
               "path": "DarkFactory/agentic-engineering/agentic-engineering.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/agentic-engineering.typ"
             },
             {
               "name": "index.typ",
               "path": "DarkFactory/agentic-engineering/index.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/index.typ"
             }
           ]
         },
@@ -278,12 +360,14 @@
             {
               "name": "references.bib",
               "path": "DarkFactory/bib/references.bib",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/bib/references.bib"
             },
             {
               "name": "references.typ",
               "path": "DarkFactory/bib/references.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/bib/references.typ"
             }
           ]
         },
@@ -300,27 +384,32 @@
                 {
                   "name": "container.typ",
                   "path": "DarkFactory/development-environment/continuous-integration/container.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/continuous-integration/container.typ"
                 },
                 {
                   "name": "continuous-integration.typ",
                   "path": "DarkFactory/development-environment/continuous-integration/continuous-integration.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/continuous-integration/continuous-integration.typ"
                 },
                 {
                   "name": "flaky-test.typ",
                   "path": "DarkFactory/development-environment/continuous-integration/flaky-test.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/continuous-integration/flaky-test.typ"
                 },
                 {
                   "name": "github-actions.typ",
                   "path": "DarkFactory/development-environment/continuous-integration/github-actions.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/continuous-integration/github-actions.typ"
                 },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/development-environment/continuous-integration/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/continuous-integration/index.typ"
                 }
               ]
             },
@@ -332,17 +421,20 @@
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/development-environment/software-engineering/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/software-engineering/index.typ"
                 },
                 {
                   "name": "planning.typ",
                   "path": "DarkFactory/development-environment/software-engineering/planning.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/software-engineering/planning.typ"
                 },
                 {
                   "name": "software-engineering.typ",
                   "path": "DarkFactory/development-environment/software-engineering/software-engineering.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/software-engineering/software-engineering.typ"
                 }
               ]
             },
@@ -359,76 +451,90 @@
                     {
                       "name": "branch-protection.typ",
                       "path": "DarkFactory/development-environment/version-control/git/branch-protection.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/branch-protection.typ"
                     },
                     {
                       "name": "branch.typ",
                       "path": "DarkFactory/development-environment/version-control/git/branch.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/branch.typ"
                     },
                     {
                       "name": "git.typ",
                       "path": "DarkFactory/development-environment/version-control/git/git.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/git.typ"
                     },
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/development-environment/version-control/git/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/index.typ"
                     },
                     {
                       "name": "issue.typ",
                       "path": "DarkFactory/development-environment/version-control/git/issue.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/issue.typ"
                     },
                     {
                       "name": "merge.typ",
                       "path": "DarkFactory/development-environment/version-control/git/merge.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/merge.typ"
                     },
                     {
                       "name": "pull-request.typ",
                       "path": "DarkFactory/development-environment/version-control/git/pull-request.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/pull-request.typ"
                     },
                     {
                       "name": "required-checks.typ",
                       "path": "DarkFactory/development-environment/version-control/git/required-checks.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/required-checks.typ"
                     },
                     {
                       "name": "squash.typ",
                       "path": "DarkFactory/development-environment/version-control/git/squash.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/development-environment/version-control/git/squash.typ"
                     }
                   ]
                 },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/development-environment/version-control/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/version-control/index.typ"
                 },
                 {
                   "name": "version-control.typ",
                   "path": "DarkFactory/development-environment/version-control/version-control.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/version-control/version-control.typ"
                 }
               ]
             },
             {
               "name": "development-environment.typ",
               "path": "DarkFactory/development-environment/development-environment.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/development-environment.typ"
             },
             {
               "name": "github.typ",
               "path": "DarkFactory/development-environment/github.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/github.typ"
             },
             {
               "name": "index.typ",
               "path": "DarkFactory/development-environment/index.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/index.typ"
             }
           ]
         },
@@ -440,47 +546,56 @@
             {
               "name": "Caladea-Bold.ttf",
               "path": "DarkFactory/fonts/Caladea-Bold.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Caladea-Bold.ttf"
             },
             {
               "name": "Caladea-BoldItalic.ttf",
               "path": "DarkFactory/fonts/Caladea-BoldItalic.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Caladea-BoldItalic.ttf"
             },
             {
               "name": "Caladea-Italic.ttf",
               "path": "DarkFactory/fonts/Caladea-Italic.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Caladea-Italic.ttf"
             },
             {
               "name": "Caladea-Regular.ttf",
               "path": "DarkFactory/fonts/Caladea-Regular.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Caladea-Regular.ttf"
             },
             {
               "name": "Carlito-Bold.ttf",
               "path": "DarkFactory/fonts/Carlito-Bold.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Carlito-Bold.ttf"
             },
             {
               "name": "Carlito-BoldItalic.ttf",
               "path": "DarkFactory/fonts/Carlito-BoldItalic.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Carlito-BoldItalic.ttf"
             },
             {
               "name": "Carlito-Italic.ttf",
               "path": "DarkFactory/fonts/Carlito-Italic.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Carlito-Italic.ttf"
             },
             {
               "name": "Carlito-Regular.ttf",
               "path": "DarkFactory/fonts/Carlito-Regular.ttf",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/Carlito-Regular.ttf"
             },
             {
               "name": "README.md",
               "path": "DarkFactory/fonts/README.md",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/fonts/README.md"
             }
           ]
         },
@@ -492,32 +607,38 @@
             {
               "name": "components-darkfactory.svg",
               "path": "DarkFactory/img/components-darkfactory.svg",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/img/components-darkfactory.svg"
             },
             {
               "name": "docs-pipeline.svg",
               "path": "DarkFactory/img/docs-pipeline.svg",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/img/docs-pipeline.svg"
             },
             {
               "name": "lifecycle-darkfactory.svg",
               "path": "DarkFactory/img/lifecycle-darkfactory.svg",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/img/lifecycle-darkfactory.svg"
             },
             {
               "name": "logo.jpeg",
               "path": "DarkFactory/img/logo.jpeg",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/img/logo.jpeg"
             },
             {
               "name": "react-loop.svg",
               "path": "DarkFactory/img/react-loop.svg",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/img/react-loop.svg"
             },
             {
               "name": "vector-embedding-queen.svg",
               "path": "DarkFactory/img/vector-embedding-queen.svg",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/img/vector-embedding-queen.svg"
             }
           ]
         },
@@ -527,86 +648,163 @@
           "type": "directory",
           "children": [
             {
+              "name": "examples",
+              "path": "DarkFactory/language-models/examples",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "chatgpt-image.typ",
+                  "path": "DarkFactory/language-models/examples/chatgpt-image.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/examples/chatgpt-image.typ"
+                },
+                {
+                  "name": "chatgpt.typ",
+                  "path": "DarkFactory/language-models/examples/chatgpt.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/examples/chatgpt.typ"
+                }
+              ]
+            },
+            {
               "name": "language-model",
               "path": "DarkFactory/language-models/language-model",
               "type": "directory",
               "children": [
                 {
+                  "name": "examples",
+                  "path": "DarkFactory/language-models/language-model/examples",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "claude-opus-5-image.typ",
+                      "path": "DarkFactory/language-models/language-model/examples/claude-opus-5-image.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/language-models/language-model/examples/claude-opus-5-image.typ"
+                    },
+                    {
+                      "name": "claude-opus-5.typ",
+                      "path": "DarkFactory/language-models/language-model/examples/claude-opus-5.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/language-models/language-model/examples/claude-opus-5.typ"
+                    },
+                    {
+                      "name": "deepseek-v4-1-flash-image.typ",
+                      "path": "DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash-image.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash-image.typ"
+                    },
+                    {
+                      "name": "deepseek-v4-1-flash.typ",
+                      "path": "DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash.typ"
+                    },
+                    {
+                      "name": "gpt-5-6-image.typ",
+                      "path": "DarkFactory/language-models/language-model/examples/gpt-5-6-image.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/language-models/language-model/examples/gpt-5-6-image.typ"
+                    },
+                    {
+                      "name": "gpt-5-6.typ",
+                      "path": "DarkFactory/language-models/language-model/examples/gpt-5-6.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/language-models/language-model/examples/gpt-5-6.typ"
+                    }
+                  ]
+                },
+                {
                   "name": "autoregression.typ",
                   "path": "DarkFactory/language-models/language-model/autoregression.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/autoregression.typ"
                 },
                 {
                   "name": "context-window.typ",
                   "path": "DarkFactory/language-models/language-model/context-window.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/context-window.typ"
                 },
                 {
                   "name": "embedding.typ",
                   "path": "DarkFactory/language-models/language-model/embedding.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/embedding.typ"
                 },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/language-models/language-model/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/index.typ"
                 },
                 {
                   "name": "kv-cache.typ",
                   "path": "DarkFactory/language-models/language-model/kv-cache.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/kv-cache.typ"
                 },
                 {
                   "name": "language-model.typ",
                   "path": "DarkFactory/language-models/language-model/language-model.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/language-model.typ"
                 },
                 {
                   "name": "stochastic-decoding.typ",
                   "path": "DarkFactory/language-models/language-model/stochastic-decoding.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/stochastic-decoding.typ"
                 },
                 {
                   "name": "token.typ",
                   "path": "DarkFactory/language-models/language-model/token.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/token.typ"
                 },
                 {
                   "name": "tokenizer.typ",
                   "path": "DarkFactory/language-models/language-model/tokenizer.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/tokenizer.typ"
                 },
                 {
                   "name": "transformer.typ",
                   "path": "DarkFactory/language-models/language-model/transformer.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/transformer.typ"
                 },
                 {
                   "name": "turn.typ",
                   "path": "DarkFactory/language-models/language-model/turn.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/language-models/language-model/turn.typ"
                 }
               ]
             },
             {
               "name": "agent.typ",
               "path": "DarkFactory/language-models/agent.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/language-models/agent.typ"
             },
             {
               "name": "chatbot.typ",
               "path": "DarkFactory/language-models/chatbot.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/language-models/chatbot.typ"
             },
             {
               "name": "index.typ",
               "path": "DarkFactory/language-models/index.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/language-models/index.typ"
             },
             {
               "name": "language-models.typ",
               "path": "DarkFactory/language-models/language-models.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/language-models/language-models.typ"
             }
           ]
         },
@@ -623,7 +821,8 @@
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/appendices/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/appendices/index.typ"
                 }
               ]
             },
@@ -635,12 +834,14 @@
                 {
                   "name": "conclusion.typ",
                   "path": "DarkFactory/manuscript/conclusion/conclusion.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/conclusion/conclusion.typ"
                 },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/conclusion/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/conclusion/index.typ"
                 }
               ]
             },
@@ -657,12 +858,14 @@
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/manuscript/introduction/methodology/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/methodology/index.typ"
                     },
                     {
                       "name": "methodology.typ",
                       "path": "DarkFactory/manuscript/introduction/methodology/methodology.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/methodology/methodology.typ"
                     }
                   ]
                 },
@@ -672,14 +875,22 @@
                   "type": "directory",
                   "children": [
                     {
+                      "name": "ai-diffusion-figure.typ",
+                      "path": "DarkFactory/manuscript/introduction/motivation/ai-diffusion-figure.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/motivation/ai-diffusion-figure.typ"
+                    },
+                    {
                       "name": "index.typ",
                       "path": "DarkFactory/manuscript/introduction/motivation/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/motivation/index.typ"
                     },
                     {
                       "name": "motivation.typ",
                       "path": "DarkFactory/manuscript/introduction/motivation/motivation.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/motivation/motivation.typ"
                     }
                   ]
                 },
@@ -696,12 +907,14 @@
                         {
                           "name": "index.typ",
                           "path": "DarkFactory/manuscript/introduction/objectives/main-goal/index.typ",
-                          "type": "file"
+                          "type": "file",
+                          "source": "repository/DarkFactory/manuscript/introduction/objectives/main-goal/index.typ"
                         },
                         {
                           "name": "main-goal.typ",
                           "path": "DarkFactory/manuscript/introduction/objectives/main-goal/main-goal.typ",
-                          "type": "file"
+                          "type": "file",
+                          "source": "repository/DarkFactory/manuscript/introduction/objectives/main-goal/main-goal.typ"
                         }
                       ]
                     },
@@ -713,12 +926,14 @@
                         {
                           "name": "index.typ",
                           "path": "DarkFactory/manuscript/introduction/objectives/research-questions/index.typ",
-                          "type": "file"
+                          "type": "file",
+                          "source": "repository/DarkFactory/manuscript/introduction/objectives/research-questions/index.typ"
                         },
                         {
                           "name": "research-questions.typ",
                           "path": "DarkFactory/manuscript/introduction/objectives/research-questions/research-questions.typ",
-                          "type": "file"
+                          "type": "file",
+                          "source": "repository/DarkFactory/manuscript/introduction/objectives/research-questions/research-questions.typ"
                         }
                       ]
                     },
@@ -730,36 +945,42 @@
                         {
                           "name": "index.typ",
                           "path": "DarkFactory/manuscript/introduction/objectives/subgoals/index.typ",
-                          "type": "file"
+                          "type": "file",
+                          "source": "repository/DarkFactory/manuscript/introduction/objectives/subgoals/index.typ"
                         },
                         {
                           "name": "subgoals.typ",
                           "path": "DarkFactory/manuscript/introduction/objectives/subgoals/subgoals.typ",
-                          "type": "file"
+                          "type": "file",
+                          "source": "repository/DarkFactory/manuscript/introduction/objectives/subgoals/subgoals.typ"
                         }
                       ]
                     },
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/manuscript/introduction/objectives/index.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/objectives/index.typ"
                     },
                     {
                       "name": "objectives.typ",
                       "path": "DarkFactory/manuscript/introduction/objectives/objectives.typ",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/objectives/objectives.typ"
                     }
                   ]
                 },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/introduction/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/introduction/index.typ"
                 },
                 {
                   "name": "introduction.typ",
                   "path": "DarkFactory/manuscript/introduction/introduction.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/introduction/introduction.typ"
                 }
               ]
             },
@@ -771,12 +992,14 @@
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/results/index.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/results/index.typ"
                 },
                 {
                   "name": "results.typ",
                   "path": "DarkFactory/manuscript/results/results.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/results/results.typ"
                 }
               ]
             }
@@ -795,71 +1018,84 @@
                 {
                   "name": "README.md",
                   "path": "DarkFactory/templates/gjkt-odborna-prace/README.md",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/templates/gjkt-odborna-prace/README.md"
                 },
                 {
                   "name": "template.typ",
                   "path": "DarkFactory/templates/gjkt-odborna-prace/template.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/templates/gjkt-odborna-prace/template.typ"
                 },
                 {
                   "name": "wordometer.typ",
                   "path": "DarkFactory/templates/gjkt-odborna-prace/wordometer.typ",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/DarkFactory/templates/gjkt-odborna-prace/wordometer.typ"
                 }
               ]
             },
             {
               "name": "common.typ",
               "path": "DarkFactory/templates/common.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/templates/common.typ"
             },
             {
               "name": "registry.typ",
               "path": "DarkFactory/templates/registry.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/templates/registry.typ"
             },
             {
               "name": "terms.typ",
               "path": "DarkFactory/templates/terms.typ",
-              "type": "file"
+              "type": "file",
+              "source": "repository/DarkFactory/templates/terms.typ"
             }
           ]
         },
         {
           "name": "book.typ",
           "path": "DarkFactory/book.typ",
-          "type": "file"
+          "type": "file",
+          "source": "repository/DarkFactory/book.typ"
         },
         {
           "name": "index.typ",
           "path": "DarkFactory/index.typ",
-          "type": "file"
+          "type": "file",
+          "source": "repository/DarkFactory/index.typ"
         },
         {
           "name": "metadata.typ",
           "path": "DarkFactory/metadata.typ",
-          "type": "file"
+          "type": "file",
+          "source": "repository/DarkFactory/metadata.typ"
         },
         {
           "name": "README.md",
           "path": "DarkFactory/README.md",
-          "type": "file"
+          "type": "file",
+          "source": "repository/DarkFactory/README.md"
         },
         {
           "name": "schema.typ",
           "path": "DarkFactory/schema.typ",
-          "type": "file"
+          "type": "file",
+          "source": "repository/DarkFactory/schema.typ"
         },
         {
           "name": "thesis.typ",
           "path": "DarkFactory/thesis.typ",
-          "type": "file"
+          "type": "file",
+          "source": "repository/DarkFactory/thesis.typ"
         },
         {
           "name": "web-publication.typ",
           "path": "DarkFactory/web-publication.typ",
-          "type": "file"
+          "type": "file",
+          "source": "repository/DarkFactory/web-publication.typ"
         }
       ]
     },
@@ -871,27 +1107,38 @@
         {
           "name": "build_review.py",
           "path": "scripts/build_review.py",
-          "type": "file"
+          "type": "file",
+          "source": "repository/scripts/build_review.py"
         },
         {
           "name": "build_site.py",
           "path": "scripts/build_site.py",
-          "type": "file"
+          "type": "file",
+          "source": "repository/scripts/build_site.py"
         },
         {
           "name": "build_web_exports.py",
           "path": "scripts/build_web_exports.py",
-          "type": "file"
+          "type": "file",
+          "source": "repository/scripts/build_web_exports.py"
         },
         {
           "name": "check_build.py",
           "path": "scripts/check_build.py",
-          "type": "file"
+          "type": "file",
+          "source": "repository/scripts/check_build.py"
+        },
+        {
+          "name": "fetch_external_assets.py",
+          "path": "scripts/fetch_external_assets.py",
+          "type": "file",
+          "source": "repository/scripts/fetch_external_assets.py"
         },
         {
           "name": "preview_server.py",
           "path": "scripts/preview_server.py",
-          "type": "file"
+          "type": "file",
+          "source": "repository/scripts/preview_server.py"
         }
       ]
     },
@@ -918,29 +1165,34 @@
                     {
                       "name": "button.tsx",
                       "path": "web/src/components/ui/button.tsx",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/web/src/components/ui/button.tsx"
                     },
                     {
                       "name": "context-menu.tsx",
                       "path": "web/src/components/ui/context-menu.tsx",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/web/src/components/ui/context-menu.tsx"
                     },
                     {
                       "name": "dropdown-menu.tsx",
                       "path": "web/src/components/ui/dropdown-menu.tsx",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/web/src/components/ui/dropdown-menu.tsx"
                     },
                     {
                       "name": "tooltip.tsx",
                       "path": "web/src/components/ui/tooltip.tsx",
-                      "type": "file"
+                      "type": "file",
+                      "source": "repository/web/src/components/ui/tooltip.tsx"
                     }
                   ]
                 },
                 {
                   "name": "animated-icon.tsx",
                   "path": "web/src/components/animated-icon.tsx",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/web/src/components/animated-icon.tsx"
                 }
               ]
             },
@@ -952,138 +1204,164 @@
                 {
                   "name": "utils.ts",
                   "path": "web/src/lib/utils.ts",
-                  "type": "file"
+                  "type": "file",
+                  "source": "repository/web/src/lib/utils.ts"
                 }
               ]
             },
             {
               "name": "app.tsx",
               "path": "web/src/app.tsx",
-              "type": "file"
+              "type": "file",
+              "source": "repository/web/src/app.tsx"
             },
             {
               "name": "compiled-artifact.tsx",
               "path": "web/src/compiled-artifact.tsx",
-              "type": "file"
+              "type": "file",
+              "source": "repository/web/src/compiled-artifact.tsx"
             },
             {
               "name": "main.tsx",
               "path": "web/src/main.tsx",
-              "type": "file"
+              "type": "file",
+              "source": "repository/web/src/main.tsx"
             },
             {
               "name": "pdf-document.tsx",
               "path": "web/src/pdf-document.tsx",
-              "type": "file"
+              "type": "file",
+              "source": "repository/web/src/pdf-document.tsx"
             },
             {
               "name": "publication.css",
               "path": "web/src/publication.css",
-              "type": "file"
+              "type": "file",
+              "source": "repository/web/src/publication.css"
             },
             {
               "name": "viewer.css",
               "path": "web/src/viewer.css",
-              "type": "file"
+              "type": "file",
+              "source": "repository/web/src/viewer.css"
             },
             {
               "name": "workspace.tsx",
               "path": "web/src/workspace.tsx",
-              "type": "file"
+              "type": "file",
+              "source": "repository/web/src/workspace.tsx"
             }
           ]
         },
         {
           "name": "biome.json",
           "path": "web/biome.json",
-          "type": "file"
+          "type": "file",
+          "source": "repository/web/biome.json"
         },
         {
           "name": "components.json",
           "path": "web/components.json",
-          "type": "file"
+          "type": "file",
+          "source": "repository/web/components.json"
         },
         {
           "name": "index.html",
           "path": "web/index.html",
-          "type": "file"
+          "type": "file",
+          "source": "repository/web/index.html"
         },
         {
           "name": "package.json",
           "path": "web/package.json",
-          "type": "file"
+          "type": "file",
+          "source": "repository/web/package.json"
         },
         {
           "name": "rsbuild.config.ts",
           "path": "web/rsbuild.config.ts",
-          "type": "file"
+          "type": "file",
+          "source": "repository/web/rsbuild.config.ts"
         },
         {
           "name": "tsconfig.json",
           "path": "web/tsconfig.json",
-          "type": "file"
+          "type": "file",
+          "source": "repository/web/tsconfig.json"
         },
         {
           "name": "viewer.html",
           "path": "web/viewer.html",
-          "type": "file"
+          "type": "file",
+          "source": "repository/web/viewer.html"
         }
       ]
     },
     {
       "name": ".gitignore",
       "path": ".gitignore",
-      "type": "file"
+      "type": "file",
+      "source": "repository/.gitignore"
     },
     {
       "name": ".gitmodules",
       "path": ".gitmodules",
-      "type": "file"
+      "type": "file",
+      "source": "repository/.gitmodules"
     },
     {
       "name": "AGENTS.md",
       "path": "AGENTS.md",
-      "type": "file"
+      "type": "file",
+      "source": "repository/AGENTS.md"
     },
     {
       "name": "books.typ",
       "path": "books.typ",
-      "type": "file"
+      "type": "file",
+      "source": "repository/books.typ"
     },
     {
       "name": "darkfactory",
       "path": "darkfactory",
-      "type": "file"
+      "type": "file",
+      "source": null
     },
     {
       "name": "main.typ",
       "path": "main.typ",
-      "type": "file"
+      "type": "file",
+      "source": "repository/main.typ"
     },
     {
       "name": "Makefile",
       "path": "Makefile",
-      "type": "file"
+      "type": "file",
+      "source": "repository/Makefile"
     },
     {
       "name": "README.md",
       "path": "README.md",
-      "type": "file"
+      "type": "file",
+      "source": "repository/README.md"
     },
     {
       "name": "review.typ",
       "path": "review.typ",
-      "type": "file"
+      "type": "file",
+      "source": "repository/review.typ"
     },
     {
       "name": "typst.toml",
       "path": "typst.toml",
-      "type": "file"
+      "type": "file",
+      "source": "repository/typst.toml"
     },
     {
       "name": "web-publication.typ",
       "path": "web-publication.typ",
-      "type": "file"
+      "type": "file",
+      "source": "repository/web-publication.typ"
     }
   ]
 }

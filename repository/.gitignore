@@ -1,0 +1,18 @@
+out/
+site/
+*.pdf
+!DarkFactory/img/*.pdf
+
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+.pipeline/
+.darkfactory/
+web/node_modules/
+web/dist/
+web/package-lock.json
+
+# Authoritative external figures are fetched from their cited primary sources.
+DarkFactory/img/external/
