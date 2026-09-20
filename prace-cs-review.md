@@ -10,7 +10,7 @@ Patrik Marius · Gymnázium J. K. Tyla · 2026
 
 ## Klíčová slova
 
-Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu, Dovednosti, Git, GitHub, Jazykový model ( LLM ) , Model Context Protocol ( MCP ) , Požadavek na sloučení, Promptové inženýrství, Rozšíření, Smyčka ReAct ( Agent Loop ) , Vektorová reprezentace, Zapojení člověka do smyčky ( HITL )
+Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu, Dovednosti, Git, GitHub, GitHub Actions ( Actions ) , Inženýrství prováděcí smyčky ( Loop Engineering ) , Jazykový model ( LLM ) , Kontextové inženýrství, Kontextové okno, Mezipaměť klíčů a hodnot ( KV Cache ) , Model Context Protocol ( MCP ) , Orientovaný acyklický graf ( DAG ) , Požadavek na sloučení, Promptové inženýrství, Rozšíření, Skript, Sloučení commitů ( Squash ) , Smyčka ReAct ( Agent Loop ) , Softwarové inženýrství, Softwarový kontejner ( Container ) , Tokenizér, Transformerová architektura ( Transformer ) , Událostní záchytný bod ( Hook ) , Vektorová reprezentace, Zapojení člověka do smyčky ( HITL )
 
 ## Obsah
 
@@ -62,28 +62,19 @@ Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu,
 7. [4 Výsledky a diskuse](#loc-51)
 8. [5 Závěr](#loc-52)
 9. [Seznam zdrojů](#loc-53)
-10. [Rejstřík](#loc-61)
-11. [Seznam příloh](#loc-62)
-12. [A Obsah přiloženého média](#loc-63)
-13. [B Schéma konfiguračního manifestu darkfactory.json](#loc-64)
-14. [C Sdílené workflow pro GitHub Actions](#loc-65)
-15. [D Systémové prompty plánovacího a kódovacího agenta](#loc-66)
-16. [E Protokol revizních značek v sazebním systému Typst](#loc-67)
-  1. [E.1 Vizuální reprezentace jednotlivých prvků v sazbě](#loc-68)
-  2. [E.2 Ukázky textových zvýrazňovacích a srovnávacích funkcí v toku odstavce](#loc-69)
-  3. [E.3 Role značek v lidském dohledu](#loc-70)
+10. [Seznam příloh](#loc-61)
 
 ## 1 Úvod
 
 ### 1.1 Motivace a vymezení problému
 
-V moderním softwarovém inženýrství dosáhla automatizace vysokého stupně zralosti. Sestavení zdrojových kódů, běh testovacích sad, statická analýza i nasazování do produkce probíhají běžně bez nutnosti lidského zásahu. Hlavním úzkým hrdlem celého vývojového procesu tak zůstává samotná tvorba a modifikace zdrojového kódu — časová prodleva mezi zadáním nového požadavku v podobě úkolu či hlášení chyby a vytvořením otestované, bezpečně začlenitelné změny.
+V moderním softwarovém inženýrství ( Software Engineering) dosáhla automatizace vysokého stupně zralosti. Sestavení zdrojových kódů, běh testovacích sad, statická analýza i nasazování do produkce probíhají běžně bez nutnosti lidského zásahu. Hlavním úzkým hrdlem celého vývojového procesu tak zůstává samotná tvorba a modifikace zdrojového kódu — časová prodleva mezi zadáním nového požadavku v podobě úkolu či hlášení chyby a vytvořením otestované, bezpečně začlenitelné změny.
 
 Inspirací pro překonání tohoto omezení je průmyslový koncept temné továrny (*Dark Factory*) — plně automatizovaného výrobního provozu, který funguje samostatně bez nutnosti stálé přítomnosti lidské obsluhy. Cílem tohoto přístupu není vytlačení lidského inženýra, nýbrž posun jeho role: člověk definuje záměr, architekturu a funkční specifikaci, zatímco mechanické, rutinní a opakující se úkony přebírají autonomní systémy.
 
 Nástup velkých jazykových modelů (LLM) otevřel cestu k automatizaci syntézy kódu, avšak stávající nástroje vykazují zásadní limity. Většina současných řešení (konverzační asistenti a doplňování kódu v editoru) řeší pouze izolovaný krok v podobě návrhu textového fragmentu. Chybí jim hlubší integrace do vývojového cyklu repozitáře: přímá práce se souborovým systémem, schopnost interpretovat výstupy překladače, iterativně odstraňovat syntaktické regrese a respektovat deterministická pravidla projektu.
 
-Ústřední inženýrská otázka této práce proto nespočívá v tom, zda jazykový model dokáže napsat fragment kódu. Zkoumáme, jaká kontrolní a dozorčí architektura — značovaná jako [***Agent Harness***](#kw-harness) — musí model obklopovat, aby bylo možné jeho výstupům v produkčním repozitáři spolehlivě důvěřovat a dosáhnout vysoké míry autonomie se zachováním lidského dohledu.
+Ústřední inženýrská otázka této práce proto nespočívá v tom, zda jazykový model dokáže napsat fragment kódu. Zkoumáme, jaká kontrolní a dozorčí architektura — značovaná jako ***Agent Harness*** — musí model obklopovat, aby bylo možné jeho výstupům v produkčním repozitáři spolehlivě důvěřovat a dosáhnout vysoké míry autonomie se zachováním lidského dohledu.
 
 ### 1.2 Cíl práce a výzkumné otázky
 
@@ -131,7 +122,7 @@ Postup práce sleduje strukturu inženýrského cyklu:
 
 #### 2.1.2 Git a GitHub
 
-Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém [***Git***](#kw-git)★ v kombinaci s platformou [***GitHub***](#kw-github)★.
+Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém ***Git*** v kombinaci s platformou ***GitHub***.
 
 Klíčové komponenty infrastruktury zahrnují:
 
@@ -158,7 +149,7 @@ Pokud se hlavní větev během práce agenta posune dopředu v důsledku jiné a
 
 #### 2.1.4 Pull Request
 
-- Pull request (PR) představuje stěžejní komunikační uzel mezi autonomním agentem a lidským inženýrem. Jedná se o formální žádost o začlenění navržených změn z pracovní větve do větve hlavní. V tomto bodě se plně uplatňuje princip zapojení člověka do smyčky (Human-in-the-loop): [+ ][***Požadavek na sloučení***](#kw-pull-request)★ — [CZ] Formální návrh na začlenění změn z jedné větve repozitáře do druhé, který slouží jako místo pro automatizované kontroly, lidskou revizi a diskusi nad navrženými úpravami.. V tomto bodě se plně uplatňuje princip [***Zapojení člověka do smyčky ( HITL )***](#kw-human-in-the-loop)★: agent kód samostatně navrhne a otestuje, avšak konečné rozhodnutí o jeho přijetí náleží vývojáři.
+- Pull request (PR) představuje stěžejní komunikační uzel mezi autonomním agentem a lidským inženýrem. Jedná se o formální žádost o začlenění navržených změn z pracovní větve do větve hlavní. V tomto bodě se plně uplatňuje princip zapojení člověka do smyčky (Human-in-the-loop): [+ ]***Požadavek na sloučení*** — [CZ] Formální návrh na začlenění změn z jedné větve repozitáře do druhé, který slouží jako místo pro automatizované kontroly, lidskou revizi a diskusi nad navrženými úpravami.. V tomto bodě se plně uplatňuje princip ***Zapojení člověka do smyčky ( HITL )***: agent kód samostatně navrhne a otestuje, avšak konečné rozhodnutí o jeho přijetí náleží vývojáři.
 
 Rozhraní pull requestu integruje všechny podstatné informace na jednom místě:
 
@@ -175,7 +166,7 @@ Způsob, jakým se změny z pracovní větve začlení do větve hlavní, má z�
 
 Zatímco klasický merge commit přenese do hlavní větve veškeré dílčí commity a rebase je lineárně přeskládá, v agentním vývoji se jako optimální strategie uplatňuje Commit and Merge:
 
-- Sloučení mezikroků: Všechny commity z pracovní větve jsou spojeny do jediného nového commitu, který je vložen do `main`.
+- Sloučení mezikroků ( Commit Squashing ( Squash ) ): Všechny commity z pracovní větve jsou spojeny do jediného nového commitu, který je vložen do `main`.
 - Eliminace interního šumu: Pomocné commity vzniklé při ladění testů se do hlavní větve vůbec nedostanou; historie projektu zůstává čistá a přehledná podle pravidla: jeden úkol = jeden commit.
 - Atomický návrat změn (`git revert`): Pokud se v budoucnu ukáže, že začleněná úprava zanesla do produkce nečekanou vadu, lze celý úkol vrátit jediným atomickým příkazem bez nutnosti rozplétat desítky dílčích mezikroků.
 
@@ -185,9 +176,9 @@ Zatímco klasický merge commit přenese do hlavní větve veškeré dílčí co
 
 Samotný jazykový model kód pouze generuje na základě statistických závislostí v trénovacích datech; nemá schopnost vnitřně ověřit, zda je vytvořený program syntakticky bezchybný a funkčně správný. Nezastupitelnou roli objektivního arbitra správnosti proto plní kontinuální integrace (CI) ([2](#loc-55)).
 
-V rámci platformy GitHub zajišťuje kontinuální integraci vestavěný nástroj GitHub Actions:
+V rámci platformy GitHub zajišťuje kontinuální integraci automatizační platforma GitHub Actions ( Actions ) :
 
-- Spouštění v čistých kontejnerech: Každé workflow běží v nově alokovaném virtuálním prostředí se zamčenými verzemi nástrojů a závislostí, což vylučuje chyby způsobené lokálním stavem počítače vývojáře.
+- Izolované běhové prostředí ( Software Container ( Container ) ): Workflow běží v deklarovaném runner prostředí se stanovenými nástroji a závislostmi, čímž se omezuje závislost na lokálním stavu počítače vývojáře.
 - Automatická exekuce: Integrační pipeline se automaticky spouští při každém pushi do pracovní větve i při otevření pull requestu.
 - Deterministická zpětná vazba pro agenta: Pokud překlad nebo testy selžou, chybový protokol z terminálu je předán zpět do kontextu agenta, který na jeho základě provede informovanou opravu kódu.
 
@@ -215,7 +206,7 @@ GitHub poskytuje pravidla ochrany větví (*Branch Protection Rules*), která za
 
 #### 2.2.1 Úvod
 
-V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek ([3](#loc-56)). Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
+V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*; Transformer Architecture ( Transformer ) ), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek ([3](#loc-56)). Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
 
 Základní principy fungování modelu zahrnují:
 
@@ -226,7 +217,7 @@ Pro efektivní nasazení modelu do vývojového cyklu je nezbytné porozumět zp
 
 #### 2.2.2 Agent vs. Chatbot
 
-[***Chatbot***](#kw-chatbot)★ — [CZ] Systém založený na jazykovém modelu určený primárně k textové interakci s uživatelem; odpovídá na jednotlivé požadavky, ale sám o sobě nedisponuje autonomní prováděcí smyčkou ani nástroji pro samostatnou modifikaci okolního prostředí.. [***Agent***](#kw-agent)★ — [CZ] Softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně plánuje, vnímá stav prostředí a provádí vícekrokové akce směřující k dosažení zadaného inženýrského cíle.. Rozdíl mezi nimi nespočívá v odlišném jazykovém modelu, ale v architektuře jeho zapojení do pracovního prostředí.
+***Chatbot*** — [CZ] Systém založený na jazykovém modelu určený primárně k textové interakci s uživatelem; odpovídá na jednotlivé požadavky, ale sám o sobě nedisponuje autonomní prováděcí smyčkou ani nástroji pro samostatnou modifikaci okolního prostředí.. ***Agent*** — [CZ] Softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně plánuje, vnímá stav prostředí a provádí vícekrokové akce směřující k dosažení zadaného inženýrského cíle.. Rozdíl mezi nimi nespočívá v odlišném jazykovém modelu, ale v architektuře jeho zapojení do pracovního prostředí.
 
 Srovnání obou přístupů:
 
@@ -245,8 +236,8 @@ Jazykový model nepracuje přímo se znaky ani slovy v lidském slova smyslu. Vs
 
 Tento proces zahrnuje následující pojmy:
 
-- Tokeny a tokenizér: Token představuje základní diskrétní jednotku (celé slovo, slabiku či fragment znaků). Převod mezi textem a posloupností číselných tokenů zajišťuje tokenizér (nejčastěji na bázi algoritmu Byte Pair Encoding, BPE).
-- [***Vektorová reprezentace***](#kw-embedding)★ — [CZ] Vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v níž numerické vztahy mezi vektory zachycují užitečné sémantické vztahy mezi reprezentacemi. (např. vektorová analogie
+- Tokeny a tokenizér ( Tokenizer): Token představuje základní diskrétní jednotku (celé slovo, slabiku či fragment znaků). Převod mezi textem a posloupností číselných tokenů zajišťuje tokenizér (nejčastěji na bázi algoritmu Byte Pair Encoding, BPE).
+- ***Vektorová reprezentace*** — [CZ] Vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v níž numerické vztahy mezi vektory zachycují užitečné sémantické vztahy mezi reprezentacemi. (např. vektorová analogie
   <math><mtext>král</mtext><mo>−</mo><mtext>muž</mtext><mo>+</mo><mtext>žena</mtext><mo>≈</mo><mtext>královna</mtext></math>
   ).
 - Jazyková asymetrie tokenizace: Vzhledem k trénovacím datům optimalizovaným primárně pro angličtinu spotřebovávají flektivní jazyky s bohatou diakritikou (včetně češtiny) 2× až 3× více tokenů pro vyjádření téhož významu.
@@ -263,14 +254,14 @@ Interakce mezi modelem, uživatelem a okolním vývojovým prostředím neprobí
   - Tah uživatele či prostředí (*User Turn*): Nové zadání úkolu nebo vnější událost.
   - Tah modelu (*Model Turn*): Vygenerovaná odpověď nebo strukturovaný požadavek na spuštění nástroje.
   - Tah nástroje (*Tool Execution Turn*): Zpětné hlášení výsledku exekuce (výpis souboru, výstup kompilátoru).
-- Správa KV cache (Key-Value Cache): Aby inferenční engine nemusel při každém novém tahu přepočítávat celou historii od začátku, ukládá mezivýpočty klíčů a hodnot matic pozornosti do paměti.
-- Kontextové okno (*Context Window*): Pevně limitovaná kapacita paměti modelu. Tento strop je dán hardwarovými limity GPU akcelerátorů a kvadratickou složitostí plné pozornosti (
+- Správa KV cache ( Key–Value Cache ( KV Cache ) ): Aby inferenční engine nemusel při každém novém tahu přepočítávat celou historii od začátku, ukládá mezivýpočty klíčů a hodnot matic pozornosti do paměti.
+- Kontextové okno ( Context Window): Pevně limitovaná kapacita paměti modelu. Tento strop je dán hardwarovými limity GPU akcelerátorů a kvadratickou složitostí plné pozornosti (
   <math><mi>𝑂</mi><mrow><mo>(</mo><msup><mi>𝑁</mi><mn>2</mn></msup><mo>)</mo></mrow></math>
    vzhledem k délce sekvence).
 
 #### 2.2.5 Kompakce kontextu a ztrátová komprese
 
-Při rozsáhlejších úlohách se kontextové okno nevyhnutelně zaplní. V okamžiku, kdy objem historie dosáhne kritické hranice, musí agent harness přistoupit ke kompakci kontextu (*compaction*) — model je vyzván, aby dosavadní průběh sezení zkrátil do syntetického souhrnu, který nahradí starší část historie.
+Správa aktivního kontextu je součástí kontextového inženýrství ( Context Engineering). Při rozsáhlejších úlohách se kontextové okno nevyhnutelně zaplní. V okamžiku, kdy objem historie dosáhne kritické hranice, musí agent harness přistoupit ke kompakci kontextu (*compaction*) — model je vyzván, aby dosavadní průběh sezení zkrátil do syntetického souhrnu, který nahradí starší část historie.
 
 Tento proces však představuje destruktivní ztrátovou kompresi:
 
@@ -310,7 +301,7 @@ Díky tomu může agent kdykoliv obnovit přesný stav projektu bez závislosti 
 
 #### 2.2.8 Degradace kontextu
 
-Schopnost jazykového modelu pracovat s dlouhým kontextem nelze posuzovat pouze podle nominální velikosti okna. Ačkoliv moderní modely deklarují kapacitu statisíců tokenů, jejich schopnost efektivně vyhledávat a logicky propojovat fakta s rostoucí délkou kontextu výrazně klesá. - Tento jev se označuje jako degradace pozornosti (*Context Rot*). [+ ]Tento jev se v agentickém inženýrství označuje jako [***Degradace kontextu***](#kw-context-rot)★ — [CZ] Degradace pozornosti a kvality logického uvažování modelu způsobená zaplněním kontextového okna dlouhou historií, šumem nebo vzájemně si konkurujícími informacemi, která vede k přehlížení instrukcí a ztrátě souvislostí..
+Schopnost jazykového modelu pracovat s dlouhým kontextem nelze posuzovat pouze podle nominální velikosti okna. Ačkoliv moderní modely deklarují kapacitu statisíců tokenů, jejich schopnost efektivně vyhledávat a logicky propojovat fakta s rostoucí délkou kontextu výrazně klesá. - Tento jev se označuje jako degradace pozornosti (*Context Rot*). [+ ]Tento jev se v agentickém inženýrství označuje jako ***Degradace kontextu*** — [CZ] Degradace pozornosti a kvality logického uvažování modelu způsobená zaplněním kontextového okna dlouhou historií, šumem nebo vzájemně si konkurujícími informacemi, která vede k přehlížení instrukcí a ztrátě souvislostí..
 
 V praxi se projevuje dvěma hlavními mechanismy:
 
@@ -323,13 +314,13 @@ Při komplexním křížovém refaktoringu ve velkém kontextu proto model čast
 
 #### 2.3.1 Úvod
 
-V terminologii agentického inženýrství používá tato práce pojem [***Agentní harness***](#kw-harness)★. [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.. Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; veškerou orchestraci, práci se soubory a řízení bezpečnosti zajišťuje harness.
+V terminologii agentického inženýrství používá tato práce pojem ***Agentní harness***. [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.. Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; veškerou orchestraci, práci se soubory a řízení bezpečnosti zajišťuje harness.
 
-Ústřední komponentou a hlavní prováděcí funkcí, která v architektuře harnessu řídí samotný běh a iterativní koordinaci agenta v reálném vývojovém prostředí, je [***Smyčka ReAct ( Agent Loop )***](#kw-agent-loop)★. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
+Ústřední komponentou a hlavní prováděcí funkcí, která v architektuře harnessu řídí samotný běh a iterativní koordinaci agenta v reálném vývojovém prostředí, je ***Smyčka ReAct ( Agent Loop )***. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
 
 #### 2.3.2 Prompt Engineering (Promptové inženýrství)
 
-- Základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. [+ ][***Promptové inženýrství***](#kw-prompt-engineering)★ — [CZ] Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu. představuje klíčový předpoklad deterministického chování: základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. Při formulaci těchto pravidel však vývojáři narážejí na specifickou vlastnost autoregresivních modelů — problematické zpracování zákazů a negativních instrukcí.
+- Základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. [+ ]***Promptové inženýrství*** — [CZ] Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu. představuje klíčový předpoklad deterministického chování: základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. Při formulaci těchto pravidel však vývojáři narážejí na specifickou vlastnost autoregresivních modelů — problematické zpracování zákazů a negativních instrukcí.
 
 Příčiny a inženýrská řešení tohoto jevu:
 
@@ -347,7 +338,7 @@ V každé iteraci agentní smyčky harness zajišťuje tyto klíčové funkce:
 
 - Inicializace a správa sezení: Sestavení systémového promptu, dynamická injekce kontextu repozitáře a sledování spotřeby tokenů.
 - Běhové prostředí nástrojů: Bezpečné spouštění příkazů v operačním systému a zpětné předávání výstupů modelu.
-- Řízení stavových přechodů a vynucování mantinelů: Dohled nad dodržováním procesních pravidel, detekce a zastavení uvíznutých běhů a vynucování lidských schvalovacích bran.
+- Řízení stavových přechodů a vynucování mantinelů ( Execution-loop Engineering ( Loop Engineering ) ): Dohled nad dodržováním procesních pravidel, detekce a zastavení uvíznutých běhů a vynucování lidských schvalovacích bran.
 
 Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem ReAct (*Reasoning + Acting*) ([6](#loc-59)), který propojuje rozvahu s přímým jednáním. Tento prováděcí cyklus sestává ze čtyř navazujících fází znázorněných na [Obrázek 1](#fig-react-loop):
 
@@ -386,19 +377,19 @@ Mezi typické patologie patří:
 
 #### 2.3.7 Dovednosti
 
-Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží [***Dovednosti***](#kw-skills)★ — [CZ] Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v souboru SKILL.md), procedurálních pravidel a volitelných pomocných skriptů či zdrojů, které harness dynamicky načítá do kontextu agenta podle povahy řešeného úkolu..
+Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží ***Dovednosti*** — [CZ] Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v souboru SKILL.md), procedurálních pravidel a volitelných pomocných skriptů či zdrojů, které harness dynamicky načítá do kontextu agenta podle povahy řešeného úkolu..
 
 Architektura dovedností staví na následujících principech:
 
 - Definiční soubor `SKILL.md`: Dovednost tvoří adresář obsahující definiční soubor se strukturovanou hlavičkou (YAML frontmatter vymezující název a popis role) a detailním návodem k použití.
 - Dynamické načítání pro úsporu kontextu: Do výchozího promptu se vloží pouze stručný přehled dostupných dovedností. Kompletní instrukce a skripty se do kontextu načtou až v okamžiku, kdy agent danou dovednost explicitně vyvolá.
-- Skripty a záchytné body (*Scripts & Hooks*): Dovednosti mohou obsahovat deterministické skripty pro rutinní transformace kódu a událostní háčky vyvolávané při stavových přechodech harnessu.
+- Skripty ( Script) a záchytné body ( Event Hook ( Hook ) ): Dovednosti mohou obsahovat deterministické skripty pro rutinní transformace kódu a událostní háčky vyvolávané při stavových přechodech harnessu.
 
-Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové [***Rozšíření***](#kw-plugins)★ — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
+Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové ***Rozšíření*** — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
 
 #### 2.3.8 Model Context Protocol ( MCP ) servery
 
-- Pro sjednocení rozhraní mezi jazykovými modely a externími nástroji či datovými zdroji vznikl otevřený standard Model Context Protocol (MCP) ([7](#loc-60)). Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP univerzální protokol. [+ ]Pro sjednocení rozhraní mezi jazykovými modely a externími nástroji či datovými zdroji vznikl [***Model Context Protocol ( MCP )***](#kw-mcp)★ — [CZ] Model Context Protocol — otevřený standard původně navržený společností Anthropic pro standardizovanou komunikaci AI aplikací s externími nástroji, zdroji a daty prostřednictvím zpráv JSON-RPC. ([7](#loc-60)). Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP univerzální protokol.
+- Pro sjednocení rozhraní mezi jazykovými modely a externími nástroji či datovými zdroji vznikl otevřený standard Model Context Protocol (MCP) ([7](#loc-60)). Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP univerzální protokol. [+ ]Pro sjednocení rozhraní mezi jazykovými modely a externími nástroji či datovými zdroji vznikl ***Model Context Protocol ( MCP )*** — [CZ] Model Context Protocol — otevřený standard původně navržený společností Anthropic pro standardizovanou komunikaci AI aplikací s externími nástroji, zdroji a daty prostřednictvím zpráv JSON-RPC. ([7](#loc-60)). Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP univerzální protokol.
 
 Základní vlastnosti protokolu MCP:
 
@@ -412,7 +403,7 @@ Monolitická agentní smyčka selhává při řešení komplexních, vícefázov
 Klíčové přístupy ke škálování zahrnují:
 
 - Subagenti (*Subagents*): Hlavní orchestrátor dekomponuje rozsáhlou úlohu a deleguje dílčí kroky na specializované agenty (např. průzkumník repozitáře, plánovač, kódovací dělník). Po dokončení je kontext subagenta zahozen a orchestrátor obdrží pouze čistý výsledek, což chrání primární kontext před znečištěním (*context pollution*).
-- Pracovní postupy jako grafy (DAG / Graph Engineering): Životní cyklus požadavku je modelován jako orientovaný acyklický graf (příjem
+- Pracovní postupy jako grafy ( Directed Acyclic Graph ( DAG ) / Graph Engineering): Životní cyklus požadavku je modelován jako orientovaný acyklický graf (příjem
   <math><mo lspace="0em" rspace="0em" stretchy="false">→</mo></math>
    plán
   <math><mo lspace="0em" rspace="0em" stretchy="false">→</mo></math>
@@ -465,341 +456,4 @@ Základním principem navrženého řešení není nekritická plná autonomie, 
 - 10.  DAO, Tri, FU, Daniel Y., ERMON, Stefano, RUDRA, Atri a RÉ, Christopher. FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness. *Advances in Neural Information Processing Systems.* Online. 2022. Vol. 35, p. 16344–16359. Available from: [https://arxiv.org/abs/2205.14135](https://arxiv.org/abs/2205.14135)
 - 11.  AINSLIE, Joshua, LEE-THORP, James, JONG, Michiel de, ZEMLYANSKIY, Yury, LEBRÓN, Federico a SANGHAI, Sumit. GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints. *arXiv preprint arXiv:2305.13245.* Online. 2023. Available from: [https://arxiv.org/abs/2305.13245](https://arxiv.org/abs/2305.13245)
 
-## Rejstřík
-
-[Agent](#kw-agent)
-[Agentické inženýrství](#kw-agentic-engineering)
-[Agentní harness](#kw-harness)
-[Chatbot](#kw-chatbot)
-[Degradace kontextu](#kw-context-rot)
-[Dovednosti](#kw-skills)
-[Generování rozšířené vyhledáváním ( RAG )](#kw-rag)
-[Git](#kw-git)
-[GitHub](#kw-github)
-[GitHub Actions ( Actions )](#kw-github-actions)
-[Inženýrství pracovních grafů ( Graph Engineering )](#kw-graph-engineering)
-[Inženýrství prováděcí smyčky ( Loop Engineering )](#kw-loop-engineering)
-[Jazykový model ( LLM )](#kw-language-model)
-[Kompakce kontextu ( Compaction )](#kw-context-compaction)
-[Kontextové inženýrství](#kw-context-engineering)
-[Kontextové okno](#kw-context-window)
-[Mezipaměť klíčů a hodnot ( KV Cache )](#kw-kv-cache)
-[Model Context Protocol ( MCP )](#kw-mcp)
-[Orientovaný acyklický graf ( DAG )](#kw-dag)
-[Požadavek na sloučení](#kw-pull-request)
-[Promptové inženýrství](#kw-prompt-engineering)
-[Průběžná integrace ( CI )](#kw-continuous-integration)
-[Rozšíření](#kw-plugins)
-[Skript](#kw-script)
-[Sloučení commitů ( Squash )](#kw-squash)
-[Sloučení větví ( Merge )](#kw-merge)
-[Smyčka ReAct ( Agent Loop )](#kw-agent-loop)
-[Softwarové inženýrství](#kw-software-engineering)
-[Softwarový kontejner ( Container )](#kw-container)
-[Správa verzí](#kw-version-control)
-[Tah interakce ( Turn )](#kw-turn)
-[Token](#kw-token)
-[Tokenizér](#kw-tokenizer)
-[Transformerová architektura ( Transformer )](#kw-transformer)
-[Událostní záchytný bod ( Hook )](#kw-hook)
-[Vektorová reprezentace](#kw-embedding)
-[Větev repozitáře ( Branch )](#kw-branch)
-[Zapojení člověka do smyčky ( HITL )](#kw-human-in-the-loop)
-
-### A
-
-#### Agent
-
-[CZ] Softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně plánuje, vnímá stav prostředí a provádí vícekrokové akce směřující k dosažení zadaného inženýrského cíle.
-
-#### Agentické inženýrství
-
-[CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.
-
-#### Agentní harness
-
-[CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.
-
-### C
-
-#### Chatbot
-
-[CZ] Systém založený na jazykovém modelu určený primárně k textové interakci s uživatelem; odpovídá na jednotlivé požadavky, ale sám o sobě nedisponuje autonomní prováděcí smyčkou ani nástroji pro samostatnou modifikaci okolního prostředí.
-
-### D
-
-#### Degradace kontextu
-
-[CZ] Degradace pozornosti a kvality logického uvažování modelu způsobená zaplněním kontextového okna dlouhou historií, šumem nebo vzájemně si konkurujícími informacemi, která vede k přehlížení instrukcí a ztrátě souvislostí.
-
-#### Dovednosti
-
-[CZ] Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v souboru SKILL.md), procedurálních pravidel a volitelných pomocných skriptů či zdrojů, které harness dynamicky načítá do kontextu agenta podle povahy řešeného úkolu.
-
-### G
-
-#### Generování rozšířené vyhledáváním ( RAG )
-
-[CZ] Architektura, v níž systém před generováním nebo během něj vyhledá relevantní informace z externího zdroje a vloží je do kontextu modelu, aby výstup mohl být založen na načtených datech.
-
-#### Git
-
-[CZ] Distribuovaný systém správy verzí, který uchovává historii projektu, podporuje větvení a slučování změn a umožňuje deterministický návrat k předchozím stavům repozitáře.
-
-#### GitHub
-
-[CZ] Cloudová platforma pro hosting gitových repozitářů, správu vývojového cyklu pomocí Issues a Pull Requests a automatizaci CI/CD pracovních postupů.
-
-#### GitHub Actions ( Actions )
-
-[CZ] Automatizační platforma GitHubu, která spouští deklarované workflow a jejich joby v reakci na události repozitáře nebo ruční spuštění.
-
-### I
-
-#### Inženýrství pracovních grafů ( Graph Engineering )
-
-[CZ] Návrh agentních nebo automatizačních pracovních postupů jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky.
-
-#### Inženýrství prováděcí smyčky ( Loop Engineering )
-
-[CZ] Návrh a řízení iterativní prováděcí smyčky agenta: stavových přechodů, podmínek ukončení, rozpočtů, opakování, eskalací a vazby mezi rozhodováním modelu a nástroji.
-
-### J
-
-#### Jazykový model ( LLM )
-
-[CZ] Velký jazykový model je neuronový model trénovaný nad rozsáhlými textovými daty, který autoregresivně zpracovává a generuje posloupnosti tokenů. V této práci vystupuje jako inferenční kognitivní jádro agentního systému.
-
-### K
-
-#### Kompakce kontextu ( Compaction )
-
-[CZ] Proces zmenšení aktivního kontextu, typicky shrnutím, výběrem nebo nahrazením starších částí historie kompaktnější reprezentací tak, aby se běh vešel do kontextového okna.
-
-#### Kontextové inženýrství
-
-[CZ] Systematický návrh, výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu, včetně instrukcí, paměti, nástrojových výsledků a externě načtených dat.
-
-#### Kontextové okno
-
-[CZ] Maximální rozsah tokenové sekvence, kterou model při jednom běhu dokáže zahrnout do aktivního kontextu. Prakticky omezuje součet instrukcí, historie, nástrojových výstupů a dalších dat předávaných modelu.
-
-### M
-
-#### Mezipaměť klíčů a hodnot ( KV Cache )
-
-[CZ] Mezipaměť dříve vypočtených vektorů klíčů a hodnot v pozornostních vrstvách transformeru, která při autoregresivním generování omezuje nutnost opakovaně přepočítávat předchozí tokeny.
-
-#### Model Context Protocol ( MCP )
-
-[CZ] Model Context Protocol — otevřený standard původně navržený společností Anthropic pro standardizovanou komunikaci AI aplikací s externími nástroji, zdroji a daty prostřednictvím zpráv JSON-RPC.
-
-### O
-
-#### Orientovaný acyklický graf ( DAG )
-
-[CZ] Orientovaný graf bez orientovaného cyklu. V pracovních postupech umožňuje explicitně vyjádřit závislosti mezi kroky a pořadí, které z nich vyplývá.
-
-### P
-
-#### Požadavek na sloučení
-
-[CZ] Formální návrh na začlenění změn z jedné větve repozitáře do druhé, který slouží jako místo pro automatizované kontroly, lidskou revizi a diskusi nad navrženými úpravami.
-
-#### Promptové inženýrství
-
-[CZ] Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu.
-
-#### Průběžná integrace ( CI )
-
-[CZ] Vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami, aby se integrační chyby odhalily co nejdříve.
-
-### R
-
-#### Rozšíření
-
-[CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.
-
-### S
-
-#### Skript
-
-[CZ] Soubor nebo posloupnost příkazů určených k automatizovanému vykonání interpretem, shellem nebo jiným běhovým prostředím.
-
-#### Sloučení commitů ( Squash )
-
-[CZ] Operace, při níž se více po sobě jdoucích commitů nahradí jedním souhrnným commitem, obvykle za účelem zjednodušení historie před integrací změn.
-
-#### Sloučení větví ( Merge )
-
-[CZ] Operace správy verzí, která kombinuje změny nebo historii dvou vývojových linií do společného výsledného stavu; konflikty vyžadují explicitní vyřešení.
-
-#### Smyčka ReAct ( Agent Loop )
-
-[CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí.
-
-#### Softwarové inženýrství
-
-[CZ] Systematické uplatňování inženýrských principů na specifikaci, návrh, implementaci, ověřování, provoz a údržbu softwarových systémů.
-
-#### Softwarový kontejner ( Container )
-
-[CZ] Izolované uživatelské běhové prostředí balící aplikaci a její závislosti při sdílení jádra hostitelského operačního systému; úroveň bezpečnostní izolace závisí na konkrétní implementaci a konfiguraci.
-
-#### Správa verzí
-
-[CZ] Správa a sledování změn zdrojových souborů a dalších verzovaných artefaktů tak, aby bylo možné změny bezpečně větvit, slučovat, auditovat a v případě potřeby vracet.
-
-### T
-
-#### Tah interakce ( Turn )
-
-[CZ] Jedna diskrétní jednotka interakce v konverzačním nebo agentním protokolu, například zpráva uživatele, odpověď modelu nebo samostatně evidovaný výsledek nástroje.
-
-#### Token
-
-[CZ] Diskrétní jednotka zpracovávaná jazykovým modelem. Token odpovídá položce slovníku tokenizéru a je reprezentován číselným identifikátorem; nemusí odpovídat celému slovu.
-
-#### Tokenizér
-
-[CZ] Komponenta, která převádí text nebo jiný vstup na posloupnost tokenů a jejich identifikátorů a podle podporovaného směru také provádí zpětnou dekódovací transformaci.
-
-#### Transformerová architektura ( Transformer )
-
-[CZ] Architektura neuronových sítí založená na mechanismu pozornosti, která modeluje vztahy mezi prvky sekvence a tvoří základ většiny současných velkých jazykových modelů.
-
-### U
-
-#### Událostní záchytný bod ( Hook )
-
-[CZ] Definovaný bod životního cyklu nebo události, na který lze navázat vlastní deterministickou logiku před, po nebo místo standardního chování systému.
-
-### V
-
-#### Vektorová reprezentace
-
-[CZ] Vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v níž numerické vztahy mezi vektory zachycují užitečné sémantické vztahy mezi reprezentacemi.
-
-#### Větev repozitáře ( Branch )
-
-[CZ] Pojmenovaná vývojová linie v systému správy verzí, která umožňuje provádět změny odděleně od jiné linie historie a později je porovnat nebo sloučit.
-
-### Z
-
-#### Zapojení člověka do smyčky ( HITL )
-
-[CZ] Návrhový vzor, v němž lidský operátor zůstává součástí rozhodovacího procesu systému prostřednictvím schvalovacích bran (Human Gates), zejména před významnými nebo nevratnými systémovými operacemi.
-
 ## Seznam příloh
-
-1. [A Obsah přiloženého média](#loc-63)
-2. [B Schéma konfiguračního manifestu darkfactory.json](#loc-64)
-3. [C Sdílené workflow pro GitHub Actions](#loc-65)
-4. [D Systémové prompty plánovacího a kódovacího agenta](#loc-66)
-5. [E Protokol revizních značek v sazebním systému Typst](#loc-67)
-
-## A Obsah přiloženého média
-
-Odevzdaný archiv obsahuje kompletní zdrojové soubory práce, sazební šablonu, řídicí skripty a zdrojový kód autonomního systému DarkFactory.
-
-```
-mono-OdbornaPrace/
-├── prace/                          # Rukopis a sazba odborné práce
-│   ├── kapitoly/                   # Texty jednotlivých kapitol (01-uvod až 06-prilohy)
-│   ├── lib/odborna-prace.typ       # Sazební šablona, recenzní značky a formátování GJKT
-│   ├── img/                        # Vektorová procesní schémata (SVG) a grafické podklady
-│   ├── fonts/                      # Metricky shodná patková písma (Caladea)
-│   ├── bib/references.bib          # Bibliografická databáze citovaných zdrojů
-│   ├── scripts/                    # Pomocné a náhledové skripty
-│   ├── main.typ                    # Hlavní řídicí dokument sazby
-│   ├── metadata.typ                # Údaje o autorovi, vedoucím a anotace
-│   └── Makefile                    # Příkazy pro automatizovanou kompilaci a kontrolu
-├── darkfactory/                    # Zdrojový kód systému DarkFactory (submodul)
-│   ├── .github/workflows/          # Sdílené šablony kontinuální integrace
-│   └── src/                        # Výkonné orchestrační jádro systému
-├── out/prace.pdf                   # Výsledný vysázený tiskový dokument v PDF
-└── README.md                       # Dokumentace a návod na reprodukci prostředí
-```
-
-*Výpis 1: Stromová adresářová struktura odevzdaného elektronického archivu a doprovodných repozitářů.*
-
-## B Schéma konfiguračního manifestu darkfactory.json
-
-📐 **Strukturální upozornění:** Příloha v rekonstrukci: Formální JSON schéma manifestu bude doplněno po stabilizaci nového schématu v přestavěném systému DarkFactory.
-
-💡 **Návrh na vylepšení:** Placeholder: Zde bude uvedeno úplné JSON Schema vymezující validní syntaxi nového konfiguračního manifestu.
-
-## C Sdílené workflow pro GitHub Actions
-
-📐 **Strukturální upozornění:** Příloha v rekonstrukci: Definice sdílených a volajících workflow pro GitHub Actions budou aktualizována po dokončení přestavby orchestrátoru.
-
-💡 **Návrh na vylepšení:** Placeholder: Zde budou uvedeny ukázky znovupoužitelného a volajícího workflow nové verze DarkFactory.
-
-## D Systémové prompty plánovacího a kódovacího agenta
-
-📐 **Strukturální upozornění:** Příloha v rekonstrukci: Systémové prompty pro plánovací a implementační fáze budou aktualizovány podle nových rolí a instrukčních šablon v přestavěném systému.
-
-💡 **Návrh na vylepšení:** Placeholder: Zde budou uvedeny kompletní systémové prompty pro jednotlivé fáze životního cyklu požadavku.
-
-## E Protokol revizních značek v sazebním systému Typst
-
-Tato příloha uvádí referenční definici a použití vizuálních revizních značek pro řízení a dohled nad generovaným textem v sazebním formátu Typst.
-
-```
-#import "../templates/registry.typ": note, issue, alert, critique, added, draft, accepted, finalized, diff
-
-// --- 1. Panely na okraji textu (Callouty) ---
-#note[Doplňte porovnání rychlosti kompilace mezi verzemi 0.1 a 0.2.]
-#issue[Chybná signatura funkce: chybí povinný parametr timeout.]
-#alert[Sekce postrádá shrnutí naměřených výsledků před diskusí.]
-#critique[Metodologická absence baseline prokazující přínos nového modulu.]
-#blue-note[Metodické vymezení: rozsah práce a oddělení agentického inženýrství od strojového učení.]
-
-// --- 2. Textové revizní funkce (zvýraznění v toku textu) ---
-#draft[Tento odstavec tvoří neověřený koncept čekající na schválení.]
-#added[Nově vygenerovaná sekce automaticky začleněná agentem.]
-#accepted[Uživatelem přijatý text, který ještě nebyl finalizován.]
-#removed[Zastaralý text navržený k odstranění.]
-// Návrh změny: nový text je automaticky unconfirmed a raw drží starou stranu.
-#diff[Původní chybné znění textu.][Navržené nové znění textu.]
-
-// Po schválení se diff odstraní a zůstane pouze správná delta:
-#accepted[Schválené nové znění textu.]
-#finalized[Uzavřené nové znění nebo strukturální prvek.]
-```
-
-*Výpis 2: Ukázka zápisu a použití revizních značek a textových funkcí v jazyce Typst.*
-
-### E.1 Vizuální reprezentace jednotlivých prvků v sazbě
-
-Pro přehlednost jsou níže uvedeny reálné ukázky jednotlivých revizních panelů a textových funkcí v jejich finální vizuální podobě:
-
-💡 **Návrh na vylepšení:** Ukázka zeleného panelu doporučení (`#note`): Konstruktivní návrh na vylepšení, doplnění diagramu nebo námět na architektonickou optimalizaci.
-
-⚠️ **Chyba / Nesrovnalost k opravě:** Ukázka červeného panelu vady (`#issue`): Zjištěná faktická nesrovnalost, logická mezera, syntaktická chyba či překlep vyžadující opravu.
-
-📐 **Strukturální upozornění:** Ukázka žlutého panelu strukturálního upozornění (`#alert` / `#struct-alert`): Hloubková nevyváženost podkapitol, nekonzistence osnovy či absence klíčových náležitostí práce.
-
-🔥 **Hloubková kritika / Oponentura:** Ukázka oranžového panelu oponentury (`#critique`): Břitká, nekompromisní oponentura — zpochybnění neověřených předpokladů, analýza slabin metodiky a příprava na otázky zkušební komise.
-
-📌 **Metodické vymezení / Rozsah práce:** Ukázka modrého panelu metodického vymezení (`#blue-note` / `#scope-note`): Vymezení rozsahu práce, formulace mantinelů a architektonických abstrakcí.
-
-### E.2 Ukázky textových zvýrazňovacích a srovnávacích funkcí v toku odstavce
-
-- Neověřený koncept (`#draft` / `#unconfirmed`): Tento text představuje koncept čekající na posouzení autorem.
-- Nově přidaný text (`#added`): [+ ]Tato pasáž byla nově vygenerována autonomním agentem na základě požadavku.
-- Přijatý text (`#accepted`): Text byl odsouhlasen uživatelem, ale může ještě projít dalším začištěním.
-- Finalizovaný text (`#finalized`): Text nebo struktura je považována za uzavřenou součást práce.
-- Navrženo k odstranění (`#removed`): - Tato neaktuální věta je navržena k úplnému smazání z rukopisu.
-- Srovnávací diff (`#diff`): - Původní platné znění pasáže. [+ ]Navržené nové znění čekající na posouzení.
-- Čistý neoznačený text: Běžný text bez explicitního workflow stavu; sám o sobě neznamená finalizaci.
-
-### E.3 Role značek v lidském dohledu
-
-- Čistý neoznačený text: Běžný text bez explicitního workflow stavu.
-- Žluté podbarvení (`#unconfirmed`): Neověřený koncept čekající na lidské posouzení.
-- Zelené podbarvení (`#added`): Nově vygenerované návrhy agenta.
-- Modré podtržení (`#accepted`): Uživatelem přijatý text, který zůstává dále editovatelný.
-- Zelené podtržení (`#finalized`): Uzavřený text nebo strukturální prvek.
-- Srovnávací diff (`#diff`): Návrh změny; review zobrazí starou červenou stranu a novou zelenou stranu, jejíž obsah je současně neověřený. Raw/final zachová staré znění až do schválení. Po přijetí nebo finalizaci se diff zcela odstraní.
-- Postranní panely (Callouty): Striktní oddělení námětů, chyb a oponentury od těla textu.
