@@ -64,134 +64,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Softwarové inženýrství [ Software Engineering ]",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-18"
           },
           {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
-            "anchor": "loc-19"
-          },
-          {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Jazykový model [ Large Language Model ] ( LLM )",
             "level": 4,
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
+            "level": 4,
             "anchor": "loc-22"
-          },
-          {
-            "title": "2.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-23"
-          },
-          {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-25"
-          },
-          {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
-            "anchor": "loc-26"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-27"
-          },
-          {
-            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-28"
           },
           {
             "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.3.2.1 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3.2.3 Dovednosti [ Skills ]",
+            "level": 5,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.2.4 Kontextové inženýrství [ Context Engineering ]",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-29"
-          },
-          {
-            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.3.5 Dovednosti [ Skills ]",
-            "level": 4,
-            "anchor": "loc-33"
-          },
-          {
-            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-34"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-35"
+            "anchor": "loc-30"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-36"
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-33"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-34"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-35"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-36"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-43"
+            "anchor": "loc-40"
           }
         ],
         "review": [
@@ -256,189 +241,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Softwarové inženýrství [ Software Engineering ]",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
-            "anchor": "loc-18"
-          },
-          {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-19"
           },
           {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Jazykový model [ Large Language Model ] ( LLM )",
             "level": 4,
-            "anchor": "loc-20"
+            "anchor": "loc-21"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-23"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
-            "anchor": "loc-24"
-          },
-          {
-            "title": "2.2.1 Úvod",
+            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-27"
+            "title": "2.3.2.1 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-26"
           },
           {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.2.4 Tahy a správa KV cache",
-            "level": 4,
-            "anchor": "loc-29"
-          },
-          {
-            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
-            "level": 4,
+            "title": "2.3.2.3 Dovednosti [ Skills ]",
+            "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2.6 Sémantický posun (Semantic Drift)",
-            "level": 4,
+            "title": "2.3.2.4 Kontextové inženýrství [ Context Engineering ]",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.2.8 Degradace kontextu [ Context Rot ]",
-            "level": 4,
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-33"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-35"
-          },
-          {
-            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-36"
-          },
-          {
-            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
-            "level": 4,
-            "anchor": "loc-37"
-          },
-          {
-            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
-            "level": 4,
-            "anchor": "loc-38"
-          },
-          {
-            "title": "2.3.4 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-40"
-          },
-          {
-            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-42"
-          },
-          {
-            "title": "2.3.6 Sandbox",
-            "level": 4,
-            "anchor": "loc-43"
-          },
-          {
-            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.8 Dovednosti [ Skills ]",
-            "level": 4,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
-            "level": 4,
-            "anchor": "loc-46"
-          },
-          {
-            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-48"
-          },
-          {
-            "title": "2.3.11 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
-            "level": 4,
-            "anchor": "loc-49"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-50"
+            "anchor": "loc-34"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-51"
+            "anchor": "loc-35"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-37"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-38"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-39"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-54"
+            "anchor": "loc-40"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-62"
+            "anchor": "loc-48"
           }
         ]
       },
@@ -505,134 +420,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Softwarové inženýrství",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-18"
           },
           {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
-            "anchor": "loc-19"
-          },
-          {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Jazykový model ( LLM )",
             "level": 4,
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentické inženýrství — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
+            "level": 4,
             "anchor": "loc-22"
-          },
-          {
-            "title": "2.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-23"
-          },
-          {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-25"
-          },
-          {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
-            "anchor": "loc-26"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-27"
-          },
-          {
-            "title": "2.3.1 Agentické inženýrství — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-28"
           },
           {
             "title": "2.3.2 Agentní harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.3.2.1 Smyčka ReAct ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3.2.3 Dovednosti",
+            "level": 5,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.2.4 Kontextové inženýrství",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-29"
-          },
-          {
-            "title": "2.3.3 Smyčka ReAct ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.3.5 Dovednosti",
-            "level": 4,
-            "anchor": "loc-33"
-          },
-          {
-            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-34"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-35"
+            "anchor": "loc-30"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-36"
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-33"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-34"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-35"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-36"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-43"
+            "anchor": "loc-40"
           }
         ],
         "review": [
@@ -697,189 +597,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Softwarové inženýrství",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
-            "anchor": "loc-18"
-          },
-          {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-19"
           },
           {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Jazykový model ( LLM )",
             "level": 4,
-            "anchor": "loc-20"
+            "anchor": "loc-21"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentické inženýrství — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-23"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
-            "anchor": "loc-24"
-          },
-          {
-            "title": "2.2.1 Úvod",
+            "title": "2.3.2 Agentní harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-27"
+            "title": "2.3.2.1 Smyčka ReAct ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-26"
           },
           {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.2.4 Tahy a správa KV cache",
-            "level": 4,
-            "anchor": "loc-29"
-          },
-          {
-            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
-            "level": 4,
+            "title": "2.3.2.3 Dovednosti",
+            "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2.6 Sémantický posun (Semantic Drift)",
-            "level": 4,
+            "title": "2.3.2.4 Kontextové inženýrství",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.2.8 Degradace kontextu",
-            "level": 4,
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-33"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-35"
-          },
-          {
-            "title": "2.3.1 Agentické inženýrství — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-36"
-          },
-          {
-            "title": "2.3.2 Agentní harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
-            "level": 4,
-            "anchor": "loc-37"
-          },
-          {
-            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
-            "level": 4,
-            "anchor": "loc-38"
-          },
-          {
-            "title": "2.3.4 Smyčka ReAct ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-40"
-          },
-          {
-            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-42"
-          },
-          {
-            "title": "2.3.6 Sandbox",
-            "level": 4,
-            "anchor": "loc-43"
-          },
-          {
-            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.8 Dovednosti",
-            "level": 4,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
-            "level": 4,
-            "anchor": "loc-46"
-          },
-          {
-            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-48"
-          },
-          {
-            "title": "2.3.11 Zapojení člověka do smyčky ( HITL )",
-            "level": 4,
-            "anchor": "loc-49"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-50"
+            "anchor": "loc-34"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-51"
+            "anchor": "loc-35"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-37"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-38"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-39"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-54"
+            "anchor": "loc-40"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-62"
+            "anchor": "loc-48"
           }
         ]
       },
@@ -946,134 +776,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Software Engineering",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-18"
           },
           {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
-            "anchor": "loc-19"
-          },
-          {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Large Language Model ( LLM )",
             "level": 4,
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentic Engineering — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
+            "level": 4,
             "anchor": "loc-22"
-          },
-          {
-            "title": "2.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-23"
-          },
-          {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-25"
-          },
-          {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
-            "anchor": "loc-26"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-27"
-          },
-          {
-            "title": "2.3.1 Agentic Engineering — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-28"
           },
           {
             "title": "2.3.2 Agent Harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.3.2.1 ReAct Loop ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3.2.3 Skills",
+            "level": 5,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.2.4 Context Engineering",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-29"
-          },
-          {
-            "title": "2.3.3 ReAct Loop ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.3.5 Skills",
-            "level": 4,
-            "anchor": "loc-33"
-          },
-          {
-            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-34"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-35"
+            "anchor": "loc-30"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-36"
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-33"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-34"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-35"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-36"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-43"
+            "anchor": "loc-40"
           }
         ],
         "review": [
@@ -1138,189 +953,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Software Engineering",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
-            "anchor": "loc-18"
-          },
-          {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-19"
           },
           {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Large Language Model ( LLM )",
             "level": 4,
-            "anchor": "loc-20"
+            "anchor": "loc-21"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentic Engineering — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-23"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
-            "anchor": "loc-24"
-          },
-          {
-            "title": "2.2.1 Úvod",
+            "title": "2.3.2 Agent Harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-27"
+            "title": "2.3.2.1 ReAct Loop ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-26"
           },
           {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.2.4 Tahy a správa KV cache",
-            "level": 4,
-            "anchor": "loc-29"
-          },
-          {
-            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
-            "level": 4,
+            "title": "2.3.2.3 Skills",
+            "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2.6 Sémantický posun (Semantic Drift)",
-            "level": 4,
+            "title": "2.3.2.4 Context Engineering",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.2.8 Context Rot",
-            "level": 4,
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-33"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-35"
-          },
-          {
-            "title": "2.3.1 Agentic Engineering — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-36"
-          },
-          {
-            "title": "2.3.2 Agent Harness — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
-            "level": 4,
-            "anchor": "loc-37"
-          },
-          {
-            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
-            "level": 4,
-            "anchor": "loc-38"
-          },
-          {
-            "title": "2.3.4 ReAct Loop ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-40"
-          },
-          {
-            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-42"
-          },
-          {
-            "title": "2.3.6 Sandbox",
-            "level": 4,
-            "anchor": "loc-43"
-          },
-          {
-            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.8 Skills",
-            "level": 4,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
-            "level": 4,
-            "anchor": "loc-46"
-          },
-          {
-            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-48"
-          },
-          {
-            "title": "2.3.11 Human-in-the-loop ( HITL )",
-            "level": 4,
-            "anchor": "loc-49"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-50"
+            "anchor": "loc-34"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-51"
+            "anchor": "loc-35"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-37"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-38"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-39"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-54"
+            "anchor": "loc-40"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-62"
+            "anchor": "loc-48"
           }
         ]
       },
@@ -1387,134 +1132,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Softwarové inženýrství [ Software Engineering ]",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-18"
           },
           {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
-            "anchor": "loc-19"
-          },
-          {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Jazykový model [ Large Language Model ] ( LLM )",
             "level": 4,
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-21"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
+            "level": 4,
             "anchor": "loc-22"
-          },
-          {
-            "title": "2.2.1 Úvod",
-            "level": 4,
-            "anchor": "loc-23"
-          },
-          {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-25"
-          },
-          {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
-            "anchor": "loc-26"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-27"
-          },
-          {
-            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-28"
           },
           {
             "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
+            "anchor": "loc-23"
+          },
+          {
+            "title": "2.3.2.1 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-24"
+          },
+          {
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
+            "anchor": "loc-26"
+          },
+          {
+            "title": "2.3.2.3 Dovednosti [ Skills ]",
+            "level": 5,
+            "anchor": "loc-27"
+          },
+          {
+            "title": "2.3.2.4 Kontextové inženýrství [ Context Engineering ]",
+            "level": 5,
+            "anchor": "loc-28"
+          },
+          {
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-29"
-          },
-          {
-            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.3.5 Dovednosti [ Skills ]",
-            "level": 4,
-            "anchor": "loc-33"
-          },
-          {
-            "title": "2.3.6 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-34"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-35"
+            "anchor": "loc-30"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-36"
+            "anchor": "loc-31"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-32"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-33"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-37"
+            "anchor": "loc-34"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-38"
+            "anchor": "loc-35"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-36"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-43"
+            "anchor": "loc-40"
           }
         ],
         "review": [
@@ -1579,189 +1309,119 @@
             "anchor": "loc-11"
           },
           {
-            "title": "2.1 Vývojové prostředí a praxe",
+            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
             "anchor": "loc-12"
           },
           {
-            "title": "2.1.1 Správa verzí [Version Control]",
+            "title": "2.1.1 Softwarové inženýrství [ Software Engineering ]",
             "level": 4,
             "anchor": "loc-13"
           },
           {
-            "title": "2.1.2 Git a GitHub",
+            "title": "2.1.2 Správa verzí [Version Control]",
             "level": 4,
             "anchor": "loc-14"
           },
           {
-            "title": "2.1.3 Větve (Branches)",
-            "level": 4,
-            "anchor": "loc-16"
+            "title": "2.1.2.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-15"
           },
           {
-            "title": "2.1.4 Pull Request",
+            "title": "2.1.3 Kontinuální integrace (CI a GitHub Actions)",
             "level": 4,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1.5 Slučování změn (Commit and Merge)",
-            "level": 4,
-            "anchor": "loc-18"
-          },
-          {
-            "title": "2.1.6 Plánování [Planning]",
-            "level": 4,
+            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "level": 3,
             "anchor": "loc-19"
           },
           {
-            "title": "2.1.7 Kontinuální integrace (CI a GitHub Actions)",
+            "title": "2.2.1 Jazykový model [ Large Language Model ] ( LLM )",
             "level": 4,
-            "anchor": "loc-20"
+            "anchor": "loc-21"
           },
           {
-            "title": "2.1.8 Požadované kontroly (Required Checks)",
-            "level": 4,
+            "title": "2.3 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
+            "level": 3,
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.9 Ochrana větví (Branch Protection)",
+            "title": "2.3.1 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-23"
           },
           {
-            "title": "2.2 Large Language Model ( LLM ) , chatboti a agenti",
-            "level": 3,
-            "anchor": "loc-24"
-          },
-          {
-            "title": "2.2.1 Úvod",
+            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
             "level": 4,
             "anchor": "loc-25"
           },
           {
-            "title": "2.2.2 Agent vs. Chatbot",
-            "level": 4,
-            "anchor": "loc-27"
+            "title": "2.3.2.1 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "level": 5,
+            "anchor": "loc-26"
           },
           {
-            "title": "2.2.3 Tokeny, tokenizace a Vektorová reprezentace [Embedding]",
-            "level": 4,
+            "title": "2.3.2.2 Vyvolávání nástrojů [Tool Calling]",
+            "level": 5,
             "anchor": "loc-28"
           },
           {
-            "title": "2.2.4 Tahy a správa KV cache",
-            "level": 4,
-            "anchor": "loc-29"
-          },
-          {
-            "title": "2.2.5 Kompakce kontextu a ztrátová komprese",
-            "level": 4,
+            "title": "2.3.2.3 Dovednosti [ Skills ]",
+            "level": 5,
             "anchor": "loc-30"
           },
           {
-            "title": "2.2.6 Sémantický posun (Semantic Drift)",
-            "level": 4,
+            "title": "2.3.2.4 Kontextové inženýrství [ Context Engineering ]",
+            "level": 5,
             "anchor": "loc-31"
           },
           {
-            "title": "2.2.7 Alternativní paměťové architektury (RAG a stavový graf)",
-            "level": 4,
-            "anchor": "loc-32"
-          },
-          {
-            "title": "2.2.8 Degradace kontextu [ Context Rot ]",
-            "level": 4,
+            "title": "2.3.2.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 5,
             "anchor": "loc-33"
-          },
-          {
-            "title": "2.3 Agentic Systems (Agentické systémy)",
-            "level": 3,
-            "anchor": "loc-35"
-          },
-          {
-            "title": "2.3.1 Agentické inženýrství [ Agentic Engineering ] — [CZ] Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu.",
-            "level": 4,
-            "anchor": "loc-36"
-          },
-          {
-            "title": "2.3.2 Agentní harness [ Agent Harness ] — [CZ] Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku.",
-            "level": 4,
-            "anchor": "loc-37"
-          },
-          {
-            "title": "2.3.3 Prompt Engineering (Promptové inženýrství)",
-            "level": 4,
-            "anchor": "loc-38"
-          },
-          {
-            "title": "2.3.4 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
-            "level": 4,
-            "anchor": "loc-40"
-          },
-          {
-            "title": "2.3.5 Vyvolávání nástrojů [Tool Calling]",
-            "level": 4,
-            "anchor": "loc-42"
-          },
-          {
-            "title": "2.3.6 Sandbox",
-            "level": 4,
-            "anchor": "loc-43"
-          },
-          {
-            "title": "2.3.7 Patologie divergence: perseverace a oscilace",
-            "level": 4,
-            "anchor": "loc-44"
-          },
-          {
-            "title": "2.3.8 Dovednosti [ Skills ]",
-            "level": 4,
-            "anchor": "loc-45"
-          },
-          {
-            "title": "2.3.9 Model Context Protocol ( MCP ) servery",
-            "level": 4,
-            "anchor": "loc-46"
-          },
-          {
-            "title": "2.3.10 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
-            "level": 4,
-            "anchor": "loc-48"
-          },
-          {
-            "title": "2.3.11 Zapojení člověka do smyčky [ Human-in-the-loop ] ( HITL )",
-            "level": 4,
-            "anchor": "loc-49"
           },
           {
             "title": "3 DarkFactory: Architektura harnessu - Praktická část",
             "level": 2,
-            "anchor": "loc-50"
+            "anchor": "loc-34"
           },
           {
-            "title": "3.1 Git a GitHub",
+            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
             "level": 3,
-            "anchor": "loc-51"
+            "anchor": "loc-35"
+          },
+          {
+            "title": "3.1.1 Správa verzí [Version Control]",
+            "level": 4,
+            "anchor": "loc-36"
+          },
+          {
+            "title": "3.1.1.1 Git a GitHub",
+            "level": 5,
+            "anchor": "loc-37"
           },
           {
             "title": "4 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-52"
+            "anchor": "loc-38"
           },
           {
             "title": "5 Závěr",
             "level": 2,
-            "anchor": "loc-53"
+            "anchor": "loc-39"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-54"
+            "anchor": "loc-40"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-62"
+            "anchor": "loc-48"
           }
         ]
       }
