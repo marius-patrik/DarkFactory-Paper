@@ -670,6 +670,11 @@
           ]
         },
         {
+          "name": "biome.json",
+          "path": "web/biome.json",
+          "type": "file"
+        },
+        {
           "name": "components.json",
           "path": "web/components.json",
           "type": "file"
@@ -685,6 +690,11 @@
           "type": "file"
         },
         {
+          "name": "rsbuild.config.ts",
+          "path": "web/rsbuild.config.ts",
+          "type": "file"
+        },
+        {
           "name": "tsconfig.json",
           "path": "web/tsconfig.json",
           "type": "file"
@@ -692,11 +702,6 @@
         {
           "name": "viewer.html",
           "path": "web/viewer.html",
-          "type": "file"
-        },
-        {
-          "name": "vite.config.ts",
-          "path": "web/vite.config.ts",
           "type": "file"
         }
       ]

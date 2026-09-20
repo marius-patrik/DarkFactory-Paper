@@ -1,5 +1,5 @@
 {
-  "commit": "26941334cd42873c899dc311f38b5baa52f990e3",
+  "commit": "d76f904225253988ae5dbd58d94b20a899c8cd25",
   "work_title": "DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství",
   "default_template": "gjkt-odborna-prace",
   "templates": [
@@ -107,6 +107,9 @@
     "stack": [
       "React",
       "TypeScript",
+      "Rsbuild",
+      "Rspack",
+      "Biome",
       "shadcn/ui",
       "Motion",
       "Dagre",
