@@ -353,6 +353,11 @@
           ]
         },
         {
+          "name": "index.typ",
+          "path": "concepts/index.typ",
+          "type": "file"
+        },
+        {
           "name": "README.md",
           "path": "concepts/README.md",
           "type": "file"
