@@ -1,22 +1,18 @@
-#import "/DarkFactory/templates/common.typ": define-term, translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
+#import "/DarkFactory/templates/common.typ": translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
 #import "/DarkFactory/schema.typ": concept
 
-#let terminology = define-term(
-  id: "agent-divergence",
-  proper: translation(cs: "Patologie divergence", en: "Agent Divergence Pathologies"),
-  keyword: false,
-  citation: bib.shinn2023reflexion,
-  source: bib.shinn2023reflexion,
-)
 
 #let item = concept(
   key: "divergence",
-  term: terminology,
-  definition: terms => [
+    czech: "Patologie divergence",
+  english: "Agent Divergence Pathologies",
+  citation: bib.shinn2023reflexion,
+  source: bib.shinn2023reflexion,
+definition: terms => [
 Divergence je třída selhání agentní smyčky, při níž se iterativní běh vzdaluje cíli například perseverací, oscilací nebo nekontrolovanou spotřebou zdrojů.
   ],
   description: terms => [
-#diff[Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním.][Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním @shinn2023reflexion.] V důsledku autoregresivní povahy se v kontextu snadno vytvoří pravděpodobnostní atraktor, který model uvězní v neproduktivním cyklu.
+Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním @shinn2023reflexion. V důsledku autoregresivní povahy se v kontextu snadno vytvoří pravděpodobnostní atraktor, který model uvězní v neproduktivním cyklu.
 
 Mezi typické patologie patří:
 - Perseverace a zacyklení: Opakované volání identického nástroje se stejnými neplatnými argumenty (např. čtení neexistujícího souboru) i po obdržení chybové zprávy.

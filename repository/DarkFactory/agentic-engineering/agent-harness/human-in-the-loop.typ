@@ -1,22 +1,19 @@
-#import "/DarkFactory/templates/common.typ": define-term, translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
+#import "/DarkFactory/templates/common.typ": translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
 #import "/DarkFactory/schema.typ": concept
 
-#let terminology = define-term(
-    id: "human-in-the-loop",
-    proper: translation(cs: "Zapojení člověka do smyčky", en: "Human-in-the-loop"),
-    industry: translation(cs: "HITL", en: "HITL"),
-    citation: bib.mosqueira2023human,
-    source: bib.mosqueira2023human,
-)
 
 #let item = concept(
   key: "human_in_the_loop",
-  term: terminology,
-  definition: terms => [
+    industry: "HITL",
+  czech: "Zapojení člověka do smyčky",
+  english: "Human-in-the-loop",
+  citation: bib.mosqueira2023human,
+  source: bib.mosqueira2023human,
+definition: terms => [
 Zapojení člověka do smyčky (HITL) je návrhový vzor, v němž lidský operátor zůstává součástí rozhodovacího procesu prostřednictvím explicitních schvalovacích bran, zejména před významnými nebo nevratnými operacemi.
   ],
   description: terms => [
-Základním principem navrženého řešení není nekritická plná autonomie, nýbrž #diff[efektivní kooperace člověka a stroje][efektivní kooperace člověka a stroje (#term(terms.human_in_the_loop, language: "en", marker: false, linked: false, emphasized: false) @mosqueira2023human)]. Autonomnímu systému náleží mechanické a rutinní úkony, zatímco klíčová architektonická a nevratná rozhodnutí zůstávají plně pod kontrolou vývojáře.
+Základním principem navrženého řešení není nekritická plná autonomie, nýbrž efektivní kooperace člověka a stroje (#term(terms.human_in_the_loop, language: "en", marker: false, linked: false, emphasized: false) @mosqueira2023human). Autonomnímu systému náleží mechanické a rutinní úkony, zatímco klíčová architektonická a nevratná rozhodnutí zůstávají plně pod kontrolou vývojáře.
 
 Řízení lidského dohledu staví na těchto pilířích:
 - Lidské schvalovací brány (_Human Gates_): Formální procesní uzly, v nichž se automatický běh pozastaví a vyčká na autorizaci operátora:

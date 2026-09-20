@@ -1,29 +1,19 @@
-#import "/DarkFactory/templates/common.typ": define-term, translation, finalized
+#import "/DarkFactory/templates/common.typ": finalized
 #import "/DarkFactory/schema.typ": concept
-
-#let terminology = define-term(
-  id: "main-goal",
-  proper: translation(cs: "Hlavní cíl", en: "Main Goal"),
-  keyword: false,
-)
 
 #let item = concept(
   key: "main_goal",
-  term: terminology,
+  czech: "Hlavní cíl",
+  english: "Main Goal",
   definition: terms => [
 #finalized[
-Vymezit teoretické principy agentického inženýrství (_agentic engineering_) a navrhnout modulární architekturu agent harnessu pro automatizovaný vývoj softwaru se zachováním lidského dohledu v klíčových rozhodovacích bodech.
+Zjistit, jak lze současnou agentní AI účinně používat při vývoji softwaru, a navrhnout architekturu agent harnessu, která podporuje vysokou míru autonomie při zachování lidského dohledu v důležitých rozhodnutích.
 ]
   ],
   description: terms => [
-Cíl spojuje konceptové vymezení agentického inženýrství s návrhem konkrétního systému. Požadovaná architektura musí podporovat autonomní provádění vývojových úloh, ale zachovat explicitní lidskou kontrolu nad rozhodnutími s významným dopadem.
+Cíl spojuje popis současných agentních postupů s návrhem konkrétního systému DarkFactory. Výsledná architektura má podporovat samostatné provádění vývojových úloh a současně zachovat jasná místa pro lidskou kontrolu.
   ],
   summary: terms => [
-Výsledkem práce má být zdůvodněná a realizovatelná architektura agentního harnessu, nikoli pouze popis schopností jazykových modelů.
+Výsledkem práce má být použitelný návrh agentního harnessu a popis principů, které umožňují současnou agentní AI efektivně zapojit do vývoje softwaru.
   ],
-  visual: none,
-  examples: (),
-  attachments: (),
-  citations: (),
-  relations: (),
 )

@@ -1,21 +1,18 @@
-#import "/DarkFactory/templates/common.typ": define-term, translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
+#import "/DarkFactory/templates/common.typ": translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
 #import "/DarkFactory/schema.typ": concept
 
-#let terminology = define-term(
-    id: "context-rot",
-    proper: translation(cs: "Degradace kontextu", en: "Context Rot"),
-    citation: bib.liu2024,
-    source: bib.liu2024,
-)
 
 #let item = concept(
   key: "context_rot",
-  term: terminology,
-  definition: terms => [
+    czech: "Degradace kontextu",
+  english: "Context Rot",
+  citation: bib.liu2024,
+  source: bib.liu2024,
+definition: terms => [
 Degradace kontextu je pokles schopnosti modelu spolehlivě využívat informace v dlouhém, hlučném nebo vzájemně si konkurujícím kontextu.
   ],
   description: terms => [
-Schopnost jazykového modelu pracovat s dlouhým kontextem nelze posuzovat pouze podle nominální velikosti okna. Ačkoliv moderní modely deklarují kapacitu statisíců tokenů, jejich schopnost efektivně vyhledávat a logicky propojovat fakta s rostoucí délkou kontextu výrazně klesá. #accepted[Tento jev se označuje jako #term(terms.context_rot).]
+Schopnost jazykového modelu pracovat s dlouhým kontextem nelze posuzovat pouze podle nominální velikosti okna. Ačkoliv moderní modely deklarují kapacitu statisíců tokenů, jejich schopnost efektivně vyhledávat a logicky propojovat fakta s rostoucí délkou kontextu výrazně klesá. Tento jev se označuje jako #term(terms.context_rot).
 
 V praxi se projevuje dvěma hlavními mechanismy:
 - Lost in the Middle @liu2024: Pozornostní vrstvy transformeru spolehlivě vnímají informace na samém začátku a konci okna, zatímco fakta umístěná uprostřed dlouhého textu jsou často přehlížena.

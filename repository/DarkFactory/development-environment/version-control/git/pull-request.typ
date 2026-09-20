@@ -1,23 +1,20 @@
-#import "/DarkFactory/templates/common.typ": define-term, translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
+#import "/DarkFactory/templates/common.typ": translation, note, issue, alert, struct-alert, critique, added, draft, unconfirmed, accepted, finalized, removed, diff, scope-note, blue-note, term, kw, bib
 #import "/DarkFactory/schema.typ": concept
 
-#let terminology = define-term(
-    id: "pull-request",
-    proper: translation(cs: "Požadavek na sloučení", en: "Pull Request"),
-    industry: translation(cs: "Pull Request", en: "Pull Request"),
-    citation: bib.chacon2014,
-    source: bib.dabbish2012github,
-)
 
 #let item = concept(
   key: "pull_request",
-  term: terminology,
-  definition: terms => [
+    industry: "Pull Request",
+  czech: "Požadavek na sloučení",
+  english: "Pull Request",
+  citation: bib.chacon2014,
+  source: bib.dabbish2012github,
+definition: terms => [
 Pull Request je formální návrh na začlenění změn z jedné větve repozitáře do druhé a společné místo pro automatizované kontroly, lidskou revizi a diskusi nad navrženými úpravami.
   ],
   description: terms => [
 #unconfirmed[
-#diff[Pull request (PR) představuje stěžejní komunikační uzel mezi autonomním agentem a lidským inženýrem. Jedná se o formální žádost o začlenění navržených změn z pracovní větve do větve hlavní. V tomto bodě se plně uplatňuje princip zapojení člověka do smyčky (Human-in-the-loop):][#term(terms.pull_request) @chacon2014. V tomto bodě se plně uplatňuje princip #term(terms.human_in_the_loop):] agent kód samostatně navrhne a otestuje, avšak konečné rozhodnutí o jeho přijetí náleží vývojáři.
+#term(terms.pull_request) @chacon2014. V tomto bodě se plně uplatňuje princip #term(terms.human_in_the_loop): agent kód samostatně navrhne a otestuje, avšak konečné rozhodnutí o jeho přijetí náleží vývojáři.
 
 Rozhraní pull requestu integruje všechny podstatné informace na jednom místě:
 - Řádkový diff: Vizuální srovnání původního a nového stavu, kde jsou jasně barevně odlišeny přidané, změněné a smazané řádky.

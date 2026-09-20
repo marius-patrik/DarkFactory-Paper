@@ -29,12 +29,6 @@
               "source": "repository/.github/workflows/deploy-docs.yml"
             },
             {
-              "name": "migrate-concepts.yml",
-              "path": ".github/workflows/migrate-concepts.yml",
-              "type": "file",
-              "source": "repository/.github/workflows/migrate-concepts.yml"
-            },
-            {
               "name": "release.yml",
               "path": ".github/workflows/release.yml",
               "type": "file",
@@ -255,6 +249,12 @@
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/script.typ"
                     },
                     {
+                      "name": "skill-md-format.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/skill-md-format.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/skill-md-format.typ"
+                    },
+                    {
                       "name": "skills.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/skills.typ",
                       "type": "file",
@@ -268,10 +268,22 @@
                   "type": "directory",
                   "children": [
                     {
+                      "name": "code-execution.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/code-execution.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/code-execution.typ"
+                    },
+                    {
                       "name": "index.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/index.typ",
                       "type": "file",
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/index.typ"
+                    },
+                    {
+                      "name": "json-schema-tool-calling.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/json-schema-tool-calling.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/json-schema-tool-calling.typ"
                     },
                     {
                       "name": "mcp.typ",
@@ -361,6 +373,18 @@
               "path": "DarkFactory/agentic-engineering/index.typ",
               "type": "file",
               "source": "repository/DarkFactory/agentic-engineering/index.typ"
+            },
+            {
+              "name": "slop.typ",
+              "path": "DarkFactory/agentic-engineering/slop.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/slop.typ"
+            },
+            {
+              "name": "vibe-coding.typ",
+              "path": "DarkFactory/agentic-engineering/vibe-coding.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/vibe-coding.typ"
             }
           ]
         },
@@ -547,6 +571,12 @@
               "path": "DarkFactory/development-environment/index.typ",
               "type": "file",
               "source": "repository/DarkFactory/development-environment/index.typ"
+            },
+            {
+              "name": "runtime.typ",
+              "path": "DarkFactory/development-environment/runtime.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/runtime.typ"
             }
           ]
         },
@@ -1147,12 +1177,6 @@
           "source": "repository/scripts/fetch_external_assets.py"
         },
         {
-          "name": "migrate_concepts.py",
-          "path": "scripts/migrate_concepts.py",
-          "type": "file",
-          "source": "repository/scripts/migrate_concepts.py"
-        },
-        {
           "name": "preview_server.py",
           "path": "scripts/preview_server.py",
           "type": "file",
@@ -1258,6 +1282,30 @@
               "source": "repository/web/src/publication.css"
             },
             {
+              "name": "settings-view.tsx",
+              "path": "web/src/settings-view.tsx",
+              "type": "file",
+              "source": "repository/web/src/settings-view.tsx"
+            },
+            {
+              "name": "settings.ts",
+              "path": "web/src/settings.ts",
+              "type": "file",
+              "source": "repository/web/src/settings.ts"
+            },
+            {
+              "name": "viewer-tabs.tsx",
+              "path": "web/src/viewer-tabs.tsx",
+              "type": "file",
+              "source": "repository/web/src/viewer-tabs.tsx"
+            },
+            {
+              "name": "viewer-ui.tsx",
+              "path": "web/src/viewer-ui.tsx",
+              "type": "file",
+              "source": "repository/web/src/viewer-ui.tsx"
+            },
+            {
               "name": "viewer.css",
               "path": "web/src/viewer.css",
               "type": "file",
@@ -1342,8 +1390,9 @@
     {
       "name": "darkfactory",
       "path": "darkfactory",
-      "type": "file",
-      "source": null
+      "type": "submodule",
+      "source": null,
+      "url": "https://github.com/marius-patrik/DarkFactory.git"
     },
     {
       "name": "main.typ",

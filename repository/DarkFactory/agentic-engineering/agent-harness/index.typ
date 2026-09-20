@@ -13,7 +13,12 @@
 #let node = folder(
   key: "harness",
   section: section.item,
-  concepts: (sandbox.item, guardrail.item, human_in_the_loop.item, plugins.item),
+  concepts: (
+    sandbox.item,
+    guardrail.item,
+    human_in_the_loop.item,
+    plugins.item,
+  ),
   children: (
     agent_loop.node,
     tool_calling.node,

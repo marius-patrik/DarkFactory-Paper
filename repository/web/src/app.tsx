@@ -4,7 +4,6 @@ import {
   useMemo,
   useRef,
   useState,
-  type ReactElement,
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import { AnimatedIcon } from "@/components/animated-icon";
@@ -52,9 +51,19 @@ import {
   type WorkspacePaneKind,
   type WorkspaceSplitDirection,
 } from "./workspace";
+import {
+  clampSidebarWidth,
+  useViewerSettings,
+  type ActivityBarPosition,
+  type ActivityPanel,
+  type ActiveActivityPanel,
+  type AppearanceMode,
+} from "./settings";
+import { SettingsView } from "./settings-view";
+import { AppTabBar, type AppTab } from "./viewer-tabs";
+import { TooltipAction } from "./viewer-ui";
 
-const DEFAULT_WORK_TITLE =
-  "DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství";
+const DEFAULT_WORK_TITLE = "DarkFactory";
 
 type ArtifactSet = {
   pdf: string;
@@ -95,16 +104,13 @@ type Manifest = {
 
 type ViewerMode = "final" | "review" | "raw";
 type ViewMode = "single" | "split";
-type AppearanceMode = "light" | "dark" | "oled";
-type ActivityPanel = "structure" | "explorer" | null;
-type ActiveActivityPanel = Exclude<ActivityPanel, null>;
-type ActivityBarPosition = "left" | "right" | "top" | "bottom";
 
 type RepoTreeNode = {
   name: string;
   path: string;
-  type: "file" | "directory";
+  type: "file" | "directory" | "submodule";
   source?: string | null;
+  url?: string | null;
   children?: RepoTreeNode[];
 };
 
@@ -161,10 +167,6 @@ function languageShortId(profile: string) {
   if (profile === "en") return "EN";
   if (profile === "merged") return "CZ+EN";
   return profile.toUpperCase();
-}
-
-function clampSidebarWidth(value: number) {
-  return Math.max(190, Math.min(640, Math.round(value)));
 }
 
 type CommandBinding = {
@@ -323,80 +325,20 @@ function childHref(args: {
   });
 }
 
-function TooltipAction({
-  label,
-  icon,
-  onClick,
-  href,
-  download,
-  target,
-  pressed,
-  disabled = false,
-  className = "",
-}: {
-  label: string;
-  icon: string | string[];
-  onClick?: () => void;
-  href?: string;
-  download?: boolean;
-  target?: string;
-  pressed?: boolean;
-  disabled?: boolean;
-  className?: string;
-}) {
-  const content = href && !disabled ? (
-    <Button
-      asChild
-      type="button"
-      variant="ghost"
-      size="icon"
-      className={"icon-action " + className}
-    >
-      <a
-        href={href}
-        download={download || undefined}
-        target={target}
-        rel={target === "_blank" ? "noopener noreferrer" : undefined}
-        aria-label={label}
-      >
-        <AnimatedIcon names={icon} />
-      </a>
-    </Button>
-  ) : (
-    <Button
-      type="button"
-      variant="ghost"
-      size="icon"
-      className={"icon-action " + className}
-      onClick={onClick}
-      disabled={disabled}
-      aria-label={label}
-      aria-pressed={pressed}
-    >
-      <AnimatedIcon names={icon} />
-    </Button>
-  );
-
-  return (
-    <Tooltip>
-      <TooltipTrigger asChild>{content}</TooltipTrigger>
-      <TooltipContent>{label}</TooltipContent>
-    </Tooltip>
-  );
-}
-
 function ActivityBar({
   position,
   active,
   structureAvailable,
   onSelect,
   onMovePosition,
+  onOpenSettings,
 }: {
   position: ActivityBarPosition;
   active: ActivityPanel;
   structureAvailable: boolean;
   onSelect: (panel: ActivityPanel) => void;
   onMovePosition: (position: ActivityBarPosition) => void;
+  onOpenSettings: () => void;
 }) {
   const positions: Array<{ position: ActivityBarPosition; label: string; icon: string[] }> = [
     { position: "left", label: "Left", icon: ["PanelLeftIcon"] },
@@ -422,6 +364,12 @@ function ActivityBar({
             icon={["FolderIcon"]}
             pressed={active === "explorer"}
             onClick={() => onSelect(active === "explorer" ? null : "explorer")}
+            className="activity-action"
+          />
+          <TooltipAction
+            label="Settings"
+            icon={["SettingsIcon"]}
+            onClick={onOpenSettings}
             className="activity-action"
           />
         </aside>
@@ -470,13 +418,20 @@ function RepoTreeBranch({
           <button
             key={node.path}
             type="button"
-            className="repo-tree-file"
+            className={node.type === "submodule" ? "repo-tree-file repo-tree-submodule" : "repo-tree-file"}
             onClick={() => onOpenFile(node)}
-            disabled={!node.source}
-            title={node.source ? node.path : node.path + " is not a regular tracked file"}
+            disabled={node.type === "file" && !node.source}
+            title={
+              node.type === "submodule"
+                ? node.url || node.path + " submodule"
+                : node.source
+                  ? node.path
+                  : node.path + " is not a regular tracked file"
+            }
           >
-            <AnimatedIcon names={["FileIcon", "FileTextIcon"]} />
+            <AnimatedIcon names={node.type === "submodule" ? ["GitBranchIcon"] : ["FileIcon", "FileTextIcon"]} />
             <span>{node.name}</span>
+            {node.type === "submodule" && <span className="ui-secondary">submodule</span>}
           </button>
         ),
       )}
@@ -717,14 +672,13 @@ function FormatPicker({
   const options: Array<{
     format: ArtifactFormat;
     label: string;
-    short: string;
     href: string;
     icon: string[];
     extension: string;
   }> = [
-    { format: "pdf", label: "PDF", short: "PDF", extension: ".pdf", href: pdfHref, icon: ["FileTextIcon"] },
-    { format: "markdown", label: "Markdown", short: "MD", extension: ".md", href: markdownHref, icon: ["FileCode2Icon"] },
-    { format: "html", label: "HTML", short: "HTML", extension: ".html", href: htmlHref, icon: ["Code2Icon"] },
+    { format: "pdf", label: "PDF", extension: ".pdf", href: pdfHref, icon: ["FileTextIcon"] },
+    { format: "markdown", label: "Markdown", extension: ".md", href: markdownHref, icon: ["FileCode2Icon"] },
+    { format: "html", label: "HTML", extension: ".html", href: htmlHref, icon: ["Code2Icon"] },
   ];
 
   const active = options.find((option) => option.format === format) || options[0];
@@ -737,7 +691,7 @@ function FormatPicker({
             <DropdownMenuTrigger asChild>
               <Button type="button" variant="ghost" className="format-select" aria-label="File type">
                 <AnimatedIcon names={active.icon} />
-                <strong className="status-short-id">{active.short}</strong>
+                <strong className="status-short-id">{active.extension}</strong>
                 <AnimatedIcon names={["ChevronsUpDownIcon"]} />
               </Button>
             </DropdownMenuTrigger>
@@ -870,18 +824,28 @@ function ViewMenu({
   sidebarOpen,
   workspace,
   theme,
+  showRefresh,
+  showFullscreen,
   onThemeChange,
   onToggleSidebar,
   onOpenSplit,
   onSingle,
+  onOpenSettings,
+  onToggleRefresh,
+  onToggleFullscreen,
 }: {
   sidebarOpen: boolean;
   workspace: boolean;
   theme: AppearanceMode;
+  showRefresh: boolean;
+  showFullscreen: boolean;
   onThemeChange: (theme: AppearanceMode) => void;
   onToggleSidebar: () => void;
   onOpenSplit: (direction: WorkspaceSplitDirection) => void;
   onSingle: () => void;
+  onOpenSettings: () => void;
+  onToggleRefresh: () => void;
+  onToggleFullscreen: () => void;
 }) {
   const appearances: Array<{ theme: AppearanceMode; label: string; icon: string[] }> = [
     { theme: "light", label: "Light", icon: ["SunIcon"] },
@@ -895,6 +859,10 @@ function ViewMenu({
         <Button type="button" variant="ghost" className="menubar-button">View</Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
+        <DropdownMenuItem onSelect={onOpenSettings}>
+          <AnimatedIcon names={["SettingsIcon"]} />
+          Settings
+        </DropdownMenuItem>
         <DropdownMenuItem onSelect={onToggleSidebar}>
           <AnimatedIcon names={["PanelLeftIcon"]} />
           {sidebarOpen ? "Hide Sidebar" : "Show Sidebar"}
@@ -913,6 +881,22 @@ function ViewMenu({
             Single View
           </DropdownMenuItem>
         )}
+        <DropdownMenuSub>
+          <DropdownMenuSubTrigger>
+            <AnimatedIcon names={["EyeIcon"]} />
+            Toolbar buttons
+          </DropdownMenuSubTrigger>
+          <DropdownMenuSubContent>
+            <DropdownMenuItem onSelect={onToggleRefresh}>
+              <AnimatedIcon names={showRefresh ? ["CheckIcon", "CircleCheckIcon"] : ["RefreshCwIcon"]} />
+              Refresh
+            </DropdownMenuItem>
+            <DropdownMenuItem onSelect={onToggleFullscreen}>
+              <AnimatedIcon names={showFullscreen ? ["CheckIcon", "CircleCheckIcon"] : ["MaximizeIcon"]} />
+              Fullscreen
+            </DropdownMenuItem>
+          </DropdownMenuSubContent>
+        </DropdownMenuSub>
         <DropdownMenuSub>
           <DropdownMenuSubTrigger>
             <AnimatedIcon names={["SunMoonIcon", "MoonIcon"]} />
@@ -1054,44 +1038,28 @@ export function ViewerApp() {
   const workspaceRef = useRef<ReviewWorkspaceControl>(null);
   const suppressEmbeddedState = useRef(false);
   const [activeWorkspacePane, setActiveWorkspacePane] = useState<WorkspacePane | null>(null);
-  const [openRepoFile, setOpenRepoFile] = useState<RepoTreeNode | null>(null);
-
-  const [sidebarSide, setSidebarSideState] = useState<SidebarSide>(() =>
-    localStorage.getItem("paper-viewer-sidebar-side") === "right" ? "right" : "left",
-  );
-  const [sidebarWidth, setSidebarWidthState] = useState(() => {
-    const stored = Number(localStorage.getItem("paper-viewer-sidebar-width"));
-    return clampSidebarWidth(Number.isFinite(stored) && stored > 0 ? stored : 300);
-  });
-  const [sidebarMode, setSidebarModeState] = useState<SidebarMode>(() =>
-    localStorage.getItem("paper-viewer-sidebar-mode") === "minimap"
-      ? "minimap"
-      : "thumbnails",
-  );
-  const [activityBarPosition, setActivityBarPositionState] = useState<ActivityBarPosition>(() => {
-    const stored = localStorage.getItem("paper-viewer-activitybar-position");
-    return stored === "right" || stored === "top" || stored === "bottom" ? stored : "left";
-  });
-  const storedActivityPanel = localStorage.getItem("paper-viewer-activity-panel");
-  const [activityPanel, setActivityPanelState] = useState<ActivityPanel>(() => {
-    if (window.innerWidth <= 760 || storedActivityPanel === "closed") return null;
-    if (storedActivityPanel === "explorer" || storedActivityPanel === "structure") {
-      return storedActivityPanel;
-    }
-    return "structure";
-  });
+  const { settings, setSetting, patchSettings } = useViewerSettings();
+  const {
+    theme,
+    sidebarSide,
+    sidebarWidth,
+    sidebarMode,
+    activityBarPosition,
+    activityPanel,
+    splitSyncScroll,
+    showRefresh,
+    showFullscreen,
+  } = settings;
+  const [tabs, setTabs] = useState<AppTab[]>([
+    { id: "document", kind: "document", title: "DarkFactory" },
+  ]);
+  const [activeTabId, setActiveTabId] = useState("document");
+  const activeTab = tabs.find((tab) => tab.id === activeTabId) || tabs[0];
+  const settingsOpen = activeTab?.kind === "settings";
   const lastActivityPanel = useRef<ActiveActivityPanel>(
-    storedActivityPanel === "explorer" ? "explorer" : "structure",
+    activityPanel === "explorer" ? "explorer" : "structure",
   );
-  const [theme, setTheme] = useState<AppearanceMode>(() => {
-    const stored = localStorage.getItem("paper-viewer-theme");
-    if (stored === "light" || stored === "dark" || stored === "oled") return stored;
-    return window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
-  });
   const [fullscreen, setFullscreen] = useState(Boolean(document.fullscreenElement));
-  const [splitSyncScroll, setSplitSyncScroll] = useState(
-    () => localStorage.getItem("paper-viewer-sync-scroll") === "true",
-  );
   const [state, setState] = useState<DocumentState>({
     page: 1,
     total: 0,
@@ -1111,8 +1079,27 @@ export function ViewerApp() {
     mode,
   );
   const { nodes: repoTree, error: repoTreeError } = useRepoTree(repoTreePath);
+  const findRepoNode = useCallback(
+    (path: string | undefined): RepoTreeNode | null => {
+      if (!path) return null;
+      const walk = (nodes: RepoTreeNode[]): RepoTreeNode | null => {
+        for (const node of nodes) {
+          if (node.path === path) return node;
+          const found = node.children ? walk(node.children) : null;
+          if (found) return found;
+        }
+        return null;
+      };
+      return walk(repoTree);
+    },
+    [repoTree],
+  );
+  const activeRepoFile = activeTab?.kind === "source" ? findRepoNode(activeTab.path) : null;
   const structureAvailable =
-    openRepoFile === null && viewMode === "single" && mode !== "raw" && format === "pdf";
+    activeTab?.kind === "document" &&
+    viewMode === "single" &&
+    mode !== "raw" &&
+    format === "pdf";
   const scopedMode: ViewerMode =
     viewMode === "split" && activeWorkspacePane ? activeWorkspacePane.kind : mode;
   const scopedFormat: ArtifactFormat =
@@ -1123,35 +1110,29 @@ export function ViewerApp() {
     manifest?.variants.find((variant) => variant.profile === scopedProfile) || activeVariant;
   const scopedVersionTitle = scopedVariant?.title || versionTitle;
   const pagesAvailable =
-    openRepoFile === null &&
+    activeTab?.kind === "document" &&
     scopedMode !== "raw" &&
     scopedFormat === "pdf" &&
     (viewMode === "single" || state.total > 0);
 
-  const selectActivityPanel = useCallback((panel: ActivityPanel) => {
-    if (panel) {
-      lastActivityPanel.current = panel;
-      localStorage.setItem("paper-viewer-activity-panel", panel);
-    } else {
-      localStorage.setItem("paper-viewer-activity-panel", "closed");
-    }
-    setActivityPanelState(panel);
-  }, []);
+  const selectActivityPanel = useCallback(
+    (panel: ActivityPanel) => {
+      if (panel) lastActivityPanel.current = panel;
+      setSetting("activityPanel", panel);
+    },
+    [setSetting],
+  );
 
   const toggleSidebar = useCallback(() => {
-    setActivityPanelState((current) => {
-      if (current) {
-        lastActivityPanel.current = current;
-        localStorage.setItem("paper-viewer-activity-panel", "closed");
-        return null;
-      }
-
-      const preferred = lastActivityPanel.current;
-      const next = preferred === "structure" && !structureAvailable ? "explorer" : preferred;
-      localStorage.setItem("paper-viewer-activity-panel", next);
-      return next;
-    });
-  }, [structureAvailable]);
+    if (activityPanel) {
+      lastActivityPanel.current = activityPanel;
+      setSetting("activityPanel", null);
+      return;
+    }
+    const preferred = lastActivityPanel.current;
+    const next = preferred === "structure" && !structureAvailable ? "explorer" : preferred;
+    setSetting("activityPanel", next);
+  }, [activityPanel, setSetting, structureAvailable]);
 
   useCommand({
     id: "toggle-sidebar",
@@ -1168,9 +1149,49 @@ export function ViewerApp() {
   }, [activityPanel, selectActivityPanel, structureAvailable]);
 
   const openRepositoryFile = useCallback((node: RepoTreeNode) => {
+    if (node.type === "submodule") {
+      if (node.url) window.open(node.url, "_blank", "noopener,noreferrer");
+      return;
+    }
     if (!node.source) return;
-    setOpenRepoFile(node);
+    const id = "source:" + node.path;
+    setTabs((current) =>
+      current.some((tab) => tab.id === id)
+        ? current
+        : [...current, { id, kind: "source", title: node.name, path: node.path }],
+    );
+    setActiveTabId(id);
   }, []);
+
+  const openSettings = useCallback(() => {
+    setTabs((current) =>
+      current.some((tab) => tab.id === "settings")
+        ? current
+        : [...current, { id: "settings", kind: "settings", title: "Settings" }],
+    );
+    setActiveTabId("settings");
+  }, []);
+
+  const newDocumentTab = useCallback(() => {
+    const id = "document:" + Date.now();
+    setTabs((current) => [...current, { id, kind: "document", title: "DarkFactory" }]);
+    setActiveTabId(id);
+  }, []);
+
+  const closeTab = useCallback(
+    (id: string) => {
+      if (id === "document") return;
+      setTabs((current) => {
+        const index = current.findIndex((tab) => tab.id === id);
+        const next = current.filter((tab) => tab.id !== id);
+        if (activeTabId === id) {
+          setActiveTabId(next[Math.max(0, index - 1)]?.id || "document");
+        }
+        return next;
+      });
+    },
+    [activeTabId],
+  );
 
   const navigateViewer = useCallback((href: string) => {
     if (!href || href === "#") return;
@@ -1187,43 +1208,44 @@ export function ViewerApp() {
     params.get("refresh") || refreshRevision,
   );
 
-  const setSidebarSide = useCallback((side: SidebarSide) => {
-    setSidebarSideState(side);
-    localStorage.setItem("paper-viewer-sidebar-side", side);
-  }, []);
+  const setSidebarSide = useCallback(
+    (side: SidebarSide) => setSetting("sidebarSide", side),
+    [setSetting],
+  );
 
-  const setSidebarWidth = useCallback((width: number) => {
-    const next = clampSidebarWidth(width);
-    setSidebarWidthState(next);
-    localStorage.setItem("paper-viewer-sidebar-width", String(next));
-  }, []);
+  const setSidebarWidth = useCallback(
+    (width: number) => setSetting("sidebarWidth", clampSidebarWidth(width)),
+    [setSetting],
+  );
 
-  const setSidebarMode = useCallback((next: SidebarMode) => {
-    setSidebarModeState(next);
-    localStorage.setItem("paper-viewer-sidebar-mode", next);
-  }, []);
+  const setSidebarMode = useCallback(
+    (next: SidebarMode) => setSetting("sidebarMode", next),
+    [setSetting],
+  );
 
   const setActivityBarPosition = useCallback(
     (position: ActivityBarPosition) => {
-      setActivityBarPositionState(position);
-      localStorage.setItem("paper-viewer-activitybar-position", position);
-      if (position === "left" || position === "right") setSidebarSide(position);
+      if (position === "left" || position === "right") {
+        patchSettings({ activityBarPosition: position, sidebarSide: position });
+      } else {
+        setSetting("activityBarPosition", position);
+      }
     },
-    [setSidebarSide],
+    [patchSettings, setSetting],
   );
 
   const moveSidebar = useCallback(() => {
     const next = sidebarSide === "left" ? "right" : "left";
-    setSidebarSide(next);
     if (activityBarPosition === "left" || activityBarPosition === "right") {
-      setActivityBarPositionState(next);
-      localStorage.setItem("paper-viewer-activitybar-position", next);
+      patchSettings({ sidebarSide: next, activityBarPosition: next });
+    } else {
+      setSetting("sidebarSide", next);
     }
-  }, [activityBarPosition, setSidebarSide, sidebarSide]);
+  }, [activityBarPosition, patchSettings, setSetting, sidebarSide]);
 
   const toggleSidebarMode = useCallback(() => {
-    setSidebarMode(sidebarMode === "minimap" ? "thumbnails" : "minimap");
-  }, [setSidebarMode, sidebarMode]);
+    setSetting("sidebarMode", sidebarMode === "minimap" ? "thumbnails" : "minimap");
+  }, [setSetting, sidebarMode]);
 
   const sendToSplit = useCallback(
     (
@@ -1303,7 +1325,6 @@ export function ViewerApp() {
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
-    localStorage.setItem("paper-viewer-theme", theme);
     if (viewMode === "split" && !embedded) sendToSplit("theme", { theme });
   }, [embedded, sendToSplit, theme, viewMode]);
 
@@ -1336,10 +1357,9 @@ export function ViewerApp() {
           Number(data.scale) || 1,
         );
       } else if (data.command === "theme") {
-        setTheme(
-          data.theme === "light" || data.theme === "oled"
-            ? data.theme
-            : "dark",
+        setSetting(
+          "theme",
+          data.theme === "light" || data.theme === "oled" ? data.theme : "dark",
         );
       }
       requestAnimationFrame(() => {
@@ -1348,7 +1368,7 @@ export function ViewerApp() {
     };
     window.addEventListener("message", onMessage);
     return () => window.removeEventListener("message", onMessage);
-  }, [embedded]);
+  }, [embedded, setSetting]);
 
   useEffect(() => {
     if (viewMode !== "split" || embedded) return;
@@ -1664,20 +1684,25 @@ export function ViewerApp() {
 
   return (
     <div className={"viewer-shell activity-position-" + activityBarPosition}>
-      <nav className="menubar" aria-label="Application menu">
-        <FileMenu file={currentDownload} formatLabel={formatLabel} />
-        <ViewMenu
-          sidebarOpen={activityPanel !== null}
-          workspace={viewMode === "split"}
-          theme={theme}
-          onThemeChange={setTheme}
-          onToggleSidebar={toggleSidebar}
-          onOpenSplit={openSplit}
-          onSingle={() => navigateViewer(exitSplitTarget)}
-        />
-      </nav>
+      <header className="toolbar app-header">
+        <nav className="menubar-inline" aria-label="Application menu">
+          <FileMenu file={currentDownload} formatLabel={formatLabel} />
+          <ViewMenu
+            sidebarOpen={activityPanel !== null}
+            workspace={viewMode === "split"}
+            theme={theme}
+            showRefresh={showRefresh}
+            showFullscreen={showFullscreen}
+            onThemeChange={(nextTheme) => setSetting("theme", nextTheme)}
+            onToggleSidebar={toggleSidebar}
+            onOpenSplit={openSplit}
+            onSingle={() => navigateViewer(exitSplitTarget)}
+            onOpenSettings={openSettings}
+            onToggleRefresh={() => setSetting("showRefresh", !showRefresh)}
+            onToggleFullscreen={() => setSetting("showFullscreen", !showFullscreen)}
+          />
+        </nav>
 
-      <header className="toolbar">
         <div className="toolbar-main">
           <div className="toolbar-left">
             {pagesAvailable && (
@@ -1714,17 +1739,8 @@ export function ViewerApp() {
                 />
               </nav>
             )}
-            <TooltipAction
-              label="Refresh document"
-              icon={["RefreshCwIcon", "RotateCwIcon"]}
-              onClick={refreshDocument}
-            />
-            <span className="work-title" title={workTitle}>{workTitle}</span>
             {pagesAvailable && (
-              <>
-                <span className="identity-separator" aria-hidden="true">\</span>
-                <ChapterPicker chapters={state.chapters} page={state.page} onSelect={goToPage} />
-              </>
+              <ChapterPicker chapters={state.chapters} page={state.page} onSelect={goToPage} />
             )}
           </div>
 
@@ -1746,16 +1762,36 @@ export function ViewerApp() {
                 pressed={splitSyncScroll}
                 onClick={() => {
                   const next = !splitSyncScroll;
-                  setSplitSyncScroll(next);
-                  localStorage.setItem("paper-viewer-sync-scroll", String(next));
+                  setSetting("splitSyncScroll", next);
                   if (next) sendToSplit("page", { page: state.page });
                 }}
               />
             )}
-
+            {showRefresh && (
+              <TooltipAction
+                label="Refresh document"
+                icon={["RefreshCwIcon", "RotateCwIcon"]}
+                onClick={refreshDocument}
+              />
+            )}
+            {showFullscreen && (
+              <TooltipAction
+                label={fullscreen ? "Exit fullscreen" : "Fullscreen"}
+                icon={fullscreen ? ["MinimizeIcon", "Minimize2Icon"] : ["MaximizeIcon", "Maximize2Icon"]}
+                onClick={() => void toggleFullscreen()}
+              />
+            )}
           </div>
         </div>
       </header>
+
+      <AppTabBar
+        tabs={tabs.map((tab) => (tab.kind === "document" ? { ...tab, title: workTitle } : tab))}
+        activeId={activeTabId}
+        onSelect={setActiveTabId}
+        onClose={closeTab}
+        onNew={newDocumentTab}
+      />
 
       <div className="viewer-body">
         {activityBarPosition === "top" && (
@@ -1765,6 +1801,7 @@ export function ViewerApp() {
             structureAvailable={structureAvailable}
             onSelect={selectActivityPanel}
             onMovePosition={setActivityBarPosition}
+            onOpenSettings={openSettings}
           />
         )}
 
@@ -1776,6 +1813,7 @@ export function ViewerApp() {
               structureAvailable={structureAvailable}
               onSelect={selectActivityPanel}
               onMovePosition={setActivityBarPosition}
+            onOpenSettings={openSettings}
             />
           )}
 
@@ -1791,24 +1829,16 @@ export function ViewerApp() {
           )}
 
           <main className="viewer-main">
-            {openRepoFile?.source ? (
+            {activeRepoFile?.source ? (
               <div className="source-editor-shell">
-                <div className="source-editor-header">
-                  <AnimatedIcon names={["FileCode2Icon", "FileIcon"]} />
-                  <span title={openRepoFile.path}>{openRepoFile.path}</span>
-                  <TooltipAction
-                    label="Close editor"
-                    icon={["XIcon"]}
-                    onClick={() => setOpenRepoFile(null)}
-                    className="source-editor-close"
-                  />
-                </div>
                 <SourceFileView
-                  path={openRepoFile.source}
-                  displayPath={openRepoFile.path}
+                  path={activeRepoFile.source}
+                  displayPath={activeRepoFile.path}
                   theme={theme}
                 />
               </div>
+            ) : settingsOpen ? (
+              <SettingsView settings={settings} onChange={setSetting} />
             ) : viewMode === "split" ? (
               workspacePanes.length >= 2 ? (
                 <ReviewWorkspace
@@ -1865,6 +1895,7 @@ export function ViewerApp() {
               structureAvailable={structureAvailable}
               onSelect={selectActivityPanel}
               onMovePosition={setActivityBarPosition}
+            onOpenSettings={openSettings}
             />
           )}
         </div>
@@ -1876,6 +1907,7 @@ export function ViewerApp() {
             structureAvailable={structureAvailable}
             onSelect={selectActivityPanel}
             onMovePosition={setActivityBarPosition}
+            onOpenSettings={openSettings}
           />
         )}
       </div>
@@ -1971,12 +2003,6 @@ export function ViewerApp() {
               <span className="status-divider" aria-hidden="true" />
             </div>
           )}
-          <TooltipAction
-            label={fullscreen ? "Exit fullscreen" : "Fullscreen"}
-            icon={fullscreen ? ["MinimizeIcon", "Minimize2Icon"] : ["MaximizeIcon", "Maximize2Icon"]}
-            onClick={() => void toggleFullscreen()}
-            className="status-action"
-          />
         </div>
       </footer>
     </div>
