@@ -1,5 +1,5 @@
 {
-  "commit": "09237c09b4becbfa7dd9684aa3813c58f05a6e3c",
+  "commit": "81984a8fff7a0fe33bf2736df2c29d2580648cbd",
   "work_title": "DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství",
   "default_template": "gjkt-odborna-prace",
   "templates": [
@@ -88,11 +88,16 @@
     }
   ],
   "viewer": {
-    "engine": "React + PDF.js + compiled Typst HTML/Markdown",
+    "engine": "React + PDF.js + rendered Markdown + compiled Typst HTML",
     "formats": [
       "pdf",
       "markdown",
       "html"
+    ],
+    "modes": [
+      "compiled",
+      "concept",
+      "raw"
     ],
     "pdfjs_version": "6.3.289",
     "entrypoint": "viewer.html",

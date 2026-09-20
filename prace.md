@@ -1,4 +1,6 @@
-## DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství
+## DarkFactory:
+Umělá inteligence v praxi -
+Agentické a harnessové inženýrství
 
 Patrik Marius · Gymnázium J. K. Tyla · 2026
 
@@ -14,7 +16,9 @@ Agent, Agentické inženýrství [ Agentic Engineering ] , Agentní harness [ Ag
 
 ## Obsah
 
-1. [DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství](#loc-1)
+1. [DarkFactory:
+   Umělá inteligence v praxi -
+   Agentické a harnessové inženýrství](#loc-1)
 2. [Anotace](#loc-2)
 3. [Klíčová slova](#loc-3)
 4. [1 Úvod](#loc-4)
