@@ -29,6 +29,12 @@
               "source": "repository/.github/workflows/deploy-docs.yml"
             },
             {
+              "name": "migrate-concepts.yml",
+              "path": ".github/workflows/migrate-concepts.yml",
+              "type": "file",
+              "source": "repository/.github/workflows/migrate-concepts.yml"
+            },
+            {
               "name": "release.yml",
               "path": ".github/workflows/release.yml",
               "type": "file",
