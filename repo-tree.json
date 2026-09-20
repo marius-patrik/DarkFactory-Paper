@@ -714,49 +714,6 @@
               "type": "directory",
               "children": [
                 {
-                  "name": "examples",
-                  "path": "DarkFactory/language-models/language-model/examples",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "claude-opus-5-image.typ",
-                      "path": "DarkFactory/language-models/language-model/examples/claude-opus-5-image.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/language-models/language-model/examples/claude-opus-5-image.typ"
-                    },
-                    {
-                      "name": "claude-opus-5.typ",
-                      "path": "DarkFactory/language-models/language-model/examples/claude-opus-5.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/language-models/language-model/examples/claude-opus-5.typ"
-                    },
-                    {
-                      "name": "deepseek-v4-1-flash-image.typ",
-                      "path": "DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash-image.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash-image.typ"
-                    },
-                    {
-                      "name": "deepseek-v4-1-flash.typ",
-                      "path": "DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/language-models/language-model/examples/deepseek-v4-1-flash.typ"
-                    },
-                    {
-                      "name": "gpt-5-6-image.typ",
-                      "path": "DarkFactory/language-models/language-model/examples/gpt-5-6-image.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/language-models/language-model/examples/gpt-5-6-image.typ"
-                    },
-                    {
-                      "name": "gpt-5-6.typ",
-                      "path": "DarkFactory/language-models/language-model/examples/gpt-5-6.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/language-models/language-model/examples/gpt-5-6.typ"
-                    }
-                  ]
-                },
-                {
                   "name": "autoregression.typ",
                   "path": "DarkFactory/language-models/language-model/autoregression.typ",
                   "type": "file",

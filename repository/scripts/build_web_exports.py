@@ -10,19 +10,13 @@ from __future__ import annotations
 import argparse
 import html
 import re
+import shutil
 import subprocess
 from dataclasses import dataclass, field
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import Iterable
-
-
-PROFILES = (
-    ("school", "prace"),
-    ("cs", "prace-cs"),
-    ("en", "prace-en"),
-    ("merged", "prace-bilingual"),
-)
+from urllib.parse import unquote, urlparse
 
 
 PUBLICATION_CSS = Path("web/src/publication.css")
@@ -206,6 +200,68 @@ def run(command: list[str]) -> None:
     subprocess.run(command, check=True)
 
 
+def localize_image_assets(source: str, output: Path) -> str:
+    root = Path.cwd().resolve()
+    asset_root = output.parent / "assets"
+
+    pattern = re.compile(
+        r'(?P<prefix><(?:img|image)\b[^>]*?\b(?:src|href)=")(?P<url>[^"]+)(?P<suffix>")',
+        flags=re.IGNORECASE,
+    )
+
+    def replace(match: re.Match[str]) -> str:
+        raw_url = html.unescape(match.group("url"))
+        parsed = urlparse(raw_url)
+        if parsed.scheme in {"data", "http", "https"}:
+            return match.group(0)
+        if parsed.scheme:
+            return match.group(0)
+
+        path_text = unquote(parsed.path)
+        candidate = Path(path_text.lstrip("/")) if path_text.startswith("/") else Path(path_text)
+        if not candidate.is_file():
+            return match.group(0)
+
+        resolved = candidate.resolve()
+        try:
+            relative_source = resolved.relative_to(root)
+        except ValueError:
+            return match.group(0)
+
+        relative_asset = Path("assets") / relative_source
+        target = output.parent / relative_asset
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(resolved, target)
+
+        suffix = ""
+        if parsed.query:
+            suffix += "?" + parsed.query
+        if parsed.fragment:
+            suffix += "#" + parsed.fragment
+        return match.group("prefix") + relative_asset.as_posix() + suffix + match.group("suffix")
+
+    return pattern.sub(replace, source)
+
+
+def validate_local_image_references(source: str, output: Path) -> None:
+    refs = re.findall(
+        r'<(?:img|image)\b[^>]*?\b(?:src|href)="([^"]+)"',
+        source,
+        flags=re.IGNORECASE,
+    )
+    if not refs:
+        raise SystemExit(f"compiled HTML contains no rendered image references: {output}")
+    for raw_url in refs:
+        parsed = urlparse(html.unescape(raw_url))
+        if parsed.scheme in {"data", "http", "https"}:
+            continue
+        if parsed.scheme:
+            continue
+        candidate = output.parent / unquote(parsed.path)
+        if not candidate.is_file():
+            raise SystemExit(f"compiled HTML image asset is missing: {candidate}")
+
+
 def style_compiled_html(source: str) -> str:
     if 'id="darkfactory-publication-style"' in source:
         return source
@@ -244,7 +300,6 @@ def compile_html(
     font_paths: Iterable[str],
     book: str,
     template: str,
-    profile: str,
     review: bool,
     source: Path,
     output: Path,
@@ -255,7 +310,6 @@ def compile_html(
     command.extend([
         "--input", f"book={book}",
         "--input", f"template={template}",
-        "--input", f"profile={profile}",
     ])
     if review:
         command.extend(["--input", "review=true"])
@@ -268,6 +322,8 @@ def compile_html(
     if "<html" not in lowered or "<body" not in lowered:
         raise SystemExit(f"Typst HTML output is not a complete HTML document: {output}")
 
+    html_source = localize_image_assets(html_source, output)
+    validate_local_image_references(html_source, output)
     html_source = style_compiled_html(html_source)
     output.write_text(html_source, encoding="utf-8")
 
@@ -276,6 +332,8 @@ def compile_html(
     md_output.write_text(markdown, encoding="utf-8")
     if len(markdown.strip()) < 256 or "#" not in markdown:
         raise SystemExit(f"derived Markdown output is unexpectedly small: {md_output}")
+    if "assets/" not in markdown and "<image" not in markdown and "data:image/" not in markdown:
+        raise SystemExit(f"derived Markdown contains no rendered image references: {md_output}")
 
 
 def main() -> None:
@@ -293,24 +351,22 @@ def main() -> None:
         raise SystemExit(f"missing semantic web publication source: {source}")
 
     output_dir = Path(args.output_dir)
-    for profile, stem in PROFILES:
-        for review in (False, True):
-            suffix = "-review" if review else ""
-            html_output = output_dir / f"{stem}{suffix}.html"
-            compile_html(
-                typst=args.typst,
-                font_paths=args.font_path,
-                book=args.book,
-                template=args.template,
-                profile=profile,
-                review=review,
-                source=source,
-                output=html_output,
-            )
-            print(
-                f"ok: semantic web publication {args.book}/{args.template}/{profile}/"
-                f"{'review' if review else 'final'} -> {html_output} + {html_output.with_suffix('.md')}"
-            )
+    for review in (False, True):
+        suffix = "-review" if review else ""
+        html_output = output_dir / f"prace{suffix}.html"
+        compile_html(
+            typst=args.typst,
+            font_paths=args.font_path,
+            book=args.book,
+            template=args.template,
+            review=review,
+            source=source,
+            output=html_output,
+        )
+        print(
+            f"ok: semantic web publication {args.book}/{args.template}/"
+            f"{'review' if review else 'final'} -> {html_output} + {html_output.with_suffix('.md')}"
+        )
 
 
 if __name__ == "__main__":

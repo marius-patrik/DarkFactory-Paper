@@ -1,0 +1,57 @@
+{
+  "commit": "e45c2c5f97ce41930c8c787dc1bac791d13a25a6",
+  "book": "DarkFactory",
+  "work_title": "DarkFactory",
+  "default_template": "gjkt-odborna-prace",
+  "templates": [
+    "gjkt-odborna-prace"
+  ],
+  "publication": {
+    "title": "DarkFactory",
+    "final": "prace.pdf",
+    "review": "prace-review.pdf",
+    "artifacts": {
+      "final": {
+        "pdf": "prace.pdf",
+        "markdown": "prace.md",
+        "html": "prace.html"
+      },
+      "review": {
+        "pdf": "prace-review.pdf",
+        "markdown": "prace-review.md",
+        "html": "prace-review.html"
+      }
+    }
+  },
+  "viewer": {
+    "engine": "React + PDF.js + Monaco Raw + rendered Markdown + compiled Typst HTML",
+    "formats": [
+      "pdf",
+      "markdown",
+      "html"
+    ],
+    "modes": [
+      "viewer",
+      "review",
+      "raw"
+    ],
+    "repo_tree": "repo-tree.json",
+    "repository_source_root": "repository/",
+    "content_index": "content-index.json",
+    "repository_url": "https://github.com/marius-patrik/DarkFactory-Paper",
+    "pdfjs_version": "6.3.289",
+    "entrypoint": "viewer.html",
+    "stack": [
+      "React",
+      "TypeScript",
+      "Rsbuild",
+      "Rspack",
+      "Biome",
+      "shadcn/ui",
+      "Motion",
+      "Dagre",
+      "PDF.js",
+      "Monaco Editor"
+    ]
+  }
+}

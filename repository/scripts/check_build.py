@@ -10,11 +10,9 @@ from pathlib import Path
 
 BOOK = os.environ.get("BOOK", "DarkFactory")
 ROOT = Path(BOOK)
-PROFILES = ("", "-cs", "-en", "-bilingual")
-EXPECTED_PDFS = tuple(
-    Path("out") / f"prace{profile}{review}.pdf"
-    for review in ("", "-review")
-    for profile in PROFILES
+EXPECTED_PDFS = (
+    Path("out/prace.pdf"),
+    Path("out/prace-review.pdf"),
 )
 EXPECTED_HTML = tuple(path.with_suffix(".html") for path in EXPECTED_PDFS)
 EXPECTED_MARKDOWN = tuple(path.with_suffix(".md") for path in EXPECTED_PDFS)
@@ -57,6 +55,28 @@ def validate_publication(path: Path) -> None:
 for artifact in EXPECTED:
     validate_publication(artifact)
 
+for html_path in EXPECTED_HTML:
+    source = html_path.read_text(encoding="utf-8")
+    refs = re.findall(
+        r'<(?:img|image)\b[^>]*?\b(?:src|href)="([^"]+)"',
+        source,
+        flags=re.IGNORECASE,
+    )
+    if not refs:
+        fail(f"HTML publication contains no rendered image references: {html_path}")
+    for ref in refs:
+        if ref.startswith(("data:", "http://", "https://")):
+            continue
+        local = html_path.parent / ref.split("#", 1)[0].split("?", 1)[0]
+        if not local.is_file():
+            fail(f"HTML publication references missing image asset: {local}")
+
+for markdown_path in EXPECTED_MARKDOWN:
+    source = markdown_path.read_text(encoding="utf-8")
+    if "assets/" not in source and "<image" not in source and "data:image/" not in source:
+        fail(f"Markdown publication contains no rendered image references: {markdown_path}")
+
+
 if not ROOT.is_dir():
     fail(f"selected book root does not exist: {ROOT}")
 
@@ -74,12 +94,11 @@ for template_name in template_names:
     template_out = Path("out/templates") / template_name
     for artifact in EXPECTED:
         validate_publication(template_out / artifact.name)
-    for profile in PROFILES:
-        for extension in (".pdf", ".html", ".md"):
-            final = template_out / f"prace{profile}{extension}"
-            review = template_out / f"prace{profile}-review{extension}"
-            if final.read_bytes() == review.read_bytes():
-                fail(f"Final and Review outputs are identical: {template_name}/{final.name}")
+    for extension in (".pdf", ".html", ".md"):
+        final = template_out / f"prace{extension}"
+        review = template_out / f"prace-review{extension}"
+        if final.read_bytes() == review.read_bytes():
+            fail(f"Final and Review outputs are identical: {template_name}/{final.name}")
 
 gitmodules = require_file(Path(".gitmodules"))
 if gitmodules.count("[submodule ") != 1:
@@ -155,8 +174,8 @@ for contract in (
     "#let appendix-folders",
     "#let book-title = root.title",
     "#let vocabulary = build-vocabulary(folders)",
-    '#let render-manuscript(profile: "school")',
-    '#let render-appendices(profile: "school")',
+    "#let render-manuscript()",
+    "#let render-appendices()",
 ):
     if contract not in catalog:
         fail(f"book structure is missing contract: {contract}")
@@ -178,8 +197,8 @@ for contract in (
     "#let relation(",
     "#let collect-concepts(folders)",
     "#let build-vocabulary(folders)",
-    '#let render-concept-title(item, profile: "school") = {',
-    '#let render-concept(item, terms, graph, level: 1, profile: "school")',
+    "#let render-concept-title(item) = {",
+    "#let render-concept(item, terms, graph, level: 1)",
 ):
     if contract not in schema:
         fail(f"concept schema is missing contract: {contract}")
@@ -191,16 +210,8 @@ for forbidden in (
 ):
     if forbidden in schema:
         fail(f"concept heading metadata remains contextual: {forbidden}")
-if 'let output = [#heading(level: level)[#render-concept-title(item, profile: profile)]#label("concept-" + item.key)]' not in schema:
+if 'let output = [#heading(level: level)[#render-concept-title(item)]#label("concept-" + item.key)]' not in schema:
     fail("concept heading construction is not bookmark-safe")
-for contract in (
-    '#let localized-concept-title(item, profile: "school") = {',
-    '#let localized-translation-title(value, profile: "school") = {',
-    'else if item.industry != none {',
-    'localized-concept-title(item, profile: profile)',
-):
-    if contract not in schema:
-        fail(f"profile-aware concept-heading contract missing: {contract}")
 
 common = sources[ROOT / "templates/common.typ"]
 for contract in (
@@ -314,9 +325,6 @@ if BOOK == "DarkFactory":
         ROOT / "agentic-engineering/agent-harness/examples/codex.typ",
         ROOT / "agentic-engineering/agent-harness/examples/claude-code.typ",
         ROOT / "agentic-engineering/agent-harness/examples/claude-desktop.typ",
-        ROOT / "language-models/language-model/examples/gpt-5-6.typ",
-        ROOT / "language-models/language-model/examples/claude-opus-5.typ",
-        ROOT / "language-models/language-model/examples/deepseek-v4-1-flash.typ",
     ):
         if not required.is_file():
             fail(f"DarkFactory book is missing required publication component: {required}")
@@ -380,9 +388,16 @@ for contract in ('role="tablist"', 'role="tab"', 'label="New tab"', "app-tab-clo
     if contract not in viewer_tabs:
         fail(f"persistent tab bar is missing contract: {contract}")
 
+web_exports = sources[Path("scripts/build_web_exports.py")]
+for contract in ("localize_image_assets", "validate_local_image_references", '"assets/"'):
+    if contract not in web_exports:
+        fail(f"web export image contract missing: {contract}")
+
 site_builder = sources[Path("scripts/build_site.py")]
 for contract in (
     "publish_tracked_sources",
+    "publish_compiled_assets",
+    '"publication": PUBLICATION',
     '"source": (',
     'f"repository/{tracked_path}"',
     '"repository_source_root": "repository/"',
@@ -408,3 +423,9 @@ print(
     f"ok: {BOOK}: {len(EXPECTED)} canonical artifacts, {len(template_names)} template matrix/matrices, "
     f"{len(concept_files)} concepts, concept-owned terminology, and web workbench validated"
 )
+
+for path in (Path("Makefile"), Path("scripts/build_review.py"), Path("scripts/build_web_exports.py"), Path("scripts/build_site.py")):
+    source = path.read_text(encoding="utf-8")
+    for forbidden in ("prace-cs", "prace-en", "prace-bilingual", "profile=cs", "profile=en", "profile=merged"):
+        if forbidden in source:
+            fail(f"obsolete language publication variant remains in {path}: {forbidden}")
