@@ -113,9 +113,9 @@ This thesis examines the current use of agentic artificial intelligence in softw
       1. [4.4.12.1 Subagent (Podřízený agent)](#concept-subagent)
 9. [5 Results and Discussion (Výsledky a diskuse)](#concept-results_discussion)
 10. [6 Conclusion (Závěr)](#concept-conclusion)
-11. [Seznam zdrojů | References](#loc-39)
-12. [Seznam obrázků a tabulek | List of figures and tables](#loc-65)
-13. [Seznam příloh | List of appendices](#loc-66)
+11. [Seznam zdrojů | References](#loc-40)
+12. [Seznam obrázků a tabulek | List of figures and tables](#loc-67)
+13. [Seznam příloh | List of appendices](#loc-68)
 
 ## 1 Introduction (Úvod)
 
@@ -129,9 +129,9 @@ Praktickým příkladem je DarkFactory, na kterém jsou popsané principy převe
 
 Motivací práce je ukázat, jaké úlohy dokážou současné agentní systémy samostatně provádět a jaká technická vrstva umožňuje převést schopnost jazykového modelu do spolehlivého jednání nad skutečným softwarovým projektem.
 
-Generativní AI se během několika let rozšířila do masového používání. Microsoft AI Economy Institute odhaduje, že v prvním čtvrtletí 2026 použilo generativní AI 17,8 % světové populace v produktivním věku. Současně se rozšiřují systémy, které plánují více kroků, pracují se soubory a nástroji, spouštějí příkazy a testy a vykonávají delší úlohy. <sup><span id="loc-5">(</span><a href="#loc-40" role="doc-biblioref">1</a>)</sup>
+Generativní AI se během několika let rozšířila do masového používání. Microsoft AI Economy Institute odhaduje, že v prvním čtvrtletí 2026 použilo generativní AI 17,8 % světové populace v produktivním věku. Současně se rozšiřují systémy, které plánují více kroků, pracují se soubory a nástroji, spouštějí příkazy a testy a vykonávají delší úlohy. <sup><span id="loc-5">(</span><a href="#loc-41" role="doc-biblioref">1</a>)</sup>
 
-V softwarovém inženýrství tento posun reprezentují například Codex a Claude Code. Jejich oficiální popisy uvádějí práci nad skutečnými repozitáři, úpravy souborů, spouštění testů a další činnosti přesahující jednorázové generování kódu. <sup><span id="loc-6">(</span><a href="#loc-41" role="doc-biblioref">2</a>)</sup> <sup><span id="loc-7">(</span><a href="#loc-42" role="doc-biblioref">3</a>)</sup>
+V softwarovém inženýrství tento posun reprezentují například Codex a Claude Code. Jejich oficiální popisy uvádějí práci nad skutečnými repozitáři, úpravy souborů, spouštění testů a další činnosti přesahující jednorázové generování kódu. <sup><span id="loc-6">(</span><a href="#loc-42" role="doc-biblioref">2</a>)</sup> <sup><span id="loc-7">(</span><a href="#loc-43" role="doc-biblioref">3</a>)</sup>
 
 Práce proto sleduje praktické využití těchto systémů při vývoji softwaru: jak jim zpřístupnit repozitář, nástroje a ověřování tak, aby dokázaly samostatně provádět užitečnou část vývojové práce a člověk si zachoval kontrolu nad důležitými rozhodnutími.
 
@@ -139,11 +139,11 @@ Práce proto sleduje praktické využití těchto systémů při vývoji softwar
 
 Grafický podklad dokumentuje rychlost, s níž se generativní AI rozšířila z experimentální technologie do běžného používání.
 
-Microsoft AI Economy Institute uvádí pro druhé pololetí roku 2025 celosvětový podíl uživatelů 16,3 %, oproti 15,1 % v prvním pololetí <sup><span id="loc-8">(</span><a href="#loc-43" role="doc-biblioref">4</a>)</sup>. Novější zpráva pro první čtvrtletí 2026 odhaduje používání generativní AI na 17,8 % světové populace v produktivním věku <sup>(<a href="#loc-40" role="doc-biblioref">1</a>)</sup>.
+Microsoft AI Economy Institute uvádí pro druhé pololetí roku 2025 celosvětový podíl uživatelů 16,3 %, oproti 15,1 % v prvním pololetí <sup><span id="loc-8">(</span><a href="#loc-44" role="doc-biblioref">4</a>)</sup>. Novější zpráva pro první čtvrtletí 2026 odhaduje používání generativní AI na 17,8 % světové populace v produktivním věku <sup>(<a href="#loc-41" role="doc-biblioref">1</a>)</sup>.
 
 ![](data:image/png;base64,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)
 
-*Obrázek 1: AI diffusion v globálním Severu, globálním Jihu a celosvětově, H1–H2 2025. Zdroj: Microsoft AI Economy Institute <sup>(<a href="#loc-43" role="doc-biblioref">4</a>)</sup>.*
+*Obrázek 1: AI diffusion v globálním Severu, globálním Jihu a celosvětově, H1–H2 2025. Zdroj: Microsoft AI Economy Institute <sup>(<a href="#loc-44" role="doc-biblioref">4</a>)</sup>.*
 
 Měřítko adopce neposuzuje schopnosti jednotlivých systémů, ale dokládá jejich rychlé rozšíření do reálného používání. Výchozím problémem je převést schopnosti současných modelů do opakovatelného a kontrolovatelného agentního vývojového procesu.
 
@@ -196,7 +196,7 @@ Agentní systém nepracuje pouze s textem, ale se stavem repozitáře a vývojov
 
 GitHub je cloudová platforma pro hosting gitových repozitářů a koordinaci vývojového cyklu pomocí Issues, Pull Requests a automatizačních workflow.
 
-GitHub zde tvoří koordinační vrstvu nad Gitem, která propojuje zadání, revizi změn a automatizované kontroly.
+GitHub poskytuje nad gitovým repozitářem koordinační vrstvu pro zadání práce, revizi změn a automatizaci. Tyto odpovědnosti jsou v práci dále rozloženy mezi samostatné koncepty Issue, Pull Request a GitHub Actions. GitHub zde tvoří koordinační vrstvu nad Gitem, která propojuje zadání, revizi změn a automatizované kontroly.
 
 ### 2.2 Runtime (Běhové prostředí)
 
@@ -222,7 +222,7 @@ V agentním vývoji plán omezuje okamžité přecházení od požadavku k úpra
 
 Orientovaný acyklický graf (DAG) je orientovaný graf bez orientovaného cyklu, který umožňuje explicitně vyjádřit závislosti a pořadí kroků pracovního postupu.
 
-DAG převádí implicitní pořadí vícefázové úlohy na kontrolovatelnou strukturu závislostí, v níž lze navazující krok spustit až po splnění jeho předpokladů.
+V agentním workflow může DAG modelovat kroky jako uzly a jejich povinné závislosti jako hrany. Tím lze explicitně vyjádřit například posloupnost příjem požadavku → plán → implementace → testy → schválení a zabránit spuštění navazujícího kroku před splněním jeho předpokladů. DAG převádí implicitní pořadí vícefázové úlohy na kontrolovatelnou strukturu závislostí, v níž lze navazující krok spustit až po splnění jeho předpokladů.
 
 #### 2.3.3 Version control (Správa verzí)
 
@@ -234,23 +234,32 @@ Pro autonomní vývoj poskytuje verzovací vrstva deterministický záznam reali
 
 Git je distribuovaný systém správy verzí, který uchovává historii projektu, podporuje větvení a slučování změn a umožňuje deterministický návrat k předchozím stavům repozitáře.
 
-Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém [***Git***](#concept-git)<sup>*</sup> v kombinaci s platformou [***GitHub***](#concept-github)<sup>*</sup>.
+Při agentním vývoji poskytuje správa verzí auditovatelnou historii změn a možnost bezpečně oddělit pracovní stav od stabilní linie projektu. Chybnou nebo neúspěšnou změnu lze porovnat, vrátit nebo zahodit bez závislosti na paměti modelu. Tato práce používá distribuovaný systém [***Git***](#concept-git)<sup>*</sup> v kombinaci s platformou [***GitHub***](#concept-github)<sup>*</sup>.
 
-Samotný [***Git***](#concept-git)<sup>*</sup> zde zůstává vymezen jako distribuovaný systém správy verzí. Hosting a koordinaci repozitáře popisuje [***GitHub***](#concept-github)<sup>*</sup>, zadání práce [***Issue (Úloha GitHubu)***](#concept-github_issue)<sup>*</sup>, revizní integraci [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> a automatizaci [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>.
-
-Git poskytuje agentnímu vývoji auditovatelnou historii a možnost bezpečně izolovat, porovnávat, slučovat nebo vracet změny bez závislosti na paměti modelu.
+Samotný [***Git***](#concept-git)<sup>*</sup> zde zůstává vymezen jako distribuovaný systém správy verzí. Hosting a koordinaci repozitáře popisuje [***GitHub***](#concept-github)<sup>*</sup>, zadání práce [***Issue (Úloha GitHubu)***](#concept-github_issue)<sup>*</sup>, revizní integraci [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> a automatizaci [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>. Git poskytuje agentnímu vývoji auditovatelnou historii a možnost bezpečně izolovat, porovnávat, slučovat nebo vracet změny bez závislosti na paměti modelu.
 
 ###### 2.3.3.1.1 Branch (Větev repozitáře)
 
 Větev je pojmenovaná vývojová linie v systému správy verzí, která umožňuje provádět změny odděleně od jiné linie historie a později je porovnat nebo sloučit.
 
-Samostatná pracovní větev izoluje mezistavy a chyby agentního běhu od stabilní hlavní linie a umožňuje celý neúspěšný pokus bezpečně zahodit.
+V navrženém procesu DarkFactory agent nepracuje přímo v hlavní větvi. Každý úkol provádí v samostatné pracovní větvi odvozené ze základní linie projektu <sup><span id="loc-10">(</span><a href="#loc-45" role="doc-biblioref">5</a>)</sup>.
+
+Tento postup přináší několik praktických vlastností:
+
+- Ochrana hlavní větve: změny se do `main` začleňují až přes definovaný integrační proces.
+- Samostatná větev pro každý úkol: pracovní historie jednoho zadání je oddělena od ostatních běhů.
+- Izolace mezistavů: dočasně nefunkční nebo experimentální změny zůstávají mimo hlavní větev.
+- Snadné zahození neúspěšného běhu: pracovní větev lze odstranit bez změny stabilní historie projektu.
+
+Pokud se hlavní větev během práce posune, pracovní větev se před integrací zaktualizuje pomocí běžných mechanismů Gitu, například rebase nebo merge. Samostatná pracovní větev izoluje mezistavy a chyby agentního běhu od stabilní hlavní linie a umožňuje celý neúspěšný pokus bezpečně zahodit.
 
 ###### 2.3.3.1.2 Merge (Sloučení větví)
 
 Merge je operace správy verzí, která kombinuje změny nebo historii dvou vývojových linií do společného výsledného stavu; případné konflikty vyžadují explicitní vyřešení.
 
-Způsob sloučení určuje, jak se pracovní historie agenta promítne do stabilní větve; před integrací je vhodné oddělit užitečný výsledný stav od experimentálních mezikroků.
+Agent může během jednoho úkolu vytvářet více pracovních commitů při iterativním vývoji a opravách. V navrženém procesu DarkFactory se tato pracovní historie před začleněním do hlavní větve zjednoduší pomocí Squash (Sloučení commitů) <sup>(<a href="#loc-45" role="doc-biblioref">5</a>)</sup>.
+
+Výsledkem je jeden integrační commit odpovídající jednomu dokončenému úkolu. Pomocné mezikroky zůstávají v pracovní větvi, zatímco hlavní historie zachovává výslednou změnu jako jeden celek, který lze samostatně auditovat nebo případně vrátit. Způsob sloučení určuje, jak se pracovní historie agenta promítne do stabilní větve; před integrací je vhodné oddělit užitečný výsledný stav od experimentálních mezikroků.
 
 ###### 2.3.3.1.3 Squash (Sloučení commitů)
 
@@ -262,25 +271,29 @@ V agentním běhu často vzniká více pomocných commitů během iterativního 
 
 GitHub Issue je strukturovaný záznam požadavku, úkolu nebo chyby v repozitáři, který může nést popis, diskusi, štítky, přiřazení a vazby na změny kódu.
 
-Issue funguje jako stabilní zdroj zadání oddělený od implementace a umožňuje pozdější plán, změny i revizi vztáhnout ke stejnému původnímu požadavku.
+V agentním vývojovém procesu může Issue fungovat jako explicitní vstupní specifikace úlohy. Odděluje zadání od samotné implementace a poskytuje stabilní referenční bod pro plán, pull request i následnou revizi. Issue funguje jako stabilní zdroj zadání oddělený od implementace a umožňuje pozdější plán, změny i revizi vztáhnout ke stejnému původnímu požadavku.
 
 ###### 2.3.3.1.5 Pull Request (Požadavek na sloučení)
 
 Pull Request je formální návrh na začlenění změn z jedné větve repozitáře do druhé a společné místo pro automatizované kontroly, lidskou revizi a diskusi nad navrženými úpravami.
 
-Pull Request vytváří kontrolní hranici mezi samostatně připravenou změnou a jejím přijetím do hlavní historie projektu.
+V navrženém procesu DarkFactory tvoří [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> kontrolní hranici mezi pracovní větví agenta a hlavní historií repozitáře <sup>(<a href="#loc-45" role="doc-biblioref">5</a>)</sup>. Agent připraví změnu, její souhrn a výsledky automatických kontrol; lidský revizor následně rozhodne o přijetí, přepracování nebo zamítnutí změny v souladu s principem [***HITL (Zapojení člověka do smyčky)***](#concept-human_in_the_loop)<sup>*</sup>.
+
+Pull request soustřeďuje na jednom místě řádkový diff, popis změny, vazbu na původní zadání, výsledky automatických kontrol a revizní diskusi. Tím poskytuje společný bod pro strojové ověření i lidskou sémantickou kontrolu před integrací. Pull Request vytváří kontrolní hranici mezi samostatně připravenou změnou a jejím přijetím do hlavní historie projektu.
 
 ###### 2.3.3.1.6 Required Checks (Požadované kontroly)
 
 Požadované kontroly jsou automatizované kontroly, jejichž úspěšné dokončení je povinnou podmínkou pro přijetí nebo sloučení změny.
 
-Required checks mění CI z informativní zpětné vazby na technicky vynucovanou podmínku integrace.
+V procesu DarkFactory nejsou automatické kontroly pouze informativní; vybrané kontroly jsou nastaveny jako podmínka integrace změny.
+
+Mezi požadované kontroly mohou patřit statická analýza a linter, typová kontrola a sestavení projektu a automatizované testy. Každá kontrola musí vrátit jednoznačný výsledek, který lze použít jako strojově vyhodnotitelnou podmínku před sloučením pull requestu <sup><span id="loc-11">(</span><a href="#loc-46" role="doc-biblioref">6</a>)</sup>. Required checks mění CI z informativní zpětné vazby na technicky vynucovanou podmínku integrace.
 
 ###### 2.3.3.1.7 Branch Protection (Ochrana větví)
 
 Ochrana větví je sada pravidel repozitáře, která omezuje přímé změny chráněných větví a vynucuje schválení, kontroly nebo jiné podmínky před sloučením.
 
-GitHub poskytuje pravidla ochrany větví *Branch Protection Rules* <sup><span id="loc-10">(</span><a href="#loc-44" role="doc-biblioref">5</a>)</sup>, která zabraňují začlenění neověřeného kódu do stabilní větve `main`.
+GitHub poskytuje pravidla ochrany větví *Branch Protection Rules* <sup>(<a href="#loc-45" role="doc-biblioref">5</a>)</sup>, která zabraňují začlenění neověřeného kódu do stabilní větve `main`.
 
 - Povinné schválení člověkem: Požadavek na explicitní autorizaci kódu lidským vývojářem dříve, než GitHub povolí sloučení do produkční větve.
 
@@ -290,25 +303,29 @@ Ochrana větví převádí procesní pravidla integrace do technicky vynucované
 
 Průběžná integrace (CI) je vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami.
 
-V agentním vývoji CI poskytuje strojově ověřitelnou zpětnou vazbu, která odděluje generování změny od jejího objektivního ověření.
+Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl úspěšně vygenerován. Kontinuální integrace proto poskytuje externí a opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek <sup>(<a href="#loc-46" role="doc-biblioref">6</a>)</sup>.
+
+Konkrétní automatizační platformu popisuje [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>, izolaci běhu [***Container (Softwarový kontejner)***](#concept-container)<sup>*</sup> a problematiku nedeterministických selhání [***Flaky Test (Nestálý test)***](#concept-flaky_test)<sup>*</sup>. Koncept CI zde zůstává zaměřen na integrační kontrakt a strojově ověřitelnou zpětnou vazbu.
+
+Riziko nestálých testů je vyčleněno do samostatného konceptu [***Flaky Test (Nestálý test)***](#concept-flaky_test)<sup>*</sup>. V agentním vývoji CI poskytuje strojově ověřitelnou zpětnou vazbu, která odděluje generování změny od jejího objektivního ověření.
 
 #### 2.4.1 Actions (GitHub Actions)
 
 GitHub Actions je automatizační platforma GitHubu pro spouštění deklarovaných workflow a jejich jobů v reakci na události repozitáře nebo ruční spuštění.
 
-V této práci GitHub Actions představuje konkrétní prováděcí prostředí CI a repozitářové automatizace, nikoli samotný princip průběžné integrace.
+GitHub Actions spouští deklarovaná workflow v reakci na události repozitáře. V této práci představuje konkrétní automatizační prostředí, které realizuje CI kontroly a další repozitářové procesy. V této práci GitHub Actions představuje konkrétní prováděcí prostředí CI a repozitářové automatizace, nikoli samotný princip průběžné integrace.
 
 #### 2.4.2 Container (Softwarový kontejner)
 
 Softwarový kontejner je izolované uživatelské běhové prostředí, které balí aplikaci a její závislosti při sdílení jádra hostitelského operačního systému.
 
-Kontejner zvyšuje reprodukovatelnost běhu, ale jeho bezpečnostní izolace závisí na konkrétní implementaci a konfiguraci.
+Kontejner může CI běhu poskytnout opakovatelné uživatelské prostředí s deklarovanými nástroji a závislostmi. Tím omezuje vliv lokální konfigurace vývojářského počítače, aniž by sám o sobě zaručoval úplnou bezpečnostní izolaci. Kontejner zvyšuje reprodukovatelnost běhu, ale jeho bezpečnostní izolace závisí na konkrétní implementaci a konfiguraci.
 
 #### 2.4.3 Flaky Test (Nestálý test)
 
 Nestálý test je test, který může nad stejným kódem střídavě projít a selhat kvůli nedeterminismu, časování, prostředí nebo externím službám.
 
-Nestálé testy snižují informační hodnotu CI a mohou agenta vést k opravám správného kódu; podezřelé selhání proto musí být reprodukovatelné nebo explicitně označené jako nedeterministické.
+Nestálé testy oslabují roli CI jako deterministické zpětné vazby. Agent může náhodné selhání mylně interpretovat jako regresi a začít měnit správný kód; proto je vhodné zdroje nedeterminismu omezovat a podezřelé běhy ověřovat opakováním v čistém prostředí. Nestálé testy snižují informační hodnotu CI a mohou agenta vést k opravám správného kódu; podezřelé selhání proto musí být reprodukovatelné nebo explicitně označené jako nedeterministické.
 
 ## 3 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)
 
@@ -338,7 +355,7 @@ Snímek ukazuje vstupní rozhraní a nabídku práce se soubory, obrazem a webem
 
 *Obrázek 2: Rozhraní ChatGPT pro macOS. Zdroj: OpenAI Help Center.*
 
-Příklad uživatelského povrchu nad jazykovým modelem.<sup><span id="loc-12">(</span><a href="#loc-45" role="doc-biblioref">6</a>)</sup>ChatGPT ilustruje rozdíl mezi jazykovým modelem a aplikačním systémem, který model obaluje.<sup>(<a href="#loc-45" role="doc-biblioref">6</a>)</sup>Chatbot je produktová vrstva nad modelem; agentní systém se od něj odlišuje především řízenou prováděcí smyčkou a schopností samostatně vykonávat akce.
+Příklad uživatelského povrchu nad jazykovým modelem.<sup><span id="loc-13">(</span><a href="#loc-47" role="doc-biblioref">7</a>)</sup>ChatGPT ilustruje rozdíl mezi jazykovým modelem a aplikačním systémem, který model obaluje.<sup>(<a href="#loc-47" role="doc-biblioref">7</a>)</sup>Chatbot je produktová vrstva nad modelem; agentní systém se od něj odlišuje především řízenou prováděcí smyčkou a schopností samostatně vykonávat akce.
 
 ### 3.2 Agent
 
@@ -368,7 +385,7 @@ Obrazový podklad je převzat z oficiálního vydání modelu OpenAI.
 
 *Obrázek 3: GPT-5.6. Zdroj: OpenAI.*
 
-Vizuální identifikace příkladu jazykového modelu.<sup><span id="loc-14">(</span><a href="#loc-46" role="doc-biblioref">7</a>)</sup>Příklad odděluje modelovou vrstvu od agentního systému, který model používá.<sup>(<a href="#loc-46" role="doc-biblioref">7</a>)</sup>
+Vizuální identifikace příkladu jazykového modelu.<sup><span id="loc-15">(</span><a href="#loc-48" role="doc-biblioref">8</a>)</sup>Příklad odděluje modelovou vrstvu od agentního systému, který model používá.<sup>(<a href="#loc-48" role="doc-biblioref">8</a>)</sup>
 
 #### 3.3.2 Claude Opus 5
 
@@ -386,7 +403,7 @@ Obrazový podklad je převzat z oficiálního oznámení společnosti Anthropic.
 
 *Obrázek 4: Claude Opus 5. Zdroj: Anthropic.*
 
-Vizuální identifikace příkladu jazykového modelu.<sup><span id="loc-16">(</span><a href="#loc-47" role="doc-biblioref">8</a>)</sup>Příklad zdůrazňuje rozdíl mezi modelem a agentním harness-em.<sup>(<a href="#loc-47" role="doc-biblioref">8</a>)</sup>
+Vizuální identifikace příkladu jazykového modelu.<sup><span id="loc-17">(</span><a href="#loc-49" role="doc-biblioref">9</a>)</sup>Příklad zdůrazňuje rozdíl mezi modelem a agentním harness-em.<sup>(<a href="#loc-49" role="doc-biblioref">9</a>)</sup>
 
 #### 3.3.3 DeepSeek-V4.1-Flash
 
@@ -404,25 +421,25 @@ Obrazový podklad je převzat z oficiálního vydání společnosti DeepSeek.
 
 *Obrázek 5: DeepSeek-V4.1-Flash. Zdroj: DeepSeek.*
 
-Vizuální identifikace příkladu jazykového modelu.<sup><span id="loc-18">(</span><a href="#loc-48" role="doc-biblioref">9</a>)</sup>Příklad ukazuje, že pojem jazykového modelu v agentním systému zahrnuje různé konkrétní modelové rodiny a architektury.<sup>(<a href="#loc-48" role="doc-biblioref">9</a>)</sup> Jazykový model je inferenční komponenta. V této práci je důležité především jeho rozhraní a omezení, protože provozní chování agenta vzniká až propojením modelu s harness-em.
+Vizuální identifikace příkladu jazykového modelu.<sup><span id="loc-19">(</span><a href="#loc-50" role="doc-biblioref">10</a>)</sup>Příklad ukazuje, že pojem jazykového modelu v agentním systému zahrnuje různé konkrétní modelové rodiny a architektury.<sup>(<a href="#loc-50" role="doc-biblioref">10</a>)</sup> Jazykový model je inferenční komponenta. V této práci je důležité především jeho rozhraní a omezení, protože provozní chování agenta vzniká až propojením modelu s harness-em.
 
 #### 3.3.4 Transformer (Transformerová architektura)
 
 Transformer je architektura neuronových sítí založená na mechanismu pozornosti, která modeluje vztahy mezi prvky sekvence a tvoří základ většiny současných velkých jazykových modelů.
 
-Pro tuto práci je podstatné, že transformer zpracovává tokenové reprezentace v omezeném kontextu a vytváří stav potřebný k postupnému odhadu dalších tokenů; detailní matematika trénování není předmětem práce.
+Současné velké jazykové modely jsou typicky realizovány transformerovou architekturou. Pro generování textu se často používá dekodérové uspořádání, které nad dosavadní sekvencí vytváří reprezentace potřebné k odhadu následujícího tokenu. Pro tuto práci je podstatné, že transformer zpracovává tokenové reprezentace v omezeném kontextu a vytváří stav potřebný k postupnému odhadu dalších tokenů; detailní matematika trénování není předmětem práce.
 
 #### 3.3.5 Autoregressive Modeling (Autoregresivní modelování)
 
 Autoregresivní modelování je sekvenční postup, při němž model odhaduje následující token podmíněně na předchozí tokeny v aktuální posloupnosti.
 
-Autoregrese vysvětluje, proč generování probíhá po jednotlivých krocích a proč každé nové pokračování závisí na dosavadním kontextu.
+Autoregresivní generování probíhá iterativně: model zpracuje dosavadní posloupnost tokenů, vypočítá distribuci pravděpodobnosti následujícího tokenu a po jeho výběru celý krok opakuje nad rozšířenou posloupností. Autoregrese vysvětluje, proč generování probíhá po jednotlivých krocích a proč každé nové pokračování závisí na dosavadním kontextu.
 
 #### 3.3.6 Stochastic Decoding (Stochastické dekódování)
 
 Stochastické dekódování je výběr výstupních tokenů z pravděpodobnostního rozdělení modelu způsobem, který může při stejném vstupu vést k různým platným pokračováním.
 
-Nedeterminismus dekódování je jedním z důvodů, proč kritická provozní pravidla agentního systému musí vynucovat harness mimo model.
+Pravděpodobnostní dekódování znamená, že shodný vstup nemusí vždy vytvořit totožný výstup. V agentním systému proto nelze provozní spolehlivost opřít pouze o model; kritická pravidla a stavové přechody musí vynucovat deterministická vrstva harnessu. Nedeterminismus dekódování je jedním z důvodů, proč kritická provozní pravidla agentního systému musí vynucovat harness mimo model.
 
 #### 3.3.7 Tokenizer (Tokenizér)
 
@@ -442,7 +459,7 @@ Embedding je vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v
 
 V jazykovém modelu embedding převádí diskrétní identifikátory tokenů na spojité vektory zpracovatelné neuronovou sítí. Podobné reprezentace lze použít také pro sémantické vyhledávání nebo porovnávání podobnosti.
 
-Známým didaktickým příkladem je přibližný relační vztah mezi vektory slov král, muž, žena a královna. Obrázek zobrazuje pouze trojrozměrnou projekci; skutečný embeddingový prostor má obvykle mnohem více rozměrů. <sup><span id="loc-19">(</span><a href="#loc-49" role="doc-biblioref">10</a>)</sup>
+Známým didaktickým příkladem je přibližný relační vztah mezi vektory slov král, muž, žena a královna. Obrázek zobrazuje pouze trojrozměrnou projekci; skutečný embeddingový prostor má obvykle mnohem více rozměrů. <sup><span id="loc-20">(</span><a href="#loc-51" role="doc-biblioref">11</a>)</sup>
 
 ![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MDAgNTYwIiB3aWR0aD0iOTAwIiBoZWlnaHQ9IjU2MCI+CiAgPGRlZnM+CiAgICA8bWFya2VyIGlkPSJhcnJvdyIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI4IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+CiAgICAgIDxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzQ3NTU2OSIvPgogICAgPC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJyZWxhdGlvbiIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI4IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNyIgbWFya2VySGVpZ2h0PSI3IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+CiAgICAgIDxwYXRoIGQ9Ik0wLDAgTDEwLDUgTDAsMTAgeiIgZmlsbD0iIzdjM2FlZCIvPgogICAgPC9tYXJrZXI+CiAgPC9kZWZzPgogIDxyZWN0IHg9IjE4IiB5PSIxOCIgd2lkdGg9Ijg2NCIgaGVpZ2h0PSI1MjQiIHJ4PSIxOCIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjY2JkNWUxIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0NCIgeT0iNTgiIGZvbnQtZmFtaWx5PSJDYXJsaXRvLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwZjE3MmEiPjNEIHByb2pla2NlIGVtYmVkZGluZ292w6lobyB2enRhaHUga3LDoWwg4oiSIG11xb4gKyDFvmVuYSDiiYgga3LDoWxvdm5hPC90ZXh0PgogIDx0ZXh0IHg9IjQ0IiB5PSI4NCIgZm9udC1mYW1pbHk9IkNhcmxpdG8sQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMyIgZmlsbD0iIzY0NzQ4YiI+SWx1c3RyYXRpdm7DrSBwcm9qZWtjZSB2eXNva29kaW1lbnppb27DoWxuw61obyBwcm9zdG9ydSBkbyB0xZnDrSByb3ptxJtyxa88L3RleHQ+CgogIDwhLS0gb3JpZ2luIGFuZCBwZXJzcGVjdGl2ZSBheGVzIC0tPgogIDxjaXJjbGUgY3g9IjIxMCIgY3k9IjQzMCIgcj0iNCIgZmlsbD0iIzMzNDE1NSIvPgogIDxsaW5lIHgxPSIyMTAiIHkxPSI0MzAiIHgyPSI3NjAiIHkyPSI0MzAiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIvPgogIDxsaW5lIHgxPSIyMTAiIHkxPSI0MzAiIHgyPSIyMTAiIHkyPSIxMjUiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIvPgogIDxsaW5lIHgxPSIyMTAiIHkxPSI0MzAiIHgyPSI1MjAiIHkyPSIyNDUiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIvPgogIDx0ZXh0IHg9Ijc3MCIgeT0iNDM1IiBmb250LWZhbWlseT0iQ2FybGl0byxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmaWxsPSIjNjQ3NDhiIj5k4oKBPC90ZXh0PgogIDx0ZXh0IHg9IjE5OCIgeT0iMTEyIiBmb250LWZhbWlseT0iQ2FybGl0byxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmaWxsPSIjNjQ3NDhiIj5k4oKCPC90ZXh0PgogIDx0ZXh0IHg9IjUzMiIgeT0iMjM5IiBmb250LWZhbWlseT0iQ2FybGl0byxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjEzIiBmaWxsPSIjNjQ3NDhiIj5k4oKDPC90ZXh0PgoKICA8IS0tIGd1aWRlIHBsYW5lIC0tPgogIDxwb2x5Z29uIHBvaW50cz0iMzAwLDM5MCA1NTUsMzMwIDY1MCwyMDUgMzk1LDI2NSIgZmlsbD0iI2Y4ZmFmYyIgc3Ryb2tlPSIjY2JkNWUxIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWRhc2hhcnJheT0iNiA1Ii8+CgogIDwhLS0gZm91ciBzZW1hbnRpYyBwb2ludHMgLS0+CiAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iMzkwIiByPSIxMCIgZmlsbD0iIzI1NjNlYiIvPgogIDxjaXJjbGUgY3g9IjU1NSIgY3k9IjMzMCIgcj0iMTAiIGZpbGw9IiNkYjI3NzciLz4KICA8Y2lyY2xlIGN4PSIzOTUiIGN5PSIyNjUiIHI9IjEwIiBmaWxsPSIjMjU2M2ViIi8+CiAgPGNpcmNsZSBjeD0iNjUwIiBjeT0iMjA1IiByPSIxMiIgZmlsbD0iI2RiMjc3NyIgc3Ryb2tlPSIjOWQxNzRkIiBzdHJva2Utd2lkdGg9IjIiLz4KCiAgPGcgZm9udC1mYW1pbHk9IkNhcmxpdG8sQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9IjcwMCIgZmlsbD0iIzBmMTcyYSI+CiAgICA8dGV4dCB4PSIyNzAiIHk9IjQyMCI+bXXFvjwvdGV4dD4KICAgIDx0ZXh0IHg9IjU1NSIgeT0iMzYwIj7FvmVuYTwvdGV4dD4KICAgIDx0ZXh0IHg9IjM1NSIgeT0iMjQ2Ij5rcsOhbDwvdGV4dD4KICAgIDx0ZXh0IHg9IjY2MiIgeT0iMTk2Ij5rcsOhbG92bmE8L3RleHQ+CiAgPC9nPgoKICA8IS0tIGdlbmRlciB2ZWN0b3IgLS0+CiAgPGxpbmUgeDE9IjMxNSIgeTE9IjM4NiIgeDI9IjU0MCIgeTI9IjMzMyIgc3Ryb2tlPSIjZTExZDQ4IiBzdHJva2Utd2lkdGg9IjQiIG1hcmtlci1lbmQ9InVybCgjcmVsYXRpb24pIi8+CiAgPGxpbmUgeDE9IjQxMCIgeTE9IjI2MSIgeDI9IjYzNSIgeTI9IjIwOCIgc3Ryb2tlPSIjZTExZDQ4IiBzdHJva2Utd2lkdGg9IjQiIG1hcmtlci1lbmQ9InVybCgjcmVsYXRpb24pIi8+CiAgPHRleHQgeD0iNDIwIiB5PSIzNDUiIGZvbnQtZmFtaWx5PSJDYXJsaXRvLEFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiNiZTEyM2MiPnN0ZWpuw70gcmVsYcSNbsOtIHBvc3VuPC90ZXh0PgoKICA8IS0tIHJveWFsdHkgdmVjdG9yIC0tPgogIDxsaW5lIHgxPSIzMDYiIHkxPSIzNzgiIHgyPSIzODkiIHkyPSIyNzgiIHN0cm9rZT0iIzRmNDZlNSIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI3JlbGF0aW9uKSIvPgogIDxsaW5lIHgxPSI1NjEiIHkxPSIzMTgiIHgyPSI2NDQiIHkyPSIyMTgiIHN0cm9rZT0iIzRmNDZlNSIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI3JlbGF0aW9uKSIvPgoKICA8IS0tIGVxdWF0aW9uIC0tPgogIDxyZWN0IHg9IjE2OCIgeT0iNDcwIiB3aWR0aD0iNTY1IiBoZWlnaHQ9IjQ4IiByeD0iMTAiIGZpbGw9IiNmOGZhZmMiIHN0cm9rZT0iI2NiZDVlMSIvPgogIDx0ZXh0IHg9IjQ1MCIgeT0iNTAxIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQ2FybGl0byxBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iNzAwIiBmaWxsPSIjMGYxNzJhIj52KGtyw6FsKSDiiJIgdihtdcW+KSArIHYoxb5lbmEpIOKJiCB2KGtyw6Fsb3ZuYSk8L3RleHQ+Cjwvc3ZnPg==)
 
@@ -478,7 +495,7 @@ Předmětem agentického inženýrství není samotná modelová architektura, a
 
 Vibe Coding je způsob tvorby softwaru, při kterém člověk popisuje požadované chování modelu přirozeným jazykem, zkouší vzniklý výsledek a dalšími prompty jej upravuje, aniž by průběžně kontroloval samotný vygenerovaný kód.
 
-Označení zavedl Andrej Karpathy v příspěvku na síti X v únoru 2025, kde tento způsob práce přímo pojmenoval jako „vibe coding“. Dobový záznam citátu a odkazu na původní příspěvek zachycuje také Simon Willison. <sup><span id="loc-21">(</span><a href="#loc-50" role="doc-biblioref">11</a>)</sup> <sup><span id="loc-22">(</span><a href="#loc-51" role="doc-biblioref">12</a>)</sup>
+Označení zavedl Andrej Karpathy v příspěvku na síti X v únoru 2025, kde tento způsob práce přímo pojmenoval jako „vibe coding“. Dobový záznam citátu a odkazu na původní příspěvek zachycuje také Simon Willison. <sup><span id="loc-22">(</span><a href="#loc-52" role="doc-biblioref">12</a>)</sup> <sup><span id="loc-23">(</span><a href="#loc-53" role="doc-biblioref">13</a>)</sup>
 
 Pro experimenty a malé jednorázové aplikace může být tento způsob velmi rychlý. Pro dlouhodobě udržovaný software však nestačí samotná schopnost rychle generovat změny; důležitá zůstává kontrola požadavků, testů, verzí a výsledného chování systému. Vibe Coding ukazuje nejméně kontrolovaný konec spektra práce s agentní AI a pomáhá odlišit rychlé generování od řízeného agentního softwarového inženýrství.
 
@@ -486,7 +503,7 @@ Pro experimenty a malé jednorázové aplikace může být tento způsob velmi r
 
 Slop je neformální označení pro velmi nekvalitní digitální obsah, zejména obsah vytvořený umělou inteligencí.
 
-Cambridge Dictionary uvádí pojem AI slop pro nekvalitní digitální obsah vytvořený AI. <sup><span id="loc-23">(</span><a href="#loc-52" role="doc-biblioref">13</a>)</sup>
+Cambridge Dictionary uvádí pojem AI slop pro nekvalitní digitální obsah vytvořený AI. <sup><span id="loc-24">(</span><a href="#loc-54" role="doc-biblioref">14</a>)</sup>
 
 V kontextu softwaru lze stejný problém pozorovat jako rychle vytvořený výstup, který na první pohled splňuje zadání, ale obsahuje zbytečné vrstvy, duplicity, neověřené předpoklady nebo obtížně udržovatelný kód. Agentní workflow proto musí hodnotit výsledek podle testů, architektury a skutečného stavu repozitáře, ne podle množství vygenerovaného textu nebo kódu. Pojem Slop pojmenovává riziko, že vysoká rychlost generování vytvoří mnoho výstupu bez odpovídající kvality a ověření.
 
@@ -526,7 +543,7 @@ Snímek dokumentuje specializované rozhraní pro práci s agentními úlohami a
 
 *Obrázek 7: Aplikace Codex. Zdroj: OpenAI.*
 
-Vizuální příklad agentního vývojového prostředí.<sup>(<a href="#loc-41" role="doc-biblioref">2</a>)</sup>Codex ukazuje posun od generování fragmentů k řízenému agentnímu vývojovému procesu.<sup>(<a href="#loc-41" role="doc-biblioref">2</a>)</sup>
+Vizuální příklad agentního vývojového prostředí.<sup>(<a href="#loc-42" role="doc-biblioref">2</a>)</sup>Codex ukazuje posun od generování fragmentů k řízenému agentnímu vývojovému procesu.<sup>(<a href="#loc-42" role="doc-biblioref">2</a>)</sup>
 
 #### 4.4.2 Claude Code
 
@@ -544,7 +561,7 @@ Snímek zobrazuje čtení souboru, zápis změny a průběžný stav agentní ú
 
 *Obrázek 8: Claude Code při práci se souborem. Zdroj: Anthropic.*
 
-Vizuální příklad nástrojově řízeného kódovacího agenta.<sup>(<a href="#loc-42" role="doc-biblioref">3</a>)</sup>Claude Code je konkrétní příklad agentního harnessu propojeného s reálným vývojovým prostředím.<sup>(<a href="#loc-42" role="doc-biblioref">3</a>)</sup>
+Vizuální příklad nástrojově řízeného kódovacího agenta.<sup>(<a href="#loc-43" role="doc-biblioref">3</a>)</sup>Claude Code je konkrétní příklad agentního harnessu propojeného s reálným vývojovým prostředím.<sup>(<a href="#loc-43" role="doc-biblioref">3</a>)</sup>
 
 #### 4.4.3 Claude Desktop (Aplikace Claude pro desktop)
 
@@ -562,7 +579,7 @@ Snímek ukazuje, že aplikační vrstva může vedle konverzace zpřístupnit so
 
 *Obrázek 9: Aplikační rozhraní Claude. Zdroj: Anthropic.*
 
-Vizuální příklad desktopového aplikačního harnessu.<sup><span id="loc-27">(</span><a href="#loc-53" role="doc-biblioref">14</a>)</sup>Desktopová aplikace ukazuje, jak harness rozšiřuje model o oprávnění, kontext a akce v uživatelském prostředí.<sup>(<a href="#loc-53" role="doc-biblioref">14</a>)</sup> Schopnosti agentního systému nevznikají pouze v modelu. Harness modelu poskytuje prostředí a pravidla, díky kterým lze jeho rozhodnutí převádět na řízené akce.
+Vizuální příklad desktopového aplikačního harnessu.<sup><span id="loc-28">(</span><a href="#loc-55" role="doc-biblioref">15</a>)</sup>Desktopová aplikace ukazuje, jak harness rozšiřuje model o oprávnění, kontext a akce v uživatelském prostředí.<sup>(<a href="#loc-55" role="doc-biblioref">15</a>)</sup> Schopnosti agentního systému nevznikají pouze v modelu. Harness modelu poskytuje prostředí a pravidla, díky kterým lze jeho rozhodnutí převádět na řízené akce.
 
 #### 4.4.4 Sandbox (Izolované běhové prostředí)
 
@@ -576,13 +593,13 @@ Bezpečné spouštění modelově generovaného kódu vyžaduje vynutitelnou izo
 
 Guardrail je programově vynucené omezení nebo kontrola, která neponechává kritické provozní pravidlo pouze na pravděpodobnostním rozhodnutí modelu.
 
-Kritická bezpečnostní a procesní pravidla patří do deterministicky vynucované vrstvy harnessu, nikoli pouze do textových instrukcí modelu.
+Pokud samotná instrukce v promptu neposkytuje dostatečnou záruku, harness může pravidlo vynutit deterministicky, například omezením přístupových práv, validací parametrů nástroje nebo odmítnutím nepovoleného stavového přechodu. Kritická bezpečnostní a procesní pravidla patří do deterministicky vynucované vrstvy harnessu, nikoli pouze do textových instrukcí modelu.
 
 #### 4.4.6 HITL (Zapojení člověka do smyčky)
 
 Zapojení člověka do smyčky (HITL) je návrhový vzor, v němž lidský operátor zůstává součástí rozhodovacího procesu prostřednictvím explicitních schvalovacích bran, zejména před významnými nebo nevratnými operacemi.
 
-Základním principem navrženého řešení není nekritická plná autonomie, nýbrž efektivní kooperace člověka a stroje ( HITL (Zapojení člověka do smyčky) <sup><span id="loc-28">(</span><a href="#loc-54" role="doc-biblioref">15</a>)</sup>). Autonomnímu systému náleží mechanické a rutinní úkony, zatímco klíčová architektonická a nevratná rozhodnutí zůstávají plně pod kontrolou vývojáře.
+Základním principem navrženého řešení není nekritická plná autonomie, nýbrž efektivní kooperace člověka a stroje ( HITL (Zapojení člověka do smyčky) <sup><span id="loc-29">(</span><a href="#loc-56" role="doc-biblioref">16</a>)</sup>). Autonomnímu systému náleží mechanické a rutinní úkony, zatímco klíčová architektonická a nevratná rozhodnutí zůstávají plně pod kontrolou vývojáře.
 
 Řízení lidského dohledu staví na těchto pilířích:
 
@@ -601,7 +618,7 @@ Lidský dohled je nejúčinnější v několika explicitních branách před zá
 
 Plugin je programové rozšíření běžící přímo v prostředí harnessu, které může doplnit exekuční jádro o systémové adaptéry, ovladače nástrojů nebo deterministické záchytné body.
 
-Plugin patří do exekuční vrstvy harnessu a používá se tehdy, když rozšíření vyžaduje programové chování namísto pouhých instrukcí pro model.
+Plugin rozšiřuje samotný harness programovým modulem. Na rozdíl od instrukční dovednosti tak může přidávat systémové adaptéry, ovladače nástrojů nebo deterministické zásahy přímo do běhové vrstvy. Plugin patří do exekuční vrstvy harnessu a používá se tehdy, když rozšíření vyžaduje programové chování namísto pouhých instrukcí pro model.
 
 #### 4.4.8 Agent Loop (Smyčka ReAct)
 
@@ -611,7 +628,7 @@ Agentní smyčka (*Agent Loop*) představuje výkonné jádro celého agent harn
 
 Provozní odpovědnosti smyčky jsou odděleny do samostatných konceptů: [***Agent Session (Agentní sezení)***](#concept-agent_session)<sup>*</sup>, [***Tool Calling (Vyvolávání nástrojů)***](#concept-tool_calling)<sup>*</sup>, [***Loop Engineering (Inženýrství prováděcí smyčky)***](#concept-loop_engineering)<sup>*</sup> a [***Guardrail (Deterministický mantinel)***](#concept-guardrail)<sup>*</sup>. Samotná agentní smyčka zde popisuje jejich iterativní koordinaci.
 
-Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem ReAct (*Reasoning + Acting*) <sup><span id="loc-29">(</span><a href="#loc-55" role="doc-biblioref">16</a>)</sup>, který propojuje rozvahu s přímým jednáním. Tento prováděcí cyklus sestává ze čtyř navazujících fází znázorněných na [Obrázek 10](#fig-react-loop):
+Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem ReAct (*Reasoning + Acting*) <sup><span id="loc-30">(</span><a href="#loc-57" role="doc-biblioref">17</a>)</sup>, který propojuje rozvahu s přímým jednáním. Tento prováděcí cyklus sestává ze čtyř navazujících fází znázorněných na [Obrázek 10](#fig-react-loop):
 
 1. Rozvaha (*Thought*): Model vyhodnotí aktuální stav kontextu a formuluje svůj nejbližší záměr.
 2. Volání nástroje (*Tool Call*): Emitování strukturovaného požadavku na provedení konkrétní akce s určenými parametry.
@@ -630,13 +647,13 @@ Diagram odděluje modelové rozhodnutí od exekuce nástroje a zpětného vlože
 
 *Obrázek 10: Architektura autonomní ReAct smyčky a tok dat mezi uživatelem, kontextem, modelem a výkonným prostředím.*
 
-Vizuální tok ukazuje, že agentní běh je uzavřená iterace modelového rozhodnutí, externí akce a nového pozorování. <sup>(<a href="#loc-55" role="doc-biblioref">16</a>)</sup> Agentní smyčka koordinuje opakované rozhodování modelu s vykonáváním akcí; její provozní spolehlivost proto závisí na řízení stavu, nástrojů, rozpočtů a podmínek ukončení.
+Vizuální tok ukazuje, že agentní běh je uzavřená iterace modelového rozhodnutí, externí akce a nového pozorování. <sup>(<a href="#loc-57" role="doc-biblioref">17</a>)</sup> Agentní smyčka koordinuje opakované rozhodování modelu s vykonáváním akcí; její provozní spolehlivost proto závisí na řízení stavu, nástrojů, rozpočtů a podmínek ukončení.
 
 ##### 4.4.8.2 Agent Session (Agentní sezení)
 
 Agentní sezení je ohraničený běh agenta se sdíleným stavem, systémovými instrukcemi, pracovním kontextem, historií tahů a provozními rozpočty.
 
-Sezení poskytuje jednotku životního cyklu, ve které lze konzistentně spravovat stav, kontext a zdrojové limity jednoho agentního běhu.
+Správa agentního sezení zahrnuje sestavení systémového promptu, načtení relevantního kontextu repozitáře, průběžné uchování stavu a sledování rozpočtů, například spotřeby tokenů nebo počtu iterací. Sezení poskytuje jednotku životního cyklu, ve které lze konzistentně spravovat stav, kontext a zdrojové limity jednoho agentního běhu.
 
 ##### 4.4.8.3 Loop Engineering (Inženýrství prováděcí smyčky)
 
@@ -648,7 +665,7 @@ Inženýrství prováděcí smyčky odděluje provozní řízení od samotného 
 
 Divergence je třída selhání agentní smyčky, při níž se iterativní běh vzdaluje cíli například perseverací, oscilací nebo nekontrolovanou spotřebou zdrojů.
 
-Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním <sup><span id="loc-30">(</span><a href="#loc-56" role="doc-biblioref">17</a>)</sup>. V důsledku autoregresivní povahy se v kontextu snadno vytvoří pravděpodobnostní atraktor, který model uvězní v neproduktivním cyklu.
+Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním <sup><span id="loc-31">(</span><a href="#loc-58" role="doc-biblioref">18</a>)</sup>. V důsledku autoregresivní povahy se v kontextu snadno vytvoří pravděpodobnostní atraktor, který model uvězní v neproduktivním cyklu.
 
 Mezi typické patologie patří:
 
@@ -668,13 +685,13 @@ Nástroj zpřístupňuje modelu operaci, kterou samotná textová inference nepr
 
 JSON Schema Tool Calling popisuje parametry nástroje formálním JSON Schema a před provedením ověřuje, že vygenerované argumenty odpovídají očekávané struktuře.
 
-JSON Schema je standardní formát pro popis struktury a validaci JSON dat. Při vyvolávání nástrojů tak může harness přesně určit povinná pole, datové typy a další omezení vstupu. Moderní rozhraní modelů mohou navíc generování argumentů přímo omezit tak, aby odpovídalo dodanému schématu. <sup><span id="loc-31">(</span><a href="#loc-57" role="doc-biblioref">18</a>)</sup> <sup><span id="loc-32">(</span><a href="#loc-58" role="doc-biblioref">19</a>)</sup> Schéma dává volání nástroje strojově kontrolovatelný kontrakt mezi modelem a kódem, který akci skutečně provádí.
+JSON Schema je standardní formát pro popis struktury a validaci JSON dat. Při vyvolávání nástrojů tak může harness přesně určit povinná pole, datové typy a další omezení vstupu. Moderní rozhraní modelů mohou navíc generování argumentů přímo omezit tak, aby odpovídalo dodanému schématu. <sup><span id="loc-32">(</span><a href="#loc-59" role="doc-biblioref">19</a>)</sup> <sup><span id="loc-33">(</span><a href="#loc-60" role="doc-biblioref">20</a>)</sup> Schéma dává volání nástroje strojově kontrolovatelný kontrakt mezi modelem a kódem, který akci skutečně provádí.
 
 ##### 4.4.9.2 Code Execution (Spouštění kódu)
 
 Spouštění kódu je nástrojová schopnost, která agentovi umožňuje vykonat program nebo příkaz a získat jeho skutečný výstup.
 
-V současných agentních systémech se tato schopnost typicky poskytuje přes řízené shellové nebo programové prostředí. Například dokumentace Anthropic popisuje provádění Bash a Python operací v sandboxovaném kontejneru včetně práce se soubory. <sup><span id="loc-33">(</span><a href="#loc-59" role="doc-biblioref">20</a>)</sup>
+V současných agentních systémech se tato schopnost typicky poskytuje přes řízené shellové nebo programové prostředí. Například dokumentace Anthropic popisuje provádění Bash a Python operací v sandboxovaném kontejneru včetně práce se soubory. <sup><span id="loc-34">(</span><a href="#loc-61" role="doc-biblioref">21</a>)</sup>
 
 Pro vývoj softwaru umožňuje Code Execution spouštět testy, formátovače, buildy, diagnostické příkazy a další ověřovací kroky místo toho, aby model jejich výsledek pouze odhadoval. Code Execution umožňuje agentovi ověřovat změny skutečným během programu a vracet pozorovaný výsledek zpět do agentní smyčky. Tool Calling vytváří rozhraní mezi rozhodnutím modelu a skutečnou operací provedenou mimo model.
 
@@ -682,7 +699,7 @@ Pro vývoj softwaru umožňuje Code Execution spouštět testy, formátovače, b
 
 Model Context Protocol (MCP) je otevřený standard původně navržený společností Anthropic pro standardizovanou komunikaci AI aplikací s externími nástroji, zdroji a daty prostřednictvím zpráv JSON-RPC.
 
-Pro sjednocení rozhraní mezi AI aplikacemi a externími nástroji či datovými zdroji vznikl otevřený standard [***MCP (Model Context Protocol)***](#concept-mcp)<sup>*</sup> <sup><span id="loc-34">(</span><a href="#loc-60" role="doc-biblioref">21</a>)</sup>. Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP standardizovaný způsob komunikace.
+Pro sjednocení rozhraní mezi AI aplikacemi a externími nástroji či datovými zdroji vznikl otevřený standard [***MCP (Model Context Protocol)***](#concept-mcp)<sup>*</sup> <sup><span id="loc-35">(</span><a href="#loc-62" role="doc-biblioref">22</a>)</sup>. Namísto vytváření proprietárních rozhraní pro každou službu definuje MCP standardizovaný způsob komunikace.
 
 Základní vlastnosti protokolu MCP:
 
@@ -695,15 +712,15 @@ MCP odděluje implementaci integrací od jádra harnessu a umožňuje stejné n�
 
 Skill je znovupoužitelný balíček instrukcí a volitelných zdrojů, který agent načte tehdy, když je relevantní pro řešený úkol.
 
-Otevřený formát Agent Skills používá adresář se souborem `SKILL.md`. Tento soubor obsahuje metadata a vlastní instrukce; adresář může navíc obsahovat skripty, reference nebo další zdroje. <sup><span id="loc-35">(</span><a href="#loc-61" role="doc-biblioref">22</a>)</sup>
+Otevřený formát Agent Skills používá adresář se souborem `SKILL.md`. Tento soubor obsahuje metadata a vlastní instrukce; adresář může navíc obsahovat skripty, reference nebo další zdroje. <sup><span id="loc-36">(</span><a href="#loc-63" role="doc-biblioref">23</a>)</sup>
 
 Smyslem je přesunout specializované postupy mimo základní systémový prompt. Agent tak může mít k dispozici větší množství schopností, aniž by musel jejich úplné instrukce držet v kontextu po celou dobu práce.
 
 ##### 4.4.10.1 SKILL.md (Formát SKILL.md)
 
-`SKILL.md` je povinný definiční soubor Agent Skill. Podle specifikace obsahuje YAML frontmatter následovaný instrukcemi v Markdownu; povinnými poli frontmatteru jsou `name` a `description`. <sup>(<a href="#loc-61" role="doc-biblioref">22</a>)</sup>
+`SKILL.md` je povinný definiční soubor Agent Skill. Podle specifikace obsahuje YAML frontmatter následovaný instrukcemi v Markdownu; povinnými poli frontmatteru jsou `name` a `description`. <sup>(<a href="#loc-63" role="doc-biblioref">23</a>)</sup>
 
-Následující úplný příklad používá povinná pole i několik volitelných polí povolených specifikací: <sup>(<a href="#loc-61" role="doc-biblioref">22</a>)</sup>
+Následující úplný příklad používá povinná pole i několik volitelných polí povolených specifikací: <sup>(<a href="#loc-63" role="doc-biblioref">23</a>)</sup>
 
 ```
 ---
@@ -734,25 +751,25 @@ Use this skill when a change must be validated against the repository's tests.
 For every unresolved failure, include the command, failing target, and relevant output.
 ```
 
-Specifikace dovoluje vedle `SKILL.md` také volitelné adresáře například pro skripty, reference a assety; ty se načítají pouze podle potřeby. <sup>(<a href="#loc-61" role="doc-biblioref">22</a>)</sup> Formát `SKILL.md` odděluje stručná metadata potřebná pro nalezení dovednosti od detailních instrukcí, které agent načte až při jejím použití. Skills modularizují opakovatelné postupy a umožňují načítat specializované instrukce až ve chvíli, kdy jsou potřeba.
+Specifikace dovoluje vedle `SKILL.md` také volitelné adresáře například pro skripty, reference a assety; ty se načítají pouze podle potřeby. <sup>(<a href="#loc-63" role="doc-biblioref">23</a>)</sup> Formát `SKILL.md` odděluje stručná metadata potřebná pro nalezení dovednosti od detailních instrukcí, které agent načte až při jejím použití. Skills modularizují opakovatelné postupy a umožňují načítat specializované instrukce až ve chvíli, kdy jsou potřeba.
 
 ##### 4.4.10.2 Progressive Disclosure (Postupné zpřístupňování kontextu)
 
 Postupné zpřístupňování je strategie, při níž se do aktivního kontextu nejprve vkládají pouze stručné popisy schopností a podrobné instrukce se načtou až při jejich použití.
 
-Do aktivního kontextu se dostávají pouze právě potřebné instrukce, čímž se omezuje režie bez ztráty dostupnosti specializovaných postupů.
+U dovedností snižuje postupné zpřístupňování kontextovou režii: základní prompt obsahuje pouze přehled dostupných dovedností a úplný obsah příslušného `SKILL.md` se načte až tehdy, když jej agent pro konkrétní úlohu potřebuje. Do aktivního kontextu se dostávají pouze právě potřebné instrukce, čímž se omezuje režie bez ztráty dostupnosti specializovaných postupů.
 
 ##### 4.4.10.3 Script (Skript)
 
 Skript je soubor nebo posloupnost příkazů určených k automatizovanému vykonání interpretem, shellem nebo jiným běhovým prostředím.
 
-Skripty přesouvají opakovatelné deterministické kroky mimo pravděpodobnostní rozhodování modelu.
+Skript poskytuje deterministickou exekuci pro úlohy, u nichž není vhodné znovu rozhodovat pomocí jazykového modelu, například pro opakovatelné transformace, validace nebo obslužné kroky dovednosti. Skripty přesouvají opakovatelné deterministické kroky mimo pravděpodobnostní rozhodování modelu.
 
 ##### 4.4.10.4 Hook (Událostní záchytný bod)
 
 Hook je definovaný bod životního cyklu nebo události, na který lze navázat vlastní deterministickou logiku před, po nebo místo standardního chování systému.
 
-Hook umožňuje vynutit opakovatelné chování v přesně určeném okamžiku bez toho, aby model musel stejné pravidlo znovu odvozovat.
+Hook váže deterministickou logiku na konkrétní událost životního cyklu harnessu, například před spuštěním nástroje, po dokončení kroku nebo při změně stavu běhu. Hook umožňuje vynutit opakovatelné chování v přesně určeném okamžiku bez toho, aby model musel stejné pravidlo znovu odvozovat.
 
 #### 4.4.11 Context Engineering (Kontextové inženýrství)
 
@@ -764,7 +781,7 @@ Kontext zahrnuje systémové instrukce, pracovní historii, výsledky nástrojů
 
 Kompakce kontextu je zmenšení aktivního kontextu výběrem, shrnutím nebo nahrazením starší historie kompaktnější reprezentací tak, aby se běh vešel do kontextového okna.
 
-Správa aktivního kontextu je součástí kontextového inženýrství ( Context Engineering (Kontextové inženýrství) ). Při rozsáhlejších úlohách se kontextové okno nevyhnutelně zaplní. V okamžiku, kdy objem historie dosáhne kritické hranice, musí agent harness přistoupit ke kompakci kontextu *compaction* <sup><span id="loc-36">(</span><a href="#loc-62" role="doc-biblioref">23</a>)</sup> — model je vyzván, aby dosavadní průběh sezení zkrátil do syntetického souhrnu, který nahradí starší část historie.
+Správa aktivního kontextu je součástí kontextového inženýrství ( Context Engineering (Kontextové inženýrství) ). Při rozsáhlejších úlohách se kontextové okno nevyhnutelně zaplní. V okamžiku, kdy objem historie dosáhne kritické hranice, musí agent harness přistoupit ke kompakci kontextu *compaction* <sup><span id="loc-37">(</span><a href="#loc-64" role="doc-biblioref">24</a>)</sup> — model je vyzván, aby dosavadní průběh sezení zkrátil do syntetického souhrnu, který nahradí starší část historie.
 
 Tento proces však představuje destruktivní ztrátovou kompresi:
 
@@ -782,7 +799,7 @@ Aby se předešlo ztrátě informací způsobené kompakcí, moderní agentní a
 
 K hlavním přístupům patří:
 
-- Hierarchická epizodická paměť (RAG <sup><span id="loc-37">(</span><a href="#loc-63" role="doc-biblioref">24</a>)</sup>): Ukládání doslovných protokolů nástrojů a historie úloh do externí databáze; do kontextu se selektivně injektují pouze bezprostředně relevantní fragmenty.
+- Hierarchická epizodická paměť (RAG <sup><span id="loc-38">(</span><a href="#loc-65" role="doc-biblioref">25</a>)</sup>): Ukládání doslovných protokolů nástrojů a historie úloh do externí databáze; do kontextu se selektivně injektují pouze bezprostředně relevantní fragmenty.
 - Persistentní graf stavu projektu (*Project State Graph*): Udržování explicitního, strukturovaného přehledu o stavu repozitáře (seznam modifikovaných souborů, otevřené úkoly, výsledky testů a platné invarianty) mimo kontextové okno.
 
 Díky tomu může agent kdykoliv obnovit přesný stav projektu bez závislosti na ztrátovém rekurzivním shrnování. RAG odděluje dlouhodobé uchování informací od omezeného aktivního kontextu a umožňuje načítat pouze data relevantní pro aktuální krok.
@@ -795,7 +812,7 @@ Schopnost jazykového modelu pracovat s dlouhým kontextem nelze posuzovat pouze
 
 V praxi se projevuje dvěma hlavními mechanismy:
 
-- Lost in the Middle <sup><span id="loc-38">(</span><a href="#loc-64" role="doc-biblioref">25</a>)</sup>: Pozornostní vrstvy transformeru spolehlivě vnímají informace na samém začátku a konci okna, zatímco fakta umístěná uprostřed dlouhého textu jsou často přehlížena.
+- Lost in the Middle <sup><span id="loc-39">(</span><a href="#loc-66" role="doc-biblioref">26</a>)</sup>: Pozornostní vrstvy transformeru spolehlivě vnímají informace na samém začátku a konci okna, zatímco fakta umístěná uprostřed dlouhého textu jsou často přehlížena.
 - Multi-Needle Reasoning: Schopnost logicky provázat několik na sobě závislých informací rozptýlených napříč různými soubory; s rostoucí délkou kontextu tato schopnost prudce klesá.
 
 Při komplexním křížovém refaktoringu ve velkém kontextu proto model často přehlédne klíčové souvislosti, které by v menším a čistším okně zpracoval bez potíží. Nominálně větší kontextové okno samo o sobě nezaručuje lepší výkon; kvalita závisí na tom, zda model dokáže relevantní informace v kontextu skutečně najít a propojit.
@@ -827,13 +844,13 @@ Inženýrství pracovních grafů je návrh agentních nebo automatizačních wo
 
 Monolitická agentní smyčka selhává při řešení komplexních, vícefázových úloh. Pro spolehlivé škálování se v moderních systémech uplatňuje hierarchická dělba práce a formalizace procesu do podoby grafu.
 
-Grafová struktura umožňuje rozdělit složitou úlohu na kontrolovatelné kroky, oddělit jejich odpovědnosti a explicitně řídit závislosti mezi nimi.
+Škálování je dále rozloženo na dva samostatné koncepty: hierarchickou delegaci prostřednictvím [***Subagent (Podřízený agent)***](#concept-subagent)<sup>*</sup> a explicitní závislosti pracovního postupu prostřednictvím [***DAG (Orientovaný acyklický graf)***](#concept-dag)<sup>*</sup>. Grafová struktura umožňuje rozdělit složitou úlohu na kontrolovatelné kroky, oddělit jejich odpovědnosti a explicitně řídit závislosti mezi nimi.
 
 ##### 4.4.12.1 Subagent (Podřízený agent)
 
 Subagent je dočasná nebo specializovaná agentní instance, které nadřazený orchestrátor deleguje vymezenou dílčí úlohu a následně převezme její výsledek.
 
-Subagenti umožňují paralelní nebo specializovanou práci a současně omezují množství dílčí pracovní historie, které musí zůstat v kontextu hlavního orchestrátoru.
+Při hierarchické dělbě práce hlavní orchestrátor rozděluje rozsáhlou úlohu a jednotlivé části deleguje specializovaným subagentům, například pro průzkum repozitáře, plánování nebo implementaci. Po dokončení dílčího běhu může nadřazený agent převzít pouze jeho výsledek namísto celé pracovní historie subagenta. Subagenti umožňují paralelní nebo specializovanou práci a současně omezují množství dílčí pracovní historie, které musí zůstat v kontextu hlavního orchestrátoru.
 
 ## 5 Results and Discussion (Výsledky a diskuse)
 
@@ -854,28 +871,28 @@ Kapitola bude doplněna po dokončení evaluace DarkFactory a nebude obsahovat n
 - [3.](#loc-7) ANTHROPIC. Claude Code. Online. 2026. [Accessed 20 září 2026]. Available from: [https://claude.com/product/claude-code](https://claude.com/product/claude-code)
 - [4.](#loc-8) MICROSOFT AI ECONOMY INSTITUTE. Global AI Adoption in 2025—A Widening Digital Divide. Online. 2026. [Accessed 20 září 2026]. Available from: [https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/reports/global-ai-adoption-2025/](https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/reports/global-ai-adoption-2025/)
 - [5.](#loc-10) CHACON, Scott a STRAUB, Ben. *Pro Git.*2. New York : Apress, 2014. ISBN 978-1-4842-0076-6.
-- [6.](#loc-12) OPENAI. ChatGPT macOS app—Screenshot Tool. Online. 2026. [Accessed 20 září 2026]. Available from: [https://help.openai.com/en/articles/9295245-chatgpt-macos-app-screenshot-tool](https://help.openai.com/en/articles/9295245-chatgpt-macos-app-screenshot-tool)
-- [7.](#loc-14) OPENAI. GPT-5.6: Frontier intelligence that scales with your ambition. Online. 2026. [Accessed 20 září 2026]. Available from: [https://openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/)
-- [8.](#loc-16) ANTHROPIC. Introducing Claude Opus 5. Online. 2026. [Accessed 20 září 2026]. Available from: [https://www.anthropic.com/news/claude-opus-5](https://www.anthropic.com/news/claude-opus-5)
-- [9.](#loc-18) DEEPSEEK. Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient. Online. 2026. [Accessed 20 září 2026]. Available from: [https://www.deepseek.com/en/news/deepseek-v4-1-flash/](https://www.deepseek.com/en/news/deepseek-v4-1-flash/)
-- [10.](#loc-19) MIKOLOV, Tomas, CHEN, Kai, CORRADO, Greg a DEAN, Jeffrey. Efficient Estimation of Word Representations in Vector Space. *arXiv preprint arXiv:1301.3781.* Online. 2013. Available from: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
-- [11.](#loc-21) KARPATHY, Andrej. A new kind of coding I call vibe coding. Online. 2025. [Accessed 20 září 2026]. Available from: [https://twitter.com/karpathy/status/1886192184808149383](https://twitter.com/karpathy/status/1886192184808149383)
-- [12.](#loc-22) WILLISON, Simon. A quote from Andrej Karpathy. Online. 2025. [Accessed 20 září 2026]. Available from: [https://simonwillison.net/2025/Feb/6/andrej-karpathy/](https://simonwillison.net/2025/Feb/6/andrej-karpathy/)
-- [13.](#loc-23) CAMBRIDGE UNIVERSITY PRESS. AI slop. Online. 2026. [Accessed 20 září 2026]. Available from: [https://dictionary.cambridge.org/dictionary/english/ai-slop](https://dictionary.cambridge.org/dictionary/english/ai-slop)
-- [14.](#loc-27) ANTHROPIC. Navigating the Claude desktop app. Online. 2026. [Accessed 20 září 2026]. Available from: [https://academy.claude.com/tutorials/navigating-the-claude-desktop-app](https://academy.claude.com/tutorials/navigating-the-claude-desktop-app)
-- [15.](#loc-28) MOSQUEIRA-REY, Eduardo, HERNÁNDEZ-PEREIRA, Elena, ALONSO-RÍOS, David, BOBES-BASCARÁN, José a FERNÁNDEZ-LEAL, Ángel. Human-in-the-loop machine learning: a state of the art. *Artificial Intelligence Review.* Online. 2023. Vol. 56, no. 4, p. 3005–3054. Available from: [https://doi.org/10.1007/s10462-022-10246-w](https://doi.org/10.1007/s10462-022-10246-w)
-- [16.](#loc-29) YAO, Shunyu, ZHAO, Jeffrey, YU, Dian, DU, Nan, SHAFRAN, Izhak, NARASIMHAN, Karthik a CAO, Yuan. ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629.* Online. 2022. Available from: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
-- [17.](#loc-30) SHINN, Noah, CASSANO, Federico, GOPINATH, Ashwin, NARASIMHAN, Karthik a YAO, Shunyu. Reflexion: Language Agents with Verbal Reinforcement Learning. *Advances in Neural Information Processing Systems.* Online. 2023. Vol. 36, p. 8634–8652. Available from: [https://arxiv.org/abs/2303.11366](https://arxiv.org/abs/2303.11366)
-- [18.](#loc-31) WRIGHT, Austin, ANDREWS, Henry, HUTTON, Ben a DENNIS, Greg. JSON Schema Draft 2020-12. Online. 2022. [Accessed 20 září 2026]. Available from: [https://json-schema.org/draft/2020-12](https://json-schema.org/draft/2020-12)
-- [19.](#loc-32) OPENAI. Introducing Structured Outputs in the API. Online. 2024. [Accessed 20 září 2026]. Available from: [https://openai.com/index/introducing-structured-outputs-in-the-api/](https://openai.com/index/introducing-structured-outputs-in-the-api/)
-- [20.](#loc-33) ANTHROPIC. Code execution tool. Online. 2026. [Accessed 20 září 2026]. Available from: [https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool)
-- [21.](#loc-34) ANTHROPIC. Model Context Protocol documentation. Online. 2026. Available from: [https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp)
-- [22.](#loc-35) AGENT SKILLS. Agent Skills Specification. Online. 2026. [Accessed 20 září 2026]. Available from: [https://agentskills.io/specification](https://agentskills.io/specification)
-- [23.](#loc-36) JIANG, Huiqiang, WU, Qianhui, LIN, Chin-Yew, YANG, Yuqing a QIU, Lili. LLMLingua: Compressing Context for Accelerated Inference of Large Language Models. *arXiv preprint arXiv:2310.05736.* Online. 2023. Available from: [https://arxiv.org/abs/2310.05736](https://arxiv.org/abs/2310.05736)
-- [24.](#loc-37) LEWIS, Patrick, PEREZ, Ethan, PIKTUS, Aleksandra, PETRONI, Fabio, KARPUKHIN, Vladimir, GOYAL, Naman, KÜTTLER, Heinrich, LEWIS, Mike, YIH, Wen-tau, ROCKTÄSCHEL, Tim, RIEDEL, Sebastian a KIELA, Douwe. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. *Advances in Neural Information Processing Systems.* Online. 2020. Vol. 33, p. 9459–9474. Available from: [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)
-- [25.](#loc-38) LIU, Nelson F., LIN, Kevin, HEWITT, John, PARANJAPE, Ashwin, BEVILACQUA, Michele, PETRONI, Fabio a LIANG, Percy. Lost in the Middle: How Language Models Use Long Contexts. *Transactions of the Association for Computational Linguistics.* Online. 2024. Vol. 12, p. 157–173. Available from: [https://arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
-- 26.  MARIUS, Patrik. DarkFactory: autonomous, governed software engineering pipelines. Online. 2026. [Accessed 8 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
-- 27.  HUMBLE, Jez a FARLEY, David. *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.*Boston : Addison-Wesley, 2010. ISBN 978-0-321-60191-9.
+- [6.](#loc-11) HUMBLE, Jez a FARLEY, David. *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.*Boston : Addison-Wesley, 2010. ISBN 978-0-321-60191-9.
+- [7.](#loc-13) OPENAI. ChatGPT macOS app—Screenshot Tool. Online. 2026. [Accessed 20 září 2026]. Available from: [https://help.openai.com/en/articles/9295245-chatgpt-macos-app-screenshot-tool](https://help.openai.com/en/articles/9295245-chatgpt-macos-app-screenshot-tool)
+- [8.](#loc-15) OPENAI. GPT-5.6: Frontier intelligence that scales with your ambition. Online. 2026. [Accessed 20 září 2026]. Available from: [https://openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/)
+- [9.](#loc-17) ANTHROPIC. Introducing Claude Opus 5. Online. 2026. [Accessed 20 září 2026]. Available from: [https://www.anthropic.com/news/claude-opus-5](https://www.anthropic.com/news/claude-opus-5)
+- [10.](#loc-19) DEEPSEEK. Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient. Online. 2026. [Accessed 20 září 2026]. Available from: [https://www.deepseek.com/en/news/deepseek-v4-1-flash/](https://www.deepseek.com/en/news/deepseek-v4-1-flash/)
+- [11.](#loc-20) MIKOLOV, Tomas, CHEN, Kai, CORRADO, Greg a DEAN, Jeffrey. Efficient Estimation of Word Representations in Vector Space. *arXiv preprint arXiv:1301.3781.* Online. 2013. Available from: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
+- [12.](#loc-22) KARPATHY, Andrej. A new kind of coding I call vibe coding. Online. 2025. [Accessed 20 září 2026]. Available from: [https://twitter.com/karpathy/status/1886192184808149383](https://twitter.com/karpathy/status/1886192184808149383)
+- [13.](#loc-23) WILLISON, Simon. A quote from Andrej Karpathy. Online. 2025. [Accessed 20 září 2026]. Available from: [https://simonwillison.net/2025/Feb/6/andrej-karpathy/](https://simonwillison.net/2025/Feb/6/andrej-karpathy/)
+- [14.](#loc-24) CAMBRIDGE UNIVERSITY PRESS. AI slop. Online. 2026. [Accessed 20 září 2026]. Available from: [https://dictionary.cambridge.org/dictionary/english/ai-slop](https://dictionary.cambridge.org/dictionary/english/ai-slop)
+- [15.](#loc-28) ANTHROPIC. Navigating the Claude desktop app. Online. 2026. [Accessed 20 září 2026]. Available from: [https://academy.claude.com/tutorials/navigating-the-claude-desktop-app](https://academy.claude.com/tutorials/navigating-the-claude-desktop-app)
+- [16.](#loc-29) MOSQUEIRA-REY, Eduardo, HERNÁNDEZ-PEREIRA, Elena, ALONSO-RÍOS, David, BOBES-BASCARÁN, José a FERNÁNDEZ-LEAL, Ángel. Human-in-the-loop machine learning: a state of the art. *Artificial Intelligence Review.* Online. 2023. Vol. 56, no. 4, p. 3005–3054. Available from: [https://doi.org/10.1007/s10462-022-10246-w](https://doi.org/10.1007/s10462-022-10246-w)
+- [17.](#loc-30) YAO, Shunyu, ZHAO, Jeffrey, YU, Dian, DU, Nan, SHAFRAN, Izhak, NARASIMHAN, Karthik a CAO, Yuan. ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629.* Online. 2022. Available from: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+- [18.](#loc-31) SHINN, Noah, CASSANO, Federico, GOPINATH, Ashwin, NARASIMHAN, Karthik a YAO, Shunyu. Reflexion: Language Agents with Verbal Reinforcement Learning. *Advances in Neural Information Processing Systems.* Online. 2023. Vol. 36, p. 8634–8652. Available from: [https://arxiv.org/abs/2303.11366](https://arxiv.org/abs/2303.11366)
+- [19.](#loc-32) WRIGHT, Austin, ANDREWS, Henry, HUTTON, Ben a DENNIS, Greg. JSON Schema Draft 2020-12. Online. 2022. [Accessed 20 září 2026]. Available from: [https://json-schema.org/draft/2020-12](https://json-schema.org/draft/2020-12)
+- [20.](#loc-33) OPENAI. Introducing Structured Outputs in the API. Online. 2024. [Accessed 20 září 2026]. Available from: [https://openai.com/index/introducing-structured-outputs-in-the-api/](https://openai.com/index/introducing-structured-outputs-in-the-api/)
+- [21.](#loc-34) ANTHROPIC. Code execution tool. Online. 2026. [Accessed 20 září 2026]. Available from: [https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool)
+- [22.](#loc-35) ANTHROPIC. Model Context Protocol documentation. Online. 2026. Available from: [https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp)
+- [23.](#loc-36) AGENT SKILLS. Agent Skills Specification. Online. 2026. [Accessed 20 září 2026]. Available from: [https://agentskills.io/specification](https://agentskills.io/specification)
+- [24.](#loc-37) JIANG, Huiqiang, WU, Qianhui, LIN, Chin-Yew, YANG, Yuqing a QIU, Lili. LLMLingua: Compressing Context for Accelerated Inference of Large Language Models. *arXiv preprint arXiv:2310.05736.* Online. 2023. Available from: [https://arxiv.org/abs/2310.05736](https://arxiv.org/abs/2310.05736)
+- [25.](#loc-38) LEWIS, Patrick, PEREZ, Ethan, PIKTUS, Aleksandra, PETRONI, Fabio, KARPUKHIN, Vladimir, GOYAL, Naman, KÜTTLER, Heinrich, LEWIS, Mike, YIH, Wen-tau, ROCKTÄSCHEL, Tim, RIEDEL, Sebastian a KIELA, Douwe. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. *Advances in Neural Information Processing Systems.* Online. 2020. Vol. 33, p. 9459–9474. Available from: [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)
+- [26.](#loc-39) LIU, Nelson F., LIN, Kevin, HEWITT, John, PARANJAPE, Ashwin, BEVILACQUA, Michele, PETRONI, Fabio a LIANG, Percy. Lost in the Middle: How Language Models Use Long Contexts. *Transactions of the Association for Computational Linguistics.* Online. 2024. Vol. 12, p. 157–173. Available from: [https://arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+- 27.  MARIUS, Patrik. DarkFactory: autonomous, governed software engineering pipelines. Online. 2026. [Accessed 8 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
 - 28.  VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
 - 29.  Deepseek Harness. *arXiv preprint arXiv:2608.25512.* Online. 2026. Available from: [https://arxiv.org/abs/2608.25512](https://arxiv.org/abs/2608.25512)
 - 30.  ANTHROPIC. Prompt Engineering overview. Online. 2026. Available from: [https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
@@ -896,15 +913,15 @@ Kapitola bude doplněna po dokončení evaluace DarkFactory a nebude obsahovat n
 
 ## Seznam obrázků a tabulek | List of figures and tables
 
-1. [Obrázek 1: AI diffusion v globálním Severu, globálním Jihu a celosvětově, H1–H2 2025. Zdroj: Microsoft AI Economy Institute <sup>(<a href="#loc-43" role="doc-biblioref">4</a>)</sup>.](#loc-9)
-2. [Obrázek 2: Rozhraní ChatGPT pro macOS. Zdroj: OpenAI Help Center.](#loc-11)
-3. [Obrázek 3: GPT-5.6. Zdroj: OpenAI.](#loc-13)
-4. [Obrázek 4: Claude Opus 5. Zdroj: Anthropic.](#loc-15)
-5. [Obrázek 5: DeepSeek-V4.1-Flash. Zdroj: DeepSeek.](#loc-17)
-6. [Obrázek 6: Třírozměrná projekce příkladu vektorového vztahu král − muž + žena ≈ královna.](#loc-20)
-7. [Obrázek 7: Aplikace Codex. Zdroj: OpenAI.](#loc-24)
-8. [Obrázek 8: Claude Code při práci se souborem. Zdroj: Anthropic.](#loc-25)
-9. [Obrázek 9: Aplikační rozhraní Claude. Zdroj: Anthropic.](#loc-26)
+1. [Obrázek 1: AI diffusion v globálním Severu, globálním Jihu a celosvětově, H1–H2 2025. Zdroj: Microsoft AI Economy Institute <sup>(<a href="#loc-44" role="doc-biblioref">4</a>)</sup>.](#loc-9)
+2. [Obrázek 2: Rozhraní ChatGPT pro macOS. Zdroj: OpenAI Help Center.](#loc-12)
+3. [Obrázek 3: GPT-5.6. Zdroj: OpenAI.](#loc-14)
+4. [Obrázek 4: Claude Opus 5. Zdroj: Anthropic.](#loc-16)
+5. [Obrázek 5: DeepSeek-V4.1-Flash. Zdroj: DeepSeek.](#loc-18)
+6. [Obrázek 6: Třírozměrná projekce příkladu vektorového vztahu král − muž + žena ≈ královna.](#loc-21)
+7. [Obrázek 7: Aplikace Codex. Zdroj: OpenAI.](#loc-25)
+8. [Obrázek 8: Claude Code při práci se souborem. Zdroj: Anthropic.](#loc-26)
+9. [Obrázek 9: Aplikační rozhraní Claude. Zdroj: Anthropic.](#loc-27)
 10. [Obrázek 10: Architektura autonomní ReAct smyčky a tok dat mezi uživatelem, kontextem, modelem a výkonným prostředím.](#fig-react-loop)
 
 ## Seznam příloh | List of appendices

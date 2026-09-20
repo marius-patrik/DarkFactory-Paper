@@ -232,7 +232,7 @@ Pro autonomní vývoj poskytuje verzovací vrstva deterministický záznam reali
 
 Git je distribuovaný systém správy verzí, který uchovává historii projektu, podporuje větvení a slučování změn a umožňuje deterministický návrat k předchozím stavům repozitáře.
 
-Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém [***Git***](#concept-git)<sup>*</sup> v kombinaci s platformou [***GitHub***](#concept-github)<sup>*</sup>.
+Při agentním vývoji poskytuje správa verzí auditovatelnou historii změn a možnost bezpečně oddělit pracovní stav od stabilní linie projektu. Chybnou nebo neúspěšnou změnu lze porovnat, vrátit nebo zahodit bez závislosti na paměti modelu. Tato práce používá distribuovaný systém [***Git***](#concept-git)<sup>*</sup> v kombinaci s platformou [***GitHub***](#concept-github)<sup>*</sup>.
 
 Samotný [***Git***](#concept-git)<sup>*</sup> zde zůstává vymezen jako distribuovaný systém správy verzí. Hosting a koordinaci repozitáře popisuje [***GitHub***](#concept-github)<sup>*</sup>, zadání práce [***Issue (Úloha GitHubu)***](#concept-github_issue)<sup>*</sup>, revizní integraci [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> a automatizaci [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>.
 
@@ -242,16 +242,16 @@ Samotný [***Git***](#concept-git)<sup>*</sup> zde zůstává vymezen jako distr
 
 Větev je pojmenovaná vývojová linie v systému správy verzí, která umožňuje provádět změny odděleně od jiné linie historie a později je porovnat nebo sloučit.
 
-Základním bezpečnostním pravidlem při zapojení autonomních agentů do vývoje je striktní izolace rozpracovaného kódu. Stabilní kód v hlavní větvi (`main`) nesmí být nikdy přímo vystaven experimentům a chybám modelu. Agent proto veškeré úpravy provádí ve vyhrazených pracovních větvích odbočených ze základní linie projektu.
+V navrženém procesu DarkFactory agent nepracuje přímo v hlavní větvi. Každý úkol provádí v samostatné pracovní větvi odvozené ze základní linie projektu <sup><span id="loc-10">(</span><a href="#loc-46" role="doc-biblioref">5</a>)</sup>.
 
-Tento princip přináší následující výhody:
+Tento postup přináší několik praktických vlastností:
 
-- Ochrana produkční větve <sup><span id="loc-10">(</span><a href="#loc-46" role="doc-biblioref">5</a>)</sup>: Hlavní větev (`main`) reprezentuje stabilní, otestovaný stav připravený k nasazení. Přímé zapisování do této větve je zakázáno jak lidským vývojářům, tak autonomním agentům.
-- Dedikovaná větev pro každý úkol: Agent pro každé zadání dynamicky vytvoří novou samostatnou větev (např. `task/123-oprava-parseru` či `agent/feature-auth`).
-- Izolace chyb a mezistavů: Případné syntaktické chyby, dočasné nefunkční stavy ani neúspěšné hypotézy neovlivňují stabilitu hlavní větve ani práci ostatních vývojářů v týmu.
-- Bezpečné zahození nezdařených běhů: Pokud se agent dostane do slepé uličky nebo vyčerpá přidělený rozpočet kroků, celou větev lze smazat jedním příkazem bez jakýchkoliv následků pro zbytek repozitáře.
+- Ochrana hlavní větve: změny se do `main` začleňují až přes definovaný integrační proces.
+- Samostatná větev pro každý úkol: pracovní historie jednoho zadání je oddělena od ostatních běhů.
+- Izolace mezistavů: dočasně nefunkční nebo experimentální změny zůstávají mimo hlavní větev.
+- Snadné zahození neúspěšného běhu: pracovní větev lze odstranit bez změny stabilní historie projektu.
 
-Pokud se hlavní větev během práce agenta posune dopředu v důsledku jiné aktivity v repozitáři, pracovní větev agenta se musí před dokončením zaktualizovat (`git rebase` nebo `git merge`), aby byla zajištěna bezkonfliktní integrace.
+Pokud se hlavní větev během práce posune, pracovní větev se před integrací zaktualizuje pomocí běžných mechanismů Gitu, například rebase nebo merge.
 
  Samostatná pracovní větev izoluje mezistavy a chyby agentního běhu od stabilní hlavní linie a umožňuje celý neúspěšný pokus bezpečně zahodit.
 
@@ -259,13 +259,10 @@ Pokud se hlavní větev během práce agenta posune dopředu v důsledku jiné a
 
 Merge je operace správy verzí, která kombinuje změny nebo historii dvou vývojových linií do společného výsledného stavu; případné konflikty vyžadují explicitní vyřešení.
 
-Způsob, jakým se změny z pracovní větve začlení do větve hlavní, má zásadní dopad na dlouhodobou udržitelnost a čitelnost repozitáře. Autonomní agent při řešení úlohy obvykle postupuje iterativní metodou pokus-omyl: upraví soubor, spustí testy, odhalí překlep a provede další drobný commit. V pracovní větvi tak vzniká dlouhá sekvence pomocných a experimentálních záznamů.
+Agent může během jednoho úkolu vytvářet více pracovních commitů při iterativním vývoji a opravách. V navrženém procesu DarkFactory se tato pracovní historie před začleněním do hlavní větve zjednoduší pomocí Squash (Sloučení commitů) <sup>(<a href="#loc-46" role="doc-biblioref">5</a>)</sup>.
 
-Zatímco klasický merge commit přenese do hlavní větve veškeré dílčí commity a rebase je lineárně přeskládá, v agentním vývoji se jako optimální strategie uplatňuje Commit and Merge <sup>(<a href="#loc-46" role="doc-biblioref">5</a>)</sup>:
+Výsledkem je jeden integrační commit odpovídající jednomu dokončenému úkolu. Pomocné mezikroky zůstávají v pracovní větvi, zatímco hlavní historie zachovává výslednou změnu jako jeden celek, který lze samostatně auditovat nebo případně vrátit.
 
-- Sloučení mezikroků ( Squash (Sloučení commitů) ): Všechny commity z pracovní větve jsou spojeny do jediného nového commitu, který je vložen do `main`.
-- Eliminace interního šumu: Pomocné commity vzniklé při ladění testů se do hlavní větve vůbec nedostanou; historie projektu zůstává čistá a přehledná podle pravidla: jeden úkol = jeden commit.
-- Atomický návrat změn (`git revert`): Pokud se v budoucnu ukáže, že začleněná úprava zanesla do produkce nečekanou vadu, lze celý úkol vrátit jediným atomickým příkazem bez nutnosti rozplétat desítky dílčích mezikroků.
  Způsob sloučení určuje, jak se pracovní historie agenta promítne do stabilní větve; před integrací je vhodné oddělit užitečný výsledný stav od experimentálních mezikroků.
 
 ###### 2.3.3.1.3 Squash (Sloučení commitů)
@@ -284,16 +281,9 @@ V agentním vývojovém procesu může Issue fungovat jako explicitní vstupní 
 
 Pull Request je formální návrh na začlenění změn z jedné větve repozitáře do druhé a společné místo pro automatizované kontroly, lidskou revizi a diskusi nad navrženými úpravami.
 
-[***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> <sup>(<a href="#loc-46" role="doc-biblioref">5</a>)</sup>. V tomto bodě se plně uplatňuje princip [***HITL (Zapojení člověka do smyčky)***](#concept-human_in_the_loop)<sup>*</sup>: agent kód samostatně navrhne a otestuje, avšak konečné rozhodnutí o jeho přijetí náleží vývojáři.
+V navrženém procesu DarkFactory tvoří [***Pull Request (Požadavek na sloučení)***](#concept-pull_request)<sup>*</sup> kontrolní hranici mezi pracovní větví agenta a hlavní historií repozitáře <sup>(<a href="#loc-46" role="doc-biblioref">5</a>)</sup>. Agent připraví změnu, její souhrn a výsledky automatických kontrol; lidský revizor následně rozhodne o přijetí, přepracování nebo zamítnutí změny v souladu s principem [***HITL (Zapojení člověka do smyčky)***](#concept-human_in_the_loop)<sup>*</sup>.
 
-Rozhraní pull requestu integruje všechny podstatné informace na jednom místě:
-
-- Řádkový diff: Vizuální srovnání původního a nového stavu, kde jsou jasně barevně odlišeny přidané, změněné a smazané řádky.
-- Strukturovaný souhrn změn: Agent v popisu PR srozumitelně shrne, jaké úpravy provedl, jakou logiku zvolil a na které původní issue reagoval.
-- Výsledky automatických kontrol: Přehled stavu automatizovaných testů a linterů z GitHub Actions (zelený či červený indikátor).
-- Revizní diskuse: Možnost vývojáře přidávat komentáře k libovolnému řádku kódu, klást doplňující dotazy nebo vyžadovat přepracování konkrétních částí.
-
-Lidský vývojář v roli revizora (Reviewer) posuzuje celkový architektonický záměr a rozhoduje o schválení, vrácení k dopracování, či zamítnutí pull requestu.
+Pull request soustřeďuje na jednom místě řádkový diff, popis změny, vazbu na původní zadání, výsledky automatických kontrol a revizní diskusi. Tím poskytuje společný bod pro strojové ověření i lidskou sémantickou kontrolu před integrací.
 
  Pull Request vytváří kontrolní hranici mezi samostatně připravenou změnou a jejím přijetím do hlavní historie projektu.
 
@@ -301,13 +291,10 @@ Lidský vývojář v roli revizora (Reviewer) posuzuje celkový architektonický
 
 Požadované kontroly jsou automatizované kontroly, jejichž úspěšné dokončení je povinnou podmínkou pro přijetí nebo sloučení změny.
 
-K tomu, aby byla kontinuální integrace efektivní, nestačí testy pouze spouštět — jejich úspěšné dokončení musí být systémově vynuceno.
+V procesu DarkFactory nejsou automatické kontroly pouze informativní; vybrané kontroly jsou nastaveny jako podmínka integrace změny.
 
-- Požadované kontroly (*Required Checks* <sup><span id="loc-11">(</span><a href="#loc-47" role="doc-biblioref">6</a>)</sup>): Seznam úloh v GitHub Actions, které musí skončit explicitním úspěchem (zelený stav), aby bylo technicky možné pull request sloučit:
-  - Statická analýza a linter: Kontrola dodržení kódového stylu, odhalování mrtvého kódu a základních syntaktických prohřešků.
-  - Typová kontrola a build: Jistota, že kód lze bez chyb zkompilovat a že typový systém nezaznamenal nekonzistence.
-  - Automatizované testy: Úspěšný průchod jednotkových i integračních testů ověřujících požadované chování.
-- Pravidlo deterministického výsledku: Každá kontrola musí skončit jednoznačným výsledkem; tiché přeskočení testu nebo nejednoznačný stav sloučení zablokuje.
+Mezi požadované kontroly mohou patřit statická analýza a linter, typová kontrola a sestavení projektu a automatizované testy. Každá kontrola musí vrátit jednoznačný výsledek, který lze použít jako strojově vyhodnotitelnou podmínku před sloučením pull requestu <sup><span id="loc-11">(</span><a href="#loc-47" role="doc-biblioref">6</a>)</sup>.
+
  Required checks mění CI z informativní zpětné vazby na technicky vynucovanou podmínku integrace.
 
 ###### 2.3.3.1.7 Branch Protection (Ochrana větví)
@@ -324,7 +311,7 @@ Ochrana větví převádí procesní pravidla integrace do technicky vynucované
 
 Průběžná integrace (CI) je vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami.
 
-Samotný jazykový model kód pouze generuje na základě statistických závislostí v trénovacích datech; nemá schopnost vnitřně ověřit, zda je vytvořený program syntakticky bezchybný a funkčně správný. Nezastupitelnou roli objektivního arbitra správnosti proto plní kontinuální integrace (CI) <sup>(<a href="#loc-47" role="doc-biblioref">6</a>)</sup>.
+Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl úspěšně vygenerován. Kontinuální integrace proto poskytuje externí a opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek <sup>(<a href="#loc-47" role="doc-biblioref">6</a>)</sup>.
 
 Konkrétní automatizační platformu popisuje [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>, izolaci běhu [***Container (Softwarový kontejner)***](#concept-container)<sup>*</sup> a problematiku nedeterministických selhání [***Flaky Test (Nestálý test)***](#concept-flaky_test)<sup>*</sup>. Koncept CI zde zůstává zaměřen na integrační kontrakt a strojově ověřitelnou zpětnou vazbu.
 
@@ -610,7 +597,7 @@ Sandbox je omezené běhové prostředí určené k oddělení prováděného k�
 
 Přímé spouštění kódu (*Code Execution*) umožňuje agentovi generovat skripty (bash, Python), které harness spouští v izolovaném terminálu. Tento model poskytuje maximální flexibilitu pro softwarový vývoj, avšak vyžaduje nekompromisní bezpečnostní izolaci.
 
-🔥 **Hloubková kritika / Oponentura:** Iluzorní bezpečnost pískoviště: Přímé spouštění netestovaného syntetického kódu v běžném Docker kontejneru nelze považovat za plnohodnotnou bezpečnostní hranici (*security boundary*). Přístup k síti otevírá prostor pro útoky typu Server-Side Request Forgery (SSRF), úniky environmentálních tajností (GitHub tokeny, API klíče k LLM) přes skryté síťové kanály a kompromitaci CI infrastruktury. Pro bezpečný produkční provoz je nezbytná formální izolace na bázi microVM (např. AWS Firecracker <sup><span id="loc-29">(</span><a href="#loc-57" role="doc-biblioref">16</a>)</sup>, gVisor) a striktní izolace síťových jmenných prostorů.
+🔥 **Hloubková kritika / Oponentura:** Limity kontejnerového sandboxu: Běžný kontejner sdílí jádro hostitelského systému, a jeho bezpečnost proto závisí na konfiguraci oprávnění, sítě, mountů a přístupu k tajnostem. U nedůvěryhodného generovaného kódu může harness podle rizika použít silnější izolační vrstvu, například microVM typu Firecracker <sup><span id="loc-29">(</span><a href="#loc-57" role="doc-biblioref">16</a>)</sup>, a současně explicitně omezit síťový přístup a dostupnost tajností.
 
 Bezpečné spouštění modelově generovaného kódu vyžaduje vynutitelnou izolaci procesů, souborů, oprávnění, tajností a sítě; běžný kontejner sám o sobě nemusí tvořit dostatečnou bezpečnostní hranici.
 
@@ -637,7 +624,7 @@ Základním principem navrženého řešení není nekritická plná autonomie, 
 - Dohledatelnost původního zadání: Trvalé uchovávání doslovného znění požadavku (GitHub Issue) bez ztrátových parafrází modelem, což brání vymizení okrajových podmínek v průběhu vývoje.
 - Transparentnost selhání a deterministická eskalace: Zákaz tichého pohlcování chyb či halucinovaných omluv při selhání. Při vyčerpání rozpočtu nebo selhání testů harness vygeneruje strukturovaný diagnostický incident (diff, chybové hlášení, stav kontextu) a předá jej vývojáři k manuálnímu zásahu.
 
-🔥 **Hloubková kritika / Oponentura:** Kognitivní limity lidské schvalovací brány (Review Fatigue): Spoléhání se na finální sémantickou kontrolu diffu v pull requestu naráží na lidské kognitivní limity. Výzkumy prokazují, že u rozsáhlých diffů (nad 300–400 řádků) dramaticky klesá hloubka lidské pozornosti — vývojář kód pouze zběžně prohlédne a spoléhá na zelenou fajfku z CI. Aby byla lidská brána efektivní, harness musí diffy rozkládat do sémanticky sevřených mikrokroků, generovat interaktivní vysvětlení netriviálních rozhodnutí a explicitně zvýrazňovat změny v kritických architektonických komponentách.
+🔥 **Hloubková kritika / Oponentura:** Omezení lidské schvalovací brány (Review Fatigue): Lidská revize ztrácí hodnotu, pokud je změna příliš rozsáhlá nebo nesourodá na to, aby ji bylo možné efektivně posoudit jako jeden celek. Harness proto má změny seskupovat do sémanticky souvisejících kroků, vysvětlovat netriviální rozhodnutí a zvýrazňovat zásahy do kritických částí systému, aby lidská brána nebyla pouze formálním potvrzením výsledku CI.
 
 Lidský dohled je nejúčinnější v několika explicitních branách před zásadními kroky, nikoli v mikromanagementu každé agentní iterace.
 
