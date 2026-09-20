@@ -517,6 +517,166 @@
           ]
         },
         {
+          "name": "manuscript",
+          "path": "concepts/manuscript",
+          "type": "directory",
+          "children": [
+            {
+              "name": "conclusion",
+              "path": "concepts/manuscript/conclusion",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "conclusion.typ",
+                  "path": "concepts/manuscript/conclusion/conclusion.typ",
+                  "type": "file"
+                },
+                {
+                  "name": "index.typ",
+                  "path": "concepts/manuscript/conclusion/index.typ",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "introduction",
+              "path": "concepts/manuscript/introduction",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "methodology",
+                  "path": "concepts/manuscript/introduction/methodology",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "index.typ",
+                      "path": "concepts/manuscript/introduction/methodology/index.typ",
+                      "type": "file"
+                    },
+                    {
+                      "name": "methodology.typ",
+                      "path": "concepts/manuscript/introduction/methodology/methodology.typ",
+                      "type": "file"
+                    }
+                  ]
+                },
+                {
+                  "name": "motivation",
+                  "path": "concepts/manuscript/introduction/motivation",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "index.typ",
+                      "path": "concepts/manuscript/introduction/motivation/index.typ",
+                      "type": "file"
+                    },
+                    {
+                      "name": "motivation.typ",
+                      "path": "concepts/manuscript/introduction/motivation/motivation.typ",
+                      "type": "file"
+                    }
+                  ]
+                },
+                {
+                  "name": "objectives",
+                  "path": "concepts/manuscript/introduction/objectives",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "main-goal",
+                      "path": "concepts/manuscript/introduction/objectives/main-goal",
+                      "type": "directory",
+                      "children": [
+                        {
+                          "name": "index.typ",
+                          "path": "concepts/manuscript/introduction/objectives/main-goal/index.typ",
+                          "type": "file"
+                        },
+                        {
+                          "name": "main-goal.typ",
+                          "path": "concepts/manuscript/introduction/objectives/main-goal/main-goal.typ",
+                          "type": "file"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "research-questions",
+                      "path": "concepts/manuscript/introduction/objectives/research-questions",
+                      "type": "directory",
+                      "children": [
+                        {
+                          "name": "index.typ",
+                          "path": "concepts/manuscript/introduction/objectives/research-questions/index.typ",
+                          "type": "file"
+                        },
+                        {
+                          "name": "research-questions.typ",
+                          "path": "concepts/manuscript/introduction/objectives/research-questions/research-questions.typ",
+                          "type": "file"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "subgoals",
+                      "path": "concepts/manuscript/introduction/objectives/subgoals",
+                      "type": "directory",
+                      "children": [
+                        {
+                          "name": "index.typ",
+                          "path": "concepts/manuscript/introduction/objectives/subgoals/index.typ",
+                          "type": "file"
+                        },
+                        {
+                          "name": "subgoals.typ",
+                          "path": "concepts/manuscript/introduction/objectives/subgoals/subgoals.typ",
+                          "type": "file"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "index.typ",
+                      "path": "concepts/manuscript/introduction/objectives/index.typ",
+                      "type": "file"
+                    },
+                    {
+                      "name": "objectives.typ",
+                      "path": "concepts/manuscript/introduction/objectives/objectives.typ",
+                      "type": "file"
+                    }
+                  ]
+                },
+                {
+                  "name": "index.typ",
+                  "path": "concepts/manuscript/introduction/index.typ",
+                  "type": "file"
+                },
+                {
+                  "name": "introduction.typ",
+                  "path": "concepts/manuscript/introduction/introduction.typ",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "results",
+              "path": "concepts/manuscript/results",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "index.typ",
+                  "path": "concepts/manuscript/results/index.typ",
+                  "type": "file"
+                },
+                {
+                  "name": "results.typ",
+                  "path": "concepts/manuscript/results/results.typ",
+                  "type": "file"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "index.typ",
           "path": "concepts/index.typ",
           "type": "file"
@@ -655,11 +815,6 @@
         {
           "name": "06-prilohy.typ",
           "path": "kapitoly/06-prilohy.typ",
-          "type": "file"
-        },
-        {
-          "name": "outline.typ",
-          "path": "kapitoly/outline.typ",
           "type": "file"
         }
       ]

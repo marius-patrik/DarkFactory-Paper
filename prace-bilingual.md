@@ -1,6 +1,6 @@
-## DarkFactory:
-Umělá inteligence v praxi -
-Agentické a harnessové inženýrství
+## DarkFactory
+Agentické a harnessové inženýrství:
+Umělá inteligence v praxi
 
 Patrik Marius · Gymnázium J. K. Tyla · 2026
 
@@ -16,84 +16,100 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
 
 ## Obsah | Contents
 
-1. [DarkFactory:
-   Umělá inteligence v praxi -
-   Agentické a harnessové inženýrství](#loc-1)
+1. [DarkFactory
+   Agentické a harnessové inženýrství:
+   Umělá inteligence v praxi](#loc-1)
 2. [Annotation (Anotace)](#loc-2)
 3. [Keywords (Klíčová slova)](#loc-3)
-4. [1 Úvod](#loc-4)
-  1. [1.1 Motivace a vymezení problému](#loc-5)
-  2. [1.2 Cíl práce a výzkumné otázky](#loc-6)
-    1. [1.2.1 Hlavní cíl](#loc-7)
-    2. [1.2.2 Dílčí cíle](#loc-8)
-    3. [1.2.3 Výzkumné otázky](#loc-9)
-  3. [1.3 Metodika práce](#loc-10)
-5. [2 Agentické AI: Vymezení konceptů - Teoretická část](#loc-11)
-  1. [2.1 Development Environment and Practices (Vývojové prostředí a praxe)](#loc-12)
-    1. [2.1.1 Úvod](#loc-14)
-    2. [2.1.2 Software Engineering (Softwarové inženýrství)](#loc-15)
-      1. [2.1.2.1 Úvod](#loc-16)
-    3. [2.1.3 Version control (Správa verzí)](#loc-17)
-      1. [2.1.3.1 Úvod](#loc-19)
-      2. [2.1.3.2 Git](#loc-20)
-        1. [2.1.3.2.1 Úvod](#loc-21)
-    4. [2.1.4 CI (Průběžná integrace) [Continuous Integration]](#loc-22)
-      1. [2.1.4.1 Úvod](#loc-24)
-  2. [2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)](#loc-25)
-    1. [2.2.1 Úvod](#loc-27)
-    2. [2.2.2 LLM (Jazykový model) [Large Language Model]](#loc-28)
-      1. [2.2.2.1 Úvod](#loc-29)
-  3. [2.3 Agentic Engineering (Agentické inženýrství)](#loc-31)
-    1. [2.3.1 Úvod](#loc-33)
-    2. [2.3.2 Prompt Engineering (Promptové inženýrství)](#loc-34)
-      1. [2.3.2.1 Úvod](#loc-36)
-    3. [2.3.3 Agent Harness (Agentní harness)](#loc-37)
-      1. [2.3.3.1 Úvod](#loc-39)
-      2. [2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]](#loc-40)
-        1. [2.3.3.2.1 Úvod](#loc-42)
-      3. [2.3.3.3 Tool Calling (Vyvolávání nástrojů)](#loc-43)
-        1. [2.3.3.3.1 Úvod](#loc-45)
-      4. [2.3.3.4 Skills (Dovednosti)](#loc-46)
-        1. [2.3.3.4.1 Úvod](#loc-48)
-      5. [2.3.3.5 Context Engineering (Kontextové inženýrství)](#loc-49)
-        1. [2.3.3.5.1 Úvod](#loc-51)
-      6. [2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#loc-52)
-        1. [2.3.3.6.1 Úvod](#loc-54)
-6. [3 DarkFactory: Architektura harnessu - Praktická část](#loc-55)
-  1. [3.1 Development Environment and Practices (Vývojové prostředí a praxe)](#loc-56)
-    1. [3.1.1 Úvod](#loc-57)
-    2. [3.1.2 Version control (Správa verzí)](#loc-58)
-      1. [3.1.2.1 Úvod](#loc-59)
-      2. [3.1.2.2 Git](#loc-60)
-        1. [3.1.2.2.1 Úvod](#loc-61)
-7. [4 Výsledky a diskuse](#loc-62)
-8. [5 Závěr](#loc-63)
-9. [Seznam zdrojů | References](#loc-64)
-10. [Seznam obrázků a tabulek | List of figures and tables](#loc-78)
-11. [Seznam příloh | List of appendices](#loc-79)
+4. [1 Introduction (Úvod)](#loc-4)
+  1. [1.1 Motivation and Problem Definition (Motivace a vymezení problému)](#loc-5)
+    1. [1.1.1 Úvod](#loc-6)
+  2. [1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)](#loc-7)
+    1. [1.2.1 Úvod](#loc-8)
+    2. [1.2.2 Main Goal (Hlavní cíl)](#loc-9)
+      1. [1.2.2.1 Úvod](#loc-10)
+    3. [1.2.3 Sub-goals (Dílčí cíle)](#loc-11)
+      1. [1.2.3.1 Úvod](#loc-12)
+    4. [1.2.4 Research Questions (Výzkumné otázky)](#loc-13)
+      1. [1.2.4.1 Úvod](#loc-14)
+  3. [1.3 Methodology (Metodika práce)](#loc-15)
+    1. [1.3.1 Úvod](#loc-16)
+5. [2 Agentic AI (Agentické AI)](#loc-17)
+  1. [2.1 Development Environment and Practices (Vývojové prostředí a praxe)](#loc-18)
+    1. [2.1.1 Úvod](#loc-20)
+    2. [2.1.2 Software Engineering (Softwarové inženýrství)](#loc-21)
+      1. [2.1.2.1 Úvod](#loc-22)
+    3. [2.1.3 Version control (Správa verzí)](#loc-23)
+      1. [2.1.3.1 Úvod](#loc-25)
+      2. [2.1.3.2 Git](#loc-26)
+        1. [2.1.3.2.1 Úvod](#loc-27)
+    4. [2.1.4 CI (Průběžná integrace) [Continuous Integration]](#loc-28)
+      1. [2.1.4.1 Úvod](#loc-30)
+  2. [2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)](#loc-31)
+    1. [2.2.1 Úvod](#loc-33)
+    2. [2.2.2 LLM (Jazykový model) [Large Language Model]](#loc-34)
+      1. [2.2.2.1 Úvod](#loc-35)
+  3. [2.3 Agentic Engineering (Agentické inženýrství)](#loc-37)
+    1. [2.3.1 Úvod](#loc-39)
+    2. [2.3.2 Prompt Engineering (Promptové inženýrství)](#loc-40)
+      1. [2.3.2.1 Úvod](#loc-42)
+    3. [2.3.3 Agent Harness (Agentní harness)](#loc-43)
+      1. [2.3.3.1 Úvod](#loc-45)
+      2. [2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]](#loc-46)
+        1. [2.3.3.2.1 Úvod](#loc-48)
+      3. [2.3.3.3 Tool Calling (Vyvolávání nástrojů)](#loc-49)
+        1. [2.3.3.3.1 Úvod](#loc-51)
+      4. [2.3.3.4 Skills (Dovednosti)](#loc-52)
+        1. [2.3.3.4.1 Úvod](#loc-54)
+      5. [2.3.3.5 Context Engineering (Kontextové inženýrství)](#loc-55)
+        1. [2.3.3.5.1 Úvod](#loc-57)
+      6. [2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#loc-58)
+        1. [2.3.3.6.1 Úvod](#loc-60)
+6. [3 DarkFactory: Architektura harnessu - Praktická část](#loc-61)
+  1. [3.1 Development Environment and Practices (Vývojové prostředí a praxe)](#loc-62)
+    1. [3.1.1 Úvod](#loc-63)
+    2. [3.1.2 Version control (Správa verzí)](#loc-64)
+      1. [3.1.2.1 Úvod](#loc-65)
+      2. [3.1.2.2 Git](#loc-66)
+        1. [3.1.2.2.1 Úvod](#loc-67)
+7. [4 Results and Discussion (Výsledky a diskuse)](#loc-68)
+8. [5 Conclusion (Závěr)](#loc-69)
+9. [Seznam zdrojů | References](#loc-70)
+10. [Seznam obrázků a tabulek | List of figures and tables](#loc-84)
+11. [Seznam příloh | List of appendices](#loc-85)
 
-## 1 Úvod
+## 1 Introduction (Úvod)
 
-### 1.1 Motivace a vymezení problému
+### 1.1 Motivation and Problem Definition (Motivace a vymezení problému)
 
 Ústřední inženýrská otázka této práce proto nespočívá v tom, zda jazykový model dokáže napsat fragment kódu. Zkoumáme, jaká kontrolní a dozorčí architektura — značovaná jako ***Agent Harness (Agentní harness)*** — musí model obklopovat, aby bylo možné jeho výstupům v produkčním repozitáři spolehlivě důvěřovat a dosáhnout vysoké míry autonomie se zachováním lidského dohledu.
 
-### 1.2 Cíl práce a výzkumné otázky
+#### 1.1.1 Úvod
 
-#### 1.2.1 Hlavní cíl
+### 1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)
+
+#### 1.2.1 Úvod
+
+#### 1.2.2 Main Goal (Hlavní cíl)
 
 Vymezit teoretické principy agentického inženýrství (*agentic engineering*) a navrhnout modulární architekturu agent harnessu pro automatizovaný vývoj softwaru se zachováním lidského dohledu v klíčových rozhodovacích bodech.
 
-#### 1.2.2 Dílčí cíle
+##### 1.2.2.1 Úvod
+
+#### 1.2.3 Sub-goals (Dílčí cíle)
 
 - Vymezit infrastrukturu pro správu verzí (Git, GitHub a kontinuální integraci).
 - Analyzovat limity velkých jazykových modelů (dynamiku kontextového okna, jev Context Rot, ztrátovou kompresi a sémantický posun).
 - Navrhnout architekturu agent harnessu zahrnující nástrojové smyčky (ReAct), bezpečnostní pískoviště a hierarchickou orchestraci subagentů.
 - Formalizovat mechanismy zapojení člověka do smyčky (*Human-in-the-loop*), schvalovací brány a protokol revizních značek pro dohled nad textovými výstupy.
 
-#### 1.2.3 Výzkumné otázky
+##### 1.2.3.1 Úvod
 
-### 1.3 Metodika práce
+#### 1.2.4 Research Questions (Výzkumné otázky)
+
+##### 1.2.4.1 Úvod
+
+### 1.3 Methodology (Metodika práce)
 
 Práce má teoreticko-architektonický a inženýrský charakter. Vzhledem k dynamickému vývoji v oblasti autonomního softwarového vývoje práce důsledně zachovává a integruje zavedené anglické odborné názvy (např. *harness*, *pull request*, *agent loop*, *prompt engineering*, *skills* či *context rot*). Použití této terminologie je integrální součástí práce, neboť tyto anglické pojmy představují de facto celosvětové průmyslové standardy (*industry standards*), jejichž doslovný český překlad by byl nejednoznačný, zavádějící či v rozporu s běžnou inženýrskou praxí.
 
@@ -106,39 +122,41 @@ Postup práce sleduje strukturu inženýrského cyklu:
 -
   1. Kritické zhodnocení: Porovnání navržených principů s volnými agentními smyčkami a vymezení provozních limitů autonomního inženýrství.
 
-## 2 Agentické AI: Vymezení konceptů - Teoretická část
+#### 1.3.1 Úvod
+
+## 2 Agentic AI (Agentické AI)
 
 Úvod
 
 ### 2.1 Development Environment and Practices (Vývojové prostředí a praxe)
 
-Soubor verzovacích, plánovacích, integračních a kontrolních postupů tvořících deterministické prostředí pro agentní vývoj softwaru. | The set of versioning, planning, integration, and verification practices that form a deterministic environment for agentic software development. ([1](#loc-65))
+Soubor verzovacích, plánovacích, integračních a kontrolních postupů tvořících deterministické prostředí pro agentní vývoj softwaru. | The set of versioning, planning, integration, and verification practices that form a deterministic environment for agentic software development. <sup><span id="loc-19">(</span><a href="#loc-71" role="doc-biblioref">1</a>)</sup>
 
 #### 2.1.1 Úvod
 
 #### 2.1.2 Software Engineering (Softwarové inženýrství)
 
-Systematické uplatňování inženýrských principů na specifikaci, návrh, implementaci, ověřování, provoz a údržbu softwarových systémů. | The systematic application of engineering principles to the specification, design, implementation, verification, operation, and maintenance of software systems. ([1](#loc-65))
+Systematické uplatňování inženýrských principů na specifikaci, návrh, implementaci, ověřování, provoz a údržbu softwarových systémů. | The systematic application of engineering principles to the specification, design, implementation, verification, operation, and maintenance of software systems. <sup>(<a href="#loc-71" role="doc-biblioref">1</a>)</sup>
 
 ##### 2.1.2.1 Úvod
 
 #### 2.1.3 Version control (Správa verzí)
 
-Správa a sledování změn zdrojových souborů a dalších verzovaných artefaktů tak, aby bylo možné změny bezpečně větvit, slučovat, auditovat a v případě potřeby vracet. | The management and tracking of changes to source files and other versioned artifacts so changes can be safely branched, merged, audited, and reverted when necessary. ([2](#loc-66))
+Správa a sledování změn zdrojových souborů a dalších verzovaných artefaktů tak, aby bylo možné změny bezpečně větvit, slučovat, auditovat a v případě potřeby vracet. | The management and tracking of changes to source files and other versioned artifacts so changes can be safely branched, merged, audited, and reverted when necessary. <sup><span id="loc-24">(</span><a href="#loc-72" role="doc-biblioref">2</a>)</sup>
 
 ##### 2.1.3.1 Úvod
 
 ##### 2.1.3.2 Git
 
-Distribuovaný systém správy verzí, který uchovává historii projektu, podporuje větvení a slučování změn a umožňuje deterministický návrat k předchozím stavům repozitáře. | A distributed version-control system that records project history, supports branching and merging, and enables deterministic return to earlier repository states. ([2](#loc-66))
+Distribuovaný systém správy verzí, který uchovává historii projektu, podporuje větvení a slučování změn a umožňuje deterministický návrat k předchozím stavům repozitáře. | A distributed version-control system that records project history, supports branching and merging, and enables deterministic return to earlier repository states. <sup>(<a href="#loc-72" role="doc-biblioref">2</a>)</sup>
 
 ###### 2.1.3.2.1 Úvod
 
-Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém ***Git**** v kombinaci s platformou ***GitHub****.
+Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém ***Git***<sup>*</sup> v kombinaci s platformou ***GitHub***<sup>*</sup>.
 
 Klíčové komponenty infrastruktury zahrnují:
 
-- Distribuovaný systém Git ([2](#loc-66)): Ukládá kompletní historii projektu v podobě jednotlivých revizí (*commitů*). Vývojář i agent pracují s plnou lokální kopií repozitáře, což umožňuje provádět změny, přepínat větve a spouštět lokální testy zcela nezávisle na síťovém připojení.
+- Distribuovaný systém Git <sup>(<a href="#loc-72" role="doc-biblioref">2</a>)</sup>: Ukládá kompletní historii projektu v podobě jednotlivých revizí (*commitů*). Vývojář i agent pracují s plnou lokální kopií repozitáře, což umožňuje provádět změny, přepínat větve a spouštět lokální testy zcela nezávisle na síťovém připojení.
 - Platforma GitHub: Slouží jako centrální bod pro sdílení kódu, týmovou koordinaci a automatizaci:
   - Zadávání a sledování úkolů (Issues): Strukturovaná textová zadání požadavků a hlášení chyb, která agentovi slouží jako výchozí specifikace úlohy.
   - Revize změn (Pull Requests): Uživatelské rozhraní pro přehledné zobrazení diffu, diskusi nad kódem a formální schválení člověkem.
@@ -146,24 +164,24 @@ Klíčové komponenty infrastruktury zahrnují:
 
 #### 2.1.4 CI (Průběžná integrace) [Continuous Integration]
 
-Vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami, aby se integrační chyby odhalily co nejdříve. | A development practice in which changes are integrated frequently and automatically verified by builds, tests, and other checks so integration failures are detected early. ([3](#loc-67))
+Vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami, aby se integrační chyby odhalily co nejdříve. | A development practice in which changes are integrated frequently and automatically verified by builds, tests, and other checks so integration failures are detected early. <sup><span id="loc-29">(</span><a href="#loc-73" role="doc-biblioref">3</a>)</sup>
 
 ##### 2.1.4.1 Úvod
 
 ### 2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)
 
-Konceptuální minimum o jazykových modelech a jejich kontextu potřebné pro pochopení agentních systémů. | The conceptual minimum about language models and their context needed to understand agentic systems. ([4](#loc-68))
+Konceptuální minimum o jazykových modelech a jejich kontextu potřebné pro pochopení agentních systémů. | The conceptual minimum about language models and their context needed to understand agentic systems. <sup><span id="loc-32">(</span><a href="#loc-74" role="doc-biblioref">4</a>)</sup>
 
 #### 2.2.1 Úvod
 
-V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*; Transformer (Transformerová architektura) [Transformer Architecture] ), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek ([4](#loc-68)). Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
+V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*; Transformer (Transformerová architektura) [Transformer Architecture] ), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek <sup>(<a href="#loc-74" role="doc-biblioref">4</a>)</sup>. Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
 
 Základní principy fungování modelu zahrnují:
 
 - Autoregresivní predikce: Model zpracovává zadanou sekvenci textu a na jejím základě iterativně předpovídá nejpravděpodobnější následující symboly (tokeny).
 - Stochastická povaha: Vzhledem k pravděpodobnostnímu vzorkování může model na totožný vstup reagovat mírně odlišně, což vyžaduje deterministické mantinely v nadřazeném agent harnessu.
 
-Pro efektivní nasazení modelu do vývojového cyklu je nezbytné porozumět způsobu, jakým reprezentuje informace a jaké fyzické limity vymezují jeho operační paměť. theory_body: none, ***Chatbot**** — [CZ] Systém založený na jazykovém modelu určený primárně k textové interakci s uživatelem; odpovídá na jednotlivé požadavky, ale sám o sobě nedisponuje autonomní prováděcí smyčkou ani nástroji pro samostatnou modifikaci okolního prostředí.. ***Agent**** — [CZ] Softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně plánuje, vnímá stav prostředí a provádí vícekrokové akce směřující k dosažení zadaného inženýrského cíle.. Rozdíl mezi nimi nespočívá v odlišném jazykovém modelu, ale v architektuře jeho zapojení do pracovního prostředí.
+Pro efektivní nasazení modelu do vývojového cyklu je nezbytné porozumět způsobu, jakým reprezentuje informace a jaké fyzické limity vymezují jeho operační paměť. theory_body: none, ***Chatbot***<sup>*</sup> — [CZ] Systém založený na jazykovém modelu určený primárně k textové interakci s uživatelem; odpovídá na jednotlivé požadavky, ale sám o sobě nedisponuje autonomní prováděcí smyčkou ani nástroji pro samostatnou modifikaci okolního prostředí.. ***Agent***<sup>*</sup> — [CZ] Softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně plánuje, vnímá stav prostředí a provádí vícekrokové akce směřující k dosažení zadaného inženýrského cíle.. Rozdíl mezi nimi nespočívá v odlišném jazykovém modelu, ale v architektuře jeho zapojení do pracovního prostředí.
 
 Srovnání obou přístupů:
 
@@ -178,7 +196,7 @@ Srovnání obou přístupů:
 
 #### 2.2.2 LLM (Jazykový model) [Large Language Model]
 
-Velký jazykový model je neuronový model trénovaný nad rozsáhlými textovými daty, který autoregresivně zpracovává a generuje posloupnosti tokenů. V této práci vystupuje jako inferenční kognitivní jádro agentního systému. | A large language model is a neural model trained on large-scale textual data that autoregressively processes and generates token sequences. In this thesis it serves as the inference-based cognitive core of an agentic system. ([4](#loc-68))
+Velký jazykový model je neuronový model trénovaný nad rozsáhlými textovými daty, který autoregresivně zpracovává a generuje posloupnosti tokenů. V této práci vystupuje jako inferenční kognitivní jádro agentního systému. | A large language model is a neural model trained on large-scale textual data that autoregressively processes and generates token sequences. In this thesis it serves as the inference-based cognitive core of an agentic system. <sup>(<a href="#loc-74" role="doc-biblioref">4</a>)</sup>
 
 ##### 2.2.2.1 Úvod
 
@@ -187,7 +205,7 @@ Jazykový model nepracuje přímo se znaky ani slovy v lidském slova smyslu. Vs
 Tento proces zahrnuje následující pojmy:
 
 - Tokeny a tokenizér ( Tokenizer (Tokenizér) ): Token představuje základní diskrétní jednotku (celé slovo, slabiku či fragment znaků). Převod mezi textem a posloupností číselných tokenů zajišťuje tokenizér (nejčastěji na bázi algoritmu Byte Pair Encoding, BPE).
-- ***Embedding (Vektorová reprezentace)**** — [CZ] Vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v níž numerické vztahy mezi vektory zachycují užitečné sémantické vztahy mezi reprezentacemi. ([5](#loc-69)) (např. vektorová analogie
+- ***Embedding (Vektorová reprezentace)***<sup>*</sup> — [CZ] Vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v níž numerické vztahy mezi vektory zachycují užitečné sémantické vztahy mezi reprezentacemi. <sup><span id="loc-36">(</span><a href="#loc-75" role="doc-biblioref">5</a>)</sup> (např. vektorová analogie
   <math><mtext>král</mtext><mo>−</mo><mtext>muž</mtext><mo>+</mo><mtext>žena</mtext><mo>≈</mo><mtext>královna</mtext></math>
   ).
 - Jazyková asymetrie tokenizace: Vzhledem k trénovacím datům optimalizovaným primárně pro angličtinu spotřebovávají flektivní jazyky s bohatou diakritikou (včetně češtiny) 2× až 3× více tokenů pro vyjádření téhož významu.
@@ -196,29 +214,29 @@ Z inženýrského hlediska je proto žádoucí vést systémové prompty, techni
 
 ### 2.3 Agentic Engineering (Agentické inženýrství)
 
-Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu. | An engineering discipline focused on designing, orchestrating, and operating agentic systems around language models, including tools, context, execution loops, guardrails, and human oversight. ([6](#loc-70))
+Inženýrská disciplína zaměřená na návrh, orchestraci a provoz agentických systémů kolem jazykových modelů, včetně nástrojů, kontextu, prováděcích smyček, bezpečnostních mantinelů a lidského dohledu. | An engineering discipline focused on designing, orchestrating, and operating agentic systems around language models, including tools, context, execution loops, guardrails, and human oversight. <sup><span id="loc-38">(</span><a href="#loc-76" role="doc-biblioref">6</a>)</sup>
 
 #### 2.3.1 Úvod
 
 #### 2.3.2 Prompt Engineering (Promptové inženýrství)
 
-Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu. | An engineering discipline for systematically designing, structuring, and optimizing instructions and system prompts to guide and constrain language-model behavior. ([7](#loc-71))
+Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu. | An engineering discipline for systematically designing, structuring, and optimizing instructions and system prompts to guide and constrain language-model behavior. <sup><span id="loc-41">(</span><a href="#loc-77" role="doc-biblioref">7</a>)</sup>
 
 ##### 2.3.2.1 Úvod
 
 #### 2.3.3 Agent Harness (Agentní harness)
 
-Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku. | Agent harness — an application and orchestration layer surrounding a model's inference core that provides the tool runtime, dynamic context-window management, guardrails, state handling, and deterministic control over the request lifecycle. ([8](#loc-72))
+Agentní harness — aplikační a orchestrační vrstva obklopující inferenční jádro modelu, která zajišťuje běhové prostředí nástrojů, dynamickou správu kontextového okna, bezpečnostní mantinely, práci se stavem a deterministické řízení životního cyklu požadavku. | Agent harness — an application and orchestration layer surrounding a model's inference core that provides the tool runtime, dynamic context-window management, guardrails, state handling, and deterministic control over the request lifecycle. <sup><span id="loc-44">(</span><a href="#loc-78" role="doc-biblioref">8</a>)</sup>
 
 ##### 2.3.3.1 Úvod
 
 Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; orchestraci, práci se soubory, správu stavu a bezpečnostní mantinely zajišťuje Agent Harness (Agentní harness) .
 
-Ústřední prováděcí funkcí, která v architektuře harnessu řídí iterativní koordinaci agenta v reálném vývojovém prostředí, je ***Agent Loop (Smyčka ReAct) [ReAct Loop]****. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
+Ústřední prováděcí funkcí, která v architektuře harnessu řídí iterativní koordinaci agenta v reálném vývojovém prostředí, je ***Agent Loop (Smyčka ReAct) [ReAct Loop]***<sup>*</sup>. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
 
 ##### 2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]
 
-Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí. | An iterative execution cycle of an autonomous agent based on the ReAct pattern (Reasoning + Acting), in which the model alternates between reasoning, tool calls, and evaluation of observations from the runtime environment. ([9](#loc-73))
+Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí. | An iterative execution cycle of an autonomous agent based on the ReAct pattern (Reasoning + Acting), in which the model alternates between reasoning, tool calls, and evaluation of observations from the runtime environment. <sup><span id="loc-47">(</span><a href="#loc-79" role="doc-biblioref">9</a>)</sup>
 
 ###### 2.3.3.2.1 Úvod
 
@@ -230,7 +248,7 @@ V každé iteraci agentní smyčky harness zajišťuje tyto klíčové funkce:
 - Běhové prostředí nástrojů: Bezpečné spouštění příkazů v operačním systému a zpětné předávání výstupů modelu.
 - Řízení stavových přechodů a vynucování mantinelů ( Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering] ): Dohled nad dodržováním procesních pravidel, detekce a zastavení uvíznutých běhů a vynucování lidských schvalovacích bran.
 
-Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem ReAct (*Reasoning + Acting*) ([9](#loc-73)), který propojuje rozvahu s přímým jednáním. Tento prováděcí cyklus sestává ze čtyř navazujících fází znázorněných na [Obrázek 1](#fig-react-loop):
+Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem ReAct (*Reasoning + Acting*) <sup>(<a href="#loc-79" role="doc-biblioref">9</a>)</sup>, který propojuje rozvahu s přímým jednáním. Tento prováděcí cyklus sestává ze čtyř navazujících fází znázorněných na [Obrázek 1](#fig-react-loop):
 
 1. Rozvaha (*Thought*): Model vyhodnotí aktuální stav kontextu a formuluje svůj nejbližší záměr.
 2. Volání nástroje (*Tool Call*): Emitování strukturovaného požadavku na provedení konkrétní akce s určenými parametry.
@@ -245,17 +263,17 @@ Kvalita a provozní spolehlivost celého systému tak závisí v prvé řadě na
 
 ##### 2.3.3.3 Tool Calling (Vyvolávání nástrojů)
 
-Mechanismus, kterým model strukturovaně žádá harness o provedení externí akce nebo funkce s validovanými parametry. | A mechanism through which a model structurally asks a harness to execute an external action or function with validated parameters. ([10](#loc-74))
+Mechanismus, kterým model strukturovaně žádá harness o provedení externí akce nebo funkce s validovanými parametry. | A mechanism through which a model structurally asks a harness to execute an external action or function with validated parameters. <sup><span id="loc-50">(</span><a href="#loc-80" role="doc-biblioref">10</a>)</sup>
 
 ###### 2.3.3.3.1 Úvod
 
 ##### 2.3.3.4 Skills (Dovednosti)
 
-Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v souboru SKILL.md), procedurálních pravidel a volitelných pomocných skriptů či zdrojů, které harness dynamicky načítá do kontextu agenta podle povahy řešeného úkolu. | Reusable modular packages of instructions (typically defined in a SKILL.md file), procedural rules, and optional helper scripts or resources that a harness dynamically loads into an agent's context for a particular class of task. ([11](#loc-75))
+Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v souboru SKILL.md), procedurálních pravidel a volitelných pomocných skriptů či zdrojů, které harness dynamicky načítá do kontextu agenta podle povahy řešeného úkolu. | Reusable modular packages of instructions (typically defined in a SKILL.md file), procedural rules, and optional helper scripts or resources that a harness dynamically loads into an agent's context for a particular class of task. <sup><span id="loc-53">(</span><a href="#loc-81" role="doc-biblioref">11</a>)</sup>
 
 ###### 2.3.3.4.1 Úvod
 
-Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží ***Skills (Dovednosti)****.
+Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží ***Skills (Dovednosti)***<sup>*</sup>.
 
 Architektura dovedností staví na následujících principech:
 
@@ -263,17 +281,17 @@ Architektura dovedností staví na následujících principech:
 - Dynamické načítání pro úsporu kontextu: Do výchozího promptu se vloží pouze stručný přehled dostupných dovedností. Kompletní instrukce a skripty se do kontextu načtou až v okamžiku, kdy agent danou dovednost explicitně vyvolá.
 - Skripty ( Script (Skript) ) a záchytné body ( Hook (Událostní záchytný bod) [Event Hook] ): Dovednosti mohou obsahovat deterministické skripty pro rutinní transformace kódu a událostní háčky vyvolávané při stavových přechodech harnessu.
 
-Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové ***Plugins (Rozšíření)**** — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
+Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové ***Plugins (Rozšíření)***<sup>*</sup> — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
 
 ##### 2.3.3.5 Context Engineering (Kontextové inženýrství)
 
-Systematický návrh, výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu, včetně instrukcí, paměti, nástrojových výsledků a externě načtených dat. | The systematic design, selection, ordering, and lifecycle management of information made available to a model in active context, including instructions, memory, tool results, and externally retrieved data. ([12](#loc-76))
+Systematický návrh, výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu, včetně instrukcí, paměti, nástrojových výsledků a externě načtených dat. | The systematic design, selection, ordering, and lifecycle management of information made available to a model in active context, including instructions, memory, tool results, and externally retrieved data. <sup><span id="loc-56">(</span><a href="#loc-82" role="doc-biblioref">12</a>)</sup>
 
 ###### 2.3.3.5.1 Úvod
 
 ##### 2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]
 
-Návrh agentních nebo automatizačních pracovních postupů jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky. | The design of agentic or automation workflows as explicit graphs of nodes, dependencies, and transitions rather than as one unconstrained loop. ([13](#loc-77))
+Návrh agentních nebo automatizačních pracovních postupů jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky. | The design of agentic or automation workflows as explicit graphs of nodes, dependencies, and transitions rather than as one unconstrained loop. <sup><span id="loc-59">(</span><a href="#loc-83" role="doc-biblioref">13</a>)</sup>
 
 ###### 2.3.3.6.1 Úvod
 
@@ -285,41 +303,41 @@ Monolitická agentní smyčka selhává při řešení komplexních, vícefázov
 
 ### 3.1 Development Environment and Practices (Vývojové prostředí a praxe)
 
-Soubor verzovacích, plánovacích, integračních a kontrolních postupů tvořících deterministické prostředí pro agentní vývoj softwaru. | The set of versioning, planning, integration, and verification practices that form a deterministic environment for agentic software development. ([1](#loc-65))
+Soubor verzovacích, plánovacích, integračních a kontrolních postupů tvořících deterministické prostředí pro agentní vývoj softwaru. | The set of versioning, planning, integration, and verification practices that form a deterministic environment for agentic software development. <sup>(<a href="#loc-71" role="doc-biblioref">1</a>)</sup>
 
 #### 3.1.1 Úvod
 
 #### 3.1.2 Version control (Správa verzí)
 
-Správa a sledování změn zdrojových souborů a dalších verzovaných artefaktů tak, aby bylo možné změny bezpečně větvit, slučovat, auditovat a v případě potřeby vracet. | The management and tracking of changes to source files and other versioned artifacts so changes can be safely branched, merged, audited, and reverted when necessary. ([2](#loc-66))
+Správa a sledování změn zdrojových souborů a dalších verzovaných artefaktů tak, aby bylo možné změny bezpečně větvit, slučovat, auditovat a v případě potřeby vracet. | The management and tracking of changes to source files and other versioned artifacts so changes can be safely branched, merged, audited, and reverted when necessary. <sup>(<a href="#loc-72" role="doc-biblioref">2</a>)</sup>
 
 ##### 3.1.2.1 Úvod
 
 ##### 3.1.2.2 Git
 
-Distribuovaný systém správy verzí, který uchovává historii projektu, podporuje větvení a slučování změn a umožňuje deterministický návrat k předchozím stavům repozitáře. | A distributed version-control system that records project history, supports branching and merging, and enables deterministic return to earlier repository states. ([2](#loc-66))
+Distribuovaný systém správy verzí, který uchovává historii projektu, podporuje větvení a slučování změn a umožňuje deterministický návrat k předchozím stavům repozitáře. | A distributed version-control system that records project history, supports branching and merging, and enables deterministic return to earlier repository states. <sup>(<a href="#loc-72" role="doc-biblioref">2</a>)</sup>
 
 ###### 3.1.2.2.1 Úvod
 
-## 4 Výsledky a diskuse
+## 4 Results and Discussion (Výsledky a diskuse)
 
-## 5 Závěr
+## 5 Conclusion (Závěr)
 
 ## Seznam zdrojů | References
 
-- [1.](#loc-13) SOMMERVILLE, Ian. *Software Engineering.*10. Pearson, 2016. ISBN 978-0-13-394303-0.
-- [2.](#loc-18) CHACON, Scott a STRAUB, Ben. *Pro Git.*2. New York : Apress, 2014. ISBN 978-1-4842-0076-6.
-- [3.](#loc-23) HUMBLE, Jez a FARLEY, David. *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.*Boston : Addison-Wesley, 2010. ISBN 978-0-321-60191-9.
-- [4.](#loc-26) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
-- [5.](#loc-30) MIKOLOV, Tomas, CHEN, Kai, CORRADO, Greg a DEAN, Jeffrey. Efficient Estimation of Word Representations in Vector Space. *arXiv preprint arXiv:1301.3781.* Online. 2013. Available from: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
-- [6.](#loc-32) WANG, Lei, MA, Chen, FENG, Xueyang, ZHANG, Zeyu, YANG, Hao, ZHANG, Jingsen, CHEN, Zhiyuan, TANG, Jiakai, CHEN, Xu, LIN, Yankai, ZHAO, Wayne Xin, WEI, Zhewei a WEN, Ji-Rong. A Survey on Large Language Model Based Autonomous Agents. *Frontiers of Computer Science.* Online. 2024. Vol. 18, no. 6, p. 186345. Available from: [https://arxiv.org/abs/2308.11432](https://arxiv.org/abs/2308.11432)
-- [7.](#loc-35) ANTHROPIC. Prompt Engineering overview. Online. 2026. Available from: [https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
-- [8.](#loc-38) Deepseek Harness. *arXiv preprint arXiv:2608.25512.* Online. 2026. Available from: [https://arxiv.org/abs/2608.25512](https://arxiv.org/abs/2608.25512)
-- [9.](#loc-41) YAO, Shunyu, ZHAO, Jeffrey, YU, Dian, DU, Nan, SHAFRAN, Izhak, NARASIMHAN, Karthik a CAO, Yuan. ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629.* Online. 2022. Available from: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
-- [10.](#loc-44) SCHICK, Timo, DWIVEDI-YU, Jane, DESS\̀I, Roberto, RAILEANU, Roberta, LOMELI, Maria, ZETTLEMOYER, Luke, CANCEDDA, Nicola a SCIALOM, Thomas. Toolformer: Language Models Can Teach Themselves to Use Tools. *Advances in Neural Information Processing Systems.* Online. 2023. Vol. 36, p. 68539–68551. Available from: [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
-- [11.](#loc-47) ANTHROPIC. Building effective agents. Online. 2024. Available from: [https://www.anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents)
-- [12.](#loc-50) LIU, Nelson F., LIN, Kevin, HEWITT, John, PARANJAPE, Ashwin, BEVILACQUA, Michele, PETRONI, Fabio a LIANG, Percy. Lost in the Middle: How Language Models Use Long Contexts. *Transactions of the Association for Computational Linguistics.* Online. 2024. Vol. 12, p. 157–173. Available from: [https://arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
-- [13.](#loc-53) WU, Qingyun, BANSAL, Gagan, ZHANG, Jieyu, WU, Yiran, LI, Beibin, ZHU, Erkang, JIANG, Li, ZHANG, Xiaoyun, ZHANG, Chi, LIU, Jue, AWADALLAH, Ahmed Hassan, WHITE, Ryen W., BURGER, Doug a WANG, Chi. AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. *arXiv preprint arXiv:2308.08155.* Online. 2023. Available from: [https://arxiv.org/abs/2308.08155](https://arxiv.org/abs/2308.08155)
+- [1.](#loc-19) SOMMERVILLE, Ian. *Software Engineering.*10. Pearson, 2016. ISBN 978-0-13-394303-0.
+- [2.](#loc-24) CHACON, Scott a STRAUB, Ben. *Pro Git.*2. New York : Apress, 2014. ISBN 978-1-4842-0076-6.
+- [3.](#loc-29) HUMBLE, Jez a FARLEY, David. *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.*Boston : Addison-Wesley, 2010. ISBN 978-0-321-60191-9.
+- [4.](#loc-32) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+- [5.](#loc-36) MIKOLOV, Tomas, CHEN, Kai, CORRADO, Greg a DEAN, Jeffrey. Efficient Estimation of Word Representations in Vector Space. *arXiv preprint arXiv:1301.3781.* Online. 2013. Available from: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
+- [6.](#loc-38) WANG, Lei, MA, Chen, FENG, Xueyang, ZHANG, Zeyu, YANG, Hao, ZHANG, Jingsen, CHEN, Zhiyuan, TANG, Jiakai, CHEN, Xu, LIN, Yankai, ZHAO, Wayne Xin, WEI, Zhewei a WEN, Ji-Rong. A Survey on Large Language Model Based Autonomous Agents. *Frontiers of Computer Science.* Online. 2024. Vol. 18, no. 6, p. 186345. Available from: [https://arxiv.org/abs/2308.11432](https://arxiv.org/abs/2308.11432)
+- [7.](#loc-41) ANTHROPIC. Prompt Engineering overview. Online. 2026. Available from: [https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+- [8.](#loc-44) Deepseek Harness. *arXiv preprint arXiv:2608.25512.* Online. 2026. Available from: [https://arxiv.org/abs/2608.25512](https://arxiv.org/abs/2608.25512)
+- [9.](#loc-47) YAO, Shunyu, ZHAO, Jeffrey, YU, Dian, DU, Nan, SHAFRAN, Izhak, NARASIMHAN, Karthik a CAO, Yuan. ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629.* Online. 2022. Available from: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+- [10.](#loc-50) SCHICK, Timo, DWIVEDI-YU, Jane, DESS\̀I, Roberto, RAILEANU, Roberta, LOMELI, Maria, ZETTLEMOYER, Luke, CANCEDDA, Nicola a SCIALOM, Thomas. Toolformer: Language Models Can Teach Themselves to Use Tools. *Advances in Neural Information Processing Systems.* Online. 2023. Vol. 36, p. 68539–68551. Available from: [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
+- [11.](#loc-53) ANTHROPIC. Building effective agents. Online. 2024. Available from: [https://www.anthropic.com/research/building-effective-agents](https://www.anthropic.com/research/building-effective-agents)
+- [12.](#loc-56) LIU, Nelson F., LIN, Kevin, HEWITT, John, PARANJAPE, Ashwin, BEVILACQUA, Michele, PETRONI, Fabio a LIANG, Percy. Lost in the Middle: How Language Models Use Long Contexts. *Transactions of the Association for Computational Linguistics.* Online. 2024. Vol. 12, p. 157–173. Available from: [https://arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+- [13.](#loc-59) WU, Qingyun, BANSAL, Gagan, ZHANG, Jieyu, WU, Yiran, LI, Beibin, ZHU, Erkang, JIANG, Li, ZHANG, Xiaoyun, ZHANG, Chi, LIU, Jue, AWADALLAH, Ahmed Hassan, WHITE, Ryen W., BURGER, Doug a WANG, Chi. AutoGen: Enabling Next-Gen LLM Applications via Multi-Agent Conversation. *arXiv preprint arXiv:2308.08155.* Online. 2023. Available from: [https://arxiv.org/abs/2308.08155](https://arxiv.org/abs/2308.08155)
 - 14.  MARIUS, Patrik. DarkFactory: autonomous, governed software engineering pipelines. Online. 2026. [Accessed 8 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
 - 15.  ANTHROPIC. Model Context Protocol documentation. Online. 2026. Available from: [https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp)
 - 16.  DAO, Tri, FU, Daniel Y., ERMON, Stefano, RUDRA, Atri a RÉ, Christopher. FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness. *Advances in Neural Information Processing Systems.* Online. 2022. Vol. 35, p. 16344–16359. Available from: [https://arxiv.org/abs/2205.14135](https://arxiv.org/abs/2205.14135)
