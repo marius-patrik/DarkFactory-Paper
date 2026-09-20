@@ -139,49 +139,54 @@
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.2 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Dovednosti [ Skills ]",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-31"
           },
           {
-            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
-            "level": 2,
+            "title": "2.3.4 Dovednosti [ Skills ]",
+            "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "3.1 Git a GitHub",
-            "level": 3,
+            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
             "anchor": "loc-33"
           },
           {
-            "title": "4 Výsledky a diskuse",
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
             "level": 2,
             "anchor": "loc-34"
           },
           {
-            "title": "5 Závěr",
-            "level": 2,
+            "title": "3.1 Git a GitHub",
+            "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "Seznam zdrojů",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-36"
           },
           {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "Seznam zdrojů",
+            "level": 2,
+            "anchor": "loc-38"
+          },
+          {
             "title": "Rejstřík",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-42"
           },
           {
             "title": "A",
@@ -456,7 +461,7 @@
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-40"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -626,12 +631,12 @@
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Promptové inženýrství [ Prompt Engineering ] a negativní instrukce",
+            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
             "anchor": "loc-39"
           },
@@ -1155,49 +1160,54 @@
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.2 Smyčka ReAct ( Agent Loop )",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Dovednosti",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-31"
           },
           {
-            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
-            "level": 2,
+            "title": "2.3.4 Dovednosti",
+            "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "3.1 Git a GitHub",
-            "level": 3,
+            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
             "anchor": "loc-33"
           },
           {
-            "title": "4 Výsledky a diskuse",
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
             "level": 2,
             "anchor": "loc-34"
           },
           {
-            "title": "5 Závěr",
-            "level": 2,
+            "title": "3.1 Git a GitHub",
+            "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "Seznam zdrojů",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-36"
           },
           {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "Seznam zdrojů",
+            "level": 2,
+            "anchor": "loc-38"
+          },
+          {
             "title": "Rejstřík",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-42"
           },
           {
             "title": "A",
@@ -1472,7 +1482,7 @@
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-40"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -1642,12 +1652,12 @@
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Promptové inženýrství a negativní instrukce",
+            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct ( Agent Loop )",
+            "title": "2.3.3 Smyčka ReAct ( Agent Loop )",
             "level": 4,
             "anchor": "loc-39"
           },
@@ -2171,49 +2181,54 @@
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.2 ReAct Loop ( Agent Loop )",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Skills",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-31"
           },
           {
-            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
-            "level": 2,
+            "title": "2.3.4 Skills",
+            "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "3.1 Git a GitHub",
-            "level": 3,
+            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
             "anchor": "loc-33"
           },
           {
-            "title": "4 Výsledky a diskuse",
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
             "level": 2,
             "anchor": "loc-34"
           },
           {
-            "title": "5 Závěr",
-            "level": 2,
+            "title": "3.1 Git a GitHub",
+            "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "References",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-36"
           },
           {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "References",
+            "level": 2,
+            "anchor": "loc-38"
+          },
+          {
             "title": "Index",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-42"
           },
           {
             "title": "A",
@@ -2488,7 +2503,7 @@
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-40"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -2658,12 +2673,12 @@
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Prompt Engineering a negativní instrukce",
+            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]ReAct Loop ( Agent Loop )",
+            "title": "2.3.3 ReAct Loop ( Agent Loop )",
             "level": 4,
             "anchor": "loc-39"
           },
@@ -3187,49 +3202,54 @@
             "anchor": "loc-28"
           },
           {
-            "title": "2.3.2 Vyvolávání nástrojů [Tool Calling]",
+            "title": "2.3.2 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
             "anchor": "loc-29"
           },
           {
-            "title": "2.3.3 Dovednosti [ Skills ]",
-            "level": 4,
-            "anchor": "loc-30"
-          },
-          {
-            "title": "2.3.4 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "title": "2.3.3 Vyvolávání nástrojů [Tool Calling]",
             "level": 4,
             "anchor": "loc-31"
           },
           {
-            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
-            "level": 2,
+            "title": "2.3.4 Dovednosti [ Skills ]",
+            "level": 4,
             "anchor": "loc-32"
           },
           {
-            "title": "3.1 Git a GitHub",
-            "level": 3,
+            "title": "2.3.5 Škálování: Multiagentní systémy (Subagenti) a grafy (DAG workflows) [Scaling: Multiagent Systems (Subagents) and DAG Workflows (Graphs)]",
+            "level": 4,
             "anchor": "loc-33"
           },
           {
-            "title": "4 Výsledky a diskuse",
+            "title": "3 DarkFactory - Praktická část: Architektura harnessu",
             "level": 2,
             "anchor": "loc-34"
           },
           {
-            "title": "5 Závěr",
-            "level": 2,
+            "title": "3.1 Git a GitHub",
+            "level": 3,
             "anchor": "loc-35"
           },
           {
-            "title": "Seznam zdrojů | References",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-36"
           },
           {
+            "title": "5 Závěr",
+            "level": 2,
+            "anchor": "loc-37"
+          },
+          {
+            "title": "Seznam zdrojů | References",
+            "level": 2,
+            "anchor": "loc-38"
+          },
+          {
             "title": "Rejstřík | Index",
             "level": 2,
-            "anchor": "loc-39"
+            "anchor": "loc-42"
           },
           {
             "title": "A",
@@ -3504,7 +3524,7 @@
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-40"
+            "anchor": "loc-43"
           }
         ],
         "review": [
@@ -3674,12 +3694,12 @@
             "anchor": "loc-36"
           },
           {
-            "title": "2.3.2 Promptové inženýrství [ Prompt Engineering ] a negativní instrukce",
+            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
             "level": 4,
             "anchor": "loc-37"
           },
           {
-            "title": "2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
+            "title": "2.3.3 Smyčka ReAct [ ReAct Loop ] ( Agent Loop )",
             "level": 4,
             "anchor": "loc-39"
           },

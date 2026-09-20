@@ -48,8 +48,8 @@ Agent, Agentické inženýrství, Agentní harness, Chatbot, Degradace kontextu,
     8. [2.2.8 Degradace kontextu](#loc-33)
   3. [2.3 Agentické inženýrství a Agent Harness](#loc-35)
     1. [2.3.1 Úvod](#loc-36)
-    2. [2.3.2 Promptové inženýrství a negativní instrukce](#loc-37)
-    3. [2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct ( Agent Loop )](#loc-39)
+    2. [2.3.2 Prompt Engineering (Promptové inženýrství)](#loc-37)
+    3. [2.3.3 Smyčka ReAct ( Agent Loop )](#loc-39)
     4. [2.3.4 Vyvolávání nástrojů [Tool Calling]](#loc-41)
     5. [2.3.5 Sandbox](#loc-42)
     6. [2.3.6 Patologie divergence: perseverace a oscilace](#loc-43)
@@ -327,7 +327,7 @@ V terminologii agentického inženýrství používá tato práce pojem [***Agen
 
 Ústřední komponentou a hlavní prováděcí funkcí, která v architektuře harnessu řídí samotný běh a iterativní koordinaci agenta v reálném vývojovém prostředí, je [***Smyčka ReAct ( Agent Loop )***](#kw-agent-loop)★. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
 
-#### 2.3.2 Promptové inženýrství a negativní instrukce
+#### 2.3.2 Prompt Engineering (Promptové inženýrství)
 
 - Základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. [+ ][***Promptové inženýrství***](#kw-prompt-engineering)★ — [CZ] Inženýrská metodika systematického návrhu, strukturování a optimalizace instrukcí a systémových promptů pro řízení chování a mantinelů jazykového modelu. představuje klíčový předpoklad deterministického chování: základní chování agenta vymezuje systémový prompt ([5](#loc-58)), který definuje jeho identitu, sadu dostupných nástrojů a provozní mantinely. Při formulaci těchto pravidel však vývojáři narážejí na specifickou vlastnost autoregresivních modelů — problematické zpracování zákazů a negativních instrukcí.
 
@@ -339,7 +339,7 @@ Příčiny a inženýrská řešení tohoto jevu:
 - Afirmativní formulace: Pravidla je nutné formulovat pozitivně — namísto výčtu zákazů vymezit přesný postup a povolené mantinely chování.
 - Deterministická ochrana v harnessu: Kde nestačí prompt, musí zasáhnout kód agent harnessu — například zpřístupněním testovacích souborů pouze pro čtení nebo zablokováním destruktivních operací na úrovni systémového volání.
 
-#### 2.3.3 - Agentní smyčka a prováděcí cyklus ReAct [+ ]Smyčka ReAct ( Agent Loop )
+#### 2.3.3 Smyčka ReAct ( Agent Loop )
 
 Agentní smyčka (*Agent Loop*) představuje výkonné jádro celého agent harnessu. Zatímco pasivní konverzační chatbot jednorázově odpoví na uživatelský dotaz a čeká na další vstup, agentní smyčka autonomně udržuje kontinuální iterativní proces, v němž harness opakovaně vyhodnocuje stav repozitáře, volá jazykový model a vykonává požadované systémové akce.
 
@@ -394,7 +394,7 @@ Architektura dovedností staví na následujících principech:
 - Dynamické načítání pro úsporu kontextu: Do výchozího promptu se vloží pouze stručný přehled dostupných dovedností. Kompletní instrukce a skripty se do kontextu načtou až v okamžiku, kdy agent danou dovednost explicitně vyvolá.
 - Skripty a záchytné body (*Scripts & Hooks*): Dovednosti mohou obsahovat deterministické skripty pro rutinní transformace kódu a událostní háčky vyvolávané při stavových přechodech harnessu.
 
--  [+ ]Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové [***Rozšíření***](#kw-plugins)★ — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
+Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové [***Rozšíření***](#kw-plugins)★ — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
 
 #### 2.3.8 Model Context Protocol ( MCP ) servery
 
