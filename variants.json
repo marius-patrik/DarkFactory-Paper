@@ -1,6 +1,7 @@
 {
-  "commit": "ea16123542e72df5add2f39e9f031287374574db",
-  "work_title": "DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství",
+  "commit": "4cae747376ad27488813554b0a4994502341e9af",
+  "book": "DarkFactory",
+  "work_title": "DarkFactory",
   "default_template": "gjkt-odborna-prace",
   "templates": [
     "gjkt-odborna-prace"
@@ -9,7 +10,7 @@
     {
       "profile": "school",
       "title": "Školní česká verze",
-      "subtitle": "Czech body, canonical English technical terms, bilingual annotation and keywords",
+      "subtitle": "Czech manuscript and section headings with canonical industry/proper terminology; bilingual annotation and keywords",
       "final": "prace.pdf",
       "review": "prace-review.pdf",
       "artifacts": {
@@ -96,7 +97,7 @@
     ],
     "modes": [
       "viewer",
-      "edit",
+      "review",
       "raw"
     ],
     "repo_tree": "repo-tree.json",

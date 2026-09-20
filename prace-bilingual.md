@@ -2,6 +2,8 @@
 Agentické a harnessové inženýrství:
 Umělá inteligence v praxi
 
+DarkFactory: Agentic and Harness Engineering: Artificial Intelligence in Practice
+
 Patrik Marius · Gymnázium J. K. Tyla · 2026
 
 ## Annotation (Anotace)
@@ -12,7 +14,7 @@ Patrik Marius · Gymnázium J. K. Tyla · 2026
 
 ## Keywords (Klíčová slova)
 
-Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loop] , Chatbot , Embedding (Vektorová reprezentace) , Git , GitHub , Hook (Událostní záchytný bod) [Event Hook] , Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering] , Plugins (Rozšíření) , Script (Skript) , Skills (Dovednosti) , Tokenizer (Tokenizér) , Transformer (Transformerová architektura) [Transformer Architecture]
+, Agent Harness , Agent Loop , , Embedding , , , Hook , Loop Engineering , Plugins , , Skills , , Transformer
 
 ## Obsah | Contents
 
@@ -43,11 +45,11 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
       1. [2.1.3.1 Úvod](#loc-25)
       2. [2.1.3.2 Git](#loc-26)
         1. [2.1.3.2.1 Úvod](#loc-27)
-    4. [2.1.4 CI (Průběžná integrace) [Continuous Integration]](#loc-28)
+    4. [2.1.4 Continuous Integration (Průběžná integrace)](#loc-28)
       1. [2.1.4.1 Úvod](#loc-30)
   2. [2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)](#loc-31)
     1. [2.2.1 Úvod](#loc-33)
-    2. [2.2.2 LLM (Jazykový model) [Large Language Model]](#loc-34)
+    2. [2.2.2 Large Language Model (Jazykový model)](#loc-34)
       1. [2.2.2.1 Úvod](#loc-35)
   3. [2.3 Agentic Engineering (Agentické inženýrství)](#loc-37)
     1. [2.3.1 Úvod](#loc-39)
@@ -55,7 +57,7 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
       1. [2.3.2.1 Úvod](#loc-42)
     3. [2.3.3 Agent Harness (Agentní harness)](#loc-43)
       1. [2.3.3.1 Úvod](#loc-45)
-      2. [2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]](#loc-46)
+      2. [2.3.3.2 ReAct Loop (Smyčka ReAct)](#loc-46)
         1. [2.3.3.2.1 Úvod](#loc-48)
       3. [2.3.3.3 Tool Calling (Vyvolávání nástrojů)](#loc-49)
         1. [2.3.3.3.1 Úvod](#loc-51)
@@ -63,9 +65,9 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
         1. [2.3.3.4.1 Úvod](#loc-54)
       5. [2.3.3.5 Context Engineering (Kontextové inženýrství)](#loc-55)
         1. [2.3.3.5.1 Úvod](#loc-57)
-      6. [2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#loc-58)
+      6. [2.3.3.6 Workflow-graph Engineering (Inženýrství pracovních grafů)](#loc-58)
         1. [2.3.3.6.1 Úvod](#loc-60)
-6. [3 DarkFactory: Architektura harnessu - Praktická část](#loc-61)
+6. [3 DarkFactory: Harness Architecture (Architektura harnessu) - Practical Part (Praktická část)](#loc-61)
   1. [3.1 Development Environment and Practices (Vývojové prostředí a praxe)](#loc-62)
     1. [3.1.1 Úvod](#loc-63)
     2. [3.1.2 Version control (Správa verzí)](#loc-64)
@@ -82,7 +84,7 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
 
 ### 1.1 Motivation and Problem Definition (Motivace a vymezení problému)
 
-Ústřední inženýrská otázka této práce proto nespočívá v tom, zda jazykový model dokáže napsat fragment kódu. Zkoumáme, jaká kontrolní a dozorčí architektura — značovaná jako ***Agent Harness (Agentní harness)*** — musí model obklopovat, aby bylo možné jeho výstupům v produkčním repozitáři spolehlivě důvěřovat a dosáhnout vysoké míry autonomie se zachováním lidského dohledu.
+Ústřední inženýrská otázka této práce proto nespočívá v tom, zda jazykový model dokáže napsat fragment kódu. Zkoumáme, jaká kontrolní a dozorčí architektura — značovaná jako ***Agent Harness*** — musí model obklopovat, aby bylo možné jeho výstupům v produkčním repozitáři spolehlivě důvěřovat a dosáhnout vysoké míry autonomie se zachováním lidského dohledu.
 
 #### 1.1.1 Úvod
 
@@ -152,7 +154,7 @@ Distribuovaný systém správy verzí, který uchovává historii projektu, podp
 
 ###### 2.1.3.2.1 Úvod
 
-Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém ***Git***<sup>*</sup> v kombinaci s platformou ***GitHub***<sup>*</sup>.
+Pro autonomní vývoj softwaru je spolehlivá správa verzí naprosto nezbytným základem. Jazykové modely generují kód na základě statistické pravděpodobnosti, a proto se nevyhnutelně dopouštějí chyb, logických přehmatů či regresí. Verzovací systém vytváří bezpečné a deterministické prostředí, v němž lze každou úpravu zaznamenat, otestovat a v případě selhání kdykoliv vrátit zpět k funkčnímu stavu. Namísto teoretických abstrakcí práce přímo využívá distribuovaný systém ******<sup>*</sup> v kombinaci s platformou ******<sup>*</sup>.
 
 Klíčové komponenty infrastruktury zahrnují:
 
@@ -162,7 +164,7 @@ Klíčové komponenty infrastruktury zahrnují:
   - Revize změn (Pull Requests): Uživatelské rozhraní pro přehledné zobrazení diffu, diskusi nad kódem a formální schválení člověkem.
   - Automatizace (GitHub Actions): Běhové prostředí pro automatické spouštění testů, linterů a překladů při každé události v repozitáři.
 
-#### 2.1.4 CI (Průběžná integrace) [Continuous Integration]
+#### 2.1.4 Continuous Integration (Průběžná integrace)
 
 Vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami, aby se integrační chyby odhalily co nejdříve. | A development practice in which changes are integrated frequently and automatically verified by builds, tests, and other checks so integration failures are detected early. <sup><span id="loc-29">(</span><a href="#loc-73" role="doc-biblioref">3</a>)</sup>
 
@@ -174,14 +176,14 @@ Konceptuální minimum o jazykových modelech a jejich kontextu potřebné pro p
 
 #### 2.2.1 Úvod
 
-V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*; Transformer (Transformerová architektura) [Transformer Architecture] ), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek <sup>(<a href="#loc-74" role="doc-biblioref">4</a>)</sup>. Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
+V agentickém softwarovém inženýrství vystupuje velký jazykový model (LLM) jako stochastické kognitivní jádro celého systému. Z hlediska vnitřní architektury se jedná o dekodérový transformer (*Decoder-only*; Transformer ), jehož typickými představiteli jsou moderní modely řad Claude, GPT či DeepSeek <sup>(<a href="#loc-74" role="doc-biblioref">4</a>)</sup>. Role modelu nespočívá ve vystupování jako vševědoucí orákulum se spolehlivou znalostí okolního světa, nýbrž jako pokročilý generátor hypotéz, kódu a strukturovaných volání nástrojů řízený obdrženým kontextem.
 
 Základní principy fungování modelu zahrnují:
 
 - Autoregresivní predikce: Model zpracovává zadanou sekvenci textu a na jejím základě iterativně předpovídá nejpravděpodobnější následující symboly (tokeny).
 - Stochastická povaha: Vzhledem k pravděpodobnostnímu vzorkování může model na totožný vstup reagovat mírně odlišně, což vyžaduje deterministické mantinely v nadřazeném agent harnessu.
 
-Pro efektivní nasazení modelu do vývojového cyklu je nezbytné porozumět způsobu, jakým reprezentuje informace a jaké fyzické limity vymezují jeho operační paměť. theory_body: none, ***Chatbot***<sup>*</sup> — [CZ] Systém založený na jazykovém modelu určený primárně k textové interakci s uživatelem; odpovídá na jednotlivé požadavky, ale sám o sobě nedisponuje autonomní prováděcí smyčkou ani nástroji pro samostatnou modifikaci okolního prostředí.. ***Agent***<sup>*</sup> — [CZ] Softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně plánuje, vnímá stav prostředí a provádí vícekrokové akce směřující k dosažení zadaného inženýrského cíle.. Rozdíl mezi nimi nespočívá v odlišném jazykovém modelu, ale v architektuře jeho zapojení do pracovního prostředí.
+Pro efektivní nasazení modelu do vývojového cyklu je nezbytné porozumět způsobu, jakým reprezentuje informace a jaké fyzické limity vymezují jeho operační paměť. ******<sup>*</sup> — [CZ] Systém založený na jazykovém modelu určený primárně k textové interakci s uživatelem; odpovídá na jednotlivé požadavky, ale sám o sobě nedisponuje autonomní prováděcí smyčkou ani nástroji pro samostatnou modifikaci okolního prostředí.. ******<sup>*</sup> — [CZ] Softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně plánuje, vnímá stav prostředí a provádí vícekrokové akce směřující k dosažení zadaného inženýrského cíle.. Rozdíl mezi nimi nespočívá v odlišném jazykovém modelu, ale v architektuře jeho zapojení do pracovního prostředí.
 
 Srovnání obou přístupů:
 
@@ -194,9 +196,9 @@ Srovnání obou přístupů:
   - Aktivně prozkoumává soubory, modifikuje zdrojový kód, spouští testy a interpretuje jejich návratové kódy.
   - Funguje v autonomní prováděcí smyčce, v níž iterativně reaguje na reálnou odezvu vývojového prostředí.
 
-#### 2.2.2 LLM (Jazykový model) [Large Language Model]
+#### 2.2.2 Large Language Model (Jazykový model)
 
-Velký jazykový model je neuronový model trénovaný nad rozsáhlými textovými daty, který autoregresivně zpracovává a generuje posloupnosti tokenů. V této práci vystupuje jako inferenční kognitivní jádro agentního systému. | A large language model is a neural model trained on large-scale textual data that autoregressively processes and generates token sequences. In this thesis it serves as the inference-based cognitive core of an agentic system. <sup>(<a href="#loc-74" role="doc-biblioref">4</a>)</sup>
+Velký jazykový model je neuronový model trénovaný nad rozsáhlými textovými daty, který autoregresivně zpracovává a generuje posloupnosti tokenů.
 
 ##### 2.2.2.1 Úvod
 
@@ -204,8 +206,8 @@ Jazykový model nepracuje přímo se znaky ani slovy v lidském slova smyslu. Vs
 
 Tento proces zahrnuje následující pojmy:
 
-- Tokeny a tokenizér ( Tokenizer (Tokenizér) ): Token představuje základní diskrétní jednotku (celé slovo, slabiku či fragment znaků). Převod mezi textem a posloupností číselných tokenů zajišťuje tokenizér (nejčastěji na bázi algoritmu Byte Pair Encoding, BPE).
-- ***Embedding (Vektorová reprezentace)***<sup>*</sup> — [CZ] Vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v níž numerické vztahy mezi vektory zachycují užitečné sémantické vztahy mezi reprezentacemi. <sup><span id="loc-36">(</span><a href="#loc-75" role="doc-biblioref">5</a>)</sup> (např. vektorová analogie
+- Tokeny a tokenizér ( ): Token představuje základní diskrétní jednotku (celé slovo, slabiku či fragment znaků). Převod mezi textem a posloupností číselných tokenů zajišťuje tokenizér (nejčastěji na bázi algoritmu Byte Pair Encoding, BPE).
+- ***Embedding***<sup>*</sup> — [CZ] Vícerozměrná vektorová reprezentace tokenů nebo jiných dat, v níž numerické vztahy mezi vektory zachycují užitečné sémantické vztahy mezi reprezentacemi. <sup><span id="loc-36">(</span><a href="#loc-75" role="doc-biblioref">5</a>)</sup> (např. vektorová analogie
   <math><mtext>král</mtext><mo>−</mo><mtext>muž</mtext><mo>+</mo><mtext>žena</mtext><mo>≈</mo><mtext>královna</mtext></math>
   ).
 - Jazyková asymetrie tokenizace: Vzhledem k trénovacím datům optimalizovaným primárně pro angličtinu spotřebovávají flektivní jazyky s bohatou diakritikou (včetně češtiny) 2× až 3× více tokenů pro vyjádření téhož významu.
@@ -230,11 +232,11 @@ Agentní harness — aplikační a orchestrační vrstva obklopující inferenč
 
 ##### 2.3.3.1 Úvod
 
-Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; orchestraci, práci se soubory, správu stavu a bezpečnostní mantinely zajišťuje Agent Harness (Agentní harness) .
+Samotné inferenční jádro provádí výhradně matematické maticové operace nad zadanými váhami a vektory tokenů; orchestraci, práci se soubory, správu stavu a bezpečnostní mantinely zajišťuje Agent Harness .
 
-Ústřední prováděcí funkcí, která v architektuře harnessu řídí iterativní koordinaci agenta v reálném vývojovém prostředí, je ***Agent Loop (Smyčka ReAct) [ReAct Loop]***<sup>*</sup>. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
+Ústřední prováděcí funkcí, která v architektuře harnessu řídí iterativní koordinaci agenta v reálném vývojovém prostředí, je ***Agent Loop***<sup>*</sup>. [CZ] Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí..
 
-##### 2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]
+##### 2.3.3.2 ReAct Loop (Smyčka ReAct)
 
 Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (Reasoning + Acting), v němž model střídavě uvažuje, volá nástroje a vyhodnocuje pozorování z běhového prostředí. | An iterative execution cycle of an autonomous agent based on the ReAct pattern (Reasoning + Acting), in which the model alternates between reasoning, tool calls, and evaluation of observations from the runtime environment. <sup><span id="loc-47">(</span><a href="#loc-79" role="doc-biblioref">9</a>)</sup>
 
@@ -246,7 +248,7 @@ V každé iteraci agentní smyčky harness zajišťuje tyto klíčové funkce:
 
 - Inicializace a správa sezení: Sestavení systémového promptu, dynamická injekce kontextu repozitáře a sledování spotřeby tokenů.
 - Běhové prostředí nástrojů: Bezpečné spouštění příkazů v operačním systému a zpětné předávání výstupů modelu.
-- Řízení stavových přechodů a vynucování mantinelů ( Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering] ): Dohled nad dodržováním procesních pravidel, detekce a zastavení uvíznutých běhů a vynucování lidských schvalovacích bran.
+- Řízení stavových přechodů a vynucování mantinelů ( Loop Engineering ): Dohled nad dodržováním procesních pravidel, detekce a zastavení uvíznutých běhů a vynucování lidských schvalovacích bran.
 
 Vnitřní kognitivní krok modelu uvnitř smyčky se řídí operačním vzorem ReAct (*Reasoning + Acting*) <sup>(<a href="#loc-79" role="doc-biblioref">9</a>)</sup>, který propojuje rozvahu s přímým jednáním. Tento prováděcí cyklus sestává ze čtyř navazujících fází znázorněných na [Obrázek 1](#fig-react-loop):
 
@@ -273,15 +275,15 @@ Znovupoužitelné modulární balíčky instrukcí (typicky definovaných v soub
 
 ###### 2.3.3.4.1 Úvod
 
-Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží ***Skills (Dovednosti)***<sup>*</sup>.
+Se vzrůstající komplexitou úloh nelze veškeré instrukce, skripty a doménové znalosti vkládat do základního systémového promptu. K modulárnímu rozšíření schopností agenta slouží ***Skills***<sup>*</sup>.
 
 Architektura dovedností staví na následujících principech:
 
 - Definiční soubor `SKILL.md`: Dovednost tvoří adresář obsahující definiční soubor se strukturovanou hlavičkou (YAML frontmatter vymezující název a popis role) a detailním návodem k použití.
 - Dynamické načítání pro úsporu kontextu: Do výchozího promptu se vloží pouze stručný přehled dostupných dovedností. Kompletní instrukce a skripty se do kontextu načtou až v okamžiku, kdy agent danou dovednost explicitně vyvolá.
-- Skripty ( Script (Skript) ) a záchytné body ( Hook (Událostní záchytný bod) [Event Hook] ): Dovednosti mohou obsahovat deterministické skripty pro rutinní transformace kódu a událostní háčky vyvolávané při stavových přechodech harnessu.
+- Skripty ( ) a záchytné body ( Hook ): Dovednosti mohou obsahovat deterministické skripty pro rutinní transformace kódu a událostní háčky vyvolávané při stavových přechodech harnessu.
 
-Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové ***Plugins (Rozšíření)***<sup>*</sup> — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
+Kromě kontextových dovedností využívají pokročilé řídicí architektury také programové ***Plugins***<sup>*</sup> — [CZ] Rozšíření běžící přímo v prostředí harnessu, která rozšiřují jeho exekuční jádro o specializované systémové adaptéry, ovladače nástrojů a deterministické záchytné body.. Zatímco *Skills* fungují jako kontextové procedury a instrukce interpretované modelem, pluginy rozšiřují samotný harness na nativní systémové úrovni.
 
 ##### 2.3.3.5 Context Engineering (Kontextové inženýrství)
 
@@ -289,7 +291,7 @@ Systematický návrh, výběr, pořadí a životní cyklus informací zpřístup
 
 ###### 2.3.3.5.1 Úvod
 
-##### 2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]
+##### 2.3.3.6 Workflow-graph Engineering (Inženýrství pracovních grafů)
 
 Návrh agentních nebo automatizačních pracovních postupů jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky. | The design of agentic or automation workflows as explicit graphs of nodes, dependencies, and transitions rather than as one unconstrained loop. <sup><span id="loc-59">(</span><a href="#loc-83" role="doc-biblioref">13</a>)</sup>
 
@@ -297,7 +299,7 @@ Návrh agentních nebo automatizačních pracovních postupů jako explicitních
 
 Monolitická agentní smyčka selhává při řešení komplexních, vícefázových úloh. Pro spolehlivé škálování se v moderních systémech uplatňuje hierarchická dělba práce a formalizace procesu do podoby grafu.
 
-## 3 DarkFactory: Architektura harnessu - Praktická část
+## 3 DarkFactory: Harness Architecture (Architektura harnessu) - Practical Part (Praktická část)
 
 Úvod
 

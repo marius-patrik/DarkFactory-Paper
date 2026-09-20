@@ -24,12 +24,12 @@
             "anchor": ""
           },
           {
-            "title": "1 Introduction (Úvod)",
+            "title": "1 Úvod",
             "level": 2,
             "anchor": "loc-4"
           },
           {
-            "title": "1.1 Motivation and Problem Definition (Motivace a vymezení problému)",
+            "title": "1.1 Motivace a vymezení problému",
             "level": 3,
             "anchor": "loc-5"
           },
@@ -39,7 +39,7 @@
             "anchor": "loc-6"
           },
           {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "title": "1.2 Cíl práce a výzkumné otázky",
             "level": 3,
             "anchor": "loc-7"
           },
@@ -49,7 +49,7 @@
             "anchor": "loc-8"
           },
           {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.2.2 Hlavní cíl",
             "level": 4,
             "anchor": "loc-9"
           },
@@ -59,7 +59,7 @@
             "anchor": "loc-10"
           },
           {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
+            "title": "1.2.3 Dílčí cíle",
             "level": 4,
             "anchor": "loc-11"
           },
@@ -69,7 +69,7 @@
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.4 Výzkumné otázky",
             "level": 4,
             "anchor": "loc-13"
           },
@@ -79,7 +79,7 @@
             "anchor": "loc-14"
           },
           {
-            "title": "1.3 Methodology (Metodika práce)",
+            "title": "1.3 Metodika práce",
             "level": 3,
             "anchor": "loc-15"
           },
@@ -89,12 +89,12 @@
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Agentické AI",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-18"
           },
@@ -104,7 +104,7 @@
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
+            "title": "2.1.2 Softwarové inženýrství",
             "level": 4,
             "anchor": "loc-21"
           },
@@ -114,7 +114,7 @@
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
+            "title": "2.1.3 Správa verzí",
             "level": 4,
             "anchor": "loc-23"
           },
@@ -134,7 +134,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Průběžná integrace",
             "level": 4,
             "anchor": "loc-28"
           },
@@ -144,7 +144,7 @@
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "title": "2.2 Jazykové modely, chatboti a agenti",
             "level": 3,
             "anchor": "loc-31"
           },
@@ -154,7 +154,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Jazykový model",
             "level": 4,
             "anchor": "loc-34"
           },
@@ -164,7 +164,7 @@
             "anchor": "loc-35"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+            "title": "2.3 Agentické inženýrství",
             "level": 3,
             "anchor": "loc-37"
           },
@@ -174,7 +174,7 @@
             "anchor": "loc-39"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Promptové inženýrství",
             "level": 4,
             "anchor": "loc-40"
           },
@@ -184,7 +184,7 @@
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
+            "title": "2.3.3 Agentní harness",
             "level": 4,
             "anchor": "loc-43"
           },
@@ -194,7 +194,7 @@
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 Smyčka ReAct",
             "level": 5,
             "anchor": "loc-46"
           },
@@ -204,7 +204,7 @@
             "anchor": "loc-48"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
+            "title": "2.3.3.3 Vyvolávání nástrojů",
             "level": 5,
             "anchor": "loc-49"
           },
@@ -214,7 +214,7 @@
             "anchor": "loc-51"
           },
           {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "2.3.3.4 Dovednosti",
             "level": 5,
             "anchor": "loc-52"
           },
@@ -224,7 +224,7 @@
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
+            "title": "2.3.3.5 Kontextové inženýrství",
             "level": 5,
             "anchor": "loc-55"
           },
@@ -234,7 +234,7 @@
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Inženýrství pracovních grafů",
             "level": 5,
             "anchor": "loc-58"
           },
@@ -249,7 +249,7 @@
             "anchor": "loc-61"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "3.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-62"
           },
@@ -259,7 +259,7 @@
             "anchor": "loc-63"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.1.2 Správa verzí",
             "level": 4,
             "anchor": "loc-64"
           },
@@ -279,12 +279,12 @@
             "anchor": "loc-67"
           },
           {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-68"
           },
           {
-            "title": "5 Conclusion (Závěr)",
+            "title": "5 Závěr",
             "level": 2,
             "anchor": "loc-69"
           },
@@ -326,12 +326,12 @@
             "anchor": ""
           },
           {
-            "title": "1 Introduction (Úvod)",
+            "title": "1 Úvod",
             "level": 2,
             "anchor": "loc-4"
           },
           {
-            "title": "1.1 Motivation and Problem Definition (Motivace a vymezení problému)",
+            "title": "1.1 Motivace a vymezení problému",
             "level": 3,
             "anchor": "loc-5"
           },
@@ -341,7 +341,7 @@
             "anchor": "loc-6"
           },
           {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "title": "1.2 Cíl práce a výzkumné otázky",
             "level": 3,
             "anchor": "loc-7"
           },
@@ -351,7 +351,7 @@
             "anchor": "loc-8"
           },
           {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.2.2 Hlavní cíl",
             "level": 4,
             "anchor": "loc-9"
           },
@@ -361,7 +361,7 @@
             "anchor": "loc-10"
           },
           {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
+            "title": "1.2.3 Dílčí cíle",
             "level": 4,
             "anchor": "loc-11"
           },
@@ -371,7 +371,7 @@
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.4 Výzkumné otázky",
             "level": 4,
             "anchor": "loc-13"
           },
@@ -381,7 +381,7 @@
             "anchor": "loc-14"
           },
           {
-            "title": "1.3 Methodology (Metodika práce)",
+            "title": "1.3 Metodika práce",
             "level": 3,
             "anchor": "loc-15"
           },
@@ -391,12 +391,12 @@
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Agentické AI",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-18"
           },
@@ -406,7 +406,7 @@
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
+            "title": "2.1.2 Softwarové inženýrství",
             "level": 4,
             "anchor": "loc-21"
           },
@@ -416,7 +416,7 @@
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
+            "title": "2.1.3 Správa verzí",
             "level": 4,
             "anchor": "loc-23"
           },
@@ -436,7 +436,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Průběžná integrace",
             "level": 4,
             "anchor": "loc-29"
           },
@@ -446,7 +446,7 @@
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "title": "2.2 Jazykové modely, chatboti a agenti",
             "level": 3,
             "anchor": "loc-31"
           },
@@ -456,7 +456,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Jazykový model",
             "level": 4,
             "anchor": "loc-36"
           },
@@ -466,7 +466,7 @@
             "anchor": "loc-37"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+            "title": "2.3 Agentické inženýrství",
             "level": 3,
             "anchor": "loc-42"
           },
@@ -476,7 +476,7 @@
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Promptové inženýrství",
             "level": 4,
             "anchor": "loc-44"
           },
@@ -486,7 +486,7 @@
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
+            "title": "2.3.3 Agentní harness",
             "level": 4,
             "anchor": "loc-47"
           },
@@ -496,7 +496,7 @@
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 Smyčka ReAct",
             "level": 5,
             "anchor": "loc-52"
           },
@@ -506,7 +506,7 @@
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
+            "title": "2.3.3.3 Vyvolávání nástrojů",
             "level": 5,
             "anchor": "loc-56"
           },
@@ -516,7 +516,7 @@
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "2.3.3.4 Dovednosti",
             "level": 5,
             "anchor": "loc-60"
           },
@@ -526,7 +526,7 @@
             "anchor": "loc-62"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
+            "title": "2.3.3.5 Kontextové inženýrství",
             "level": 5,
             "anchor": "loc-63"
           },
@@ -536,7 +536,7 @@
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Inženýrství pracovních grafů",
             "level": 5,
             "anchor": "loc-68"
           },
@@ -551,7 +551,7 @@
             "anchor": "loc-71"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "3.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-72"
           },
@@ -561,7 +561,7 @@
             "anchor": "loc-73"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.1.2 Správa verzí",
             "level": 4,
             "anchor": "loc-74"
           },
@@ -581,12 +581,12 @@
             "anchor": "loc-77"
           },
           {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-78"
           },
           {
-            "title": "5 Conclusion (Závěr)",
+            "title": "5 Závěr",
             "level": 2,
             "anchor": "loc-79"
           },
@@ -630,12 +630,12 @@
             "anchor": ""
           },
           {
-            "title": "1 Introduction (Úvod)",
+            "title": "1 Úvod",
             "level": 2,
             "anchor": "loc-4"
           },
           {
-            "title": "1.1 Motivation and Problem Definition (Motivace a vymezení problému)",
+            "title": "1.1 Motivace a vymezení problému",
             "level": 3,
             "anchor": "loc-5"
           },
@@ -645,7 +645,7 @@
             "anchor": "loc-6"
           },
           {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "title": "1.2 Cíl práce a výzkumné otázky",
             "level": 3,
             "anchor": "loc-7"
           },
@@ -655,7 +655,7 @@
             "anchor": "loc-8"
           },
           {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.2.2 Hlavní cíl",
             "level": 4,
             "anchor": "loc-9"
           },
@@ -665,7 +665,7 @@
             "anchor": "loc-10"
           },
           {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
+            "title": "1.2.3 Dílčí cíle",
             "level": 4,
             "anchor": "loc-11"
           },
@@ -675,7 +675,7 @@
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.4 Výzkumné otázky",
             "level": 4,
             "anchor": "loc-13"
           },
@@ -685,7 +685,7 @@
             "anchor": "loc-14"
           },
           {
-            "title": "1.3 Methodology (Metodika práce)",
+            "title": "1.3 Metodika práce",
             "level": 3,
             "anchor": "loc-15"
           },
@@ -695,12 +695,12 @@
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Agentické AI",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-18"
           },
@@ -710,7 +710,7 @@
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
+            "title": "2.1.2 Softwarové inženýrství",
             "level": 4,
             "anchor": "loc-21"
           },
@@ -720,7 +720,7 @@
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
+            "title": "2.1.3 Správa verzí",
             "level": 4,
             "anchor": "loc-23"
           },
@@ -740,7 +740,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Průběžná integrace",
             "level": 4,
             "anchor": "loc-28"
           },
@@ -750,7 +750,7 @@
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "title": "2.2 Jazykové modely, chatboti a agenti",
             "level": 3,
             "anchor": "loc-31"
           },
@@ -760,7 +760,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Jazykový model",
             "level": 4,
             "anchor": "loc-34"
           },
@@ -770,7 +770,7 @@
             "anchor": "loc-35"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+            "title": "2.3 Agentické inženýrství",
             "level": 3,
             "anchor": "loc-37"
           },
@@ -780,7 +780,7 @@
             "anchor": "loc-39"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Promptové inženýrství",
             "level": 4,
             "anchor": "loc-40"
           },
@@ -790,7 +790,7 @@
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
+            "title": "2.3.3 Agentní harness",
             "level": 4,
             "anchor": "loc-43"
           },
@@ -800,7 +800,7 @@
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 Smyčka ReAct",
             "level": 5,
             "anchor": "loc-46"
           },
@@ -810,7 +810,7 @@
             "anchor": "loc-48"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
+            "title": "2.3.3.3 Vyvolávání nástrojů",
             "level": 5,
             "anchor": "loc-49"
           },
@@ -820,7 +820,7 @@
             "anchor": "loc-51"
           },
           {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "2.3.3.4 Dovednosti",
             "level": 5,
             "anchor": "loc-52"
           },
@@ -830,7 +830,7 @@
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
+            "title": "2.3.3.5 Kontextové inženýrství",
             "level": 5,
             "anchor": "loc-55"
           },
@@ -840,7 +840,7 @@
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Inženýrství pracovních grafů",
             "level": 5,
             "anchor": "loc-58"
           },
@@ -855,7 +855,7 @@
             "anchor": "loc-61"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "3.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-62"
           },
@@ -865,7 +865,7 @@
             "anchor": "loc-63"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.1.2 Správa verzí",
             "level": 4,
             "anchor": "loc-64"
           },
@@ -885,12 +885,12 @@
             "anchor": "loc-67"
           },
           {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-68"
           },
           {
-            "title": "5 Conclusion (Závěr)",
+            "title": "5 Závěr",
             "level": 2,
             "anchor": "loc-69"
           },
@@ -932,12 +932,12 @@
             "anchor": ""
           },
           {
-            "title": "1 Introduction (Úvod)",
+            "title": "1 Úvod",
             "level": 2,
             "anchor": "loc-4"
           },
           {
-            "title": "1.1 Motivation and Problem Definition (Motivace a vymezení problému)",
+            "title": "1.1 Motivace a vymezení problému",
             "level": 3,
             "anchor": "loc-5"
           },
@@ -947,7 +947,7 @@
             "anchor": "loc-6"
           },
           {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "title": "1.2 Cíl práce a výzkumné otázky",
             "level": 3,
             "anchor": "loc-7"
           },
@@ -957,7 +957,7 @@
             "anchor": "loc-8"
           },
           {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.2.2 Hlavní cíl",
             "level": 4,
             "anchor": "loc-9"
           },
@@ -967,7 +967,7 @@
             "anchor": "loc-10"
           },
           {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
+            "title": "1.2.3 Dílčí cíle",
             "level": 4,
             "anchor": "loc-11"
           },
@@ -977,7 +977,7 @@
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.4 Výzkumné otázky",
             "level": 4,
             "anchor": "loc-13"
           },
@@ -987,7 +987,7 @@
             "anchor": "loc-14"
           },
           {
-            "title": "1.3 Methodology (Metodika práce)",
+            "title": "1.3 Metodika práce",
             "level": 3,
             "anchor": "loc-15"
           },
@@ -997,12 +997,12 @@
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Agentické AI",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-18"
           },
@@ -1012,7 +1012,7 @@
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
+            "title": "2.1.2 Softwarové inženýrství",
             "level": 4,
             "anchor": "loc-21"
           },
@@ -1022,7 +1022,7 @@
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
+            "title": "2.1.3 Správa verzí",
             "level": 4,
             "anchor": "loc-23"
           },
@@ -1042,7 +1042,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Průběžná integrace",
             "level": 4,
             "anchor": "loc-29"
           },
@@ -1052,7 +1052,7 @@
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "title": "2.2 Jazykové modely, chatboti a agenti",
             "level": 3,
             "anchor": "loc-31"
           },
@@ -1062,7 +1062,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Jazykový model",
             "level": 4,
             "anchor": "loc-36"
           },
@@ -1072,7 +1072,7 @@
             "anchor": "loc-37"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+            "title": "2.3 Agentické inženýrství",
             "level": 3,
             "anchor": "loc-42"
           },
@@ -1082,7 +1082,7 @@
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Promptové inženýrství",
             "level": 4,
             "anchor": "loc-44"
           },
@@ -1092,7 +1092,7 @@
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
+            "title": "2.3.3 Agentní harness",
             "level": 4,
             "anchor": "loc-47"
           },
@@ -1102,7 +1102,7 @@
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 Smyčka ReAct",
             "level": 5,
             "anchor": "loc-52"
           },
@@ -1112,7 +1112,7 @@
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
+            "title": "2.3.3.3 Vyvolávání nástrojů",
             "level": 5,
             "anchor": "loc-56"
           },
@@ -1122,7 +1122,7 @@
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "2.3.3.4 Dovednosti",
             "level": 5,
             "anchor": "loc-60"
           },
@@ -1132,7 +1132,7 @@
             "anchor": "loc-62"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
+            "title": "2.3.3.5 Kontextové inženýrství",
             "level": 5,
             "anchor": "loc-63"
           },
@@ -1142,7 +1142,7 @@
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Inženýrství pracovních grafů",
             "level": 5,
             "anchor": "loc-68"
           },
@@ -1157,7 +1157,7 @@
             "anchor": "loc-71"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "3.1 Vývojové prostředí a praxe",
             "level": 3,
             "anchor": "loc-72"
           },
@@ -1167,7 +1167,7 @@
             "anchor": "loc-73"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.1.2 Správa verzí",
             "level": 4,
             "anchor": "loc-74"
           },
@@ -1187,12 +1187,12 @@
             "anchor": "loc-77"
           },
           {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
+            "title": "4 Výsledky a diskuse",
             "level": 2,
             "anchor": "loc-78"
           },
           {
-            "title": "5 Conclusion (Závěr)",
+            "title": "5 Závěr",
             "level": 2,
             "anchor": "loc-79"
           },
@@ -1216,7 +1216,7 @@
       "en": {
         "final": [
           {
-            "title": "DarkFactory: Artificial Intelligence in Practice – Agentic and Harness Engineering",
+            "title": "DarkFactoryAgentic and Harness Engineering:Artificial Intelligence in Practice",
             "level": 2,
             "anchor": "loc-1"
           },
@@ -1236,12 +1236,12 @@
             "anchor": ""
           },
           {
-            "title": "1 Introduction (Úvod)",
+            "title": "1 Introduction",
             "level": 2,
             "anchor": "loc-4"
           },
           {
-            "title": "1.1 Motivation and Problem Definition (Motivace a vymezení problému)",
+            "title": "1.1 Motivation and Problem Definition",
             "level": 3,
             "anchor": "loc-5"
           },
@@ -1251,7 +1251,7 @@
             "anchor": "loc-6"
           },
           {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "title": "1.2 Thesis Objective and Research Questions",
             "level": 3,
             "anchor": "loc-7"
           },
@@ -1261,7 +1261,7 @@
             "anchor": "loc-8"
           },
           {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.2.2 Main Goal",
             "level": 4,
             "anchor": "loc-9"
           },
@@ -1271,7 +1271,7 @@
             "anchor": "loc-10"
           },
           {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
+            "title": "1.2.3 Sub-goals",
             "level": 4,
             "anchor": "loc-11"
           },
@@ -1281,7 +1281,7 @@
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.4 Research Questions",
             "level": 4,
             "anchor": "loc-13"
           },
@@ -1291,7 +1291,7 @@
             "anchor": "loc-14"
           },
           {
-            "title": "1.3 Methodology (Metodika práce)",
+            "title": "1.3 Methodology",
             "level": 3,
             "anchor": "loc-15"
           },
@@ -1301,12 +1301,12 @@
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Agentic AI",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 Development Environment and Practices",
             "level": 3,
             "anchor": "loc-18"
           },
@@ -1316,7 +1316,7 @@
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
+            "title": "2.1.2 Software Engineering",
             "level": 4,
             "anchor": "loc-21"
           },
@@ -1326,7 +1326,7 @@
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
+            "title": "2.1.3 Version control",
             "level": 4,
             "anchor": "loc-23"
           },
@@ -1346,7 +1346,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Continuous Integration",
             "level": 4,
             "anchor": "loc-28"
           },
@@ -1356,7 +1356,7 @@
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "title": "2.2 Language Models, Chatbots, and Agents",
             "level": 3,
             "anchor": "loc-31"
           },
@@ -1366,7 +1366,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Large Language Model",
             "level": 4,
             "anchor": "loc-34"
           },
@@ -1376,7 +1376,7 @@
             "anchor": "loc-35"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+            "title": "2.3 Agentic Engineering",
             "level": 3,
             "anchor": "loc-37"
           },
@@ -1386,7 +1386,7 @@
             "anchor": "loc-39"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Prompt Engineering",
             "level": 4,
             "anchor": "loc-40"
           },
@@ -1396,7 +1396,7 @@
             "anchor": "loc-42"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
+            "title": "2.3.3 Agent Harness",
             "level": 4,
             "anchor": "loc-43"
           },
@@ -1406,7 +1406,7 @@
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 ReAct Loop",
             "level": 5,
             "anchor": "loc-46"
           },
@@ -1416,7 +1416,7 @@
             "anchor": "loc-48"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
+            "title": "2.3.3.3 Tool Calling",
             "level": 5,
             "anchor": "loc-49"
           },
@@ -1426,7 +1426,7 @@
             "anchor": "loc-51"
           },
           {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "2.3.3.4 Skills",
             "level": 5,
             "anchor": "loc-52"
           },
@@ -1436,7 +1436,7 @@
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
+            "title": "2.3.3.5 Context Engineering",
             "level": 5,
             "anchor": "loc-55"
           },
@@ -1446,7 +1446,7 @@
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Workflow-graph Engineering",
             "level": 5,
             "anchor": "loc-58"
           },
@@ -1456,12 +1456,12 @@
             "anchor": "loc-60"
           },
           {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
+            "title": "3 DarkFactory: Harness Architecture - Practical Part",
             "level": 2,
             "anchor": "loc-61"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "3.1 Development Environment and Practices",
             "level": 3,
             "anchor": "loc-62"
           },
@@ -1471,7 +1471,7 @@
             "anchor": "loc-63"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.1.2 Version control",
             "level": 4,
             "anchor": "loc-64"
           },
@@ -1491,12 +1491,12 @@
             "anchor": "loc-67"
           },
           {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
+            "title": "4 Results and Discussion",
             "level": 2,
             "anchor": "loc-68"
           },
           {
-            "title": "5 Conclusion (Závěr)",
+            "title": "5 Conclusion",
             "level": 2,
             "anchor": "loc-69"
           },
@@ -1518,7 +1518,7 @@
         ],
         "review": [
           {
-            "title": "DarkFactory: Artificial Intelligence in Practice – Agentic and Harness Engineering",
+            "title": "DarkFactoryAgentic and Harness Engineering:Artificial Intelligence in Practice",
             "level": 2,
             "anchor": "loc-1"
           },
@@ -1538,12 +1538,12 @@
             "anchor": ""
           },
           {
-            "title": "1 Introduction (Úvod)",
+            "title": "1 Introduction",
             "level": 2,
             "anchor": "loc-4"
           },
           {
-            "title": "1.1 Motivation and Problem Definition (Motivace a vymezení problému)",
+            "title": "1.1 Motivation and Problem Definition",
             "level": 3,
             "anchor": "loc-5"
           },
@@ -1553,7 +1553,7 @@
             "anchor": "loc-6"
           },
           {
-            "title": "1.2 Thesis Objective and Research Questions (Cíl práce a výzkumné otázky)",
+            "title": "1.2 Thesis Objective and Research Questions",
             "level": 3,
             "anchor": "loc-7"
           },
@@ -1563,7 +1563,7 @@
             "anchor": "loc-8"
           },
           {
-            "title": "1.2.2 Main Goal (Hlavní cíl)",
+            "title": "1.2.2 Main Goal",
             "level": 4,
             "anchor": "loc-9"
           },
@@ -1573,7 +1573,7 @@
             "anchor": "loc-10"
           },
           {
-            "title": "1.2.3 Sub-goals (Dílčí cíle)",
+            "title": "1.2.3 Sub-goals",
             "level": 4,
             "anchor": "loc-11"
           },
@@ -1583,7 +1583,7 @@
             "anchor": "loc-12"
           },
           {
-            "title": "1.2.4 Research Questions (Výzkumné otázky)",
+            "title": "1.2.4 Research Questions",
             "level": 4,
             "anchor": "loc-13"
           },
@@ -1593,7 +1593,7 @@
             "anchor": "loc-14"
           },
           {
-            "title": "1.3 Methodology (Metodika práce)",
+            "title": "1.3 Methodology",
             "level": 3,
             "anchor": "loc-15"
           },
@@ -1603,12 +1603,12 @@
             "anchor": "loc-16"
           },
           {
-            "title": "2 Agentic AI (Agentické AI)",
+            "title": "2 Agentic AI",
             "level": 2,
             "anchor": "loc-17"
           },
           {
-            "title": "2.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "2.1 Development Environment and Practices",
             "level": 3,
             "anchor": "loc-18"
           },
@@ -1618,7 +1618,7 @@
             "anchor": "loc-20"
           },
           {
-            "title": "2.1.2 Software Engineering (Softwarové inženýrství)",
+            "title": "2.1.2 Software Engineering",
             "level": 4,
             "anchor": "loc-21"
           },
@@ -1628,7 +1628,7 @@
             "anchor": "loc-22"
           },
           {
-            "title": "2.1.3 Version control (Správa verzí)",
+            "title": "2.1.3 Version control",
             "level": 4,
             "anchor": "loc-23"
           },
@@ -1648,7 +1648,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Continuous Integration",
             "level": 4,
             "anchor": "loc-29"
           },
@@ -1658,7 +1658,7 @@
             "anchor": "loc-30"
           },
           {
-            "title": "2.2 Language Models, Chatbots, and Agents (Jazykové modely, chatboti a agenti)",
+            "title": "2.2 Language Models, Chatbots, and Agents",
             "level": 3,
             "anchor": "loc-31"
           },
@@ -1668,7 +1668,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Large Language Model",
             "level": 4,
             "anchor": "loc-36"
           },
@@ -1678,7 +1678,7 @@
             "anchor": "loc-37"
           },
           {
-            "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+            "title": "2.3 Agentic Engineering",
             "level": 3,
             "anchor": "loc-42"
           },
@@ -1688,7 +1688,7 @@
             "anchor": "loc-43"
           },
           {
-            "title": "2.3.2 Prompt Engineering (Promptové inženýrství)",
+            "title": "2.3.2 Prompt Engineering",
             "level": 4,
             "anchor": "loc-44"
           },
@@ -1698,7 +1698,7 @@
             "anchor": "loc-46"
           },
           {
-            "title": "2.3.3 Agent Harness (Agentní harness)",
+            "title": "2.3.3 Agent Harness",
             "level": 4,
             "anchor": "loc-47"
           },
@@ -1708,7 +1708,7 @@
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 ReAct Loop",
             "level": 5,
             "anchor": "loc-52"
           },
@@ -1718,7 +1718,7 @@
             "anchor": "loc-54"
           },
           {
-            "title": "2.3.3.3 Tool Calling (Vyvolávání nástrojů)",
+            "title": "2.3.3.3 Tool Calling",
             "level": 5,
             "anchor": "loc-56"
           },
@@ -1728,7 +1728,7 @@
             "anchor": "loc-58"
           },
           {
-            "title": "2.3.3.4 Skills (Dovednosti)",
+            "title": "2.3.3.4 Skills",
             "level": 5,
             "anchor": "loc-60"
           },
@@ -1738,7 +1738,7 @@
             "anchor": "loc-62"
           },
           {
-            "title": "2.3.3.5 Context Engineering (Kontextové inženýrství)",
+            "title": "2.3.3.5 Context Engineering",
             "level": 5,
             "anchor": "loc-63"
           },
@@ -1748,7 +1748,7 @@
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Workflow-graph Engineering",
             "level": 5,
             "anchor": "loc-68"
           },
@@ -1758,12 +1758,12 @@
             "anchor": "loc-70"
           },
           {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
+            "title": "3 DarkFactory: Harness Architecture - Practical Part",
             "level": 2,
             "anchor": "loc-71"
           },
           {
-            "title": "3.1 Development Environment and Practices (Vývojové prostředí a praxe)",
+            "title": "3.1 Development Environment and Practices",
             "level": 3,
             "anchor": "loc-72"
           },
@@ -1773,7 +1773,7 @@
             "anchor": "loc-73"
           },
           {
-            "title": "3.1.2 Version control (Správa verzí)",
+            "title": "3.1.2 Version control",
             "level": 4,
             "anchor": "loc-74"
           },
@@ -1793,12 +1793,12 @@
             "anchor": "loc-77"
           },
           {
-            "title": "4 Results and Discussion (Výsledky a diskuse)",
+            "title": "4 Results and Discussion",
             "level": 2,
             "anchor": "loc-78"
           },
           {
-            "title": "5 Conclusion (Závěr)",
+            "title": "5 Conclusion",
             "level": 2,
             "anchor": "loc-79"
           },
@@ -1952,7 +1952,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Continuous Integration (Průběžná integrace)",
             "level": 4,
             "anchor": "loc-28"
           },
@@ -1972,7 +1972,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Large Language Model (Jazykový model)",
             "level": 4,
             "anchor": "loc-34"
           },
@@ -2012,7 +2012,7 @@
             "anchor": "loc-45"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 ReAct Loop (Smyčka ReAct)",
             "level": 5,
             "anchor": "loc-46"
           },
@@ -2052,7 +2052,7 @@
             "anchor": "loc-57"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 5,
             "anchor": "loc-58"
           },
@@ -2062,7 +2062,7 @@
             "anchor": "loc-60"
           },
           {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
+            "title": "3 DarkFactory: Harness Architecture (Architektura harnessu) - Practical Part (Praktická část)",
             "level": 2,
             "anchor": "loc-61"
           },
@@ -2254,7 +2254,7 @@
             "anchor": "loc-27"
           },
           {
-            "title": "2.1.4 CI (Průběžná integrace) [Continuous Integration]",
+            "title": "2.1.4 Continuous Integration (Průběžná integrace)",
             "level": 4,
             "anchor": "loc-29"
           },
@@ -2274,7 +2274,7 @@
             "anchor": "loc-33"
           },
           {
-            "title": "2.2.2 LLM (Jazykový model) [Large Language Model]",
+            "title": "2.2.2 Large Language Model (Jazykový model)",
             "level": 4,
             "anchor": "loc-36"
           },
@@ -2314,7 +2314,7 @@
             "anchor": "loc-49"
           },
           {
-            "title": "2.3.3.2 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+            "title": "2.3.3.2 ReAct Loop (Smyčka ReAct)",
             "level": 5,
             "anchor": "loc-52"
           },
@@ -2354,7 +2354,7 @@
             "anchor": "loc-65"
           },
           {
-            "title": "2.3.3.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+            "title": "2.3.3.6 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 5,
             "anchor": "loc-68"
           },
@@ -2364,7 +2364,7 @@
             "anchor": "loc-70"
           },
           {
-            "title": "3 DarkFactory: Architektura harnessu - Praktická část",
+            "title": "3 DarkFactory: Harness Architecture (Architektura harnessu) - Practical Part (Praktická část)",
             "level": 2,
             "anchor": "loc-71"
           },

@@ -30,3 +30,17 @@
  * @licend The above is the entire license notice for the
  * JavaScript code in this page
  */
+
+/**
+ * dockview-core
+ * @version 8.3.1
+ * @link https://github.com/dockview/dockview
+ * @license MIT
+ */
+
+/**
+ * dockview-react
+ * @version 8.3.1
+ * @link https://github.com/dockview/dockview
+ * @license MIT
+ */

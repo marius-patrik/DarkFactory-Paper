@@ -16,11 +16,6 @@
               "type": "file"
             },
             {
-              "name": "auto-format.yml",
-              "path": ".github/workflows/auto-format.yml",
-              "type": "file"
-            },
-            {
               "name": "ci.yml",
               "path": ".github/workflows/ci.yml",
               "type": "file"
@@ -31,38 +26,8 @@
               "type": "file"
             },
             {
-              "name": "open-pr.yml",
-              "path": ".github/workflows/open-pr.yml",
-              "type": "file"
-            },
-            {
-              "name": "pr-approval-automerge.yml",
-              "path": ".github/workflows/pr-approval-automerge.yml",
-              "type": "file"
-            },
-            {
-              "name": "preview-docs.yml",
-              "path": ".github/workflows/preview-docs.yml",
-              "type": "file"
-            },
-            {
-              "name": "project-automation.yml",
-              "path": ".github/workflows/project-automation.yml",
-              "type": "file"
-            },
-            {
               "name": "release.yml",
               "path": ".github/workflows/release.yml",
-              "type": "file"
-            },
-            {
-              "name": "report-failure.yml",
-              "path": ".github/workflows/report-failure.yml",
-              "type": "file"
-            },
-            {
-              "name": "verify-pr-issue.yml",
-              "path": ".github/workflows/verify-pr-issue.yml",
               "type": "file"
             }
           ]
@@ -75,613 +40,742 @@
       ]
     },
     {
-      "name": "bib",
-      "path": "bib",
-      "type": "directory",
-      "children": [
-        {
-          "name": "references.bib",
-          "path": "bib/references.bib",
-          "type": "file"
-        },
-        {
-          "name": "references.typ",
-          "path": "bib/references.typ",
-          "type": "file"
-        }
-      ]
-    },
-    {
-      "name": "concepts",
-      "path": "concepts",
+      "name": "DarkFactory",
+      "path": "DarkFactory",
       "type": "directory",
       "children": [
         {
           "name": "agentic-engineering",
-          "path": "concepts/agentic-engineering",
+          "path": "DarkFactory/agentic-engineering",
           "type": "directory",
           "children": [
             {
               "name": "agent-harness",
-              "path": "concepts/agentic-engineering/agent-harness",
+              "path": "DarkFactory/agentic-engineering/agent-harness",
               "type": "directory",
               "children": [
                 {
                   "name": "agent-loop",
-                  "path": "concepts/agentic-engineering/agent-harness/agent-loop",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop",
                   "type": "directory",
                   "children": [
                     {
                       "name": "agent-loop.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/agent-loop/agent-loop.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/agent-loop.typ",
                       "type": "file"
                     },
                     {
                       "name": "divergence.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/agent-loop/divergence.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/divergence.typ",
                       "type": "file"
                     },
                     {
                       "name": "index.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/agent-loop/index.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/index.typ",
                       "type": "file"
                     },
                     {
                       "name": "loop-engineering.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ",
+                      "type": "file"
+                    },
+                    {
+                      "name": "session-management.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "context-engineering",
-                  "path": "concepts/agentic-engineering/agent-harness/context-engineering",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering",
                   "type": "directory",
                   "children": [
                     {
                       "name": "compaction.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/context-engineering/compaction.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/compaction.typ",
                       "type": "file"
                     },
                     {
                       "name": "context-engineering.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/context-engineering/context-engineering.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-engineering.typ",
                       "type": "file"
                     },
                     {
                       "name": "context-rot.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/context-engineering/context-rot.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-rot.typ",
                       "type": "file"
                     },
                     {
                       "name": "index.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/context-engineering/index.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/index.typ",
                       "type": "file"
                     },
                     {
                       "name": "rag.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/context-engineering/rag.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/rag.typ",
                       "type": "file"
                     },
                     {
                       "name": "semantic-drift.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/context-engineering/semantic-drift.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/semantic-drift.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "graph-engineering",
-                  "path": "concepts/agentic-engineering/agent-harness/graph-engineering",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering",
                   "type": "directory",
                   "children": [
                     {
                       "name": "dag.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/graph-engineering/dag.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/dag.typ",
                       "type": "file"
                     },
                     {
                       "name": "graph-engineering.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/graph-engineering/graph-engineering.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/graph-engineering.typ",
                       "type": "file"
                     },
                     {
                       "name": "index.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/graph-engineering/index.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/index.typ",
+                      "type": "file"
+                    },
+                    {
+                      "name": "subagent.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/subagent.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "skills",
-                  "path": "concepts/agentic-engineering/agent-harness/skills",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/skills",
                   "type": "directory",
                   "children": [
                     {
                       "name": "hook.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/skills/hook.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/hook.typ",
                       "type": "file"
                     },
                     {
                       "name": "index.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/skills/index.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/index.typ",
+                      "type": "file"
+                    },
+                    {
+                      "name": "progressive-disclosure.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/progressive-disclosure.typ",
                       "type": "file"
                     },
                     {
                       "name": "script.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/skills/script.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/script.typ",
                       "type": "file"
                     },
                     {
                       "name": "skills.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/skills/skills.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/skills.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "tool-calling",
-                  "path": "concepts/agentic-engineering/agent-harness/tool-calling",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling",
                   "type": "directory",
                   "children": [
                     {
                       "name": "index.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/tool-calling/index.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/index.typ",
                       "type": "file"
                     },
                     {
                       "name": "mcp.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/tool-calling/mcp.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/mcp.typ",
                       "type": "file"
                     },
                     {
                       "name": "tool-calling.typ",
-                      "path": "concepts/agentic-engineering/agent-harness/tool-calling/tool-calling.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/tool-calling.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "agent-harness.typ",
-                  "path": "concepts/agentic-engineering/agent-harness/agent-harness.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/agent-harness.typ",
+                  "type": "file"
+                },
+                {
+                  "name": "guardrail.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/guardrail.typ",
                   "type": "file"
                 },
                 {
                   "name": "human-in-the-loop.typ",
-                  "path": "concepts/agentic-engineering/agent-harness/human-in-the-loop.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/human-in-the-loop.typ",
                   "type": "file"
                 },
                 {
                   "name": "index.typ",
-                  "path": "concepts/agentic-engineering/agent-harness/index.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/index.typ",
                   "type": "file"
                 },
                 {
                   "name": "plugins.typ",
-                  "path": "concepts/agentic-engineering/agent-harness/plugins.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/plugins.typ",
                   "type": "file"
                 },
                 {
                   "name": "sandbox.typ",
-                  "path": "concepts/agentic-engineering/agent-harness/sandbox.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/sandbox.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "prompt-engineering",
-              "path": "concepts/agentic-engineering/prompt-engineering",
+              "path": "DarkFactory/agentic-engineering/prompt-engineering",
               "type": "directory",
               "children": [
                 {
                   "name": "index.typ",
-                  "path": "concepts/agentic-engineering/prompt-engineering/index.typ",
+                  "path": "DarkFactory/agentic-engineering/prompt-engineering/index.typ",
                   "type": "file"
                 },
                 {
                   "name": "prompt-engineering.typ",
-                  "path": "concepts/agentic-engineering/prompt-engineering/prompt-engineering.typ",
+                  "path": "DarkFactory/agentic-engineering/prompt-engineering/prompt-engineering.typ",
                   "type": "file"
                 },
                 {
                   "name": "system-prompt.typ",
-                  "path": "concepts/agentic-engineering/prompt-engineering/system-prompt.typ",
+                  "path": "DarkFactory/agentic-engineering/prompt-engineering/system-prompt.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "agentic-engineering.typ",
-              "path": "concepts/agentic-engineering/agentic-engineering.typ",
+              "path": "DarkFactory/agentic-engineering/agentic-engineering.typ",
               "type": "file"
             },
             {
               "name": "index.typ",
-              "path": "concepts/agentic-engineering/index.typ",
+              "path": "DarkFactory/agentic-engineering/index.typ",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "bib",
+          "path": "DarkFactory/bib",
+          "type": "directory",
+          "children": [
+            {
+              "name": "references.bib",
+              "path": "DarkFactory/bib/references.bib",
+              "type": "file"
+            },
+            {
+              "name": "references.typ",
+              "path": "DarkFactory/bib/references.typ",
               "type": "file"
             }
           ]
         },
         {
           "name": "development-environment",
-          "path": "concepts/development-environment",
+          "path": "DarkFactory/development-environment",
           "type": "directory",
           "children": [
             {
               "name": "continuous-integration",
-              "path": "concepts/development-environment/continuous-integration",
+              "path": "DarkFactory/development-environment/continuous-integration",
               "type": "directory",
               "children": [
                 {
                   "name": "container.typ",
-                  "path": "concepts/development-environment/continuous-integration/container.typ",
+                  "path": "DarkFactory/development-environment/continuous-integration/container.typ",
                   "type": "file"
                 },
                 {
                   "name": "continuous-integration.typ",
-                  "path": "concepts/development-environment/continuous-integration/continuous-integration.typ",
+                  "path": "DarkFactory/development-environment/continuous-integration/continuous-integration.typ",
+                  "type": "file"
+                },
+                {
+                  "name": "flaky-test.typ",
+                  "path": "DarkFactory/development-environment/continuous-integration/flaky-test.typ",
                   "type": "file"
                 },
                 {
                   "name": "github-actions.typ",
-                  "path": "concepts/development-environment/continuous-integration/github-actions.typ",
+                  "path": "DarkFactory/development-environment/continuous-integration/github-actions.typ",
                   "type": "file"
                 },
                 {
                   "name": "index.typ",
-                  "path": "concepts/development-environment/continuous-integration/index.typ",
+                  "path": "DarkFactory/development-environment/continuous-integration/index.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "software-engineering",
-              "path": "concepts/development-environment/software-engineering",
+              "path": "DarkFactory/development-environment/software-engineering",
               "type": "directory",
               "children": [
                 {
                   "name": "index.typ",
-                  "path": "concepts/development-environment/software-engineering/index.typ",
+                  "path": "DarkFactory/development-environment/software-engineering/index.typ",
                   "type": "file"
                 },
                 {
                   "name": "planning.typ",
-                  "path": "concepts/development-environment/software-engineering/planning.typ",
+                  "path": "DarkFactory/development-environment/software-engineering/planning.typ",
                   "type": "file"
                 },
                 {
                   "name": "software-engineering.typ",
-                  "path": "concepts/development-environment/software-engineering/software-engineering.typ",
+                  "path": "DarkFactory/development-environment/software-engineering/software-engineering.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "version-control",
-              "path": "concepts/development-environment/version-control",
+              "path": "DarkFactory/development-environment/version-control",
               "type": "directory",
               "children": [
                 {
                   "name": "git",
-                  "path": "concepts/development-environment/version-control/git",
+                  "path": "DarkFactory/development-environment/version-control/git",
                   "type": "directory",
                   "children": [
                     {
                       "name": "branch-protection.typ",
-                      "path": "concepts/development-environment/version-control/git/branch-protection.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/branch-protection.typ",
                       "type": "file"
                     },
                     {
                       "name": "branch.typ",
-                      "path": "concepts/development-environment/version-control/git/branch.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/branch.typ",
                       "type": "file"
                     },
                     {
                       "name": "git.typ",
-                      "path": "concepts/development-environment/version-control/git/git.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/git.typ",
                       "type": "file"
                     },
                     {
                       "name": "index.typ",
-                      "path": "concepts/development-environment/version-control/git/index.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/index.typ",
+                      "type": "file"
+                    },
+                    {
+                      "name": "issue.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/issue.typ",
                       "type": "file"
                     },
                     {
                       "name": "merge.typ",
-                      "path": "concepts/development-environment/version-control/git/merge.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/merge.typ",
                       "type": "file"
                     },
                     {
                       "name": "pull-request.typ",
-                      "path": "concepts/development-environment/version-control/git/pull-request.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/pull-request.typ",
                       "type": "file"
                     },
                     {
                       "name": "required-checks.typ",
-                      "path": "concepts/development-environment/version-control/git/required-checks.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/required-checks.typ",
                       "type": "file"
                     },
                     {
                       "name": "squash.typ",
-                      "path": "concepts/development-environment/version-control/git/squash.typ",
+                      "path": "DarkFactory/development-environment/version-control/git/squash.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "index.typ",
-                  "path": "concepts/development-environment/version-control/index.typ",
+                  "path": "DarkFactory/development-environment/version-control/index.typ",
                   "type": "file"
                 },
                 {
                   "name": "version-control.typ",
-                  "path": "concepts/development-environment/version-control/version-control.typ",
+                  "path": "DarkFactory/development-environment/version-control/version-control.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "development-environment.typ",
-              "path": "concepts/development-environment/development-environment.typ",
+              "path": "DarkFactory/development-environment/development-environment.typ",
               "type": "file"
             },
             {
               "name": "github.typ",
-              "path": "concepts/development-environment/github.typ",
+              "path": "DarkFactory/development-environment/github.typ",
               "type": "file"
             },
             {
               "name": "index.typ",
-              "path": "concepts/development-environment/index.typ",
+              "path": "DarkFactory/development-environment/index.typ",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "fonts",
+          "path": "DarkFactory/fonts",
+          "type": "directory",
+          "children": [
+            {
+              "name": "Caladea-Bold.ttf",
+              "path": "DarkFactory/fonts/Caladea-Bold.ttf",
+              "type": "file"
+            },
+            {
+              "name": "Caladea-BoldItalic.ttf",
+              "path": "DarkFactory/fonts/Caladea-BoldItalic.ttf",
+              "type": "file"
+            },
+            {
+              "name": "Caladea-Italic.ttf",
+              "path": "DarkFactory/fonts/Caladea-Italic.ttf",
+              "type": "file"
+            },
+            {
+              "name": "Caladea-Regular.ttf",
+              "path": "DarkFactory/fonts/Caladea-Regular.ttf",
+              "type": "file"
+            },
+            {
+              "name": "Carlito-Bold.ttf",
+              "path": "DarkFactory/fonts/Carlito-Bold.ttf",
+              "type": "file"
+            },
+            {
+              "name": "Carlito-BoldItalic.ttf",
+              "path": "DarkFactory/fonts/Carlito-BoldItalic.ttf",
+              "type": "file"
+            },
+            {
+              "name": "Carlito-Italic.ttf",
+              "path": "DarkFactory/fonts/Carlito-Italic.ttf",
+              "type": "file"
+            },
+            {
+              "name": "Carlito-Regular.ttf",
+              "path": "DarkFactory/fonts/Carlito-Regular.ttf",
+              "type": "file"
+            },
+            {
+              "name": "README.md",
+              "path": "DarkFactory/fonts/README.md",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "img",
+          "path": "DarkFactory/img",
+          "type": "directory",
+          "children": [
+            {
+              "name": "components-darkfactory.svg",
+              "path": "DarkFactory/img/components-darkfactory.svg",
+              "type": "file"
+            },
+            {
+              "name": "docs-pipeline.svg",
+              "path": "DarkFactory/img/docs-pipeline.svg",
+              "type": "file"
+            },
+            {
+              "name": "lifecycle-darkfactory.svg",
+              "path": "DarkFactory/img/lifecycle-darkfactory.svg",
+              "type": "file"
+            },
+            {
+              "name": "logo.jpeg",
+              "path": "DarkFactory/img/logo.jpeg",
+              "type": "file"
+            },
+            {
+              "name": "react-loop.svg",
+              "path": "DarkFactory/img/react-loop.svg",
+              "type": "file"
+            },
+            {
+              "name": "vector-embedding-queen.svg",
+              "path": "DarkFactory/img/vector-embedding-queen.svg",
               "type": "file"
             }
           ]
         },
         {
           "name": "language-models",
-          "path": "concepts/language-models",
+          "path": "DarkFactory/language-models",
           "type": "directory",
           "children": [
             {
               "name": "language-model",
-              "path": "concepts/language-models/language-model",
+              "path": "DarkFactory/language-models/language-model",
               "type": "directory",
               "children": [
                 {
+                  "name": "autoregression.typ",
+                  "path": "DarkFactory/language-models/language-model/autoregression.typ",
+                  "type": "file"
+                },
+                {
                   "name": "context-window.typ",
-                  "path": "concepts/language-models/language-model/context-window.typ",
+                  "path": "DarkFactory/language-models/language-model/context-window.typ",
                   "type": "file"
                 },
                 {
                   "name": "embedding.typ",
-                  "path": "concepts/language-models/language-model/embedding.typ",
+                  "path": "DarkFactory/language-models/language-model/embedding.typ",
                   "type": "file"
                 },
                 {
                   "name": "index.typ",
-                  "path": "concepts/language-models/language-model/index.typ",
+                  "path": "DarkFactory/language-models/language-model/index.typ",
                   "type": "file"
                 },
                 {
                   "name": "kv-cache.typ",
-                  "path": "concepts/language-models/language-model/kv-cache.typ",
+                  "path": "DarkFactory/language-models/language-model/kv-cache.typ",
                   "type": "file"
                 },
                 {
                   "name": "language-model.typ",
-                  "path": "concepts/language-models/language-model/language-model.typ",
+                  "path": "DarkFactory/language-models/language-model/language-model.typ",
+                  "type": "file"
+                },
+                {
+                  "name": "stochastic-decoding.typ",
+                  "path": "DarkFactory/language-models/language-model/stochastic-decoding.typ",
                   "type": "file"
                 },
                 {
                   "name": "token.typ",
-                  "path": "concepts/language-models/language-model/token.typ",
+                  "path": "DarkFactory/language-models/language-model/token.typ",
                   "type": "file"
                 },
                 {
                   "name": "tokenizer.typ",
-                  "path": "concepts/language-models/language-model/tokenizer.typ",
+                  "path": "DarkFactory/language-models/language-model/tokenizer.typ",
                   "type": "file"
                 },
                 {
                   "name": "transformer.typ",
-                  "path": "concepts/language-models/language-model/transformer.typ",
+                  "path": "DarkFactory/language-models/language-model/transformer.typ",
                   "type": "file"
                 },
                 {
                   "name": "turn.typ",
-                  "path": "concepts/language-models/language-model/turn.typ",
+                  "path": "DarkFactory/language-models/language-model/turn.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "agent.typ",
-              "path": "concepts/language-models/agent.typ",
+              "path": "DarkFactory/language-models/agent.typ",
               "type": "file"
             },
             {
               "name": "chatbot.typ",
-              "path": "concepts/language-models/chatbot.typ",
+              "path": "DarkFactory/language-models/chatbot.typ",
               "type": "file"
             },
             {
               "name": "index.typ",
-              "path": "concepts/language-models/index.typ",
+              "path": "DarkFactory/language-models/index.typ",
               "type": "file"
             },
             {
               "name": "language-models.typ",
-              "path": "concepts/language-models/language-models.typ",
+              "path": "DarkFactory/language-models/language-models.typ",
               "type": "file"
             }
           ]
         },
         {
           "name": "manuscript",
-          "path": "concepts/manuscript",
+          "path": "DarkFactory/manuscript",
           "type": "directory",
           "children": [
             {
               "name": "appendices",
-              "path": "concepts/manuscript/appendices",
+              "path": "DarkFactory/manuscript/appendices",
               "type": "directory",
               "children": [
                 {
                   "name": "index.typ",
-                  "path": "concepts/manuscript/appendices/index.typ",
+                  "path": "DarkFactory/manuscript/appendices/index.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "conclusion",
-              "path": "concepts/manuscript/conclusion",
+              "path": "DarkFactory/manuscript/conclusion",
               "type": "directory",
               "children": [
                 {
                   "name": "conclusion.typ",
-                  "path": "concepts/manuscript/conclusion/conclusion.typ",
+                  "path": "DarkFactory/manuscript/conclusion/conclusion.typ",
                   "type": "file"
                 },
                 {
                   "name": "index.typ",
-                  "path": "concepts/manuscript/conclusion/index.typ",
+                  "path": "DarkFactory/manuscript/conclusion/index.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "introduction",
-              "path": "concepts/manuscript/introduction",
+              "path": "DarkFactory/manuscript/introduction",
               "type": "directory",
               "children": [
                 {
                   "name": "methodology",
-                  "path": "concepts/manuscript/introduction/methodology",
+                  "path": "DarkFactory/manuscript/introduction/methodology",
                   "type": "directory",
                   "children": [
                     {
                       "name": "index.typ",
-                      "path": "concepts/manuscript/introduction/methodology/index.typ",
+                      "path": "DarkFactory/manuscript/introduction/methodology/index.typ",
                       "type": "file"
                     },
                     {
                       "name": "methodology.typ",
-                      "path": "concepts/manuscript/introduction/methodology/methodology.typ",
+                      "path": "DarkFactory/manuscript/introduction/methodology/methodology.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "motivation",
-                  "path": "concepts/manuscript/introduction/motivation",
+                  "path": "DarkFactory/manuscript/introduction/motivation",
                   "type": "directory",
                   "children": [
                     {
                       "name": "index.typ",
-                      "path": "concepts/manuscript/introduction/motivation/index.typ",
+                      "path": "DarkFactory/manuscript/introduction/motivation/index.typ",
                       "type": "file"
                     },
                     {
                       "name": "motivation.typ",
-                      "path": "concepts/manuscript/introduction/motivation/motivation.typ",
+                      "path": "DarkFactory/manuscript/introduction/motivation/motivation.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "objectives",
-                  "path": "concepts/manuscript/introduction/objectives",
+                  "path": "DarkFactory/manuscript/introduction/objectives",
                   "type": "directory",
                   "children": [
                     {
                       "name": "main-goal",
-                      "path": "concepts/manuscript/introduction/objectives/main-goal",
+                      "path": "DarkFactory/manuscript/introduction/objectives/main-goal",
                       "type": "directory",
                       "children": [
                         {
                           "name": "index.typ",
-                          "path": "concepts/manuscript/introduction/objectives/main-goal/index.typ",
+                          "path": "DarkFactory/manuscript/introduction/objectives/main-goal/index.typ",
                           "type": "file"
                         },
                         {
                           "name": "main-goal.typ",
-                          "path": "concepts/manuscript/introduction/objectives/main-goal/main-goal.typ",
+                          "path": "DarkFactory/manuscript/introduction/objectives/main-goal/main-goal.typ",
                           "type": "file"
                         }
                       ]
                     },
                     {
                       "name": "research-questions",
-                      "path": "concepts/manuscript/introduction/objectives/research-questions",
+                      "path": "DarkFactory/manuscript/introduction/objectives/research-questions",
                       "type": "directory",
                       "children": [
                         {
                           "name": "index.typ",
-                          "path": "concepts/manuscript/introduction/objectives/research-questions/index.typ",
+                          "path": "DarkFactory/manuscript/introduction/objectives/research-questions/index.typ",
                           "type": "file"
                         },
                         {
                           "name": "research-questions.typ",
-                          "path": "concepts/manuscript/introduction/objectives/research-questions/research-questions.typ",
+                          "path": "DarkFactory/manuscript/introduction/objectives/research-questions/research-questions.typ",
                           "type": "file"
                         }
                       ]
                     },
                     {
                       "name": "subgoals",
-                      "path": "concepts/manuscript/introduction/objectives/subgoals",
+                      "path": "DarkFactory/manuscript/introduction/objectives/subgoals",
                       "type": "directory",
                       "children": [
                         {
                           "name": "index.typ",
-                          "path": "concepts/manuscript/introduction/objectives/subgoals/index.typ",
+                          "path": "DarkFactory/manuscript/introduction/objectives/subgoals/index.typ",
                           "type": "file"
                         },
                         {
                           "name": "subgoals.typ",
-                          "path": "concepts/manuscript/introduction/objectives/subgoals/subgoals.typ",
+                          "path": "DarkFactory/manuscript/introduction/objectives/subgoals/subgoals.typ",
                           "type": "file"
                         }
                       ]
                     },
                     {
                       "name": "index.typ",
-                      "path": "concepts/manuscript/introduction/objectives/index.typ",
+                      "path": "DarkFactory/manuscript/introduction/objectives/index.typ",
                       "type": "file"
                     },
                     {
                       "name": "objectives.typ",
-                      "path": "concepts/manuscript/introduction/objectives/objectives.typ",
+                      "path": "DarkFactory/manuscript/introduction/objectives/objectives.typ",
                       "type": "file"
                     }
                   ]
                 },
                 {
                   "name": "index.typ",
-                  "path": "concepts/manuscript/introduction/index.typ",
+                  "path": "DarkFactory/manuscript/introduction/index.typ",
                   "type": "file"
                 },
                 {
                   "name": "introduction.typ",
-                  "path": "concepts/manuscript/introduction/introduction.typ",
+                  "path": "DarkFactory/manuscript/introduction/introduction.typ",
                   "type": "file"
                 }
               ]
             },
             {
               "name": "results",
-              "path": "concepts/manuscript/results",
+              "path": "DarkFactory/manuscript/results",
               "type": "directory",
               "children": [
                 {
                   "name": "index.typ",
-                  "path": "concepts/manuscript/results/index.typ",
+                  "path": "DarkFactory/manuscript/results/index.typ",
                   "type": "file"
                 },
                 {
                   "name": "results.typ",
-                  "path": "concepts/manuscript/results/results.typ",
+                  "path": "DarkFactory/manuscript/results/results.typ",
                   "type": "file"
                 }
               ]
@@ -689,107 +783,82 @@
           ]
         },
         {
+          "name": "templates",
+          "path": "DarkFactory/templates",
+          "type": "directory",
+          "children": [
+            {
+              "name": "gjkt-odborna-prace",
+              "path": "DarkFactory/templates/gjkt-odborna-prace",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "README.md",
+                  "path": "DarkFactory/templates/gjkt-odborna-prace/README.md",
+                  "type": "file"
+                },
+                {
+                  "name": "template.typ",
+                  "path": "DarkFactory/templates/gjkt-odborna-prace/template.typ",
+                  "type": "file"
+                },
+                {
+                  "name": "wordometer.typ",
+                  "path": "DarkFactory/templates/gjkt-odborna-prace/wordometer.typ",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "common.typ",
+              "path": "DarkFactory/templates/common.typ",
+              "type": "file"
+            },
+            {
+              "name": "registry.typ",
+              "path": "DarkFactory/templates/registry.typ",
+              "type": "file"
+            },
+            {
+              "name": "terms.typ",
+              "path": "DarkFactory/templates/terms.typ",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "book.typ",
+          "path": "DarkFactory/book.typ",
+          "type": "file"
+        },
+        {
           "name": "index.typ",
-          "path": "concepts/index.typ",
+          "path": "DarkFactory/index.typ",
+          "type": "file"
+        },
+        {
+          "name": "metadata.typ",
+          "path": "DarkFactory/metadata.typ",
           "type": "file"
         },
         {
           "name": "README.md",
-          "path": "concepts/README.md",
+          "path": "DarkFactory/README.md",
           "type": "file"
         },
         {
           "name": "schema.typ",
-          "path": "concepts/schema.typ",
-          "type": "file"
-        }
-      ]
-    },
-    {
-      "name": "fonts",
-      "path": "fonts",
-      "type": "directory",
-      "children": [
-        {
-          "name": "Caladea-Bold.ttf",
-          "path": "fonts/Caladea-Bold.ttf",
+          "path": "DarkFactory/schema.typ",
           "type": "file"
         },
         {
-          "name": "Caladea-BoldItalic.ttf",
-          "path": "fonts/Caladea-BoldItalic.ttf",
+          "name": "thesis.typ",
+          "path": "DarkFactory/thesis.typ",
           "type": "file"
         },
         {
-          "name": "Caladea-Italic.ttf",
-          "path": "fonts/Caladea-Italic.ttf",
-          "type": "file"
-        },
-        {
-          "name": "Caladea-Regular.ttf",
-          "path": "fonts/Caladea-Regular.ttf",
-          "type": "file"
-        },
-        {
-          "name": "Carlito-Bold.ttf",
-          "path": "fonts/Carlito-Bold.ttf",
-          "type": "file"
-        },
-        {
-          "name": "Carlito-BoldItalic.ttf",
-          "path": "fonts/Carlito-BoldItalic.ttf",
-          "type": "file"
-        },
-        {
-          "name": "Carlito-Italic.ttf",
-          "path": "fonts/Carlito-Italic.ttf",
-          "type": "file"
-        },
-        {
-          "name": "Carlito-Regular.ttf",
-          "path": "fonts/Carlito-Regular.ttf",
-          "type": "file"
-        },
-        {
-          "name": "README.md",
-          "path": "fonts/README.md",
-          "type": "file"
-        }
-      ]
-    },
-    {
-      "name": "img",
-      "path": "img",
-      "type": "directory",
-      "children": [
-        {
-          "name": "components-darkfactory.svg",
-          "path": "img/components-darkfactory.svg",
-          "type": "file"
-        },
-        {
-          "name": "docs-pipeline.svg",
-          "path": "img/docs-pipeline.svg",
-          "type": "file"
-        },
-        {
-          "name": "lifecycle-darkfactory.svg",
-          "path": "img/lifecycle-darkfactory.svg",
-          "type": "file"
-        },
-        {
-          "name": "logo.jpeg",
-          "path": "img/logo.jpeg",
-          "type": "file"
-        },
-        {
-          "name": "react-loop.svg",
-          "path": "img/react-loop.svg",
-          "type": "file"
-        },
-        {
-          "name": "vector-embedding-queen.svg",
-          "path": "img/vector-embedding-queen.svg",
+          "name": "web-publication.typ",
+          "path": "DarkFactory/web-publication.typ",
           "type": "file"
         }
       ]
@@ -822,50 +891,6 @@
         {
           "name": "preview_server.py",
           "path": "scripts/preview_server.py",
-          "type": "file"
-        }
-      ]
-    },
-    {
-      "name": "templates",
-      "path": "templates",
-      "type": "directory",
-      "children": [
-        {
-          "name": "gjkt-odborna-prace",
-          "path": "templates/gjkt-odborna-prace",
-          "type": "directory",
-          "children": [
-            {
-              "name": "README.md",
-              "path": "templates/gjkt-odborna-prace/README.md",
-              "type": "file"
-            },
-            {
-              "name": "template.typ",
-              "path": "templates/gjkt-odborna-prace/template.typ",
-              "type": "file"
-            },
-            {
-              "name": "wordometer.typ",
-              "path": "templates/gjkt-odborna-prace/wordometer.typ",
-              "type": "file"
-            }
-          ]
-        },
-        {
-          "name": "common.typ",
-          "path": "templates/common.typ",
-          "type": "file"
-        },
-        {
-          "name": "registry.typ",
-          "path": "templates/registry.typ",
-          "type": "file"
-        },
-        {
-          "name": "terms.typ",
-          "path": "templates/terms.typ",
           "type": "file"
         }
       ]
@@ -960,6 +985,11 @@
               "name": "viewer.css",
               "path": "web/src/viewer.css",
               "type": "file"
+            },
+            {
+              "name": "workspace.tsx",
+              "path": "web/src/workspace.tsx",
+              "type": "file"
             }
           ]
         },
@@ -1016,6 +1046,11 @@
       "type": "file"
     },
     {
+      "name": "books.typ",
+      "path": "books.typ",
+      "type": "file"
+    },
+    {
       "name": "darkfactory",
       "path": "darkfactory",
       "type": "file"
@@ -1031,11 +1066,6 @@
       "type": "file"
     },
     {
-      "name": "metadata.typ",
-      "path": "metadata.typ",
-      "type": "file"
-    },
-    {
       "name": "README.md",
       "path": "README.md",
       "type": "file"
@@ -1043,11 +1073,6 @@
     {
       "name": "review.typ",
       "path": "review.typ",
-      "type": "file"
-    },
-    {
-      "name": "thesis.typ",
-      "path": "thesis.typ",
       "type": "file"
     },
     {
