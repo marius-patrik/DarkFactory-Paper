@@ -529,7 +529,7 @@ Programmatic extension modules running directly in the harness environment that 
 
 #### 4.2.8 ReAct Loop
 
-An iterative execution cycle of an autonomous agent based on the ReAct pattern (Reasoning + Acting), in which the model alternates between reasoning, tool calls, and evaluation of observations from the runtime environment. <sup>(<a href="#loc-149" role="doc-biblioref">22</a>)</sup> Agentní smyčka (*Agent Loop*) představuje výkonné jádro celého agent harnessu. Zatímco pasivní konverzační chatbot jednorázově odpoví na uživatelský dotaz a čeká na další vstup, agentní smyčka autonomně udržuje kontinuální iterativní proces, v němž harness opakovaně vyhodnocuje stav repozitáře, volá jazykový model a vykonává požadované systémové akce.
+Iterativní prováděcí cyklus autonomního agenta založený na vzoru ReAct (*Reasoning + Acting*), v němž model střídá rozhodování, volání nástrojů a vyhodnocování výsledků z běhového prostředí. Agentní smyčka (*Agent Loop*) představuje výkonné jádro celého agent harnessu. Zatímco pasivní konverzační chatbot jednorázově odpoví na uživatelský dotaz a čeká na další vstup, agentní smyčka autonomně udržuje kontinuální iterativní proces, v němž harness opakovaně vyhodnocuje stav repozitáře, volá jazykový model a vykonává požadované systémové akce.
 
 - V každé iteraci agentní smyčky harness zajišťuje tyto klíčové funkce:
 
@@ -551,23 +551,27 @@ Kvalita a provozní spolehlivost celého systému tak závisí v prvé řadě na
 
 *Obrázek 9: Architektura autonomní ReAct smyčky (Reasoning + Acting) a tok dat mezi uživatelem, kontextem, modelem a výkonným prostředím.*
 
+Agentní smyčka koordinuje opakované rozhodování modelu s vykonáváním akcí; její provozní spolehlivost proto závisí na řízení stavu, nástrojů, rozpočtů a podmínek ukončení.
+
 ##### 4.2.8.1 Agent Session
 
-A bounded agent run with shared state, system instructions, working context, turn history, and operating budgets. Správa agentního sezení zahrnuje sestavení systémového promptu, načtení relevantního kontextu repozitáře, průběžné uchování stavu a sledování rozpočtů, například spotřeby tokenů nebo počtu iterací.
+Agentní sezení je ohraničený běh agenta se sdíleným stavem, systémovými instrukcemi, pracovním kontextem, historií tahů a provozními rozpočty. Správa agentního sezení zahrnuje sestavení systémového promptu, načtení relevantního kontextu repozitáře, průběžné uchování stavu a sledování rozpočtů, například spotřeby tokenů nebo počtu iterací. Sezení poskytuje jednotku životního cyklu, ve které lze konzistentně spravovat stav, kontext a zdrojové limity jednoho agentního běhu.
 
 ##### 4.2.8.2 Execution-loop Engineering
 
-The design and control of an agent's iterative execution loop, including state transitions, termination conditions, budgets, retries, escalation, and the connection between model decisions and tools. <sup>(<a href="#loc-149" role="doc-biblioref">22</a>)</sup> Inženýrství prováděcí smyčky odděluje provozní řízení od samotného modelového rozhodování. Patří sem stavové přechody, podmínky ukončení, rozpočty běhu, opakování po selhání, detekce uvíznutí a pravidla pro eskalaci nebo lidské schválení.
+Inženýrství prováděcí smyčky je návrh a řízení stavových přechodů, podmínek ukončení, rozpočtů, opakování, eskalací a vazby mezi rozhodováním modelu a nástroji. Inženýrství prováděcí smyčky odděluje provozní řízení od samotného modelového rozhodování. Patří sem stavové přechody, podmínky ukončení, rozpočty běhu, opakování po selhání, detekce uvíznutí a pravidla pro eskalaci nebo lidské schválení. Loop engineering převádí otevřenou agentní iteraci na provozně ohraničený proces s explicitními pravidly pokračování, selhání a ukončení.
 
 ##### 4.2.8.3 Agent Divergence Pathologies
 
-A class of agent-loop failures in which iterative execution moves away from the goal through perseveration, oscillation, or uncontrolled resource consumption. <sup><span id="loc-104">(</span><a href="#loc-156" role="doc-biblioref">29</a>)</sup> - Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním. [+ ]Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním <sup>(<a href="#loc-156" role="doc-biblioref">29</a>)</sup>. V důsledku autoregresivní povahy se v kontextu snadno vytvoří pravděpodobnostní atraktor, který model uvězní v neproduktivním cyklu.
+Divergence je třída selhání agentní smyčky, při níž se iterativní běh vzdaluje cíli například perseverací, oscilací nebo nekontrolovanou spotřebou zdrojů. - Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním. [+ ]Ponechání jazykového modelu v neomezené prováděcí smyčce vede k předvídatelným selháním <sup><span id="loc-104">(</span><a href="#loc-156" role="doc-biblioref">29</a>)</sup>. V důsledku autoregresivní povahy se v kontextu snadno vytvoří pravděpodobnostní atraktor, který model uvězní v neproduktivním cyklu.
 
 Mezi typické patologie patří:
 
 - Perseverace a zacyklení: Opakované volání identického nástroje se stejnými neplatnými argumenty (např. čtení neexistujícího souboru) i po obdržení chybové zprávy.
 - Oscilace a těkání (*Thrashing*): Střídavé přepínání mezi dvěma protichůdnými zásahy (úprava modulu A rozbije modul B a následná oprava B rozbije modul A).
 - Nekontrolovaná spotřeba zdrojů (*Context Runaway*): Rychlé vyčerpání kontextového okna i finančního rozpočtu na volání API bez dosažení cíle.
+
+Divergenci nelze řešit pouze lepším promptem; harness musí rozpoznávat neproduktivní trajektorie a omezovat jejich pokračování.
 
 #### 4.2.9 Tool Calling
 
@@ -621,13 +625,15 @@ The systematic design, selection, ordering, and lifecycle management of informat
 
 ##### 4.2.11.1 Context Compaction
 
-The process of reducing active context, typically by summarizing, selecting, or replacing older history with a more compact representation so execution remains within the context window. <sup><span id="loc-116">(</span><a href="#loc-160" role="doc-biblioref">33</a>)</sup> Správa aktivního kontextu je součástí kontextového inženýrství ( ). Při rozsáhlejších úlohách se kontextové okno nevyhnutelně zaplní. V okamžiku, kdy objem historie dosáhne kritické hranice, musí agent harness přistoupit ke kompakci kontextu - (*compaction*) [+ ](*compaction* <sup>(<a href="#loc-160" role="doc-biblioref">33</a>)</sup>) — model je vyzván, aby dosavadní průběh sezení zkrátil do syntetického souhrnu, který nahradí starší část historie.
+Kompakce kontextu je zmenšení aktivního kontextu výběrem, shrnutím nebo nahrazením starší historie kompaktnější reprezentací tak, aby se běh vešel do kontextového okna. Správa aktivního kontextu je součástí kontextového inženýrství ( ). Při rozsáhlejších úlohách se kontextové okno nevyhnutelně zaplní. V okamžiku, kdy objem historie dosáhne kritické hranice, musí agent harness přistoupit ke kompakci kontextu - (*compaction*) [+ ](*compaction* <sup><span id="loc-116">(</span><a href="#loc-160" role="doc-biblioref">33</a>)</sup>) — model je vyzván, aby dosavadní průběh sezení zkrátil do syntetického souhrnu, který nahradí starší část historie.
 
 Tento proces však představuje destruktivní ztrátovou kompresi:
 
 - Ztráta deterministických detailů: Model při rekurzivním zkracování vynechává přesná čísla řádků, signatury privátních funkcí, přesné cesty k souborům a doslovná chybová hlášení kompilátoru.
 - Oslabení negativních pravidel: Explicitní zákazy (např. neměnit veřejné rozhraní API) bývají v souhrnu zevšeobecněny nebo zcela vypuštěny.
 - Konfirmační zkreslení (*Confirmation Bias*): Model v souhrnu upřednostňuje fakta odpovídající jeho vnitřním statistickým asociacím na úkor netriviálních specifik konkrétního projektu.
+
+Kompakce prodlužuje běh za cenu ztráty informace, a proto musí být navržena tak, aby neodstraňovala detaily nutné pro další rozhodování.
 
 ##### 4.2.11.2 Retrieval-Augmented Generation
 

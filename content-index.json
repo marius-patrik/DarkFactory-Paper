@@ -346,97 +346,97 @@
           {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-103"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-105"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-107"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-110"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-113"
+            "anchor": "loc-112"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-113"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-114"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-125"
+            "anchor": "loc-123"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-126"
+            "anchor": "loc-124"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-161"
+            "anchor": "loc-157"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-162"
+            "anchor": "loc-158"
           }
         ],
         "review": [
@@ -1222,97 +1222,97 @@
           {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-103"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-105"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-107"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-110"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-113"
+            "anchor": "loc-112"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-113"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-114"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-125"
+            "anchor": "loc-123"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-126"
+            "anchor": "loc-124"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-161"
+            "anchor": "loc-157"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-162"
+            "anchor": "loc-158"
           }
         ],
         "review": [
@@ -2098,97 +2098,97 @@
           {
             "title": "4.2.9 Tool Calling",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-103"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-105"
           },
           {
             "title": "4.2.10 Skills",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-107"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.10.2 Script",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-110"
           },
           {
             "title": "4.2.10.3 Event Hook",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.11 Context Engineering",
             "level": 4,
-            "anchor": "loc-113"
+            "anchor": "loc-112"
           },
           {
             "title": "4.2.11.1 Context Compaction",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-113"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-114"
           },
           {
             "title": "4.2.11.3 Context Rot",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.11.4 Semantic Drift",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering",
             "level": 4,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.1 Subagent",
             "level": 5,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph",
             "level": 5,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "5 Results and Discussion",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "6 Conclusion",
             "level": 2,
-            "anchor": "loc-125"
+            "anchor": "loc-123"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-126"
+            "anchor": "loc-124"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-161"
+            "anchor": "loc-157"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-162"
+            "anchor": "loc-158"
           }
         ],
         "review": [
@@ -2974,97 +2974,97 @@
           {
             "title": "4.2.9 Tool Calling (Vyvolávání nástrojů)",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-103"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-105"
           },
           {
             "title": "4.2.10 Skills (Dovednosti)",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-107"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure (Postupné zpřístupňování kontextu)",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.10.2 Script (Skript)",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-110"
           },
           {
             "title": "4.2.10.3 Event Hook (Událostní záchytný bod)",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.11 Context Engineering (Kontextové inženýrství)",
             "level": 4,
-            "anchor": "loc-113"
+            "anchor": "loc-112"
           },
           {
             "title": "4.2.11.1 Context Compaction (Kompakce kontextu)",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-113"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)",
             "level": 5,
-            "anchor": "loc-116"
+            "anchor": "loc-114"
           },
           {
             "title": "4.2.11.3 Context Rot (Degradace kontextu)",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-116"
           },
           {
             "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-117"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 4,
-            "anchor": "loc-120"
+            "anchor": "loc-118"
           },
           {
             "title": "4.2.12.1 Subagent (Podřízený agent)",
             "level": 5,
-            "anchor": "loc-122"
+            "anchor": "loc-120"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
             "level": 5,
-            "anchor": "loc-123"
+            "anchor": "loc-121"
           },
           {
             "title": "5 Results and Discussion (Výsledky a diskuse)",
             "level": 2,
-            "anchor": "loc-124"
+            "anchor": "loc-122"
           },
           {
             "title": "6 Conclusion (Závěr)",
             "level": 2,
-            "anchor": "loc-125"
+            "anchor": "loc-123"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-126"
+            "anchor": "loc-124"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-161"
+            "anchor": "loc-157"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-162"
+            "anchor": "loc-158"
           }
         ],
         "review": [
