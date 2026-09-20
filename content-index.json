@@ -176,267 +176,267 @@
           {
             "title": "3.3 Velký jazykový model",
             "level": 3,
-            "anchor": "loc-43"
+            "anchor": "loc-42"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-44"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1.1 Produktový vizuál GPT-5.6",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-48"
+            "anchor": "loc-47"
           },
           {
             "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-52"
+            "anchor": "loc-51"
           },
           {
             "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.4 Transformerová architektura",
             "level": 4,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "3.3.5 Autoregresivní modelování",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.6 Stochastické dekódování",
             "level": 4,
-            "anchor": "loc-59"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.7 Tokenizér",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.9 Vektorová reprezentace",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.10 Kontextové okno",
             "level": 4,
-            "anchor": "loc-65"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.11 Mezipaměť klíčů a hodnot",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.12 Tah interakce",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "4 Agentické inženýrství",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4.1 Promptové inženýrství",
             "level": 3,
-            "anchor": "loc-72"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1.1 Systémový prompt",
             "level": 4,
-            "anchor": "loc-74"
+            "anchor": "loc-67"
           },
           {
             "title": "4.2 Agentní harness",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-76"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1.1 Rozhraní aplikace Codex",
             "level": 5,
-            "anchor": "loc-77"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-72"
           },
           {
             "title": "4.2.2.1 Rozhraní Claude Code",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.3 Aplikace Claude pro desktop",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-75"
           },
           {
             "title": "4.2.3.1 Rozhraní aplikace Claude",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.4 Izolované běhové prostředí",
             "level": 4,
-            "anchor": "loc-86"
+            "anchor": "loc-79"
           },
           {
             "title": "4.2.5 Deterministický mantinel",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.6 Zapojení člověka do smyčky",
             "level": 4,
-            "anchor": "loc-88"
+            "anchor": "loc-81"
           },
           {
             "title": "4.2.7 Rozšíření",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.8 Smyčka ReAct",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.8.1 Agentní sezení",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8.2 Inženýrství prováděcí smyčky",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.3 Patologie divergence",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-87"
           },
           {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-97"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-100"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-101"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-104"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-106"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-109"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-110"
+            "anchor": "loc-105"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-111"
+            "anchor": "loc-106"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-131"
+            "anchor": "loc-121"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-132"
+            "anchor": "loc-122"
           }
         ],
         "review": [
@@ -613,267 +613,267 @@
           {
             "title": "3.3 Velký jazykový model",
             "level": 3,
-            "anchor": "loc-45"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-46"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.1.1 Produktový vizuál GPT-5.6",
             "level": 5,
-            "anchor": "loc-47"
+            "anchor": "loc-45"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-50"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
             "level": 5,
-            "anchor": "loc-51"
+            "anchor": "loc-49"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-54"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
-            "anchor": "loc-55"
+            "anchor": "loc-53"
           },
           {
             "title": "3.3.4 Transformerová architektura",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.5 Autoregresivní modelování",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.6 Stochastické dekódování",
             "level": 4,
-            "anchor": "loc-61"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.7 Tokenizér",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.9 Vektorová reprezentace",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.10 Kontextové okno",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.11 Mezipaměť klíčů a hodnot",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "3.3.12 Tah interakce",
             "level": 4,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4 Agentické inženýrství",
             "level": 2,
-            "anchor": "loc-74"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1 Promptové inženýrství",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-66"
           },
           {
             "title": "4.1.1 Systémový prompt",
             "level": 4,
-            "anchor": "loc-77"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2 Agentní harness",
             "level": 3,
-            "anchor": "loc-78"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.1.1 Rozhraní aplikace Codex",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-71"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.2.1 Rozhraní Claude Code",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-74"
           },
           {
             "title": "4.2.3 Aplikace Claude pro desktop",
             "level": 4,
-            "anchor": "loc-85"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.3.1 Rozhraní aplikace Claude",
             "level": 5,
-            "anchor": "loc-86"
+            "anchor": "loc-77"
           },
           {
             "title": "4.2.4 Izolované běhové prostředí",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.5 Deterministický mantinel",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.6 Zapojení člověka do smyčky",
             "level": 4,
-            "anchor": "loc-92"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.7 Rozšíření",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8 Smyčka ReAct",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.1 Agentní sezení",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.8.2 Inženýrství prováděcí smyčky",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.8.3 Patologie divergence",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-90"
           },
           {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-109"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-115"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-116"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-121"
+            "anchor": "loc-114"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-115"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-153"
+            "anchor": "loc-139"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-154"
+            "anchor": "loc-140"
           }
         ]
       },
@@ -1052,267 +1052,267 @@
           {
             "title": "3.3 Velký jazykový model",
             "level": 3,
-            "anchor": "loc-43"
+            "anchor": "loc-42"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-44"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1.1 Produktový vizuál GPT-5.6",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-48"
+            "anchor": "loc-47"
           },
           {
             "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-52"
+            "anchor": "loc-51"
           },
           {
             "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.4 Transformerová architektura",
             "level": 4,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "3.3.5 Autoregresivní modelování",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.6 Stochastické dekódování",
             "level": 4,
-            "anchor": "loc-59"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.7 Tokenizér",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.9 Vektorová reprezentace",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.10 Kontextové okno",
             "level": 4,
-            "anchor": "loc-65"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.11 Mezipaměť klíčů a hodnot",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.12 Tah interakce",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "4 Agentické inženýrství",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4.1 Promptové inženýrství",
             "level": 3,
-            "anchor": "loc-72"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1.1 Systémový prompt",
             "level": 4,
-            "anchor": "loc-74"
+            "anchor": "loc-67"
           },
           {
             "title": "4.2 Agentní harness",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-76"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1.1 Rozhraní aplikace Codex",
             "level": 5,
-            "anchor": "loc-77"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-72"
           },
           {
             "title": "4.2.2.1 Rozhraní Claude Code",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.3 Aplikace Claude pro desktop",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-75"
           },
           {
             "title": "4.2.3.1 Rozhraní aplikace Claude",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.4 Izolované běhové prostředí",
             "level": 4,
-            "anchor": "loc-86"
+            "anchor": "loc-79"
           },
           {
             "title": "4.2.5 Deterministický mantinel",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.6 Zapojení člověka do smyčky",
             "level": 4,
-            "anchor": "loc-88"
+            "anchor": "loc-81"
           },
           {
             "title": "4.2.7 Rozšíření",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.8 Smyčka ReAct",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.8.1 Agentní sezení",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8.2 Inženýrství prováděcí smyčky",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.3 Patologie divergence",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-87"
           },
           {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-97"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-100"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-101"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-104"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-106"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-109"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-110"
+            "anchor": "loc-105"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-111"
+            "anchor": "loc-106"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-131"
+            "anchor": "loc-121"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-132"
+            "anchor": "loc-122"
           }
         ],
         "review": [
@@ -1489,267 +1489,267 @@
           {
             "title": "3.3 Velký jazykový model",
             "level": 3,
-            "anchor": "loc-45"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-46"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.1.1 Produktový vizuál GPT-5.6",
             "level": 5,
-            "anchor": "loc-47"
+            "anchor": "loc-45"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-50"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.2.1 Produktový vizuál Claude Opus 5",
             "level": 5,
-            "anchor": "loc-51"
+            "anchor": "loc-49"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-54"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.3.1 Produktový vizuál DeepSeek-V4.1-Flash",
             "level": 5,
-            "anchor": "loc-55"
+            "anchor": "loc-53"
           },
           {
             "title": "3.3.4 Transformerová architektura",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.5 Autoregresivní modelování",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.6 Stochastické dekódování",
             "level": 4,
-            "anchor": "loc-61"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.7 Tokenizér",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.9 Vektorová reprezentace",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.10 Kontextové okno",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.11 Mezipaměť klíčů a hodnot",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "3.3.12 Tah interakce",
             "level": 4,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4 Agentické inženýrství",
             "level": 2,
-            "anchor": "loc-74"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1 Promptové inženýrství",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-66"
           },
           {
             "title": "4.1.1 Systémový prompt",
             "level": 4,
-            "anchor": "loc-77"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2 Agentní harness",
             "level": 3,
-            "anchor": "loc-78"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.1.1 Rozhraní aplikace Codex",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-71"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.2.1 Rozhraní Claude Code",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-74"
           },
           {
             "title": "4.2.3 Aplikace Claude pro desktop",
             "level": 4,
-            "anchor": "loc-85"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.3.1 Rozhraní aplikace Claude",
             "level": 5,
-            "anchor": "loc-86"
+            "anchor": "loc-77"
           },
           {
             "title": "4.2.4 Izolované běhové prostředí",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.5 Deterministický mantinel",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.6 Zapojení člověka do smyčky",
             "level": 4,
-            "anchor": "loc-92"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.7 Rozšíření",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8 Smyčka ReAct",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.1 Agentní sezení",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.8.2 Inženýrství prováděcí smyčky",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.8.3 Patologie divergence",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-90"
           },
           {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-109"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-115"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-116"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-121"
+            "anchor": "loc-114"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-115"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-153"
+            "anchor": "loc-139"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-154"
+            "anchor": "loc-140"
           }
         ]
       },
@@ -1928,267 +1928,267 @@
           {
             "title": "3.3 Large Language Model",
             "level": 3,
-            "anchor": "loc-43"
+            "anchor": "loc-42"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-44"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1.1 GPT-5.6 Product Visual",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-48"
+            "anchor": "loc-47"
           },
           {
             "title": "3.3.2.1 Claude Opus 5 Product Visual",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-52"
+            "anchor": "loc-51"
           },
           {
             "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.4 Transformer Architecture",
             "level": 4,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "3.3.5 Autoregressive Modeling",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.6 Stochastic Decoding",
             "level": 4,
-            "anchor": "loc-59"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.7 Tokenizer",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.9 Embedding",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.10 Context Window",
             "level": 4,
-            "anchor": "loc-65"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.11 Key–Value Cache",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.12 Interaction Turn",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "4 Agentic Engineering",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4.1 Prompt Engineering",
             "level": 3,
-            "anchor": "loc-72"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1.1 System Prompt",
             "level": 4,
-            "anchor": "loc-74"
+            "anchor": "loc-67"
           },
           {
             "title": "4.2 Agent Harness",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-76"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1.1 Codex App Interface",
             "level": 5,
-            "anchor": "loc-77"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-72"
           },
           {
             "title": "4.2.2.1 Claude Code Interface",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.3 Claude Desktop App",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-75"
           },
           {
             "title": "4.2.3.1 Claude Desktop Interface",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.4 Sandbox",
             "level": 4,
-            "anchor": "loc-86"
+            "anchor": "loc-79"
           },
           {
             "title": "4.2.5 Deterministic Guardrail",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.6 Human-in-the-loop",
             "level": 4,
-            "anchor": "loc-88"
+            "anchor": "loc-81"
           },
           {
             "title": "4.2.7 Plugins",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.8 ReAct Loop",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.8.1 Agent Session",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8.2 Execution-loop Engineering",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.3 Agent Divergence Pathologies",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-87"
           },
           {
             "title": "4.2.9 Tool Calling",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Skills",
             "level": 4,
-            "anchor": "loc-97"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Script",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Event Hook",
             "level": 5,
-            "anchor": "loc-100"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Context Engineering",
             "level": 4,
-            "anchor": "loc-101"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Context Compaction",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Context Rot",
             "level": 5,
-            "anchor": "loc-104"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Semantic Drift",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering",
             "level": 4,
-            "anchor": "loc-106"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Subagent",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Results and Discussion",
             "level": 2,
-            "anchor": "loc-109"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Conclusion",
             "level": 2,
-            "anchor": "loc-110"
+            "anchor": "loc-105"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-111"
+            "anchor": "loc-106"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-131"
+            "anchor": "loc-121"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-132"
+            "anchor": "loc-122"
           }
         ],
         "review": [
@@ -2365,267 +2365,267 @@
           {
             "title": "3.3 Large Language Model",
             "level": 3,
-            "anchor": "loc-45"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-46"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.1.1 GPT-5.6 Product Visual",
             "level": 5,
-            "anchor": "loc-47"
+            "anchor": "loc-45"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-50"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.2.1 Claude Opus 5 Product Visual",
             "level": 5,
-            "anchor": "loc-51"
+            "anchor": "loc-49"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-54"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual",
             "level": 5,
-            "anchor": "loc-55"
+            "anchor": "loc-53"
           },
           {
             "title": "3.3.4 Transformer Architecture",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.5 Autoregressive Modeling",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.6 Stochastic Decoding",
             "level": 4,
-            "anchor": "loc-61"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.7 Tokenizer",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.9 Embedding",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.10 Context Window",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.11 Key–Value Cache",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "3.3.12 Interaction Turn",
             "level": 4,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4 Agentic Engineering",
             "level": 2,
-            "anchor": "loc-74"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1 Prompt Engineering",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-66"
           },
           {
             "title": "4.1.1 System Prompt",
             "level": 4,
-            "anchor": "loc-77"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2 Agent Harness",
             "level": 3,
-            "anchor": "loc-78"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.1.1 Codex App Interface",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-71"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.2.1 Claude Code Interface",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-74"
           },
           {
             "title": "4.2.3 Claude Desktop App",
             "level": 4,
-            "anchor": "loc-85"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.3.1 Claude Desktop Interface",
             "level": 5,
-            "anchor": "loc-86"
+            "anchor": "loc-77"
           },
           {
             "title": "4.2.4 Sandbox",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.5 Deterministic Guardrail",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.6 Human-in-the-loop",
             "level": 4,
-            "anchor": "loc-92"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.7 Plugins",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8 ReAct Loop",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.1 Agent Session",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.8.2 Execution-loop Engineering",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.8.3 Agent Divergence Pathologies",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-90"
           },
           {
             "title": "4.2.9 Tool Calling",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Skills",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Script",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Event Hook",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Context Engineering",
             "level": 4,
-            "anchor": "loc-109"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Context Compaction",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Context Rot",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Semantic Drift",
             "level": 5,
-            "anchor": "loc-115"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering",
             "level": 4,
-            "anchor": "loc-116"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Subagent",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Results and Discussion",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Conclusion",
             "level": 2,
-            "anchor": "loc-121"
+            "anchor": "loc-114"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-115"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-153"
+            "anchor": "loc-139"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-154"
+            "anchor": "loc-140"
           }
         ]
       },
@@ -2804,267 +2804,267 @@
           {
             "title": "3.3 Large Language Model (Velký jazykový model)",
             "level": 3,
-            "anchor": "loc-43"
+            "anchor": "loc-42"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-44"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1.1 GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)",
             "level": 5,
-            "anchor": "loc-45"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-48"
+            "anchor": "loc-47"
           },
           {
             "title": "3.3.2.1 Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)",
             "level": 5,
-            "anchor": "loc-49"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-52"
+            "anchor": "loc-51"
           },
           {
             "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)",
             "level": 5,
-            "anchor": "loc-53"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.4 Transformer Architecture (Transformerová architektura)",
             "level": 4,
-            "anchor": "loc-56"
+            "anchor": "loc-55"
           },
           {
             "title": "3.3.5 Autoregressive Modeling (Autoregresivní modelování)",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.6 Stochastic Decoding (Stochastické dekódování)",
             "level": 4,
-            "anchor": "loc-59"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.7 Tokenizer (Tokenizér)",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.9 Embedding (Vektorová reprezentace)",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.10 Context Window (Kontextové okno)",
             "level": 4,
-            "anchor": "loc-65"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.11 Key–Value Cache (Mezipaměť klíčů a hodnot)",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.12 Interaction Turn (Tah interakce)",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "4 Agentic Engineering (Agentické inženýrství)",
             "level": 2,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4.1 Prompt Engineering (Promptové inženýrství)",
             "level": 3,
-            "anchor": "loc-72"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1.1 System Prompt (Systémový prompt)",
             "level": 4,
-            "anchor": "loc-74"
+            "anchor": "loc-67"
           },
           {
             "title": "4.2 Agent Harness (Agentní harness)",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-76"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1.1 Codex App Interface (Rozhraní aplikace Codex)",
             "level": 5,
-            "anchor": "loc-77"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-72"
           },
           {
             "title": "4.2.2.1 Claude Code Interface (Rozhraní Claude Code)",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.3 Claude Desktop App (Aplikace Claude pro desktop)",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-75"
           },
           {
             "title": "4.2.3.1 Claude Desktop Interface (Rozhraní aplikace Claude)",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.4 Sandbox (Izolované běhové prostředí)",
             "level": 4,
-            "anchor": "loc-86"
+            "anchor": "loc-79"
           },
           {
             "title": "4.2.5 Deterministic Guardrail (Deterministický mantinel)",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.6 Human-in-the-loop (Zapojení člověka do smyčky)",
             "level": 4,
-            "anchor": "loc-88"
+            "anchor": "loc-81"
           },
           {
             "title": "4.2.7 Plugins (Rozšíření)",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.8 ReAct Loop (Smyčka ReAct)",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.8.1 Agent Session (Agentní sezení)",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8.2 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.3 Agent Divergence Pathologies (Patologie divergence)",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-87"
           },
           {
             "title": "4.2.9 Tool Calling (Vyvolávání nástrojů)",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Skills (Dovednosti)",
             "level": 4,
-            "anchor": "loc-97"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure (Postupné zpřístupňování kontextu)",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Script (Skript)",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Event Hook (Událostní záchytný bod)",
             "level": 5,
-            "anchor": "loc-100"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Context Engineering (Kontextové inženýrství)",
             "level": 4,
-            "anchor": "loc-101"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Context Compaction (Kompakce kontextu)",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Context Rot (Degradace kontextu)",
             "level": 5,
-            "anchor": "loc-104"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 4,
-            "anchor": "loc-106"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Subagent (Podřízený agent)",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Results and Discussion (Výsledky a diskuse)",
             "level": 2,
-            "anchor": "loc-109"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Conclusion (Závěr)",
             "level": 2,
-            "anchor": "loc-110"
+            "anchor": "loc-105"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-111"
+            "anchor": "loc-106"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-131"
+            "anchor": "loc-121"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-132"
+            "anchor": "loc-122"
           }
         ],
         "review": [
@@ -3241,267 +3241,267 @@
           {
             "title": "3.3 Large Language Model (Velký jazykový model)",
             "level": 3,
-            "anchor": "loc-45"
+            "anchor": "loc-43"
           },
           {
             "title": "3.3.1 GPT-5.6",
             "level": 4,
-            "anchor": "loc-46"
+            "anchor": "loc-44"
           },
           {
             "title": "3.3.1.1 GPT-5.6 Product Visual (Produktový vizuál GPT-5.6)",
             "level": 5,
-            "anchor": "loc-47"
+            "anchor": "loc-45"
           },
           {
             "title": "3.3.2 Claude Opus 5",
             "level": 4,
-            "anchor": "loc-50"
+            "anchor": "loc-48"
           },
           {
             "title": "3.3.2.1 Claude Opus 5 Product Visual (Produktový vizuál Claude Opus 5)",
             "level": 5,
-            "anchor": "loc-51"
+            "anchor": "loc-49"
           },
           {
             "title": "3.3.3 DeepSeek-V4.1-Flash",
             "level": 4,
-            "anchor": "loc-54"
+            "anchor": "loc-52"
           },
           {
             "title": "3.3.3.1 DeepSeek-V4.1-Flash Product Visual (Produktový vizuál DeepSeek-V4.1-Flash)",
             "level": 5,
-            "anchor": "loc-55"
+            "anchor": "loc-53"
           },
           {
             "title": "3.3.4 Transformer Architecture (Transformerová architektura)",
             "level": 4,
-            "anchor": "loc-58"
+            "anchor": "loc-56"
           },
           {
             "title": "3.3.5 Autoregressive Modeling (Autoregresivní modelování)",
             "level": 4,
-            "anchor": "loc-60"
+            "anchor": "loc-57"
           },
           {
             "title": "3.3.6 Stochastic Decoding (Stochastické dekódování)",
             "level": 4,
-            "anchor": "loc-61"
+            "anchor": "loc-58"
           },
           {
             "title": "3.3.7 Tokenizer (Tokenizér)",
             "level": 4,
-            "anchor": "loc-62"
+            "anchor": "loc-59"
           },
           {
             "title": "3.3.8 Token",
             "level": 4,
-            "anchor": "loc-64"
+            "anchor": "loc-60"
           },
           {
             "title": "3.3.9 Embedding (Vektorová reprezentace)",
             "level": 4,
-            "anchor": "loc-66"
+            "anchor": "loc-61"
           },
           {
             "title": "3.3.10 Context Window (Kontextové okno)",
             "level": 4,
-            "anchor": "loc-67"
+            "anchor": "loc-62"
           },
           {
             "title": "3.3.11 Key–Value Cache (Mezipaměť klíčů a hodnot)",
             "level": 4,
-            "anchor": "loc-69"
+            "anchor": "loc-63"
           },
           {
             "title": "3.3.12 Interaction Turn (Tah interakce)",
             "level": 4,
-            "anchor": "loc-71"
+            "anchor": "loc-64"
           },
           {
             "title": "4 Agentic Engineering (Agentické inženýrství)",
             "level": 2,
-            "anchor": "loc-74"
+            "anchor": "loc-65"
           },
           {
             "title": "4.1 Prompt Engineering (Promptové inženýrství)",
             "level": 3,
-            "anchor": "loc-75"
+            "anchor": "loc-66"
           },
           {
             "title": "4.1.1 System Prompt (Systémový prompt)",
             "level": 4,
-            "anchor": "loc-77"
+            "anchor": "loc-68"
           },
           {
             "title": "4.2 Agent Harness (Agentní harness)",
             "level": 3,
-            "anchor": "loc-78"
+            "anchor": "loc-69"
           },
           {
             "title": "4.2.1 Codex",
             "level": 4,
-            "anchor": "loc-79"
+            "anchor": "loc-70"
           },
           {
             "title": "4.2.1.1 Codex App Interface (Rozhraní aplikace Codex)",
             "level": 5,
-            "anchor": "loc-80"
+            "anchor": "loc-71"
           },
           {
             "title": "4.2.2 Claude Code",
             "level": 4,
-            "anchor": "loc-82"
+            "anchor": "loc-73"
           },
           {
             "title": "4.2.2.1 Claude Code Interface (Rozhraní Claude Code)",
             "level": 5,
-            "anchor": "loc-83"
+            "anchor": "loc-74"
           },
           {
             "title": "4.2.3 Claude Desktop App (Aplikace Claude pro desktop)",
             "level": 4,
-            "anchor": "loc-85"
+            "anchor": "loc-76"
           },
           {
             "title": "4.2.3.1 Claude Desktop Interface (Rozhraní aplikace Claude)",
             "level": 5,
-            "anchor": "loc-86"
+            "anchor": "loc-77"
           },
           {
             "title": "4.2.4 Sandbox (Izolované běhové prostředí)",
             "level": 4,
-            "anchor": "loc-89"
+            "anchor": "loc-80"
           },
           {
             "title": "4.2.5 Deterministic Guardrail (Deterministický mantinel)",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-82"
           },
           {
             "title": "4.2.6 Human-in-the-loop (Zapojení člověka do smyčky)",
             "level": 4,
-            "anchor": "loc-92"
+            "anchor": "loc-83"
           },
           {
             "title": "4.2.7 Plugins (Rozšíření)",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-85"
           },
           {
             "title": "4.2.8 ReAct Loop (Smyčka ReAct)",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-86"
           },
           {
             "title": "4.2.8.1 Agent Session (Agentní sezení)",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.8.2 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.8.3 Agent Divergence Pathologies (Patologie divergence)",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-90"
           },
           {
             "title": "4.2.9 Tool Calling (Vyvolávání nástrojů)",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Skills (Dovednosti)",
             "level": 4,
-            "anchor": "loc-104"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure (Postupné zpřístupňování kontextu)",
             "level": 5,
-            "anchor": "loc-106"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Script (Skript)",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Event Hook (Událostní záchytný bod)",
             "level": 5,
-            "anchor": "loc-108"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Context Engineering (Kontextové inženýrství)",
             "level": 4,
-            "anchor": "loc-109"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Context Compaction (Kompakce kontextu)",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)",
             "level": 5,
-            "anchor": "loc-112"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Context Rot (Degradace kontextu)",
             "level": 5,
-            "anchor": "loc-114"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
             "level": 5,
-            "anchor": "loc-115"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 4,
-            "anchor": "loc-116"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Subagent (Podřízený agent)",
             "level": 5,
-            "anchor": "loc-118"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
             "level": 5,
-            "anchor": "loc-119"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Results and Discussion (Výsledky a diskuse)",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Conclusion (Závěr)",
             "level": 2,
-            "anchor": "loc-121"
+            "anchor": "loc-114"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-122"
+            "anchor": "loc-115"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-153"
+            "anchor": "loc-139"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-154"
+            "anchor": "loc-140"
           }
         ]
       }
