@@ -1,0 +1,482 @@
+{
+  "tree": [
+    {
+      "name": ".github",
+      "path": ".github",
+      "type": "directory",
+      "children": [
+        {
+          "name": "workflows",
+          "path": ".github/workflows",
+          "type": "directory",
+          "children": [
+            {
+              "name": "agent.yml",
+              "path": ".github/workflows/agent.yml",
+              "type": "file"
+            },
+            {
+              "name": "auto-format.yml",
+              "path": ".github/workflows/auto-format.yml",
+              "type": "file"
+            },
+            {
+              "name": "ci.yml",
+              "path": ".github/workflows/ci.yml",
+              "type": "file"
+            },
+            {
+              "name": "deploy-docs.yml",
+              "path": ".github/workflows/deploy-docs.yml",
+              "type": "file"
+            },
+            {
+              "name": "open-pr.yml",
+              "path": ".github/workflows/open-pr.yml",
+              "type": "file"
+            },
+            {
+              "name": "pr-approval-automerge.yml",
+              "path": ".github/workflows/pr-approval-automerge.yml",
+              "type": "file"
+            },
+            {
+              "name": "preview-docs.yml",
+              "path": ".github/workflows/preview-docs.yml",
+              "type": "file"
+            },
+            {
+              "name": "project-automation.yml",
+              "path": ".github/workflows/project-automation.yml",
+              "type": "file"
+            },
+            {
+              "name": "release.yml",
+              "path": ".github/workflows/release.yml",
+              "type": "file"
+            },
+            {
+              "name": "report-failure.yml",
+              "path": ".github/workflows/report-failure.yml",
+              "type": "file"
+            },
+            {
+              "name": "verify-pr-issue.yml",
+              "path": ".github/workflows/verify-pr-issue.yml",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "darkfactory.json",
+          "path": ".github/darkfactory.json",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "bib",
+      "path": "bib",
+      "type": "directory",
+      "children": [
+        {
+          "name": "references.bib",
+          "path": "bib/references.bib",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "fonts",
+      "path": "fonts",
+      "type": "directory",
+      "children": [
+        {
+          "name": "Caladea-Bold.ttf",
+          "path": "fonts/Caladea-Bold.ttf",
+          "type": "file"
+        },
+        {
+          "name": "Caladea-BoldItalic.ttf",
+          "path": "fonts/Caladea-BoldItalic.ttf",
+          "type": "file"
+        },
+        {
+          "name": "Caladea-Italic.ttf",
+          "path": "fonts/Caladea-Italic.ttf",
+          "type": "file"
+        },
+        {
+          "name": "Caladea-Regular.ttf",
+          "path": "fonts/Caladea-Regular.ttf",
+          "type": "file"
+        },
+        {
+          "name": "Carlito-Bold.ttf",
+          "path": "fonts/Carlito-Bold.ttf",
+          "type": "file"
+        },
+        {
+          "name": "Carlito-BoldItalic.ttf",
+          "path": "fonts/Carlito-BoldItalic.ttf",
+          "type": "file"
+        },
+        {
+          "name": "Carlito-Italic.ttf",
+          "path": "fonts/Carlito-Italic.ttf",
+          "type": "file"
+        },
+        {
+          "name": "Carlito-Regular.ttf",
+          "path": "fonts/Carlito-Regular.ttf",
+          "type": "file"
+        },
+        {
+          "name": "README.md",
+          "path": "fonts/README.md",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "img",
+      "path": "img",
+      "type": "directory",
+      "children": [
+        {
+          "name": "components-darkfactory.svg",
+          "path": "img/components-darkfactory.svg",
+          "type": "file"
+        },
+        {
+          "name": "docs-pipeline.svg",
+          "path": "img/docs-pipeline.svg",
+          "type": "file"
+        },
+        {
+          "name": "lifecycle-darkfactory.svg",
+          "path": "img/lifecycle-darkfactory.svg",
+          "type": "file"
+        },
+        {
+          "name": "logo.jpeg",
+          "path": "img/logo.jpeg",
+          "type": "file"
+        },
+        {
+          "name": "react-loop.svg",
+          "path": "img/react-loop.svg",
+          "type": "file"
+        },
+        {
+          "name": "vector-embedding-queen.svg",
+          "path": "img/vector-embedding-queen.svg",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "kapitoly",
+      "path": "kapitoly",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-uvod.typ",
+          "path": "kapitoly/01-uvod.typ",
+          "type": "file"
+        },
+        {
+          "name": "02-teoreticka-cast.typ",
+          "path": "kapitoly/02-teoreticka-cast.typ",
+          "type": "file"
+        },
+        {
+          "name": "03-prakticka-cast.typ",
+          "path": "kapitoly/03-prakticka-cast.typ",
+          "type": "file"
+        },
+        {
+          "name": "04-vysledky.typ",
+          "path": "kapitoly/04-vysledky.typ",
+          "type": "file"
+        },
+        {
+          "name": "05-zaver.typ",
+          "path": "kapitoly/05-zaver.typ",
+          "type": "file"
+        },
+        {
+          "name": "06-prilohy.typ",
+          "path": "kapitoly/06-prilohy.typ",
+          "type": "file"
+        },
+        {
+          "name": "outline.typ",
+          "path": "kapitoly/outline.typ",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "path": "scripts",
+      "type": "directory",
+      "children": [
+        {
+          "name": "build_review.py",
+          "path": "scripts/build_review.py",
+          "type": "file"
+        },
+        {
+          "name": "build_site.py",
+          "path": "scripts/build_site.py",
+          "type": "file"
+        },
+        {
+          "name": "build_web_exports.py",
+          "path": "scripts/build_web_exports.py",
+          "type": "file"
+        },
+        {
+          "name": "check_build.py",
+          "path": "scripts/check_build.py",
+          "type": "file"
+        },
+        {
+          "name": "preview_server.py",
+          "path": "scripts/preview_server.py",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "path": "templates",
+      "type": "directory",
+      "children": [
+        {
+          "name": "gjkt-odborna-prace",
+          "path": "templates/gjkt-odborna-prace",
+          "type": "directory",
+          "children": [
+            {
+              "name": "README.md",
+              "path": "templates/gjkt-odborna-prace/README.md",
+              "type": "file"
+            },
+            {
+              "name": "template.typ",
+              "path": "templates/gjkt-odborna-prace/template.typ",
+              "type": "file"
+            },
+            {
+              "name": "wordometer.typ",
+              "path": "templates/gjkt-odborna-prace/wordometer.typ",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "common.typ",
+          "path": "templates/common.typ",
+          "type": "file"
+        },
+        {
+          "name": "registry.typ",
+          "path": "templates/registry.typ",
+          "type": "file"
+        },
+        {
+          "name": "terms.typ",
+          "path": "templates/terms.typ",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": "web",
+      "path": "web",
+      "type": "directory",
+      "children": [
+        {
+          "name": "src",
+          "path": "web/src",
+          "type": "directory",
+          "children": [
+            {
+              "name": "components",
+              "path": "web/src/components",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "ui",
+                  "path": "web/src/components/ui",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "button.tsx",
+                      "path": "web/src/components/ui/button.tsx",
+                      "type": "file"
+                    },
+                    {
+                      "name": "context-menu.tsx",
+                      "path": "web/src/components/ui/context-menu.tsx",
+                      "type": "file"
+                    },
+                    {
+                      "name": "dropdown-menu.tsx",
+                      "path": "web/src/components/ui/dropdown-menu.tsx",
+                      "type": "file"
+                    },
+                    {
+                      "name": "tooltip.tsx",
+                      "path": "web/src/components/ui/tooltip.tsx",
+                      "type": "file"
+                    }
+                  ]
+                },
+                {
+                  "name": "animated-icon.tsx",
+                  "path": "web/src/components/animated-icon.tsx",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "lib",
+              "path": "web/src/lib",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "utils.ts",
+                  "path": "web/src/lib/utils.ts",
+                  "type": "file"
+                }
+              ]
+            },
+            {
+              "name": "app.tsx",
+              "path": "web/src/app.tsx",
+              "type": "file"
+            },
+            {
+              "name": "compiled-artifact.tsx",
+              "path": "web/src/compiled-artifact.tsx",
+              "type": "file"
+            },
+            {
+              "name": "main.tsx",
+              "path": "web/src/main.tsx",
+              "type": "file"
+            },
+            {
+              "name": "pdf-document.tsx",
+              "path": "web/src/pdf-document.tsx",
+              "type": "file"
+            },
+            {
+              "name": "publication.css",
+              "path": "web/src/publication.css",
+              "type": "file"
+            },
+            {
+              "name": "viewer.css",
+              "path": "web/src/viewer.css",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "components.json",
+          "path": "web/components.json",
+          "type": "file"
+        },
+        {
+          "name": "index.html",
+          "path": "web/index.html",
+          "type": "file"
+        },
+        {
+          "name": "package.json",
+          "path": "web/package.json",
+          "type": "file"
+        },
+        {
+          "name": "tsconfig.json",
+          "path": "web/tsconfig.json",
+          "type": "file"
+        },
+        {
+          "name": "viewer.html",
+          "path": "web/viewer.html",
+          "type": "file"
+        },
+        {
+          "name": "vite.config.ts",
+          "path": "web/vite.config.ts",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "type": "file"
+    },
+    {
+      "name": ".gitmodules",
+      "path": ".gitmodules",
+      "type": "file"
+    },
+    {
+      "name": "AGENTS.md",
+      "path": "AGENTS.md",
+      "type": "file"
+    },
+    {
+      "name": "darkfactory",
+      "path": "darkfactory",
+      "type": "file"
+    },
+    {
+      "name": "main.typ",
+      "path": "main.typ",
+      "type": "file"
+    },
+    {
+      "name": "Makefile",
+      "path": "Makefile",
+      "type": "file"
+    },
+    {
+      "name": "metadata.typ",
+      "path": "metadata.typ",
+      "type": "file"
+    },
+    {
+      "name": "README.md",
+      "path": "README.md",
+      "type": "file"
+    },
+    {
+      "name": "review.typ",
+      "path": "review.typ",
+      "type": "file"
+    },
+    {
+      "name": "thesis.typ",
+      "path": "thesis.typ",
+      "type": "file"
+    },
+    {
+      "name": "typst.toml",
+      "path": "typst.toml",
+      "type": "file"
+    },
+    {
+      "name": "web-publication.typ",
+      "path": "web-publication.typ",
+      "type": "file"
+    }
+  ]
+}

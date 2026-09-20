@@ -1,5 +1,5 @@
 {
-  "commit": "81984a8fff7a0fe33bf2736df2c29d2580648cbd",
+  "commit": "fe72c2459845901da3907fe59500e251e29c8c6b",
   "work_title": "DarkFactory: Umělá inteligence v praxi - Agentické a harnessové inženýrství",
   "default_template": "gjkt-odborna-prace",
   "templates": [
@@ -88,17 +88,19 @@
     }
   ],
   "viewer": {
-    "engine": "React + PDF.js + rendered Markdown + compiled Typst HTML",
+    "engine": "React + PDF.js + Monaco Raw + rendered Markdown + compiled Typst HTML",
     "formats": [
       "pdf",
       "markdown",
       "html"
     ],
     "modes": [
-      "compiled",
-      "concept",
+      "viewer",
+      "edit",
       "raw"
     ],
+    "repo_tree": "repo-tree.json",
+    "repository_url": "https://github.com/marius-patrik/DarkFactory-Paper",
     "pdfjs_version": "6.3.289",
     "entrypoint": "viewer.html",
     "stack": [
@@ -107,7 +109,8 @@
       "shadcn/ui",
       "Motion",
       "Dagre",
-      "PDF.js"
+      "PDF.js",
+      "Monaco Editor"
     ]
   }
 }
