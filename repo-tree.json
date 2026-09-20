@@ -89,6 +89,12 @@
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ"
                     },
                     {
+                      "name": "react-loop-diagram.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/react-loop-diagram.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/react-loop-diagram.typ"
+                    },
+                    {
                       "name": "session-management.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ",
                       "type": "file",

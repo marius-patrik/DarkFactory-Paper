@@ -329,114 +329,119 @@
             "anchor": "loc-82"
           },
           {
-            "title": "4.2.8.1 Agentní sezení",
+            "title": "4.2.8.1 Schéma agentní smyčky ReAct",
             "level": 5,
             "anchor": "loc-84"
           },
           {
-            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "title": "4.2.8.2 Agentní sezení",
             "level": 5,
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.3 Patologie divergence",
+            "title": "4.2.8.3 Inženýrství prováděcí smyčky",
             "level": 5,
             "anchor": "loc-86"
           },
           {
+            "title": "4.2.8.4 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-88"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-105"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-119"
+            "anchor": "loc-120"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-121"
           }
         ],
         "review": [
@@ -766,114 +771,119 @@
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.1 Agentní sezení",
+            "title": "4.2.8.1 Schéma agentní smyčky ReAct",
             "level": 5,
             "anchor": "loc-87"
           },
           {
-            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "title": "4.2.8.2 Agentní sezení",
             "level": 5,
             "anchor": "loc-88"
           },
           {
-            "title": "4.2.8.3 Patologie divergence",
+            "title": "4.2.8.3 Inženýrství prováděcí smyčky",
             "level": 5,
             "anchor": "loc-89"
           },
           {
+            "title": "4.2.8.4 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-112"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-113"
+            "anchor": "loc-114"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-114"
+            "anchor": "loc-115"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-137"
+            "anchor": "loc-138"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-138"
+            "anchor": "loc-139"
           }
         ]
       },
@@ -1205,114 +1215,119 @@
             "anchor": "loc-82"
           },
           {
-            "title": "4.2.8.1 Agentní sezení",
+            "title": "4.2.8.1 Schéma agentní smyčky ReAct",
             "level": 5,
             "anchor": "loc-84"
           },
           {
-            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "title": "4.2.8.2 Agentní sezení",
             "level": 5,
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.3 Patologie divergence",
+            "title": "4.2.8.3 Inženýrství prováděcí smyčky",
             "level": 5,
             "anchor": "loc-86"
           },
           {
+            "title": "4.2.8.4 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-88"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-105"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-119"
+            "anchor": "loc-120"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-121"
           }
         ],
         "review": [
@@ -1642,114 +1657,119 @@
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.1 Agentní sezení",
+            "title": "4.2.8.1 Schéma agentní smyčky ReAct",
             "level": 5,
             "anchor": "loc-87"
           },
           {
-            "title": "4.2.8.2 Inženýrství prováděcí smyčky",
+            "title": "4.2.8.2 Agentní sezení",
             "level": 5,
             "anchor": "loc-88"
           },
           {
-            "title": "4.2.8.3 Patologie divergence",
+            "title": "4.2.8.3 Inženýrství prováděcí smyčky",
             "level": 5,
             "anchor": "loc-89"
           },
           {
+            "title": "4.2.8.4 Patologie divergence",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
             "title": "4.2.9 Vyvolávání nástrojů",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Dovednosti",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Postupné zpřístupňování kontextu",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Skript",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Událostní záchytný bod",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Kontextové inženýrství",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Kompakce kontextu",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Generování rozšířené vyhledáváním",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Degradace kontextu",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Sémantický posun",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Inženýrství pracovních grafů",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Podřízený agent",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Orientovaný acyklický graf",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Výsledky a diskuse",
             "level": 2,
-            "anchor": "loc-112"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Závěr",
             "level": 2,
-            "anchor": "loc-113"
+            "anchor": "loc-114"
           },
           {
             "title": "Seznam zdrojů",
             "level": 2,
-            "anchor": "loc-114"
+            "anchor": "loc-115"
           },
           {
             "title": "Seznam obrázků a tabulek",
             "level": 2,
-            "anchor": "loc-137"
+            "anchor": "loc-138"
           },
           {
             "title": "Seznam příloh",
             "level": 2,
-            "anchor": "loc-138"
+            "anchor": "loc-139"
           }
         ]
       },
@@ -2081,114 +2101,119 @@
             "anchor": "loc-82"
           },
           {
-            "title": "4.2.8.1 Agent Session",
+            "title": "4.2.8.1 ReAct Agent-loop Diagram",
             "level": 5,
             "anchor": "loc-84"
           },
           {
-            "title": "4.2.8.2 Execution-loop Engineering",
+            "title": "4.2.8.2 Agent Session",
             "level": 5,
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.3 Agent Divergence Pathologies",
+            "title": "4.2.8.3 Execution-loop Engineering",
             "level": 5,
             "anchor": "loc-86"
           },
           {
+            "title": "4.2.8.4 Agent Divergence Pathologies",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
             "title": "4.2.9 Tool Calling",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-88"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Skills",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Script",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Event Hook",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Context Engineering",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Context Compaction",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Context Rot",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Semantic Drift",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Subagent",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Results and Discussion",
             "level": 2,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Conclusion",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-105"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-119"
+            "anchor": "loc-120"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-121"
           }
         ],
         "review": [
@@ -2518,114 +2543,119 @@
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.1 Agent Session",
+            "title": "4.2.8.1 ReAct Agent-loop Diagram",
             "level": 5,
             "anchor": "loc-87"
           },
           {
-            "title": "4.2.8.2 Execution-loop Engineering",
+            "title": "4.2.8.2 Agent Session",
             "level": 5,
             "anchor": "loc-88"
           },
           {
-            "title": "4.2.8.3 Agent Divergence Pathologies",
+            "title": "4.2.8.3 Execution-loop Engineering",
             "level": 5,
             "anchor": "loc-89"
           },
           {
+            "title": "4.2.8.4 Agent Divergence Pathologies",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
             "title": "4.2.9 Tool Calling",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Skills",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Script",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Event Hook",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Context Engineering",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Context Compaction",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Context Rot",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Semantic Drift",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Subagent",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Results and Discussion",
             "level": 2,
-            "anchor": "loc-112"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Conclusion",
             "level": 2,
-            "anchor": "loc-113"
+            "anchor": "loc-114"
           },
           {
             "title": "References",
             "level": 2,
-            "anchor": "loc-114"
+            "anchor": "loc-115"
           },
           {
             "title": "List of figures and tables",
             "level": 2,
-            "anchor": "loc-137"
+            "anchor": "loc-138"
           },
           {
             "title": "List of appendices",
             "level": 2,
-            "anchor": "loc-138"
+            "anchor": "loc-139"
           }
         ]
       },
@@ -2957,114 +2987,119 @@
             "anchor": "loc-82"
           },
           {
-            "title": "4.2.8.1 Agent Session (Agentní sezení)",
+            "title": "4.2.8.1 ReAct Agent-loop Diagram (Schéma agentní smyčky ReAct)",
             "level": 5,
             "anchor": "loc-84"
           },
           {
-            "title": "4.2.8.2 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.2.8.2 Agent Session (Agentní sezení)",
             "level": 5,
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.3 Agent Divergence Pathologies (Patologie divergence)",
+            "title": "4.2.8.3 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
             "level": 5,
             "anchor": "loc-86"
           },
           {
+            "title": "4.2.8.4 Agent Divergence Pathologies (Patologie divergence)",
+            "level": 5,
+            "anchor": "loc-87"
+          },
+          {
             "title": "4.2.9 Tool Calling (Vyvolávání nástrojů)",
             "level": 4,
-            "anchor": "loc-87"
+            "anchor": "loc-88"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-88"
+            "anchor": "loc-89"
           },
           {
             "title": "4.2.10 Skills (Dovednosti)",
             "level": 4,
-            "anchor": "loc-90"
+            "anchor": "loc-91"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure (Postupné zpřístupňování kontextu)",
             "level": 5,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.10.2 Script (Skript)",
             "level": 5,
-            "anchor": "loc-92"
+            "anchor": "loc-93"
           },
           {
             "title": "4.2.10.3 Event Hook (Událostní záchytný bod)",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.11 Context Engineering (Kontextové inženýrství)",
             "level": 4,
-            "anchor": "loc-94"
+            "anchor": "loc-95"
           },
           {
             "title": "4.2.11.1 Context Compaction (Kompakce kontextu)",
             "level": 5,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)",
             "level": 5,
-            "anchor": "loc-96"
+            "anchor": "loc-97"
           },
           {
             "title": "4.2.11.3 Context Rot (Degradace kontextu)",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.12.1 Subagent (Podřízený agent)",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
             "level": 5,
-            "anchor": "loc-102"
+            "anchor": "loc-103"
           },
           {
             "title": "5 Results and Discussion (Výsledky a diskuse)",
             "level": 2,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "6 Conclusion (Závěr)",
             "level": 2,
-            "anchor": "loc-104"
+            "anchor": "loc-105"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-119"
+            "anchor": "loc-120"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-120"
+            "anchor": "loc-121"
           }
         ],
         "review": [
@@ -3394,114 +3429,119 @@
             "anchor": "loc-85"
           },
           {
-            "title": "4.2.8.1 Agent Session (Agentní sezení)",
+            "title": "4.2.8.1 ReAct Agent-loop Diagram (Schéma agentní smyčky ReAct)",
             "level": 5,
             "anchor": "loc-87"
           },
           {
-            "title": "4.2.8.2 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
+            "title": "4.2.8.2 Agent Session (Agentní sezení)",
             "level": 5,
             "anchor": "loc-88"
           },
           {
-            "title": "4.2.8.3 Agent Divergence Pathologies (Patologie divergence)",
+            "title": "4.2.8.3 Execution-loop Engineering (Inženýrství prováděcí smyčky)",
             "level": 5,
             "anchor": "loc-89"
           },
           {
+            "title": "4.2.8.4 Agent Divergence Pathologies (Patologie divergence)",
+            "level": 5,
+            "anchor": "loc-90"
+          },
+          {
             "title": "4.2.9 Tool Calling (Vyvolávání nástrojů)",
             "level": 4,
-            "anchor": "loc-91"
+            "anchor": "loc-92"
           },
           {
             "title": "4.2.9.1 Model Context Protocol",
             "level": 5,
-            "anchor": "loc-93"
+            "anchor": "loc-94"
           },
           {
             "title": "4.2.10 Skills (Dovednosti)",
             "level": 4,
-            "anchor": "loc-95"
+            "anchor": "loc-96"
           },
           {
             "title": "4.2.10.1 Progressive Disclosure (Postupné zpřístupňování kontextu)",
             "level": 5,
-            "anchor": "loc-97"
+            "anchor": "loc-98"
           },
           {
             "title": "4.2.10.2 Script (Skript)",
             "level": 5,
-            "anchor": "loc-98"
+            "anchor": "loc-99"
           },
           {
             "title": "4.2.10.3 Event Hook (Událostní záchytný bod)",
             "level": 5,
-            "anchor": "loc-99"
+            "anchor": "loc-100"
           },
           {
             "title": "4.2.11 Context Engineering (Kontextové inženýrství)",
             "level": 4,
-            "anchor": "loc-100"
+            "anchor": "loc-101"
           },
           {
             "title": "4.2.11.1 Context Compaction (Kompakce kontextu)",
             "level": 5,
-            "anchor": "loc-101"
+            "anchor": "loc-102"
           },
           {
             "title": "4.2.11.2 Retrieval-Augmented Generation (Generování rozšířené vyhledáváním)",
             "level": 5,
-            "anchor": "loc-103"
+            "anchor": "loc-104"
           },
           {
             "title": "4.2.11.3 Context Rot (Degradace kontextu)",
             "level": 5,
-            "anchor": "loc-105"
+            "anchor": "loc-106"
           },
           {
             "title": "4.2.11.4 Semantic Drift (Sémantický posun)",
             "level": 5,
-            "anchor": "loc-107"
+            "anchor": "loc-108"
           },
           {
             "title": "4.2.12 Workflow-graph Engineering (Inženýrství pracovních grafů)",
             "level": 4,
-            "anchor": "loc-108"
+            "anchor": "loc-109"
           },
           {
             "title": "4.2.12.1 Subagent (Podřízený agent)",
             "level": 5,
-            "anchor": "loc-110"
+            "anchor": "loc-111"
           },
           {
             "title": "4.2.12.2 Directed Acyclic Graph (Orientovaný acyklický graf)",
             "level": 5,
-            "anchor": "loc-111"
+            "anchor": "loc-112"
           },
           {
             "title": "5 Results and Discussion (Výsledky a diskuse)",
             "level": 2,
-            "anchor": "loc-112"
+            "anchor": "loc-113"
           },
           {
             "title": "6 Conclusion (Závěr)",
             "level": 2,
-            "anchor": "loc-113"
+            "anchor": "loc-114"
           },
           {
             "title": "Seznam zdrojů | References",
             "level": 2,
-            "anchor": "loc-114"
+            "anchor": "loc-115"
           },
           {
             "title": "Seznam obrázků a tabulek | List of figures and tables",
             "level": 2,
-            "anchor": "loc-137"
+            "anchor": "loc-138"
           },
           {
             "title": "Seznam příloh | List of appendices",
             "level": 2,
-            "anchor": "loc-138"
+            "anchor": "loc-139"
           }
         ]
       }
