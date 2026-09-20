@@ -87,6 +87,284 @@
       ]
     },
     {
+      "name": "concepts",
+      "path": "concepts",
+      "type": "directory",
+      "children": [
+        {
+          "name": "01-development-environment",
+          "path": "concepts/01-development-environment",
+          "type": "directory",
+          "children": [
+            {
+              "name": "branch-protection.typ",
+              "path": "concepts/01-development-environment/branch-protection.typ",
+              "type": "file"
+            },
+            {
+              "name": "branch.typ",
+              "path": "concepts/01-development-environment/branch.typ",
+              "type": "file"
+            },
+            {
+              "name": "container.typ",
+              "path": "concepts/01-development-environment/container.typ",
+              "type": "file"
+            },
+            {
+              "name": "continuous-integration.typ",
+              "path": "concepts/01-development-environment/continuous-integration.typ",
+              "type": "file"
+            },
+            {
+              "name": "git.typ",
+              "path": "concepts/01-development-environment/git.typ",
+              "type": "file"
+            },
+            {
+              "name": "github-actions.typ",
+              "path": "concepts/01-development-environment/github-actions.typ",
+              "type": "file"
+            },
+            {
+              "name": "github.typ",
+              "path": "concepts/01-development-environment/github.typ",
+              "type": "file"
+            },
+            {
+              "name": "index.typ",
+              "path": "concepts/01-development-environment/index.typ",
+              "type": "file"
+            },
+            {
+              "name": "merge.typ",
+              "path": "concepts/01-development-environment/merge.typ",
+              "type": "file"
+            },
+            {
+              "name": "planning.typ",
+              "path": "concepts/01-development-environment/planning.typ",
+              "type": "file"
+            },
+            {
+              "name": "pull-request.typ",
+              "path": "concepts/01-development-environment/pull-request.typ",
+              "type": "file"
+            },
+            {
+              "name": "required-checks.typ",
+              "path": "concepts/01-development-environment/required-checks.typ",
+              "type": "file"
+            },
+            {
+              "name": "software-engineering.typ",
+              "path": "concepts/01-development-environment/software-engineering.typ",
+              "type": "file"
+            },
+            {
+              "name": "squash.typ",
+              "path": "concepts/01-development-environment/squash.typ",
+              "type": "file"
+            },
+            {
+              "name": "version-control.typ",
+              "path": "concepts/01-development-environment/version-control.typ",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "02-language-models",
+          "path": "concepts/02-language-models",
+          "type": "directory",
+          "children": [
+            {
+              "name": "agent.typ",
+              "path": "concepts/02-language-models/agent.typ",
+              "type": "file"
+            },
+            {
+              "name": "chatbot.typ",
+              "path": "concepts/02-language-models/chatbot.typ",
+              "type": "file"
+            },
+            {
+              "name": "compaction.typ",
+              "path": "concepts/02-language-models/compaction.typ",
+              "type": "file"
+            },
+            {
+              "name": "context-rot.typ",
+              "path": "concepts/02-language-models/context-rot.typ",
+              "type": "file"
+            },
+            {
+              "name": "context-window.typ",
+              "path": "concepts/02-language-models/context-window.typ",
+              "type": "file"
+            },
+            {
+              "name": "embedding.typ",
+              "path": "concepts/02-language-models/embedding.typ",
+              "type": "file"
+            },
+            {
+              "name": "index.typ",
+              "path": "concepts/02-language-models/index.typ",
+              "type": "file"
+            },
+            {
+              "name": "kv-cache.typ",
+              "path": "concepts/02-language-models/kv-cache.typ",
+              "type": "file"
+            },
+            {
+              "name": "language-model.typ",
+              "path": "concepts/02-language-models/language-model.typ",
+              "type": "file"
+            },
+            {
+              "name": "rag.typ",
+              "path": "concepts/02-language-models/rag.typ",
+              "type": "file"
+            },
+            {
+              "name": "semantic-drift.typ",
+              "path": "concepts/02-language-models/semantic-drift.typ",
+              "type": "file"
+            },
+            {
+              "name": "token.typ",
+              "path": "concepts/02-language-models/token.typ",
+              "type": "file"
+            },
+            {
+              "name": "tokenizer.typ",
+              "path": "concepts/02-language-models/tokenizer.typ",
+              "type": "file"
+            },
+            {
+              "name": "transformer.typ",
+              "path": "concepts/02-language-models/transformer.typ",
+              "type": "file"
+            },
+            {
+              "name": "turn.typ",
+              "path": "concepts/02-language-models/turn.typ",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "03-agentic-engineering",
+          "path": "concepts/03-agentic-engineering",
+          "type": "directory",
+          "children": [
+            {
+              "name": "agent-loop.typ",
+              "path": "concepts/03-agentic-engineering/agent-loop.typ",
+              "type": "file"
+            },
+            {
+              "name": "agentic-engineering.typ",
+              "path": "concepts/03-agentic-engineering/agentic-engineering.typ",
+              "type": "file"
+            },
+            {
+              "name": "context-engineering.typ",
+              "path": "concepts/03-agentic-engineering/context-engineering.typ",
+              "type": "file"
+            },
+            {
+              "name": "dag.typ",
+              "path": "concepts/03-agentic-engineering/dag.typ",
+              "type": "file"
+            },
+            {
+              "name": "divergence.typ",
+              "path": "concepts/03-agentic-engineering/divergence.typ",
+              "type": "file"
+            },
+            {
+              "name": "graph-engineering.typ",
+              "path": "concepts/03-agentic-engineering/graph-engineering.typ",
+              "type": "file"
+            },
+            {
+              "name": "harness.typ",
+              "path": "concepts/03-agentic-engineering/harness.typ",
+              "type": "file"
+            },
+            {
+              "name": "hook.typ",
+              "path": "concepts/03-agentic-engineering/hook.typ",
+              "type": "file"
+            },
+            {
+              "name": "human-in-the-loop.typ",
+              "path": "concepts/03-agentic-engineering/human-in-the-loop.typ",
+              "type": "file"
+            },
+            {
+              "name": "index.typ",
+              "path": "concepts/03-agentic-engineering/index.typ",
+              "type": "file"
+            },
+            {
+              "name": "loop-engineering.typ",
+              "path": "concepts/03-agentic-engineering/loop-engineering.typ",
+              "type": "file"
+            },
+            {
+              "name": "mcp.typ",
+              "path": "concepts/03-agentic-engineering/mcp.typ",
+              "type": "file"
+            },
+            {
+              "name": "plugins.typ",
+              "path": "concepts/03-agentic-engineering/plugins.typ",
+              "type": "file"
+            },
+            {
+              "name": "prompt-engineering.typ",
+              "path": "concepts/03-agentic-engineering/prompt-engineering.typ",
+              "type": "file"
+            },
+            {
+              "name": "sandbox.typ",
+              "path": "concepts/03-agentic-engineering/sandbox.typ",
+              "type": "file"
+            },
+            {
+              "name": "script.typ",
+              "path": "concepts/03-agentic-engineering/script.typ",
+              "type": "file"
+            },
+            {
+              "name": "skills.typ",
+              "path": "concepts/03-agentic-engineering/skills.typ",
+              "type": "file"
+            },
+            {
+              "name": "tool-calling.typ",
+              "path": "concepts/03-agentic-engineering/tool-calling.typ",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "path": "concepts/README.md",
+          "type": "file"
+        },
+        {
+          "name": "schema.typ",
+          "path": "concepts/schema.typ",
+          "type": "file"
+        }
+      ]
+    },
+    {
       "name": "fonts",
       "path": "fonts",
       "type": "directory",
