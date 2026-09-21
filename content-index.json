@@ -183,32 +183,37 @@
           "anchor": "concept-harness_engineering"
         },
         {
-          "title": "2.3.2 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
+          "title": "2.3.2 Spec-Driven Development (Vývoj řízený specifikací)",
+          "level": 4,
+          "anchor": "concept-spec_driven_development"
+        },
+        {
+          "title": "2.3.3 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
           "level": 4,
           "anchor": "concept-guardrail"
         },
         {
-          "title": "2.3.3 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
+          "title": "2.3.4 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
           "level": 4,
           "anchor": "concept-human_in_the_loop"
         },
         {
-          "title": "2.3.4 Sandbox (Izolované běhové prostředí)",
+          "title": "2.3.5 Sandbox (Izolované běhové prostředí)",
           "level": 4,
           "anchor": "concept-sandbox"
         },
         {
-          "title": "2.3.5 Vibe Coding",
+          "title": "2.3.6 Vibe Coding",
           "level": 4,
           "anchor": "concept-vibe_coding"
         },
         {
-          "title": "2.3.6 Slop",
+          "title": "2.3.7 Slop",
           "level": 4,
           "anchor": "concept-slop"
         },
         {
-          "title": "2.3.7 Promptové inženýrství",
+          "title": "2.3.8 Promptové inženýrství",
           "level": 4,
           "anchor": "concept-prompt_engineering"
         },
@@ -218,12 +223,12 @@
           "anchor": "concept-system_prompt"
         },
         {
-          "title": "2.3.8 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
+          "title": "2.3.9 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
           "level": 4,
           "anchor": "concept-loop_engineering"
         },
         {
-          "title": "2.3.9 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "title": "2.3.10 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
           "level": 4,
           "anchor": "concept-graph_engineering"
         },
@@ -233,7 +238,7 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.3.10 Kontextové inženýrství",
+          "title": "2.3.11 Kontextové inženýrství",
           "level": 4,
           "anchor": "concept-context_engineering"
         },
@@ -263,7 +268,7 @@
           "anchor": "concept-semantic_drift"
         },
         {
-          "title": "2.3.11 Skills (Dovednosti)",
+          "title": "2.3.12 Skills (Dovednosti)",
           "level": 4,
           "anchor": "concept-skills"
         },
@@ -360,17 +365,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-37"
+          "anchor": "loc-40"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-64"
+          "anchor": "loc-69"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-65"
+          "anchor": "loc-70"
         }
       ],
       "review": [
@@ -555,32 +560,37 @@
           "anchor": "concept-harness_engineering"
         },
         {
-          "title": "2.3.2 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
+          "title": "2.3.2 Spec-Driven Development (Vývoj řízený specifikací)",
+          "level": 4,
+          "anchor": "concept-spec_driven_development"
+        },
+        {
+          "title": "2.3.3 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
           "level": 4,
           "anchor": "concept-guardrail"
         },
         {
-          "title": "2.3.3 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
+          "title": "2.3.4 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
           "level": 4,
           "anchor": "concept-human_in_the_loop"
         },
         {
-          "title": "2.3.4 Sandbox (Izolované běhové prostředí)",
+          "title": "2.3.5 Sandbox (Izolované běhové prostředí)",
           "level": 4,
           "anchor": "concept-sandbox"
         },
         {
-          "title": "2.3.5 Vibe Coding",
+          "title": "2.3.6 Vibe Coding",
           "level": 4,
           "anchor": "concept-vibe_coding"
         },
         {
-          "title": "2.3.6 Slop",
+          "title": "2.3.7 Slop",
           "level": 4,
           "anchor": "concept-slop"
         },
         {
-          "title": "2.3.7 Promptové inženýrství",
+          "title": "2.3.8 Promptové inženýrství",
           "level": 4,
           "anchor": "concept-prompt_engineering"
         },
@@ -590,12 +600,12 @@
           "anchor": "concept-system_prompt"
         },
         {
-          "title": "2.3.8 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
+          "title": "2.3.9 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
           "level": 4,
           "anchor": "concept-loop_engineering"
         },
         {
-          "title": "2.3.9 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "title": "2.3.10 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
           "level": 4,
           "anchor": "concept-graph_engineering"
         },
@@ -605,7 +615,7 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.3.10 Kontextové inženýrství",
+          "title": "2.3.11 Kontextové inženýrství",
           "level": 4,
           "anchor": "concept-context_engineering"
         },
@@ -635,7 +645,7 @@
           "anchor": "concept-semantic_drift"
         },
         {
-          "title": "2.3.11 Skills (Dovednosti)",
+          "title": "2.3.12 Skills (Dovednosti)",
           "level": 4,
           "anchor": "concept-skills"
         },
@@ -732,17 +742,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-37"
+          "anchor": "loc-40"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-64"
+          "anchor": "loc-69"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-65"
+          "anchor": "loc-70"
         }
       ]
     }

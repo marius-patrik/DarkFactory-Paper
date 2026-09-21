@@ -244,6 +244,19 @@
               ]
             },
             {
+              "name": "examples",
+              "path": "DarkFactory/agentic-engineering/examples",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "karpathy-vibe-coding-tweet.typ",
+                  "path": "DarkFactory/agentic-engineering/examples/karpathy-vibe-coding-tweet.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/examples/karpathy-vibe-coding-tweet.typ"
+                }
+              ]
+            },
+            {
               "name": "graph-engineering",
               "path": "DarkFactory/agentic-engineering/graph-engineering",
               "type": "directory",
@@ -390,6 +403,12 @@
               "path": "DarkFactory/agentic-engineering/slop.typ",
               "type": "file",
               "source": "repository/DarkFactory/agentic-engineering/slop.typ"
+            },
+            {
+              "name": "spec-driven-development.typ",
+              "path": "DarkFactory/agentic-engineering/spec-driven-development.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/spec-driven-development.typ"
             },
             {
               "name": "vibe-coding.typ",
