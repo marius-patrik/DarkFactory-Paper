@@ -701,6 +701,11 @@
           "title": "Seznam příloh",
           "level": 2,
           "anchor": "loc-146"
+        },
+        {
+          "title": "A Encyklopedie a rejstřík pojmů",
+          "level": 2,
+          "anchor": "section-concept_encyclopedia"
         }
       ],
       "review": [
@@ -1403,6 +1408,11 @@
           "title": "Seznam příloh",
           "level": 2,
           "anchor": "loc-146"
+        },
+        {
+          "title": "A Encyklopedie a rejstřík pojmů",
+          "level": 2,
+          "anchor": "section-concept_encyclopedia"
         }
       ]
     }

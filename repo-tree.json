@@ -591,6 +591,25 @@
               "type": "directory",
               "children": [
                 {
+                  "name": "encyclopedia",
+                  "path": "DarkFactory/manuscript/appendices/encyclopedia",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "encyclopedia.typ",
+                      "path": "DarkFactory/manuscript/appendices/encyclopedia/encyclopedia.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/appendices/encyclopedia/encyclopedia.typ"
+                    },
+                    {
+                      "name": "index.typ",
+                      "path": "DarkFactory/manuscript/appendices/encyclopedia/index.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/appendices/encyclopedia/index.typ"
+                    }
+                  ]
+                },
+                {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/appendices/index.typ",
                   "type": "file",

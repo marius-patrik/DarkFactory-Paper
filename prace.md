@@ -159,6 +159,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
 9. [Seznam zdrojů](#loc-77)
 10. [Seznam obrázků a tabulek](#loc-145)
 11. [Seznam příloh](#loc-146)
+12. [A Encyklopedie a rejstřík pojmů](#section-concept_encyclopedia)
 
 ## 1 Úvod
 
@@ -1088,3 +1089,57 @@ Evaluace však zatím neobsahuje jeden uzavřený živý df-only průchod celým
 6. [Obrázek 6: Smyčka ReAct: model zvolí akci, harness ji provede a výsledek vrátí modelu.](#fig-react-loop)
 
 ## Seznam příloh
+
+1. [A Encyklopedie a rejstřík pojmů](#section-concept_encyclopedia)
+
+## A Encyklopedie a rejstřík pojmů
+
+Abecední přehled klíčových pojmů použitých v práci. Názvy a definice jsou odvozeny přímo z kanonických konceptů, takže rejstřík nevytváří paralelní terminologický zdroj.
+
+[**Agent Harness (Agentní harness)**](#concept-harness)
+
+Běhová a orchestrační vrstva, která propojuje jazykový model se stavem, nástroji a prostředím. <sup>(<a href="#loc-105" role="doc-biblioref">28</a>)</sup>
+
+[**Agent Loop (Smyčka ReAct) [ReAct Loop]**](#concept-agent_loop)
+
+Iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace. <sup>(<a href="#loc-108" role="doc-biblioref">31</a>)</sup>
+
+[**Agentic Engineering (Agentické inženýrství)**](#concept-agentic_engineering)
+
+V této práci zastřešuje návrh systémů, které kolem jazykového modelu zajišťují nástroje, kontext, stav, provádění a kontrolní mechanismy.
+
+[**CI (Průběžná integrace) [Continuous Integration]**](#concept-continuous_integration)
+
+Vývojová praxe, při níž se změny průběžně integrují a automaticky ověřují sestavením, testy a dalšími kontrolami. <sup>(<a href="#loc-93" role="doc-biblioref">16</a>)</sup>
+
+[**Context Engineering (Kontextové inženýrství)**](#concept-context_engineering)
+
+Systematický výběr a správa informací, které jsou modelu zpřístupněny v aktivním kontextu během inference. <sup>(<a href="#loc-121" role="doc-biblioref">44</a>)</sup>
+
+[**Guardrail (Deterministický mantinel) [Deterministic Guardrail]**](#concept-guardrail)
+
+V této práci označuje Guardrail programově vynucenou kontrolu, která může před pokračováním běhu validovat nebo zablokovat vstup, výstup či použití nástroje. <sup>(<a href="#loc-126" role="doc-biblioref">49</a>)</sup>
+
+[**HITL (Zapojení člověka do smyčky) [Human-in-the-loop]**](#concept-human_in_the_loop)
+
+Uspořádání automatizovaného procesu, ve kterém člověk v určených bodech poskytuje zpětnou vazbu, schválení nebo rozhodnutí. <sup>(<a href="#loc-127" role="doc-biblioref">50</a>)</sup>
+
+[**LLM (Jazykový model) [Large Language Model]**](#concept-language_model)
+
+Velký neuronový jazykový model trénovaný na rozsáhlých textových datech pro predikci a generování posloupností tokenů. <sup>(<a href="#loc-97" role="doc-biblioref">20</a>)</sup>
+
+[**Prompt Engineering (Promptové inženýrství)**](#concept-prompt_engineering)
+
+Systematický návrh instrukcí, příkladů a jejich struktury s cílem ovlivnit chování jazykového modelu. <sup>(<a href="#loc-120" role="doc-biblioref">43</a>)</sup>
+
+[**Sandbox (Izolované běhové prostředí)**](#concept-sandbox)
+
+Oddělené běhové prostředí, ve kterém agent může spouštět kód nebo měnit pracovní soubory bez přímého přístupu ke všem prostředkům hostitelského systému. <sup>(<a href="#loc-105" role="doc-biblioref">28</a>)</sup>
+
+[**Tools (Nástroje)**](#concept-tools)
+
+Rozhraní, kterým agent vyvolává operace mimo samotnou textovou inferenci, například čtení dat, volání API nebo změnu stavu systému. <sup>(<a href="#loc-98" role="doc-biblioref">21</a>)</sup>
+
+[**Version Control (Správa verzí)**](#concept-version_control)
+
+Systém pro zaznamenávání historie změn souborů a práci s oddělenými liniemi vývoje. <sup>(<a href="#loc-90" role="doc-biblioref">13</a>)</sup>
