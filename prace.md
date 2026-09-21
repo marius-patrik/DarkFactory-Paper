@@ -103,9 +103,7 @@ Motivací práce je ukázat, jaké úlohy dokážou současné agentní systémy
 
 Generativní AI se během několika let rozšířila do masového používání. CPA.RIP uvádí odhad Gradually AI, podle kterého generativní AI používá přibližně 2,4 miliardy lidí, tedy 29 % světové populace. Článek zároveň upozorňuje, že jde o přibližný odhad založený na datech DataReportal a dalších zdrojích. Současně se rozšiřují systémy, které plánují více kroků, pracují se soubory a nástroji, spouštějí příkazy a testy a vykonávají delší úlohy. <sup><span id="loc-5">(</span><a href="#loc-38" role="doc-biblioref">1</a>)</sup>
 
-V softwarovém inženýrství tento posun reprezentují například Codex a Claude Code. Jejich oficiální popisy uvádějí práci nad skutečnými repozitáři, úpravy souborů, spouštění testů a další činnosti přesahující jednorázové generování kódu. <sup><span id="loc-6">(</span><a href="#loc-39" role="doc-biblioref">2</a>)</sup> <sup><span id="loc-7">(</span><a href="#loc-40" role="doc-biblioref">3</a>)</sup>
-
-Práce proto sleduje praktické využití těchto systémů při vývoji softwaru: jak jim zpřístupnit repozitář, nástroje a ověřování tak, aby dokázaly samostatně provádět užitečnou část vývojové práce a člověk si zachoval kontrolu nad důležitými rozhodnutími.
+V softwarovém inženýrství tento posun reprezentují například Codex a Claude Code, které pracují nad repozitáři, upravují soubory a spouštějí testy. <sup><span id="loc-6">(</span><a href="#loc-39" role="doc-biblioref">2</a>)</sup> <sup><span id="loc-7">(</span><a href="#loc-40" role="doc-biblioref">3</a>)</sup>
 
 Generative AI Usage Worldwide (Používání generativní AI ve světě) . Grafický podklad znázorňuje odhad celosvětového používání generativní AI pomocí bodové reprezentace světové populace.
 
@@ -117,15 +115,15 @@ CPA.RIP dne 14. září 2026 publikoval odhad Gradually AI, podle kterého gener
 
 ### 1.2 Cíl práce a výzkumné otázky
 
-Cíl práce a výzkumné otázky určují, co má návrh DarkFactory řešit a podle čeho bude posuzován.
+Tato část stanovuje hlavní cíl, dílčí cíle a výzkumné otázky práce.
 
-Hlavní cíl vymezuje výsledný návrh, dílčí cíle jeho oblasti a výzkumné otázky hodnoticí problémy.
+Společně vymezují rozsah návrhu DarkFactory a rámec jeho evaluace.
 
 #### 1.2.1 Hlavní cíl
 
 Zjistit, jak lze současnou agentní AI účinně používat při vývoji softwaru, a navrhnout architekturu agent harnessu, která podporuje vysokou míru autonomie při zachování lidského dohledu v důležitých rozhodnutích.
 
-Cíl spojuje popis současných agentních postupů s návrhem konkrétního systému DarkFactory. Výsledná architektura má podporovat samostatné provádění vývojových úloh a současně zachovat jasná místa pro lidskou kontrolu.
+DarkFactory slouží jako konkrétní návrh této architektury.
 
 #### 1.2.2 Dílčí cíle
 
@@ -142,7 +140,7 @@ Dílčí cíle pokrývají vývojové prostředí, kontext, provádění a lidsk
 - O2: Jaké mechanismy harnessu pomáhají rozpoznat a zastavit neproduktivní opakování, oscilaci nebo zacyklení během delší úlohy?
 - O3: Jak spravovat pracovní kontext agenta tak, aby při delších úlohách neztrácel důležité požadavky a stav projektu?
 
-Otázky soustřeďují hodnocení na praktickou míru samostatnosti, spolehlivost prováděcí smyčky a zachování potřebného pracovního kontextu.
+O1–O3 pokrývají autonomii, stabilitu prováděcí smyčky a správu pracovního kontextu.
 
 ### 1.3 Metodika práce
 
@@ -170,11 +168,11 @@ Jazykový model, chatbot a agent jsou odlišné systémové vrstvy.
 
 Chatbot je aplikační systém, který zpřístupňuje jazykový model prostřednictvím konverzační interakce.
 
-Na rozdíl od samotného modelu může chatbot přidávat historii konverzace, multimodální vstupy, práci se soubory, webové vyhledávání nebo další nástroje. Tyto funkce patří aplikační vrstvě, nikoli modelu samotnému.
+Chatbot může k modelu přidat historii konverzace, multimodální vstupy, soubory, webové vyhledávání a další nástroje; tyto funkce patří aplikační vrstvě.
 
 ChatGPT . ChatGPT je konverzační produkt OpenAI zpřístupňující modely prostřednictvím chatového a aplikačního rozhraní.
 
-Jako příklad chatbota odděluje modelovou vrstvu od uživatelského produktu: rozhraní přidává práci se soubory, obrazem, webem a dalšími nástroji, které samotný model neposkytuje.
+Rozhraní ChatGPT přidává k modelové vrstvě práci se soubory, obrazem, webem a dalšími nástroji.
 
 ChatGPT Web Interface (Webové rozhraní ChatGPT) . Snímek úplného webového rozhraní ChatGPT v prohlížeči.
 
@@ -190,7 +188,7 @@ Snímek ukazuje celé rozhraní chatgpt.com včetně postranního panelu, aktivn
 
 Agent je softwarový systém řízený jazykovým modelem a vybavený nástroji, který samostatně vnímá stav prostředí a provádí vícekrokové akce směřující k zadanému cíli.
 
-Rozdíl mezi [***Chatbot***](#concept-chatbot)<sup>*</sup> a agentem nespočívá nutně v použitém jazykovém modelu, ale v architektuře jeho zapojení do prostředí. Agent může číst stav repozitáře, provádět změny, spouštět nástroje a podle jejich výsledků pokračovat v další iteraci. Tuto schopnost zajišťuje nadřazená prováděcí a nástrojová vrstva, nikoli samotný model.
+Oproti [***Chatbot***](#concept-chatbot)<sup>*</sup> může agent pozorovat stav prostředí, volat nástroje a pokračovat podle jejich výsledků. Tyto schopnosti poskytuje harness, nikoli samotný model.
 
 #### 2.1.3 LLM (Jazykový model) [Large Language Model]
 
@@ -202,7 +200,7 @@ Model při generování odhaduje další token z aktivního kontextu. Práci se 
 
 Transformer je architektura neuronových sítí založená na mechanismu pozornosti, která modeluje vztahy mezi prvky sekvence a tvoří základ většiny současných velkých jazykových modelů.
 
-Současné velké jazykové modely jsou typicky realizovány transformerovou architekturou. Pro generování textu se často používá dekodérové uspořádání, které nad dosavadní sekvencí vytváří reprezentace potřebné k odhadu následujícího tokenu.
+Při generování textu se často používá dekodérové uspořádání, které z dosavadní sekvence vytváří reprezentace pro odhad následujícího tokenu.
 
 ##### 2.1.3.2 Tokenizér
 
@@ -244,7 +242,7 @@ Při každém novém tokenu lze znovu použít klíče a hodnoty vytvořené pro
 
 Tah je jedna diskrétní jednotka interakce v konverzačním nebo agentním protokolu, například zpráva uživatele, výstup modelu nebo samostatně evidovaný výsledek nástroje.
 
-Agentní běh skládá sekvenci tahů, v níž se střídají vstupy prostředí, modelová rozhodnutí a výsledky provedených akcí. Historie těchto tahů tvoří část pracovního kontextu a harness rozhoduje, které z nich zůstávají modelu dostupné v dalších iteracích.
+Historie tahů tvoří část pracovního kontextu; harness rozhoduje, které vstupy, modelová rozhodnutí a výsledky nástrojů zůstanou dostupné v dalších iteracích.
 
 ### 2.2 Agentické inženýrství
 
@@ -284,7 +282,7 @@ Harness spravuje pracovní kontext, nástroje, stav úlohy, výsledky akcí a po
 
 Codex . Codex je agentní vývojový systém OpenAI určený pro samostatné plnění softwarově-inženýrských úloh.
 
-Desktopová aplikace umožňuje řídit více agentů paralelně, oddělovat jejich práci do vláken a worktree, kontrolovat diffy a delegovat dlouhotrvající úlohy. Tím představuje praktický příklad harnessu, který rozšiřuje model o stav, nástroje, izolaci a pracovní postup.
+Desktopová aplikace umožňuje řídit více agentů paralelně, oddělovat jejich práci do vláken a worktree, kontrolovat diffy a delegovat dlouhotrvající úlohy.
 
 Codex App Interface (Rozhraní aplikace Codex) . Oficiální produktový snímek aplikace Codex.
 
@@ -298,7 +296,7 @@ Snímek dokumentuje specializované rozhraní pro práci s agentními úlohami a
 
 Claude Code . Claude Code je agentní vývojové prostředí společnosti Anthropic dostupné v terminálu, IDE, na webu a v desktopové aplikaci.
 
-Systém může plánovat změny, číst a zapisovat soubory, spouštět příkazy a testy, používat Git a MCP a vytvářet pull requesty. Tyto schopnosti vznikají kombinací modelu s nástrojovou a stavovou vrstvou harnessu.
+Claude Code může plánovat změny, upravovat soubory, spouštět příkazy a testy, používat Git a MCP a vytvářet pull requesty.
 
 Claude Code Interface (Rozhraní Claude Code) . Oficiální snímek rozhraní Claude Code při práci se zdrojovým kódem.
 
@@ -312,7 +310,7 @@ Snímek zobrazuje čtení souboru, zápis změny a průběžný stav agentní ú
 
 Claude Desktop (Aplikace Claude pro desktop) [Claude Desktop App] . Claude Desktop je desktopová aplikační vrstva nad modely Claude, která propojuje konverzaci s lokálními soubory, aplikacemi, webem a dalšími schopnostmi.
 
-Anthropic popisuje desktopovou aplikaci jako prostředí, v němž může Claude se souhlasem uživatele přímo číst, upravovat a ukládat soubory a pracovat s dalšími aplikacemi. Jde proto o širší příklad harnessu než samotný chatbot.
+Se souhlasem uživatele může aplikace číst, upravovat a ukládat soubory a pracovat s dalšími aplikacemi.
 
 Claude Desktop Interface (Rozhraní aplikace Claude) . Oficiální snímek aplikačního rozhraní Claude s pracovním artefaktem.
 
@@ -346,7 +344,7 @@ V DarkFactory zůstávají člověku zejména významná nebo nevratná rozhodnu
 
 Plugin je programové rozšíření běžící přímo v prostředí harnessu, které může doplnit exekuční jádro o systémové adaptéry, ovladače nástrojů nebo deterministické záchytné body.
 
-Plugin rozšiřuje běhovou vrstvu harnessu programovou komponentou; pluginové systémy jsou příkladem dynamické kompozice komponent. <sup><span id="loc-23">(</span><a href="#loc-50" role="doc-biblioref">13</a>)</sup>
+Na rozdíl od instrukční dovednosti mění plugin programové chování běhové vrstvy harnessu. <sup><span id="loc-23">(</span><a href="#loc-50" role="doc-biblioref">13</a>)</sup>
 
 ##### 2.2.4.5 Agent Loop (Smyčka ReAct) [ReAct Loop]
 
@@ -362,13 +360,13 @@ Ve vzoru ReAct se cyklus opakuje jako rozhodnutí → volání nástroje → poz
 
 Agentní sezení je ohraničený běh agenta se sdíleným stavem, systémovými instrukcemi, pracovním kontextem, historií tahů a provozními rozpočty.
 
-Správa agentního sezení zahrnuje sestavení systémového promptu, načtení relevantního kontextu repozitáře, průběžné uchování stavu a sledování rozpočtů, například spotřeby tokenů nebo počtu iterací.
+Sezení vymezuje stav jednoho běhu; harness v něm spravuje pracovní kontext a sleduje rozpočty, například spotřebu tokenů nebo počet iterací.
 
 ###### 2.2.4.5.2 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]
 
 Inženýrství prováděcí smyčky je návrh a řízení stavových přechodů, podmínek ukončení, rozpočtů, opakování, eskalací a vazby mezi rozhodováním modelu a nástroji.
 
-Inženýrství prováděcí smyčky odděluje provozní řízení od samotného modelového rozhodování. Patří sem stavové přechody, podmínky ukončení, rozpočty běhu, opakování po selhání, detekce uvíznutí a pravidla pro eskalaci nebo lidské schválení.
+Harness tak může nezávisle na modelu omezit počet iterací, ukončit neproduktivní běh, opakovat selhaný krok nebo vyžádat lidské schválení.
 
 ###### 2.2.4.5.3 Patologie divergence
 
@@ -384,13 +382,11 @@ Nástroj zpřístupňuje modelu operaci, kterou samotná textová inference nepr
 
 JSON Schema Tool Calling (Vyvolávání nástrojů s JSON Schema) . JSON Schema Tool Calling popisuje parametry nástroje formálním JSON Schema a před provedením ověřuje, že vygenerované argumenty odpovídají očekávané struktuře.
 
-JSON Schema je standardní formát pro popis struktury a validaci JSON dat. Při vyvolávání nástrojů tak může harness přesně určit povinná pole, datové typy a další omezení vstupu. Moderní rozhraní modelů mohou navíc generování argumentů přímo omezit tak, aby odpovídalo dodanému schématu. <sup><span id="loc-26">(</span><a href="#loc-53" role="doc-biblioref">16</a>)</sup> <sup><span id="loc-27">(</span><a href="#loc-54" role="doc-biblioref">17</a>)</sup>
+Schéma určuje povinná pole, datové typy a další omezení vstupu; rozhraní modelu může zároveň omezit generování argumentů tak, aby schématu odpovídaly. <sup><span id="loc-26">(</span><a href="#loc-53" role="doc-biblioref">16</a>)</sup> <sup><span id="loc-27">(</span><a href="#loc-54" role="doc-biblioref">17</a>)</sup>
 
 Code Execution (Spouštění kódu) . Spouštění kódu je nástrojová schopnost, která agentovi umožňuje vykonat program nebo příkaz a získat jeho skutečný výstup.
 
-V současných agentních systémech se tato schopnost typicky poskytuje přes řízené shellové nebo programové prostředí. Například dokumentace Anthropic popisuje provádění Bash a Python operací v sandboxovaném kontejneru včetně práce se soubory. <sup><span id="loc-28">(</span><a href="#loc-55" role="doc-biblioref">18</a>)</sup>
-
-Pro vývoj softwaru umožňuje Code Execution spouštět testy, formátovače, buildy, diagnostické příkazy a další ověřovací kroky místo toho, aby model jejich výsledek pouze odhadoval.
+Při vývoji softwaru umožňuje spouštět testy, buildy, formátovače a diagnostické příkazy v řízeném prostředí místo odhadování jejich výsledku modelem. <sup><span id="loc-28">(</span><a href="#loc-55" role="doc-biblioref">18</a>)</sup>
 
 ###### 2.2.4.6.1 MCP (Model Context Protocol)
 
@@ -443,13 +439,13 @@ Specifikace dovoluje vedle `SKILL.md` také volitelné adresáře například pr
 
 Skript je soubor nebo posloupnost příkazů určených k automatizovanému vykonání interpretem, shellem nebo jiným běhovým prostředím.
 
-Skript poskytuje deterministickou exekuci pro úlohy, u nichž není vhodné znovu rozhodovat pomocí jazykového modelu, například pro opakovatelné transformace, validace nebo obslužné kroky dovednosti.
+V harnessu se skript používá pro opakovatelné transformace, validace a další kroky, které nemají vyžadovat nové rozhodnutí modelu.
 
 ###### 2.2.4.7.2 Hook (Událostní záchytný bod) [Event Hook]
 
 Hook je definovaný bod životního cyklu nebo události, na který lze navázat vlastní deterministickou logiku před, po nebo místo standardního chování systému.
 
-Hook váže deterministickou logiku na konkrétní událost životního cyklu harnessu, například před spuštěním nástroje, po dokončení kroku nebo při změně stavu běhu.
+Hook se používá například před spuštěním nástroje, po dokončení kroku nebo při změně stavu běhu.
 
 ##### 2.2.4.8 Kontextové inženýrství
 
@@ -485,15 +481,13 @@ Každá další komprese může převzít nepřesnost z předchozí verze jako f
 
 Inženýrství pracovních grafů je návrh agentních nebo automatizačních workflow jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky.
 
-Monolitická agentní smyčka selhává při řešení komplexních, vícefázových úloh. Pro spolehlivé škálování se v moderních systémech uplatňuje hierarchická dělba práce a formalizace procesu do podoby grafu.
-
-Škálování je dále rozloženo na dva samostatné koncepty: hierarchickou delegaci prostřednictvím [***Subagent (Podřízený agent)***](#concept-subagent)<sup>*</sup> a explicitní závislosti pracovního postupu prostřednictvím [***DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]***](#concept-dag)<sup>*</sup>.
+Graf umožňuje explicitně řídit pořadí, paralelizaci a kontrolní body vícefázové úlohy. Dílčí práci lze delegovat pomocí [***Subagent (Podřízený agent)***](#concept-subagent)<sup>*</sup> a její závislosti vyjádřit pomocí [***DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]***](#concept-dag)<sup>*</sup>.
 
 ###### 2.2.4.9.1 Subagent (Podřízený agent)
 
 Subagent je dočasná nebo specializovaná agentní instance, které nadřazený orchestrátor deleguje vymezenou dílčí úlohu a následně převezme její výsledek.
 
-Při hierarchické dělbě práce hlavní orchestrátor rozděluje rozsáhlou úlohu a jednotlivé části deleguje specializovaným subagentům, například pro průzkum repozitáře, plánování nebo implementaci. Po dokončení dílčího běhu může nadřazený agent převzít pouze jeho výsledek namísto celé pracovní historie subagenta.
+Subagent izoluje dílčí práci, například průzkum, plánování nebo implementaci, a může nadřazenému orchestrátoru vrátit pouze výsledek místo celé pracovní historie.
 
 ### 2.3 Vývojové prostředí a praxe
 
@@ -505,7 +499,7 @@ Tyto mechanismy poskytují explicitní stav repozitáře, ověřování změn a 
 
 GitHub je cloudová platforma pro hosting gitových repozitářů a koordinaci vývojového cyklu pomocí Issues, Pull Requests a automatizačních workflow.
 
-GitHub poskytuje nad repozitářem koordinační vrstvu pro zadání práce, revizi změn a automatizaci.
+Nad historií spravovanou Gitem přidává GitHub zadání práce, revizi změn a automatizační workflow.
 
 #### 2.3.2 Runtime (Běhové prostředí) [Runtime Environment]
 
@@ -523,39 +517,37 @@ V agentním vývoji zasazuje generování kódu do řízeného procesu požadavk
 
 Plánování je proces převodu požadavku na explicitní posloupnost kroků, závislostí a ověřovacích podmínek před prováděním změn.
 
-V agentním vývoji plán omezuje okamžité přecházení od požadavku k úpravám kódu. Rozděluje práci na kontrolovatelné kroky a předem určuje, jak bude možné ověřit, že jednotlivé části i celek splnily zadání.
+V agentním vývoji plán před změnami určuje kontrolovatelné kroky a podmínky, podle nichž se ověří splnění zadání.
 
 ##### 2.3.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]
 
 Orientovaný acyklický graf (DAG) je orientovaný graf bez orientovaného cyklu, který umožňuje explicitně vyjádřit závislosti a pořadí kroků pracovního postupu.
 
-V agentním workflow může DAG modelovat kroky jako uzly a jejich povinné závislosti jako hrany. Tím lze explicitně vyjádřit například posloupnost příjem požadavku → plán → implementace → testy → schválení a zabránit spuštění navazujícího kroku před splněním jeho předpokladů.
+V agentním workflow reprezentuje DAG kroky jako uzly a jejich závislosti jako hrany, takže navazující krok může začít až po splnění svých předpokladů.
 
 ##### 2.3.3.3 Version Control (Správa verzí)
 
 Správa verzí je sledování historie změn v repozitáři tak, aby bylo možné změny porovnávat, oddělovat a bezpečně slučovat.
 
-DarkFactory používá Git a GitHub jako auditovatelnou hranici mezi pracovním stavem agenta a hlavní historií projektu. Větve, pull requesty a slučování jsou zde prostředky pracovního toku, nikoli samostatné teoretické koncepty. <sup><span id="loc-34">(</span><a href="#loc-61" role="doc-biblioref">24</a>)</sup>
+DarkFactory používá Git a GitHub k oddělení pracovního stavu agenta od hlavní historie projektu a k dohledání provedených změn. <sup><span id="loc-34">(</span><a href="#loc-61" role="doc-biblioref">24</a>)</sup>
 
 #### 2.3.4 CI (Průběžná integrace) [Continuous Integration]
 
 Průběžná integrace (CI) je vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami.
 
-Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl úspěšně vygenerován. CI poskytuje externí a opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek. <sup><span id="loc-35">(</span><a href="#loc-62" role="doc-biblioref">25</a>)</sup>
-
-Konkrétní automatizační platformu popisuje [***Actions (GitHub Actions)***](#concept-github_actions)<sup>*</sup>, izolaci běhu [***Container (Softwarový kontejner) [Software Container]***](#concept-container)<sup>*</sup> a ověření spolupráce částí systému [***Integration Test (Integrační test)***](#concept-integration_test)<sup>*</sup>.
+Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl vygenerován. CI poskytuje opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek. <sup><span id="loc-35">(</span><a href="#loc-62" role="doc-biblioref">25</a>)</sup>
 
 ##### 2.3.4.1 Actions (GitHub Actions)
 
 GitHub Actions je automatizační platforma GitHubu pro spouštění deklarovaných workflow a jejich jobů v reakci na události repozitáře nebo ruční spuštění.
 
-GitHub Actions spouští deklarovaná workflow v reakci na události repozitáře. V této práci představuje konkrétní automatizační prostředí, které realizuje CI kontroly a další repozitářové procesy.
+V DarkFactory GitHub Actions spouští CI kontroly a další automatizované procesy repozitáře.
 
 ##### 2.3.4.2 Container (Softwarový kontejner) [Software Container]
 
 Softwarový kontejner je izolované uživatelské běhové prostředí, které balí aplikaci a její závislosti při sdílení jádra hostitelského operačního systému.
 
-Kontejner může CI běhu poskytnout opakovatelné uživatelské prostředí s deklarovanými nástroji a závislostmi. Tím omezuje vliv lokální konfigurace vývojářského počítače, aniž by sám o sobě zaručoval úplnou bezpečnostní izolaci.
+V CI poskytuje kontejner opakovatelné prostředí s deklarovanými nástroji a závislostmi, ale sám o sobě nezaručuje úplnou bezpečnostní izolaci.
 
 ##### 2.3.4.3 Integration Test (Integrační test)
 
@@ -567,13 +559,13 @@ V agentním vývoji ověřuje, že změna funguje nejen izolovaně, ale také v 
 
 Praktická část převádí popsané principy do návrhu harnessu DarkFactory.
 
-Zaměřuje se na výsledné řešení, jeho vyhodnocení a omezení.
+Obsahuje vyhodnocení výzkumných otázek a omezení evaluace.
 
 ### 3.1 Výsledky a diskuse
 
 Výsledky a diskuse vyhodnocují, jak návrh DarkFactory odpovídá stanoveným cílům a výzkumným otázkám.
 
-Hodnocení je rozděleno na vyhodnocení výzkumných otázek a omezení evaluace.
+Výsledky odpovídají na O1–O3 a odděleně vymezují hranice toho, co lze z provedeného ověření tvrdit.
 
 #### 3.1.1 Vyhodnocení výzkumných otázek
 
@@ -597,11 +589,9 @@ Výsledky proto hodnotí návrh a jeho technické ověření, nikoli obecnou vý
 
 Práce zkoumala, jak lze současnou agentní AI účinně zapojit do vývoje softwaru a jakou architekturu musí mít agent harness, aby spojoval autonomii s kontrolovatelným prováděním.
 
-Výsledný návrh odděluje jazykový model od vrstvy, která spravuje stav, nástroje, provádění, automatické kontroly a lidské rozhodovací body.
-
 K O1 architektura přesouvá rutinní kroky na agentní systém a ponechává člověku zadání, kontrolu a důležitá rozhodnutí. K O2 používá explicitní stav, limity, kontrolní uzly a eskalaci namísto neomezené smyčky. K O3 odděluje trvalý stav úlohy od omezeného pracovního kontextu modelu.
 
-DarkFactory tyto principy převádí do konkrétní architektury harnessu. Kvantitativní srovnání výkonu agentů, ceny nebo dlouhodobé spolehlivosti však vyžaduje samostatnou experimentální evaluaci.
+DarkFactory tyto principy spojuje v konkrétní architektuře agentního harnessu.
 
 ## Seznam zdrojů
 
