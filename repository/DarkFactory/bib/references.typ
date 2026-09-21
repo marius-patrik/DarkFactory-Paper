@@ -28,7 +28,6 @@
 #let merkel2014docker = <merkel2014docker>
 #let kinsman2021actions = <kinsman2021actions>
 #let dabbish2012github = <dabbish2012github>
-#let cparip2026aiusage = <cparip2026aiusage>
 #let openai_chatgpt_home = <openai-chatgpt-home>
 #let openai_chatgpt_web = <openai-community-chatgpt-web>
 #let openai_codex_app = <openai-codex-app>
@@ -56,6 +55,19 @@
 #let anthropic_context_engineering = <anthropic-context-engineering>
 #let anthropic_harness_design = <anthropic-harness-design>
 #let anthropic_managed_agents = <anthropic-managed-agents>
+#let owasp_prompt_injection = <owasp-prompt-injection>
+#let openai_prompt_injection = <openai-prompt-injection>
+#let openai_agent_orchestration = <openai-agent-orchestration>
+#let autogen_swarm = <autogen-swarm>
+#let networkx_dag = <networkx-dag>
+#let oci_runtime_spec = <oci-runtime-spec>
+#let hevner2004designscience = <hevner2004designscience>
+#let peffers2007dsrm = <peffers2007dsrm>
+#let microsoft_ai_diffusion_2026 = <microsoft-ai-diffusion-2026>
+#let brown2020 = <brown2020>
+#let owasp_llm01_prompt_injection = <owasp-llm01-prompt-injection>
+#let darkfactory_e9c10221 = <darkfactory-e9c10221>
+#let darkfactory_ci_35616745304 = <darkfactory-ci-35616745304>
 
 #let bib = (
   darkfactory: darkfactory,
@@ -85,7 +97,6 @@
   merkel2014docker: merkel2014docker,
   kinsman2021actions: kinsman2021actions,
   dabbish2012github: dabbish2012github,
-  cparip2026aiusage: cparip2026aiusage,
   openai_chatgpt_home: openai_chatgpt_home,
   openai_chatgpt_web: openai_chatgpt_web,
   openai_codex_app: openai_codex_app,
@@ -113,4 +124,17 @@
   anthropic_context_engineering: anthropic_context_engineering,
   anthropic_harness_design: anthropic_harness_design,
   anthropic_managed_agents: anthropic_managed_agents,
+  owasp_prompt_injection: owasp_prompt_injection,
+  openai_prompt_injection: openai_prompt_injection,
+  openai_agent_orchestration: openai_agent_orchestration,
+  autogen_swarm: autogen_swarm,
+  networkx_dag: networkx_dag,
+  oci_runtime_spec: oci_runtime_spec,
+  hevner2004designscience: hevner2004designscience,
+  peffers2007dsrm: peffers2007dsrm,
+  microsoft_ai_diffusion_2026: microsoft_ai_diffusion_2026,
+  brown2020: brown2020,
+  owasp_llm01_prompt_injection: owasp_llm01_prompt_injection,
+  darkfactory_e9c10221: darkfactory_e9c10221,
+  darkfactory_ci_35616745304: darkfactory_ci_35616745304,
 )

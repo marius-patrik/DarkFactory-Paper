@@ -8,10 +8,10 @@
   citation: bib.yao2022,
   source: bib.yao2022,
   definition: terms => [
-Jedna diskrétní jednotka interakce v konverzačním nebo agentním běhu, například vstup uživatele, výstup modelu nebo výsledek nástroje.
+Jedna diskrétní jednotka interakce v konverzačním nebo agentním běhu, například vstup uživatele, výstup modelu nebo výsledek nástroje. #cite(bib.yao2022)
   ],
   description: terms => [
-Posloupnost tahů tvoří historii, ze které harness sestavuje vstup pro další iteraci agentní smyčky. #cite(bib.yao2022)
+Posloupnost tahů vytváří historii session; v agentní smyčce může výsledek jednoho tahu ovlivnit rozhodnutí v následujícím tahu. #cite(bib.yao2022)
   ],
-  relations: ((type: "dependency", target: "context_window"),),
+  relations: ((type: "parent", target: "agent_session"), (type: "related", target: "agent_loop")),
 )

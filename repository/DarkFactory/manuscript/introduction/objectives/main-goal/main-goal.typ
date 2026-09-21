@@ -1,16 +1,12 @@
-#import "/DarkFactory/templates/common.typ": finalized
-#import "/DarkFactory/schema.typ": concept
+#import "/DarkFactory/schema.typ": section
 
-#let item = concept(
+#let item = section(
   key: "main_goal",
-  czech: "Hlavní cíl",
-  english: "Main Goal",
+  title: [Hlavní cíl],
   definition: terms => [
-#finalized[
-Zjistit, jak lze současnou agentní AI účinně používat při vývoji softwaru, a navrhnout architekturu agent harnessu, která podporuje vysokou míru autonomie při zachování lidského dohledu v důležitých rozhodnutích.
-]
+Navrhnout, implementovat a ověřit architekturu agentního harnessu pro dlouhotrvající vývoj softwaru, která odděluje jazykový model od trvalého stavu, prostředí a kontrolních mechanismů a umožňuje autonomní provádění změn při zachování explicitních bodů lidského rozhodnutí.
   ],
   description: terms => [
-DarkFactory slouží jako konkrétní návrh této architektury.
+DarkFactory je implementační artefakt této architektury. Úspěšnost cíle se neposuzuje podle obecné převahy nad jinými agenty, ale podle toho, zda implementace doložitelně realizuje navržené mechanismy a zda jimi projde ověřený end-to-end vývojový proces.
   ],
 )

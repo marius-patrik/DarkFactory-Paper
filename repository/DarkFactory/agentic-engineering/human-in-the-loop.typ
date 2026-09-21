@@ -10,10 +10,10 @@
   citation: bib.mosqueira2023human,
   source: bib.mosqueira2023human,
   definition: terms => [
-Uspořádání automatizovaného procesu, ve kterém člověk v určených bodech poskytuje zpětnou vazbu, schválení nebo rozhodnutí.
+Uspořádání automatizovaného procesu, ve kterém člověk v určených bodech poskytuje zpětnou vazbu, schválení nebo rozhodnutí. #cite(bib.mosqueira2023human)
   ],
   description: terms => [
-HITL ponechává část rozhodovacího procesu člověku místo úplné automatizace a používá lidský zásah jako součást řízení nebo kontroly systému. #cite(bib.mosqueira2023human)
+HITL ponechává vybraná rozhodnutí člověku místo úplné automatizace. V agentním workflow může být lidský zásah explicitní přechod nebo schvalovací bod, po kterém automatizované provádění pokračuje. #cite(bib.mosqueira2023human)
   ],
-  relations: ((type: "related", target: "guardrail"),),
+  relations: ((type: "related", target: "guardrail"), (type: "related", target: "goal_loops")),
 )

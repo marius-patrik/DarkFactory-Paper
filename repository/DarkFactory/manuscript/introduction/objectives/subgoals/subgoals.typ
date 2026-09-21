@@ -1,17 +1,15 @@
-#import "/DarkFactory/schema.typ": concept
+#import "/DarkFactory/schema.typ": section
 
-#let item = concept(
+#let item = section(
   key: "subgoals",
-  czech: "Dílčí cíle",
-  english: "Sub-goals",
+  title: [Dílčí cíle],
   definition: terms => [
-- Vymezit infrastrukturu pro správu verzí a průběžné automatické ověřování změn.
-- Popsat limity modelového kontextu, jeho správu a mechanismy pro dlouhotrvající agentní úlohy.
-- Popsat nástrojové a prováděcí mechanismy současného agentního harnessu.
-- Navrhnout způsob, jak zachovat lidský dohled nad důležitými rozhodnutími bez nutnosti ručně provádět každou rutinní změnu.
+- Vymezit teoretické mechanismy Software Engineering, Modelu, Harnessu a Agentic Engineering potřebné pro dlouhotrvající agentní vývoj softwaru.
+- Navrhnout a implementovat DarkFactory jako systém s explicitním stavem běhu, odděleným prostředím, capability rozhraním, GitHub control plane a oddělenými hranicemi identity a přihlašovacích údajů.
+- Realizovat řízený životní cyklus požadavku od zachycení zadání přes Planning a implementaci po deterministické ověření, Final Alignment, integraci a obnovu přerušeného běhu.
+- Ověřit implementaci pomocí automatických kontrol, end-to-end scénáře a provozu na vybraných cílových repozitářích a výsledky vztáhnout k výzkumným otázkám.
   ],
   description: terms => [
-Dílčí cíle pokrývají vývojové prostředí, kontext, provádění a lidský dohled.
+Dílčí cíle vytvářejí sled od teoretického vymezení přes návrh artefaktu k jeho technickému ověření.
   ],
-  relations: ((type: "dependency", target: "main_goal"),),
 )

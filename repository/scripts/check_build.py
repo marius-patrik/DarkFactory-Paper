@@ -203,6 +203,7 @@ require_contract(
         "description: none",
         "examples: ()",
         "attachments: ()",
+        "#let section(",
         "#let folder(",
         "#let relation(",
         "#let collect-concepts(folders)",
@@ -210,8 +211,10 @@ require_contract(
         "#let render-concept-title(item) = {",
         "#let render-inline-example(item, terms, graph)",
         "#let render-concept(item, terms, graph, level: 1, title: none)",
-        "if level >= 4 {",
+        "#let render-section-body(item, terms, graph)",
         "heading(level: level, numbering: none, outlined: true)",
+        "let has-section = node.title != none or node.section != none",
+        'assert(edge.type in ("dependency", "related", "parent", "child")',
     ),
     "concept schema",
 )
@@ -232,6 +235,9 @@ all_book_typ = tuple(sorted(ROOT.rglob("*.typ")))
 concept_files = tuple(
     path for path in all_book_typ if "#let item = concept(" in path.read_text(encoding="utf-8")
 )
+section_files = tuple(
+    path for path in all_book_typ if "#let item = section(" in path.read_text(encoding="utf-8")
+)
 folder_manifests = tuple(
     path
     for path in all_book_typ
@@ -241,14 +247,22 @@ folder_manifests = tuple(
 )
 if not concept_files:
     fail(f"book contains no canonical concept records: {BOOK}")
+if not section_files:
+    fail(f"book contains no structural section records: {BOOK}")
 if not folder_manifests:
     fail(f"book contains no structural folder manifests: {BOOK}")
+
+for path in section_files:
+    source = path.read_text(encoding="utf-8")
+    require_contract(source, ("key:", "title:", "definition:", "description:"), f"section {path}")
 
 concept_keys: list[str] = []
 keyword_keys: list[str] = []
 for path in concept_files:
     source = path.read_text(encoding="utf-8")
     require_contract(source, ("definition:", "description:", "key:"), f"concept {path}")
+    if path.is_relative_to(ROOT / "software-engineering") or path.is_relative_to(ROOT / "language-models") or path.is_relative_to(ROOT / "agentic-engineering"):
+        require_contract(source, ("citation:", "source:"), f"theory concept {path}")
     if not any(
         re.search(rf"{field}:\s*(?!none\b)", source)
         for field in ("industry", "czech", "english")
@@ -264,6 +278,14 @@ for path in concept_files:
 
 if len(concept_keys) != len(set(concept_keys)):
     fail("concept keys must be unique within a book")
+
+concept_key_set = set(concept_keys)
+for path in concept_files:
+    source = path.read_text(encoding="utf-8")
+    for target in re.findall(r'target:\s*"([^"]+)"', source):
+        if target not in concept_key_set:
+            fail(f"concept relation in {path} targets unknown concept: {target}")
+
 if BOOK == "DarkFactory" and not 5 <= len(keyword_keys) <= 20:
     fail(f"DarkFactory keyword curation is unexpectedly sized: {len(keyword_keys)} keyword concepts")
 
@@ -283,43 +305,127 @@ if BOOK == "DarkFactory":
         ROOT / "manuscript/practical/index.typ": (
             "manuscript/practical/introduction/index.typ",
             "manuscript/practical/darkfactory-architecture/index.typ",
+            "manuscript/practical/execution-lifecycle/index.typ",
             "manuscript/results/index.typ",
         ),
         ROOT / "software-engineering/index.typ": (
+            "software-engineering.typ",
             "vibe-coding.typ",
             "slop.typ",
             "spec-driven-development.typ",
             "planning.typ",
             "version-control.typ",
-            "github.typ",
-            "runtime.typ",
+            "branch.typ",
+            "pull-request.typ",
             "continuous-integration.typ",
-            "github-actions.typ",
-            "container.typ",
             "integration-test.typ",
+            "dag.typ",
+            "runtime.typ",
+            "container.typ",
+            'title: [AI-asistovaný vývoj]',
+            'title: [Řízení změn]',
+            'title: [Ověřování a integrace]',
+            'title: [Specifikace a plánování]',
+            'title: [Běhová prostředí]',
         ),
         ROOT / "language-models/index.typ": (
+            'key: "model"',
+            'title: [Model]',
             "language-model/language-model.typ",
             "language-model/context-rot.typ",
+            "language-model/divergence.typ",
+            'title: [Jazykové modely]',
+            'title: [Inferenční kontext]',
+            'title: [Limity modelu]',
         ),
         ROOT / "agentic-engineering/agent-harness/index.typ": (
-            "agent-harness/turn.typ",
+            "agent-harness/agent-harness.typ",
             "agent-harness/session-management.typ",
+            "agent-harness/turn.typ",
             "agent-harness/transcript.typ",
-            "agent-harness/tools/index.typ",
-            "agent-harness/skills/index.typ",
-            "agent-harness/scripts/index.typ",
-            "agent-harness/hooks/index.typ",
+            "agent-harness/state.typ",
+            "agent-harness/agent-loop.typ",
+            "agent-harness/environment.typ",
+            "agentic-engineering/sandbox.typ",
+            "agent-harness/plugins.typ",
+            "agent-harness/tools/tools.typ",
+            "agent-harness/tools/mcp.typ",
+            "agent-harness/skills/skills.typ",
+            'title: [Stav běhu]',
+            'title: [Běh a prostředí]',
+            'title: [Rozšíření harnessu]',
         ),
         ROOT / "agentic-engineering/index.typ": (
+            "agentic-engineering.typ",
             "guardrail.typ",
             "human-in-the-loop.typ",
-            "sandbox.typ",
-            "harness-engineering/index.typ",
+            "goal-loops.typ",
             "prompt-engineering/index.typ",
-            "loop-engineering/index.typ",
-            "graph-engineering/index.typ",
             "context-engineering/index.typ",
+            "multi-agent-systems/index.typ",
+            'title: [Řízení provádění]',
+        ),
+        ROOT / "agentic-engineering/context-engineering/index.typ": (
+            "context-engineering.typ",
+            "context-injection.typ",
+            "prompt-injection.typ",
+            "compaction.typ",
+            "rag.typ",
+        ),
+        ROOT / "agentic-engineering/multi-agent-systems/index.typ": (
+            "subagent.typ",
+            "orchestrator.typ",
+            "handoff.typ",
+            "swarm.typ",
+            "workflow-graphs.typ",
+        ),
+        ROOT / "manuscript/practical/darkfactory-architecture/index.typ": (
+            "darkfactory.typ",
+            "protocol.typ",
+            "run-state.typ",
+            "routing.typ",
+            "supervisor.typ",
+            "result-capture.typ",
+            "recovery.typ",
+            "capability.typ",
+            "capability-abi.typ",
+            "capability-adapter.typ",
+            "github-control-plane.typ",
+            "keychain.typ",
+            "browser-auth.typ",
+            "cli.typ",
+            "web.typ",
+            "docs-compiler.typ",
+            'title: [Cíle návrhu]',
+            'title: [Celková architektura]',
+            'title: [Vykonávací jádro a stav]',
+            'title: [Systém capabilities]',
+            'title: [Externí integrace]',
+            'title: [Identita a bezpečnostní hranice]',
+            'title: [Rozhraní]',
+        ),
+        ROOT / "manuscript/practical/execution-lifecycle/index.typ": (
+            "request.typ",
+            "planning-artifact.typ",
+            "review-fix-loop.typ",
+            "deterministic-verification.typ",
+            "final-alignment.typ",
+            "reconciliation.typ",
+            'title: [Zachycení požadavku]',
+            'title: [Plánování a schválení]',
+            'title: [Implementace]',
+            'title: [Ověření a revize]',
+            'title: [Finalizace a integrace]',
+            'title: [Obnova a pokračování]',
+        ),
+        ROOT / "manuscript/results/index.typ": (
+            'title: [Metoda ověření]',
+            'title: [Technické výsledky]',
+            'title: [End-to-end ověření]',
+            'title: [Ověření na cílových repozitářích]',
+            'title: [Vyhodnocení cílů a výzkumných otázek]',
+            'title: [Omezení]',
+            'title: [Diskuse]',
         ),
     }
     for path, contracts in expected_structure.items():
@@ -333,16 +439,51 @@ if BOOK == "DarkFactory":
         ROOT / "manuscript/introduction/index.typ",
         ROOT / "manuscript/theory/introduction/index.typ",
         ROOT / "manuscript/practical/introduction/index.typ",
-        ROOT / "agentic-engineering/harness-engineering/index.typ",
         ROOT / "manuscript/practical/darkfactory-architecture/index.typ",
+        ROOT / "manuscript/practical/execution-lifecycle/index.typ",
         ROOT / "manuscript/results/index.typ",
         ROOT / "manuscript/conclusion/index.typ",
         ROOT / "manuscript/appendices/index.typ",
+        ROOT / "software-engineering/branch.typ",
+        ROOT / "software-engineering/pull-request.typ",
+        ROOT / "software-engineering/dag.typ",
+        ROOT / "language-models/language-model/divergence.typ",
+        ROOT / "agentic-engineering/agent-harness/state.typ",
+        ROOT / "agentic-engineering/agent-harness/environment.typ",
         ROOT / "agentic-engineering/agent-harness/tools/tools.typ",
         ROOT / "agentic-engineering/agent-harness/skills/skills.typ",
         ROOT / "agentic-engineering/agent-harness/scripts/scripts.typ",
         ROOT / "agentic-engineering/agent-harness/hooks/hooks.typ",
         ROOT / "agentic-engineering/agent-harness/transcript.typ",
+        ROOT / "agentic-engineering/context-engineering/prompt-injection.typ",
+        ROOT / "agentic-engineering/goal-loops.typ",
+        ROOT / "agentic-engineering/multi-agent-systems/index.typ",
+        ROOT / "agentic-engineering/multi-agent-systems/orchestrator.typ",
+        ROOT / "agentic-engineering/multi-agent-systems/handoff.typ",
+        ROOT / "agentic-engineering/multi-agent-systems/swarm.typ",
+        ROOT / "agentic-engineering/multi-agent-systems/workflow-graphs.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/darkfactory.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/protocol.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/run-state.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/routing.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/supervisor.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/result-capture.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/recovery.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/capability.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/capability-abi.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/capability-adapter.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/github-control-plane.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/keychain.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/browser-auth.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/cli.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/web.typ",
+        ROOT / "manuscript/practical/darkfactory-architecture/docs-compiler.typ",
+        ROOT / "manuscript/practical/execution-lifecycle/request.typ",
+        ROOT / "manuscript/practical/execution-lifecycle/planning-artifact.typ",
+        ROOT / "manuscript/practical/execution-lifecycle/review-fix-loop.typ",
+        ROOT / "manuscript/practical/execution-lifecycle/deterministic-verification.typ",
+        ROOT / "manuscript/practical/execution-lifecycle/final-alignment.typ",
+        ROOT / "manuscript/practical/execution-lifecycle/reconciliation.typ",
         ROOT / "software-engineering/examples/karpathy-vibe-coding-tweet.typ",
         ROOT / "img/external/karpathy-vibe-coding.png",
     ):
@@ -467,5 +608,5 @@ if release_assets != set(EXPECTED):
 
 print(
     f"ok: {BOOK}: {len(EXPECTED)} canonical artifacts, {len(template_names)} template(s), "
-    f"{len(concept_files)} concepts, final hierarchy and web workbench validated"
+    f"{len(section_files)} sections, {len(concept_files)} concepts, final hierarchy and web workbench validated"
 )

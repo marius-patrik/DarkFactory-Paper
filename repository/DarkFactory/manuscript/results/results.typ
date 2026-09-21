@@ -1,14 +1,12 @@
-#import "/DarkFactory/schema.typ": concept
+#import "/DarkFactory/schema.typ": section
 
-#let item = concept(
+#let item = section(
   key: "results_discussion",
-  czech: "Výsledky a diskuse",
-  english: "Results and Discussion",
+  title: [Výsledky a diskuse],
   definition: terms => [
-Vyhodnocení, jak návrh DarkFactory odpovídá stanoveným cílům a výzkumným otázkám.
+Tato část odděluje doložené vlastnosti implementace DarkFactory od tvrzení, která vyžadují další end-to-end nebo fleet-level důkaz.
   ],
   description: terms => [
-Výsledky odpovídají na O1–O3 a odděleně vymezují hranice toho, co lze z provedeného ověření tvrdit.
+Výsledky vycházejí z konkrétního referenčního commitu, automatických testů, CI check runů a zdrojového kódu. Architektonická existence mechanismu není zaměňována za důkaz jeho úspěšného použití v celém produkčním životním cyklu.
   ],
-  relations: ((type: "dependency", target: "darkfactory_architecture"),),
 )
