@@ -714,12 +714,6 @@
               "type": "directory",
               "children": [
                 {
-                  "name": "autoregression.typ",
-                  "path": "DarkFactory/language-models/language-model/autoregression.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/language-models/language-model/autoregression.typ"
-                },
-                {
                   "name": "context-window.typ",
                   "path": "DarkFactory/language-models/language-model/context-window.typ",
                   "type": "file",
@@ -874,10 +868,10 @@
                   "type": "directory",
                   "children": [
                     {
-                      "name": "ai-diffusion-figure.typ",
-                      "path": "DarkFactory/manuscript/introduction/motivation/ai-diffusion-figure.typ",
+                      "name": "ai-usage-example.typ",
+                      "path": "DarkFactory/manuscript/introduction/motivation/ai-usage-example.typ",
                       "type": "file",
-                      "source": "repository/DarkFactory/manuscript/introduction/motivation/ai-diffusion-figure.typ"
+                      "source": "repository/DarkFactory/manuscript/introduction/motivation/ai-usage-example.typ"
                     },
                     {
                       "name": "index.typ",

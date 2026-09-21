@@ -38,9 +38,9 @@
           "anchor": "concept-motivation_problem_definition"
         },
         {
-          "title": "1.1.1 Globální adopce generativní AI",
+          "title": "1.1.1 Používání generativní AI ve světě",
           "level": 4,
-          "anchor": "concept-global_ai_diffusion_figure"
+          "anchor": "concept-global_ai_usage_figure"
         },
         {
           "title": "1.2 Cíl práce a výzkumné otázky",
@@ -198,42 +198,37 @@
           "anchor": "concept-transformer"
         },
         {
-          "title": "3.3.2 Autoregresivní modelování",
-          "level": 4,
-          "anchor": "concept-autoregression"
-        },
-        {
-          "title": "3.3.3 Stochastické dekódování",
+          "title": "3.3.2 Stochastické dekódování",
           "level": 4,
           "anchor": "concept-stochastic_decoding"
         },
         {
-          "title": "3.3.4 Tokenizér",
+          "title": "3.3.3 Tokenizér",
           "level": 4,
           "anchor": "concept-tokenizer"
         },
         {
-          "title": "3.3.5 Token",
+          "title": "3.3.4 Token",
           "level": 4,
           "anchor": "concept-token"
         },
         {
-          "title": "3.3.6 Embedding (Vektorová reprezentace)",
+          "title": "3.3.5 Embedding (Vektorová reprezentace)",
           "level": 4,
           "anchor": "concept-embedding"
         },
         {
-          "title": "3.3.7 Kontextové okno",
+          "title": "3.3.6 Kontextové okno",
           "level": 4,
           "anchor": "concept-context_window"
         },
         {
-          "title": "3.3.8 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
+          "title": "3.3.7 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
           "level": 4,
           "anchor": "concept-kv_cache"
         },
         {
-          "title": "3.3.9 Turn (Tah interakce) [Interaction Turn]",
+          "title": "3.3.8 Turn (Tah interakce) [Interaction Turn]",
           "level": 4,
           "anchor": "concept-turn"
         },
@@ -455,17 +450,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-39"
+          "anchor": "loc-38"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-68"
+          "anchor": "loc-66"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-69"
+          "anchor": "loc-67"
         }
       ],
       "review": [
@@ -505,9 +500,9 @@
           "anchor": "concept-motivation_problem_definition"
         },
         {
-          "title": "1.1.1 Globální adopce generativní AI",
+          "title": "1.1.1 Používání generativní AI ve světě",
           "level": 4,
-          "anchor": "concept-global_ai_diffusion_figure"
+          "anchor": "concept-global_ai_usage_figure"
         },
         {
           "title": "1.2 Cíl práce a výzkumné otázky",
@@ -665,42 +660,37 @@
           "anchor": "concept-transformer"
         },
         {
-          "title": "3.3.2 Autoregresivní modelování",
-          "level": 4,
-          "anchor": "concept-autoregression"
-        },
-        {
-          "title": "3.3.3 Stochastické dekódování",
+          "title": "3.3.2 Stochastické dekódování",
           "level": 4,
           "anchor": "concept-stochastic_decoding"
         },
         {
-          "title": "3.3.4 Tokenizér",
+          "title": "3.3.3 Tokenizér",
           "level": 4,
           "anchor": "concept-tokenizer"
         },
         {
-          "title": "3.3.5 Token",
+          "title": "3.3.4 Token",
           "level": 4,
           "anchor": "concept-token"
         },
         {
-          "title": "3.3.6 Embedding (Vektorová reprezentace)",
+          "title": "3.3.5 Embedding (Vektorová reprezentace)",
           "level": 4,
           "anchor": "concept-embedding"
         },
         {
-          "title": "3.3.7 Kontextové okno",
+          "title": "3.3.6 Kontextové okno",
           "level": 4,
           "anchor": "concept-context_window"
         },
         {
-          "title": "3.3.8 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
+          "title": "3.3.7 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
           "level": 4,
           "anchor": "concept-kv_cache"
         },
         {
-          "title": "3.3.9 Turn (Tah interakce) [Interaction Turn]",
+          "title": "3.3.8 Turn (Tah interakce) [Interaction Turn]",
           "level": 4,
           "anchor": "concept-turn"
         },
@@ -922,17 +912,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-39"
+          "anchor": "loc-38"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-68"
+          "anchor": "loc-66"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-69"
+          "anchor": "loc-67"
         }
       ]
     }

@@ -94,11 +94,11 @@ for template_name in template_names:
     template_out = Path("out/templates") / template_name
     for artifact in EXPECTED:
         validate_publication(template_out / artifact.name)
-    for extension in (".pdf", ".html", ".md"):
+    for extension in (".pdf", ".html"):
         final = template_out / f"prace{extension}"
         review = template_out / f"prace-review{extension}"
         if final.read_bytes() == review.read_bytes():
-            fail(f"Final and Review outputs are identical: {template_name}/{final.name}")
+            fail(f"Final and Review visual outputs are identical: {template_name}/{final.name}")
 
 gitmodules = require_file(Path(".gitmodules"))
 if gitmodules.count("[submodule ") != 1:
@@ -188,10 +188,8 @@ for contract in (
     "czech: none",
     "english: none",
     "alias: none",
-    "title: none",
     "definition: none",
     "description: none",
-    "summary: none",
     "examples: ()",
     "attachments: ()",
     "#let folder(",
@@ -275,11 +273,13 @@ for path in concept_files:
     source = path.read_text(encoding="utf-8")
     if "define-term" in source or "#let terminology =" in source or "term: terminology" in source:
         fail(f"obsolete separate terminology abstraction remains in concept: {path}")
-    for field in ("definition", "description", "summary"):
+    for field in ("definition", "description"):
         if f"{field}:" not in source:
             fail(f"concept file is missing canonical {field} field: {path}")
         if re.search(rf"{field}:\s*none\b", source):
             fail(f"concept file has empty canonical {field}: {path}")
+    if "summary:" in source:
+        fail(f"obsolete concept summary field remains: {path}")
     if not any(re.search(rf"{field}:\s*(?!none\b)", source) for field in ("industry", "czech", "english")):
         fail(f"concept file is missing concept-owned terminology slots: {path}")
     if "explanation_cs:" in source or "explanation_en:" in source:
@@ -321,7 +321,7 @@ if BOOK == "DarkFactory":
         ROOT / "development-environment/index.typ",
         ROOT / "language-models/index.typ",
         ROOT / "agentic-engineering/index.typ",
-        ROOT / "manuscript/introduction/motivation/ai-diffusion-figure.typ",
+        ROOT / "manuscript/introduction/motivation/ai-usage-example.typ",
         ROOT / "language-models/examples/chatgpt.typ",
         ROOT / "agentic-engineering/agent-harness/examples/codex.typ",
         ROOT / "agentic-engineering/agent-harness/examples/claude-code.typ",
