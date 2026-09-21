@@ -3,12 +3,13 @@
 
 #let item = concept(
   key: "context_rot",
+  industry: "Context Rot",
   czech: "Degradace kontextu",
   english: "Context Rot",
   citation: bib.liu2024,
   source: bib.liu2024,
   definition: terms => [
-Pokles spolehlivosti, s níž model využívá relevantní informace v dlouhém nebo zahlceném kontextu. #cite(bib.liu2024)
+V této práci označuje Context Rot pokles spolehlivosti, s níž model využívá relevantní informace v dlouhém nebo zahlceném kontextu. #cite(bib.liu2024)
   ],
   description: terms => [
 Experimenty s dlouhým kontextem ukazují, že výkon může záviset na poloze relevantní informace a klesat, když je umístěna uvnitř dlouhého vstupu. #cite(bib.liu2024)

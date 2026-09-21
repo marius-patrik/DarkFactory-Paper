@@ -40,7 +40,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
       2. [Slop](#concept-slop)
     3. [2.2.2 Specifikace a plánování](#section-software_engineering_specification_planning)
       1. [Spec-Driven Development (Vývoj řízený specifikací)](#concept-spec_driven_development)
-      2. [Plánování](#concept-planning)
+      2. [Planning (Plánování)](#concept-planning)
       3. [DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
     4. [2.2.3 Řízení změn](#section-software_engineering_change_management)
       1. [Version Control (Správa verzí)](#concept-version_control)
@@ -56,14 +56,14 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
     1. [2.3.1 Jazykové modely](#section-model_language_models)
       1. [Transformer](#concept-transformer)
       2. [LLM (Jazykový model) [Large Language Model]](#concept-language_model)
-      3. [Tokenizér](#concept-tokenizer)
+      3. [Tokenizer (Tokenizér)](#concept-tokenizer)
       4. [Token](#concept-token)
       5. [Embedding (Vektorová reprezentace)](#concept-embedding)
     2. [2.3.2 Inferenční kontext](#section-model_inference_context)
-      1. [Kontextové okno](#concept-context_window)
+      1. [Context Window (Kontextové okno)](#concept-context_window)
       2. [KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]](#concept-kv_cache)
     3. [2.3.3 Limity modelu](#section-model_failure_modes)
-      1. [Degradace kontextu](#concept-context_rot)
+      1. [Context Rot (Degradace kontextu)](#concept-context_rot)
       2. [Divergence (Divergence modelu) [Model Divergence]](#concept-divergence)
   4. [2.4 Harness](#section-harness)
     1. [Agent Harness (Agentní harness)](#concept-harness)
@@ -93,7 +93,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
     3. [2.5.2 Kontextové mechanismy](#section-agentic_context)
       1. [Context Engineering (Kontextové inženýrství)](#concept-context_engineering)
       2. [Context Injection (Vkládání kontextu)](#concept-context_injection)
-      3. [Prompt Injection (Prompt injection)](#concept-prompt_injection)
+      3. [Prompt Injection](#concept-prompt_injection)
       4. [Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction)
       5. [RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag)
     4. [2.5.3 Řízení provádění](#section-agentic_execution_control)
@@ -121,7 +121,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
       6. [Recovery (Obnova běhu)](#concept-darkfactory_recovery)
     4. [3.2.4 Systém capabilities](#section-darkfactory_capability_system)
       1. [Capability](#concept-darkfactory_capability)
-      2. [Capability ABI (ABI capabilities)](#concept-capability_abi)
+      2. [Capability ABI](#concept-capability_abi)
       3. [Capability Adapter (Adaptér capability)](#concept-capability_adapter)
     5. [3.2.5 Externí integrace](#section-darkfactory_external_integrations)
       1. [GitHub Control Plane (GitHub jako řídicí vrstva)](#concept-github_control_plane)
@@ -270,7 +270,7 @@ Přístup k AI-asistovanému vývoji, ve kterém explicitní specifikace řídí
 
 Specifikace odděluje požadované chování a omezení od konkrétní implementace a slouží jako společný referenční bod pro člověka i agenta. <sup>(<a href="#loc-88" role="doc-biblioref">11</a>)</sup>
 
-##### Plánování
+##### Planning (Plánování)
 
 Převod požadavku na explicitní kroky, závislosti a podmínky ověření před prováděním změn. <sup>(<a href="#loc-83" role="doc-biblioref">6</a>)</sup>
 
@@ -346,7 +346,7 @@ Velký neuronový jazykový model trénovaný na rozsáhlých textových datech 
 
 Současné LLM typicky používají architekturu [***Transformer***](#concept-transformer)<sup>*</sup>, která při autoregresivním generování odhaduje další token z předchozí sekvence. <sup>(<a href="#loc-96" role="doc-biblioref">19</a>)</sup> Práci s nástroji, stavem a prostředím zajišťuje okolní agentní runtime nebo harness, nikoli samotná textová inference. <sup><span id="loc-26">(</span><a href="#loc-98" role="doc-biblioref">21</a>)</sup>
 
-##### Tokenizér
+##### Tokenizer (Tokenizér)
 
 Komponenta, která převádí vstup na posloupnost tokenů a jejich identifikátorů a provádí odpovídající zpětné dekódování. <sup><span id="loc-27">(</span><a href="#loc-99" role="doc-biblioref">22</a>)</sup>
 
@@ -370,7 +370,7 @@ V jazykovém modelu embedding převádí identifikátory tokenů na spojité vek
 
 #### 2.3.2 Inferenční kontext
 
-##### Kontextové okno
+##### Context Window (Kontextové okno)
 
 Maximální rozsah tokenové sekvence dostupný modelu v jednom inferenčním běhu. <sup><span id="loc-30">(</span><a href="#loc-101" role="doc-biblioref">24</a>)</sup>
 
@@ -384,9 +384,9 @@ Při generování dalšího tokenu lze uložené klíče a hodnoty předchozí s
 
 #### 2.3.3 Limity modelu
 
-##### Degradace kontextu
+##### Context Rot (Degradace kontextu)
 
-Pokles spolehlivosti, s níž model využívá relevantní informace v dlouhém nebo zahlceném kontextu. <sup>(<a href="#loc-101" role="doc-biblioref">24</a>)</sup>
+V této práci označuje Context Rot pokles spolehlivosti, s níž model využívá relevantní informace v dlouhém nebo zahlceném kontextu. <sup>(<a href="#loc-101" role="doc-biblioref">24</a>)</sup>
 
 Experimenty s dlouhým kontextem ukazují, že výkon může záviset na poloze relevantní informace a klesat, když je umístěna uvnitř dlouhého vstupu. <sup>(<a href="#loc-101" role="doc-biblioref">24</a>)</sup>
 
@@ -605,7 +605,7 @@ V této práci označuje Context Injection cílené vložení relevantních info
 
 Just-in-time přístup umožňuje mimo modelový kontext uchovávat odkazy nebo trvalý stav a potřebná data načíst nástrojem až během běhu. <sup>(<a href="#loc-121" role="doc-biblioref">44</a>)</sup>
 
-##### Prompt Injection (Prompt injection)
+##### Prompt Injection
 
 Manipulace chování jazykového modelu pomocí instrukcí vložených do vstupu nebo do externího obsahu, který systém následně zpracuje jako kontext. <sup><span id="loc-54">(</span><a href="#loc-122" role="doc-biblioref">45</a>)</sup>
 
@@ -765,7 +765,7 @@ Verzovaný modul DarkFactory, který přidává agentní nebo produktové chová
 
 Capability může deklarovat nástroje, příkazy, detektory, graph contributions, verifikaci, hooks, deterministické akce, credential requirements a publikační surfaces.
 
-##### Capability ABI (ABI capabilities)
+##### Capability ABI
 
 Verzovaný kontrakt určující strukturu a kompatibilitu capability modulů DarkFactory.
 

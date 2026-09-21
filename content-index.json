@@ -108,7 +108,7 @@
           "anchor": "concept-spec_driven_development"
         },
         {
-          "title": "Plánování",
+          "title": "Planning (Plánování)",
           "level": 5,
           "anchor": "concept-planning"
         },
@@ -188,7 +188,7 @@
           "anchor": "concept-language_model"
         },
         {
-          "title": "Tokenizér",
+          "title": "Tokenizer (Tokenizér)",
           "level": 5,
           "anchor": "concept-tokenizer"
         },
@@ -208,7 +208,7 @@
           "anchor": "section-model_inference_context"
         },
         {
-          "title": "Kontextové okno",
+          "title": "Context Window (Kontextové okno)",
           "level": 5,
           "anchor": "concept-context_window"
         },
@@ -223,7 +223,7 @@
           "anchor": "section-model_failure_modes"
         },
         {
-          "title": "Degradace kontextu",
+          "title": "Context Rot (Degradace kontextu)",
           "level": 5,
           "anchor": "concept-context_rot"
         },
@@ -373,7 +373,7 @@
           "anchor": "concept-context_injection"
         },
         {
-          "title": "Prompt Injection (Prompt injection)",
+          "title": "Prompt Injection",
           "level": 5,
           "anchor": "concept-prompt_injection"
         },
@@ -513,7 +513,7 @@
           "anchor": "concept-darkfactory_capability"
         },
         {
-          "title": "Capability ABI (ABI capabilities)",
+          "title": "Capability ABI",
           "level": 5,
           "anchor": "concept-capability_abi"
         },
@@ -815,7 +815,7 @@
           "anchor": "concept-spec_driven_development"
         },
         {
-          "title": "Plánování",
+          "title": "Planning (Plánování)",
           "level": 5,
           "anchor": "concept-planning"
         },
@@ -895,7 +895,7 @@
           "anchor": "concept-language_model"
         },
         {
-          "title": "Tokenizér",
+          "title": "Tokenizer (Tokenizér)",
           "level": 5,
           "anchor": "concept-tokenizer"
         },
@@ -915,7 +915,7 @@
           "anchor": "section-model_inference_context"
         },
         {
-          "title": "Kontextové okno",
+          "title": "Context Window (Kontextové okno)",
           "level": 5,
           "anchor": "concept-context_window"
         },
@@ -930,7 +930,7 @@
           "anchor": "section-model_failure_modes"
         },
         {
-          "title": "Degradace kontextu",
+          "title": "Context Rot (Degradace kontextu)",
           "level": 5,
           "anchor": "concept-context_rot"
         },
@@ -1080,7 +1080,7 @@
           "anchor": "concept-context_injection"
         },
         {
-          "title": "Prompt Injection (Prompt injection)",
+          "title": "Prompt Injection",
           "level": 5,
           "anchor": "concept-prompt_injection"
         },
@@ -1220,7 +1220,7 @@
           "anchor": "concept-darkfactory_capability"
         },
         {
-          "title": "Capability ABI (ABI capabilities)",
+          "title": "Capability ABI",
           "level": 5,
           "anchor": "concept-capability_abi"
         },
