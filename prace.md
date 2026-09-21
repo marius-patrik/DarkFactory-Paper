@@ -47,19 +47,19 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
       1. [2.2.3.1 Plugins (Rozšíření)](#concept-plugins)
       2. [2.2.3.2 Subagent (Podřízený agent)](#concept-subagent)
       3. [2.2.3.3 Agent Loop (Smyčka ReAct) [ReAct Loop]](#concept-agent_loop)
-        1. [2.2.3.3.1 Agentní sezení](#concept-agent_session)
-        2. [2.2.3.3.2 Patologie divergence](#concept-divergence)
+        1. [Agentní sezení](#concept-agent_session)
+        2. [Patologie divergence](#concept-divergence)
       4. [2.2.3.4 Tool Calling (Vyvolávání nástrojů)](#concept-tool_calling)
-        1. [2.2.3.4.1 MCP (Model Context Protocol)](#concept-mcp)
+        1. [MCP (Model Context Protocol)](#concept-mcp)
       5. [2.2.3.5 Skills (Dovednosti)](#concept-skills)
-        1. [2.2.3.5.1 Skript](#concept-script)
-        2. [2.2.3.5.2 Hook (Událostní záchytný bod) [Event Hook]](#concept-hook)
+        1. [Skript](#concept-script)
+        2. [Hook (Událostní záchytný bod) [Event Hook]](#concept-hook)
       6. [2.2.3.6 Kontextové inženýrství](#concept-context_engineering)
-        1. [2.2.3.6.1 Context Injection (Vkládání kontextu)](#concept-context_injection)
-        2. [2.2.3.6.2 Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction)
-        3. [2.2.3.6.3 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag)
-        4. [2.2.3.6.4 Degradace kontextu](#concept-context_rot)
-        5. [2.2.3.6.5 Sémantický posun](#concept-semantic_drift)
+        1. [Context Injection (Vkládání kontextu)](#concept-context_injection)
+        2. [Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction)
+        3. [RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag)
+        4. [Degradace kontextu](#concept-context_rot)
+        5. [Sémantický posun](#concept-semantic_drift)
   3. [2.3 Agentic Engineering (Agentické inženýrství)](#concept-agentic_engineering)
     1. [2.3.1 Guardrail (Deterministický mantinel) [Deterministic Guardrail]](#concept-guardrail)
     2. [2.3.2 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]](#concept-human_in_the_loop)
@@ -73,7 +73,7 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
       1. [2.3.8.1 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
   4. [2.4 Vývojové prostředí a praxe](#concept-development_environment)
     1. [2.4.1 GitHub](#concept-github)
-    2. [2.4.2 Runtime (Běhové prostředí) [Runtime Environment]](#concept-runtime)
+    2. [2.4.2 Runtime (Běhové prostředí)](#concept-runtime)
     3. [2.4.3 Softwarové inženýrství](#concept-software_engineering)
       1. [2.4.3.1 Plánování](#concept-planning)
       2. [2.4.3.2 Version Control (Správa verzí)](#concept-version_control)
@@ -317,13 +317,13 @@ Ve vzoru ReAct se cyklus opakuje jako rozhodnutí → volání nástroje → poz
 
 *Obrázek 7: Smyčka ReAct: model rozhodne o akci, harness ji provede a výsledek vrátí modelu.*
 
-###### 2.2.3.3.1 Agentní sezení
+###### Agentní sezení
 
 Agentní sezení je ohraničený běh agenta se sdíleným stavem, systémovými instrukcemi, pracovním kontextem, historií tahů a provozními rozpočty.
 
 Sezení vymezuje stav jednoho běhu; harness v něm spravuje pracovní kontext a sleduje rozpočty, například spotřebu tokenů nebo počet iterací.
 
-###### 2.2.3.3.2 Patologie divergence
+###### Patologie divergence
 
 Divergence je selhání agentní smyčky, při němž se běh vzdaluje cíli opakováním neúčinných kroků, oscilací nebo nekontrolovanou spotřebou zdrojů.
 
@@ -343,7 +343,7 @@ Code Execution (Spouštění kódu) . Spouštění kódu je nástrojová schopno
 
 Při vývoji softwaru umožňuje spouštět testy, buildy, formátovače a diagnostické příkazy v řízeném prostředí místo odhadování jejich výsledku modelem. <sup><span id="loc-23">(</span><a href="#loc-50" role="doc-biblioref">13</a>)</sup>
 
-###### 2.2.3.4.1 MCP (Model Context Protocol)
+###### MCP (Model Context Protocol)
 
 Model Context Protocol (MCP) je otevřený protokol pro standardizované propojení AI aplikací s externími nástroji, zdroji a daty.
 
@@ -390,13 +390,13 @@ For every unresolved failure, include the command, failing target, and relevant 
 
 Specifikace dovoluje vedle `SKILL.md` také volitelné adresáře například pro skripty, reference a assety; ty se načítají pouze podle potřeby. <sup>(<a href="#loc-52" role="doc-biblioref">15</a>)</sup>
 
-###### 2.2.3.5.1 Skript
+###### Skript
 
 Skript je soubor nebo posloupnost příkazů určených k automatizovanému vykonání interpretem, shellem nebo jiným běhovým prostředím.
 
 V harnessu se skript používá pro opakovatelné transformace, validace a další kroky, které nemají vyžadovat nové rozhodnutí modelu.
 
-###### 2.2.3.5.2 Hook (Událostní záchytný bod) [Event Hook]
+###### Hook (Událostní záchytný bod) [Event Hook]
 
 Hook je definovaný bod životního cyklu nebo události, na který lze navázat vlastní deterministickou logiku před, po nebo místo standardního chování systému.
 
@@ -408,31 +408,31 @@ Kontextové inženýrství je systematický výběr, pořadí a životní cyklus
 
 Určuje, které instrukce, pracovní stav, výsledky nástrojů a externí data model právě vidí a jak se tento obsah mění při omezené kapacitě kontextového okna.
 
-###### 2.2.3.6.1 Context Injection (Vkládání kontextu)
+###### Context Injection (Vkládání kontextu)
 
 Context Injection je cílené vložení informací do aktivního kontextu modelu v okamžiku, kdy jsou potřebné pro aktuální krok úlohy.
 
 Harness může tímto způsobem doplnit instrukce, stav projektu, výsledky nástrojů nebo externě načtená data bez jejich trvalého držení v celém průběhu sezení.
 
-###### 2.2.3.6.2 Compaction (Kompakce kontextu) [Context Compaction]
+###### Compaction (Kompakce kontextu) [Context Compaction]
 
 Kompakce kontextu je zmenšení aktivního kontextu výběrem, shrnutím nebo nahrazením starší historie kompaktnější reprezentací.
 
 Kompakce uvolňuje místo v kontextovém okně za cenu možné ztráty přesných detailů; důležité požadavky a stav proto nemají existovat pouze v rekurzivně shrnované historii. <sup><span id="loc-26">(</span><a href="#loc-53" role="doc-biblioref">16</a>)</sup>
 
-###### 2.2.3.6.3 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]
+###### RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]
 
 Retrieval-Augmented Generation (RAG) je architektura, v níž systém vyhledá relevantní informace z externího zdroje a vloží je do kontextu modelu.
 
 RAG umožňuje načítat potřebné informace podle aktuální úlohy místo jejich trvalého držení v aktivním kontextu. <sup><span id="loc-27">(</span><a href="#loc-54" role="doc-biblioref">17</a>)</sup>
 
-###### 2.2.3.6.4 Degradace kontextu
+###### Degradace kontextu
 
 Degradace kontextu je pokles schopnosti modelu spolehlivě využívat informace v dlouhém nebo zahlceném kontextu.
 
 Nominální délka kontextového okna nezaručuje rovnoměrné využití všech informací; výkon může klesat zejména u relevantních údajů umístěných uvnitř dlouhého vstupu. <sup><span id="loc-28">(</span><a href="#loc-55" role="doc-biblioref">18</a>)</sup>
 
-###### 2.2.3.6.5 Sémantický posun
+###### Sémantický posun
 
 Sémantický posun je postupné zkreslování významu nebo faktického stavu při opakovaném ztrátovém shrnování či transformaci kontextu.
 
@@ -516,7 +516,7 @@ GitHub je cloudová platforma pro hosting gitových repozitářů a koordinaci v
 
 Nad historií spravovanou Gitem přidává GitHub zadání práce, revizi změn a automatizační workflow.
 
-#### 2.4.2 Runtime (Běhové prostředí) [Runtime Environment]
+#### 2.4.2 Runtime (Běhové prostředí)
 
 Běhové prostředí je prostředí, ve kterém se program nebo agent vykonává a využívá procesy, souborový systém, síť a další systémové prostředky.
 
