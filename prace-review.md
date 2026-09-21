@@ -669,6 +669,9 @@ DarkFactory tyto principy spojuje v konkrétní architektuře agentního harness
 - 53.  MARIUS, Patrik. DarkFactory. Online. 2026. [Accessed 20 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
 - 54.  ANTHROPIC. Hooks reference | Claude Code Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/hooks](https://code.claude.com/docs/en/hooks)
 - 55.  ANTHROPIC. Connect Claude Code to tools via MCP. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
+- 56.  ANTHROPIC. Effective context engineering for AI agents. Online. 2025. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- 57.  ANTHROPIC. Harness design for long-running application development. Online. 2026. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/harness-design-long-running-apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- 58.  ANTHROPIC. Scaling Managed Agents: Decoupling the brain from the hands. Online. 2026. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/managed-agents](https://www.anthropic.com/engineering/managed-agents)
 
 ## Seznam obrázků a tabulek
 
