@@ -1,16 +1,16 @@
-## Agentic AI,
-Agentic Engineering and
-Harness Engineering
+## DarkFactory:
+Agentic Engineering in practice
+(Agentické inženýrství v praxi)
 
 Patrik Marius · Gymnázium J. K. Tyla · 2026
 
 ## Anotace
 
-Tato odborná práce se zabývá současným využitím agentní umělé inteligence při vývoji softwaru. Popisuje, jaké části vývojového procesu mohou dnešní agentní systémy provádět samostatně a jaké nástroje, pravidla a kontrolní mechanismy potřebují pro opakovatelnou práci nad skutečným repozitářem. Praktickou část tvoří návrh a implementace systému DarkFactory, který tyto principy převádí do konkrétní architektury agentního harnessu.
+Odborná práce zkoumá využití agentní umělé inteligence při vývoji softwaru se zaměřením na architekturu agentního harnessu. Teoretická část vymezuje mechanismy softwarového inženýrství, jazykových modelů, správy kontextu, nástrojů, řízení provádění a multiagentních systémů. Praktická část popisuje systém DarkFactory, který odděluje modelové rozhodování od trvalého stavu, prostředí, capabilities, GitHub control plane, ověřování a bezpečnostních hranic. Evaluace používá zdrojový kód, automatické testy a CI výsledky a rozlišuje implementované mechanismy od vlastností, které ještě vyžadují živý end-to-end důkaz.
 
 ## Abstract
 
-This thesis examines the current use of agentic artificial intelligence in software development. It describes which parts of the development process today’s agentic systems can perform independently and which tools, rules, and control mechanisms they need for repeatable work on a real repository. The practical part is the design and implementation of DarkFactory, which applies these principles in a concrete agent-harness architecture.
+This thesis examines the use of agentic artificial intelligence in software development, focusing on the architecture of an agent harness. The theoretical part defines mechanisms from software engineering, language models, context management, tools, execution control, and multi-agent systems. The practical part describes DarkFactory, a system that separates model decisions from persistent state, the execution environment, capabilities, the GitHub control plane, verification, and security boundaries. The evaluation uses source code, automated tests, and CI results and distinguishes implemented mechanisms from properties that still require live end-to-end evidence.
 
 ## Keywords (Klíčová slova)
 
@@ -18,9 +18,9 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
 
 ## Obsah
 
-1. [Agentic AI,
-   Agentic Engineering and
-   Harness Engineering](#loc-1)
+1. [DarkFactory:
+   Agentic Engineering in practice
+   (Agentické inženýrství v praxi)](#loc-1)
 2. [Anotace](#loc-2)
 3. [Abstract](#loc-3)
 4. [Keywords (Klíčová slova)](#loc-4)
@@ -162,11 +162,11 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
 
 ## 1 Úvod
 
-Tato práce zkoumá, jak dnes účinně využívat agentní umělou inteligenci při vývoji softwaru.
+Tato práce zkoumá, jak lze současné agentní systémy používat při vývoji softwaru tak, aby jejich autonomie byla spojena s trvalým stavem, ověřitelnými účinky a explicitními kontrolními body.
 
-Zaměřuje se na to, co současní agenti dokážou samostatně provést a jaké prostředí, nástroje a pravidla potřebují, aby jejich práce byla opakovatelná a kontrolovatelná.
+Teoretická část postupuje od principů softwarového inženýrství přes vlastnosti a limity jazykového modelu k agentnímu harnessu a technikám Agentic Engineering. Praktická část tyto mechanismy vztahuje k systému DarkFactory a odděluje popis implementované architektury od výsledků, které lze doložit testy, CI a provozními artefakty.
 
-Praktickým příkladem je DarkFactory, na kterém jsou popsané principy převedeny do konkrétní architektury a vývojového procesu. Cílem úvodu je stručně vymezit, co práce zkoumá, proč je téma aktuální a podle čeho bude navržené řešení posuzováno.
+Práce se nezaměřuje na trénování modelů. Jazykový model je chápán jako inferenční komponenta uvnitř širšího systému, jehož spolehlivost závisí také na správě stavu, prostředí, nástrojích, verifikaci, bezpečnostních hranicích a způsobu orchestrace.
 
 ### 1.1 Motivace a vymezení problému
 
@@ -986,9 +986,13 @@ Slabší část evidence leží na úrovni celého systému. Jednotlivé mechani
 
 ## 4 Závěr
 
-Práce zkoumala, jak lze současnou agentní AI účinně zapojit do vývoje softwaru a jakou architekturu musí mít agent harness, aby spojoval autonomii s kontrolovatelným prováděním.
+Práce ukazuje, že praktické použití agentní AI při vývoji softwaru nelze redukovat na samotné generování kódu jazykovým modelem; rozhodující část systému tvoří harness, který spravuje stav, prostředí, nástroje, ověřování a řídicí hranice.
 
-Současné závěry jsou pracovní a budou v závěrečném alignment passu přepsány podle skutečně doložených výsledků, výzkumných otázek a omezení evaluace.
+Na systému DarkFactory byla tato architektura rozložena do explicitních runtime, capability, GitHub, identity a operátorských hranic. Referenční commit DarkFactory prošel automatickou quality pipeline a hlavní testovací sada vykázala 670 úspěšných testů bez selhání; samostatné testy ověřují mimo jiné persistenci Run State, Planning review, modelový failover, deterministické zachycení výsledku, recovery provenance a oddělení browserové autentizace od strojových credentials.
+
+Výsledky podporují architektonickou odpověď na výzkumné otázky: řízená autonomie vyžaduje explicitní schvalovací a verifikační body, odolnost běhu vyžaduje persistovaný stav a kontrolovaný failover/recovery a kontinuita dlouhotrvající úlohy nemůže být závislá pouze na modelovém context window.
+
+Evaluace však zatím neobsahuje jeden uzavřený živý df-only průchod celým Request lifecycle od schválení Planningu po merge a rekonciliaci. Práce proto nevyvozuje obecnou výkonnostní převahu DarkFactory ani úplnou autonomii; tato tvrzení zůstávají mimo rozsah současných důkazů.
 
 ## Seznam zdrojů
 
