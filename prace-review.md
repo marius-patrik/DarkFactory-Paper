@@ -187,18 +187,20 @@ Společně vymezují rozsah návrhu DarkFactory a rámec jeho evaluace.
 
 #### 1.2.1 Hlavní cíl
 
-Navrhnout, implementovat a ověřit architekturu agentního harnessu pro dlouhotrvající vývoj softwaru, která odděluje jazykový model od trvalého stavu, prostředí a kontrolních mechanismů a umožňuje autonomní provádění změn při zachování explicitních bodů lidského rozhodnutí.
+Navrhnout a implementovat architekturu agentního harnessu pro dlouhotrvající vývoj softwaru, která odděluje jazykový model od trvalého stavu, prostředí a deterministických kontrolních mechanismů, a technicky ověřit vlastnosti této architektury na systému DarkFactory.
 
-DarkFactory je implementační artefakt této architektury. Úspěšnost cíle se neposuzuje podle obecné převahy nad jinými agenty, ale podle toho, zda implementace doložitelně realizuje navržené mechanismy a zda jimi projde ověřený end-to-end vývojový proces.
+DarkFactory je implementační artefakt této architektury. Splnění cíle se posuzuje podle dohledatelné implementace navržených mechanismů a reprodukovatelných testovacích nebo provozních důkazů. Úplný živý Request lifecycle je samostatná úroveň ověření a nesmí být zaměněn za samotnou existenci architektury nebo úspěšné komponentové testy.
 
 #### 1.2.2 Dílčí cíle
 
 - Vymezit teoretické mechanismy Software Engineering, Modelu, Harnessu a Agentic Engineering potřebné pro dlouhotrvající agentní vývoj softwaru.
-- Navrhnout a implementovat DarkFactory jako systém s explicitním stavem běhu, odděleným prostředím, capability rozhraním, GitHub control plane a oddělenými hranicemi identity a přihlašovacích údajů.
-- Realizovat řízený životní cyklus požadavku od zachycení zadání přes Planning a implementaci po deterministické ověření, Final Alignment, integraci a obnovu přerušeného běhu.
-- Ověřit implementaci pomocí automatických kontrol, end-to-end scénáře a provozu na vybraných cílových repozitářích a výsledky vztáhnout k výzkumným otázkám.
+- Navrhnout a implementovat DarkFactory s explicitním stavem běhu, odděleným prostředím, capability rozhraním, GitHub control plane a oddělenými hranicemi lidské a strojové identity.
+- Implementovat mechanismy řízeného životního cyklu požadavku: Planning, deterministické ověření, review/fix, Final Alignment, integraci a obnovu přerušeného běhu.
+- Ověřit implementované mechanismy automatickými testy a CI nad konkrétním commitem.
+- Ověřit přenositelnost vybraných částí řešení na konkrétních cílových repozitářích a samostatně vyhodnotit, zda existuje důkaz celého živého end-to-end Request lifecycle.
+- Vztáhnout zjištěné výsledky a jejich omezení přímo k výzkumným otázkám.
 
-Dílčí cíle vytvářejí sled od teoretického vymezení přes návrh artefaktu k jeho technickému ověření.
+Dílčí cíle oddělují teoretické vymezení, konstrukci artefaktu a jednotlivé úrovně jeho ověření. Nesplněná nebo neprokázaná úroveň evaluace proto nemusí být nahrazena silnějším tvrzením z jiné vrstvy důkazů.
 
 #### 1.2.3 Výzkumné otázky
 
@@ -210,15 +212,15 @@ O1 sleduje řízenou autonomii, O2 odolnost provádění a O3 kontinuitu stavu p
 
 ### 1.3 Metodika práce
 
-Práce používá konstrukční přístup odpovídající design science: vymezuje problém a cíle řešení, navrhuje a implementuje artefakt DarkFactory, demonstruje jeho použití a následně jej technicky vyhodnocuje. <sup><span id="loc-8">(</span><a href="#loc-81" role="doc-biblioref">4</a>)</sup> <sup><span id="loc-9">(</span><a href="#loc-82" role="doc-biblioref">5</a>)</sup>
+Práce používá konstrukční přístup odpovídající design science: vymezuje problém a cíle řešení, navrhuje a implementuje artefakt DarkFactory a následně jej vyhodnocuje pomocí reprodukovatelných technických důkazů. <sup><span id="loc-8">(</span><a href="#loc-81" role="doc-biblioref">4</a>)</sup> <sup><span id="loc-9">(</span><a href="#loc-82" role="doc-biblioref">5</a>)</sup>
 
-Teoretická část vychází z odborných článků, standardů, protokolových specifikací a primární dokumentace současných agentních systémů. Jednotlivé mechanismy jsou rozděleny do samostatných konceptů, aby bylo možné přesně oddělit vlastnosti [***LLM (Jazykový model) [Large Language Model]***](#concept-language_model)<sup>*</sup>, harnessu a agentických technik.
+Teoretická část vychází z odborných článků, standardů, protokolových specifikací a primární dokumentace současných agentních systémů. Jednotlivé mechanismy jsou rozděleny do samostatných konceptů, aby bylo možné oddělit vlastnosti [***LLM (Jazykový model) [Large Language Model]***](#concept-language_model)<sup>*</sup>, harnessu a technik Agentic Engineering.
 
-Předmětem práce není trénování neuronových sítí, optimalizace vah ani matematický rozbor učení modelu. [***LLM (Jazykový model) [Large Language Model]***](#concept-language_model)<sup>*</sup> je chápán jako hotová inferenční komponenta a je popsán pouze v rozsahu nutném pro vysvětlení dalších částí systému.
+Předmětem práce není trénování neuronových sítí, optimalizace vah ani matematický rozbor učení modelu. [***LLM (Jazykový model) [Large Language Model]***](#concept-language_model)<sup>*</sup> je chápán jako hotová inferenční komponenta a je popsán pouze v rozsahu potřebném pro vysvětlení architektury okolního systému.
 
-Praktická část používá zdrojový kód, typované kontrakty, testy, workflow a generované artefakty DarkFactory jako primární důkaz skutečné implementace. Evaluace kombinuje kontrolu architektonického souladu, automatické buildy a testy, end-to-end průchod řízeným životním cyklem a ověření na vybraných cílových repozitářích.
+Praktická část používá zdrojový kód, typované kontrakty, testy, workflow a generované artefakty DarkFactory jako primární důkaz skutečné implementace. Evaluace rozlišuje architektonický důkaz, automatizované funkční testy, CI nad konkrétním commitem a provozní ověření na konkrétních cílových repozitářích. Tvrzení o kompletním produkčním Request lifecycle je přijato pouze tehdy, pokud existuje reprodukovatelný živý průchod od schválení Planningu po merge a rekonciliaci; aktuální absence tohoto důkazu je uvedena jako omezení, nikoli nahrazena architektonickým předpokladem.
 
-Práce neprovádí statistický benchmark obecné výkonnosti agentních systémů. Každá odpověď na výzkumnou otázku musí být omezena na tvrzení, která podporují konkrétní reprodukovatelné důkazy.
+Práce neprovádí statistický benchmark obecné výkonnosti agentních systémů. Odpovědi na výzkumné otázky jsou omezeny na tvrzení podporovaná konkrétními reprodukovatelnými důkazy.
 
 ## 2 Teoretická část
 
@@ -1064,20 +1066,7 @@ Evaluace však zatím neobsahuje jeden uzavřený živý df-only průchod celým
 - [65.](#loc-74) GITHUB ACTIONS. DarkFactory-Paper CI run 35617820423. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820423](https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820423)
 - [66.](#loc-75) GITHUB ACTIONS. DarkFactory-Paper Deploy Documentation run 35617820271. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820271](https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820271)
 - [67.](#loc-76) GITHUB ACTIONS. DarkFactory-Paper Release run 35617820286. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820286](https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820286)
-- 68.  SHI, Yifan, ZHANG, Wei a CUI, Tianyi. A Programming Paradigm for Spatiotemporal Composability. *arXiv preprint arXiv:2608.25512.* Online. 2026. Available from: [https://arxiv.org/abs/2608.25512](https://arxiv.org/abs/2608.25512)
-- 69.  WOOLDRIDGE, Michael a JENNINGS, Nicholas R. Intelligent Agents: Theory and Practice. *The Knowledge Engineering Review*. 1995. Vol. 10, no. 2, p. 115–152.
-- 70.  SHINN, Noah, CASSANO, Federico, GOPINATH, Ashwin, NARASIMHAN, Karthik a YAO, Shunyu. Reflexion: Language Agents with Verbal Reinforcement Learning. *Advances in Neural Information Processing Systems.* Online. 2023. Vol. 36, p. 8634–8652. Available from: [https://arxiv.org/abs/2303.11366](https://arxiv.org/abs/2303.11366)
-- 71.  MERKEL, Dirk. Docker: lightweight linux containers for consistent development and deployment. *Linux Journal*. 2014. Vol. 2014, no. 239, p. 2.
-- 72.  KINSMAN, Timothy, WESSEL, Mairieli, GEROSA, Marco A. a TREUDE, Christoph. How do software developers use GitHub Actions to automate their workflows?. In : *Proceedings of the 18th International Conference on Mining Software Repositories*. 2021. p. 420–431.
-- 73.  DABBISH, Laura, STUART, Colleen, TSAY, Jason a HERBSLEB, Jim. Social coding in GitHub: transparency and collaboration in an open software repository. In : *Proceedings of the ACM 2012 conference on Computer Supported Cooperative Work*. 2012. p. 1277–1286.
-- 74.  OPENAI. The ChatGPT home page. Online. 2026. [Accessed 20 září 2026]. Available from: [https://help.openai.com/en/articles/9125172](https://help.openai.com/en/articles/9125172)
-- 75.  OPENAI DEVELOPER COMMUNITY. Seeking Community Advice: Best Practices for Creating a Comprehensive GPT Manual. Online. 2024. [Accessed 20 září 2026]. Available from: [https://community.openai.com/t/seeking-community-advice-best-practices-for-creating-a-comprehensive-gpt-manual/1033512](https://community.openai.com/t/seeking-community-advice-best-practices-for-creating-a-comprehensive-gpt-manual/1033512)
-- 76.  FOWLER, Martin. Vibe Coding. Online. 2026. [Accessed 20 září 2026]. Available from: [https://martinfowler.com/bliki/VibeCoding.html](https://martinfowler.com/bliki/VibeCoding.html)
-- 77.  GONÇALVES, Pavlína Wurzel, FREGNAN, Enrico, BAUM, Tobias, SCHNEIDER, Kurt a BACCHELLI, Alberto. Do explicit review strategies improve code review performance? Towards understanding the role of cognitive load. *Empirical Software Engineering.* Online. 2022. Vol. 27, no. 4, p. 99. DOI [10.1007/s10664-022-10123-8](https://doi.org/10.1007/s10664-022-10123-8).
-- 78.  GVISOR AUTHORS. Introduction to gVisor security. Online. 2026. [Accessed 20 září 2026]. Available from: [https://gvisor.dev/docs/architecture_guide/intro/](https://gvisor.dev/docs/architecture_guide/intro/)
-- 79.  MARIUS, Patrik. DarkFactory. Online. 2026. [Accessed 20 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
-- 80.  GITHUB. Understanding GitHub Actions. Online. 2026. [Accessed 21 září 2026]. Available from: [https://docs.github.com/en/actions/get-started/understand-github-actions](https://docs.github.com/en/actions/get-started/understand-github-actions)
-- 81.  ANTHROPIC. Harness design for long-running application development. Online. 2026. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/harness-design-long-running-apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- 68.  ANTHROPIC. Harness design for long-running application development. Online. 2026. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/harness-design-long-running-apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
 
 ## Seznam obrázků a tabulek
 
