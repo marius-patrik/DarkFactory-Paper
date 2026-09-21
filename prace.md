@@ -648,6 +648,13 @@ DarkFactory tyto principy spojuje v konkrétní architektuře agentního harness
 - 44.  GONÇALVES, Pavlína Wurzel, FREGNAN, Enrico, BAUM, Tobias, SCHNEIDER, Kurt a BACCHELLI, Alberto. Do explicit review strategies improve code review performance? Towards understanding the role of cognitive load. *Empirical Software Engineering.* Online. 2022. Vol. 27, no. 4, p. 99. DOI [10.1007/s10664-022-10123-8](https://doi.org/10.1007/s10664-022-10123-8).
 - 45.  GVISOR AUTHORS. Introduction to gVisor security. Online. 2026. [Accessed 20 září 2026]. Available from: [https://gvisor.dev/docs/architecture_guide/intro/](https://gvisor.dev/docs/architecture_guide/intro/)
 - 46.  MARIUS, Patrik. DarkFactory. Online. 2026. [Accessed 20 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
+- 47.  OPENAI. Sessions | OpenAI Agents SDK. Online. 2026. [Accessed 21 září 2026]. Available from: [https://openai.github.io/openai-agents-js/guides/sessions/](https://openai.github.io/openai-agents-js/guides/sessions/)
+- 48.  OPENAI. Guardrails | OpenAI Agents SDK. Online. 2026. [Accessed 21 září 2026]. Available from: [https://openai.github.io/openai-agents-js/guides/guardrails/](https://openai.github.io/openai-agents-js/guides/guardrails/)
+- 49.  ANTHROPIC. Create plugins | Claude Code Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/plugins](https://code.claude.com/docs/en/plugins)
+- 50.  ANTHROPIC. Hooks reference | Claude Code Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/hooks](https://code.claude.com/docs/en/hooks)
+- 51.  ANTHROPIC. Connect Claude Code to tools via MCP. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
+- 52.  GITHUB. Branches | GitHub Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://docs.github.com/en/pull-requests/reference/branches](https://docs.github.com/en/pull-requests/reference/branches)
+- 53.  GITHUB. About pull requests | GitHub Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://docs.github.com/en/pull-requests/get-started/about-pull-requests](https://docs.github.com/en/pull-requests/get-started/about-pull-requests)
 
 ## Seznam obrázků a tabulek
 
