@@ -1060,6 +1060,12 @@
                   "source": "repository/DarkFactory/manuscript/results/evaluation-method.typ"
                 },
                 {
+                  "name": "goal-question-section.typ",
+                  "path": "DarkFactory/manuscript/results/goal-question-section.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/results/goal-question-section.typ"
+                },
+                {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/results/index.typ",
                   "type": "file",

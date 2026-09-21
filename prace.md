@@ -950,6 +950,12 @@ Aktivní fleet evidence tedy v této fázi pokrývá DarkFactory, omnis, ChessWi
 
 #### 3.4.5 Vyhodnocení cílů a výzkumných otázek
 
+Hlavní cíl je v této fázi doložen na úrovni návrhu, implementovaných mechanismů a automatických testů; úplné uzavření vyžaduje ještě živý df-only Request lifecycle.
+
+Dílčí cíle zaměřené na teoretické vymezení, architekturu DarkFactory, explicitní stav, capability rozhraní, GitHub control plane, identity boundaries a automatické technické ověření mají přímé implementační nebo CI důkazy. <sup>(<a href="#loc-131" role="doc-biblioref">55</a>)</sup> <sup>(<a href="#loc-132" role="doc-biblioref">56</a>)</sup>
+
+Cíl prokázat celý řízený životní cyklus od Requestu přes schválení Planningu až po merge a následnou rekonciliaci zůstává otevřený ze stejného důvodu jako end-to-end část evaluace: jednotlivé mechanismy jsou testované, ale jeden živý produkční důkaz zatím není uložen jako uzavřený artefakt.
+
 ##### Vyhodnocení výzkumných otázek
 
 Průběžné přiřazení výzkumných otázek ke konkrétním implementačním a testovacím důkazům, které vymezuje, co lze z aktuální evaluace tvrdit a co ještě vyžaduje živý end-to-end důkaz.
