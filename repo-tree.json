@@ -50,25 +50,6 @@
       "type": "directory",
       "children": [
         {
-          "name": "agentic-ai",
-          "path": "DarkFactory/agentic-ai",
-          "type": "directory",
-          "children": [
-            {
-              "name": "agentic-ai.typ",
-              "path": "DarkFactory/agentic-ai/agentic-ai.typ",
-              "type": "file",
-              "source": "repository/DarkFactory/agentic-ai/agentic-ai.typ"
-            },
-            {
-              "name": "index.typ",
-              "path": "DarkFactory/agentic-ai/index.typ",
-              "type": "file",
-              "source": "repository/DarkFactory/agentic-ai/index.typ"
-            }
-          ]
-        },
-        {
           "name": "agentic-engineering",
           "path": "DarkFactory/agentic-engineering",
           "type": "directory",
@@ -78,86 +59,6 @@
               "path": "DarkFactory/agentic-engineering/agent-harness",
               "type": "directory",
               "children": [
-                {
-                  "name": "agent-loop",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "agent-loop.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/agent-loop.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/agent-loop.typ"
-                    },
-                    {
-                      "name": "divergence.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/divergence.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/divergence.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/index.typ"
-                    },
-                    {
-                      "name": "session-management.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ"
-                    }
-                  ]
-                },
-                {
-                  "name": "context-engineering",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "compaction.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/compaction.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/compaction.typ"
-                    },
-                    {
-                      "name": "context-engineering.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-engineering.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/context-engineering.typ"
-                    },
-                    {
-                      "name": "context-injection.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-injection.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/context-injection.typ"
-                    },
-                    {
-                      "name": "context-rot.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-rot.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/context-rot.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/index.typ"
-                    },
-                    {
-                      "name": "rag.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/rag.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/rag.typ"
-                    },
-                    {
-                      "name": "semantic-drift.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/semantic-drift.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/semantic-drift.typ"
-                    }
-                  ]
-                },
                 {
                   "name": "examples",
                   "path": "DarkFactory/agentic-engineering/agent-harness/examples",
@@ -202,84 +103,46 @@
                   ]
                 },
                 {
-                  "name": "skills",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/skills",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "hook.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/hook.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/hook.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/index.typ"
-                    },
-                    {
-                      "name": "script.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/script.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/script.typ"
-                    },
-                    {
-                      "name": "skill-md-format.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/skill-md-format.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/skill-md-format.typ"
-                    },
-                    {
-                      "name": "skills.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/skills.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/skills.typ"
-                    }
-                  ]
-                },
-                {
-                  "name": "tool-calling",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "code-execution.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/code-execution.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/code-execution.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/index.typ"
-                    },
-                    {
-                      "name": "json-schema-tool-calling.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/json-schema-tool-calling.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/json-schema-tool-calling.typ"
-                    },
-                    {
-                      "name": "mcp.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/mcp.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/mcp.typ"
-                    },
-                    {
-                      "name": "tool-calling.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling/tool-calling.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling/tool-calling.typ"
-                    }
-                  ]
-                },
-                {
                   "name": "agent-harness.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/agent-harness.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-harness.typ"
+                },
+                {
+                  "name": "agent-loop.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop.typ"
+                },
+                {
+                  "name": "agent.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/agent.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent.typ"
+                },
+                {
+                  "name": "agentic-ai.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/agentic-ai.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/agentic-ai.typ"
+                },
+                {
+                  "name": "chatbot.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/chatbot.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/chatbot.typ"
+                },
+                {
+                  "name": "code-execution.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/code-execution.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/code-execution.typ"
+                },
+                {
+                  "name": "divergence.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/divergence.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/divergence.typ"
                 },
                 {
                   "name": "index.typ",
@@ -288,16 +151,95 @@
                   "source": "repository/DarkFactory/agentic-engineering/agent-harness/index.typ"
                 },
                 {
+                  "name": "json-schema-tool-calling.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/json-schema-tool-calling.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/json-schema-tool-calling.typ"
+                },
+                {
+                  "name": "mcp.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/mcp.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/mcp.typ"
+                },
+                {
                   "name": "plugins.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/plugins.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/agentic-engineering/agent-harness/plugins.typ"
                 },
                 {
+                  "name": "session-management.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/session-management.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/session-management.typ"
+                },
+                {
                   "name": "subagent.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/subagent.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/agentic-engineering/agent-harness/subagent.typ"
+                },
+                {
+                  "name": "tool-calling.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/tool-calling.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/tool-calling.typ"
+                },
+                {
+                  "name": "turn.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/turn.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/turn.typ"
+                }
+              ]
+            },
+            {
+              "name": "context-engineering",
+              "path": "DarkFactory/agentic-engineering/context-engineering",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "compaction.typ",
+                  "path": "DarkFactory/agentic-engineering/context-engineering/compaction.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/context-engineering/compaction.typ"
+                },
+                {
+                  "name": "context-engineering.typ",
+                  "path": "DarkFactory/agentic-engineering/context-engineering/context-engineering.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/context-engineering/context-engineering.typ"
+                },
+                {
+                  "name": "context-injection.typ",
+                  "path": "DarkFactory/agentic-engineering/context-engineering/context-injection.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/context-engineering/context-injection.typ"
+                },
+                {
+                  "name": "context-rot.typ",
+                  "path": "DarkFactory/agentic-engineering/context-engineering/context-rot.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/context-engineering/context-rot.typ"
+                },
+                {
+                  "name": "index.typ",
+                  "path": "DarkFactory/agentic-engineering/context-engineering/index.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/context-engineering/index.typ"
+                },
+                {
+                  "name": "rag.typ",
+                  "path": "DarkFactory/agentic-engineering/context-engineering/rag.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/context-engineering/rag.typ"
+                },
+                {
+                  "name": "semantic-drift.typ",
+                  "path": "DarkFactory/agentic-engineering/context-engineering/semantic-drift.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/context-engineering/semantic-drift.typ"
                 }
               ]
             },
@@ -371,6 +313,43 @@
               ]
             },
             {
+              "name": "skills",
+              "path": "DarkFactory/agentic-engineering/skills",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "hook.typ",
+                  "path": "DarkFactory/agentic-engineering/skills/hook.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/skills/hook.typ"
+                },
+                {
+                  "name": "index.typ",
+                  "path": "DarkFactory/agentic-engineering/skills/index.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/skills/index.typ"
+                },
+                {
+                  "name": "script.typ",
+                  "path": "DarkFactory/agentic-engineering/skills/script.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/skills/script.typ"
+                },
+                {
+                  "name": "skill-md-format.typ",
+                  "path": "DarkFactory/agentic-engineering/skills/skill-md-format.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/skills/skill-md-format.typ"
+                },
+                {
+                  "name": "skills.typ",
+                  "path": "DarkFactory/agentic-engineering/skills/skills.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/skills/skills.typ"
+                }
+              ]
+            },
+            {
               "name": "agentic-engineering.typ",
               "path": "DarkFactory/agentic-engineering/agentic-engineering.typ",
               "type": "file",
@@ -381,6 +360,12 @@
               "path": "DarkFactory/agentic-engineering/guardrail.typ",
               "type": "file",
               "source": "repository/DarkFactory/agentic-engineering/guardrail.typ"
+            },
+            {
+              "name": "harness-engineering.typ",
+              "path": "DarkFactory/agentic-engineering/harness-engineering.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/harness-engineering.typ"
             },
             {
               "name": "human-in-the-loop.typ",
@@ -680,26 +665,8 @@
                   "path": "DarkFactory/language-models/language-model/transformer.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/language-models/language-model/transformer.typ"
-                },
-                {
-                  "name": "turn.typ",
-                  "path": "DarkFactory/language-models/language-model/turn.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/language-models/language-model/turn.typ"
                 }
               ]
-            },
-            {
-              "name": "agent.typ",
-              "path": "DarkFactory/language-models/agent.typ",
-              "type": "file",
-              "source": "repository/DarkFactory/language-models/agent.typ"
-            },
-            {
-              "name": "chatbot.typ",
-              "path": "DarkFactory/language-models/chatbot.typ",
-              "type": "file",
-              "source": "repository/DarkFactory/language-models/chatbot.typ"
             },
             {
               "name": "index.typ",
@@ -906,25 +873,6 @@
                       "path": "DarkFactory/manuscript/practical/darkfactory-architecture/index.typ",
                       "type": "file",
                       "source": "repository/DarkFactory/manuscript/practical/darkfactory-architecture/index.typ"
-                    }
-                  ]
-                },
-                {
-                  "name": "harness-engineering",
-                  "path": "DarkFactory/manuscript/practical/harness-engineering",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "harness-engineering.typ",
-                      "path": "DarkFactory/manuscript/practical/harness-engineering/harness-engineering.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/manuscript/practical/harness-engineering/harness-engineering.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/manuscript/practical/harness-engineering/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/manuscript/practical/harness-engineering/index.typ"
                     }
                   ]
                 },
