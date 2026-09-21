@@ -1368,12 +1368,6 @@
       "source": "repository/Makefile"
     },
     {
-      "name": "PLAN.md",
-      "path": "PLAN.md",
-      "type": "file",
-      "source": "repository/PLAN.md"
-    },
-    {
       "name": "README.md",
       "path": "README.md",
       "type": "file",
