@@ -123,6 +123,7 @@ required_sources = (
     Path("web/package.json"),
     Path("web/rsbuild.config.ts"),
     Path("web/src/app.tsx"),
+    Path("web/src/compiled-artifact.tsx"),
     Path("web/src/pdf-document.tsx"),
     Path("web/src/workspace.tsx"),
     Path("web/src/settings.ts"),
@@ -366,6 +367,15 @@ for forbidden in (
         fail(f"obsolete language/profile UI remains: {forbidden}")
 if "publication.json" not in app or "manifest?.publication" not in app:
     fail("viewer is not using the canonical single-publication manifest")
+
+compiled_artifact = sources[Path("web/src/compiled-artifact.tsx")]
+for contract in (
+    "function publicationUrlTransform(url: string)",
+    "data:image",
+    "urlTransform={publicationUrlTransform}",
+):
+    if contract not in compiled_artifact:
+        fail(f"compiled Markdown image rendering contract missing: {contract}")
 
 for contract in (
     'label="Structure"',
