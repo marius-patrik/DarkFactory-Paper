@@ -273,12 +273,12 @@
           "anchor": "concept-harness_engineering"
         },
         {
-          "title": "2.5.5 Promptové inženýrství",
+          "title": "2.5.5 Prompt Engineering (Promptové inženýrství)",
           "level": 4,
           "anchor": "concept-prompt_engineering"
         },
         {
-          "title": "Systémový prompt",
+          "title": "System Prompt (Systémový prompt)",
           "level": 5,
           "anchor": "concept-system_prompt"
         },
@@ -298,7 +298,7 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.5.8 Kontextové inženýrství",
+          "title": "2.5.8 Context Engineering (Kontextové inženýrství)",
           "level": 4,
           "anchor": "concept-context_engineering"
         },
@@ -360,17 +360,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-50"
+          "anchor": "loc-54"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-90"
+          "anchor": "loc-98"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-91"
+          "anchor": "loc-99"
         }
       ],
       "review": [
@@ -645,12 +645,12 @@
           "anchor": "concept-harness_engineering"
         },
         {
-          "title": "2.5.5 Promptové inženýrství",
+          "title": "2.5.5 Prompt Engineering (Promptové inženýrství)",
           "level": 4,
           "anchor": "concept-prompt_engineering"
         },
         {
-          "title": "Systémový prompt",
+          "title": "System Prompt (Systémový prompt)",
           "level": 5,
           "anchor": "concept-system_prompt"
         },
@@ -670,7 +670,7 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.5.8 Kontextové inženýrství",
+          "title": "2.5.8 Context Engineering (Kontextové inženýrství)",
           "level": 4,
           "anchor": "concept-context_engineering"
         },
@@ -732,17 +732,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-50"
+          "anchor": "loc-54"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-90"
+          "anchor": "loc-98"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-91"
+          "anchor": "loc-99"
         }
       ]
     }
