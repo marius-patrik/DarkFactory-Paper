@@ -128,17 +128,17 @@
           "anchor": "concept-harness"
         },
         {
-          "title": "2.2.3.1 Plugins (Rozšíření)",
+          "title": "Plugins (Rozšíření)",
           "level": 5,
           "anchor": "concept-plugins"
         },
         {
-          "title": "2.2.3.2 Subagent (Podřízený agent)",
+          "title": "Subagent (Podřízený agent)",
           "level": 5,
           "anchor": "concept-subagent"
         },
         {
-          "title": "2.2.3.3 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+          "title": "Agent Loop (Smyčka ReAct) [ReAct Loop]",
           "level": 5,
           "anchor": "concept-agent_loop"
         },
@@ -153,7 +153,7 @@
           "anchor": "concept-divergence"
         },
         {
-          "title": "2.2.3.4 Tool Calling (Vyvolávání nástrojů)",
+          "title": "Tool Calling (Vyvolávání nástrojů)",
           "level": 5,
           "anchor": "concept-tool_calling"
         },
@@ -163,7 +163,7 @@
           "anchor": "concept-mcp"
         },
         {
-          "title": "2.2.3.5 Skills (Dovednosti)",
+          "title": "Skills (Dovednosti)",
           "level": 5,
           "anchor": "concept-skills"
         },
@@ -178,7 +178,7 @@
           "anchor": "concept-hook"
         },
         {
-          "title": "2.2.3.6 Kontextové inženýrství",
+          "title": "Kontextové inženýrství",
           "level": 5,
           "anchor": "concept-context_engineering"
         },
@@ -243,7 +243,7 @@
           "anchor": "concept-prompt_engineering"
         },
         {
-          "title": "2.3.6.1 Systémový prompt",
+          "title": "Systémový prompt",
           "level": 5,
           "anchor": "concept-system_prompt"
         },
@@ -258,7 +258,7 @@
           "anchor": "concept-graph_engineering"
         },
         {
-          "title": "2.3.8.1 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
+          "title": "DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
           "level": 5,
           "anchor": "concept-dag"
         },
@@ -283,12 +283,12 @@
           "anchor": "concept-software_engineering"
         },
         {
-          "title": "2.4.3.1 Plánování",
+          "title": "Plánování",
           "level": 5,
           "anchor": "concept-planning"
         },
         {
-          "title": "2.4.3.2 Version Control (Správa verzí)",
+          "title": "Version Control (Správa verzí)",
           "level": 5,
           "anchor": "concept-version_control"
         },
@@ -298,17 +298,17 @@
           "anchor": "concept-continuous_integration"
         },
         {
-          "title": "2.4.4.1 Actions (GitHub Actions)",
+          "title": "Actions (GitHub Actions)",
           "level": 5,
           "anchor": "concept-github_actions"
         },
         {
-          "title": "2.4.4.2 Container (Softwarový kontejner) [Software Container]",
+          "title": "Container (Softwarový kontejner) [Software Container]",
           "level": 5,
           "anchor": "concept-container"
         },
         {
-          "title": "2.4.4.3 Integration Test (Integrační test)",
+          "title": "Integration Test (Integrační test)",
           "level": 5,
           "anchor": "concept-integration_test"
         },
@@ -490,17 +490,17 @@
           "anchor": "concept-harness"
         },
         {
-          "title": "2.2.3.1 Plugins (Rozšíření)",
+          "title": "Plugins (Rozšíření)",
           "level": 5,
           "anchor": "concept-plugins"
         },
         {
-          "title": "2.2.3.2 Subagent (Podřízený agent)",
+          "title": "Subagent (Podřízený agent)",
           "level": 5,
           "anchor": "concept-subagent"
         },
         {
-          "title": "2.2.3.3 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+          "title": "Agent Loop (Smyčka ReAct) [ReAct Loop]",
           "level": 5,
           "anchor": "concept-agent_loop"
         },
@@ -515,7 +515,7 @@
           "anchor": "concept-divergence"
         },
         {
-          "title": "2.2.3.4 Tool Calling (Vyvolávání nástrojů)",
+          "title": "Tool Calling (Vyvolávání nástrojů)",
           "level": 5,
           "anchor": "concept-tool_calling"
         },
@@ -525,7 +525,7 @@
           "anchor": "concept-mcp"
         },
         {
-          "title": "2.2.3.5 Skills (Dovednosti)",
+          "title": "Skills (Dovednosti)",
           "level": 5,
           "anchor": "concept-skills"
         },
@@ -540,7 +540,7 @@
           "anchor": "concept-hook"
         },
         {
-          "title": "2.2.3.6 Kontextové inženýrství",
+          "title": "Kontextové inženýrství",
           "level": 5,
           "anchor": "concept-context_engineering"
         },
@@ -605,7 +605,7 @@
           "anchor": "concept-prompt_engineering"
         },
         {
-          "title": "2.3.6.1 Systémový prompt",
+          "title": "Systémový prompt",
           "level": 5,
           "anchor": "concept-system_prompt"
         },
@@ -620,7 +620,7 @@
           "anchor": "concept-graph_engineering"
         },
         {
-          "title": "2.3.8.1 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
+          "title": "DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
           "level": 5,
           "anchor": "concept-dag"
         },
@@ -645,12 +645,12 @@
           "anchor": "concept-software_engineering"
         },
         {
-          "title": "2.4.3.1 Plánování",
+          "title": "Plánování",
           "level": 5,
           "anchor": "concept-planning"
         },
         {
-          "title": "2.4.3.2 Version Control (Správa verzí)",
+          "title": "Version Control (Správa verzí)",
           "level": 5,
           "anchor": "concept-version_control"
         },
@@ -660,17 +660,17 @@
           "anchor": "concept-continuous_integration"
         },
         {
-          "title": "2.4.4.1 Actions (GitHub Actions)",
+          "title": "Actions (GitHub Actions)",
           "level": 5,
           "anchor": "concept-github_actions"
         },
         {
-          "title": "2.4.4.2 Container (Softwarový kontejner) [Software Container]",
+          "title": "Container (Softwarový kontejner) [Software Container]",
           "level": 5,
           "anchor": "concept-container"
         },
         {
-          "title": "2.4.4.3 Integration Test (Integrační test)",
+          "title": "Integration Test (Integrační test)",
           "level": 5,
           "anchor": "concept-integration_test"
         },

@@ -44,17 +44,17 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
     1. [2.2.1 Chatbot](#concept-chatbot)
     2. [2.2.2 Agent](#concept-agent)
     3. [2.2.3 Agent Harness (Agentní harness)](#concept-harness)
-      1. [2.2.3.1 Plugins (Rozšíření)](#concept-plugins)
-      2. [2.2.3.2 Subagent (Podřízený agent)](#concept-subagent)
-      3. [2.2.3.3 Agent Loop (Smyčka ReAct) [ReAct Loop]](#concept-agent_loop)
+      1. [Plugins (Rozšíření)](#concept-plugins)
+      2. [Subagent (Podřízený agent)](#concept-subagent)
+      3. [Agent Loop (Smyčka ReAct) [ReAct Loop]](#concept-agent_loop)
         1. [Agentní sezení](#concept-agent_session)
         2. [Patologie divergence](#concept-divergence)
-      4. [2.2.3.4 Tool Calling (Vyvolávání nástrojů)](#concept-tool_calling)
+      4. [Tool Calling (Vyvolávání nástrojů)](#concept-tool_calling)
         1. [MCP (Model Context Protocol)](#concept-mcp)
-      5. [2.2.3.5 Skills (Dovednosti)](#concept-skills)
+      5. [Skills (Dovednosti)](#concept-skills)
         1. [Skript](#concept-script)
         2. [Hook (Událostní záchytný bod) [Event Hook]](#concept-hook)
-      6. [2.2.3.6 Kontextové inženýrství](#concept-context_engineering)
+      6. [Kontextové inženýrství](#concept-context_engineering)
         1. [Context Injection (Vkládání kontextu)](#concept-context_injection)
         2. [Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction)
         3. [RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag)
@@ -67,20 +67,20 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
     4. [2.3.4 Vibe Coding](#concept-vibe_coding)
     5. [2.3.5 Slop](#concept-slop)
     6. [2.3.6 Promptové inženýrství](#concept-prompt_engineering)
-      1. [2.3.6.1 Systémový prompt](#concept-system_prompt)
+      1. [Systémový prompt](#concept-system_prompt)
     7. [2.3.7 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]](#concept-loop_engineering)
     8. [2.3.8 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#concept-graph_engineering)
-      1. [2.3.8.1 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
+      1. [DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
   4. [2.4 Vývojové prostředí a praxe](#concept-development_environment)
     1. [2.4.1 GitHub](#concept-github)
     2. [2.4.2 Runtime (Běhové prostředí)](#concept-runtime)
     3. [2.4.3 Softwarové inženýrství](#concept-software_engineering)
-      1. [2.4.3.1 Plánování](#concept-planning)
-      2. [2.4.3.2 Version Control (Správa verzí)](#concept-version_control)
+      1. [Plánování](#concept-planning)
+      2. [Version Control (Správa verzí)](#concept-version_control)
     4. [2.4.4 CI (Průběžná integrace) [Continuous Integration]](#concept-continuous_integration)
-      1. [2.4.4.1 Actions (GitHub Actions)](#concept-github_actions)
-      2. [2.4.4.2 Container (Softwarový kontejner) [Software Container]](#concept-container)
-      3. [2.4.4.3 Integration Test (Integrační test)](#concept-integration_test)
+      1. [Actions (GitHub Actions)](#concept-github_actions)
+      2. [Container (Softwarový kontejner) [Software Container]](#concept-container)
+      3. [Integration Test (Integrační test)](#concept-integration_test)
 7. [3 Praktická část](#concept-practical)
   1. [3.1 Harness Engineering (Harnessové inženýrství)](#concept-harness_engineering)
   2. [3.2 Architektura DarkFactory](#concept-darkfactory_architecture)
@@ -295,19 +295,19 @@ Snímek ukazuje, že aplikační vrstva může vedle konverzace zpřístupnit so
 
 <sup><span id="loc-17">(</span><a href="#loc-44" role="doc-biblioref">7</a>)</sup><sup>(<a href="#loc-44" role="doc-biblioref">7</a>)</sup>
 
-##### 2.2.3.1 Plugins (Rozšíření)
+##### Plugins (Rozšíření)
 
 Plugin je programové rozšíření běžící přímo v prostředí harnessu, které může doplnit exekuční jádro o systémové adaptéry, ovladače nástrojů nebo deterministické záchytné body.
 
 Na rozdíl od instrukční dovednosti mění plugin programové chování běhové vrstvy harnessu. <sup><span id="loc-18">(</span><a href="#loc-45" role="doc-biblioref">8</a>)</sup>
 
-##### 2.2.3.2 Subagent (Podřízený agent)
+##### Subagent (Podřízený agent)
 
 Subagent je dočasná nebo specializovaná agentní instance, které nadřazený orchestrátor deleguje vymezenou dílčí úlohu a následně převezme její výsledek.
 
 Subagent izoluje dílčí práci, například průzkum, plánování nebo implementaci, a může nadřazenému orchestrátoru vrátit pouze výsledek místo celé pracovní historie.
 
-##### 2.2.3.3 Agent Loop (Smyčka ReAct) [ReAct Loop]
+##### Agent Loop (Smyčka ReAct) [ReAct Loop]
 
 Agent Loop je iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace.
 
@@ -329,7 +329,7 @@ Divergence je selhání agentní smyčky, při němž se běh vzdaluje cíli opa
 
 Typickými projevy jsou opakování stejné neúspěšné akce, střídání protichůdných změn a pokračování běhu bez měřitelného pokroku. Harness je proto musí rozpoznat pomocí pozorovaného stavu, limitů a podmínek ukončení. <sup><span id="loc-20">(</span><a href="#loc-47" role="doc-biblioref">10</a>)</sup>
 
-##### 2.2.3.4 Tool Calling (Vyvolávání nástrojů)
+##### Tool Calling (Vyvolávání nástrojů)
 
 Vyvolávání nástrojů je mechanismus, kterým model požádá okolní systém o provedení konkrétní externí akce a předá jí potřebné parametry.
 
@@ -349,7 +349,7 @@ Model Context Protocol (MCP) je otevřený protokol pro standardizované propoje
 
 MCP používá klient–server rozhraní nad JSON-RPC, takže nástroje a datové zdroje mohou být implementovány mimo jádro harnessu a znovu používány různými aplikacemi. <sup><span id="loc-24">(</span><a href="#loc-51" role="doc-biblioref">14</a>)</sup>
 
-##### 2.2.3.5 Skills (Dovednosti)
+##### Skills (Dovednosti)
 
 Skill je znovupoužitelný balíček instrukcí a volitelných zdrojů načítaný pro úlohy, ke kterým je relevantní.
 
@@ -402,7 +402,7 @@ Hook je definovaný bod životního cyklu nebo události, na který lze navázat
 
 Hook se používá například před spuštěním nástroje, po dokončení kroku nebo při změně stavu běhu.
 
-##### 2.2.3.6 Kontextové inženýrství
+##### Kontextové inženýrství
 
 Kontextové inženýrství je systematický výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu.
 
@@ -480,7 +480,7 @@ Promptové inženýrství je systematický návrh instrukcí a kontextu určují
 
 Prompt může řídit postup a používání nástrojů, ale nevynucuje bezpečnostní nebo procesní pravidla; ta zajišťuje [***Guardrail (Deterministický mantinel) [Deterministic Guardrail]***](#concept-guardrail)<sup>*</sup>.
 
-##### 2.3.6.1 Systémový prompt
+##### Systémový prompt
 
 Systémový prompt je instrukční vrstva s vysokou prioritou, která vymezuje roli a základní pravidla chování modelu nebo agenta.
 
@@ -498,7 +498,7 @@ Inženýrství pracovních grafů je návrh agentních nebo automatizačních wo
 
 Graf umožňuje explicitně řídit pořadí, paralelizaci a kontrolní body vícefázové úlohy. Dílčí práci lze delegovat pomocí [***Subagent (Podřízený agent)***](#concept-subagent)<sup>*</sup> a její závislosti vyjádřit pomocí [***DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]***](#concept-dag)<sup>*</sup>.
 
-##### 2.3.8.1 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]
+##### DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]
 
 Orientovaný acyklický graf (DAG) je orientovaný graf bez orientovaného cyklu, který umožňuje explicitně vyjádřit závislosti a pořadí kroků pracovního postupu.
 
@@ -528,13 +528,13 @@ Softwarové inženýrství je systematické uplatňování inženýrských princ
 
 V agentním vývoji zasazuje generování kódu do řízeného procesu požadavků, změn, automatického ověřování a revize.
 
-##### 2.4.3.1 Plánování
+##### Plánování
 
 Plánování je proces převodu požadavku na explicitní posloupnost kroků, závislostí a ověřovacích podmínek před prováděním změn.
 
 V agentním vývoji plán před změnami určuje kontrolovatelné kroky a podmínky, podle nichž se ověří splnění zadání.
 
-##### 2.4.3.2 Version Control (Správa verzí)
+##### Version Control (Správa verzí)
 
 Správa verzí je sledování historie změn v repozitáři tak, aby bylo možné změny porovnávat, oddělovat a bezpečně slučovat.
 
@@ -546,19 +546,19 @@ Průběžná integrace (CI) je vývojová praxe, při níž se změny často int
 
 Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl vygenerován. CI poskytuje opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek. <sup><span id="loc-35">(</span><a href="#loc-62" role="doc-biblioref">25</a>)</sup>
 
-##### 2.4.4.1 Actions (GitHub Actions)
+##### Actions (GitHub Actions)
 
 GitHub Actions je automatizační platforma GitHubu pro spouštění deklarovaných workflow a jejich jobů v reakci na události repozitáře nebo ruční spuštění.
 
 V DarkFactory GitHub Actions spouští CI kontroly a další automatizované procesy repozitáře.
 
-##### 2.4.4.2 Container (Softwarový kontejner) [Software Container]
+##### Container (Softwarový kontejner) [Software Container]
 
 Softwarový kontejner je izolované uživatelské běhové prostředí, které balí aplikaci a její závislosti při sdílení jádra hostitelského operačního systému.
 
 V CI poskytuje kontejner opakovatelné prostředí s deklarovanými nástroji a závislostmi, ale sám o sobě nezaručuje úplnou bezpečnostní izolaci.
 
-##### 2.4.4.3 Integration Test (Integrační test)
+##### Integration Test (Integrační test)
 
 Integrační test ověřuje spolupráci více komponent nebo vrstev systému přes jejich skutečná rozhraní.
 
