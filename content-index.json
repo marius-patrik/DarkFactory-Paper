@@ -63,267 +63,282 @@
           "anchor": "concept-methodology"
         },
         {
-          "title": "2 Teoretická část: koncepty agentického AI",
+          "title": "2 Teoretická část",
           "level": 2,
           "anchor": "concept-theory"
         },
         {
-          "title": "2.1 Jazykové modely, chatboti a agenti",
+          "title": "2.1 LLM (Jazykový model)",
           "level": 3,
-          "anchor": "concept-language_models"
+          "anchor": "concept-language_model"
         },
         {
-          "title": "2.1.1 Chatbot",
+          "title": "2.1.1 Transformer",
+          "level": 4,
+          "anchor": "concept-transformer"
+        },
+        {
+          "title": "2.1.2 Tokenizér",
+          "level": 4,
+          "anchor": "concept-tokenizer"
+        },
+        {
+          "title": "2.1.3 Token",
+          "level": 4,
+          "anchor": "concept-token"
+        },
+        {
+          "title": "2.1.4 Embedding (Vektorová reprezentace)",
+          "level": 4,
+          "anchor": "concept-embedding"
+        },
+        {
+          "title": "2.1.5 Kontextové okno",
+          "level": 4,
+          "anchor": "concept-context_window"
+        },
+        {
+          "title": "2.1.6 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
+          "level": 4,
+          "anchor": "concept-kv_cache"
+        },
+        {
+          "title": "2.1.7 Turn (Tah interakce)",
+          "level": 4,
+          "anchor": "concept-turn"
+        },
+        {
+          "title": "2.2 Agentic AI (Agentické AI)",
+          "level": 3,
+          "anchor": "concept-agentic_ai"
+        },
+        {
+          "title": "2.2.1 Chatbot",
           "level": 4,
           "anchor": "concept-chatbot"
         },
         {
-          "title": "2.1.2 Agent",
+          "title": "2.2.2 Agent",
           "level": 4,
           "anchor": "concept-agent"
         },
         {
-          "title": "2.1.3 LLM (Jazykový model) [Large Language Model]",
-          "level": 4,
-          "anchor": "concept-language_model"
-        },
-        {
-          "title": "2.1.3.1 Transformer (Transformerová architektura) [Transformer Architecture]",
-          "level": 5,
-          "anchor": "concept-transformer"
-        },
-        {
-          "title": "2.1.3.2 Tokenizér",
-          "level": 5,
-          "anchor": "concept-tokenizer"
-        },
-        {
-          "title": "2.1.3.3 Token",
-          "level": 5,
-          "anchor": "concept-token"
-        },
-        {
-          "title": "2.1.3.4 Embedding (Vektorová reprezentace)",
-          "level": 5,
-          "anchor": "concept-embedding"
-        },
-        {
-          "title": "2.1.3.5 Kontextové okno",
-          "level": 5,
-          "anchor": "concept-context_window"
-        },
-        {
-          "title": "2.1.3.6 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
-          "level": 5,
-          "anchor": "concept-kv_cache"
-        },
-        {
-          "title": "2.1.3.7 Turn (Tah interakce) [Interaction Turn]",
-          "level": 5,
-          "anchor": "concept-turn"
-        },
-        {
-          "title": "2.2 Agentické inženýrství",
-          "level": 3,
-          "anchor": "concept-agentic_engineering"
-        },
-        {
-          "title": "2.2.1 Vibe Coding",
-          "level": 4,
-          "anchor": "concept-vibe_coding"
-        },
-        {
-          "title": "2.2.2 Slop",
-          "level": 4,
-          "anchor": "concept-slop"
-        },
-        {
-          "title": "2.2.3 Promptové inženýrství",
-          "level": 4,
-          "anchor": "concept-prompt_engineering"
-        },
-        {
-          "title": "2.2.3.1 Systémový prompt",
-          "level": 5,
-          "anchor": "concept-system_prompt"
-        },
-        {
-          "title": "2.2.4 Agent Harness (Agentní harness)",
+          "title": "2.2.3 Agent Harness (Agentní harness)",
           "level": 4,
           "anchor": "concept-harness"
         },
         {
-          "title": "2.2.4.1 Sandbox (Izolované běhové prostředí)",
-          "level": 5,
-          "anchor": "concept-sandbox"
-        },
-        {
-          "title": "2.2.4.2 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
-          "level": 5,
-          "anchor": "concept-guardrail"
-        },
-        {
-          "title": "2.2.4.3 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
-          "level": 5,
-          "anchor": "concept-human_in_the_loop"
-        },
-        {
-          "title": "2.2.4.4 Plugins (Rozšíření)",
+          "title": "2.2.3.1 Plugins (Rozšíření)",
           "level": 5,
           "anchor": "concept-plugins"
         },
         {
-          "title": "2.2.4.5 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+          "title": "2.2.3.2 Subagent (Podřízený agent)",
+          "level": 5,
+          "anchor": "concept-subagent"
+        },
+        {
+          "title": "2.2.3.3 Agent Loop (Smyčka ReAct) [ReAct Loop]",
           "level": 5,
           "anchor": "concept-agent_loop"
         },
         {
-          "title": "2.2.4.5.1 Agentní sezení",
+          "title": "2.2.3.3.1 Agentní sezení",
           "level": 6,
           "anchor": "concept-agent_session"
         },
         {
-          "title": "2.2.4.5.2 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
-          "level": 6,
-          "anchor": "concept-loop_engineering"
-        },
-        {
-          "title": "2.2.4.5.3 Patologie divergence",
+          "title": "2.2.3.3.2 Patologie divergence",
           "level": 6,
           "anchor": "concept-divergence"
         },
         {
-          "title": "2.2.4.6 Tool Calling (Vyvolávání nástrojů)",
+          "title": "2.2.3.4 Tool Calling (Vyvolávání nástrojů)",
           "level": 5,
           "anchor": "concept-tool_calling"
         },
         {
-          "title": "2.2.4.6.1 MCP (Model Context Protocol)",
+          "title": "2.2.3.4.1 MCP (Model Context Protocol)",
           "level": 6,
           "anchor": "concept-mcp"
         },
         {
-          "title": "2.2.4.7 Skills (Dovednosti)",
+          "title": "2.2.3.5 Skills (Dovednosti)",
           "level": 5,
           "anchor": "concept-skills"
         },
         {
-          "title": "2.2.4.7.1 Skript",
+          "title": "2.2.3.5.1 Skript",
           "level": 6,
           "anchor": "concept-script"
         },
         {
-          "title": "2.2.4.7.2 Hook (Událostní záchytný bod) [Event Hook]",
+          "title": "2.2.3.5.2 Hook (Událostní záchytný bod) [Event Hook]",
           "level": 6,
           "anchor": "concept-hook"
         },
         {
-          "title": "2.2.4.8 Kontextové inženýrství",
+          "title": "2.2.3.6 Kontextové inženýrství",
           "level": 5,
           "anchor": "concept-context_engineering"
         },
         {
-          "title": "2.2.4.8.1 Compaction (Kompakce kontextu) [Context Compaction]",
+          "title": "2.2.3.6.1 Context Injection (Vkládání kontextu)",
+          "level": 6,
+          "anchor": "concept-context_injection"
+        },
+        {
+          "title": "2.2.3.6.2 Compaction (Kompakce kontextu) [Context Compaction]",
           "level": 6,
           "anchor": "concept-compaction"
         },
         {
-          "title": "2.2.4.8.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
+          "title": "2.2.3.6.3 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
           "level": 6,
           "anchor": "concept-rag"
         },
         {
-          "title": "2.2.4.8.3 Degradace kontextu",
+          "title": "2.2.3.6.4 Degradace kontextu",
           "level": 6,
           "anchor": "concept-context_rot"
         },
         {
-          "title": "2.2.4.8.4 Sémantický posun",
+          "title": "2.2.3.6.5 Sémantický posun",
           "level": 6,
           "anchor": "concept-semantic_drift"
         },
         {
-          "title": "2.2.4.9 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+          "level": 3,
+          "anchor": "concept-agentic_engineering"
+        },
+        {
+          "title": "2.3.1 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
+          "level": 4,
+          "anchor": "concept-guardrail"
+        },
+        {
+          "title": "2.3.2 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
+          "level": 4,
+          "anchor": "concept-human_in_the_loop"
+        },
+        {
+          "title": "2.3.3 Sandbox (Izolované běhové prostředí)",
+          "level": 4,
+          "anchor": "concept-sandbox"
+        },
+        {
+          "title": "2.3.4 Vibe Coding",
+          "level": 4,
+          "anchor": "concept-vibe_coding"
+        },
+        {
+          "title": "2.3.5 Slop",
+          "level": 4,
+          "anchor": "concept-slop"
+        },
+        {
+          "title": "2.3.6 Promptové inženýrství",
+          "level": 4,
+          "anchor": "concept-prompt_engineering"
+        },
+        {
+          "title": "2.3.6.1 Systémový prompt",
           "level": 5,
+          "anchor": "concept-system_prompt"
+        },
+        {
+          "title": "2.3.7 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
+          "level": 4,
+          "anchor": "concept-loop_engineering"
+        },
+        {
+          "title": "2.3.8 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "level": 4,
           "anchor": "concept-graph_engineering"
         },
         {
-          "title": "2.2.4.9.1 Subagent (Podřízený agent)",
-          "level": 6,
-          "anchor": "concept-subagent"
-        },
-        {
-          "title": "2.3 Vývojové prostředí a praxe",
-          "level": 3,
-          "anchor": "concept-development_environment"
-        },
-        {
-          "title": "2.3.1 GitHub",
-          "level": 4,
-          "anchor": "concept-github"
-        },
-        {
-          "title": "2.3.2 Runtime (Běhové prostředí) [Runtime Environment]",
-          "level": 4,
-          "anchor": "concept-runtime"
-        },
-        {
-          "title": "2.3.3 Softwarové inženýrství",
-          "level": 4,
-          "anchor": "concept-software_engineering"
-        },
-        {
-          "title": "2.3.3.1 Plánování",
-          "level": 5,
-          "anchor": "concept-planning"
-        },
-        {
-          "title": "2.3.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
+          "title": "2.3.8.1 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
           "level": 5,
           "anchor": "concept-dag"
         },
         {
-          "title": "2.3.3.3 Version Control (Správa verzí)",
+          "title": "2.4 Vývojové prostředí a praxe",
+          "level": 3,
+          "anchor": "concept-development_environment"
+        },
+        {
+          "title": "2.4.1 GitHub",
+          "level": 4,
+          "anchor": "concept-github"
+        },
+        {
+          "title": "2.4.2 Runtime (Běhové prostředí) [Runtime Environment]",
+          "level": 4,
+          "anchor": "concept-runtime"
+        },
+        {
+          "title": "2.4.3 Softwarové inženýrství",
+          "level": 4,
+          "anchor": "concept-software_engineering"
+        },
+        {
+          "title": "2.4.3.1 Plánování",
+          "level": 5,
+          "anchor": "concept-planning"
+        },
+        {
+          "title": "2.4.3.2 Version Control (Správa verzí)",
           "level": 5,
           "anchor": "concept-version_control"
         },
         {
-          "title": "2.3.4 CI (Průběžná integrace) [Continuous Integration]",
+          "title": "2.4.4 CI (Průběžná integrace) [Continuous Integration]",
           "level": 4,
           "anchor": "concept-continuous_integration"
         },
         {
-          "title": "2.3.4.1 Actions (GitHub Actions)",
+          "title": "2.4.4.1 Actions (GitHub Actions)",
           "level": 5,
           "anchor": "concept-github_actions"
         },
         {
-          "title": "2.3.4.2 Container (Softwarový kontejner) [Software Container]",
+          "title": "2.4.4.2 Container (Softwarový kontejner) [Software Container]",
           "level": 5,
           "anchor": "concept-container"
         },
         {
-          "title": "2.3.4.3 Integration Test (Integrační test)",
+          "title": "2.4.4.3 Integration Test (Integrační test)",
           "level": 5,
           "anchor": "concept-integration_test"
         },
         {
-          "title": "3 Praktická část: DarkFactory Harness",
+          "title": "3 Praktická část",
           "level": 2,
           "anchor": "concept-practical"
         },
         {
-          "title": "3.1 Výsledky a diskuse",
+          "title": "3.1 Harness Engineering (Harnessové inženýrství)",
+          "level": 3,
+          "anchor": "concept-harness_engineering"
+        },
+        {
+          "title": "3.2 Architektura DarkFactory",
+          "level": 3,
+          "anchor": "concept-darkfactory_architecture"
+        },
+        {
+          "title": "3.3 Výsledky a diskuse",
           "level": 3,
           "anchor": "concept-results_discussion"
         },
         {
-          "title": "3.1.1 Vyhodnocení výzkumných otázek",
+          "title": "3.3.1 Vyhodnocení výzkumných otázek",
           "level": 4,
           "anchor": "concept-research_question_evaluation"
         },
         {
-          "title": "3.1.2 Omezení evaluace",
+          "title": "3.3.2 Omezení evaluace",
           "level": 4,
           "anchor": "concept-evaluation_limitations"
         },
@@ -410,267 +425,282 @@
           "anchor": "concept-methodology"
         },
         {
-          "title": "2 Teoretická část: koncepty agentického AI",
+          "title": "2 Teoretická část",
           "level": 2,
           "anchor": "concept-theory"
         },
         {
-          "title": "2.1 Jazykové modely, chatboti a agenti",
+          "title": "2.1 LLM (Jazykový model)",
           "level": 3,
-          "anchor": "concept-language_models"
+          "anchor": "concept-language_model"
         },
         {
-          "title": "2.1.1 Chatbot",
+          "title": "2.1.1 Transformer",
+          "level": 4,
+          "anchor": "concept-transformer"
+        },
+        {
+          "title": "2.1.2 Tokenizér",
+          "level": 4,
+          "anchor": "concept-tokenizer"
+        },
+        {
+          "title": "2.1.3 Token",
+          "level": 4,
+          "anchor": "concept-token"
+        },
+        {
+          "title": "2.1.4 Embedding (Vektorová reprezentace)",
+          "level": 4,
+          "anchor": "concept-embedding"
+        },
+        {
+          "title": "2.1.5 Kontextové okno",
+          "level": 4,
+          "anchor": "concept-context_window"
+        },
+        {
+          "title": "2.1.6 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
+          "level": 4,
+          "anchor": "concept-kv_cache"
+        },
+        {
+          "title": "2.1.7 Turn (Tah interakce)",
+          "level": 4,
+          "anchor": "concept-turn"
+        },
+        {
+          "title": "2.2 Agentic AI (Agentické AI)",
+          "level": 3,
+          "anchor": "concept-agentic_ai"
+        },
+        {
+          "title": "2.2.1 Chatbot",
           "level": 4,
           "anchor": "concept-chatbot"
         },
         {
-          "title": "2.1.2 Agent",
+          "title": "2.2.2 Agent",
           "level": 4,
           "anchor": "concept-agent"
         },
         {
-          "title": "2.1.3 LLM (Jazykový model) [Large Language Model]",
-          "level": 4,
-          "anchor": "concept-language_model"
-        },
-        {
-          "title": "2.1.3.1 Transformer (Transformerová architektura) [Transformer Architecture]",
-          "level": 5,
-          "anchor": "concept-transformer"
-        },
-        {
-          "title": "2.1.3.2 Tokenizér",
-          "level": 5,
-          "anchor": "concept-tokenizer"
-        },
-        {
-          "title": "2.1.3.3 Token",
-          "level": 5,
-          "anchor": "concept-token"
-        },
-        {
-          "title": "2.1.3.4 Embedding (Vektorová reprezentace)",
-          "level": 5,
-          "anchor": "concept-embedding"
-        },
-        {
-          "title": "2.1.3.5 Kontextové okno",
-          "level": 5,
-          "anchor": "concept-context_window"
-        },
-        {
-          "title": "2.1.3.6 KV Cache (Mezipaměť klíčů a hodnot) [Key–Value Cache]",
-          "level": 5,
-          "anchor": "concept-kv_cache"
-        },
-        {
-          "title": "2.1.3.7 Turn (Tah interakce) [Interaction Turn]",
-          "level": 5,
-          "anchor": "concept-turn"
-        },
-        {
-          "title": "2.2 Agentické inženýrství",
-          "level": 3,
-          "anchor": "concept-agentic_engineering"
-        },
-        {
-          "title": "2.2.1 Vibe Coding",
-          "level": 4,
-          "anchor": "concept-vibe_coding"
-        },
-        {
-          "title": "2.2.2 Slop",
-          "level": 4,
-          "anchor": "concept-slop"
-        },
-        {
-          "title": "2.2.3 Promptové inženýrství",
-          "level": 4,
-          "anchor": "concept-prompt_engineering"
-        },
-        {
-          "title": "2.2.3.1 Systémový prompt",
-          "level": 5,
-          "anchor": "concept-system_prompt"
-        },
-        {
-          "title": "2.2.4 Agent Harness (Agentní harness)",
+          "title": "2.2.3 Agent Harness (Agentní harness)",
           "level": 4,
           "anchor": "concept-harness"
         },
         {
-          "title": "2.2.4.1 Sandbox (Izolované běhové prostředí)",
-          "level": 5,
-          "anchor": "concept-sandbox"
-        },
-        {
-          "title": "2.2.4.2 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
-          "level": 5,
-          "anchor": "concept-guardrail"
-        },
-        {
-          "title": "2.2.4.3 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
-          "level": 5,
-          "anchor": "concept-human_in_the_loop"
-        },
-        {
-          "title": "2.2.4.4 Plugins (Rozšíření)",
+          "title": "2.2.3.1 Plugins (Rozšíření)",
           "level": 5,
           "anchor": "concept-plugins"
         },
         {
-          "title": "2.2.4.5 Agent Loop (Smyčka ReAct) [ReAct Loop]",
+          "title": "2.2.3.2 Subagent (Podřízený agent)",
+          "level": 5,
+          "anchor": "concept-subagent"
+        },
+        {
+          "title": "2.2.3.3 Agent Loop (Smyčka ReAct) [ReAct Loop]",
           "level": 5,
           "anchor": "concept-agent_loop"
         },
         {
-          "title": "2.2.4.5.1 Agentní sezení",
+          "title": "2.2.3.3.1 Agentní sezení",
           "level": 6,
           "anchor": "concept-agent_session"
         },
         {
-          "title": "2.2.4.5.2 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
-          "level": 6,
-          "anchor": "concept-loop_engineering"
-        },
-        {
-          "title": "2.2.4.5.3 Patologie divergence",
+          "title": "2.2.3.3.2 Patologie divergence",
           "level": 6,
           "anchor": "concept-divergence"
         },
         {
-          "title": "2.2.4.6 Tool Calling (Vyvolávání nástrojů)",
+          "title": "2.2.3.4 Tool Calling (Vyvolávání nástrojů)",
           "level": 5,
           "anchor": "concept-tool_calling"
         },
         {
-          "title": "2.2.4.6.1 MCP (Model Context Protocol)",
+          "title": "2.2.3.4.1 MCP (Model Context Protocol)",
           "level": 6,
           "anchor": "concept-mcp"
         },
         {
-          "title": "2.2.4.7 Skills (Dovednosti)",
+          "title": "2.2.3.5 Skills (Dovednosti)",
           "level": 5,
           "anchor": "concept-skills"
         },
         {
-          "title": "2.2.4.7.1 Skript",
+          "title": "2.2.3.5.1 Skript",
           "level": 6,
           "anchor": "concept-script"
         },
         {
-          "title": "2.2.4.7.2 Hook (Událostní záchytný bod) [Event Hook]",
+          "title": "2.2.3.5.2 Hook (Událostní záchytný bod) [Event Hook]",
           "level": 6,
           "anchor": "concept-hook"
         },
         {
-          "title": "2.2.4.8 Kontextové inženýrství",
+          "title": "2.2.3.6 Kontextové inženýrství",
           "level": 5,
           "anchor": "concept-context_engineering"
         },
         {
-          "title": "2.2.4.8.1 Compaction (Kompakce kontextu) [Context Compaction]",
+          "title": "2.2.3.6.1 Context Injection (Vkládání kontextu)",
+          "level": 6,
+          "anchor": "concept-context_injection"
+        },
+        {
+          "title": "2.2.3.6.2 Compaction (Kompakce kontextu) [Context Compaction]",
           "level": 6,
           "anchor": "concept-compaction"
         },
         {
-          "title": "2.2.4.8.2 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
+          "title": "2.2.3.6.3 RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]",
           "level": 6,
           "anchor": "concept-rag"
         },
         {
-          "title": "2.2.4.8.3 Degradace kontextu",
+          "title": "2.2.3.6.4 Degradace kontextu",
           "level": 6,
           "anchor": "concept-context_rot"
         },
         {
-          "title": "2.2.4.8.4 Sémantický posun",
+          "title": "2.2.3.6.5 Sémantický posun",
           "level": 6,
           "anchor": "concept-semantic_drift"
         },
         {
-          "title": "2.2.4.9 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "title": "2.3 Agentic Engineering (Agentické inženýrství)",
+          "level": 3,
+          "anchor": "concept-agentic_engineering"
+        },
+        {
+          "title": "2.3.1 Guardrail (Deterministický mantinel) [Deterministic Guardrail]",
+          "level": 4,
+          "anchor": "concept-guardrail"
+        },
+        {
+          "title": "2.3.2 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]",
+          "level": 4,
+          "anchor": "concept-human_in_the_loop"
+        },
+        {
+          "title": "2.3.3 Sandbox (Izolované běhové prostředí)",
+          "level": 4,
+          "anchor": "concept-sandbox"
+        },
+        {
+          "title": "2.3.4 Vibe Coding",
+          "level": 4,
+          "anchor": "concept-vibe_coding"
+        },
+        {
+          "title": "2.3.5 Slop",
+          "level": 4,
+          "anchor": "concept-slop"
+        },
+        {
+          "title": "2.3.6 Promptové inženýrství",
+          "level": 4,
+          "anchor": "concept-prompt_engineering"
+        },
+        {
+          "title": "2.3.6.1 Systémový prompt",
           "level": 5,
+          "anchor": "concept-system_prompt"
+        },
+        {
+          "title": "2.3.7 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
+          "level": 4,
+          "anchor": "concept-loop_engineering"
+        },
+        {
+          "title": "2.3.8 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "level": 4,
           "anchor": "concept-graph_engineering"
         },
         {
-          "title": "2.2.4.9.1 Subagent (Podřízený agent)",
-          "level": 6,
-          "anchor": "concept-subagent"
-        },
-        {
-          "title": "2.3 Vývojové prostředí a praxe",
-          "level": 3,
-          "anchor": "concept-development_environment"
-        },
-        {
-          "title": "2.3.1 GitHub",
-          "level": 4,
-          "anchor": "concept-github"
-        },
-        {
-          "title": "2.3.2 Runtime (Běhové prostředí) [Runtime Environment]",
-          "level": 4,
-          "anchor": "concept-runtime"
-        },
-        {
-          "title": "2.3.3 Softwarové inženýrství",
-          "level": 4,
-          "anchor": "concept-software_engineering"
-        },
-        {
-          "title": "2.3.3.1 Plánování",
-          "level": 5,
-          "anchor": "concept-planning"
-        },
-        {
-          "title": "2.3.3.2 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
+          "title": "2.3.8.1 DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]",
           "level": 5,
           "anchor": "concept-dag"
         },
         {
-          "title": "2.3.3.3 Version Control (Správa verzí)",
+          "title": "2.4 Vývojové prostředí a praxe",
+          "level": 3,
+          "anchor": "concept-development_environment"
+        },
+        {
+          "title": "2.4.1 GitHub",
+          "level": 4,
+          "anchor": "concept-github"
+        },
+        {
+          "title": "2.4.2 Runtime (Běhové prostředí) [Runtime Environment]",
+          "level": 4,
+          "anchor": "concept-runtime"
+        },
+        {
+          "title": "2.4.3 Softwarové inženýrství",
+          "level": 4,
+          "anchor": "concept-software_engineering"
+        },
+        {
+          "title": "2.4.3.1 Plánování",
+          "level": 5,
+          "anchor": "concept-planning"
+        },
+        {
+          "title": "2.4.3.2 Version Control (Správa verzí)",
           "level": 5,
           "anchor": "concept-version_control"
         },
         {
-          "title": "2.3.4 CI (Průběžná integrace) [Continuous Integration]",
+          "title": "2.4.4 CI (Průběžná integrace) [Continuous Integration]",
           "level": 4,
           "anchor": "concept-continuous_integration"
         },
         {
-          "title": "2.3.4.1 Actions (GitHub Actions)",
+          "title": "2.4.4.1 Actions (GitHub Actions)",
           "level": 5,
           "anchor": "concept-github_actions"
         },
         {
-          "title": "2.3.4.2 Container (Softwarový kontejner) [Software Container]",
+          "title": "2.4.4.2 Container (Softwarový kontejner) [Software Container]",
           "level": 5,
           "anchor": "concept-container"
         },
         {
-          "title": "2.3.4.3 Integration Test (Integrační test)",
+          "title": "2.4.4.3 Integration Test (Integrační test)",
           "level": 5,
           "anchor": "concept-integration_test"
         },
         {
-          "title": "3 Praktická část: DarkFactory Harness",
+          "title": "3 Praktická část",
           "level": 2,
           "anchor": "concept-practical"
         },
         {
-          "title": "3.1 Výsledky a diskuse",
+          "title": "3.1 Harness Engineering (Harnessové inženýrství)",
+          "level": 3,
+          "anchor": "concept-harness_engineering"
+        },
+        {
+          "title": "3.2 Architektura DarkFactory",
+          "level": 3,
+          "anchor": "concept-darkfactory_architecture"
+        },
+        {
+          "title": "3.3 Výsledky a diskuse",
           "level": 3,
           "anchor": "concept-results_discussion"
         },
         {
-          "title": "3.1.1 Vyhodnocení výzkumných otázek",
+          "title": "3.3.1 Vyhodnocení výzkumných otázek",
           "level": 4,
           "anchor": "concept-research_question_evaluation"
         },
         {
-          "title": "3.1.2 Omezení evaluace",
+          "title": "3.3.2 Omezení evaluace",
           "level": 4,
           "anchor": "concept-evaluation_limitations"
         },

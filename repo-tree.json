@@ -50,6 +50,25 @@
       "type": "directory",
       "children": [
         {
+          "name": "agentic-ai",
+          "path": "DarkFactory/agentic-ai",
+          "type": "directory",
+          "children": [
+            {
+              "name": "agentic-ai.typ",
+              "path": "DarkFactory/agentic-ai/agentic-ai.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-ai/agentic-ai.typ"
+            },
+            {
+              "name": "index.typ",
+              "path": "DarkFactory/agentic-ai/index.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-ai/index.typ"
+            }
+          ]
+        },
+        {
           "name": "agentic-engineering",
           "path": "DarkFactory/agentic-engineering",
           "type": "directory",
@@ -83,12 +102,6 @@
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/index.typ"
                     },
                     {
-                      "name": "loop-engineering.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ"
-                    },
-                    {
                       "name": "session-management.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ",
                       "type": "file",
@@ -112,6 +125,12 @@
                       "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-engineering.typ",
                       "type": "file",
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/context-engineering.typ"
+                    },
+                    {
+                      "name": "context-injection.typ",
+                      "path": "DarkFactory/agentic-engineering/agent-harness/context-engineering/context-injection.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/context-engineering/context-injection.typ"
                     },
                     {
                       "name": "context-rot.typ",
@@ -179,37 +198,6 @@
                       "path": "DarkFactory/agentic-engineering/agent-harness/examples/codex.typ",
                       "type": "file",
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/examples/codex.typ"
-                    }
-                  ]
-                },
-                {
-                  "name": "graph-engineering",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "dag.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/dag.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/dag.typ"
-                    },
-                    {
-                      "name": "graph-engineering.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/graph-engineering.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/graph-engineering.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/index.typ"
-                    },
-                    {
-                      "name": "subagent.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/graph-engineering/subagent.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/graph-engineering/subagent.typ"
                     }
                   ]
                 },
@@ -294,18 +282,6 @@
                   "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-harness.typ"
                 },
                 {
-                  "name": "guardrail.typ",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/guardrail.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/guardrail.typ"
-                },
-                {
-                  "name": "human-in-the-loop.typ",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/human-in-the-loop.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/human-in-the-loop.typ"
-                },
-                {
                   "name": "index.typ",
                   "path": "DarkFactory/agentic-engineering/agent-harness/index.typ",
                   "type": "file",
@@ -318,10 +294,54 @@
                   "source": "repository/DarkFactory/agentic-engineering/agent-harness/plugins.typ"
                 },
                 {
-                  "name": "sandbox.typ",
-                  "path": "DarkFactory/agentic-engineering/agent-harness/sandbox.typ",
+                  "name": "subagent.typ",
+                  "path": "DarkFactory/agentic-engineering/agent-harness/subagent.typ",
                   "type": "file",
-                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/sandbox.typ"
+                  "source": "repository/DarkFactory/agentic-engineering/agent-harness/subagent.typ"
+                }
+              ]
+            },
+            {
+              "name": "graph-engineering",
+              "path": "DarkFactory/agentic-engineering/graph-engineering",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "dag.typ",
+                  "path": "DarkFactory/agentic-engineering/graph-engineering/dag.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/graph-engineering/dag.typ"
+                },
+                {
+                  "name": "graph-engineering.typ",
+                  "path": "DarkFactory/agentic-engineering/graph-engineering/graph-engineering.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/graph-engineering/graph-engineering.typ"
+                },
+                {
+                  "name": "index.typ",
+                  "path": "DarkFactory/agentic-engineering/graph-engineering/index.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/graph-engineering/index.typ"
+                }
+              ]
+            },
+            {
+              "name": "loop-engineering",
+              "path": "DarkFactory/agentic-engineering/loop-engineering",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "index.typ",
+                  "path": "DarkFactory/agentic-engineering/loop-engineering/index.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/loop-engineering/index.typ"
+                },
+                {
+                  "name": "loop-engineering.typ",
+                  "path": "DarkFactory/agentic-engineering/loop-engineering/loop-engineering.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/loop-engineering/loop-engineering.typ"
                 }
               ]
             },
@@ -357,10 +377,28 @@
               "source": "repository/DarkFactory/agentic-engineering/agentic-engineering.typ"
             },
             {
+              "name": "guardrail.typ",
+              "path": "DarkFactory/agentic-engineering/guardrail.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/guardrail.typ"
+            },
+            {
+              "name": "human-in-the-loop.typ",
+              "path": "DarkFactory/agentic-engineering/human-in-the-loop.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/human-in-the-loop.typ"
+            },
+            {
               "name": "index.typ",
               "path": "DarkFactory/agentic-engineering/index.typ",
               "type": "file",
               "source": "repository/DarkFactory/agentic-engineering/index.typ"
+            },
+            {
+              "name": "sandbox.typ",
+              "path": "DarkFactory/agentic-engineering/sandbox.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/agentic-engineering/sandbox.typ"
             },
             {
               "name": "slop.typ",
@@ -653,12 +691,6 @@
                   "source": "repository/DarkFactory/language-models/language-model/embedding.typ"
                 },
                 {
-                  "name": "index.typ",
-                  "path": "DarkFactory/language-models/language-model/index.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/language-models/language-model/index.typ"
-                },
-                {
                   "name": "kv-cache.typ",
                   "path": "DarkFactory/language-models/language-model/kv-cache.typ",
                   "type": "file",
@@ -713,12 +745,6 @@
               "path": "DarkFactory/language-models/index.typ",
               "type": "file",
               "source": "repository/DarkFactory/language-models/index.typ"
-            },
-            {
-              "name": "language-models.typ",
-              "path": "DarkFactory/language-models/language-models.typ",
-              "type": "file",
-              "source": "repository/DarkFactory/language-models/language-models.typ"
             }
           ]
         },
@@ -903,6 +929,44 @@
               "path": "DarkFactory/manuscript/practical",
               "type": "directory",
               "children": [
+                {
+                  "name": "darkfactory-architecture",
+                  "path": "DarkFactory/manuscript/practical/darkfactory-architecture",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "darkfactory-architecture.typ",
+                      "path": "DarkFactory/manuscript/practical/darkfactory-architecture/darkfactory-architecture.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/practical/darkfactory-architecture/darkfactory-architecture.typ"
+                    },
+                    {
+                      "name": "index.typ",
+                      "path": "DarkFactory/manuscript/practical/darkfactory-architecture/index.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/practical/darkfactory-architecture/index.typ"
+                    }
+                  ]
+                },
+                {
+                  "name": "harness-engineering",
+                  "path": "DarkFactory/manuscript/practical/harness-engineering",
+                  "type": "directory",
+                  "children": [
+                    {
+                      "name": "harness-engineering.typ",
+                      "path": "DarkFactory/manuscript/practical/harness-engineering/harness-engineering.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/practical/harness-engineering/harness-engineering.typ"
+                    },
+                    {
+                      "name": "index.typ",
+                      "path": "DarkFactory/manuscript/practical/harness-engineering/index.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/practical/harness-engineering/index.typ"
+                    }
+                  ]
+                },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/manuscript/practical/index.typ",
