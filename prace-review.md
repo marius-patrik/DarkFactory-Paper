@@ -151,7 +151,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
     3. [3.4.3 End-to-end ověření](#section-end_to_end_evaluation)
     4. [3.4.4 Ověření na cílových repozitářích](#section-target_repository_evaluation)
     5. [3.4.5 Vyhodnocení cílů a výzkumných otázek](#section-goal_and_question_evaluation)
-      1. [Vyhodnocení výzkumných otázek](#concept-research_question_evaluation)
+      1. [Odpovědi na výzkumné otázky](#concept-research_question_evaluation)
     6. [3.4.6 Omezení](#section-evaluation_limits)
       1. [Omezení evaluace](#concept-evaluation_limitations)
     7. [3.4.7 Diskuse](#section-results_discussion_section)
@@ -959,15 +959,15 @@ Dílčí cíle zaměřené na teoretické vymezení, architekturu DarkFactory, e
 
 Cíl prokázat celý řízený životní cyklus od Requestu přes schválení Planningu až po merge a následnou rekonciliaci zůstává otevřený ze stejného důvodu jako end-to-end část evaluace: jednotlivé mechanismy jsou testované, ale jeden živý produkční důkaz zatím není uložen jako uzavřený artefakt.
 
-##### Vyhodnocení výzkumných otázek
+##### Odpovědi na výzkumné otázky
 
-Průběžné přiřazení výzkumných otázek ke konkrétním implementačním a testovacím důkazům, které vymezuje, co lze z aktuální evaluace tvrdit a co ještě vyžaduje živý end-to-end důkaz.
+Odpovědi na výzkumné otázky jsou omezeny na vlastnosti doložené implementací, automatickými testy, CI a dostupnými provozními artefakty.
 
-**O1.** Implementace obsahuje explicitní Planning Approval, review/fix mechanismy, deterministic verification, Final Alignment a oddělené body merge autorizace; CI a testovací sada ověřují jejich dílčí kontrakty. <sup>(<a href="#loc-132" role="doc-biblioref">55</a>)</sup> <sup>(<a href="#loc-133" role="doc-biblioref">56</a>)</sup> To podporuje tvrzení, že architektura umí oddělit automatizované kroky od lidských rozhodovacích bodů. Bez jednoho živého průchodu celým Request lifecycle však zatím nelze uzavřít, jak se tato řízená autonomie chová v úplném produkčním běhu; stejný požadavek zůstává otevřený i v acceptance 359 <sup>(<a href="#loc-134" role="doc-biblioref">57</a>)</sup>
+**O1.** Řízenou autonomii umožňuje kombinace explicitního Planning Approval, oddělené implementace, deterministického ověření, review/fix smyčky, Final Alignment a samostatné merge autorizace. Tyto mechanismy oddělují práci, kterou může systém provádět automaticky, od rozhodovacích bodů, které zůstávají pod lidskou kontrolou. Jejich dílčí kontrakty jsou implementované a testované. <sup>(<a href="#loc-132" role="doc-biblioref">55</a>)</sup> <sup>(<a href="#loc-133" role="doc-biblioref">56</a>)</sup> Bez jednoho živého průchodu celým Request lifecycle však evidence zatím neprokazuje chování této autonomie v úplném produkčním běhu; stejná podmínka zůstává otevřená v acceptance 359 <sup>(<a href="#loc-134" role="doc-biblioref">57</a>)</sup>
 
-**O2.** Supervisor a související testy ověřují provider/model failover, samostatné limity počtu tahů a času, klasifikaci chyb a zachování historie při pokračování. Recovery testy ověřují provenance, zachování rozpracovaného stavu a odmítnutí nebezpečného nebo neaplikovatelného recovery vstupu. <sup>(<a href="#loc-132" role="doc-biblioref">55</a>)</sup> Tato evidence podporuje technickou realizaci omezení a obnovy běhu; živý crash/resume scénář s reálnými externími účinky zůstává součástí dosud neuzavřeného 359 acceptance. <sup>(<a href="#loc-134" role="doc-biblioref">57</a>)</sup>
+**O2.** Neproduktivní nebo přerušený běh lze omezovat pomocí turn/time budgetů, klasifikace chyb a modelového failoveru a obnovovat pomocí persistovaného Run State a recovery provenance. Testy ověřují zachování historie při failoveru, round-trip stavu a odmítnutí neplatného nebo citlivého recovery vstupu. <sup>(<a href="#loc-132" role="doc-biblioref">55</a>)</sup> Tato evidence podporuje implementovaný mechanismus obnovy; neprokazuje ještě živou crash/resume idempotenci nad reálnými externími účinky, která zůstává součástí otevřeného 359 acceptance. <sup>(<a href="#loc-134" role="doc-biblioref">57</a>)</sup>
 
-**O3.** Run State je samostatně persistován a testy ověřují jeho round-trip uložení a atomický zápis. Session a Transcript jsou odděleny od aktivního modelového kontextu a recovery kontrakt váže pokračování na zachovaný stav a aktuální base/provenance. <sup>(<a href="#loc-132" role="doc-biblioref">55</a>)</sup> To podporuje architektonickou odpověď, že kontinuita dlouhotrvající úlohy nemá být závislá na tom, aby celý pracovní stav zůstal současně v context window. Evidence ale nedokazuje nulovou informační ztrátu pro libovolně dlouhou úlohu ani univerzální kvalitu kompakce.
+**O3.** Trvalý stav dlouhotrvající úlohy je oddělen od context window tím, že Run State, Session a Transcript mohou existovat mimo aktuální inferenční vstup a aktivní kontext se z nich sestavuje pouze v rozsahu potřebném pro další krok. Testy ověřují persistenci Run State a recovery vazby na aktuální base a provenance. <sup>(<a href="#loc-132" role="doc-biblioref">55</a>)</sup> Tento návrh umožňuje pokračování přes hranice jednotlivých modelových běhů, ale nedokazuje nulovou informační ztrátu pro libovolně dlouhou úlohu ani univerzální kvalitu výběru nebo kompakce kontextu.
 
 #### 3.4.6 Omezení
 
