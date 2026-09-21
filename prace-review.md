@@ -1060,6 +1060,10 @@ Současné závěry jsou pracovní a budou v závěrečném alignment passu pře
 - 74.  MARIUS, Patrik. DarkFactory. Online. 2026. [Accessed 20 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
 - 75.  GITHUB. Understanding GitHub Actions. Online. 2026. [Accessed 21 září 2026]. Available from: [https://docs.github.com/en/actions/get-started/understand-github-actions](https://docs.github.com/en/actions/get-started/understand-github-actions)
 - 76.  ANTHROPIC. Harness design for long-running application development. Online. 2026. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/harness-design-long-running-apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- 77.  MARIUS, Patrik. DarkFactory-Paper commit 5bc04974. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory-Paper/commit/5bc04974f9aed0f55295389154124a09059ff35e](https://github.com/marius-patrik/DarkFactory-Paper/commit/5bc04974f9aed0f55295389154124a09059ff35e)
+- 78.  GITHUB ACTIONS. DarkFactory-Paper CI run 35617820423. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820423](https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820423)
+- 79.  GITHUB ACTIONS. DarkFactory-Paper Deploy Documentation run 35617820271. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820271](https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820271)
+- 80.  GITHUB ACTIONS. DarkFactory-Paper Release run 35617820286. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820286](https://github.com/marius-patrik/DarkFactory-Paper/actions/runs/35617820286)
 
 ## Seznam obrázků a tabulek
 
