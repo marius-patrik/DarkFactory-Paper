@@ -89,12 +89,6 @@
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/loop-engineering.typ"
                     },
                     {
-                      "name": "react-loop-diagram.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/react-loop-diagram.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/agent-loop/react-loop-diagram.typ"
-                    },
-                    {
                       "name": "session-management.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/agent-loop/session-management.typ",
                       "type": "file",
@@ -235,12 +229,6 @@
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/index.typ",
                       "type": "file",
                       "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/index.typ"
-                    },
-                    {
-                      "name": "progressive-disclosure.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/progressive-disclosure.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/progressive-disclosure.typ"
                     },
                     {
                       "name": "script.typ",
@@ -430,12 +418,6 @@
                   "source": "repository/DarkFactory/development-environment/continuous-integration/continuous-integration.typ"
                 },
                 {
-                  "name": "flaky-test.typ",
-                  "path": "DarkFactory/development-environment/continuous-integration/flaky-test.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/continuous-integration/flaky-test.typ"
-                },
-                {
                   "name": "github-actions.typ",
                   "path": "DarkFactory/development-environment/continuous-integration/github-actions.typ",
                   "type": "file",
@@ -446,6 +428,12 @@
                   "path": "DarkFactory/development-environment/continuous-integration/index.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/development-environment/continuous-integration/index.typ"
+                },
+                {
+                  "name": "integration-test.typ",
+                  "path": "DarkFactory/development-environment/continuous-integration/integration-test.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/development-environment/continuous-integration/integration-test.typ"
                 }
               ]
             },
@@ -479,67 +467,6 @@
               "path": "DarkFactory/development-environment/version-control",
               "type": "directory",
               "children": [
-                {
-                  "name": "git",
-                  "path": "DarkFactory/development-environment/version-control/git",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "branch-protection.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/branch-protection.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/branch-protection.typ"
-                    },
-                    {
-                      "name": "branch.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/branch.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/branch.typ"
-                    },
-                    {
-                      "name": "git.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/git.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/git.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/index.typ"
-                    },
-                    {
-                      "name": "issue.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/issue.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/issue.typ"
-                    },
-                    {
-                      "name": "merge.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/merge.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/merge.typ"
-                    },
-                    {
-                      "name": "pull-request.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/pull-request.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/pull-request.typ"
-                    },
-                    {
-                      "name": "required-checks.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/required-checks.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/required-checks.typ"
-                    },
-                    {
-                      "name": "squash.typ",
-                      "path": "DarkFactory/development-environment/version-control/git/squash.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/development-environment/version-control/git/squash.typ"
-                    }
-                  ]
-                },
                 {
                   "name": "index.typ",
                   "path": "DarkFactory/development-environment/version-control/index.typ",
@@ -742,12 +669,6 @@
                   "path": "DarkFactory/language-models/language-model/language-model.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/language-models/language-model/language-model.typ"
-                },
-                {
-                  "name": "stochastic-decoding.typ",
-                  "path": "DarkFactory/language-models/language-model/stochastic-decoding.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/language-models/language-model/stochastic-decoding.typ"
                 },
                 {
                   "name": "token.typ",
@@ -978,6 +899,25 @@
               ]
             },
             {
+              "name": "practical",
+              "path": "DarkFactory/manuscript/practical",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "index.typ",
+                  "path": "DarkFactory/manuscript/practical/index.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/practical/index.typ"
+                },
+                {
+                  "name": "practical.typ",
+                  "path": "DarkFactory/manuscript/practical/practical.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/practical/practical.typ"
+                }
+              ]
+            },
+            {
               "name": "results",
               "path": "DarkFactory/manuscript/results",
               "type": "directory",
@@ -987,12 +927,6 @@
                   "path": "DarkFactory/manuscript/results/evaluation-limitations.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/manuscript/results/evaluation-limitations.typ"
-                },
-                {
-                  "name": "evaluation-snapshot.typ",
-                  "path": "DarkFactory/manuscript/results/evaluation-snapshot.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/manuscript/results/evaluation-snapshot.typ"
                 },
                 {
                   "name": "index.typ",
@@ -1011,12 +945,25 @@
                   "path": "DarkFactory/manuscript/results/results.typ",
                   "type": "file",
                   "source": "repository/DarkFactory/manuscript/results/results.typ"
+                }
+              ]
+            },
+            {
+              "name": "theory",
+              "path": "DarkFactory/manuscript/theory",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "index.typ",
+                  "path": "DarkFactory/manuscript/theory/index.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/manuscript/theory/index.typ"
                 },
                 {
-                  "name": "verified-implementation-state.typ",
-                  "path": "DarkFactory/manuscript/results/verified-implementation-state.typ",
+                  "name": "theory.typ",
+                  "path": "DarkFactory/manuscript/theory/theory.typ",
                   "type": "file",
-                  "source": "repository/DarkFactory/manuscript/results/verified-implementation-state.typ"
+                  "source": "repository/DarkFactory/manuscript/theory/theory.typ"
                 }
               ]
             }
