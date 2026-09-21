@@ -327,6 +327,25 @@
               ]
             },
             {
+              "name": "harness-engineering",
+              "path": "DarkFactory/agentic-engineering/harness-engineering",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "harness-engineering.typ",
+                  "path": "DarkFactory/agentic-engineering/harness-engineering/harness-engineering.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/harness-engineering/harness-engineering.typ"
+                },
+                {
+                  "name": "index.typ",
+                  "path": "DarkFactory/agentic-engineering/harness-engineering/index.typ",
+                  "type": "file",
+                  "source": "repository/DarkFactory/agentic-engineering/harness-engineering/index.typ"
+                }
+              ]
+            },
+            {
               "name": "loop-engineering",
               "path": "DarkFactory/agentic-engineering/loop-engineering",
               "type": "directory",
@@ -790,25 +809,6 @@
                       "path": "DarkFactory/manuscript/practical/darkfactory-architecture/index.typ",
                       "type": "file",
                       "source": "repository/DarkFactory/manuscript/practical/darkfactory-architecture/index.typ"
-                    }
-                  ]
-                },
-                {
-                  "name": "harness-engineering",
-                  "path": "DarkFactory/manuscript/practical/harness-engineering",
-                  "type": "directory",
-                  "children": [
-                    {
-                      "name": "harness-engineering.typ",
-                      "path": "DarkFactory/manuscript/practical/harness-engineering/harness-engineering.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/manuscript/practical/harness-engineering/harness-engineering.typ"
-                    },
-                    {
-                      "name": "index.typ",
-                      "path": "DarkFactory/manuscript/practical/harness-engineering/index.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/manuscript/practical/harness-engineering/index.typ"
                     }
                   ]
                 },

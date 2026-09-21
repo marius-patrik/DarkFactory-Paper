@@ -63,7 +63,7 @@
           "anchor": "concept-methodology"
         },
         {
-          "title": "2 Teoretická část: Agentic AI and Agentic Engineering",
+          "title": "2 Teoretická část",
           "level": 2,
           "anchor": "concept-theory"
         },
@@ -183,7 +183,7 @@
           "anchor": "concept-turn"
         },
         {
-          "title": "2.4.2 Agentní sezení",
+          "title": "2.4.2 Session (Agentní sezení) [Agent Session]",
           "level": 4,
           "anchor": "concept-agent_session"
         },
@@ -268,7 +268,12 @@
           "anchor": "concept-sandbox"
         },
         {
-          "title": "2.5.4 Promptové inženýrství",
+          "title": "2.5.4 Harness Engineering (Harnessové inženýrství)",
+          "level": 4,
+          "anchor": "concept-harness_engineering"
+        },
+        {
+          "title": "2.5.5 Promptové inženýrství",
           "level": 4,
           "anchor": "concept-prompt_engineering"
         },
@@ -278,12 +283,12 @@
           "anchor": "concept-system_prompt"
         },
         {
-          "title": "2.5.5 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
+          "title": "2.5.6 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
           "level": 4,
           "anchor": "concept-loop_engineering"
         },
         {
-          "title": "2.5.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "title": "2.5.7 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
           "level": 4,
           "anchor": "concept-graph_engineering"
         },
@@ -293,7 +298,7 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.5.7 Kontextové inženýrství",
+          "title": "2.5.8 Kontextové inženýrství",
           "level": 4,
           "anchor": "concept-context_engineering"
         },
@@ -318,7 +323,7 @@
           "anchor": "concept-semantic_drift"
         },
         {
-          "title": "3 Praktická část: Harness and Harness Engineering",
+          "title": "3 Praktická část",
           "level": 2,
           "anchor": "concept-practical"
         },
@@ -328,27 +333,22 @@
           "anchor": "concept-practical_introduction"
         },
         {
-          "title": "3.2 Harness Engineering (Harnessové inženýrství)",
-          "level": 3,
-          "anchor": "concept-harness_engineering"
-        },
-        {
-          "title": "3.3 Architektura DarkFactory",
+          "title": "3.2 Architektura DarkFactory",
           "level": 3,
           "anchor": "concept-darkfactory_architecture"
         },
         {
-          "title": "3.4 Výsledky a diskuse",
+          "title": "3.3 Výsledky a diskuse",
           "level": 3,
           "anchor": "concept-results_discussion"
         },
         {
-          "title": "3.4.1 Vyhodnocení výzkumných otázek",
+          "title": "3.3.1 Vyhodnocení výzkumných otázek",
           "level": 4,
           "anchor": "concept-research_question_evaluation"
         },
         {
-          "title": "3.4.2 Omezení evaluace",
+          "title": "3.3.2 Omezení evaluace",
           "level": 4,
           "anchor": "concept-evaluation_limitations"
         },
@@ -435,7 +435,7 @@
           "anchor": "concept-methodology"
         },
         {
-          "title": "2 Teoretická část: Agentic AI and Agentic Engineering",
+          "title": "2 Teoretická část",
           "level": 2,
           "anchor": "concept-theory"
         },
@@ -555,7 +555,7 @@
           "anchor": "concept-turn"
         },
         {
-          "title": "2.4.2 Agentní sezení",
+          "title": "2.4.2 Session (Agentní sezení) [Agent Session]",
           "level": 4,
           "anchor": "concept-agent_session"
         },
@@ -640,7 +640,12 @@
           "anchor": "concept-sandbox"
         },
         {
-          "title": "2.5.4 Promptové inženýrství",
+          "title": "2.5.4 Harness Engineering (Harnessové inženýrství)",
+          "level": 4,
+          "anchor": "concept-harness_engineering"
+        },
+        {
+          "title": "2.5.5 Promptové inženýrství",
           "level": 4,
           "anchor": "concept-prompt_engineering"
         },
@@ -650,12 +655,12 @@
           "anchor": "concept-system_prompt"
         },
         {
-          "title": "2.5.5 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
+          "title": "2.5.6 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]",
           "level": 4,
           "anchor": "concept-loop_engineering"
         },
         {
-          "title": "2.5.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
+          "title": "2.5.7 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]",
           "level": 4,
           "anchor": "concept-graph_engineering"
         },
@@ -665,7 +670,7 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.5.7 Kontextové inženýrství",
+          "title": "2.5.8 Kontextové inženýrství",
           "level": 4,
           "anchor": "concept-context_engineering"
         },
@@ -690,7 +695,7 @@
           "anchor": "concept-semantic_drift"
         },
         {
-          "title": "3 Praktická část: Harness and Harness Engineering",
+          "title": "3 Praktická část",
           "level": 2,
           "anchor": "concept-practical"
         },
@@ -700,27 +705,22 @@
           "anchor": "concept-practical_introduction"
         },
         {
-          "title": "3.2 Harness Engineering (Harnessové inženýrství)",
-          "level": 3,
-          "anchor": "concept-harness_engineering"
-        },
-        {
-          "title": "3.3 Architektura DarkFactory",
+          "title": "3.2 Architektura DarkFactory",
           "level": 3,
           "anchor": "concept-darkfactory_architecture"
         },
         {
-          "title": "3.4 Výsledky a diskuse",
+          "title": "3.3 Výsledky a diskuse",
           "level": 3,
           "anchor": "concept-results_discussion"
         },
         {
-          "title": "3.4.1 Vyhodnocení výzkumných otázek",
+          "title": "3.3.1 Vyhodnocení výzkumných otázek",
           "level": 4,
           "anchor": "concept-research_question_evaluation"
         },
         {
-          "title": "3.4.2 Omezení evaluace",
+          "title": "3.3.2 Omezení evaluace",
           "level": 4,
           "anchor": "concept-evaluation_limitations"
         },

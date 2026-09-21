@@ -31,7 +31,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
     2. [1.2.2 Dílčí cíle](#concept-subgoals)
     3. [1.2.3 Výzkumné otázky](#concept-research_questions)
   3. [1.3 Metodika práce](#concept-methodology)
-6. [2 Teoretická část: Agentic AI and Agentic Engineering](#concept-theory)
+6. [2 Teoretická část](#concept-theory)
   1. [2.1 Úvod](#concept-theory_introduction)
   2. [2.2 Software Engineering (Softwarové inženýrství)](#concept-software_engineering)
     1. [2.2.1 Vibe Coding](#concept-vibe_coding)
@@ -55,7 +55,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
     7. [2.3.7 Degradace kontextu](#concept-context_rot)
   4. [2.4 Harness](#concept-harness)
     1. [2.4.1 Turn (Tah interakce)](#concept-turn)
-    2. [2.4.2 Agentní sezení](#concept-agent_session)
+    2. [2.4.2 Session (Agentní sezení) [Agent Session]](#concept-agent_session)
     3. [2.4.3 Transcript (Přepis)](#concept-transcript)
     4. [2.4.4 Agent Loop (Smyčka ReAct) [ReAct Loop]](#concept-agent_loop)
     5. [2.4.5 Patologie divergence](#concept-divergence)
@@ -72,23 +72,23 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
     1. [2.5.1 Guardrail (Deterministický mantinel) [Deterministic Guardrail]](#concept-guardrail)
     2. [2.5.2 HITL (Zapojení člověka do smyčky) [Human-in-the-loop]](#concept-human_in_the_loop)
     3. [2.5.3 Sandbox (Izolované běhové prostředí)](#concept-sandbox)
-    4. [2.5.4 Promptové inženýrství](#concept-prompt_engineering)
+    4. [2.5.4 Harness Engineering (Harnessové inženýrství)](#concept-harness_engineering)
+    5. [2.5.5 Promptové inženýrství](#concept-prompt_engineering)
       1. [Systémový prompt](#concept-system_prompt)
-    5. [2.5.5 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]](#concept-loop_engineering)
-    6. [2.5.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#concept-graph_engineering)
+    6. [2.5.6 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]](#concept-loop_engineering)
+    7. [2.5.7 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#concept-graph_engineering)
       1. [DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
-    7. [2.5.7 Kontextové inženýrství](#concept-context_engineering)
+    8. [2.5.8 Kontextové inženýrství](#concept-context_engineering)
       1. [Context Injection (Vkládání kontextu)](#concept-context_injection)
       2. [Compaction (Kompakce kontextu) [Context Compaction]](#concept-compaction)
       3. [RAG (Generování rozšířené vyhledáváním) [Retrieval-Augmented Generation]](#concept-rag)
       4. [Sémantický posun](#concept-semantic_drift)
-7. [3 Praktická část: Harness and Harness Engineering](#concept-practical)
+7. [3 Praktická část](#concept-practical)
   1. [3.1 Úvod](#concept-practical_introduction)
-  2. [3.2 Harness Engineering (Harnessové inženýrství)](#concept-harness_engineering)
-  3. [3.3 Architektura DarkFactory](#concept-darkfactory_architecture)
-  4. [3.4 Výsledky a diskuse](#concept-results_discussion)
-    1. [3.4.1 Vyhodnocení výzkumných otázek](#concept-research_question_evaluation)
-    2. [3.4.2 Omezení evaluace](#concept-evaluation_limitations)
+  2. [3.2 Architektura DarkFactory](#concept-darkfactory_architecture)
+  3. [3.3 Výsledky a diskuse](#concept-results_discussion)
+    1. [3.3.1 Vyhodnocení výzkumných otázek](#concept-research_question_evaluation)
+    2. [3.3.2 Omezení evaluace](#concept-evaluation_limitations)
 8. [4 Závěr](#concept-conclusion)
 9. [Seznam zdrojů](#loc-37)
 10. [Seznam obrázků a tabulek](#loc-64)
@@ -157,7 +157,7 @@ Architektura kolem modelu je rozložena do samostatných konceptů, aby měl ka�
 
 Navržené principy jsou následně promítnuty do DarkFactory.
 
-## 2 Teoretická část: Agentic AI and Agentic Engineering
+## 2 Teoretická část
 
 Vymezení konceptů potřebných pro pochopení současného agentního vývoje softwaru.
 
@@ -167,7 +167,7 @@ Postupuje od softwarového inženýrství přes jazykový model a harness k agen
 
 Vymezení hranic teoretické části a vztahů mezi jejími hlavními vrstvami.
 
-Jazykový model je v práci chápán jako hotová inferenční komponenta. Agentic AI označuje systémovou schopnost vznikající propojením modelu s harnessovou vrstvou, nikoli samostatný koncept. Teoretická část proto postupuje přes Software Engineering, LLM, Harness a Agentic Engineering.
+Jazykový model je v práci chápán jako hotová inferenční komponenta. Teoretická část postupuje přes Software Engineering, LLM a Harness k Agentic Engineering, pod které spadá také Harness Engineering.
 
 ### 2.2 Software Engineering (Softwarové inženýrství)
 
@@ -347,11 +347,11 @@ Jedna diskrétní jednotka interakce v konverzačním nebo agentním protokolu, 
 
 Historie tahů tvoří část pracovního kontextu; harness rozhoduje, které vstupy, modelová rozhodnutí a výsledky nástrojů zůstanou dostupné v dalších iteracích.
 
-#### 2.4.2 Agentní sezení
+#### 2.4.2 Session (Agentní sezení) [Agent Session]
 
-Ohraničený běh agenta se sdíleným stavem, systémovými instrukcemi, pracovním kontextem, historií tahů a provozními rozpočty.
+Ohraničený běh se sdíleným stavem, systémovými instrukcemi, pracovním kontextem, historií tahů a provozními rozpočty.
 
-Sezení vymezuje stav jednoho běhu; harness v něm spravuje pracovní kontext a sleduje rozpočty, například spotřebu tokenů nebo počet iterací.
+Harness v rámci session spravuje pracovní kontext a sleduje rozpočty, například spotřebu tokenů nebo počet iterací.
 
 #### 2.4.3 Transcript (Přepis)
 
@@ -488,7 +488,13 @@ Omezené běhové prostředí, které odděluje prováděný kód a jeho oprávn
 
 Harness v sandboxu omezuje přístup k souborům, síti, tajnostem a dalším systémovým prostředkům. Silnější izolaci nedůvěryhodného kódu mohou poskytovat virtualizované hranice, například microVM. <sup><span id="loc-34">(</span><a href="#loc-61" role="doc-biblioref">24</a>)</sup>
 
-#### 2.5.4 Promptové inženýrství
+#### 2.5.4 Harness Engineering (Harnessové inženýrství)
+
+Návrh, implementace a provoz harnessu, který propojuje jazykový model s nástroji, stavem, kontextem a kontrolními mechanismy.
+
+Zaměřuje se na strukturu běhové vrstvy, její rozhraní a deterministické mechanismy, které převádějí modelový výstup na řízené a ověřitelné jednání.
+
+#### 2.5.5 Promptové inženýrství
 
 Systematický návrh instrukcí a kontextu určujících požadované chování jazykového modelu nebo agenta.
 
@@ -500,13 +506,13 @@ Instrukční vrstva s vysokou prioritou, která vymezuje roli a základní pravi
 
 V harnessu tvoří stabilní instrukční základ pro práci s kontextem a nástroji, nikoli technickou bezpečnostní hranici.
 
-#### 2.5.5 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]
+#### 2.5.6 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]
 
 Návrh a řízení stavových přechodů, podmínek ukončení, rozpočtů, opakování, eskalací a vazby mezi rozhodováním modelu a nástroji.
 
 Harness tak může nezávisle na modelu omezit počet iterací, ukončit neproduktivní běh, opakovat selhaný krok nebo vyžádat lidské schválení.
 
-#### 2.5.6 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]
+#### 2.5.7 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]
 
 Návrh agentních nebo automatizačních workflow jako explicitních grafů uzlů, závislostí a přechodů namísto jediné neomezené smyčky.
 
@@ -518,7 +524,7 @@ Orientovaný graf bez orientovaného cyklu, který umožňuje explicitně vyjád
 
 V agentním workflow reprezentuje DAG kroky jako uzly a jejich závislosti jako hrany, takže navazující krok může začít až po splnění svých předpokladů.
 
-#### 2.5.7 Kontextové inženýrství
+#### 2.5.8 Kontextové inženýrství
 
 Systematický výběr, pořadí a životní cyklus informací zpřístupňovaných modelu v aktivním kontextu.
 
@@ -552,27 +558,19 @@ Každá další komprese může převzít nepřesnost z předchozí verze jako f
 
 ⚠️ **Chyba / Nesrovnalost k opravě:** Ověřit terminologii „Sémantický posun“ vůči odborným zdrojům a doplnit citaci pro tvrzení o kumulaci chyb při opakované kompresi kontextu.
 
-## 3 Praktická část: Harness and Harness Engineering
+## 3 Praktická část
 
-Převod teoretických principů do implementační disciplíny a konkrétního systému DarkFactory.
+Aplikace teoretických principů na konkrétní systém DarkFactory.
 
-Praktická část vymezuje Harness Engineering, popisuje architekturu DarkFactory a následně hodnotí ověřené vlastnosti výsledného řešení.
+Praktická část popisuje ověřenou architekturu DarkFactory a hodnotí doložitelné vlastnosti výsledného řešení.
 
 ### 3.1 Úvod
 
-Vymezení způsobu, jakým praktická část převádí teoretické mechanismy do implementace.
+Vymezení způsobu, jakým praktická část aplikuje teoretické mechanismy na systém DarkFactory.
 
-Harness Engineering zde představuje implementační disciplínu, DarkFactory konkrétní systém a výsledná evaluace se omezuje na chování a důkazy, které lze skutečně ověřit.
+Praktická část popisuje pouze ověřenou implementaci DarkFactory a následně hodnotí chování a důkazy, které lze skutečně doložit.
 
-### 3.2 Harness Engineering (Harnessové inženýrství)
-
-Návrh, implementace a provoz běhové vrstvy, která propojuje jazykový model s nástroji, stavem a kontrolními mechanismy.
-
-V praktické části určuje, jak jsou model, nástroje, stav, provádění a deterministické kontroly spojeny do implementovatelného a ověřitelného systému.
-
-📌 **Metodické vymezení / Rozsah práce:** Termín Harness Engineering je zde použit jako zastřešující označení. Před finalizací rozhodnout, zda jej opřít o autoritativní zdroj, nebo výslovně vymezit jako pracovní termín této práce.
-
-### 3.3 Architektura DarkFactory
+### 3.2 Architektura DarkFactory
 
 Konkrétní uspořádání komponent agentního harnessu do jednoho vývojového systému.
 
@@ -580,13 +578,13 @@ Spojuje modelovou, stavovou, nástrojovou a kontrolní vrstvu do řízeného tok
 
 🔥 **Hloubková kritika / Oponentura:** Tato část zatím popisuje architekturu pouze obecně. Před finalizací doplnit skutečné komponenty DarkFactory, jejich rozhraní, tok stavu a ověřené vazby na implementaci; nevymýšlet je pouze z návrhového záměru.
 
-### 3.4 Výsledky a diskuse
+### 3.3 Výsledky a diskuse
 
 Vyhodnocení, jak návrh DarkFactory odpovídá stanoveným cílům a výzkumným otázkám.
 
 Výsledky odpovídají na O1–O3 a odděleně vymezují hranice toho, co lze z provedeného ověření tvrdit.
 
-#### 3.4.1 Vyhodnocení výzkumných otázek
+#### 3.3.1 Vyhodnocení výzkumných otázek
 
 Posouzení, jak navržená architektura DarkFactory odpovídá na stanovené otázky.
 
@@ -598,7 +596,7 @@ O3 — zachování kontextu: trvalý stav úlohy je oddělen od omezeného konte
 
 ⚠️ **Chyba / Nesrovnalost k opravě:** Každou odpověď O1–O3 propojit s konkrétním ověřitelným prvkem návrhu nebo implementace a s výsledkem kontroly/testu. Současné znění je argumentační shrnutí, nikoli ještě doložená evaluace.
 
-#### 3.4.2 Omezení evaluace
+#### 3.3.2 Omezení evaluace
 
 Vymezení tvrzení, která nelze z architektonického a implementačního ověření spolehlivě odvodit.
 
