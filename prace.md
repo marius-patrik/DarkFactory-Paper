@@ -12,7 +12,7 @@ Odborná práce zkoumá využití agentní umělé inteligence při vývoji soft
 
 This thesis examines the use of agentic artificial intelligence in software development, focusing on the architecture of an agent harness. The theoretical part defines mechanisms from software engineering, language models, context management, tools, execution control, and multi-agent systems. The practical part describes DarkFactory, a system that separates model decisions from persistent state, the execution environment, capabilities, the GitHub control plane, verification, and security boundaries. The evaluation uses source code, automated tests, and CI results and distinguishes implemented mechanisms from properties that still require live end-to-end evidence.
 
-## Keywords (Klíčová slova)
+## Klíčová slova (Keywords)
 
 Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agentic Engineering (Agentické inženýrství), CI (Průběžná integrace) [Continuous Integration], Context Engineering (Kontextové inženýrství), Guardrail (Deterministický mantinel) [Deterministic Guardrail], HITL (Zapojení člověka do smyčky) [Human-in-the-loop], LLM (Jazykový model) [Large Language Model], Prompt Engineering (Promptové inženýrství), Sandbox (Izolované běhové prostředí), Tools (Nástroje), Version Control (Správa verzí)
 
@@ -23,7 +23,7 @@ Agent Harness (Agentní harness), Agent Loop (Smyčka ReAct) [ReAct Loop], Agent
    (Agentické inženýrství v praxi)](#loc-1)
 2. [Anotace](#loc-2)
 3. [Abstract](#loc-3)
-4. [Keywords (Klíčová slova)](#loc-4)
+4. [Klíčová slova (Keywords)](#loc-4)
 5. [1 Úvod](#section-thesis_introduction)
   1. [1.1 Motivace a vymezení problému](#section-motivation_problem_definition)
   2. [1.2 Cíl práce a výzkumné otázky](#section-thesis_objectives_research_questions)
