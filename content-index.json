@@ -118,7 +118,7 @@
           "anchor": "concept-continuous_integration"
         },
         {
-          "title": "2.2.9 Actions (GitHub Actions)",
+          "title": "2.2.9 GitHub Actions",
           "level": 4,
           "anchor": "concept-github_actions"
         },
@@ -360,17 +360,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-45"
+          "anchor": "loc-50"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-80"
+          "anchor": "loc-90"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-81"
+          "anchor": "loc-91"
         }
       ],
       "review": [
@@ -490,7 +490,7 @@
           "anchor": "concept-continuous_integration"
         },
         {
-          "title": "2.2.9 Actions (GitHub Actions)",
+          "title": "2.2.9 GitHub Actions",
           "level": 4,
           "anchor": "concept-github_actions"
         },
@@ -732,17 +732,17 @@
         {
           "title": "Seznam zdrojů",
           "level": 2,
-          "anchor": "loc-45"
+          "anchor": "loc-50"
         },
         {
           "title": "Seznam obrázků a tabulek",
           "level": 2,
-          "anchor": "loc-80"
+          "anchor": "loc-90"
         },
         {
           "title": "Seznam příloh",
           "level": 2,
-          "anchor": "loc-81"
+          "anchor": "loc-91"
         }
       ]
     }
