@@ -955,19 +955,19 @@ Aktivní fleet evidence tedy v této fázi pokrývá DarkFactory, omnis, ChessWi
 
 #### 3.4.5 Vyhodnocení cílů a výzkumných otázek
 
-Hlavní cíl je v této fázi doložen na úrovni návrhu, implementovaných mechanismů a automatických testů; úplné uzavření vyžaduje ještě živý df-only Request lifecycle.
+Hlavní cíl byl naplněn návrhem a implementací oddělené harness architektury a technickým ověřením jejích klíčových mechanismů na systému DarkFactory.
 
-Dílčí cíle zaměřené na teoretické vymezení, architekturu DarkFactory, explicitní stav, capability rozhraní, GitHub control plane, identity boundaries a automatické technické ověření mají přímé implementační nebo CI důkazy. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup> <sup>(<a href="#loc-134" role="doc-biblioref">56</a>)</sup>
+Teoretické vymezení, architektura DarkFactory, explicitní stav, capability rozhraní, GitHub control plane, identity boundaries a automatické technické ověření mají přímé implementační nebo CI důkazy. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup> <sup>(<a href="#loc-134" role="doc-biblioref">56</a>)</sup>
 
-Cíl prokázat celý řízený životní cyklus od Requestu přes schválení Planningu až po merge a následnou rekonciliaci zůstává otevřený ze stejného důvodu jako end-to-end část evaluace: jednotlivé mechanismy jsou testované, ale jeden živý produkční důkaz zatím není uložen jako uzavřený artefakt.
+Evaluace současně ověřila hranici dostupných důkazů: celý živý řízený životní cyklus od schválení Planningu až po merge a rekonciliaci nebyl v uzavřeném evidence setu prokázán. Tento výsledek je uveden jako omezení a nebrání vyhodnocení mechanismů, které byly implementovány a reprodukovatelně testovány.
 
 ##### Odpovědi na výzkumné otázky
 
 Odpovědi na výzkumné otázky jsou omezeny na vlastnosti doložené implementací, automatickými testy, CI a dostupnými provozními artefakty.
 
-**O1.** Řízenou autonomii umožňuje kombinace explicitního Planning Approval, oddělené implementace, deterministického ověření, review/fix smyčky, Final Alignment a samostatné merge autorizace. Tyto mechanismy oddělují práci, kterou může systém provádět automaticky, od rozhodovacích bodů, které zůstávají pod lidskou kontrolou. Jejich dílčí kontrakty jsou implementované a testované. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup> <sup>(<a href="#loc-134" role="doc-biblioref">56</a>)</sup> Bez jednoho živého průchodu celým Request lifecycle však evidence zatím neprokazuje chování této autonomie v úplném produkčním běhu; stejná podmínka zůstává otevřená v acceptance 359 <sup>(<a href="#loc-135" role="doc-biblioref">57</a>)</sup>
+**O1.** Řízenou autonomii umožňuje kombinace explicitního Planning Approval, oddělené implementace, deterministického ověření, review/fix smyčky, Final Alignment a samostatné merge autorizace. Tyto mechanismy oddělují práci, kterou může systém provádět automaticky, od rozhodovacích bodů, které zůstávají pod lidskou kontrolou. Jejich dílčí kontrakty jsou implementované a testované. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup> <sup>(<a href="#loc-134" role="doc-biblioref">56</a>)</sup> Dostupná evidence však neprokazuje chování této autonomie v jednom úplném živém produkčním průchodu; tato acceptance položka zůstala k uzávěrce evaluace otevřená v 359 <sup>(<a href="#loc-135" role="doc-biblioref">57</a>)</sup>
 
-**O2.** Neproduktivní nebo přerušený běh lze omezovat pomocí turn/time budgetů, klasifikace chyb a modelového failoveru a obnovovat pomocí persistovaného Run State a recovery provenance. Testy ověřují zachování historie při failoveru, round-trip stavu a odmítnutí neplatného nebo citlivého recovery vstupu. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup> Tato evidence podporuje implementovaný mechanismus obnovy; neprokazuje ještě živou crash/resume idempotenci nad reálnými externími účinky, která zůstává součástí otevřeného 359 acceptance. <sup>(<a href="#loc-135" role="doc-biblioref">57</a>)</sup>
+**O2.** Neproduktivní nebo přerušený běh lze omezovat pomocí turn/time budgetů, klasifikace chyb a modelového failoveru a obnovovat pomocí persistovaného Run State a recovery provenance. Testy ověřují zachování historie při failoveru, round-trip stavu a odmítnutí neplatného nebo citlivého recovery vstupu. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup> Evidence neprokazuje živou crash/resume idempotenci nad reálnými externími účinky; tento požadavek zůstal k uzávěrce evaluace součástí otevřeného 359 acceptance. <sup>(<a href="#loc-135" role="doc-biblioref">57</a>)</sup>
 
 **O3.** Trvalý stav dlouhotrvající úlohy je oddělen od context window tím, že Run State, Session a Transcript mohou existovat mimo aktuální inferenční vstup a aktivní kontext se z nich sestavuje pouze v rozsahu potřebném pro další krok. Testy ověřují persistenci Run State a recovery vazby na aktuální base a provenance. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup> Tento návrh umožňuje pokračování přes hranice jednotlivých modelových běhů, ale nedokazuje nulovou informační ztrátu pro libovolně dlouhou úlohu ani univerzální kvalitu výběru nebo kompakce kontextu.
 
@@ -979,15 +979,15 @@ Vymezení tvrzení, která nelze z architektonického, testovacího a integračn
 
 Práce nepředstavuje statistický benchmark úspěšnosti agentů, ceny, latence ani četnosti zacyklení na reprezentativním souboru úloh. Taková tvrzení by vyžadovala samostatný kontrolovaný experiment.
 
-Aktuální evidence také ještě neobsahuje jeden živý produkční běh celého Request lifecycle ani uzavřenou fleet-level evaluaci všech cílových repozitářů. Výsledky proto zatím podporují technickou realizaci a testované vlastnosti jednotlivých mechanismů, nikoli tvrzení o obecné autonomii nebo převaze DarkFactory nad jinými agentními systémy.
+Evidence uzavřená 21. září 2026 neobsahuje jeden živý produkční běh celého Request lifecycle ani kompletní acceptance celé původně plánované fleety. Request 359 současně eviduje plný df-only lifecycle a crash/resume idempotenci jako nesplněné acceptance položky. <sup>(<a href="#loc-135" role="doc-biblioref">57</a>)</sup> Výsledky proto podporují technickou realizaci a testované vlastnosti jednotlivých mechanismů, nikoli tvrzení o obecné autonomii nebo výkonnostní převaze DarkFactory nad jinými agentními systémy.
 
 #### 3.4.7 Diskuse
 
-Dosavadní evidence podporuje architektonické oddělení modelového rozhodování od deterministických mechanismů stavu, verifikace, credentials a obnovy, ale zatím nepodporuje obecné tvrzení o vyšší výkonnosti nebo úplné autonomii.
+Dostupná evidence podporuje architektonické oddělení modelového rozhodování od deterministických mechanismů stavu, verifikace, credentials a obnovy, ale nepodporuje obecné tvrzení o vyšší výkonnosti nebo úplné autonomii.
 
 Silnou stránkou evaluace je přímá vazba mezi jednotlivými tvrzeními a implementačními nebo testovacími důkazy: například výsledek kódového kroku je odvozován z pracovního stromu a scope checku místo textového tvrzení modelu a recovery kontrakt je testován proti neplatné provenance i citlivému obsahu. <sup>(<a href="#loc-133" role="doc-biblioref">55</a>)</sup>
 
-Slabší část evidence leží na úrovni celého systému. Jednotlivé mechanismy a jejich integrace jsou automaticky testovány a referenční quality run je zelený, ale živá end-to-end demonstrace celého Request lifecycle a ověření na cílové fleetě musí být doplněny dříve, než budou výzkumné otázky uzavřeny finálními odpověďmi.
+Slabší část evidence leží na úrovni celého systému. Jednotlivé mechanismy a jejich integrace jsou automaticky testovány a referenční quality run je zelený, ale evaluace neobsahuje jeden živý průchod celým Request lifecycle ani plnou acceptance původní cílové fleety. Odpovědi na výzkumné otázky jsou proto záměrně omezeny na architekturu a testované mechanismy a nepřenášejí tyto výsledky na neprovedené produkční scénáře.
 
 ## 4 Závěr
 
@@ -997,7 +997,7 @@ Na systému DarkFactory byla tato architektura rozložena do explicitních runti
 
 Výsledky podporují architektonickou odpověď na výzkumné otázky: řízená autonomie vyžaduje explicitní schvalovací a verifikační body, odolnost běhu vyžaduje persistovaný stav a kontrolovaný failover/recovery a kontinuita dlouhotrvající úlohy nemůže být závislá pouze na modelovém context window.
 
-Evaluace však zatím neobsahuje jeden uzavřený živý df-only průchod celým Request lifecycle od schválení Planningu po merge a rekonciliaci; stejná podmínka zůstává otevřenou acceptance položkou Requestu 359 <sup>(<a href="#loc-135" role="doc-biblioref">57</a>)</sup> Práce proto nevyvozuje obecnou výkonnostní převahu DarkFactory ani úplnou autonomii; tato tvrzení zůstávají mimo rozsah současných důkazů.
+V evidence setu uzavřeném 21. září 2026 nebyl prokázán jeden živý df-only průchod celým Request lifecycle od schválení Planningu po merge a rekonciliaci; stejná podmínka zůstala otevřenou acceptance položkou Requestu 359 <sup>(<a href="#loc-135" role="doc-biblioref">57</a>)</sup> Práce proto nevyvozuje obecnou výkonnostní převahu DarkFactory ani úplnou autonomii; tato tvrzení zůstávají mimo rozsah provedené evaluace.
 
 ## Seznam zdrojů
 
