@@ -439,91 +439,28 @@
           "type": "directory",
           "children": [
             {
-              "name": "continuous-integration",
-              "path": "DarkFactory/development-environment/continuous-integration",
-              "type": "directory",
-              "children": [
-                {
-                  "name": "container.typ",
-                  "path": "DarkFactory/development-environment/continuous-integration/container.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/continuous-integration/container.typ"
-                },
-                {
-                  "name": "continuous-integration.typ",
-                  "path": "DarkFactory/development-environment/continuous-integration/continuous-integration.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/continuous-integration/continuous-integration.typ"
-                },
-                {
-                  "name": "github-actions.typ",
-                  "path": "DarkFactory/development-environment/continuous-integration/github-actions.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/continuous-integration/github-actions.typ"
-                },
-                {
-                  "name": "index.typ",
-                  "path": "DarkFactory/development-environment/continuous-integration/index.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/continuous-integration/index.typ"
-                },
-                {
-                  "name": "integration-test.typ",
-                  "path": "DarkFactory/development-environment/continuous-integration/integration-test.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/continuous-integration/integration-test.typ"
-                }
-              ]
+              "name": "container.typ",
+              "path": "DarkFactory/development-environment/container.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/container.typ"
             },
             {
-              "name": "software-engineering",
-              "path": "DarkFactory/development-environment/software-engineering",
-              "type": "directory",
-              "children": [
-                {
-                  "name": "index.typ",
-                  "path": "DarkFactory/development-environment/software-engineering/index.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/software-engineering/index.typ"
-                },
-                {
-                  "name": "planning.typ",
-                  "path": "DarkFactory/development-environment/software-engineering/planning.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/software-engineering/planning.typ"
-                },
-                {
-                  "name": "software-engineering.typ",
-                  "path": "DarkFactory/development-environment/software-engineering/software-engineering.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/software-engineering/software-engineering.typ"
-                }
-              ]
-            },
-            {
-              "name": "version-control",
-              "path": "DarkFactory/development-environment/version-control",
-              "type": "directory",
-              "children": [
-                {
-                  "name": "index.typ",
-                  "path": "DarkFactory/development-environment/version-control/index.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/version-control/index.typ"
-                },
-                {
-                  "name": "version-control.typ",
-                  "path": "DarkFactory/development-environment/version-control/version-control.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/development-environment/version-control/version-control.typ"
-                }
-              ]
+              "name": "continuous-integration.typ",
+              "path": "DarkFactory/development-environment/continuous-integration.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/continuous-integration.typ"
             },
             {
               "name": "development-environment.typ",
               "path": "DarkFactory/development-environment/development-environment.typ",
               "type": "file",
               "source": "repository/DarkFactory/development-environment/development-environment.typ"
+            },
+            {
+              "name": "github-actions.typ",
+              "path": "DarkFactory/development-environment/github-actions.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/github-actions.typ"
             },
             {
               "name": "github.typ",
@@ -538,10 +475,34 @@
               "source": "repository/DarkFactory/development-environment/index.typ"
             },
             {
+              "name": "integration-test.typ",
+              "path": "DarkFactory/development-environment/integration-test.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/integration-test.typ"
+            },
+            {
+              "name": "planning.typ",
+              "path": "DarkFactory/development-environment/planning.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/planning.typ"
+            },
+            {
               "name": "runtime.typ",
               "path": "DarkFactory/development-environment/runtime.typ",
               "type": "file",
               "source": "repository/DarkFactory/development-environment/runtime.typ"
+            },
+            {
+              "name": "software-engineering.typ",
+              "path": "DarkFactory/development-environment/software-engineering.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/software-engineering.typ"
+            },
+            {
+              "name": "version-control.typ",
+              "path": "DarkFactory/development-environment/version-control.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/development-environment/version-control.typ"
             }
           ]
         },

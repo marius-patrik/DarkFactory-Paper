@@ -71,22 +71,22 @@ Agent , Agent Harness (Agentní harness) , Agent Loop (Smyčka ReAct) [ReAct Loo
     7. [2.3.7 Loop Engineering (Inženýrství prováděcí smyčky) [Execution-loop Engineering]](#concept-loop_engineering)
     8. [2.3.8 Graph Engineering (Inženýrství pracovních grafů) [Workflow-graph Engineering]](#concept-graph_engineering)
       1. [DAG (Orientovaný acyklický graf) [Directed Acyclic Graph]](#concept-dag)
-  4. [2.4 Vývojové prostředí a praxe](#concept-development_environment)
-    1. [2.4.1 GitHub](#concept-github)
-    2. [2.4.2 Runtime (Běhové prostředí)](#concept-runtime)
-    3. [2.4.3 Softwarové inženýrství](#concept-software_engineering)
-      1. [Plánování](#concept-planning)
-      2. [Version Control (Správa verzí)](#concept-version_control)
-    4. [2.4.4 CI (Průběžná integrace) [Continuous Integration]](#concept-continuous_integration)
-      1. [Actions (GitHub Actions)](#concept-github_actions)
-      2. [Container (Softwarový kontejner) [Software Container]](#concept-container)
-      3. [Integration Test (Integrační test)](#concept-integration_test)
 7. [3 Praktická část](#concept-practical)
   1. [3.1 Harness Engineering (Harnessové inženýrství)](#concept-harness_engineering)
   2. [3.2 Architektura DarkFactory](#concept-darkfactory_architecture)
-  3. [3.3 Výsledky a diskuse](#concept-results_discussion)
-    1. [3.3.1 Vyhodnocení výzkumných otázek](#concept-research_question_evaluation)
-    2. [3.3.2 Omezení evaluace](#concept-evaluation_limitations)
+  3. [3.3 Vývojové prostředí a praxe](#concept-development_environment)
+    1. [3.3.1 GitHub](#concept-github)
+    2. [3.3.2 Runtime (Běhové prostředí)](#concept-runtime)
+    3. [3.3.3 Softwarové inženýrství](#concept-software_engineering)
+    4. [3.3.4 Plánování](#concept-planning)
+    5. [3.3.5 Version Control (Správa verzí)](#concept-version_control)
+    6. [3.3.6 CI (Průběžná integrace) [Continuous Integration]](#concept-continuous_integration)
+    7. [3.3.7 Actions (GitHub Actions)](#concept-github_actions)
+    8. [3.3.8 Container (Softwarový kontejner) [Software Container]](#concept-container)
+    9. [3.3.9 Integration Test (Integrační test)](#concept-integration_test)
+  4. [3.4 Výsledky a diskuse](#concept-results_discussion)
+    1. [3.4.1 Vyhodnocení výzkumných otázek](#concept-research_question_evaluation)
+    2. [3.4.2 Omezení evaluace](#concept-evaluation_limitations)
 8. [4 Závěr](#concept-conclusion)
 9. [Seznam zdrojů](#loc-37)
 10. [Seznam obrázků a tabulek](#loc-64)
@@ -159,7 +159,7 @@ Navržené principy jsou následně promítnuty do DarkFactory.
 
 Teoretická část vymezuje koncepty potřebné pro návrh a pochopení agentních systémů.
 
-Postupuje od jazykového modelu přes agentic AI a agentické inženýrství k vývojovému prostředí.
+Postupuje od jazykového modelu přes agentic AI k agentickému inženýrství.
 
 ### 2.1 LLM (Jazykový model)
 
@@ -504,71 +504,11 @@ Orientovaný acyklický graf (DAG) je orientovaný graf bez orientovaného cyklu
 
 V agentním workflow reprezentuje DAG kroky jako uzly a jejich závislosti jako hrany, takže navazující krok může začít až po splnění svých předpokladů.
 
-### 2.4 Vývojové prostředí a praxe
-
-Vývojové prostředí a praxe tvoří verzovací, plánovací, integrační a kontrolní mechanismy, ve kterých agent provádí změny softwaru.
-
-Tyto mechanismy poskytují explicitní stav repozitáře, ověřování změn a kontrolní body nezávislé na tvrzení modelu.
-
-#### 2.4.1 GitHub
-
-GitHub je cloudová platforma pro hosting gitových repozitářů a koordinaci vývojového cyklu pomocí Issues, Pull Requests a automatizačních workflow.
-
-Nad historií spravovanou Gitem přidává GitHub zadání práce, revizi změn a automatizační workflow.
-
-#### 2.4.2 Runtime (Běhové prostředí)
-
-Běhové prostředí je prostředí, ve kterém se program nebo agent vykonává a využívá procesy, souborový systém, síť a další systémové prostředky.
-
-Runtime určuje skutečné nástroje, soubory a oprávnění dostupné agentovi a může být omezen kontejnerem nebo sandboxem.
-
-#### 2.4.3 Softwarové inženýrství
-
-Softwarové inženýrství je systematické uplatňování inženýrských principů na specifikaci, návrh, implementaci, ověřování, provoz a údržbu softwarových systémů.
-
-V agentním vývoji zasazuje generování kódu do řízeného procesu požadavků, změn, automatického ověřování a revize.
-
-##### Plánování
-
-Plánování je proces převodu požadavku na explicitní posloupnost kroků, závislostí a ověřovacích podmínek před prováděním změn.
-
-V agentním vývoji plán před změnami určuje kontrolovatelné kroky a podmínky, podle nichž se ověří splnění zadání.
-
-##### Version Control (Správa verzí)
-
-Správa verzí je sledování historie změn v repozitáři tak, aby bylo možné změny porovnávat, oddělovat a bezpečně slučovat.
-
-DarkFactory používá Git a GitHub k oddělení pracovního stavu agenta od hlavní historie projektu a k dohledání provedených změn. <sup><span id="loc-34">(</span><a href="#loc-61" role="doc-biblioref">24</a>)</sup>
-
-#### 2.4.4 CI (Průběžná integrace) [Continuous Integration]
-
-Průběžná integrace (CI) je vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami.
-
-Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl vygenerován. CI poskytuje opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek. <sup><span id="loc-35">(</span><a href="#loc-62" role="doc-biblioref">25</a>)</sup>
-
-##### Actions (GitHub Actions)
-
-GitHub Actions je automatizační platforma GitHubu pro spouštění deklarovaných workflow a jejich jobů v reakci na události repozitáře nebo ruční spuštění.
-
-V DarkFactory GitHub Actions spouští CI kontroly a další automatizované procesy repozitáře.
-
-##### Container (Softwarový kontejner) [Software Container]
-
-Softwarový kontejner je izolované uživatelské běhové prostředí, které balí aplikaci a její závislosti při sdílení jádra hostitelského operačního systému.
-
-V CI poskytuje kontejner opakovatelné prostředí s deklarovanými nástroji a závislostmi, ale sám o sobě nezaručuje úplnou bezpečnostní izolaci.
-
-##### Integration Test (Integrační test)
-
-Integrační test ověřuje spolupráci více komponent nebo vrstev systému přes jejich skutečná rozhraní.
-
-V agentním vývoji ověřuje, že změna funguje nejen izolovaně, ale také v toku mezi částmi aplikace, službami, úložišti nebo automatizačními kroky. <sup><span id="loc-36">(</span><a href="#loc-63" role="doc-biblioref">26</a>)</sup>
-
 ## 3 Praktická část
 
 Praktická část převádí principy teoretické části do návrhu systému DarkFactory.
 
-Popisuje harnessové inženýrství, architekturu DarkFactory a následné vyhodnocení.
+Popisuje harnessové inženýrství, architekturu DarkFactory, vývojové prostředí a následné vyhodnocení.
 
 ### 3.1 Harness Engineering (Harnessové inženýrství)
 
@@ -582,13 +522,73 @@ Architektura DarkFactory je konkrétní uspořádání komponent agentního harn
 
 Spojuje modelovou, stavovou, nástrojovou a kontrolní vrstvu do řízeného toku provádění softwarových úloh.
 
-### 3.3 Výsledky a diskuse
+### 3.3 Vývojové prostředí a praxe
+
+Vývojové prostředí a praxe tvoří verzovací, plánovací, integrační a kontrolní mechanismy, ve kterých agent provádí změny softwaru.
+
+Tyto mechanismy poskytují explicitní stav repozitáře, ověřování změn a kontrolní body nezávislé na tvrzení modelu.
+
+#### 3.3.1 GitHub
+
+GitHub je cloudová platforma pro hosting gitových repozitářů a koordinaci vývojového cyklu pomocí Issues, Pull Requests a automatizačních workflow.
+
+Nad historií spravovanou Gitem přidává GitHub zadání práce, revizi změn a automatizační workflow.
+
+#### 3.3.2 Runtime (Běhové prostředí)
+
+Běhové prostředí je prostředí, ve kterém se program nebo agent vykonává a využívá procesy, souborový systém, síť a další systémové prostředky.
+
+Runtime určuje skutečné nástroje, soubory a oprávnění dostupné agentovi a může být omezen kontejnerem nebo sandboxem.
+
+#### 3.3.3 Softwarové inženýrství
+
+Softwarové inženýrství je systematické uplatňování inženýrských principů na specifikaci, návrh, implementaci, ověřování, provoz a údržbu softwarových systémů.
+
+V agentním vývoji zasazuje generování kódu do řízeného procesu požadavků, změn, automatického ověřování a revize.
+
+#### 3.3.4 Plánování
+
+Plánování je proces převodu požadavku na explicitní posloupnost kroků, závislostí a ověřovacích podmínek před prováděním změn.
+
+V agentním vývoji plán před změnami určuje kontrolovatelné kroky a podmínky, podle nichž se ověří splnění zadání.
+
+#### 3.3.5 Version Control (Správa verzí)
+
+Správa verzí je sledování historie změn v repozitáři tak, aby bylo možné změny porovnávat, oddělovat a bezpečně slučovat.
+
+DarkFactory používá Git a GitHub k oddělení pracovního stavu agenta od hlavní historie projektu a k dohledání provedených změn. <sup><span id="loc-34">(</span><a href="#loc-61" role="doc-biblioref">24</a>)</sup>
+
+#### 3.3.6 CI (Průběžná integrace) [Continuous Integration]
+
+Průběžná integrace (CI) je vývojová praxe, při níž se změny často integrují a automaticky ověřují sestavením, testy a dalšími kontrolami.
+
+Kód vytvořený jazykovým modelem nelze považovat za ověřený pouze proto, že byl vygenerován. CI poskytuje opakovatelnou kontrolu sestavení, testů a dalších strojově vyhodnotitelných podmínek. <sup><span id="loc-35">(</span><a href="#loc-62" role="doc-biblioref">25</a>)</sup>
+
+#### 3.3.7 Actions (GitHub Actions)
+
+GitHub Actions je automatizační platforma GitHubu pro spouštění deklarovaných workflow a jejich jobů v reakci na události repozitáře nebo ruční spuštění.
+
+V DarkFactory GitHub Actions spouští CI kontroly a další automatizované procesy repozitáře.
+
+#### 3.3.8 Container (Softwarový kontejner) [Software Container]
+
+Softwarový kontejner je izolované uživatelské běhové prostředí, které balí aplikaci a její závislosti při sdílení jádra hostitelského operačního systému.
+
+V CI poskytuje kontejner opakovatelné prostředí s deklarovanými nástroji a závislostmi, ale sám o sobě nezaručuje úplnou bezpečnostní izolaci.
+
+#### 3.3.9 Integration Test (Integrační test)
+
+Integrační test ověřuje spolupráci více komponent nebo vrstev systému přes jejich skutečná rozhraní.
+
+V agentním vývoji ověřuje, že změna funguje nejen izolovaně, ale také v toku mezi částmi aplikace, službami, úložišti nebo automatizačními kroky. <sup><span id="loc-36">(</span><a href="#loc-63" role="doc-biblioref">26</a>)</sup>
+
+### 3.4 Výsledky a diskuse
 
 Výsledky a diskuse vyhodnocují, jak návrh DarkFactory odpovídá stanoveným cílům a výzkumným otázkám.
 
 Výsledky odpovídají na O1–O3 a odděleně vymezují hranice toho, co lze z provedeného ověření tvrdit.
 
-#### 3.3.1 Vyhodnocení výzkumných otázek
+#### 3.4.1 Vyhodnocení výzkumných otázek
 
 Vyhodnocení výzkumných otázek posuzuje, jak navržená architektura DarkFactory odpovídá na stanovené otázky.
 
@@ -598,7 +598,7 @@ O2 — rozpoznání neproduktivního běhu: návrh používá explicitní stav, 
 
 O3 — zachování kontextu: trvalý stav úlohy je oddělen od omezeného kontextového okna modelu a potřebné informace lze průběžně komprimovat a znovu načítat.
 
-#### 3.3.2 Omezení evaluace
+#### 3.4.2 Omezení evaluace
 
 Omezení evaluace vymezují, která tvrzení nelze z architektonického a implementačního ověření spolehlivě odvodit.
 

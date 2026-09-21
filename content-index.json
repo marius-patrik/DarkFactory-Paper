@@ -263,56 +263,6 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.4 Vývojové prostředí a praxe",
-          "level": 3,
-          "anchor": "concept-development_environment"
-        },
-        {
-          "title": "2.4.1 GitHub",
-          "level": 4,
-          "anchor": "concept-github"
-        },
-        {
-          "title": "2.4.2 Runtime (Běhové prostředí)",
-          "level": 4,
-          "anchor": "concept-runtime"
-        },
-        {
-          "title": "2.4.3 Softwarové inženýrství",
-          "level": 4,
-          "anchor": "concept-software_engineering"
-        },
-        {
-          "title": "Plánování",
-          "level": 5,
-          "anchor": "concept-planning"
-        },
-        {
-          "title": "Version Control (Správa verzí)",
-          "level": 5,
-          "anchor": "concept-version_control"
-        },
-        {
-          "title": "2.4.4 CI (Průběžná integrace) [Continuous Integration]",
-          "level": 4,
-          "anchor": "concept-continuous_integration"
-        },
-        {
-          "title": "Actions (GitHub Actions)",
-          "level": 5,
-          "anchor": "concept-github_actions"
-        },
-        {
-          "title": "Container (Softwarový kontejner) [Software Container]",
-          "level": 5,
-          "anchor": "concept-container"
-        },
-        {
-          "title": "Integration Test (Integrační test)",
-          "level": 5,
-          "anchor": "concept-integration_test"
-        },
-        {
           "title": "3 Praktická část",
           "level": 2,
           "anchor": "concept-practical"
@@ -328,17 +278,67 @@
           "anchor": "concept-darkfactory_architecture"
         },
         {
-          "title": "3.3 Výsledky a diskuse",
+          "title": "3.3 Vývojové prostředí a praxe",
+          "level": 3,
+          "anchor": "concept-development_environment"
+        },
+        {
+          "title": "3.3.1 GitHub",
+          "level": 4,
+          "anchor": "concept-github"
+        },
+        {
+          "title": "3.3.2 Runtime (Běhové prostředí)",
+          "level": 4,
+          "anchor": "concept-runtime"
+        },
+        {
+          "title": "3.3.3 Softwarové inženýrství",
+          "level": 4,
+          "anchor": "concept-software_engineering"
+        },
+        {
+          "title": "3.3.4 Plánování",
+          "level": 4,
+          "anchor": "concept-planning"
+        },
+        {
+          "title": "3.3.5 Version Control (Správa verzí)",
+          "level": 4,
+          "anchor": "concept-version_control"
+        },
+        {
+          "title": "3.3.6 CI (Průběžná integrace) [Continuous Integration]",
+          "level": 4,
+          "anchor": "concept-continuous_integration"
+        },
+        {
+          "title": "3.3.7 Actions (GitHub Actions)",
+          "level": 4,
+          "anchor": "concept-github_actions"
+        },
+        {
+          "title": "3.3.8 Container (Softwarový kontejner) [Software Container]",
+          "level": 4,
+          "anchor": "concept-container"
+        },
+        {
+          "title": "3.3.9 Integration Test (Integrační test)",
+          "level": 4,
+          "anchor": "concept-integration_test"
+        },
+        {
+          "title": "3.4 Výsledky a diskuse",
           "level": 3,
           "anchor": "concept-results_discussion"
         },
         {
-          "title": "3.3.1 Vyhodnocení výzkumných otázek",
+          "title": "3.4.1 Vyhodnocení výzkumných otázek",
           "level": 4,
           "anchor": "concept-research_question_evaluation"
         },
         {
-          "title": "3.3.2 Omezení evaluace",
+          "title": "3.4.2 Omezení evaluace",
           "level": 4,
           "anchor": "concept-evaluation_limitations"
         },
@@ -625,56 +625,6 @@
           "anchor": "concept-dag"
         },
         {
-          "title": "2.4 Vývojové prostředí a praxe",
-          "level": 3,
-          "anchor": "concept-development_environment"
-        },
-        {
-          "title": "2.4.1 GitHub",
-          "level": 4,
-          "anchor": "concept-github"
-        },
-        {
-          "title": "2.4.2 Runtime (Běhové prostředí)",
-          "level": 4,
-          "anchor": "concept-runtime"
-        },
-        {
-          "title": "2.4.3 Softwarové inženýrství",
-          "level": 4,
-          "anchor": "concept-software_engineering"
-        },
-        {
-          "title": "Plánování",
-          "level": 5,
-          "anchor": "concept-planning"
-        },
-        {
-          "title": "Version Control (Správa verzí)",
-          "level": 5,
-          "anchor": "concept-version_control"
-        },
-        {
-          "title": "2.4.4 CI (Průběžná integrace) [Continuous Integration]",
-          "level": 4,
-          "anchor": "concept-continuous_integration"
-        },
-        {
-          "title": "Actions (GitHub Actions)",
-          "level": 5,
-          "anchor": "concept-github_actions"
-        },
-        {
-          "title": "Container (Softwarový kontejner) [Software Container]",
-          "level": 5,
-          "anchor": "concept-container"
-        },
-        {
-          "title": "Integration Test (Integrační test)",
-          "level": 5,
-          "anchor": "concept-integration_test"
-        },
-        {
           "title": "3 Praktická část",
           "level": 2,
           "anchor": "concept-practical"
@@ -690,17 +640,67 @@
           "anchor": "concept-darkfactory_architecture"
         },
         {
-          "title": "3.3 Výsledky a diskuse",
+          "title": "3.3 Vývojové prostředí a praxe",
+          "level": 3,
+          "anchor": "concept-development_environment"
+        },
+        {
+          "title": "3.3.1 GitHub",
+          "level": 4,
+          "anchor": "concept-github"
+        },
+        {
+          "title": "3.3.2 Runtime (Běhové prostředí)",
+          "level": 4,
+          "anchor": "concept-runtime"
+        },
+        {
+          "title": "3.3.3 Softwarové inženýrství",
+          "level": 4,
+          "anchor": "concept-software_engineering"
+        },
+        {
+          "title": "3.3.4 Plánování",
+          "level": 4,
+          "anchor": "concept-planning"
+        },
+        {
+          "title": "3.3.5 Version Control (Správa verzí)",
+          "level": 4,
+          "anchor": "concept-version_control"
+        },
+        {
+          "title": "3.3.6 CI (Průběžná integrace) [Continuous Integration]",
+          "level": 4,
+          "anchor": "concept-continuous_integration"
+        },
+        {
+          "title": "3.3.7 Actions (GitHub Actions)",
+          "level": 4,
+          "anchor": "concept-github_actions"
+        },
+        {
+          "title": "3.3.8 Container (Softwarový kontejner) [Software Container]",
+          "level": 4,
+          "anchor": "concept-container"
+        },
+        {
+          "title": "3.3.9 Integration Test (Integrační test)",
+          "level": 4,
+          "anchor": "concept-integration_test"
+        },
+        {
+          "title": "3.4 Výsledky a diskuse",
           "level": 3,
           "anchor": "concept-results_discussion"
         },
         {
-          "title": "3.3.1 Vyhodnocení výzkumných otázek",
+          "title": "3.4.1 Vyhodnocení výzkumných otázek",
           "level": 4,
           "anchor": "concept-research_question_evaluation"
         },
         {
-          "title": "3.3.2 Omezení evaluace",
+          "title": "3.4.2 Omezení evaluace",
           "level": 4,
           "anchor": "concept-evaluation_limitations"
         },
