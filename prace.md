@@ -1048,6 +1048,12 @@ Současné závěry jsou pracovní a budou v závěrečném alignment passu pře
 - 68.  MARIUS, Patrik. DarkFactory. Online. 2026. [Accessed 20 září 2026]. Available from: [https://github.com/marius-patrik/DarkFactory](https://github.com/marius-patrik/DarkFactory)
 - 69.  GITHUB. Understanding GitHub Actions. Online. 2026. [Accessed 21 září 2026]. Available from: [https://docs.github.com/en/actions/get-started/understand-github-actions](https://docs.github.com/en/actions/get-started/understand-github-actions)
 - 70.  ANTHROPIC. Harness design for long-running application development. Online. 2026. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/harness-design-long-running-apps](https://www.anthropic.com/engineering/harness-design-long-running-apps)
+- 71.  MARIUS, Patrik. omnis commit a53660a1. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/omnis/commit/a53660a1c0c6619f94768e5d520405052fb03df6](https://github.com/marius-patrik/omnis/commit/a53660a1c0c6619f94768e5d520405052fb03df6)
+- 72.  GITHUB ACTIONS. omnis pipeline run 34708160162. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/omnis/actions/runs/34708160162](https://github.com/marius-patrik/omnis/actions/runs/34708160162)
+- 73.  MARIUS, Patrik. ChessWithQuests commit 50a50797. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/ChessWithQuests/commit/50a50797f29c2a636d973981993191a65df3d131](https://github.com/marius-patrik/ChessWithQuests/commit/50a50797f29c2a636d973981993191a65df3d131)
+- 74.  GITHUB ACTIONS. ChessWithQuests pipeline run 34708180783. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/ChessWithQuests/actions/runs/34708180783](https://github.com/marius-patrik/ChessWithQuests/actions/runs/34708180783)
+- 75.  MARIUS, Patrik. template-OdbornaPrace repository. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/template-OdbornaPrace](https://github.com/marius-patrik/template-OdbornaPrace)
+- 76.  MARIUS, Patrik. OdbornaPrace-mono repository. Online. 2026. [Accessed 21 září 2026]. Available from: [https://github.com/marius-patrik/OdbornaPrace-mono](https://github.com/marius-patrik/OdbornaPrace-mono)
 
 ## Seznam obrázků a tabulek
 
