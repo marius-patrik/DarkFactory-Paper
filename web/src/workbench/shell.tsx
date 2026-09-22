@@ -40,6 +40,7 @@ type ResizeKind = keyof WorkbenchRootSizes;
 type ResizeSession = {
   kind: ResizeKind;
   pointerId: number;
+  target: HTMLElement;
   startX: number;
   startY: number;
   startSize: number;
@@ -421,6 +422,7 @@ export function WorkbenchShell() {
     resizeRef.current = {
       kind,
       pointerId: event.pointerId,
+      target: event.currentTarget,
       startX: event.clientX,
       startY: event.clientY,
       startSize: sizesRef.current[kind],
@@ -428,37 +430,61 @@ export function WorkbenchShell() {
     setResizeKind(kind);
   }, []);
 
-  const continueResize = useCallback((event: ReactPointerEvent<HTMLElement>) => {
+  const applyResize = useCallback((clientX: number, clientY: number) => {
     const session = resizeRef.current;
-    if (!session || session.pointerId !== event.pointerId) return;
-    event.preventDefault();
+    if (!session) return;
     const handles = (visibility.primary ? RESIZER_SIZE : 0) + (visibility.secondary ? RESIZER_SIZE : 0);
     let nextSize = session.startSize;
     if (session.kind === "primary") {
       const other = visibility.secondary ? effective.secondary : 0;
       const maximum = Math.min(SIDEBAR_MAX, Math.max(0, viewport.width - MAIN_MIN_WIDTH - other - handles));
-      nextSize = clamp(session.startSize + event.clientX - session.startX, Math.min(SIDEBAR_MIN, maximum), maximum);
+      nextSize = clamp(session.startSize + clientX - session.startX, Math.min(SIDEBAR_MIN, maximum), maximum);
     } else if (session.kind === "secondary") {
       const other = visibility.primary ? effective.primary : 0;
       const maximum = Math.min(SIDEBAR_MAX, Math.max(0, viewport.width - MAIN_MIN_WIDTH - other - handles));
-      nextSize = clamp(session.startSize + session.startX - event.clientX, Math.min(SIDEBAR_MIN, maximum), maximum);
+      nextSize = clamp(session.startSize + session.startX - clientX, Math.min(SIDEBAR_MIN, maximum), maximum);
     } else {
       const maximum = Math.min(PANEL_MAX, Math.max(0, viewport.height - 36 - 24 - MAIN_MIN_HEIGHT - RESIZER_SIZE));
-      nextSize = clamp(session.startSize + session.startY - event.clientY, Math.min(PANEL_MIN, maximum), maximum);
+      nextSize = clamp(session.startSize + session.startY - clientY, Math.min(PANEL_MIN, maximum), maximum);
     }
     const next = { ...sizesRef.current, [session.kind]: Math.round(nextSize) };
     sizesRef.current = next;
     setSizes(next);
   }, [effective.primary, effective.secondary, viewport, visibility.primary, visibility.secondary]);
 
-  const endResize = useCallback((event: ReactPointerEvent<HTMLElement>) => {
+  const finishResize = useCallback(() => {
     const session = resizeRef.current;
-    if (!session || session.pointerId !== event.pointerId) return;
-    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    if (!session) return;
+    if (session.target.hasPointerCapture(session.pointerId)) {
+      session.target.releasePointerCapture(session.pointerId);
+    }
     resizeRef.current = null;
     setResizeKind(null);
     persist(settings.theme, visibility, sizesRef.current);
   }, [persist, settings.theme, visibility]);
+
+  useEffect(() => {
+    if (!resizeKind) return;
+    const move = (event: PointerEvent) => {
+      const session = resizeRef.current;
+      if (!session || session.pointerId !== event.pointerId) return;
+      event.preventDefault();
+      applyResize(event.clientX, event.clientY);
+    };
+    const finish = (event: PointerEvent) => {
+      const session = resizeRef.current;
+      if (!session || session.pointerId !== event.pointerId) return;
+      finishResize();
+    };
+    window.addEventListener("pointermove", move, { passive: false });
+    window.addEventListener("pointerup", finish);
+    window.addEventListener("pointercancel", finish);
+    return () => {
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", finish);
+      window.removeEventListener("pointercancel", finish);
+    };
+  }, [applyResize, finishResize, resizeKind]);
 
   const resizeClass = resizeKind ? ` root-resizing root-resizing-${resizeKind === "panel" ? "row" : "column"}` : "";
 
@@ -513,9 +539,6 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.primary)}
             onPointerDown={(event) => beginResize("primary", event)}
-            onPointerMove={continueResize}
-            onPointerUp={endResize}
-            onPointerCancel={endResize}
           />
           <main className="root-surface root-main"><WorkbenchSurfaceView surface="main" restoredLayout={initial.surfaces.main.layout} defaultTabs={defaults.main} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></main>
           <hr
@@ -524,9 +547,6 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.secondary)}
             onPointerDown={(event) => beginResize("secondary", event)}
-            onPointerMove={continueResize}
-            onPointerUp={endResize}
-            onPointerCancel={endResize}
           />
           <aside className="root-surface root-secondary"><WorkbenchSurfaceView surface="secondary" restoredLayout={initial.surfaces.secondary.layout} defaultTabs={defaults.secondary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
         </div>
@@ -536,9 +556,6 @@ export function WorkbenchShell() {
           aria-orientation="horizontal"
           aria-valuenow={Math.round(effective.panel)}
           onPointerDown={(event) => beginResize("panel", event)}
-          onPointerMove={continueResize}
-          onPointerUp={endResize}
-          onPointerCancel={endResize}
         />
         <section className="root-surface root-panel"><WorkbenchSurfaceView surface="panel" restoredLayout={initial.surfaces.panel.layout} defaultTabs={defaults.panel} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></section>
         <footer className="workbench-statusbar">
