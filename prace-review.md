@@ -1,6 +1,8 @@
-## AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory
+## Prohlášení
 
-Patrik Marius · Gymnázium J. K. Tyla · 2026
+Prohlašuji, že jsem tuto studentskou odbornou práci vypracoval/a samostatně pod dohledem vedoucího uvedeného na první straně. Všechny použité zdroje jsou uvedeny v seznamu zdrojů a informace z nich získané jsou v textu řádně označeny odkazem na zdroj. Souhlasím s tím, aby tištěná forma práce byla uchována na Gymnázium J. K. Tyla a tam používána jako tištěný zdroj např. pro další studentské práce či pro prezentaci vzdělávání na GJKT.
+
+V Hradci Králové dne Podpis autora práce:
 
 ## Anotace
 
@@ -10,16 +12,16 @@ Odborná práce zkoumá využití agentní umělé inteligence při vývoji soft
 
 This thesis examines the use of agentic artificial intelligence in software development, focusing on the architecture of an agent harness. Chapters 2–4 progress from the language model through the harness to AI-assisted development and agentic engineering. Chapters 5–6 separate the canonical DarkFactory documentation from evaluation of the available evidence. The evaluation uses source code, automated tests, and CI results and explicitly distinguishes demonstrated mechanisms from a full production lifecycle that was not demonstrated.
 
-## Klíčová slova (Keywords)
+## Klíčová slova
 
 .agents/, .claude/, Agentní sezení (Session), Agentní smyčka (Agent Loop), AGENTS.md, CLAUDE.md, Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Dovednosti (Skills), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Plánování (Planning), Poskytovatel modelu (Model Provider), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Revize (Review), Slop, Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Swarm, Systémový prompt (System Prompt), Teplota (Temperature), Token, Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
 
 ## Obsah
 
-1. [AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory](#loc-1)
+1. [Prohlášení](#loc-1)
 2. [Anotace](#loc-2)
 3. [Abstract](#loc-3)
-4. [Klíčová slova (Keywords)](#loc-4)
+4. [Klíčová slova](#loc-4)
 5. [1 Úvod](#section-thesis_introduction)
   1. [1.1 Motivace a vymezení problému](#section-motivation_problem_definition)
   2. [1.2 Východisko a argument práce](#section-thesis_argument)
@@ -57,13 +59,15 @@ This thesis examines the use of agentic artificial intelligence in software deve
 
 ## 1 Úvod
 
-Práce se zabývá použitím agentní AI při vývoji softwaru a technickými podmínkami, které umožňují delegovat delší úlohy bez ztráty kontroly nad stavem, účinky a ověřením výsledku.
+[
+
+Práce se zabývá použitím agentní AI při vývoji softwaru a technickými podmínkami, které umožňují delegovat delší úlohy bez ztráty kontroly nad stavem, účinky a ověřením výsledku. ]
 
 Předmětem práce není trénování jazykových modelů, ale systémové vrstvy potřebné pro jejich praktické použití jako součásti agentního vývojového procesu. Východisko a argument, podle kterého je tato otázka dále rozpracována, stanovuje část 1.2.
 
-### 1.1 Motivace a vymezení problému
+[
 
-Současné agentní systémy dokážou nad softwarovým projektem provádět více navazujících kroků, pracovat se soubory a nástroji a ověřovat vlastní změny. Jejich praktická schopnost proto nezávisí pouze na generování kódu, ale také na technické vrstvě, která propojuje model s prostředím, stavem, nástroji a kontrolními mechanismy. <sup><span id="loc-5">(</span><a href="#loc-84" role="doc-biblioref">1</a>)</sup> <sup><span id="loc-6">(</span><a href="#loc-85" role="doc-biblioref">2</a>)</sup>
+Současné agentní systémy dokážou nad softwarovým projektem provádět více navazujících kroků, pracovat se soubory a nástroji a ověřovat vlastní změny. Jejich praktická schopnost proto nezávisí pouze na generování kódu, ale také na technické vrstvě, která propojuje model s prostředím, stavem, nástroji a kontrolními mechanismy. <sup><span id="loc-5">(</span><a href="#loc-84" role="doc-biblioref">1</a>)</sup> <sup><span id="loc-6">(</span><a href="#loc-85" role="doc-biblioref">2</a>)</sup> ]
 
 Používání generativní AI je už globálně rozšířené. Gradually ve svém srpnovém odhadu z roku 2026 rozděluje světovou populaci do čtyř vzájemně výlučných kategorií podle nejpokročilejšího způsobu používání AI: 1 771 z 2 500 bodů připadá na lidi, kteří generativní AI nikdy vědomě nepoužili, 696 na uživatele bezplatných chatbotů, 24 na platící uživatele a 9 na pravidelné uživatele AI coding agents. <sup><span id="loc-7">(</span><a href="#loc-86" role="doc-biblioref">3</a>)</sup>
 
@@ -81,25 +85,25 @@ Současně se zvyšují schopnosti samotných modelů. Epoch AI na datech Epoch 
 
 S růstem modelových schopností se proto technická otázka posouvá od izolované tvorby textu nebo kódu k tomu, jak model zasadit do spolehlivého prostředí s nástroji, trvalejším stavem, ověřováním výsledků a orchestrací více kroků. <sup><span id="loc-11">(</span><a href="#loc-88" role="doc-biblioref">5</a>)</sup> <sup>(<a href="#loc-85" role="doc-biblioref">2</a>)</sup>
 
-### 1.2 Východisko a argument práce
+[
 
-Rostoucí schopnosti jazykových modelů mění vývoj softwaru od dílčí asistence k delegování stále delších a samostatnějších pracovních úloh.
+Rostoucí schopnosti jazykových modelů mění vývoj softwaru od dílčí asistence k delegování stále delších a samostatnějších pracovních úloh. ]
 
 Argument práce postupuje v jedné návaznosti: jak AI mění způsob zadávání, provádění a ověřování softwarové práce; co samotný model skutečně je a dokáže; co kolem něj přidává Harness; jak Agentické inženýrství tyto mechanismy záměrně skládá a omezuje; jak je realizuje DarkFactory; a co o výsledku skutečně ukazují dostupné důkazy.
 
-### 1.3 Cíle
+[
 
-Tato část stanovuje hlavní a dílčí cíle.
+Tato část stanovuje hlavní a dílčí cíle. ]
 
 Cíle vymezují, jaký artefakt má být navržen a které jeho vlastnosti mají být technicky ověřeny. Výzkumné otázky jsou odděleny do následující samostatné části.
 
-#### 1.3.1 Hlavní cíl
+[
 
-Navrhnout a implementovat architekturu Harnessu pro dlouhotrvající vývoj softwaru, která odděluje jazykový model od trvalého stavu, prostředí a deterministických kontrolních mechanismů, a technicky ověřit vlastnosti této architektury na systému DarkFactory.
+Navrhnout a implementovat architekturu Harnessu pro dlouhotrvající vývoj softwaru, která odděluje jazykový model od trvalého stavu, prostředí a deterministických kontrolních mechanismů, a technicky ověřit vlastnosti této architektury na systému DarkFactory. ]
 
 DarkFactory je implementační artefakt této architektury. Splnění cíle se posuzuje podle dohledatelné implementace navržených mechanismů a reprodukovatelných testovacích nebo provozních důkazů. Úplný živý životní cyklus změny je samostatná úroveň ověření a nesmí být zaměněn za samotnou existenci architektury nebo úspěšné komponentové testy.
 
-#### 1.3.2 Dílčí cíle
+[
 
 - Vymezit teoretické mechanismy AI-asistovaného vývoje, jazykového modelu a inference, Harnessu a Agentického inženýrství potřebné pro dlouhotrvající agentní vývoj softwaru.
 - Navrhnout a implementovat DarkFactory s explicitním stavem běhu, odděleným prostředím, rozšiřitelným capability rozhraním, GitHubem jako řídicí vrstvou a oddělenými hranicemi lidské a strojové identity.
@@ -108,19 +112,23 @@ DarkFactory je implementační artefakt této architektury. Splnění cíle se p
 - Ověřit přenositelnost vybraných částí řešení na konkrétních cílových repozitářích a samostatně vyhodnotit, zda existuje důkaz úplného živého životního cyklu změny.
 - Vztáhnout zjištěné výsledky a jejich omezení přímo k výzkumným otázkám.
 
+]
+
 Dílčí cíle oddělují teoretické vymezení, konstrukci artefaktu a jednotlivé úrovně jeho ověření. Nesplněná nebo neprokázaná úroveň evaluace proto nemusí být nahrazena silnějším tvrzením z jiné vrstvy důkazů.
 
-### 1.4 Výzkumné otázky
+[
 
 - O1: Které mechanismy agentního harnessu a vývojového životního cyklu umožňují agentovi samostatně provádět softwarovou změnu, zatímco rozhodnutí s vyšším dopadem zůstávají explicitně řízena člověkem?
 - O2: Jak může agentní harness omezit nebo obnovit neproduktivní či přerušený běh bez ztráty již ověřeného stavu a bez opakování přijatých deterministických účinků?
 - O3: Jak lze oddělit trvalý stav dlouhotrvající úlohy od omezeného kontextového okna modelu tak, aby bylo možné práci po přerušení bezpečně obnovit a pokračovat v ní?
 
+]
+
 O1 sleduje řízenou autonomii, O2 odolnost provádění a O3 kontinuitu stavu přes hranice jednotlivých modelových kontextů a běhů. Otázky jsou záměrně formulovány tak, aby na ně bylo možné odpovědět konkrétními architektonickými prvky a reprodukovatelnými důkazy z implementace.
 
-### 1.5 Metodika
+[
 
-Práce používá konstrukční přístup odpovídající design science: vymezuje problém a cíle řešení, navrhuje a implementuje artefakt DarkFactory a následně jej vyhodnocuje pomocí reprodukovatelných technických důkazů. <sup><span id="loc-12">(</span><a href="#loc-89" role="doc-biblioref">6</a>)</sup> <sup><span id="loc-13">(</span><a href="#loc-90" role="doc-biblioref">7</a>)</sup>
+Práce používá konstrukční přístup odpovídající design science: vymezuje problém a cíle řešení, navrhuje a implementuje artefakt DarkFactory a následně jej vyhodnocuje pomocí reprodukovatelných technických důkazů. <sup><span id="loc-12">(</span><a href="#loc-89" role="doc-biblioref">6</a>)</sup> <sup><span id="loc-13">(</span><a href="#loc-90" role="doc-biblioref">7</a>)</sup> ]
 
 Teoretická část vychází z odborných článků, standardů, protokolových specifikací a primární dokumentace současných agentních systémů. Jednotlivé mechanismy jsou rozděleny do samostatných konceptů, aby bylo možné oddělit vlastnosti [***Velký jazykový model (LLM)***](#concept-language_model)<sup>*</sup>, mechanismy Harnessu a postupy Agentického inženýrství.
 
@@ -132,7 +140,9 @@ Práce neprovádí statistický benchmark obecné výkonnosti agentních systém
 
 ## 2 Jazykový model
 
-Jazykový model převádí tokenový kontext na inferenční výstup; výsledné chování proto závisí jak na reprezentaci vstupu a architektuře modelu, tak na způsobu provedení inference a jejích runtime omezeních. <sup><span id="loc-14">(</span><a href="#loc-91" role="doc-biblioref">8</a>)</sup> <sup><span id="loc-15">(</span><a href="#loc-92" role="doc-biblioref">9</a>)</sup>
+[
+
+Jazykový model převádí tokenový kontext na inferenční výstup; výsledné chování proto závisí jak na reprezentaci vstupu a architektuře modelu, tak na způsobu provedení inference a jejích runtime omezeních. <sup><span id="loc-14">(</span><a href="#loc-91" role="doc-biblioref">8</a>)</sup> <sup><span id="loc-15">(</span><a href="#loc-92" role="doc-biblioref">9</a>)</sup> ]
 
 Modelová vrstva končí vytvořením výstupu nad aktuálním kontextem. Trvalý stav úlohy, účinky v externím prostředí, nástroje a dlouhodobé řízení patří až do Harnessu.
 
@@ -144,51 +154,49 @@ Artificial Analysis Intelligence Index v4.3.2 poskytuje bodový snímek současn
 
 Dílčí výsledky ukazují rozdílné profily schopností. Claude Fable 5.1 (Max, default fallback) a GPT-6 Astra (max) mají v tomto snímku shodný agregovaný index 53, ale GPT-6 Astra dosahuje vyššího výsledku v Terminal-Bench 4.0 (59 % oproti 52 %), zatímco Claude Fable 5.1 dosahuje vyššího výsledku v SciCode (63 % oproti 56 %). <sup>(<a href="#loc-93" role="doc-biblioref">10</a>)</sup> Agregované pořadí a pořadí na jednotlivých benchmarkech se tedy mohou lišit, protože modelová schopnost je vícerozměrná.
 
-### 2.1 Architektura a reprezentace
+[
 
-#### Velký jazykový model (LLM)
-
-Velký jazykový model (LLM) je parametrický model pravděpodobnostního rozdělení nad posloupnostmi tokenů; autoregresivní LLM generuje pokračování postupným odhadem dalšího tokenu z již dostupného kontextu. <sup>(<a href="#loc-91" role="doc-biblioref">8</a>)</sup>
+Velký jazykový model (LLM) je parametrický model pravděpodobnostního rozdělení nad posloupnostmi tokenů; autoregresivní LLM generuje pokračování postupným odhadem dalšího tokenu z již dostupného kontextu. <sup>(<a href="#loc-91" role="doc-biblioref">8</a>)</sup> ]
 
 Při inferenci model převádí aktivní posloupnost tokenů na distribuci možných pokračování a z ní vytváří výstup. Současné generativní LLM jsou často založeny na architektuře [***Transformer***](#concept-transformer)<sup>*</sup>, ale modelová inference sama nepředstavuje perzistentní pracovní stav, vykonání nástroje ani změnu externího prostředí. <sup>(<a href="#loc-92" role="doc-biblioref">9</a>)</sup>
 
 **GPT-3.** Brown et al. popisují GPT-3 jako autoregresivní jazykový model se 175 miliardami parametrů, který při evaluaci provádí zero-shot, one-shot a few-shot úlohy pouze z textového kontextu bez gradientních aktualizací vah. <sup>(<a href="#loc-91" role="doc-biblioref">8</a>)</sup>
 
-*Praktický význam:* Model dodává inferenční schopnost potřebnou pro generování, klasifikaci nebo volbu dalšího kroku. Perzistentní stav workflow, skutečné vykonání nástrojů, účinky v prostředí a dlouhodobá orchestrace proto musí vzniknout mimo samotný model.
+[*Praktický význam:* Model dodává inferenční schopnost potřebnou pro generování, klasifikaci nebo volbu dalšího kroku. Perzistentní stav workflow, skutečné vykonání nástrojů, účinky v prostředí a dlouhodobá orchestrace proto musí vzniknout mimo samotný model.]
 
-#### Transformer
+[
 
-Transformer je architektura neuronové sítě, která zpracovává vztahy v sekvenci pomocí mechanismů pozornosti místo rekurence či konvoluce jako základního mechanismu pro přenos informace mezi pozicemi. <sup>(<a href="#loc-92" role="doc-biblioref">9</a>)</sup>
+Transformer je architektura neuronové sítě, která zpracovává vztahy v sekvenci pomocí mechanismů pozornosti místo rekurence či konvoluce jako základního mechanismu pro přenos informace mezi pozicemi. <sup>(<a href="#loc-92" role="doc-biblioref">9</a>)</sup> ]
 
 Původní architektura Transformer má enkodér a dekodér; autoregresivní chování vzniká v dekodéru maskováním přístupu k budoucím tokenům a postupným vytvářením dalšího výstupu. Transformer tedy není synonymem pro autoregresivní LLM, ale jeho pozornostní mechanismus tvoří základ zpracování aktivního kontextu v mnoha současných jazykových modelech. <sup>(<a href="#loc-92" role="doc-biblioref">9</a>)</sup>
 
 **Původní Transformer.** Vaswani et al. demonstrují Transformer na strojovém překladu: enkodér i dekodér skládají vrstvy pozornosti a dopředných sítí, přičemž maskovaná self-attention v dekodéru brání přístupu k budoucím pozicím během autoregresivní predikce. <sup>(<a href="#loc-92" role="doc-biblioref">9</a>)</sup>
 
-*Praktický význam:* Pozornost umožňuje, aby výpočet dalšího výstupu podmiňovaly informace z aktivního kontextu. Informace, které mají přetrvat mezi inferenčními běhy nebo mimo dostupný kontext, však musí udržovat okolní systém.
+[*Praktický význam:* Pozornost umožňuje, aby výpočet dalšího výstupu podmiňovaly informace z aktivního kontextu. Informace, které mají přetrvat mezi inferenčními běhy nebo mimo dostupný kontext, však musí udržovat okolní systém.]
 
-#### Tokenizér
+[
 
-Tokenizér je komponenta, která podle slovníku a segmentačních pravidel mapuje vstup na posloupnost diskrétních tokenů a jejich identifikátorů a umožňuje odpovídající zpětné dekódování. <sup><span id="loc-18">(</span><a href="#loc-94" role="doc-biblioref">11</a>)</sup>
+Tokenizér je komponenta, která podle slovníku a segmentačních pravidel mapuje vstup na posloupnost diskrétních tokenů a jejich identifikátorů a umožňuje odpovídající zpětné dekódování. <sup><span id="loc-18">(</span><a href="#loc-94" role="doc-biblioref">11</a>)</sup> ]
 
 Subword tokenizace dělí text na jednotky menší než celé slovo, takže model nepotřebuje samostatnou položku slovníku pro každé možné slovo. BPE postupně slučuje časté sousední jednotky a vytváří omezený slovník, z něhož lze skládat i dříve neviděná slova. <sup>(<a href="#loc-94" role="doc-biblioref">11</a>)</sup>
 
 **Subword BPE.** Sennrich et al. používají Byte Pair Encoding pro překlad angličtiny do němčiny a ruštiny tak, aby omezený slovník reprezentoval otevřenou slovní zásobu sekvencemi subword jednotek; v analýze uvádějí německý kompozit „Sonnensystem“ složený z „Sonne“ a „System“. <sup>(<a href="#loc-94" role="doc-biblioref">11</a>)</sup>
 
-*Praktický význam:* Zvolená tokenizace určuje, kolik tokenů spotřebují instrukce, historie, zdrojový kód i výsledky nástrojů. Stejný text tak může podle tokenizéru zabírat odlišnou část vstupní nebo výstupní kapacity modelu.
+[*Praktický význam:* Zvolená tokenizace určuje, kolik tokenů spotřebují instrukce, historie, zdrojový kód i výsledky nástrojů. Stejný text tak může podle tokenizéru zabírat odlišnou část vstupní nebo výstupní kapacity modelu.]
 
-#### Token
+[
 
-Token je diskrétní jednotka sekvence identifikovaná položkou slovníku tokenizéru; podle tokenizační metody může odpovídat celému slovu, části slova nebo jinému textovému fragmentu. <sup>(<a href="#loc-94" role="doc-biblioref">11</a>)</sup>
+Token je diskrétní jednotka sekvence identifikovaná položkou slovníku tokenizéru; podle tokenizační metody může odpovídat celému slovu, části slova nebo jinému textovému fragmentu. <sup>(<a href="#loc-94" role="doc-biblioref">11</a>)</sup> ]
 
 Token se od tokenizéru liší tím, že je výslednou sekvenční jednotkou, zatímco tokenizér určuje pravidla jejího vzniku. Před vstupem do vrstev Transformeru se identifikátory vstupních tokenů mapují na spojité naučené vektory. <sup>(<a href="#loc-92" role="doc-biblioref">9</a>)</sup>
 
 **Token pod úrovní slova.** Subword přístup Sennricha et al. reprezentuje vzácná a neznámá slova jako posloupnost menších jednotek namísto jediné položky celého slova; rozbor německých kompozit, například „Sonnensystem“ („Sonne“ + „System“), ukazuje, proč token nemusí odpovídat jednomu slovu. <sup>(<a href="#loc-94" role="doc-biblioref">11</a>)</sup>
 
-*Praktický význam:* Tokeny jsou jednotkou, podle níž se vyjadřuje délka aktivního kontextu a generovaného výstupu. Agentní systém proto musí sledovat, kolik tokenů zabírají instrukce, historie, data i nástrojové výsledky.
+[*Praktický význam:* Tokeny jsou jednotkou, podle níž se vyjadřuje délka aktivního kontextu a generovaného výstupu. Agentní systém proto musí sledovat, kolik tokenů zabírají instrukce, historie, data i nástrojové výsledky.]
 
-#### Vektorová reprezentace (Embedding)
+[
 
-Embedding je spojitá vícerozměrná vektorová reprezentace diskrétního prvku, v níž se naučené geometrické vztahy mohou využít k zachycení podobnosti a dalších vztahů mezi reprezentovanými objekty. <sup><span id="loc-19">(</span><a href="#loc-95" role="doc-biblioref">12</a>)</sup>
+Embedding je spojitá vícerozměrná vektorová reprezentace diskrétního prvku, v níž se naučené geometrické vztahy mohou využít k zachycení podobnosti a dalších vztahů mezi reprezentovanými objekty. <sup><span id="loc-19">(</span><a href="#loc-95" role="doc-biblioref">12</a>)</sup> ]
 
 Uvnitř Transformeru se identifikátory tokenů mapují na naučené vektory, které vstupují do neuronového zpracování. <sup>(<a href="#loc-92" role="doc-biblioref">9</a>)</sup> Vektorové reprezentace však lze používat i mimo samotnou inferenci jazykového modelu, například pro porovnání blízkosti reprezentací; jde o obecnější použití než interní tokenové embeddingy. <sup>(<a href="#loc-95" role="doc-biblioref">12</a>)</sup>
 
@@ -204,81 +212,83 @@ Uvnitř Transformeru se identifikátory tokenů mapují na naučené vektory, kt
 
 *Obrázek 4: Pedagogická 3D projekce dvou relačních rodin. Reálné embeddingové prostory jsou vysokodimenzionální; osy Pohlaví, Královský status a Další sémantická dimenze jsou pouze vysvětlující projekční pomůcky a nepředstavují doslovné produkční souřadnice embeddingu.*
 
-*Praktický význam:* Vektorové reprezentace umožňují řadit nebo vyhledávat položky podle sémantické podobnosti, což je užitečné při výběru relevantních informací pro další modelový krok. Samotný embedding přitom neurčuje, jak se vybraný kontext následně spravuje nebo používá.
+[*Praktický význam:* Vektorové reprezentace umožňují řadit nebo vyhledávat položky podle sémantické podobnosti, což je užitečné při výběru relevantních informací pro další modelový krok. Samotný embedding přitom neurčuje, jak se vybraný kontext následně spravuje nebo používá.]
 
-### 2.2 Inference
+[
 
-#### Poskytovatel modelu (Model Provider)
-
-Poskytovatel modelu je externí služba nebo programové rozhraní, přes které runtime vybírá a volá konkrétní model; provider může mapovat abstraktní jméno modelu na vlastní implementaci modelového API. <sup><span id="loc-24">(</span><a href="#loc-98" role="doc-biblioref">15</a>)</sup>
+Poskytovatel modelu je externí služba nebo programové rozhraní, přes které runtime vybírá a volá konkrétní model; provider může mapovat abstraktní jméno modelu na vlastní implementaci modelového API. <sup><span id="loc-24">(</span><a href="#loc-98" role="doc-biblioref">15</a>)</sup> ]
 
 Provider není samotný jazykový model ani lokální inferenční engine. Zprostředkovává přístup k modelům a určuje kontrakt požadavku, dostupné schopnosti a provozní omezení daného rozhraní; různí provideři proto mohou stejnou roli realizovat odlišnými API. <sup>(<a href="#loc-98" role="doc-biblioref">15</a>)</sup>
 
 **OpenAI Agents SDK.** Dokumentace OpenAI Agents SDK ukazuje konfiguraci modelu řetězcem, například `RunConfig(model="gpt-5.6-sol")`; výchozí OpenAI provider tento název překládá na konkrétní modelové rozhraní založené na Responses API. <sup>(<a href="#loc-98" role="doc-biblioref">15</a>)</sup>
 
-*Praktický význam:* Volba poskytovatele určuje, ke kterým modelům a schopnostem má agentní runtime přístup, jaké požadavky musí vytvářet a s jakými limity musí počítat. Oddělená provider vrstva umožňuje měnit způsob přístupu bez změny významu samotného modelu.
+[*Praktický význam:* Volba poskytovatele určuje, ke kterým modelům a schopnostem má agentní runtime přístup, jaké požadavky musí vytvářet a s jakými limity musí počítat. Oddělená provider vrstva umožňuje měnit způsob přístupu bez změny významu samotného modelu.]
 
-#### Inferenční engine (Inference Engine)
+[
 
-Inferenční engine je běhová vrstva, která načítá model a skutečně provádí jeho dopředné výpočty a autoregresivní generování nad vstupními tokeny. <sup><span id="loc-25">(</span><a href="#loc-99" role="doc-biblioref">16</a>)</sup>
+Inferenční engine je běhová vrstva, která načítá model a skutečně provádí jeho dopředné výpočty a autoregresivní generování nad vstupními tokeny. <sup><span id="loc-25">(</span><a href="#loc-99" role="doc-biblioref">16</a>)</sup> ]
 
 Serving engine může kromě samotného výpočtu plánovat a dávkovat požadavky, spravovat akcelerátorovou paměť a organizovat KV cache. Tím se liší od poskytovatele modelu: provider je přístupové rozhraní nebo služba, zatímco inference engine řeší fyzické provedení modelu a správu runtime prostředků. <sup><span id="loc-26">(</span><a href="#loc-100" role="doc-biblioref">17</a>)</sup>
 
 **vLLM a PagedAttention.** vLLM používá mechanismus PagedAttention pro správu KV cache po blocích místo požadavku na jeden souvislý paměťový prostor; práce Kwon et al. popisuje tuto paměťovou správu jako součást serving systému pro LLM. <sup>(<a href="#loc-100" role="doc-biblioref">17</a>)</sup> <sup>(<a href="#loc-99" role="doc-biblioref">16</a>)</sup>
 
-*Praktický význam:* Vlastnosti inference enginu ovlivňují latenci, propustnost, využití paměti a tím i cenu nebo proveditelnost opakovaných a dlouhotrvajících modelových volání. Tyto vlastnosti jsou důležité i tehdy, když je engine skryt za vzdáleným provider API.
+[*Praktický význam:* Vlastnosti inference enginu ovlivňují latenci, propustnost, využití paměti a tím i cenu nebo proveditelnost opakovaných a dlouhotrvajících modelových volání. Tyto vlastnosti jsou důležité i tehdy, když je engine skryt za vzdáleným provider API.]
 
-#### Teplota (Temperature)
+[
 
-Teplota je parametr vzorkování, který u rozhraní, jež jej podporují, mění koncentraci pravděpodobnostního výběru dalších tokenů a tím ovlivňuje variabilitu generovaného výstupu. <sup><span id="loc-27">(</span><a href="#loc-101" role="doc-biblioref">18</a>)</sup>
+Teplota je parametr vzorkování, který u rozhraní, jež jej podporují, mění koncentraci pravděpodobnostního výběru dalších tokenů a tím ovlivňuje variabilitu generovaného výstupu. <sup><span id="loc-27">(</span><a href="#loc-101" role="doc-biblioref">18</a>)</sup> ]
 
 Nižší teplota typicky soustřeďuje výběr na pravděpodobnější pokračování, zatímco vyšší hodnota připouští větší variabilitu. Nelze ji ztotožnit s jednoduchým přepínačem determinismu: přesný rozsah, význam a interakce s dalšími sampling parametry jsou vlastností konkrétního modelového rozhraní. <sup>(<a href="#loc-101" role="doc-biblioref">18</a>)</sup>
 
 **OpenAI Responses API.** OpenAI u rozhraní Responses dokumentuje `temperature` v rozsahu 0 až 2 a jako příklady uvádí vyšší hodnotu 0,8 pro náhodnější výstup a nižší hodnotu 0,2 pro soustředěnější výstup. Jde o kontrakt tohoto konkrétního API, nikoli o univerzální rozsah všech modelů a providerů. <sup>(<a href="#loc-101" role="doc-biblioref">18</a>)</sup>
 
-*Praktický význam:* Podporované sampling parametry lze volit podle charakteru úlohy: stabilnější strukturované kroky mohou vyžadovat koncentrovanější výběr, zatímco explorační generování může využít větší variabilitu. Nastavení musí respektovat možnosti konkrétního API.
+[*Praktický význam:* Podporované sampling parametry lze volit podle charakteru úlohy: stabilnější strukturované kroky mohou vyžadovat koncentrovanější výběr, zatímco explorační generování může využít větší variabilitu. Nastavení musí respektovat možnosti konkrétního API.]
 
-#### Kontextové okno (Context Window)
+[
 
-Kontextové okno je konečný rozsah tokenové sekvence, kterou model může mít v daném inferenčním běhu současně k dispozici jako aktivní vstup. <sup><span id="loc-28">(</span><a href="#loc-102" role="doc-biblioref">19</a>)</sup>
+Kontextové okno je konečný rozsah tokenové sekvence, kterou model může mít v daném inferenčním běhu současně k dispozici jako aktivní vstup. <sup><span id="loc-28">(</span><a href="#loc-102" role="doc-biblioref">19</a>)</sup> ]
 
 O tuto kapacitu se dělí instrukce, historie konverzace, uživatelská data, výsledky nástrojů a další vložený obsah. Nominální maximální délka však popisuje kapacitu vstupu, nikoli záruku, že model využije každou relevantní informaci v dlouhém kontextu stejně spolehlivě. <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup>
 
 **Long-context model s nominálním 16K oknem.** Liu et al. mezi testovanými systémy zahrnují LongChat-13B s kontextovým oknem 16K a ukazují, že samotná deklarovaná kapacita neznamená stejně spolehlivé využití informace ve všech pozicích dlouhého vstupu. <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup>
 
-*Praktický význam:* Agent nemůže do jednoho inferenčního kroku bez omezení hromadit instrukce, přepis, nástrojové výstupy a další kontext. Musí proto hlídat aktivní tokenový rozpočet a rozhodovat, které informace mají být v konkrétním kroku dostupné.
+[*Praktický význam:* Agent nemůže do jednoho inferenčního kroku bez omezení hromadit instrukce, přepis, nástrojové výstupy a další kontext. Musí proto hlídat aktivní tokenový rozpočet a rozhodovat, které informace mají být v konkrétním kroku dostupné.]
 
-#### Mezipaměť klíčů a hodnot (KV Cache)
+[
 
-KV cache je runtime mezipaměť dříve vypočtených klíčů a hodnot pozornostních vrstev pro tokeny již zpracovaného prefixu, které lze znovu použít při autoregresivním dekódování dalších tokenů. <sup><span id="loc-29">(</span><a href="#loc-103" role="doc-biblioref">20</a>)</sup>
+KV cache je runtime mezipaměť dříve vypočtených klíčů a hodnot pozornostních vrstev pro tokeny již zpracovaného prefixu, které lze znovu použít při autoregresivním dekódování dalších tokenů. <sup><span id="loc-29">(</span><a href="#loc-103" role="doc-biblioref">20</a>)</sup> ]
 
 Opakované použití uložených klíčů a hodnot omezuje potřebu znovu počítat pozornostní reprezentace celého prefixu, ale cache současně spotřebovává paměť a její velikost roste s počtem aktivních tokenů a sekvencí. <sup>(<a href="#loc-100" role="doc-biblioref">17</a>)</sup> KV cache je interní runtime mechanismus inference a není totéž co providerové prompt caching, billing cache ani sémantická cache.
 
 **Bloková správa KV cache ve vLLM.** PagedAttention ve vLLM ukládá KV cache do nesouvislých bloků a mapuje logické bloky sekvence na fyzické bloky paměti. Tím řeší proměnlivou velikost cache jednotlivých sekvencí a umožňuje bezpečné sdílení bloků tam, kde je obsah společný. <sup>(<a href="#loc-100" role="doc-biblioref">17</a>)</sup>
 
-*Praktický význam:* KV cache zrychluje pokračující autoregresivní generování z již zpracovaného prefixu za cenu runtime paměti. Při dlouhých nebo souběžných agentních bězích proto může být správa cache významnou součástí kapacitního plánování inference.
+[*Praktický význam:* KV cache zrychluje pokračující autoregresivní generování z již zpracovaného prefixu za cenu runtime paměti. Při dlouhých nebo souběžných agentních bězích proto může být správa cache významnou součástí kapacitního plánování inference.]
 
-#### Degradace kontextu (Context Rot)
+[
 
-Degradace kontextu (Context Rot) označuje praktický pokles spolehlivosti, s níž model dokáže využívat relevantní informace při růstu délky, informačního zatížení nebo nevýhodném umístění informace v aktivním kontextu. <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup>
+Degradace kontextu (Context Rot) označuje praktický pokles spolehlivosti, s níž model dokáže využívat relevantní informace při růstu délky, informačního zatížení nebo nevýhodném umístění informace v aktivním kontextu. <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup> ]
 
 Empirické studie dlouhého kontextu ukazují, že schopnost nalézt a využít relevantní údaj není určena pouze tím, zda se údaj vejde do nominálního kontextového okna. Výkon může záviset na jeho poloze a přidání dalšího kontextu proto samo o sobě nezaručuje spolehlivější využití všech vložených informací. <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup>
 
 **„Lost in the Middle“.** V experimentu s multi-document question answering i key-value retrieval vykazují testované dlouhokontextové modely výraznou citlivost na polohu relevantní informace: výkon bývá vyšší, když je informace na začátku nebo na konci vstupu, a nižší při jejím umístění uprostřed dlouhého kontextu. <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup>
 
-*Praktický význam:* Pouhé hromadění celé historie není spolehlivou strategií pro dlouhotrvající agentní běhy. Pozdější vrstvy agentního systému proto potřebují kontext selektivně vybírat, zkracovat nebo jinak spravovat podle aktuálního kroku. Modelová inference poskytuje výstup z konečného aktivního kontextu, nikoli kontinuitu dlouhotrvající úlohy ani provedení účinků v externím prostředí. Systém, který má uchovávat stav, používat nástroje a pokračovat napříč více kroky, proto potřebuje další vrstvu: Harness.
+[*Praktický význam:* Pouhé hromadění celé historie není spolehlivou strategií pro dlouhotrvající agentní běhy. Pozdější vrstvy agentního systému proto potřebují kontext selektivně vybírat, zkracovat nebo jinak spravovat podle aktuálního kroku.]
+
+Modelová inference poskytuje výstup z konečného aktivního kontextu, nikoli kontinuitu dlouhotrvající úlohy ani provedení účinků v externím prostředí. Systém, který má uchovávat stav, používat nástroje a pokračovat napříč více kroky, proto potřebuje další vrstvu: Harness.
 
 ## 3 Harness
 
-Harness je běhová vrstva kolem modelové inference, která drží stav, opakuje agentní smyčku a propojuje model s nástroji a prostředím. <sup><span id="loc-30">(</span><a href="#loc-104" role="doc-biblioref">21</a>)</sup>
+[
 
-Jeho odpovědností je kontinuita běhu a provedení účinků mimo model. Strategie, podle které se tyto schopnosti skládají do cíleného chování, patří do agentického inženýrství. *Praktický význam:* Harness umožňuje převést jednotlivé modelové inference na dlouhotrvající agentní běh, který může udržovat stav, používat nástroje a pracovat se skutečným prostředím.
+Harness je běhová vrstva kolem modelové inference, která drží stav, opakuje agentní smyčku a propojuje model s nástroji a prostředím. <sup><span id="loc-30">(</span><a href="#loc-104" role="doc-biblioref">21</a>)</sup> ]
 
-### 3.1 Smyčka a stav
+Jeho odpovědností je kontinuita běhu a provedení účinků mimo model. Strategie, podle které se tyto schopnosti skládají do cíleného chování, patří do agentického inženýrství.
 
-#### Agentní smyčka (Agent Loop)
+[*Praktický význam:* Harness umožňuje převést jednotlivé modelové inference na dlouhotrvající agentní běh, který může udržovat stav, používat nástroje a pracovat se skutečným prostředím.]
 
-Iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace. <sup><span id="loc-31">(</span><a href="#loc-105" role="doc-biblioref">22</a>)</sup>
+[
+
+Iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace. <sup><span id="loc-31">(</span><a href="#loc-105" role="doc-biblioref">22</a>)</sup> ]
 
 ReAct formalizuje střídání rozhodnutí, akce a pozorování výsledku; nové pozorování se stává vstupem dalšího kroku. <sup>(<a href="#loc-105" role="doc-biblioref">22</a>)</sup>
 
@@ -286,113 +296,143 @@ ReAct formalizuje střídání rozhodnutí, akce a pozorování výsledku; nové
 
 *Obrázek 5: Smyčka ReAct: model zvolí akci, harness ji provede a výsledek vrátí modelu.*
 
-*Praktický význam:* Agentní smyčka umožňuje opakovaně převádět pozorování na další akci, takže agent může postupovat po více krocích místo jednorázové odpovědi.
+[*Praktický význam:* Agentní smyčka umožňuje opakovaně převádět pozorování na další akci, takže agent může postupovat po více krocích místo jednorázové odpovědi.]
 
-#### Agentní sezení (Session)
+[
 
-Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup><span id="loc-32">(</span><a href="#loc-106" role="doc-biblioref">23</a>)</sup>
+Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup><span id="loc-32">(</span><a href="#loc-106" role="doc-biblioref">23</a>)</sup> ]
 
-Session je vlastníkem identity a hranice pokračujícího běhu; jeho historický průběh vlastní [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> a aktuální pracovní skutečnosti [***Stav (State)***](#concept-state)<sup>*</sup>. <sup>(<a href="#loc-106" role="doc-biblioref">23</a>)</sup> <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> *Praktický význam:* Sezení dává více krokům společnou kontinuitu, takže lze navázat na předchozí položky, nástroje a stav bez zakládání zcela nového běhu.
+Session je vlastníkem identity a hranice pokračujícího běhu; jeho historický průběh vlastní [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> a aktuální pracovní skutečnosti [***Stav (State)***](#concept-state)<sup>*</sup>. <sup>(<a href="#loc-106" role="doc-biblioref">23</a>)</sup> <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
 
-#### Přepis (Transcript)
+[*Praktický význam:* Sezení dává více krokům společnou kontinuitu, takže lze navázat na předchozí položky, nástroje a stav bez zakládání zcela nového běhu.]
 
-Uspořádaný historický záznam událostí vzniklých během [***Agentní sezení (Session)***](#concept-agent_session)<sup>*</sup>, například zpráv, akcí a výsledků nástrojů. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
+[
 
-Transcript odpovídá na otázku, co se během běhu stalo. Je historickým záznamem, nikoli reprezentací právě platného pracovního stavu. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> *Praktický význam:* Přepis poskytuje auditovatelnou historii interakcí a nástrojových událostí, z níž lze rekonstruovat průběh běhu a hledat příčiny chyb.
+Uspořádaný historický záznam událostí vzniklých během [***Agentní sezení (Session)***](#concept-agent_session)<sup>*</sup>, například zpráv, akcí a výsledků nástrojů. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> ]
 
-#### Stav (State)
+Transcript odpovídá na otázku, co se během běhu stalo. Je historickým záznamem, nikoli reprezentací právě platného pracovního stavu. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
 
-Persistovaná reprezentace aktuálně platných pracovních skutečností a řídicích údajů běhu. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
+[*Praktický význam:* Přepis poskytuje auditovatelnou historii interakcí a nástrojových událostí, z níž lze rekonstruovat průběh běhu a hledat příčiny chyb.]
 
-State odpovídá na otázku, co je pro další krok právě platné; na rozdíl od [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> nemusí zachovávat úplnou historii předchozích událostí. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> *Praktický význam:* Stav umožňuje pokračovat podle aktuálně platných skutečností a řídicích údajů, aniž by bylo nutné spoléhat na to, že vše zůstane v textové historii modelu.
+[
 
-### 3.2 Prostředí a nástroje
+Persistovaná reprezentace aktuálně platných pracovních skutečností a řídicích údajů běhu. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> ]
 
-#### Prostředí agenta (Agent Environment)
+State odpovídá na otázku, co je pro další krok právě platné; na rozdíl od [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> nemusí zachovávat úplnou historii předchozích událostí. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
 
-Vnější prostředí, které agent prostřednictvím harnessu pozoruje a mění, například pracovní soubory, procesy, síťové služby a další systémové prostředky. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
+[*Praktický význam:* Stav umožňuje pokračovat podle aktuálně platných skutečností a řídicích údajů, aniž by bylo nutné spoléhat na to, že vše zůstane v textové historii modelu.]
 
-Změna souboru nebo spuštění procesu mění stav prostředí mimo modelový kontext. Přístup k těmto účinkům zprostředkovávají [***Nástroje (Tools)***](#concept-tools)<sup>*</sup> a jejich bezpečnostní hranice. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> *Praktický význam:* Prostředí dává agentovi konkrétní pracovní prostor, v němž může číst soubory, spouštět příkazy a pozorovat skutečné výsledky.
+[
 
-#### Nástroje (Tools)
+Vnější prostředí, které agent prostřednictvím harnessu pozoruje a mění, například pracovní soubory, procesy, síťové služby a další systémové prostředky. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> ]
 
-Rozhraní, kterým agent vyvolává operace mimo samotnou textovou inferenci, například čtení dat, volání API nebo změnu stavu systému. <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup>
+Změna souboru nebo spuštění procesu mění stav prostředí mimo modelový kontext. Přístup k těmto účinkům zprostředkovávají [***Nástroje (Tools)***](#concept-tools)<sup>*</sup> a jejich bezpečnostní hranice. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
 
-Harness zprostředkuje požadavek na nástroj, provede operaci v prostředí a vrátí její výsledek modelu jako další pozorování. <sup><span id="loc-33">(</span><a href="#loc-107" role="doc-biblioref">24</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup> *Praktický význam:* Nástroje umožňují agentovi spouštět příkazy, číst soubory, volat API, spouštět testy a pracovat se skutečnými výsledky místo jejich predikování.
+[*Praktický význam:* Prostředí dává agentovi konkrétní pracovní prostor, v němž může číst soubory, spouštět příkazy a pozorovat skutečné výsledky.]
 
-#### Vyvolávání nástrojů (Tool Calling)
+[
 
-Mechanismus, kterým model místo běžné textové odpovědi vybere konkrétní [***Nástroje (Tools)***](#concept-tools)<sup>*</sup> a vytvoří strukturované argumenty pro jeho vyvolání. <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup>
+Rozhraní, kterým agent vyvolává operace mimo samotnou textovou inferenci, například čtení dat, volání API nebo změnu stavu systému. <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup> ]
 
-Schéma rozhraní omezuje tvar argumentů a umožňuje jejich programovou validaci; JSON Schema je jedním z používaných formátů takového kontraktu. <sup><span id="loc-34">(</span><a href="#loc-108" role="doc-biblioref">25</a>)</sup> *Praktický význam:* Tool Calling propojuje rozhodnutí modelu s deterministicky provedenou funkcí nebo službou a vrací skutečný výsledek zpět do dalšího kroku.
+Harness zprostředkuje požadavek na nástroj, provede operaci v prostředí a vrátí její výsledek modelu jako další pozorování. <sup><span id="loc-33">(</span><a href="#loc-107" role="doc-biblioref">24</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup>
 
-#### Spouštění kódu (Code Execution)
+[*Praktický význam:* Nástroje umožňují agentovi spouštět příkazy, číst soubory, volat API, spouštět testy a pracovat se skutečnými výsledky místo jejich predikování.]
 
-Nástrojová schopnost umožňující vykonat program nebo příkaz a vrátit jeho skutečný výstup modelu. <sup><span id="loc-35">(</span><a href="#loc-109" role="doc-biblioref">26</a>)</sup>
+[
 
-Při vývoji softwaru zpřístupňuje agentovi například testy, buildy, formátovače a diagnostické příkazy místo odhadování jejich výsledku. <sup>(<a href="#loc-109" role="doc-biblioref">26</a>)</sup> *Praktický význam:* Spouštění kódu umožňuje agentovi ověřovat hypotézy příkazy, testy a programy namísto pouhého predikování jejich výsledku.
+Mechanismus, kterým model místo běžné textové odpovědi vybere konkrétní [***Nástroje (Tools)***](#concept-tools)<sup>*</sup> a vytvoří strukturované argumenty pro jeho vyvolání. <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup> ]
 
-#### Izolované prostředí (Sandbox)
+Schéma rozhraní omezuje tvar argumentů a umožňuje jejich programovou validaci; JSON Schema je jedním z používaných formátů takového kontraktu. <sup><span id="loc-34">(</span><a href="#loc-108" role="doc-biblioref">25</a>)</sup>
 
-Oddělené běhové prostředí, ve kterém agent může spouštět kód nebo měnit pracovní soubory bez přímého přístupu ke všem prostředkům hostitelského systému. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup>
+[*Praktický význam:* Tool Calling propojuje rozhodnutí modelu s deterministicky provedenou funkcí nebo službou a vrací skutečný výsledek zpět do dalšího kroku.]
 
-Sandbox vytváří bezpečnostní hranici kolem nedůvěryhodných účinků; konkrétní realizace může používat například kontejner nebo microVM. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> <sup><span id="loc-36">(</span><a href="#loc-110" role="doc-biblioref">27</a>)</sup> *Praktický význam:* Sandbox omezuje dopad chybného nebo nežádoucího kroku tím, že vymezuje dostupný souborový systém, síť a další schopnosti prostředí.
+[
 
-### 3.3 Rozšíření
+Nástrojová schopnost umožňující vykonat program nebo příkaz a vrátit jeho skutečný výstup modelu. <sup><span id="loc-35">(</span><a href="#loc-109" role="doc-biblioref">26</a>)</sup> ]
 
-#### Dovednosti (Skills)
+Při vývoji softwaru zpřístupňuje agentovi například testy, buildy, formátovače a diagnostické příkazy místo odhadování jejich výsledku. <sup>(<a href="#loc-109" role="doc-biblioref">26</a>)</sup>
 
-Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načítá pro úlohy odpovídající jeho účelu. <sup><span id="loc-37">(</span><a href="#loc-111" role="doc-biblioref">28</a>)</sup>
+[*Praktický význam:* Spouštění kódu umožňuje agentovi ověřovat hypotézy příkazy, testy a programy namísto pouhého predikování jejich výsledku.]
 
-Agent Skill je definován souborem `SKILL.md` s YAML frontmatterem a instrukcemi v Markdownu; může odkazovat na doplňující skripty, reference nebo další zdroje načítané podle potřeby. <sup>(<a href="#loc-111" role="doc-biblioref">28</a>)</sup> *Praktický význam:* Skills umožňují opakovaně balit doménový postup a podpůrné prostředky tak, aby je agent mohl použít konzistentně bez opakovaného zadávání celé instrukce.
+[
 
-#### Plugin
+Oddělené běhové prostředí, ve kterém agent může spouštět kód nebo měnit pracovní soubory bez přímého přístupu ke všem prostředkům hostitelského systému. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> ]
 
-Distribuovatelné rozšíření, které do hostitelského agentního prostředí přidává další chování nebo integrace. <sup><span id="loc-38">(</span><a href="#loc-112" role="doc-biblioref">29</a>)</sup>
+Sandbox vytváří bezpečnostní hranici kolem nedůvěryhodných účinků; konkrétní realizace může používat například kontejner nebo microVM. <sup>(<a href="#loc-104" role="doc-biblioref">21</a>)</sup> <sup><span id="loc-36">(</span><a href="#loc-110" role="doc-biblioref">27</a>)</sup>
 
-Konkrétní platforma může plugin použít jako obal pro různé druhy rozšíření, například skills, hooks, agenty nebo konfiguraci externích integrací. Plugin zde proto označuje způsob balení a distribuce, nikoli nadřazenou kategorii všech mechanismů Harnessu. <sup>(<a href="#loc-112" role="doc-biblioref">29</a>)</sup> *Praktický význam:* Plugin sdružuje rozšiřující schopnosti do distribuovatelné jednotky, takže lze přidat nový pracovní postup nebo integraci bez změny samotného modelu.
+[*Praktický význam:* Sandbox omezuje dopad chybného nebo nežádoucího kroku tím, že vymezuje dostupný souborový systém, síť a další schopnosti prostředí.]
 
-#### Skript
+[
 
-Spustitelné soubory nebo posloupnosti příkazů používané k deterministickému provedení opakovatelné operace. <sup>(<a href="#loc-112" role="doc-biblioref">29</a>)</sup>
+Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načítá pro úlohy odpovídající jeho účelu. <sup><span id="loc-37">(</span><a href="#loc-111" role="doc-biblioref">28</a>)</sup> ]
 
-Agentní rozšíření mohou skripty používat pro transformace, validace nebo jiné kroky, které je výhodnější provést programově než novým modelovým rozhodnutím. <sup>(<a href="#loc-111" role="doc-biblioref">28</a>)</sup> <sup>(<a href="#loc-112" role="doc-biblioref">29</a>)</sup> *Praktický význam:* Skript je vhodný pro deterministické kroky, které mají být provedeny přesně a opakovatelně, například validaci nebo transformaci souborů.
+Agent Skill je definován souborem `SKILL.md` s YAML frontmatterem a instrukcemi v Markdownu; může odkazovat na doplňující skripty, reference nebo další zdroje načítané podle potřeby. <sup>(<a href="#loc-111" role="doc-biblioref">28</a>)</sup>
 
-#### Hooks
+[*Praktický význam:* Skills umožňují opakovaně balit doménový postup a podpůrné prostředky tak, aby je agent mohl použít konzistentně bez opakovaného zadávání celé instrukce.]
 
-Konfigurované reakce spouštěné při určených událostech životního cyklu agentního prostředí. <sup><span id="loc-39">(</span><a href="#loc-113" role="doc-biblioref">30</a>)</sup>
+[
 
-Hook může před nebo po vybrané události spustit deterministickou logiku, například validaci, příkaz nebo jinou automatizaci. <sup>(<a href="#loc-113" role="doc-biblioref">30</a>)</sup> *Praktický význam:* Hooks umožňují spustit deterministickou kontrolu nebo reakci v definovaném bodě životního cyklu a vynutit chování nezávisle na tom, zda jej model sám navrhne.
+Distribuovatelné rozšíření, které do hostitelského agentního prostředí přidává další chování nebo integrace. <sup><span id="loc-38">(</span><a href="#loc-112" role="doc-biblioref">29</a>)</sup> ]
 
-#### MCP
+Konkrétní platforma může plugin použít jako obal pro různé druhy rozšíření, například skills, hooks, agenty nebo konfiguraci externích integrací. Plugin zde proto označuje způsob balení a distribuce, nikoli nadřazenou kategorii všech mechanismů Harnessu. <sup>(<a href="#loc-112" role="doc-biblioref">29</a>)</sup>
 
-Otevřený protokol pro standardizované propojení AI aplikací s externími nástroji a datovými zdroji. <sup><span id="loc-40">(</span><a href="#loc-114" role="doc-biblioref">31</a>)</sup>
+[*Praktický význam:* Plugin sdružuje rozšiřující schopnosti do distribuovatelné jednotky, takže lze přidat nový pracovní postup nebo integraci bez změny samotného modelu.]
 
-MCP odděluje klientskou AI aplikaci od serverů poskytujících nástroje a další schopnosti, takže integrace lze implementovat mimo vlastní jádro harnessu. <sup>(<a href="#loc-114" role="doc-biblioref">31</a>)</sup> <sup><span id="loc-41">(</span><a href="#loc-115" role="doc-biblioref">32</a>)</sup> *Praktický význam:* MCP standardizuje připojení externích nástrojů, zdrojů a promptů k agentnímu hostiteli, takže integrace nemusí být navržena zvlášť pro každý modelový klient.
+[
 
-#### .agents/
+Spustitelné soubory nebo posloupnosti příkazů používané k deterministickému provedení opakovatelné operace. <sup>(<a href="#loc-112" role="doc-biblioref">29</a>)</sup> ]
 
-`.agents/` je repozitářový nebo uživatelský jmenný prostor Codexu pro znovupoužitelná agentní rozšíření, zejména Skills. <sup><span id="loc-42">(</span><a href="#loc-116" role="doc-biblioref">33</a>)</sup>
+Agentní rozšíření mohou skripty používat pro transformace, validace nebo jiné kroky, které je výhodnější provést programově než novým modelovým rozhodnutím. <sup>(<a href="#loc-111" role="doc-biblioref">28</a>)</sup> <sup>(<a href="#loc-112" role="doc-biblioref">29</a>)</sup>
 
-Repozitářové Skills se ukládají do `.agents/skills` a uživatelské do `~/.agents/skills`; AGENTS.md zůstává samostatnou vrstvou projektových instrukcí a není podadresářem `.agents/`. <sup>(<a href="#loc-116" role="doc-biblioref">33</a>)</sup> *Praktický význam:* Adresář `.agents/` umožňuje držet repozitářové dovednosti a jejich podpůrné prostředky blízko kódu, který je používá, a verzovat je společně s projektem.
+[*Praktický význam:* Skript je vhodný pro deterministické kroky, které mají být provedeny přesně a opakovatelně, například validaci nebo transformaci souborů.]
 
-#### .claude/
+[
 
-`.claude/` je projektový nebo uživatelský jmenný prostor Claude Code pro instrukce, pravidla, nastavení a rozšíření. <sup><span id="loc-43">(</span><a href="#loc-117" role="doc-biblioref">34</a>)</sup> <sup><span id="loc-44">(</span><a href="#loc-118" role="doc-biblioref">35</a>)</sup>
+Konfigurované reakce spouštěné při určených událostech životního cyklu agentního prostředí. <sup><span id="loc-39">(</span><a href="#loc-113" role="doc-biblioref">30</a>)</sup> ]
 
-Anthropic dokumentuje `.claude/CLAUDE.md`, modulární `.claude/rules/` a projektové `.claude/settings.json`; hooks a Skills jsou samostatné rozšiřující mechanismy s vlastními pravidly. <sup>(<a href="#loc-117" role="doc-biblioref">34</a>)</sup> <sup>(<a href="#loc-118" role="doc-biblioref">35</a>)</sup> <sup>(<a href="#loc-113" role="doc-biblioref">30</a>)</sup> <sup><span id="loc-45">(</span><a href="#loc-119" role="doc-biblioref">36</a>)</sup> *Praktický význam:* Adresář `.claude/` umožňuje verzovat projektová pravidla, nastavení a rozšíření Claude Code společně s repozitářem. Harness doplňuje modelovou inferenci o kontinuitu běhu a rozhraní pro pozorování a změnu externího prostředí. Tím vzniká stavový agentní systém schopný jednat; výběr kontextu, řízení chování a rozdělování práce jsou navazujícími návrhovými rozhodnutími agentického inženýrství.
+Hook může před nebo po vybrané události spustit deterministickou logiku, například validaci, příkaz nebo jinou automatizaci. <sup>(<a href="#loc-113" role="doc-biblioref">30</a>)</sup>
+
+[*Praktický význam:* Hooks umožňují spustit deterministickou kontrolu nebo reakci v definovaném bodě životního cyklu a vynutit chování nezávisle na tom, zda jej model sám navrhne.]
+
+[
+
+Otevřený protokol pro standardizované propojení AI aplikací s externími nástroji a datovými zdroji. <sup><span id="loc-40">(</span><a href="#loc-114" role="doc-biblioref">31</a>)</sup> ]
+
+MCP odděluje klientskou AI aplikaci od serverů poskytujících nástroje a další schopnosti, takže integrace lze implementovat mimo vlastní jádro harnessu. <sup>(<a href="#loc-114" role="doc-biblioref">31</a>)</sup> <sup><span id="loc-41">(</span><a href="#loc-115" role="doc-biblioref">32</a>)</sup>
+
+[*Praktický význam:* MCP standardizuje připojení externích nástrojů, zdrojů a promptů k agentnímu hostiteli, takže integrace nemusí být navržena zvlášť pro každý modelový klient.]
+
+[
+
+`.agents/` je repozitářový nebo uživatelský jmenný prostor Codexu pro znovupoužitelná agentní rozšíření, zejména Skills. <sup><span id="loc-42">(</span><a href="#loc-116" role="doc-biblioref">33</a>)</sup> ]
+
+Repozitářové Skills se ukládají do `.agents/skills` a uživatelské do `~/.agents/skills`; AGENTS.md zůstává samostatnou vrstvou projektových instrukcí a není podadresářem `.agents/`. <sup>(<a href="#loc-116" role="doc-biblioref">33</a>)</sup>
+
+[*Praktický význam:* Adresář `.agents/` umožňuje držet repozitářové dovednosti a jejich podpůrné prostředky blízko kódu, který je používá, a verzovat je společně s projektem.]
+
+[
+
+`.claude/` je projektový nebo uživatelský jmenný prostor Claude Code pro instrukce, pravidla, nastavení a rozšíření. <sup><span id="loc-43">(</span><a href="#loc-117" role="doc-biblioref">34</a>)</sup> <sup><span id="loc-44">(</span><a href="#loc-118" role="doc-biblioref">35</a>)</sup> ]
+
+Anthropic dokumentuje `.claude/CLAUDE.md`, modulární `.claude/rules/` a projektové `.claude/settings.json`; hooks a Skills jsou samostatné rozšiřující mechanismy s vlastními pravidly. <sup>(<a href="#loc-117" role="doc-biblioref">34</a>)</sup> <sup>(<a href="#loc-118" role="doc-biblioref">35</a>)</sup> <sup>(<a href="#loc-113" role="doc-biblioref">30</a>)</sup> <sup><span id="loc-45">(</span><a href="#loc-119" role="doc-biblioref">36</a>)</sup>
+
+[*Praktický význam:* Adresář `.claude/` umožňuje verzovat projektová pravidla, nastavení a rozšíření Claude Code společně s repozitářem.]
+
+Harness doplňuje modelovou inferenci o kontinuitu běhu a rozhraní pro pozorování a změnu externího prostředí. Tím vzniká stavový agentní systém schopný jednat; výběr kontextu, řízení chování a rozdělování práce jsou navazujícími návrhovými rozhodnutími agentického inženýrství.
 
 ## 4 AI-asistovaný vývoj a agentické inženýrství
 
-AI ve vývoji softwaru posouvá část práce od přímého psaní k zadávání, delegování a kontrole změn. Agentické inženýrství označuje návrh způsobu, jakým se schopnosti Harnessu skládají, omezují a koordinují tak, aby agent cíleně plnil delší úlohu. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup>
+[
 
-Kapitola spojuje způsob formulace práce, řízení změny a nezávislé ověření kvality s návrhem instrukcí, kontextu, řízení chování a orchestrace agentů. *Praktický význam:* Agentické inženýrství převádí obecné schopnosti modelu a Harnessu do opakovatelného vývojového procesu s explicitním zadáním, kontrolami, řízeným kontextem a koordinací práce.
+AI ve vývoji softwaru posouvá část práce od přímého psaní k zadávání, delegování a kontrole změn. Agentické inženýrství označuje návrh způsobu, jakým se schopnosti Harnessu skládají, omezují a koordinují tak, aby agent cíleně plnil delší úlohu. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> ]
 
-### 4.1 Zadání a způsob práce
+Kapitola spojuje způsob formulace práce, řízení změny a nezávislé ověření kvality s návrhem instrukcí, kontextu, řízení chování a orchestrace agentů.
 
-#### Vibe Coding
+[*Praktický význam:* Agentické inženýrství převádí obecné schopnosti modelu a Harnessu do opakovatelného vývojového procesu s explicitním zadáním, kontrolami, řízeným kontextem a koordinací práce.]
 
-Způsob tvorby softwaru, při kterém člověk iteruje pomocí pokynů v přirozeném jazyce bez průběžné kontroly vygenerovaného kódu. <sup><span id="loc-46">(</span><a href="#loc-120" role="doc-biblioref">37</a>)</sup>
+[
+
+Způsob tvorby softwaru, při kterém člověk iteruje pomocí pokynů v přirozeném jazyce bez průběžné kontroly vygenerovaného kódu. <sup><span id="loc-46">(</span><a href="#loc-120" role="doc-biblioref">37</a>)</sup> ]
 
 Termín zavedl Andrej Karpathy v roce 2025. V této práci slouží jako kontrast k postupům, které před delegováním práce explicitně formulují specifikaci, plán a podmínky ověření. <sup>(<a href="#loc-120" role="doc-biblioref">37</a>)</sup> <sup><span id="loc-47">(</span><a href="#loc-121" role="doc-biblioref">38</a>)</sup>
 
@@ -402,197 +442,243 @@ Tweet Andreje Karpathyho z 2. února 2025, ve kterém popsal původní význam V
 
 *Obrázek 6: Původní tweet Andreje Karpathyho o Vibe Coding. <sup>(<a href="#loc-120" role="doc-biblioref">37</a>)</sup> <sup><span id="loc-49">(</span><a href="#loc-122" role="doc-biblioref">39</a>)</sup>*
 
-*Praktický význam:* Vibe Coding může zrychlit průzkumné prototypování, ale bez explicitních kontrol zvyšuje význam následné revize, testů a sledovatelnosti změn.
+[*Praktický význam:* Vibe Coding může zrychlit průzkumné prototypování, ale bez explicitních kontrol zvyšuje význam následné revize, testů a sledovatelnosti změn.]
 
-#### Vývoj řízený specifikací (Spec-Driven Development)
+[
 
-Přístup k AI-asistovanému vývoji, ve kterém explicitní specifikace řídí plánování, implementaci a ověřování změny. <sup><span id="loc-50">(</span><a href="#loc-123" role="doc-biblioref">40</a>)</sup>
+Přístup k AI-asistovanému vývoji, ve kterém explicitní specifikace řídí plánování, implementaci a ověřování změny. <sup><span id="loc-50">(</span><a href="#loc-123" role="doc-biblioref">40</a>)</sup> ]
 
-Specifikace odděluje požadované chování a omezení od konkrétní implementace a slouží jako společný referenční bod pro člověka i agenta. <sup>(<a href="#loc-123" role="doc-biblioref">40</a>)</sup> *Praktický význam:* Specifikace dává agentovi explicitní cíl a akceptační podmínky, podle nichž lze plánovat kroky a ověřovat výsledek.
+Specifikace odděluje požadované chování a omezení od konkrétní implementace a slouží jako společný referenční bod pro člověka i agenta. <sup>(<a href="#loc-123" role="doc-biblioref">40</a>)</sup>
 
-#### Plánování (Planning)
+[*Praktický význam:* Specifikace dává agentovi explicitní cíl a akceptační podmínky, podle nichž lze plánovat kroky a ověřovat výsledek.]
 
-Převod požadavku na explicitní kroky, závislosti a podmínky ověření před prováděním změn. <sup><span id="loc-51">(</span><a href="#loc-124" role="doc-biblioref">41</a>)</sup>
+[
 
-Plán rozděluje práci na kontrolovatelné části, určuje jejich pořadí a stanovuje podmínky, podle kterých lze posoudit dokončení. <sup>(<a href="#loc-124" role="doc-biblioref">41</a>)</sup> *Praktický význam:* Plánování převádí zadání na pořadí kroků a podmínky ověření, podle nichž může agent postupovat a průběžně kontrolovat dokončení.
+Převod požadavku na explicitní kroky, závislosti a podmínky ověření před prováděním změn. <sup><span id="loc-51">(</span><a href="#loc-124" role="doc-biblioref">41</a>)</sup> ]
 
-#### Revize (Review)
+Plán rozděluje práci na kontrolovatelné části, určuje jejich pořadí a stanovuje podmínky, podle kterých lze posoudit dokončení. <sup>(<a href="#loc-124" role="doc-biblioref">41</a>)</sup>
 
-Revize je samostatná kontrola změny nebo výstupu proti explicitním požadavkům a kvalitativním kritériím před jeho přijetím.
+[*Praktický význam:* Plánování převádí zadání na pořadí kroků a podmínky ověření, podle nichž může agent postupovat a průběžně kontrolovat dokončení.]
 
-GitHub Pull Request review například umožňuje změny komentovat, schválit nebo vrátit s požadavkem na úpravy před sloučením. <sup><span id="loc-52">(</span><a href="#loc-125" role="doc-biblioref">42</a>)</sup> *Praktický význam:* Revize poskytuje samostatný kontrolní krok proti požadavkům a kvalitativním kritériím, takže nalezené odchylky lze vrátit k opravě před přijetím změny.
+[
 
-### 4.2 Řízení změny
+Revize je samostatná kontrola změny nebo výstupu proti explicitním požadavkům a kvalitativním kritériím před jeho přijetím. ]
 
-#### Správa verzí (Version Control)
+GitHub Pull Request review například umožňuje změny komentovat, schválit nebo vrátit s požadavkem na úpravy před sloučením. <sup><span id="loc-52">(</span><a href="#loc-125" role="doc-biblioref">42</a>)</sup>
 
-Systém pro zaznamenávání a porovnávání historie změn souborů v čase. <sup><span id="loc-53">(</span><a href="#loc-126" role="doc-biblioref">43</a>)</sup>
+[*Praktický význam:* Revize poskytuje samostatný kontrolní krok proti požadavkům a kvalitativním kritériím, takže nalezené odchylky lze vrátit k opravě před přijetím změny.]
 
-Uložená historie umožňuje identifikovat původ změny, vracet se k předchozím stavům a slučovat samostatně vzniklé změny. <sup>(<a href="#loc-126" role="doc-biblioref">43</a>)</sup> *Praktický význam:* Správa verzí umožňuje agentním změnám zůstat dohledatelné, porovnatelné a vratné místo přepisování pracovního stavu bez historie.
+[
 
-#### Větev (Branch)
+Systém pro zaznamenávání a porovnávání historie změn souborů v čase. <sup><span id="loc-53">(</span><a href="#loc-126" role="doc-biblioref">43</a>)</sup> ]
 
-Oddělená linie vývoje v systému správy verzí, která ukazuje na vlastní posloupnost commitů. <sup>(<a href="#loc-126" role="doc-biblioref">43</a>)</sup>
+Uložená historie umožňuje identifikovat původ změny, vracet se k předchozím stavům a slučovat samostatně vzniklé změny. <sup>(<a href="#loc-126" role="doc-biblioref">43</a>)</sup>
 
-Větev umožňuje izolovat souběžnou změnu od cílové větve a později ji sloučit po kontrole nebo ověření. <sup>(<a href="#loc-126" role="doc-biblioref">43</a>)</sup> <sup><span id="loc-54">(</span><a href="#loc-127" role="doc-biblioref">44</a>)</sup> *Praktický význam:* Větev izoluje rozpracovanou agentní změnu od hlavní historie a vytváří bezpečný prostor pro testování a revizi před integrací.
+[*Praktický význam:* Správa verzí umožňuje agentním změnám zůstat dohledatelné, porovnatelné a vratné místo přepisování pracovního stavu bez historie.]
 
-#### Pull Request
+[
 
-Návrh na sloučení změn z jedné větve do jiné, kolem kterého GitHub soustřeďuje revizi, diskusi a automatické kontroly. <sup><span id="loc-55">(</span><a href="#loc-128" role="doc-biblioref">45</a>)</sup>
+Oddělená linie vývoje v systému správy verzí, která ukazuje na vlastní posloupnost commitů. <sup>(<a href="#loc-126" role="doc-biblioref">43</a>)</sup> ]
 
-Pull request zpřístupňuje diff navržené změny a její stav před integrací do cílové větve. <sup>(<a href="#loc-128" role="doc-biblioref">45</a>)</sup> *Praktický význam:* Pull Request vytváří explicitní integrační a revizní hranici, kde lze porovnat změny, spustit kontroly a zaznamenat rozhodnutí před sloučením.
+Větev umožňuje izolovat souběžnou změnu od cílové větve a později ji sloučit po kontrole nebo ověření. <sup>(<a href="#loc-126" role="doc-biblioref">43</a>)</sup> <sup><span id="loc-54">(</span><a href="#loc-127" role="doc-biblioref">44</a>)</sup>
 
-### 4.3 Kvalita a ověřování
+[*Praktický význam:* Větev izoluje rozpracovanou agentní změnu od hlavní historie a vytváří bezpečný prostor pro testování a revizi před integrací.]
 
-#### Slop
+[
 
-Neformální označení pro nekvalitní digitální obsah, zejména obsah vytvořený umělou inteligencí. <sup><span id="loc-56">(</span><a href="#loc-129" role="doc-biblioref">46</a>)</sup>
+Návrh na sloučení změn z jedné větve do jiné, kolem kterého GitHub soustřeďuje revizi, diskusi a automatické kontroly. <sup><span id="loc-55">(</span><a href="#loc-128" role="doc-biblioref">45</a>)</sup> ]
 
-V této práci označuje zejména AI-generovaný software, jehož objem nebo zdánlivá úplnost převyšují jeho ověřenou funkčnost a udržovatelnost. *Praktický význam:* Riziko nekvalitního generovaného výstupu znamená, že agentní práce potřebuje objektivní kontroly a revizi namísto přijetí výsledku jen proto, že je syntakticky úplný.
+Pull request zpřístupňuje diff navržené změny a její stav před integrací do cílové větve. <sup>(<a href="#loc-128" role="doc-biblioref">45</a>)</sup>
 
-#### Průběžná integrace (CI)
+[*Praktický význam:* Pull Request vytváří explicitní integrační a revizní hranici, kde lze porovnat změny, spustit kontroly a zaznamenat rozhodnutí před sloučením.]
 
-Vývojová praxe, při níž se změny průběžně integrují a automaticky ověřují sestavením, testy a dalšími kontrolami. <sup><span id="loc-57">(</span><a href="#loc-130" role="doc-biblioref">47</a>)</sup>
+[
 
-CI převádí část podmínek kvality do opakovatelných strojově vyhodnotitelných kontrol spouštěných nad změnami. <sup>(<a href="#loc-130" role="doc-biblioref">47</a>)</sup> *Praktický význam:* CI převádí opakovatelné kontroly změny do automatického signálu, který může agent i člověk použít při rozhodování o dalším kroku.
+Neformální označení pro nekvalitní digitální obsah, zejména obsah vytvořený umělou inteligencí. <sup><span id="loc-56">(</span><a href="#loc-129" role="doc-biblioref">46</a>)</sup> ]
 
-#### Integrační test (Integration Test)
+V této práci označuje zejména AI-generovaný software, jehož objem nebo zdánlivá úplnost převyšují jeho ověřenou funkčnost a udržovatelnost.
 
-Ověření spolupráce více komponent nebo vrstev systému přes jejich rozhraní. <sup>(<a href="#loc-124" role="doc-biblioref">41</a>)</sup>
+[*Praktický význam:* Riziko nekvalitního generovaného výstupu znamená, že agentní práce potřebuje objektivní kontroly a revizi namísto přijetí výsledku jen proto, že je syntakticky úplný.]
 
-Integrační test zachycuje chyby vznikající ve vzájemném propojení částí systému, které izolované testování jednotlivých komponent nemusí odhalit. <sup>(<a href="#loc-124" role="doc-biblioref">41</a>)</sup> *Praktický význam:* Integrační test ověřuje spolupráci více částí systému, a proto zachytí chyby, které izolovaná kontrola jednotlivého modulu nebo generovaného souboru neodhalí.
+[
 
-### 4.4 Instrukce a kontext
+Vývojová praxe, při níž se změny průběžně integrují a automaticky ověřují sestavením, testy a dalšími kontrolami. <sup><span id="loc-57">(</span><a href="#loc-130" role="doc-biblioref">47</a>)</sup> ]
 
-#### Promptové inženýrství (Prompt Engineering)
+CI převádí část podmínek kvality do opakovatelných strojově vyhodnotitelných kontrol spouštěných nad změnami. <sup>(<a href="#loc-130" role="doc-biblioref">47</a>)</sup>
 
-Systematický návrh instrukcí, příkladů a jejich struktury s cílem ovlivnit chování jazykového modelu. <sup><span id="loc-58">(</span><a href="#loc-131" role="doc-biblioref">48</a>)</sup>
+[*Praktický význam:* CI převádí opakovatelné kontroly změny do automatického signálu, který může agent i člověk použít při rozhodování o dalším kroku.]
 
-Prompt ovlivňuje pravděpodobnostní chování modelu, ale sám nevynucuje technickou bezpečnostní nebo autorizační hranici; pravidla, která musí systém garantovat, patří do [***Guardrail***](#concept-guardrail)<sup>*</sup> nebo jiné běhové kontroly. *Praktický význam:* Promptové inženýrství umožňuje zpřesnit instrukce pro jeden modelový krok; u agentů je však třeba jeho účinek kombinovat se stavem, nástroji a řízením kontextu.
+[
 
-#### Systémový prompt (System Prompt)
+Ověření spolupráce více komponent nebo vrstev systému přes jejich rozhraní. <sup>(<a href="#loc-124" role="doc-biblioref">41</a>)</sup> ]
 
-Systémová instrukční vrstva, která vymezuje roli, pravidla a výchozí způsob chování modelu nebo agenta. <sup>(<a href="#loc-131" role="doc-biblioref">48</a>)</sup>
+Integrační test zachycuje chyby vznikající ve vzájemném propojení částí systému, které izolované testování jednotlivých komponent nemusí odhalit. <sup>(<a href="#loc-124" role="doc-biblioref">41</a>)</sup>
 
-Systémový prompt poskytuje stabilní instrukční kontext, ale sám o sobě není technickou izolační ani autorizační hranicí. <sup>(<a href="#loc-131" role="doc-biblioref">48</a>)</sup> *Praktický význam:* Systémový prompt stanovuje základní instrukce a hranice chování, které Harness přikládá ke každému relevantnímu modelovému kroku.
+[*Praktický význam:* Integrační test ověřuje spolupráci více částí systému, a proto zachytí chyby, které izolovaná kontrola jednotlivého modulu nebo generovaného souboru neodhalí.]
 
-#### AGENTS.md
+[
 
-AGENTS.md je mechanismus projektových instrukcí Codexu, který dodává agentovi trvalý repozitářový kontext před zahájením práce. <sup><span id="loc-59">(</span><a href="#loc-132" role="doc-biblioref">49</a>)</sup>
+Systematický návrh instrukcí, příkladů a jejich struktury s cílem ovlivnit chování jazykového modelu. <sup><span id="loc-58">(</span><a href="#loc-131" role="doc-biblioref">48</a>)</sup> ]
 
-Codex hledá instrukce od kořene repozitáře směrem k aktuálnímu pracovnímu adresáři, skládá je v tomto pořadí a bližší instrukce tak dostávají vyšší prioritu; na úrovni adresáře může AGENTS.override.md nahradit AGENTS.md. <sup>(<a href="#loc-132" role="doc-biblioref">49</a>)</sup> *Praktický význam:* AGENTS.md umožňuje udržovat repozitářové instrukce přímo u kódu a automaticky je přidávat do kontextu Codexu podle pracovního umístění.
+Prompt ovlivňuje pravděpodobnostní chování modelu, ale sám nevynucuje technickou bezpečnostní nebo autorizační hranici; pravidla, která musí systém garantovat, patří do [***Guardrail***](#concept-guardrail)<sup>*</sup> nebo jiné běhové kontroly.
 
-#### CLAUDE.md
+[*Praktický význam:* Promptové inženýrství umožňuje zpřesnit instrukce pro jeden modelový krok; u agentů je však třeba jeho účinek kombinovat se stavem, nástroji a řízením kontextu.]
 
-CLAUDE.md je soubor trvalých instrukcí a kontextu, který Claude Code načítá do sezení. <sup>(<a href="#loc-117" role="doc-biblioref">34</a>)</sup>
+[
 
-Projektové instrukce mohou být v `./CLAUDE.md` nebo `./.claude/CLAUDE.md`, uživatelské v `~/.claude/CLAUDE.md`; soubory nad pracovním adresářem se načítají při spuštění a soubory v podadresářích se mohou načíst až při práci v nich. Jde o kontextové instrukce, nikoli o vynucenou bezpečnostní hranici. <sup>(<a href="#loc-117" role="doc-biblioref">34</a>)</sup> *Praktický význam:* CLAUDE.md umožňuje udržovat trvalé projektové nebo uživatelské instrukce, které Claude Code načítá do kontextu sezení.
+Systémová instrukční vrstva, která vymezuje roli, pravidla a výchozí způsob chování modelu nebo agenta. <sup>(<a href="#loc-131" role="doc-biblioref">48</a>)</sup> ]
 
-#### Kontextové inženýrství (Context Engineering)
+Systémový prompt poskytuje stabilní instrukční kontext, ale sám o sobě není technickou izolační ani autorizační hranicí. <sup>(<a href="#loc-131" role="doc-biblioref">48</a>)</sup>
 
-Systematický výběr a správa informací, které jsou modelu zpřístupněny v aktivním kontextu během inference. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup>
+[*Praktický význam:* Systémový prompt stanovuje základní instrukce a hranice chování, které Harness přikládá ke každému relevantnímu modelovému kroku.]
 
-Aktivní kontext může obsahovat instrukce, popisy dostupných nástrojů, externí data a vybranou historii interakce. Jeho obsah je nutné kurátorovat vzhledem k omezené kapacitě a nerovnoměrnému využití dlouhého kontextu. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup> *Praktický význam:* Kontextové inženýrství rozhoduje, které informace mají být v daném kroku modelu skutečně dostupné, což je zásadní pro dlouhé agentní běhy s omezeným rozpočtem.
+[
 
-#### Vkládání kontextu (Context Injection)
+AGENTS.md je mechanismus projektových instrukcí Codexu, který dodává agentovi trvalý repozitářový kontext před zahájením práce. <sup><span id="loc-59">(</span><a href="#loc-132" role="doc-biblioref">49</a>)</sup> ]
 
-V této práci označuje Context Injection cílené vložení relevantních informací do aktivního kontextu až v okamžiku, kdy jsou potřebné pro aktuální krok. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup>
+Codex hledá instrukce od kořene repozitáře směrem k aktuálnímu pracovnímu adresáři, skládá je v tomto pořadí a bližší instrukce tak dostávají vyšší prioritu; na úrovni adresáře může AGENTS.override.md nahradit AGENTS.md. <sup>(<a href="#loc-132" role="doc-biblioref">49</a>)</sup>
 
-Just-in-time přístup umožňuje mimo modelový kontext uchovávat odkazy nebo trvalý stav a potřebná data načíst nástrojem až během běhu. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> *Praktický význam:* Vkládání kontextu umožňuje Harnessu doplnit modelu aktuální data, instrukce nebo výsledky nástrojů právě v okamžiku, kdy jsou relevantní.
+[*Praktický význam:* AGENTS.md umožňuje udržovat repozitářové instrukce přímo u kódu a automaticky je přidávat do kontextu Codexu podle pracovního umístění.]
 
-#### Kompakce kontextu (Context Compaction)
+[
 
-Zmenšení aktivního kontextu nahrazením části historie kratší reprezentací, typicky shrnutím nebo výběrem důležitých informací. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup>
+CLAUDE.md je soubor trvalých instrukcí a kontextu, který Claude Code načítá do sezení. <sup>(<a href="#loc-117" role="doc-biblioref">34</a>)</sup> ]
 
-Kompakce uvolňuje kapacitu pro další běh, ale příliš agresivní komprese může odstranit detaily, které se později ukážou jako důležité. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> <sup><span id="loc-60">(</span><a href="#loc-133" role="doc-biblioref">50</a>)</sup> *Praktický význam:* Kompakce kontextu umožňuje dlouhotrvajícímu agentovi pokračovat přes bezprostřední kontextový rozpočet, za cenu možného ztracení detailů.
+Projektové instrukce mohou být v `./CLAUDE.md` nebo `./.claude/CLAUDE.md`, uživatelské v `~/.claude/CLAUDE.md`; soubory nad pracovním adresářem se načítají při spuštění a soubory v podadresářích se mohou načíst až při práci v nich. Jde o kontextové instrukce, nikoli o vynucenou bezpečnostní hranici. <sup>(<a href="#loc-117" role="doc-biblioref">34</a>)</sup>
 
-#### RAG
+[*Praktický význam:* CLAUDE.md umožňuje udržovat trvalé projektové nebo uživatelské instrukce, které Claude Code načítá do kontextu sezení.]
 
-Architektura, ve které systém před generováním vyhledá relevantní informace z externího zdroje a poskytne je modelu jako další kontext. <sup><span id="loc-61">(</span><a href="#loc-134" role="doc-biblioref">51</a>)</sup>
+[
 
-RAG odděluje znalost uloženou v externím korpusu od parametrů modelu a umožňuje vybírat podklady podle aktuálního dotazu. <sup>(<a href="#loc-134" role="doc-biblioref">51</a>)</sup> *Praktický význam:* RAG umožňuje před generováním dohledat relevantní externí informace a přidat je do kontextu, takže agent nemusí spoléhat pouze na parametry modelu.
+Systematický výběr a správa informací, které jsou modelu zpřístupněny v aktivním kontextu během inference. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> ]
 
-#### Prompt Injection
+Aktivní kontext může obsahovat instrukce, popisy dostupných nástrojů, externí data a vybranou historii interakce. Jeho obsah je nutné kurátorovat vzhledem k omezené kapacitě a nerovnoměrnému využití dlouhého kontextu. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> <sup>(<a href="#loc-102" role="doc-biblioref">19</a>)</sup>
 
-Manipulace chování jazykového modelu pomocí instrukcí vložených do vstupu nebo do externího obsahu, který systém následně zpracuje jako kontext. <sup><span id="loc-62">(</span><a href="#loc-135" role="doc-biblioref">52</a>)</sup>
+[*Praktický význam:* Kontextové inženýrství rozhoduje, které informace mají být v daném kroku modelu skutečně dostupné, což je zásadní pro dlouhé agentní běhy s omezeným rozpočtem.]
 
-Přímá prompt injection přichází v uživatelském vstupu; nepřímá injection je vložena do externích dat, například webové stránky, e-mailu, dokumentu, repozitáře nebo zdroje RAG. <sup><span id="loc-63">(</span><a href="#loc-136" role="doc-biblioref">53</a>)</sup> Typickým příkladem je životopis obsahující skrytou instrukci, která se pokusí ovlivnit následné hodnocení kandidáta modelem, přestože dokument měl sloužit pouze jako data. <sup>(<a href="#loc-135" role="doc-biblioref">52</a>)</sup> Důsledky proto závisejí také na oprávněních a nástrojích, které má agent k dispozici. <sup><span id="loc-64">(</span><a href="#loc-137" role="doc-biblioref">54</a>)</sup> *Praktický význam:* Prompt Injection vyžaduje oddělovat důvěryhodné instrukce od nedůvěryhodného obsahu a omezovat následné nástrojové akce, protože text z prostředí může ovlivnit rozhodování modelu.
+[
 
-### 4.5 Řízení agentního chování
+V této práci označuje Context Injection cílené vložení relevantních informací do aktivního kontextu až v okamžiku, kdy jsou potřebné pro aktuální krok. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> ]
 
-#### Cílené smyčky (Goal Loops)
+Just-in-time přístup umožňuje mimo modelový kontext uchovávat odkazy nebo trvalý stav a potřebná data načíst nástrojem až během běhu. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup>
 
-V této práci označují řídicí smyčky, které opakují jednání podle explicitního cíle, pozorovaného výsledku a podmínky dalšího pokračování nebo ukončení.
+[*Praktický význam:* Vkládání kontextu umožňuje Harnessu doplnit modelu aktuální data, instrukce nebo výsledky nástrojů právě v okamžiku, kdy jsou relevantní.]
 
-Na rozdíl od samotného běhového Agent Loopu zahrnuje Goal Loop také zpětnou vazbu k dosažení cíle, ověření výsledku a rozhodnutí, zda pokračovat, změnit postup nebo běh ukončit. <sup>(<a href="#loc-105" role="doc-biblioref">22</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup> *Praktický význam:* Cílená smyčka umožňuje opakovat plánování a ověřování až do splnění explicitní podmínky místo ukončení po prvním přijatelně vypadajícím výstupu.
+[
 
-#### Guardrail
+Zmenšení aktivního kontextu nahrazením části historie kratší reprezentací, typicky shrnutím nebo výběrem důležitých informací. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> ]
 
-V této práci označuje Guardrail programově vynucenou kontrolu, která může před pokračováním běhu validovat nebo zablokovat vstup, výstup či použití nástroje. <sup><span id="loc-65">(</span><a href="#loc-138" role="doc-biblioref">55</a>)</sup>
+Kompakce uvolňuje kapacitu pro další běh, ale příliš agresivní komprese může odstranit detaily, které se později ukážou jako důležité. <sup>(<a href="#loc-88" role="doc-biblioref">5</a>)</sup> <sup><span id="loc-60">(</span><a href="#loc-133" role="doc-biblioref">50</a>)</sup>
 
-Agentní frameworky mohou guardrails implementovat různými způsoby; zde je důležitá deterministicky vyhodnotitelná hranice oddělená od samotného modelového rozhodnutí. Kontrola může běh zastavit nebo odmítnout konkrétní akci před provedením jejího účinku. <sup>(<a href="#loc-138" role="doc-biblioref">55</a>)</sup> *Praktický význam:* Guardrails umožňují deterministickými kontrolami vynucovat omezení, která nemají záviset pouze na tom, zda je model dodrží.
+[*Praktický význam:* Kompakce kontextu umožňuje dlouhotrvajícímu agentovi pokračovat přes bezprostřední kontextový rozpočet, za cenu možného ztracení detailů.]
 
-#### Člověk ve smyčce (HITL)
+[
 
-Uspořádání automatizovaného procesu, ve kterém člověk v určených bodech poskytuje zpětnou vazbu, schválení nebo rozhodnutí. <sup><span id="loc-66">(</span><a href="#loc-139" role="doc-biblioref">56</a>)</sup>
+Architektura, ve které systém před generováním vyhledá relevantní informace z externího zdroje a poskytne je modelu jako další kontext. <sup><span id="loc-61">(</span><a href="#loc-134" role="doc-biblioref">51</a>)</sup> ]
 
-HITL ponechává vybraná rozhodnutí člověku místo úplné automatizace. V agentním workflow může být lidský zásah explicitní přechod nebo schvalovací bod, po kterém automatizované provádění pokračuje. <sup>(<a href="#loc-139" role="doc-biblioref">56</a>)</sup> *Praktický význam:* HITL umožňuje vyžádat lidské rozhodnutí před citlivou nebo nevratnou akcí a tím vložit explicitní schvalovací hranici do jinak automatického běhu.
+RAG odděluje znalost uloženou v externím korpusu od parametrů modelu a umožňuje vybírat podklady podle aktuálního dotazu. <sup>(<a href="#loc-134" role="doc-biblioref">51</a>)</sup>
 
-### 4.6 Orchestrace agentů
+[*Praktický význam:* RAG umožňuje před generováním dohledat relevantní externí informace a přidat je do kontextu, takže agent nemusí spoléhat pouze na parametry modelu.]
 
-#### Subagent
+[
 
-Specializovaná agentní instance, které jiný agent nebo orchestrátor deleguje vymezenou dílčí úlohu. <sup><span id="loc-67">(</span><a href="#loc-140" role="doc-biblioref">57</a>)</sup>
+Manipulace chování jazykového modelu pomocí instrukcí vložených do vstupu nebo do externího obsahu, který systém následně zpracuje jako kontext. <sup><span id="loc-62">(</span><a href="#loc-135" role="doc-biblioref">52</a>)</sup> ]
 
-Subagent umožňuje oddělit roli, instrukce a pracovní kontext dílčí úlohy od koordinujícího běhu a následně vrátit výsledek zpět nadřazené orchestrace. <sup><span id="loc-68">(</span><a href="#loc-141" role="doc-biblioref">58</a>)</sup> <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup> *Praktický význam:* Subagent umožňuje oddělit dílčí úlohu do samostatného kontextu a paralelizovat nebo specializovat práci bez zahlcení hlavního agentního vlákna.
+Přímá prompt injection přichází v uživatelském vstupu; nepřímá injection je vložena do externích dat, například webové stránky, e-mailu, dokumentu, repozitáře nebo zdroje RAG. <sup><span id="loc-63">(</span><a href="#loc-136" role="doc-biblioref">53</a>)</sup> Typickým příkladem je životopis obsahující skrytou instrukci, která se pokusí ovlivnit následné hodnocení kandidáta modelem, přestože dokument měl sloužit pouze jako data. <sup>(<a href="#loc-135" role="doc-biblioref">52</a>)</sup> Důsledky proto závisejí také na oprávněních a nástrojích, které má agent k dispozici. <sup><span id="loc-64">(</span><a href="#loc-137" role="doc-biblioref">54</a>)</sup>
 
-#### Orchestrátor
+[*Praktický význam:* Prompt Injection vyžaduje oddělovat důvěryhodné instrukce od nedůvěryhodného obsahu a omezovat následné nástrojové akce, protože text z prostředí může ovlivnit rozhodování modelu.]
 
-Koordinační role nebo komponenta, která rozhoduje, kterému specializovanému agentovi předat dílčí práci a jak jeho výsledek začlenit do pokračujícího běhu. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup>
+[
 
-Centralizovaný orchestrátor zůstává vlastníkem hlavního workflow a může specialisty volat jako omezené pracovní jednotky, případně jejich práci kombinovat nebo spouštět paralelně. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup> *Praktický význam:* Orchestrátor rozděluje práci, spouští dílčí vykonavatele a skládá jejich výsledky, čímž umožňuje koordinovat více agentních větví jako jeden proces.
+V této práci označují řídicí smyčky, které opakují jednání podle explicitního cíle, pozorovaného výsledku a podmínky dalšího pokračování nebo ukončení. ]
 
-#### Předání řízení (Handoff)
+Na rozdíl od samotného běhového Agent Loopu zahrnuje Goal Loop také zpětnou vazbu k dosažení cíle, ověření výsledku a rozhodnutí, zda pokračovat, změnit postup nebo běh ukončit. <sup>(<a href="#loc-105" role="doc-biblioref">22</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup>
 
-Vzor koordinace, při kterém aktivní agent předá další řízení specializovanému agentovi. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup>
+[*Praktický význam:* Cílená smyčka umožňuje opakovat plánování a ověřování až do splnění explicitní podmínky místo ukončení po prvním přijatelně vypadajícím výstupu.]
 
-Handoff se liší od centralizované orchestrace tím, že specialista není pouze zavolán jako dílčí pracovní jednotka a vrácen orchestrátoru, ale přebírá aktivní pokračování interakce nebo úlohy. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup> *Praktický význam:* Handoff předává odpovědnost i potřebný kontext jinému agentovi nebo roli, takže další krok nemusí pokračovat ve stejném agentním vlákně.
+[
 
-#### Graf pracovního postupu (Workflow Graph)
+V této práci označuje Guardrail programově vynucenou kontrolu, která může před pokračováním běhu validovat nebo zablokovat vstup, výstup či použití nástroje. <sup><span id="loc-65">(</span><a href="#loc-138" role="doc-biblioref">55</a>)</sup> ]
 
-Explicitní grafová reprezentace vícefázového workflow, v níž uzly představují dílčí práci a hrany určují přechody nebo závislosti mezi kroky. <sup>(<a href="#loc-141" role="doc-biblioref">58</a>)</sup>
+Agentní frameworky mohou guardrails implementovat různými způsoby; zde je důležitá deterministicky vyhodnotitelná hranice oddělená od samotného modelového rozhodnutí. Kontrola může běh zastavit nebo odmítnout konkrétní akci před provedením jejího účinku. <sup>(<a href="#loc-138" role="doc-biblioref">55</a>)</sup>
 
-Workflow Graph může vyjádřit sekvenční, podmíněné i paralelní větvení a může koordinovat více agentů. Pokud hrany vyjadřují pouze acyklické závislosti, může mít podobu DAG; workflow s návraty nebo opakováním však obecně DAG být nemusí. <sup>(<a href="#loc-141" role="doc-biblioref">58</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup> *Praktický význam:* Workflow Graph explicitně zachycuje návaznosti, větvení, paralelismus a smyčky, takže složitější agentní proces lze řídit jako strukturovaný tok práce.
+[*Praktický význam:* Guardrails umožňují deterministickými kontrolami vynucovat omezení, která nemají záviset pouze na tom, zda je model dodrží.]
 
-#### Swarm
+[
 
-Swarm označuje dynamicky koordinované paralelní provádění úlohy více subagenty pod orchestrujícím agentem nebo systémem; nejde o univerzální formální standard.
+Uspořádání automatizovaného procesu, ve kterém člověk v určených bodech poskytuje zpětnou vazbu, schválení nebo rozhodnutí. <sup><span id="loc-66">(</span><a href="#loc-139" role="doc-biblioref">56</a>)</sup> ]
 
-Kimi K2.5 Agent Swarm je konkrétní realizace, v níž orchestrátor dynamicky vytváří a koordinuje paralelní subagenty bez předem definovaných rolí nebo ručně napsaného workflow. <sup><span id="loc-69">(</span><a href="#loc-142" role="doc-biblioref">59</a>)</sup> *Praktický význam:* Swarm umožňuje dynamicky rozdělit rozsáhlou úlohu mezi více paralelních subagentů, pokud zadání přirozeně obsahuje nezávislé části práce. Delegování práce AI nezmenšuje potřebu softwarově-inženýrských kontrol; přesouvá jejich význam k explicitnímu zadání, sledovatelným změnám, řízenému kontextu a strojově ověřitelné zpětné vazbě. Tyto principy vytvářejí základ pro konkrétní realizaci v systému DarkFactory.
+HITL ponechává vybraná rozhodnutí člověku místo úplné automatizace. V agentním workflow může být lidský zásah explicitní přechod nebo schvalovací bod, po kterém automatizované provádění pokračuje. <sup>(<a href="#loc-139" role="doc-biblioref">56</a>)</sup>
+
+[*Praktický význam:* HITL umožňuje vyžádat lidské rozhodnutí před citlivou nebo nevratnou akcí a tím vložit explicitní schvalovací hranici do jinak automatického běhu.]
+
+[
+
+Specializovaná agentní instance, které jiný agent nebo orchestrátor deleguje vymezenou dílčí úlohu. <sup><span id="loc-67">(</span><a href="#loc-140" role="doc-biblioref">57</a>)</sup> ]
+
+Subagent umožňuje oddělit roli, instrukce a pracovní kontext dílčí úlohy od koordinujícího běhu a následně vrátit výsledek zpět nadřazené orchestrace. <sup><span id="loc-68">(</span><a href="#loc-141" role="doc-biblioref">58</a>)</sup> <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup>
+
+[*Praktický význam:* Subagent umožňuje oddělit dílčí úlohu do samostatného kontextu a paralelizovat nebo specializovat práci bez zahlcení hlavního agentního vlákna.]
+
+[
+
+Koordinační role nebo komponenta, která rozhoduje, kterému specializovanému agentovi předat dílčí práci a jak jeho výsledek začlenit do pokračujícího běhu. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup> ]
+
+Centralizovaný orchestrátor zůstává vlastníkem hlavního workflow a může specialisty volat jako omezené pracovní jednotky, případně jejich práci kombinovat nebo spouštět paralelně. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup>
+
+[*Praktický význam:* Orchestrátor rozděluje práci, spouští dílčí vykonavatele a skládá jejich výsledky, čímž umožňuje koordinovat více agentních větví jako jeden proces.]
+
+[
+
+Vzor koordinace, při kterém aktivní agent předá další řízení specializovanému agentovi. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup> ]
+
+Handoff se liší od centralizované orchestrace tím, že specialista není pouze zavolán jako dílčí pracovní jednotka a vrácen orchestrátoru, ale přebírá aktivní pokračování interakce nebo úlohy. <sup>(<a href="#loc-140" role="doc-biblioref">57</a>)</sup>
+
+[*Praktický význam:* Handoff předává odpovědnost i potřebný kontext jinému agentovi nebo roli, takže další krok nemusí pokračovat ve stejném agentním vlákně.]
+
+[
+
+Explicitní grafová reprezentace vícefázového workflow, v níž uzly představují dílčí práci a hrany určují přechody nebo závislosti mezi kroky. <sup>(<a href="#loc-141" role="doc-biblioref">58</a>)</sup> ]
+
+Workflow Graph může vyjádřit sekvenční, podmíněné i paralelní větvení a může koordinovat více agentů. Pokud hrany vyjadřují pouze acyklické závislosti, může mít podobu DAG; workflow s návraty nebo opakováním však obecně DAG být nemusí. <sup>(<a href="#loc-141" role="doc-biblioref">58</a>)</sup> <sup>(<a href="#loc-84" role="doc-biblioref">1</a>)</sup>
+
+[*Praktický význam:* Workflow Graph explicitně zachycuje návaznosti, větvení, paralelismus a smyčky, takže složitější agentní proces lze řídit jako strukturovaný tok práce.]
+
+[
+
+Swarm označuje dynamicky koordinované paralelní provádění úlohy více subagenty pod orchestrujícím agentem nebo systémem; nejde o univerzální formální standard. ]
+
+Kimi K2.5 Agent Swarm je konkrétní realizace, v níž orchestrátor dynamicky vytváří a koordinuje paralelní subagenty bez předem definovaných rolí nebo ručně napsaného workflow. <sup><span id="loc-69">(</span><a href="#loc-142" role="doc-biblioref">59</a>)</sup>
+
+[*Praktický význam:* Swarm umožňuje dynamicky rozdělit rozsáhlou úlohu mezi více paralelních subagentů, pokud zadání přirozeně obsahuje nezávislé části práce.]
+
+Delegování práce AI nezmenšuje potřebu softwarově-inženýrských kontrol; přesouvá jejich význam k explicitnímu zadání, sledovatelným změnám, řízenému kontextu a strojově ověřitelné zpětné vazbě. Tyto principy vytvářejí základ pro konkrétní realizaci v systému DarkFactory.
 
 ## 5 DarkFactory
 
 ## 6 Vyhodnocení
 
-Vyhodnocení odděluje důkazy o jednotlivých mechanismech od důkazů o jejich spolupráci na úrovni systému a od přenosu na konkrétní cílové repozitáře.
+[
+
+Vyhodnocení odděluje důkazy o jednotlivých mechanismech od důkazů o jejich spolupráci na úrovni systému a od přenosu na konkrétní cílové repozitáře. ]
 
 Metodika těchto důkazů je stanovena v části 1.5; zde se už neopakuje. Vyhodnocení používá reprodukovatelný evidence snapshot DarkFactory na commitu `e9c10221b40589512d262a0edb95f709b923150c` a odpovídající CI run `35616745304`. Snapshot slouží pouze jako pevný referenční bod pro výsledky. <sup><span id="loc-70">(</span><a href="#loc-143" role="doc-biblioref">60</a>)</sup> <sup><span id="loc-71">(</span><a href="#loc-144" role="doc-biblioref">61</a>)</sup>
 
-### 6.1 Ověření mechanismů
+[
 
-Referenční CI run dokončil všech 15 jobů úspěšně a hlavní Bun testovací sada vykázala 670 úspěšných testů ve 102 souborech bez selhání. <sup>(<a href="#loc-144" role="doc-biblioref">61</a>)</sup>
+Referenční CI run dokončil všech 15 jobů úspěšně a hlavní Bun testovací sada vykázala 670 úspěšných testů ve 102 souborech bez selhání. <sup>(<a href="#loc-144" role="doc-biblioref">61</a>)</sup> ]
 
 Samostatné testy ověřují mimo jiné persistenci Run State, detekci neaktuálního Planningu, zachování historie při provider failoveru, odvozování výsledku z pracovního stromu, kontrolu scope a recovery provenance. <sup>(<a href="#loc-143" role="doc-biblioref">60</a>)</sup> Tato evidence podporuje konkrétní mechanismy; sama o sobě neprokazuje úspěšnost celého produkčního životního cyklu.
 
-### 6.2 Ověření systému
+[
 
-Integrační testy dokazují spolupráci hlavních runtime mechanismů, ale evidence uzavřená 21. září 2026 neobsahuje jeden reprodukovatelný živý průchod celým produkčním životním cyklem změny.
+Integrační testy dokazují spolupráci hlavních runtime mechanismů, ale evidence uzavřená 21. září 2026 neobsahuje jeden reprodukovatelný živý průchod celým produkčním životním cyklem změny. ]
 
 Testy pokrývají workflow přechody, review/fix iterace, persistovaný stav, GitHub události, required-check gate, nástrojové účinky, failover a recovery. <sup>(<a href="#loc-143" role="doc-biblioref">60</a>)</sup> Plný df-only průchod od schválení Planningu po merge a následnou rekonciliaci zůstal zároveň otevřenou acceptance položkou Requestu 359, a proto není v této práci považován za prokázaný. <sup><span id="loc-72">(</span><a href="#loc-145" role="doc-biblioref">62</a>)</sup>
 
-### 6.3 Ověření na repozitářích
+[
 
-Fleet-level ověření rozlišuje aktivní cílové repozitáře od historických nebo archivovaných položek a hodnotí pouze konkrétní commity s dohledatelnými workflow výsledky.
+Fleet-level ověření rozlišuje aktivní cílové repozitáře od historických nebo archivovaných položek a hodnotí pouze konkrétní commity s dohledatelnými workflow výsledky. ]
 
 Repozitář `omnis` byl ověřen na commitu `a53660a1c0c6619f94768e5d520405052fb03df6`. Jeho pipeline run `34708160162` dokončil úspěšně mimo jiné web, paper a docs jobs; samostatné deploy-docs a release joby na stejném commitu byly rovněž úspěšné. <sup><span id="loc-73">(</span><a href="#loc-146" role="doc-biblioref">63</a>)</sup> <sup><span id="loc-74">(</span><a href="#loc-147" role="doc-biblioref">64</a>)</sup>
 
@@ -604,9 +690,9 @@ Aktivním repozitářem práce je `DarkFactory-Paper`, který nahrazuje starší
 
 Aktivní fleet evidence tedy v této fázi pokrývá DarkFactory, omnis, ChessWithQuests a DarkFactory-Paper. Dvě původní fleet položky jsou archivované; úplné 361 fleet acceptance proto nelze z těchto výsledků považovat za uzavřené.
 
-### 6.4 Výzkumné otázky
+[
 
-Odpovědi jsou omezeny na vlastnosti doložené implementací, automatickými testy, CI a dostupnými provozními artefakty.
+Odpovědi jsou omezeny na vlastnosti doložené implementací, automatickými testy, CI a dostupnými provozními artefakty. ]
 
 **O1.** Řízenou autonomii podporuje oddělení schváleného plánu, implementace, deterministického ověření, review/fix smyčky, Final Alignment a merge autorizace. Jejich dílčí kontrakty jsou implementované a testované, ale evidence neobsahuje jeden úplný živý produkční průchod. <sup>(<a href="#loc-143" role="doc-biblioref">60</a>)</sup> <sup>(<a href="#loc-144" role="doc-biblioref">61</a>)</sup> <sup>(<a href="#loc-145" role="doc-biblioref">62</a>)</sup>
 
@@ -614,15 +700,19 @@ Odpovědi jsou omezeny na vlastnosti doložené implementací, automatickými te
 
 **O3.** Trvalý pracovní stav je oddělen od context window: Run State, Session a Transcript mohou existovat mimo aktuální inferenční vstup a aktivní kontext z nich vybírá pouze informace potřebné pro další krok. Tato architektura podporuje pokračování přes hranice modelových běhů, ale nedokazuje nulovou informační ztrátu pro libovolně dlouhou úlohu. <sup>(<a href="#loc-143" role="doc-biblioref">60</a>)</sup>
 
-### 6.5 Diskuse a omezení
+[
 
-Dostupná evidence podporuje realizaci a testované vlastnosti jednotlivých mechanismů, nikoli obecné tvrzení o úplné autonomii nebo výkonnostní převaze DarkFactory.
+Dostupná evidence podporuje realizaci a testované vlastnosti jednotlivých mechanismů, nikoli obecné tvrzení o úplné autonomii nebo výkonnostní převaze DarkFactory. ]
 
-Práce neprovádí statistický benchmark úspěšnosti, ceny, latence ani četnosti zacyklení na reprezentativním souboru úloh. Evidence také neobsahuje jeden živý plný Request lifecycle ani úplnou acceptance původně plánované fleety. <sup>(<a href="#loc-145" role="doc-biblioref">62</a>)</sup> Silnou stránkou evaluace je naopak přímá vazba konkrétních tvrzení na implementační a testovací důkazy, například pozorovaný stav pracovního stromu nebo recovery provenance. <sup>(<a href="#loc-143" role="doc-biblioref">60</a>)</sup> Evaluace prokazuje implementaci a automatické ověření klíčových mechanismů DarkFactory a současně vymezuje chybějící systémové důkazy. Hlavní cíl je proto hodnocen na úrovni navržené architektury a reprodukovatelně testovaných mechanismů; neprovedený plný živý lifecycle zůstává explicitním omezením závěrů. <sup>(<a href="#loc-145" role="doc-biblioref">62</a>)</sup>
+Práce neprovádí statistický benchmark úspěšnosti, ceny, latence ani četnosti zacyklení na reprezentativním souboru úloh. Evidence také neobsahuje jeden živý plný Request lifecycle ani úplnou acceptance původně plánované fleety. <sup>(<a href="#loc-145" role="doc-biblioref">62</a>)</sup> Silnou stránkou evaluace je naopak přímá vazba konkrétních tvrzení na implementační a testovací důkazy, například pozorovaný stav pracovního stromu nebo recovery provenance. <sup>(<a href="#loc-143" role="doc-biblioref">60</a>)</sup>
+
+Evaluace prokazuje implementaci a automatické ověření klíčových mechanismů DarkFactory a současně vymezuje chybějící systémové důkazy. Hlavní cíl je proto hodnocen na úrovni navržené architektury a reprodukovatelně testovaných mechanismů; neprovedený plný živý lifecycle zůstává explicitním omezením závěrů. <sup>(<a href="#loc-145" role="doc-biblioref">62</a>)</sup>
 
 ## 7 Závěr
 
-Práce ukazuje, že delegování softwarové práce agentní AI vyžaduje více než samotnou schopnost jazykového modelu generovat kód: rozhodující jsou mechanismy, které mimo model udržují stav, zprostředkovávají účinky a poskytují ověřitelnou zpětnou vazbu.
+[
+
+Práce ukazuje, že delegování softwarové práce agentní AI vyžaduje více než samotnou schopnost jazykového modelu generovat kód: rozhodující jsou mechanismy, které mimo model udržují stav, zprostředkovávají účinky a poskytují ověřitelnou zpětnou vazbu. ]
 
 DarkFactory demonstruje konkrétní realizaci tohoto přístupu a dostupná evaluace podporuje funkčnost klíčových mechanismů i jejich vybraných integrací. Výzkumné otázky proto lze uzavřít na úrovni řízené autonomie, obnovitelnosti běhu a oddělení trvalého stavu od omezeného modelového kontextu.
 
