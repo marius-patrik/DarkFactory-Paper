@@ -433,6 +433,7 @@ export function WorkbenchShell() {
   }, []);
 
   const beginMouseResize = useCallback((kind: ResizeKind, event: ReactMouseEvent<HTMLElement>) => {
+    if (resizeRef.current) return;
     event.preventDefault();
     resizeRef.current = {
       kind,
