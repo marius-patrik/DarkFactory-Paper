@@ -1274,6 +1274,12 @@
       "url": "https://github.com/marius-patrik/DarkFactory.git"
     },
     {
+      "name": "IDE_PLAN.md",
+      "path": "IDE_PLAN.md",
+      "type": "file",
+      "source": "repository/IDE_PLAN.md"
+    },
+    {
       "name": "main.typ",
       "path": "main.typ",
       "type": "file",
