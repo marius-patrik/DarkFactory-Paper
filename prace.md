@@ -138,11 +138,9 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
 
 ## 1 Úvod
 
-Tato práce zkoumá, jak lze současné agentní systémy používat při vývoji softwaru tak, aby jejich autonomie byla spojena s trvalým stavem, ověřitelnými účinky a explicitními kontrolními body.
+Práce se zabývá použitím agentní AI při vývoji softwaru a technickými podmínkami, které umožňují delegovat delší úlohy bez ztráty kontroly nad stavem, účinky a ověřením výsledku.
 
-Teoretická část postupuje od principů softwarového inženýrství přes vlastnosti a limity jazykového modelu k agentnímu harnessu a technikám Agentic Engineering. Praktická část tyto mechanismy vztahuje k systému DarkFactory a odděluje popis implementované architektury od výsledků, které lze doložit testy, CI a provozními artefakty.
-
-Práce se nezaměřuje na trénování modelů. Jazykový model je chápán jako inferenční komponenta uvnitř širšího systému, jehož spolehlivost závisí také na správě stavu, prostředí, nástrojích, verifikaci, bezpečnostních hranicích a způsobu orchestrace.
+Předmětem práce není trénování jazykových modelů, ale systémové vrstvy potřebné pro jejich praktické použití jako součásti agentního vývojového procesu. Východisko a argument, podle kterého je tato otázka dále rozpracována, stanovuje část 1.2.
 
 ### 1.1 Motivace a vymezení problému
 
@@ -782,13 +780,11 @@ Hlavní cíl práce je proto hodnocen na úrovni navržené architektury a repro
 
 ## 4 Závěr
 
-Práce ukazuje, že praktické použití agentní AI při vývoji softwaru nelze redukovat na samotné generování kódu jazykovým modelem; rozhodující část systému tvoří harness, který spravuje stav, prostředí, nástroje, ověřování a řídicí hranice.
+Práce ukazuje, že delegování softwarové práce agentní AI vyžaduje více než samotnou schopnost jazykového modelu generovat kód: rozhodující jsou mechanismy, které mimo model udržují stav, zprostředkovávají účinky a poskytují ověřitelnou zpětnou vazbu.
 
-Na systému DarkFactory byla tato architektura rozložena do explicitních runtime, capability, GitHub, identity a operátorských hranic. Referenční commit DarkFactory prošel automatickou quality pipeline a hlavní testovací sada vykázala 670 úspěšných testů bez selhání; samostatné testy ověřují mimo jiné persistenci Run State, Planning review, modelový failover, deterministické zachycení výsledku, recovery provenance a oddělení browserové autentizace od strojových credentials. <sup>(<a href="#loc-113" role="doc-biblioref">47</a>)</sup> <sup>(<a href="#loc-114" role="doc-biblioref">48</a>)</sup>
+DarkFactory demonstruje konkrétní realizaci tohoto přístupu a dostupná evaluace podporuje funkčnost klíčových mechanismů i jejich vybraných integrací. Výzkumné otázky proto lze uzavřít na úrovni řízené autonomie, obnovitelnosti běhu a oddělení trvalého stavu od omezeného modelového kontextu.
 
-Výsledky podporují architektonickou odpověď na výzkumné otázky: řízená autonomie vyžaduje explicitní schvalovací a verifikační body, odolnost běhu vyžaduje persistovaný stav a kontrolovaný failover/recovery a kontinuita dlouhotrvající úlohy nemůže být závislá pouze na modelovém context window.
-
-V evidence setu uzavřeném 21. září 2026 nebyl prokázán jeden živý df-only průchod celým Request lifecycle od schválení Planningu po merge a rekonciliaci; stejná podmínka zůstala otevřenou acceptance položkou Requestu 359 <sup>(<a href="#loc-115" role="doc-biblioref">49</a>)</sup> Práce proto nevyvozuje obecnou výkonnostní převahu DarkFactory ani úplnou autonomii; tato tvrzení zůstávají mimo rozsah provedené evaluace.
+Rozsah závěru je omezen provedenými důkazy: práce neprokazuje obecnou převahu DarkFactory ani jeden úplný živý průchod celým produkčním životním cyklem změny. Tato hranice je součástí výsledku evaluace, nikoli nahrazena silnějším tvrzením. <sup>(<a href="#loc-115" role="doc-biblioref">49</a>)</sup>
 
 ## Seznam zdrojů
 
