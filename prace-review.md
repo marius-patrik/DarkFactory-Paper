@@ -453,42 +453,7 @@ Sandbox vytváří bezpečnostní hranici kolem nedůvěryhodných účinků; ko
 
 Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načítá pro úlohy odpovídající jeho účelu. <sup><span id="loc-37">(</span><a href="#loc-97" role="doc-biblioref">31</a>)</sup>
 
-Agent Skill je definován souborem `SKILL.md` a může odkazovat na doplňující skripty, reference nebo další zdroje načítané podle potřeby. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
-
-Formát SKILL.md. Povinný definiční soubor Agent Skill. Podle specifikace obsahuje YAML frontmatter následovaný instrukcemi v Markdownu; povinnými poli frontmatteru jsou `name` a `description`. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
-
-Následující úplný příklad používá povinná pole i několik volitelných polí povolených specifikací: <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
-
-```
----
-name: repository-tests
-description: Run, diagnose, and summarize the repository test suite. Use when a software change must be validated before completion.
-license: MIT
-compatibility: Requires the repository's test runner to be available in the runtime.
-metadata:
-  author: DarkFactory
-  version: "1.0"
-allowed-tools: Bash Read
----
-
-# Repository tests
-
-Use this skill when a change must be validated against the repository's tests.
-
-## Procedure
-
-1. Detect the test command documented by the repository.
-2. Run the smallest relevant test scope first.
-3. Fix or report failures before continuing.
-4. Run the complete required suite before completion.
-5. Report the commands run and the final result.
-
-## Failure reporting
-
-For every unresolved failure, include the command, failing target, and relevant output.
-```
-
-Specifikace dovoluje vedle `SKILL.md` také volitelné adresáře například pro skripty, reference a assety; ty se načítají pouze podle potřeby. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
+Agent Skill je definován souborem `SKILL.md` s YAML frontmatterem a instrukcemi v Markdownu; může odkazovat na doplňující skripty, reference nebo další zdroje načítané podle potřeby. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
 
 ##### Pluginy (Plugins)
 
