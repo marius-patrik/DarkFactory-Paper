@@ -191,6 +191,21 @@ export function WorkbenchSurfaceView({
         defaultRenderer="always"
         rightHeaderActionsComponent={HeaderActions}
         getTabContextMenuItems={tabContextMenuItems}
+        onDidDrop={(event: any) => {
+          const dockviewPanelId = event.getData?.()?.panelId;
+          const payload = event.nativeEvent instanceof DragEvent
+            ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
+            : activeCrossSurfaceDrag;
+          const id = activeCrossSurfaceDrag?.id
+            ?? (typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id);
+          if (!id || !runtimeRef.current.getTab(id)) return;
+          const referencePanelId = event.group?.activePanel?.id ?? event.panel?.id;
+          const moved = runtimeRef.current.transferTab(id, surface, {
+            referencePanelId,
+            direction: dropDirection(event.position),
+          });
+          if (moved) activeCrossSurfaceDrag = null;
+        }}
         onReady={(event: any) => {
           const api = event.api;
           onReady(surface, api);
@@ -210,24 +225,14 @@ export function WorkbenchSurfaceView({
             const payload = event.nativeEvent instanceof DragEvent
               ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
               : activeCrossSurfaceDrag;
-            const id = typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id;
-            if (id && runtimeRef.current.getTab(id)) event.accept();
+            const id = activeCrossSurfaceDrag?.id
+              ?? (typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id);
+            if (
+              id &&
+              activeCrossSurfaceDrag?.source !== surface &&
+              runtimeRef.current.getTab(id)
+            ) event.accept();
           });
-          api.onDidDrop?.((event: any) => {
-            const dockviewPanelId = event.getData?.()?.panelId;
-            const payload = event.nativeEvent instanceof DragEvent
-              ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
-              : activeCrossSurfaceDrag;
-            const id = typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id;
-            if (!id || !runtimeRef.current.getTab(id)) return;
-            const referencePanelId = event.group?.activePanel?.id ?? event.panel?.id;
-            const moved = runtimeRef.current.transferTab(id, surface, {
-              referencePanelId,
-              direction: dropDirection(event.position),
-            });
-            if (moved) activeCrossSurfaceDrag = null;
-          });
-
           let restored = false;
           if (restoredLayout) {
             try {
