@@ -193,7 +193,7 @@
           "anchor": "concept-embedding"
         },
         {
-          "title": "2.3.3 Inference",
+          "title": "2.3.3 Inference a její limity",
           "level": 4,
           "anchor": "section-model_inference"
         },
@@ -213,22 +213,12 @@
           "anchor": "concept-kv_cache"
         },
         {
-          "title": "2.3.4 Limity inference",
-          "level": 4,
-          "anchor": "section-inference_limits"
-        },
-        {
           "title": "Degradace kontextu (Context Rot)",
           "level": 5,
           "anchor": "concept-context_rot"
         },
         {
-          "title": "Divergence modelu",
-          "level": 5,
-          "anchor": "concept-divergence"
-        },
-        {
-          "title": "2.3.5 Závěr",
+          "title": "2.3.4 Závěr",
           "level": 4,
           "anchor": "section-model_inference_conclusion"
         },
@@ -775,7 +765,7 @@
           "anchor": "concept-embedding"
         },
         {
-          "title": "2.3.3 Inference",
+          "title": "2.3.3 Inference a její limity",
           "level": 4,
           "anchor": "section-model_inference"
         },
@@ -795,22 +785,12 @@
           "anchor": "concept-kv_cache"
         },
         {
-          "title": "2.3.4 Limity inference",
-          "level": 4,
-          "anchor": "section-inference_limits"
-        },
-        {
           "title": "Degradace kontextu (Context Rot)",
           "level": 5,
           "anchor": "concept-context_rot"
         },
         {
-          "title": "Divergence modelu",
-          "level": 5,
-          "anchor": "concept-divergence"
-        },
-        {
-          "title": "2.3.5 Závěr",
+          "title": "2.3.4 Závěr",
           "level": 4,
           "anchor": "section-model_inference_conclusion"
         },

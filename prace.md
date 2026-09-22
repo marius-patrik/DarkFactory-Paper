@@ -57,14 +57,12 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
       3. [Tokenizér](#concept-tokenizer)
       4. [Token](#concept-token)
       5. [Vektorová reprezentace (Embedding)](#concept-embedding)
-    3. [2.3.3 Inference](#section-model_inference)
+    3. [2.3.3 Inference a její limity](#section-model_inference)
       1. [Inferenční engine (Inference Engine)](#concept-inference_engine)
       2. [Kontextové okno (Context Window)](#concept-context_window)
       3. [Mezipaměť klíčů a hodnot (KV Cache)](#concept-kv_cache)
-    4. [2.3.4 Limity inference](#section-inference_limits)
-      1. [Degradace kontextu (Context Rot)](#concept-context_rot)
-      2. [Divergence modelu](#concept-divergence)
-    5. [2.3.5 Závěr](#section-model_inference_conclusion)
+      4. [Degradace kontextu (Context Rot)](#concept-context_rot)
+    4. [2.3.4 Závěr](#section-model_inference_conclusion)
   4. [2.4 Harness](#section-harness_section)
     1. [2.4.1 Úvod](#section-harness)
     2. [2.4.2 Smyčka a stav](#section-harness_state_loop)
@@ -337,7 +335,7 @@ V jazykovém modelu embedding převádí identifikátory tokenů na spojité vek
 
 *Obrázek 2: Ilustrativní 2D projekce vztahu král − muž + žena ≈ královna; osy Pohlaví a Královský status slouží pouze k názornému vysvětlení a nepředstavují doslovné naučené dimenze embeddingového prostoru.*
 
-#### 2.3.3 Inference
+#### 2.3.3 Inference a její limity
 
 ##### Inferenční engine (Inference Engine)
 
@@ -357,25 +355,17 @@ Mezipaměť dříve vypočtených klíčů a hodnot v pozornostních vrstvách t
 
 Při generování dalšího tokenu lze uložené klíče a hodnoty předchozí sekvence znovu použít místo jejich úplného přepočítání; paměťové nároky cache přitom rostou s délkou aktivní sekvence. <sup><span id="loc-29">(</span><a href="#loc-89" role="doc-biblioref">23</a>)</sup> <sup>(<a href="#loc-88" role="doc-biblioref">22</a>)</sup>
 
-#### 2.3.4 Limity inference
-
 ##### Degradace kontextu (Context Rot)
 
 V této práci označuje Context Rot pokles spolehlivosti, s níž model využívá relevantní informace v dlouhém nebo zahlceném kontextu. <sup>(<a href="#loc-87" role="doc-biblioref">21</a>)</sup>
 
 Experimenty s dlouhým kontextem ukazují, že výkon může záviset na poloze relevantní informace a klesat, když je umístěna uvnitř dlouhého vstupu. <sup>(<a href="#loc-87" role="doc-biblioref">21</a>)</sup>
 
-##### Divergence modelu
+#### 2.3.4 Závěr
 
-V této práci označuje postupné odchýlení pracovní reprezentace nebo generované trajektorie modelu od zamýšleného cíle či skutečného stavu.
+Modelová vrstva převádí vstupní sekvenci na další výstup prostřednictvím inference omezené dostupným kontextem a běhovými prostředky.
 
-Divergenci mohou podporovat dlouhý nebo zahlcený kontext, ztrátová kompakce a převzetí nepřesné mezireprezentace jako dalšího vstupu. Tento pojem zde zahrnuje i jev dříve označovaný jako sémantický posun. <sup>(<a href="#loc-87" role="doc-biblioref">21</a>)</sup> <sup><span id="loc-30">(</span><a href="#loc-90" role="doc-biblioref">24</a>)</sup>
-
-#### 2.3.5 Závěr
-
-Modelová vrstva převádí vstupní sekvenci na další výstup prostřednictvím inference omezené kontextem a dostupnými výpočetními prostředky.
-
-Pro delší autonomní práci proto nestačí samotná inference: systém musí mimo model udržovat kontinuitu úlohy a bezpečně zprostředkovat skutečné účinky. Tuto hranici přebírá Harness.
+Pro delší autonomní práci nestačí samotná inference: s rostoucím kontextem se zhoršuje spolehlivé využití relevantních informací a systém musí mimo model udržovat kontinuitu úlohy i skutečné účinky. Tuto hranici přebírá Harness.
 
 ### 2.4 Harness
 
@@ -389,9 +379,9 @@ Jeho odpovědností je kontinuita běhu a provedení účinků mimo model. Strat
 
 ##### Agentní smyčka (Agent Loop)
 
-Iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace. <sup><span id="loc-31">(</span><a href="#loc-91" role="doc-biblioref">25</a>)</sup>
+Iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace. <sup><span id="loc-30">(</span><a href="#loc-90" role="doc-biblioref">24</a>)</sup>
 
-ReAct formalizuje střídání rozhodnutí, akce a pozorování výsledku; nové pozorování se stává vstupem dalšího kroku. <sup>(<a href="#loc-91" role="doc-biblioref">25</a>)</sup>
+ReAct formalizuje střídání rozhodnutí, akce a pozorování výsledku; nové pozorování se stává vstupem dalšího kroku. <sup>(<a href="#loc-90" role="doc-biblioref">24</a>)</sup>
 
 ![](data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA5MjAgNTQwIiB3aWR0aD0iOTIwIiBoZWlnaHQ9IjU0MCI+CiAgPGRlZnM+CiAgICA8IS0tIEFycm93aGVhZCBtYXJrZXJzIC0tPgogICAgPG1hcmtlciBpZD0iYXJyb3ciIHZpZXdCb3g9IjAgMCAxMCAxMCIgcmVmWD0iNiIgcmVmWT0iNSIgbWFya2VyV2lkdGg9IjYiIG1hcmtlckhlaWdodD0iNiIgb3JpZW50PSJhdXRvLXN0YXJ0LXJldmVyc2UiPgogICAgICA8cGF0aCBkPSJNIDAgMSBMIDEwIDUgTCAwIDkgeiIgZmlsbD0iIzQ3NTU2OSIgLz4KICAgIDwvbWFya2VyPgogICAgPG1hcmtlciBpZD0iYXJyb3ctYmx1ZSIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI2IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gMCAxIEwgMTAgNSBMIDAgOSB6IiBmaWxsPSIjMjU2M2ViIiAvPgogICAgPC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJhcnJvdy1lbWVyYWxkIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHJlZlg9IjYiIHJlZlk9IjUiIG1hcmtlcldpZHRoPSI2IiBtYXJrZXJIZWlnaHQ9IjYiIG9yaWVudD0iYXV0by1zdGFydC1yZXZlcnNlIj4KICAgICAgPHBhdGggZD0iTSAwIDEgTCAxMCA1IEwgMCA5IHoiIGZpbGw9IiMwNTk2NjkiIC8+CiAgICA8L21hcmtlcj4KICAgIDxtYXJrZXIgaWQ9ImFycm93LXZpb2xldCIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI2IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gMCAxIEwgMTAgNSBMIDAgOSB6IiBmaWxsPSIjN2MzYWVkIiAvPgogICAgPC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJhcnJvdy1hbWJlciIgdmlld0JveD0iMCAwIDEwIDEwIiByZWZYPSI2IiByZWZZPSI1IiBtYXJrZXJXaWR0aD0iNiIgbWFya2VySGVpZ2h0PSI2IiBvcmllbnQ9ImF1dG8tc3RhcnQtcmV2ZXJzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gMCAxIEwgMTAgNSBMIDAgOSB6IiBmaWxsPSIjZDk3NzA2IiAvPgogICAgPC9tYXJrZXI+CgogICAgPCEtLSBGaWx0ZXJzIGZvciBzdWJ0bGUgc2hhZG93IC0tPgogICAgPGZpbHRlciBpZD0ic2hhZG93IiB4PSItNSUiIHk9Ii01JSIgd2lkdGg9IjExMCUiIGhlaWdodD0iMTE1JSIgZmlsdGVyVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjIiIHN0ZERldmlhdGlvbj0iMyIgZmxvb2QtY29sb3I9IiMwZjE3MmEiIGZsb29kLW9wYWNpdHk9IjAuMDgiIC8+CiAgICA8L2ZpbHRlcj4KICA8L2RlZnM+CgogIDxzdHlsZT4KICAgIC50aXRsZS10ZXh0IHsgZm9udC1mYW1pbHk6ICdDYXJsaXRvJywgJ0NhbGFkZWEnLCBzeXN0ZW0tdWksIC1hcHBsZS1zeXN0ZW0sIHNhbnMtc2VyaWY7IGZvbnQtd2VpZ2h0OiBib2xkOyBmb250LXNpemU6IDE0cHg7IH0KICAgIC5zdWItdGV4dCB7IGZvbnQtZmFtaWx5OiAnQ2FybGl0bycsICdDYWxhZGVhJywgc3lzdGVtLXVpLCAtYXBwbGUtc3lzdGVtLCBzYW5zLXNlcmlmOyBmb250LXNpemU6IDExLjVweDsgfQogICAgLmVkZ2UtbGFiZWwgeyBmb250LWZhbWlseTogJ0NhcmxpdG8nLCAnQ2FsYWRlYScsIHN5c3RlbS11aSwgLWFwcGxlLXN5c3RlbSwgc2Fucy1zZXJpZjsgZm9udC1zaXplOiAxMXB4OyBmb250LXdlaWdodDogNjAwOyBmaWxsOiAjNDc1NTY5OyB9CiAgICAuY29kZS1iYWRnZSB7IGZvbnQtZmFtaWx5OiAnQ291cmllciBOZXcnLCBtb25vc3BhY2U7IGZvbnQtc2l6ZTogMTAuNXB4OyB9CiAgICAubG9vcC1iYWRnZSB7IGZvbnQtZmFtaWx5OiAnQ2FybGl0bycsICdDYWxhZGVhJywgc3lzdGVtLXVpLCAtYXBwbGUtc3lzdGVtLCBzYW5zLXNlcmlmOyBmb250LXdlaWdodDogYm9sZDsgZm9udC1zaXplOiAxMS41cHg7IGZpbGw6ICMwNDc4NTc7IH0KICA8L3N0eWxlPgoKICA8IS0tIEJhY2tncm91bmQgY29udGFpbmVyIC0tPgogIDxyZWN0IHg9IjEwIiB5PSIxMCIgd2lkdGg9IjkwMCIgaGVpZ2h0PSI1MjAiIHJ4PSIxNiIgZmlsbD0iI2ZmZmZmZiIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjEuNSIgLz4KCiAgPCEtLSBPdXRlciBoYXJuZXNzIGJvdW5kYXJ5IGJveCAtLT4KICA8cmVjdCB4PSIyMzAiIHk9IjI4IiB3aWR0aD0iNjYwIiBoZWlnaHQ9IjQ4NSIgcng9IjEyIiBmaWxsPSIjZjhmYWZjIiBzdHJva2U9IiNjYmQ1ZTEiIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtZGFzaGFycmF5PSI2LDQiIC8+CiAgPHRleHQgeD0iMjUwIiB5PSI1MiIgY2xhc3M9ImVkZ2UtbGFiZWwiIGZpbGw9IiM2NDc0OGIiIGZvbnQtc2l6ZT0iMTIiPkFHRU5UIEhBUk5FU1MgJmFtcDsgUFJPU1TFmEVEw408L3RleHQ+CgogIDwhLS0gMS4gVcW+aXZhdGVsIChVc2VyKSAtLT4KICA8ZyBmaWx0ZXI9InVybCgjc2hhZG93KSI+CiAgICA8cmVjdCB4PSIzNSIgeT0iMTQ1IiB3aWR0aD0iMTU1IiBoZWlnaHQ9IjgwIiByeD0iMTAiIGZpbGw9IiNmMWY1ZjkiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIxLjgiIC8+CiAgICA8Y2lyY2xlIGN4PSIxMTIuNSIgY3k9IjE3MyIgcj0iMTQiIGZpbGw9IiNjYmQ1ZTEiIC8+CiAgICA8cGF0aCBkPSJNIDk4IDIwNiBBIDE0IDE0IDAgMCAxIDEyNyAyMDYgWiIgZmlsbD0iI2NiZDVlMSIgLz4KICAgIDx0ZXh0IHg9IjExMi41IiB5PSIyMTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aXRsZS10ZXh0IiBmaWxsPSIjMGYxNzJhIj5Vxb5pdmF0ZWw8L3RleHQ+CiAgPC9nPgoKICA8IS0tIEFycm93IFVzZXIgLT4gQ29udGV4dCAtLT4KICA8cGF0aCBkPSJNIDE5MCAxNzUgTCAyNjggMTc1IiBmaWxsPSJub25lIiBzdHJva2U9IiMyNTYzZWIiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNhcnJvdy1ibHVlKSIgLz4KICA8cmVjdCB4PSIxOTUiIHk9IjE1MyIgd2lkdGg9IjcwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2VmZjZmZiIgLz4KICA8dGV4dCB4PSIyMzAiIHk9IjE2NiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImVkZ2UtbGFiZWwiIGZpbGw9IiMxZDRlZDgiPjEuIFphZMOhbsOtPC90ZXh0PgoKICA8IS0tIDIuIEtvbnRleHQgYSBoaXN0b3JpZSAoQ29udGV4dCBXaW5kb3cpIC0tPgogIDxnIGZpbHRlcj0idXJsKCNzaGFkb3cpIj4KICAgIDxyZWN0IHg9IjI3MCIgeT0iMTMwIiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjExMCIgcng9IjEwIiBmaWxsPSIjZWVmMmZmIiBzdHJva2U9IiM2MzY2ZjEiIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgIDxyZWN0IHg9IjI4MiIgeT0iMTQyIiB3aWR0aD0iMTU2IiBoZWlnaHQ9IjI0IiByeD0iNSIgZmlsbD0iI2UwZTdmZiIgLz4KICAgIDx0ZXh0IHg9IjM2MCIgeT0iMTU4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGl0bGUtdGV4dCIgZmlsbD0iIzMxMmU4MSI+S29udGV4dCBrb252ZXJ6YWNlPC90ZXh0PgogICAgPHRleHQgeD0iMzYwIiB5PSIxODAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJzdWItdGV4dCIgZmlsbD0iIzQzMzhjYSI+4oCiIFN5c3RlbSBwcm9tcHQgJmFtcDsgcHJhdmlkbGE8L3RleHQ+CiAgICA8dGV4dCB4PSIzNjAiIHk9IjE5OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InN1Yi10ZXh0IiBmaWxsPSIjNDMzOGNhIj7igKIgSGlzdG9yaWUgenByw6F2IChUdXJucyk8L3RleHQ+CiAgICA8dGV4dCB4PSIzNjAiIHk9IjIxNiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InN1Yi10ZXh0IiBmaWxsPSIjNDMzOGNhIj7igKIgVsO9c3R1cHkgbsOhc3Ryb2rFryAoTG9nKTwvdGV4dD4KICA8L2c+CgogIDwhLS0gQXJyb3cgQ29udGV4dCAtPiBJbmZlcmVuY2UgLS0+CiAgPHBhdGggZD0iTSA0NTAgMTg1IEwgNTE4IDE4NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjN2MzYWVkIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjYXJyb3ctdmlvbGV0KSIgLz4KICA8cmVjdCB4PSI0NTYiIHk9IjE2NSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjE4IiByeD0iNCIgZmlsbD0iI2Y1ZjNmZiIgLz4KICA8dGV4dCB4PSI0ODYiIHk9IjE3OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9ImVkZ2UtbGFiZWwiIGZpbGw9IiM2ZDI4ZDkiPlRva2VueTwvdGV4dD4KCiAgPCEtLSAzLiBJbmZlcmVuY2UgJiBNecWhbGVua2EgKFJlYXNvbmluZyAvIFRob3VnaHQpIC0tPgogIDxnIGZpbHRlcj0idXJsKCNzaGFkb3cpIj4KICAgIDxyZWN0IHg9IjUyMCIgeT0iMTE1IiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjE0MCIgcng9IjEwIiBmaWxsPSIjZmFmNWZmIiBzdHJva2U9IiNhODU1ZjciIHN0cm9rZS13aWR0aD0iMiIgLz4KICAgIDxyZWN0IHg9IjUzMiIgeT0iMTI3IiB3aWR0aD0iMTc2IiBoZWlnaHQ9IjI2IiByeD0iNSIgZmlsbD0iI2YzZThmZiIgLz4KICAgIDx0ZXh0IHg9IjYyMCIgeT0iMTQ1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGl0bGUtdGV4dCIgZmlsbD0iIzU4MWM4NyI+TExNIEluZmVyZW5jZSAmYW1wOyBSb3p2YWhhPC90ZXh0PgogICAgPHRleHQgeD0iNjIwIiB5PSIxNzIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aXRsZS10ZXh0IiBmaWxsPSIjN2UyMmNlIj7igJ5NecWhbGVua2HigJwgKFRob3VnaHQpPC90ZXh0PgogICAgPHRleHQgeD0iNjIwIiB5PSIxOTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJzdWItdGV4dCIgZmlsbD0iIzZiMjFhOCI+TW9kZWwgYW5hbHl6dWplIHN0YXYsPC90ZXh0PgogICAgPHRleHQgeD0iNjIwIiB5PSIyMTAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJzdWItdGV4dCIgZmlsbD0iIzZiMjFhOCI+cGzDoW51amUgZGFsxaHDrSBrcm9rIGEgcm96aG9kbmU6PC90ZXh0PgogICAgPHRleHQgeD0iNjIwIiB5PSIyMzUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJlZGdlLWxhYmVsIiBmaWxsPSIjNTgxYzg3Ij5Ba2NlIHZzLiBEb2tvbsSNZW7DrTwvdGV4dD4KICA8L2c+CgogIDwhLS0gQnJhbmNoIEE6IE9kZXZ6ZMOhbsOtIHbDvXNsZWRrdSAoRmluYWwgT3V0cHV0KSAtLT4KICA8cGF0aCBkPSJNIDYyMCAxMTUgTCA2MjAgNzggTCAxMTIuNSA3OCBMIDExMi41IDE0MyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDU5NjY5IiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjUsNCIgbWFya2VyLWVuZD0idXJsKCNhcnJvdy1lbWVyYWxkKSIgLz4KICA8cmVjdCB4PSIzMDAiIHk9IjY2IiB3aWR0aD0iMTgwIiBoZWlnaHQ9IjI0IiByeD0iNCIgZmlsbD0iI2VjZmRmNSIgc3Ryb2tlPSIjYTdmM2QwIiAvPgogIDx0ZXh0IHg9IjM5MCIgeT0iODIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJlZGdlLWxhYmVsIiBmaWxsPSIjMDQ3ODU3Ij5Dw61sIHNwbG7Em246IEZpbsOhbG7DrSBvZHBvdsSbxI88L3RleHQ+CgogIDwhLS0gQnJhbmNoIEI6IFRvb2wgQ2FsbCAtLT4KICA8cGF0aCBkPSJNIDYyMCAyNTUgTCA2MjAgMzA4IiBmaWxsPSJub25lIiBzdHJva2U9IiNkOTc3MDYiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNhcnJvdy1hbWJlcikiIC8+CiAgPHJlY3QgeD0iNTQ4IiB5PSIyNzIiIHdpZHRoPSIxNDQiIGhlaWdodD0iMjAiIHJ4PSI0IiBmaWxsPSIjZmZmYmViIiAvPgogIDx0ZXh0IHg9IjYyMCIgeT0iMjg2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0iZWRnZS1sYWJlbCIgZmlsbD0iI2I0NTMwOSI+UG90xZllYmEgYWtjZSAoQWN0KTwvdGV4dD4KCiAgPCEtLSA0LiBUb29sIENhbGwgKEpTT04vQmFzaCkgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHJlY3QgeD0iNTI1IiB5PSIzMTAiIHdpZHRoPSIxOTAiIGhlaWdodD0iODYiIHJ4PSIxMCIgZmlsbD0iI2ZmZmJlYiIgc3Ryb2tlPSIjZjU5ZTBiIiBzdHJva2Utd2lkdGg9IjIiIC8+CiAgICA8cmVjdCB4PSI1MzciIHk9IjMyMiIgd2lkdGg9IjE2NiIgaGVpZ2h0PSIyNCIgcng9IjUiIGZpbGw9IiNmZWYzYzciIC8+CiAgICA8dGV4dCB4PSI2MjAiIHk9IjMzOCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRpdGxlLXRleHQiIGZpbGw9IiM3ODM1MGYiPlZvbMOhbsOtIG7DoXN0cm9qZSAoVG9vbCBDYWxsKTwvdGV4dD4KICAgIDx0ZXh0IHg9IjYyMCIgeT0iMzYyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0iY29kZS1iYWRnZSIgZmlsbD0iIzkyNDAwZSI+eyJuYW1lIjogImdyZXAiLCAiYXJncyI6IHsuLi59fTwvdGV4dD4KICAgIDx0ZXh0IHg9IjYyMCIgeT0iMzgwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0ic3ViLXRleHQiIGZpbGw9IiNiNDUzMDkiPm5lYm8gQmFzaCAvIENvZGUgZXhlY3V0aW9uPC90ZXh0PgogIDwvZz4KCiAgPCEtLSBBcnJvdyBUb29sIENhbGwgLT4gRXhlY3V0aW9uIEVudmlyb25tZW50IC0tPgogIDxwYXRoIGQ9Ik0gNzE1IDM1MyBMIDc1OCAzNTMiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzQ3NTU2OSIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2Fycm93KSIgLz4KCiAgPCEtLSA1LiBWw71rb25uw6kgcHJvc3TFmWVkw60gKEV4ZWN1dGlvbiBFbnZpcm9ubWVudCkgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHJlY3QgeD0iNzYwIiB5PSIzMDAiIHdpZHRoPSIxMjAiIGhlaWdodD0iMTEwIiByeD0iMTAiIGZpbGw9IiNmMGZkZmEiIHN0cm9rZT0iIzBkOTQ4OCIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgPHJlY3QgeD0iNzY4IiB5PSIzMTAiIHdpZHRoPSIxMDQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSIjY2NmYmYxIiAvPgogICAgPHRleHQgeD0iODIwIiB5PSIzMjYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aXRsZS10ZXh0IiBmaWxsPSIjMTE1ZTU5Ij5Qcm9zdMWZZWTDrTwvdGV4dD4KICAgIDx0ZXh0IHg9IjgyMCIgeT0iMzQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0ic3ViLXRleHQiIGZpbGw9IiMwZjc2NmUiPuKAoiBTYW5kYm94IC8gT1M8L3RleHQ+CiAgICA8dGV4dCB4PSI4MjAiIHk9IjM2OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InN1Yi10ZXh0IiBmaWxsPSIjMGY3NjZlIj7igKIgU291Ym9yeSAvIEdpdDwvdGV4dD4KICAgIDx0ZXh0IHg9IjgyMCIgeT0iMzg4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0ic3ViLXRleHQiIGZpbGw9IiMwZjc2NmUiPuKAoiBNQ1Agc2VydmVyeTwvdGV4dD4KICA8L2c+CgogIDwhLS0gQXJyb3cgRXhlY3V0aW9uIC0+IE9ic2VydmF0aW9uIC0tPgogIDxwYXRoIGQ9Ik0gODIwIDQxMCBMIDgyMCA0NTIgTCA3MjIgNDUyIiBmaWxsPSJub25lIiBzdHJva2U9IiMwNTk2NjkiIHN0cm9rZS13aWR0aD0iMiIgbWFya2VyLWVuZD0idXJsKCNhcnJvdy1lbWVyYWxkKSIgLz4KCiAgPCEtLSA2LiBWw71zdHVwIG7DoXN0cm9qZSAoT2JzZXJ2YXRpb24pIC0tPgogIDxnIGZpbHRlcj0idXJsKCNzaGFkb3cpIj4KICAgIDxyZWN0IHg9IjUyMCIgeT0iNDE1IiB3aWR0aD0iMjAwIiBoZWlnaHQ9Ijc1IiByeD0iMTAiIGZpbGw9IiNmMGZkZjQiIHN0cm9rZT0iIzE2YTM0YSIgc3Ryb2tlLXdpZHRoPSIyIiAvPgogICAgPHJlY3QgeD0iNTMyIiB5PSI0MjUiIHdpZHRoPSIxNzYiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSIjZGNmY2U3IiAvPgogICAgPHRleHQgeD0iNjIwIiB5PSI0NDEiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aXRsZS10ZXh0IiBmaWxsPSIjMTQ1MzJkIj5Qb3pvcm92w6Fuw60gKE9ic2VydmF0aW9uKTwvdGV4dD4KICAgIDx0ZXh0IHg9IjYyMCIgeT0iNDYzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0ic3ViLXRleHQiIGZpbGw9IiMxNTgwM2QiPlbDvXN0dXAgeiBuw6FzdHJvamUgKHN0ZG91dC9zdGRlcnIpPC90ZXh0PgogICAgPHRleHQgeD0iNjIwIiB5PSI0NzgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJzdWItdGV4dCIgZmlsbD0iIzE2NjUzNCI+VsO9c2xlZGVrIHZ5aGxlZMOhdsOhbsOtIC8gxI10ZW7DrSBzb3Vib3J1PC90ZXh0PgogIDwvZz4KCiAgPCEtLSBSZUFjdCBGZWVkYmFjayBMb29wIEFycm93OiBPYnNlcnZhdGlvbiAtPiBDb250ZXh0IFdpbmRvdyAtLT4KICA8cGF0aCBkPSJNIDUyMCA0NTIgTCAzNjAgNDUyIEwgMzYwIDI0MiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMDU5NjY5IiBzdHJva2Utd2lkdGg9IjIuNSIgbWFya2VyLWVuZD0idXJsKCNhcnJvdy1lbWVyYWxkKSIgLz4KCiAgPCEtLSBGZWVkYmFjayBMb29wIEJhZGdlICYgTGFiZWwgLS0+CiAgPGcgZmlsdGVyPSJ1cmwoI3NoYWRvdykiPgogICAgPHJlY3QgeD0iMzc1IiB5PSI0MzUiIHdpZHRoPSIxMjUiIGhlaWdodD0iMzQiIHJ4PSI2IiBmaWxsPSIjZGNmY2U3IiBzdHJva2U9IiMxMGI5ODEiIHN0cm9rZS13aWR0aD0iMS41IiAvPgogICAgPHRleHQgeD0iNDM3LjUiIHk9IjQ1MCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9Imxvb3AtYmFkZ2UiPlJlQWN0IFNNWcSMS0E8L3RleHQ+CiAgICA8dGV4dCB4PSI0MzcuNSIgeT0iNDYzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0ic3ViLXRleHQiIGZpbGw9IiMwNjVmNDYiPlpwxJt0IGRvIGtvbnRleHR1PC90ZXh0PgogIDwvZz4KCiAgPCEtLSBBbm5vdGF0aW9uIGZvb3RlciBpbnNpZGUgaGFybmVzcyBib3ggLS0+CiAgPHRleHQgeD0iMjUwIiB5PSI1MDAiIGNsYXNzPSJzdWItdGV4dCIgZmlsbD0iIzY0NzQ4YiIgZm9udC1zdHlsZT0iaXRhbGljIj4KICAgIEhhcm5lc3Mgc3ByYXZ1amUga29udGV4dCwgdm9sw6Fuw60gbsOhc3Ryb2rFryBhIGN5a2x1cyBvcGFrdWplLCBkb2t1ZCBhZ2VudCBuZW9obMOhc8OtIGhvdG92byBuZWJvIG5ldnnFvmFkdWplIHZzdHVwIMSNbG92xJtrYS4KICA8L3RleHQ+Cjwvc3ZnPgo=)
 
@@ -399,9 +389,9 @@ ReAct formalizuje střídání rozhodnutí, akce a pozorování výsledku; nové
 
 ##### Agentní sezení (Session)
 
-Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup><span id="loc-32">(</span><a href="#loc-92" role="doc-biblioref">26</a>)</sup>
+Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup><span id="loc-31">(</span><a href="#loc-91" role="doc-biblioref">25</a>)</sup>
 
-Session je vlastníkem identity a hranice pokračujícího běhu; jeho historický průběh vlastní [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> a aktuální pracovní skutečnosti [***Stav (State)***](#concept-state)<sup>*</sup>. <sup>(<a href="#loc-92" role="doc-biblioref">26</a>)</sup> <sup>(<a href="#loc-68" role="doc-biblioref">2</a>)</sup>
+Session je vlastníkem identity a hranice pokračujícího běhu; jeho historický průběh vlastní [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> a aktuální pracovní skutečnosti [***Stav (State)***](#concept-state)<sup>*</sup>. <sup>(<a href="#loc-91" role="doc-biblioref">25</a>)</sup> <sup>(<a href="#loc-68" role="doc-biblioref">2</a>)</sup>
 
 ##### Přepis (Transcript)
 
@@ -427,57 +417,57 @@ Změna souboru nebo spuštění procesu mění stav prostředí mimo modelový k
 
 Rozhraní, kterým agent vyvolává operace mimo samotnou textovou inferenci, například čtení dat, volání API nebo změnu stavu systému. <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
 
-Harness zprostředkuje požadavek na nástroj, provede operaci v prostředí a vrátí její výsledek modelu jako další pozorování. <sup><span id="loc-33">(</span><a href="#loc-93" role="doc-biblioref">27</a>)</sup> <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
+Harness zprostředkuje požadavek na nástroj, provede operaci v prostředí a vrátí její výsledek modelu jako další pozorování. <sup><span id="loc-32">(</span><a href="#loc-92" role="doc-biblioref">26</a>)</sup> <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
 
 ##### Vyvolávání nástrojů (Tool Calling)
 
 Mechanismus, kterým model místo běžné textové odpovědi vybere konkrétní [***Nástroje (Tools)***](#concept-tools)<sup>*</sup> a vytvoří strukturované argumenty pro jeho vyvolání. <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
 
-Schéma rozhraní omezuje tvar argumentů a umožňuje jejich programovou validaci; JSON Schema je jedním z používaných formátů takového kontraktu. <sup><span id="loc-34">(</span><a href="#loc-94" role="doc-biblioref">28</a>)</sup>
+Schéma rozhraní omezuje tvar argumentů a umožňuje jejich programovou validaci; JSON Schema je jedním z používaných formátů takového kontraktu. <sup><span id="loc-33">(</span><a href="#loc-93" role="doc-biblioref">27</a>)</sup>
 
 ##### Spouštění kódu (Code Execution)
 
-Nástrojová schopnost umožňující vykonat program nebo příkaz a vrátit jeho skutečný výstup modelu. <sup><span id="loc-35">(</span><a href="#loc-95" role="doc-biblioref">29</a>)</sup>
+Nástrojová schopnost umožňující vykonat program nebo příkaz a vrátit jeho skutečný výstup modelu. <sup><span id="loc-34">(</span><a href="#loc-94" role="doc-biblioref">28</a>)</sup>
 
-Při vývoji softwaru zpřístupňuje agentovi například testy, buildy, formátovače a diagnostické příkazy místo odhadování jejich výsledku. <sup>(<a href="#loc-95" role="doc-biblioref">29</a>)</sup>
+Při vývoji softwaru zpřístupňuje agentovi například testy, buildy, formátovače a diagnostické příkazy místo odhadování jejich výsledku. <sup>(<a href="#loc-94" role="doc-biblioref">28</a>)</sup>
 
 ##### Izolované prostředí (Sandbox)
 
 Oddělené běhové prostředí, ve kterém agent může spouštět kód nebo měnit pracovní soubory bez přímého přístupu ke všem prostředkům hostitelského systému. <sup>(<a href="#loc-68" role="doc-biblioref">2</a>)</sup>
 
-Sandbox vytváří bezpečnostní hranici kolem nedůvěryhodných účinků; konkrétní realizace může používat například kontejner nebo microVM. <sup>(<a href="#loc-68" role="doc-biblioref">2</a>)</sup> <sup><span id="loc-36">(</span><a href="#loc-96" role="doc-biblioref">30</a>)</sup>
+Sandbox vytváří bezpečnostní hranici kolem nedůvěryhodných účinků; konkrétní realizace může používat například kontejner nebo microVM. <sup>(<a href="#loc-68" role="doc-biblioref">2</a>)</sup> <sup><span id="loc-35">(</span><a href="#loc-95" role="doc-biblioref">29</a>)</sup>
 
 #### 2.4.4 Dovednosti a rozšíření
 
 ##### Dovednosti (Skills)
 
-Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načítá pro úlohy odpovídající jeho účelu. <sup><span id="loc-37">(</span><a href="#loc-97" role="doc-biblioref">31</a>)</sup>
+Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načítá pro úlohy odpovídající jeho účelu. <sup><span id="loc-36">(</span><a href="#loc-96" role="doc-biblioref">30</a>)</sup>
 
-Agent Skill je definován souborem `SKILL.md` s YAML frontmatterem a instrukcemi v Markdownu; může odkazovat na doplňující skripty, reference nebo další zdroje načítané podle potřeby. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
+Agent Skill je definován souborem `SKILL.md` s YAML frontmatterem a instrukcemi v Markdownu; může odkazovat na doplňující skripty, reference nebo další zdroje načítané podle potřeby. <sup>(<a href="#loc-96" role="doc-biblioref">30</a>)</sup>
 
 ##### Plugin
 
-Distribuovatelné rozšíření, které do hostitelského agentního prostředí přidává další chování nebo integrace. <sup><span id="loc-38">(</span><a href="#loc-98" role="doc-biblioref">32</a>)</sup>
+Distribuovatelné rozšíření, které do hostitelského agentního prostředí přidává další chování nebo integrace. <sup><span id="loc-37">(</span><a href="#loc-97" role="doc-biblioref">31</a>)</sup>
 
-Konkrétní platforma může plugin použít jako obal pro různé druhy rozšíření, například skills, hooks, agenty nebo konfiguraci externích integrací. Plugin zde proto označuje způsob balení a distribuce, nikoli nadřazenou kategorii všech mechanismů Harnessu. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
+Konkrétní platforma může plugin použít jako obal pro různé druhy rozšíření, například skills, hooks, agenty nebo konfiguraci externích integrací. Plugin zde proto označuje způsob balení a distribuce, nikoli nadřazenou kategorii všech mechanismů Harnessu. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
 
 ##### Skript
 
-Spustitelné soubory nebo posloupnosti příkazů používané k deterministickému provedení opakovatelné operace. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
+Spustitelné soubory nebo posloupnosti příkazů používané k deterministickému provedení opakovatelné operace. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
 
-Agentní rozšíření mohou skripty používat pro transformace, validace nebo jiné kroky, které je výhodnější provést programově než novým modelovým rozhodnutím. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup> <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
+Agentní rozšíření mohou skripty používat pro transformace, validace nebo jiné kroky, které je výhodnější provést programově než novým modelovým rozhodnutím. <sup>(<a href="#loc-96" role="doc-biblioref">30</a>)</sup> <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
 
 ##### Hooks
 
-Konfigurované reakce spouštěné při určených událostech životního cyklu agentního prostředí. <sup><span id="loc-39">(</span><a href="#loc-99" role="doc-biblioref">33</a>)</sup>
+Konfigurované reakce spouštěné při určených událostech životního cyklu agentního prostředí. <sup><span id="loc-38">(</span><a href="#loc-98" role="doc-biblioref">32</a>)</sup>
 
-Hook může před nebo po vybrané události spustit deterministickou logiku, například validaci, příkaz nebo jinou automatizaci. <sup>(<a href="#loc-99" role="doc-biblioref">33</a>)</sup>
+Hook může před nebo po vybrané události spustit deterministickou logiku, například validaci, příkaz nebo jinou automatizaci. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
 
 ##### MCP
 
-Otevřený protokol pro standardizované propojení AI aplikací s externími nástroji a datovými zdroji. <sup><span id="loc-40">(</span><a href="#loc-100" role="doc-biblioref">34</a>)</sup>
+Otevřený protokol pro standardizované propojení AI aplikací s externími nástroji a datovými zdroji. <sup><span id="loc-39">(</span><a href="#loc-99" role="doc-biblioref">33</a>)</sup>
 
-MCP odděluje klientskou AI aplikaci od serverů poskytujících nástroje a další schopnosti, takže integrace lze implementovat mimo vlastní jádro harnessu. <sup>(<a href="#loc-100" role="doc-biblioref">34</a>)</sup> <sup><span id="loc-41">(</span><a href="#loc-101" role="doc-biblioref">35</a>)</sup>
+MCP odděluje klientskou AI aplikaci od serverů poskytujících nástroje a další schopnosti, takže integrace lze implementovat mimo vlastní jádro harnessu. <sup>(<a href="#loc-99" role="doc-biblioref">33</a>)</sup> <sup><span id="loc-40">(</span><a href="#loc-100" role="doc-biblioref">34</a>)</sup>
 
 #### 2.4.5 Závěr
 
@@ -497,33 +487,33 @@ Vrstva se soustředí na tři otázky: jaké instrukce a informace model dostáv
 
 ##### Promptové inženýrství (Prompt Engineering)
 
-Systematický návrh instrukcí, příkladů a jejich struktury s cílem ovlivnit chování jazykového modelu. <sup><span id="loc-42">(</span><a href="#loc-102" role="doc-biblioref">36</a>)</sup>
+Systematický návrh instrukcí, příkladů a jejich struktury s cílem ovlivnit chování jazykového modelu. <sup><span id="loc-41">(</span><a href="#loc-101" role="doc-biblioref">35</a>)</sup>
 
 Prompt ovlivňuje pravděpodobnostní chování modelu, ale sám nevynucuje technickou bezpečnostní nebo autorizační hranici; pravidla, která musí systém garantovat, patří do [***Guardrail***](#concept-guardrail)<sup>*</sup> nebo jiné běhové kontroly.
 
 ##### Systémový prompt (System Prompt)
 
-Systémová instrukční vrstva, která vymezuje roli, pravidla a výchozí způsob chování modelu nebo agenta. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
+Systémová instrukční vrstva, která vymezuje roli, pravidla a výchozí způsob chování modelu nebo agenta. <sup>(<a href="#loc-101" role="doc-biblioref">35</a>)</sup>
 
-Systémový prompt poskytuje stabilní instrukční kontext, ale sám o sobě není technickou izolační ani autorizační hranicí. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
+Systémový prompt poskytuje stabilní instrukční kontext, ale sám o sobě není technickou izolační ani autorizační hranicí. <sup>(<a href="#loc-101" role="doc-biblioref">35</a>)</sup>
 
 ##### Kontextové inženýrství (Context Engineering)
 
-Systematický výběr a správa informací, které jsou modelu zpřístupněny v aktivním kontextu během inference. <sup><span id="loc-43">(</span><a href="#loc-103" role="doc-biblioref">37</a>)</sup>
+Systematický výběr a správa informací, které jsou modelu zpřístupněny v aktivním kontextu během inference. <sup><span id="loc-42">(</span><a href="#loc-102" role="doc-biblioref">36</a>)</sup>
 
-Aktivní kontext může obsahovat instrukce, popisy dostupných nástrojů, externí data a vybranou historii interakce. Jeho obsah je nutné kurátorovat vzhledem k omezené kapacitě a nerovnoměrnému využití dlouhého kontextu. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup> <sup>(<a href="#loc-87" role="doc-biblioref">21</a>)</sup>
+Aktivní kontext může obsahovat instrukce, popisy dostupných nástrojů, externí data a vybranou historii interakce. Jeho obsah je nutné kurátorovat vzhledem k omezené kapacitě a nerovnoměrnému využití dlouhého kontextu. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup> <sup>(<a href="#loc-87" role="doc-biblioref">21</a>)</sup>
 
 ##### Vkládání kontextu (Context Injection)
 
-V této práci označuje Context Injection cílené vložení relevantních informací do aktivního kontextu až v okamžiku, kdy jsou potřebné pro aktuální krok. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup>
+V této práci označuje Context Injection cílené vložení relevantních informací do aktivního kontextu až v okamžiku, kdy jsou potřebné pro aktuální krok. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
 
-Just-in-time přístup umožňuje mimo modelový kontext uchovávat odkazy nebo trvalý stav a potřebná data načíst nástrojem až během běhu. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup>
+Just-in-time přístup umožňuje mimo modelový kontext uchovávat odkazy nebo trvalý stav a potřebná data načíst nástrojem až během běhu. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
 
 ##### Kompakce kontextu (Context Compaction)
 
-Zmenšení aktivního kontextu nahrazením části historie kratší reprezentací, typicky shrnutím nebo výběrem důležitých informací. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup>
+Zmenšení aktivního kontextu nahrazením části historie kratší reprezentací, typicky shrnutím nebo výběrem důležitých informací. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
 
-Kompakce uvolňuje kapacitu pro další běh, ale příliš agresivní komprese může odstranit detaily, které se později ukážou jako důležité. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup> <sup>(<a href="#loc-90" role="doc-biblioref">24</a>)</sup>
+Kompakce uvolňuje kapacitu pro další běh, ale příliš agresivní komprese může odstranit detaily, které se později ukážou jako důležité. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup> <sup><span id="loc-43">(</span><a href="#loc-103" role="doc-biblioref">37</a>)</sup>
 
 ##### RAG
 
@@ -543,7 +533,7 @@ Přímá prompt injection přichází v uživatelském vstupu; nepřímá inject
 
 V této práci označují řídicí smyčky, které opakují jednání podle explicitního cíle, pozorovaného výsledku a podmínky dalšího pokračování nebo ukončení.
 
-Na rozdíl od samotného běhového Agent Loopu zahrnuje Goal Loop také zpětnou vazbu k dosažení cíle, ověření výsledku a rozhodnutí, zda pokračovat, změnit postup nebo běh ukončit. <sup>(<a href="#loc-91" role="doc-biblioref">25</a>)</sup> <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
+Na rozdíl od samotného běhového Agent Loopu zahrnuje Goal Loop také zpětnou vazbu k dosažení cíle, ověření výsledku a rozhodnutí, zda pokračovat, změnit postup nebo běh ukončit. <sup>(<a href="#loc-90" role="doc-biblioref">24</a>)</sup> <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
 
 ##### Guardrail
 
@@ -776,20 +766,20 @@ Rozsah závěru je omezen provedenými důkazy: práce neprokazuje obecnou přev
 - [21.](#loc-27) LIU, Nelson F., LIN, Kevin, HEWITT, John, PARANJAPE, Ashwin, BEVILACQUA, Michele, PETRONI, Fabio a LIANG, Percy. Lost in the Middle: How Language Models Use Long Contexts. *Transactions of the Association for Computational Linguistics.* Online. 2024. Vol. 12, p. 157–173. Available from: [https://arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
 - [22.](#loc-28) AINSLIE, Joshua, LEE-THORP, James, JONG, Michiel de, ZEMLYANSKIY, Yury, LEBRÓN, Federico a SANGHAI, Sumit. GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints. *arXiv preprint arXiv:2305.13245.* Online. 2023. Available from: [https://arxiv.org/abs/2305.13245](https://arxiv.org/abs/2305.13245)
 - [23.](#loc-29) DAO, Tri, FU, Daniel Y., ERMON, Stefano, RUDRA, Atri a RÉ, Christopher. FlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness. *Advances in Neural Information Processing Systems.* Online. 2022. Vol. 35, p. 16344–16359. Available from: [https://arxiv.org/abs/2205.14135](https://arxiv.org/abs/2205.14135)
-- [24.](#loc-30) JIANG, Huiqiang, WU, Qianhui, LIN, Chin-Yew, YANG, Yuqing a QIU, Lili. LLMLingua: Compressing Context for Accelerated Inference of Large Language Models. *arXiv preprint arXiv:2310.05736.* Online. 2023. Available from: [https://arxiv.org/abs/2310.05736](https://arxiv.org/abs/2310.05736)
-- [25.](#loc-31) YAO, Shunyu, ZHAO, Jeffrey, YU, Dian, DU, Nan, SHAFRAN, Izhak, NARASIMHAN, Karthik a CAO, Yuan. ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629.* Online. 2022. Available from: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
-- [26.](#loc-32) OPENAI. Sessions | OpenAI Agents SDK. Online. 2026. [Accessed 21 září 2026]. Available from: [https://openai.github.io/openai-agents-js/guides/sessions/](https://openai.github.io/openai-agents-js/guides/sessions/)
-- [27.](#loc-33) SCHICK, Timo, DWIVEDI-YU, Jane, DESS\̀I, Roberto, RAILEANU, Roberta, LOMELI, Maria, ZETTLEMOYER, Luke, CANCEDDA, Nicola a SCIALOM, Thomas. Toolformer: Language Models Can Teach Themselves to Use Tools. *Advances in Neural Information Processing Systems.* Online. 2023. Vol. 36, p. 68539–68551. Available from: [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
-- [28.](#loc-34) OPENAI. Introducing Structured Outputs in the API. Online. 2024. [Accessed 20 září 2026]. Available from: [https://openai.com/index/introducing-structured-outputs-in-the-api/](https://openai.com/index/introducing-structured-outputs-in-the-api/)
-- [29.](#loc-35) ANTHROPIC. Code execution tool. Online. 2026. [Accessed 20 září 2026]. Available from: [https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool)
-- [30.](#loc-36) AGACHE, Alexandru, DEACONESCU, Razvan, IORDACHE, Mihai, LUPU, Alexandra, RADU, Vlad, BUGA, Cezar, BALAN, Catalin a FLORESCU, Andreea. Firecracker: Lightweight Virtualization for Serverless Applications. In : *17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20).* Online. 2020. p. 419–434. Available from: [https://www.usenix.org/conference/nsdi20/presentation/agache](https://www.usenix.org/conference/nsdi20/presentation/agache)
-- [31.](#loc-37) AGENT SKILLS. Agent Skills Specification. Online. 2026. [Accessed 20 září 2026]. Available from: [https://agentskills.io/specification](https://agentskills.io/specification)
-- [32.](#loc-38) ANTHROPIC. Create plugins | Claude Code Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/plugins](https://code.claude.com/docs/en/plugins)
-- [33.](#loc-39) ANTHROPIC. Hooks reference | Claude Code Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/hooks](https://code.claude.com/docs/en/hooks)
-- [34.](#loc-40) ANTHROPIC. Model Context Protocol documentation. Online. 2026. Available from: [https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp)
-- [35.](#loc-41) ANTHROPIC. Connect Claude Code to tools via MCP. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
-- [36.](#loc-42) ANTHROPIC. Prompt Engineering overview. Online. 2026. Available from: [https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
-- [37.](#loc-43) ANTHROPIC. Effective context engineering for AI agents. Online. 2025. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [24.](#loc-30) YAO, Shunyu, ZHAO, Jeffrey, YU, Dian, DU, Nan, SHAFRAN, Izhak, NARASIMHAN, Karthik a CAO, Yuan. ReAct: Synergizing Reasoning and Acting in Language Models. *arXiv preprint arXiv:2210.03629.* Online. 2022. Available from: [https://arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+- [25.](#loc-31) OPENAI. Sessions | OpenAI Agents SDK. Online. 2026. [Accessed 21 září 2026]. Available from: [https://openai.github.io/openai-agents-js/guides/sessions/](https://openai.github.io/openai-agents-js/guides/sessions/)
+- [26.](#loc-32) SCHICK, Timo, DWIVEDI-YU, Jane, DESS\̀I, Roberto, RAILEANU, Roberta, LOMELI, Maria, ZETTLEMOYER, Luke, CANCEDDA, Nicola a SCIALOM, Thomas. Toolformer: Language Models Can Teach Themselves to Use Tools. *Advances in Neural Information Processing Systems.* Online. 2023. Vol. 36, p. 68539–68551. Available from: [https://arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
+- [27.](#loc-33) OPENAI. Introducing Structured Outputs in the API. Online. 2024. [Accessed 20 září 2026]. Available from: [https://openai.com/index/introducing-structured-outputs-in-the-api/](https://openai.com/index/introducing-structured-outputs-in-the-api/)
+- [28.](#loc-34) ANTHROPIC. Code execution tool. Online. 2026. [Accessed 20 září 2026]. Available from: [https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/code-execution-tool)
+- [29.](#loc-35) AGACHE, Alexandru, DEACONESCU, Razvan, IORDACHE, Mihai, LUPU, Alexandra, RADU, Vlad, BUGA, Cezar, BALAN, Catalin a FLORESCU, Andreea. Firecracker: Lightweight Virtualization for Serverless Applications. In : *17th USENIX Symposium on Networked Systems Design and Implementation (NSDI 20).* Online. 2020. p. 419–434. Available from: [https://www.usenix.org/conference/nsdi20/presentation/agache](https://www.usenix.org/conference/nsdi20/presentation/agache)
+- [30.](#loc-36) AGENT SKILLS. Agent Skills Specification. Online. 2026. [Accessed 20 září 2026]. Available from: [https://agentskills.io/specification](https://agentskills.io/specification)
+- [31.](#loc-37) ANTHROPIC. Create plugins | Claude Code Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/plugins](https://code.claude.com/docs/en/plugins)
+- [32.](#loc-38) ANTHROPIC. Hooks reference | Claude Code Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/hooks](https://code.claude.com/docs/en/hooks)
+- [33.](#loc-39) ANTHROPIC. Model Context Protocol documentation. Online. 2026. Available from: [https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro#explore-mcp)
+- [34.](#loc-40) ANTHROPIC. Connect Claude Code to tools via MCP. Online. 2026. [Accessed 21 září 2026]. Available from: [https://code.claude.com/docs/en/mcp](https://code.claude.com/docs/en/mcp)
+- [35.](#loc-41) ANTHROPIC. Prompt Engineering overview. Online. 2026. Available from: [https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview](https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview)
+- [36.](#loc-42) ANTHROPIC. Effective context engineering for AI agents. Online. 2025. [Accessed 21 září 2026]. Available from: [https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents)
+- [37.](#loc-43) JIANG, Huiqiang, WU, Qianhui, LIN, Chin-Yew, YANG, Yuqing a QIU, Lili. LLMLingua: Compressing Context for Accelerated Inference of Large Language Models. *arXiv preprint arXiv:2310.05736.* Online. 2023. Available from: [https://arxiv.org/abs/2310.05736](https://arxiv.org/abs/2310.05736)
 - [38.](#loc-44) LEWIS, Patrick, PEREZ, Ethan, PIKTUS, Aleksandra, PETRONI, Fabio, KARPUKHIN, Vladimir, GOYAL, Naman, KÜTTLER, Heinrich, LEWIS, Mike, YIH, Wen-tau, ROCKTÄSCHEL, Tim, RIEDEL, Sebastian a KIELA, Douwe. Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks. *Advances in Neural Information Processing Systems.* Online. 2020. Vol. 33, p. 9459–9474. Available from: [https://arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)
 - [39.](#loc-45) OWASP GENAI SECURITY PROJECT. LLM01:2025 Prompt Injection. Online. 2025. [Accessed 21 září 2026]. Available from: [https://genai.owasp.org/llmrisk/llm01-prompt-injection/](https://genai.owasp.org/llmrisk/llm01-prompt-injection/)
 - [40.](#loc-46) OWASP FOUNDATION. LLM Prompt Injection Prevention Cheat Sheet. Online. 2026. [Accessed 21 září 2026]. Available from: [https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html](https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html)
@@ -830,11 +820,11 @@ Abecední přehled klíčových pojmů použitých v práci. Názvy a definice j
 
 [**Agentní sezení (Session)**](#concept-agent_session)
 
-Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup>(<a href="#loc-92" role="doc-biblioref">26</a>)</sup>
+Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup>(<a href="#loc-91" role="doc-biblioref">25</a>)</sup>
 
 [**Agentní smyčka (Agent Loop)**](#concept-agent_loop)
 
-Iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace. <sup>(<a href="#loc-91" role="doc-biblioref">25</a>)</sup>
+Iterativní cyklus, v němž model vyhodnotí stav, zvolí akci, harness ji provede a výsledek vrátí do další iterace. <sup>(<a href="#loc-90" role="doc-biblioref">24</a>)</sup>
 
 [**Cílené smyčky (Goal Loops)**](#concept-goal_loops)
 
@@ -850,7 +840,7 @@ Ověření výsledku změny pomocí přímo pozorovatelných strojových důkaz�
 
 [**Dovednosti (Skills)**](#concept-skills)
 
-Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načítá pro úlohy odpovídající jeho účelu. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
+Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načítá pro úlohy odpovídající jeho účelu. <sup>(<a href="#loc-96" role="doc-biblioref">30</a>)</sup>
 
 [**Finální kontrola souladu (Final Alignment)**](#concept-final_alignment)
 
@@ -870,7 +860,7 @@ Harness je běhová vrstva kolem modelové inference, která drží stav, opakuj
 
 [**Hooks**](#concept-hooks)
 
-Konfigurované reakce spouštěné při určených událostech životního cyklu agentního prostředí. <sup>(<a href="#loc-99" role="doc-biblioref">33</a>)</sup>
+Konfigurované reakce spouštěné při určených událostech životního cyklu agentního prostředí. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
 
 [**Inferenční engine (Inference Engine)**](#concept-inference_engine)
 
@@ -886,11 +876,11 @@ Oddělené běhové prostředí, ve kterém agent může spouštět kód nebo m�
 
 [**Kompakce kontextu (Context Compaction)**](#concept-compaction)
 
-Zmenšení aktivního kontextu nahrazením části historie kratší reprezentací, typicky shrnutím nebo výběrem důležitých informací. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup>
+Zmenšení aktivního kontextu nahrazením části historie kratší reprezentací, typicky shrnutím nebo výběrem důležitých informací. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
 
 [**Kontextové inženýrství (Context Engineering)**](#concept-context_engineering)
 
-Systematický výběr a správa informací, které jsou modelu zpřístupněny v aktivním kontextu během inference. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup>
+Systematický výběr a správa informací, které jsou modelu zpřístupněny v aktivním kontextu během inference. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
 
 [**Kontextové okno (Context Window)**](#concept-context_window)
 
@@ -898,7 +888,7 @@ Maximální rozsah tokenové sekvence dostupný modelu v jednom inferenčním b�
 
 [**MCP**](#concept-mcp)
 
-Otevřený protokol pro standardizované propojení AI aplikací s externími nástroji a datovými zdroji. <sup>(<a href="#loc-100" role="doc-biblioref">34</a>)</sup>
+Otevřený protokol pro standardizované propojení AI aplikací s externími nástroji a datovými zdroji. <sup>(<a href="#loc-99" role="doc-biblioref">33</a>)</sup>
 
 [**Mezipaměť klíčů a hodnot (KV Cache)**](#concept-kv_cache)
 
@@ -922,7 +912,7 @@ Manipulace chování jazykového modelu pomocí instrukcí vložených do vstupu
 
 [**Promptové inženýrství (Prompt Engineering)**](#concept-prompt_engineering)
 
-Systematický návrh instrukcí, příkladů a jejich struktury s cílem ovlivnit chování jazykového modelu. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
+Systematický návrh instrukcí, příkladů a jejich struktury s cílem ovlivnit chování jazykového modelu. <sup>(<a href="#loc-101" role="doc-biblioref">35</a>)</sup>
 
 [**Prostředí agenta (Agent Environment)**](#concept-environment)
 
@@ -962,7 +952,7 @@ Opakovaný DarkFactory mechanismus, ve kterém je Planning nebo implementace nez
 
 [**Spouštění kódu (Code Execution)**](#concept-code_execution)
 
-Nástrojová schopnost umožňující vykonat program nebo příkaz a vrátit jeho skutečný výstup modelu. <sup>(<a href="#loc-95" role="doc-biblioref">29</a>)</sup>
+Nástrojová schopnost umožňující vykonat program nebo příkaz a vrátit jeho skutečný výstup modelu. <sup>(<a href="#loc-94" role="doc-biblioref">28</a>)</sup>
 
 [**Správa verzí (Version Control)**](#concept-version_control)
 
@@ -978,7 +968,7 @@ Specializovaná agentní instance, které jiný agent nebo orchestrátor deleguj
 
 [**Systémový prompt (System Prompt)**](#concept-system_prompt)
 
-Systémová instrukční vrstva, která vymezuje roli, pravidla a výchozí způsob chování modelu nebo agenta. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
+Systémová instrukční vrstva, která vymezuje roli, pravidla a výchozí způsob chování modelu nebo agenta. <sup>(<a href="#loc-101" role="doc-biblioref">35</a>)</sup>
 
 [**Token**](#concept-token)
 
@@ -1002,7 +992,7 @@ Způsob tvorby softwaru, při kterém člověk iteruje pomocí pokynů v přiroz
 
 [**Vkládání kontextu (Context Injection)**](#concept-context_injection)
 
-V této práci označuje Context Injection cílené vložení relevantních informací do aktivního kontextu až v okamžiku, kdy jsou potřebné pro aktuální krok. <sup>(<a href="#loc-103" role="doc-biblioref">37</a>)</sup>
+V této práci označuje Context Injection cílené vložení relevantních informací do aktivního kontextu až v okamžiku, kdy jsou potřebné pro aktuální krok. <sup>(<a href="#loc-102" role="doc-biblioref">36</a>)</sup>
 
 [**Vyvolávání nástrojů (Tool Calling)**](#concept-tool_calling)
 

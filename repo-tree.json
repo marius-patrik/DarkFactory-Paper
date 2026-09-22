@@ -462,12 +462,6 @@
                   "source": "repository/DarkFactory/language-models/language-model/context-window.typ"
                 },
                 {
-                  "name": "divergence.typ",
-                  "path": "DarkFactory/language-models/language-model/divergence.typ",
-                  "type": "file",
-                  "source": "repository/DarkFactory/language-models/language-model/divergence.typ"
-                },
-                {
                   "name": "embedding.typ",
                   "path": "DarkFactory/language-models/language-model/embedding.typ",
                   "type": "file",
