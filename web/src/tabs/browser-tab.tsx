@@ -23,12 +23,15 @@ export function BrowserTab({
   updateState: (patch: Record<string, unknown>) => void;
 }) {
   const initialUrl = typeof tab.state.url === "string" ? tab.state.url : "about:blank";
-  const history = Array.isArray(tab.state.history)
+  const initialHistory = Array.isArray(tab.state.history)
     ? tab.state.history.filter((item): item is string => typeof item === "string")
     : [initialUrl];
-  const index = typeof tab.state.historyIndex === "number"
-    ? Math.max(0, Math.min(history.length - 1, tab.state.historyIndex))
-    : Math.max(0, history.length - 1);
+  const safeInitialHistory = initialHistory.length ? initialHistory : [initialUrl];
+  const initialIndex = typeof tab.state.historyIndex === "number"
+    ? Math.max(0, Math.min(safeInitialHistory.length - 1, tab.state.historyIndex))
+    : Math.max(0, safeInitialHistory.length - 1);
+  const [history, setHistory] = useState<string[]>(safeInitialHistory);
+  const [index, setIndex] = useState(initialIndex);
   const current = history[index] ?? initialUrl;
   const [draft, setDraft] = useState(current === "about:blank" ? "" : current);
   const [revision, setRevision] = useState(0);
@@ -54,7 +57,10 @@ export function BrowserTab({
     try {
       const url = normalizeUrl(value);
       const nextHistory = [...history.slice(0, index + 1), url];
-      updateState({ url, history: nextHistory, historyIndex: nextHistory.length - 1 });
+      const nextIndex = nextHistory.length - 1;
+      setHistory(nextHistory);
+      setIndex(nextIndex);
+      updateState({ url, history: nextHistory, historyIndex: nextIndex });
       setDraft(url === "about:blank" ? "" : url);
       setFrameError("");
       setSlowFrame(false);
@@ -69,6 +75,7 @@ export function BrowserTab({
   const step = (delta: number) => {
     const nextIndex = index + delta;
     if (nextIndex < 0 || nextIndex >= history.length) return;
+    setIndex(nextIndex);
     updateState({ url: history[nextIndex], historyIndex: nextIndex });
     setDraft(history[nextIndex]);
     setFrameError("");
