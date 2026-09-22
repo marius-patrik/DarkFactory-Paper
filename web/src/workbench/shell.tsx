@@ -5,7 +5,6 @@ import {
   useRef,
   useState,
   type CSSProperties,
-  type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import { GitBranch, PanelBottom, PanelLeft, PanelRight, UserRound } from "lucide-react";
@@ -418,34 +417,6 @@ export function WorkbenchShell() {
     "--panel-size": `${effective.panel}px`,
   } as CSSProperties;
 
-  const beginResize = useCallback((kind: ResizeKind, event: ReactPointerEvent<HTMLElement>) => {
-    event.preventDefault();
-    event.currentTarget.setPointerCapture(event.pointerId);
-    resizeRef.current = {
-      kind,
-      pointerId: event.pointerId,
-      target: event.currentTarget,
-      startX: event.clientX,
-      startY: event.clientY,
-      startSize: sizesRef.current[kind],
-    };
-    setResizeKind(kind);
-  }, []);
-
-  const beginMouseResize = useCallback((kind: ResizeKind, event: ReactMouseEvent<HTMLElement>) => {
-    if (resizeRef.current) return;
-    event.preventDefault();
-    resizeRef.current = {
-      kind,
-      pointerId: -1,
-      target: event.currentTarget,
-      startX: event.clientX,
-      startY: event.clientY,
-      startSize: sizesRef.current[kind],
-    };
-    setResizeKind(kind);
-  }, []);
-
   const applyResize = useCallback((clientX: number, clientY: number) => {
     const session = resizeRef.current;
     if (!session) return;
@@ -479,38 +450,39 @@ export function WorkbenchShell() {
     persist(settings.theme, visibility, sizesRef.current);
   }, [persist, settings.theme, visibility]);
 
-  useEffect(() => {
-    const move = (event: PointerEvent) => {
-      const session = resizeRef.current;
-      if (!session || session.pointerId !== event.pointerId) return;
-      event.preventDefault();
-      applyResize(event.clientX, event.clientY);
+  const beginResize = useCallback((kind: ResizeKind, event: ReactPointerEvent<HTMLElement>) => {
+    event.preventDefault();
+    const target = event.currentTarget;
+    const pointerId = event.pointerId;
+    resizeRef.current = {
+      kind,
+      pointerId,
+      target,
+      startX: event.clientX,
+      startY: event.clientY,
+      startSize: sizesRef.current[kind],
     };
-    const finish = (event: PointerEvent) => {
+    setResizeKind(kind);
+    target.setPointerCapture(pointerId);
+
+    const move = (nativeEvent: PointerEvent) => {
       const session = resizeRef.current;
-      if (!session || session.pointerId !== event.pointerId) return;
+      if (!session || session.pointerId !== nativeEvent.pointerId) return;
+      nativeEvent.preventDefault();
+      applyResize(nativeEvent.clientX, nativeEvent.clientY);
+    };
+    const finish = (nativeEvent: PointerEvent) => {
+      const session = resizeRef.current;
+      if (!session || session.pointerId !== nativeEvent.pointerId) return;
+      target.removeEventListener("pointermove", move);
+      target.removeEventListener("pointerup", finish);
+      target.removeEventListener("pointercancel", finish);
       finishResize();
     };
-    const mouseMove = (event: MouseEvent) => {
-      if (!resizeRef.current) return;
-      event.preventDefault();
-      applyResize(event.clientX, event.clientY);
-    };
-    const mouseFinish = () => {
-      if (resizeRef.current) finishResize();
-    };
-    window.addEventListener("pointermove", move, { passive: false });
-    window.addEventListener("pointerup", finish);
-    window.addEventListener("pointercancel", finish);
-    window.addEventListener("mousemove", mouseMove, { passive: false });
-    window.addEventListener("mouseup", mouseFinish);
-    return () => {
-      window.removeEventListener("pointermove", move);
-      window.removeEventListener("pointerup", finish);
-      window.removeEventListener("pointercancel", finish);
-      window.removeEventListener("mousemove", mouseMove);
-      window.removeEventListener("mouseup", mouseFinish);
-    };
+
+    target.addEventListener("pointermove", move, { passive: false });
+    target.addEventListener("pointerup", finish);
+    target.addEventListener("pointercancel", finish);
   }, [applyResize, finishResize]);
 
   const resizeClass = resizeKind ? ` root-resizing root-resizing-${resizeKind === "panel" ? "row" : "column"}` : "";
@@ -566,7 +538,6 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.primary)}
             onPointerDown={(event) => beginResize("primary", event)}
-            onMouseDown={(event) => beginMouseResize("primary", event)}
           />
           <main className="root-surface root-main"><WorkbenchSurfaceView surface="main" restoredLayout={initial.surfaces.main.layout} defaultTabs={defaults.main} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></main>
           <hr
@@ -575,7 +546,6 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.secondary)}
             onPointerDown={(event) => beginResize("secondary", event)}
-            onMouseDown={(event) => beginMouseResize("secondary", event)}
           />
           <aside className="root-surface root-secondary"><WorkbenchSurfaceView surface="secondary" restoredLayout={initial.surfaces.secondary.layout} defaultTabs={defaults.secondary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
         </div>
@@ -585,7 +555,6 @@ export function WorkbenchShell() {
           aria-orientation="horizontal"
           aria-valuenow={Math.round(effective.panel)}
           onPointerDown={(event) => beginResize("panel", event)}
-          onMouseDown={(event) => beginMouseResize("panel", event)}
         />
         <section className="root-surface root-panel"><WorkbenchSurfaceView surface="panel" restoredLayout={initial.surfaces.panel.layout} defaultTabs={defaults.panel} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></section>
         <footer className="workbench-statusbar">
