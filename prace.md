@@ -26,7 +26,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
 4. [Klíčová slova (Keywords)](#loc-4)
 5. [1 Úvod](#section-thesis_introduction)
   1. [1.1 Motivace a vymezení problému](#section-motivation_problem_definition)
-  2. [1.2 Argument](#section-thesis_argument)
+  2. [1.2 Východisko a argument práce](#section-thesis_argument)
   3. [1.3 Cíle](#section-thesis_objectives)
     1. [1.3.1 Hlavní cíl](#section-main_goal)
     2. [1.3.2 Dílčí cíle](#section-subgoals)
@@ -152,7 +152,7 @@ Rozšíření generativní AI zároveň vytváří praktický důvod tyto systé
 
 DarkFactory slouží jako konkrétní artefakt, na kterém práce zkoumá oddělení modelu, trvalého stavu, prostředí, nástrojů a kontrolních mechanismů.
 
-### 1.2 Argument
+### 1.2 Východisko a argument práce
 
 Rostoucí schopnosti jazykových modelů mění vývoj softwaru od dílčí asistence k delegování stále delších a samostatnějších pracovních úloh.
 
