@@ -479,7 +479,6 @@ export function WorkbenchShell() {
   }, [persist, settings.theme, visibility]);
 
   useEffect(() => {
-    if (!resizeKind) return;
     const move = (event: PointerEvent) => {
       const session = resizeRef.current;
       if (!session || session.pointerId !== event.pointerId) return;
@@ -511,7 +510,7 @@ export function WorkbenchShell() {
       window.removeEventListener("mousemove", mouseMove);
       window.removeEventListener("mouseup", mouseFinish);
     };
-  }, [applyResize, finishResize, resizeKind]);
+  }, [applyResize, finishResize]);
 
   const resizeClass = resizeKind ? ` root-resizing root-resizing-${resizeKind === "panel" ? "row" : "column"}` : "";
 
