@@ -2,8 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   DockviewDefaultTab,
   DockviewReact,
-  LocalSelectionTransfer,
-  PanelTransfer,
   themeAbyss,
   themeLight
 } from "dockview-react";
@@ -43,13 +41,6 @@ function dragPayload(event: DragEvent): CrossSurfaceDrag | null {
   return null;
 }
 
-function dropDirection(position: unknown) {
-  if (position === "left" || position === "right") return position;
-  if (position === "top") return "above";
-  if (position === "bottom") return "below";
-  return "within";
-}
-
 export function WorkbenchSurfaceView({
   surface,
   restoredLayout,
@@ -71,18 +62,17 @@ export function WorkbenchSurfaceView({
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const transfer = LocalSelectionTransfer.getInstance<PanelTransfer>();
+    const root = rootRef.current;
+    if (!root) return;
 
     const beginPanelDrag = (event: DragEvent) => {
-      const root = rootRef.current;
-      if (!root || !(event.target instanceof Element) || !root.contains(event.target)) return;
+      if (!(event.target instanceof Element) || !root.contains(event.target)) return;
       const tabElement = event.target.closest<HTMLElement>(".dv-tab");
       const workbenchTabElement = tabElement?.querySelector<HTMLElement>("[data-workbench-tab-id]");
       const id = tabElement?.dataset.tabPanelId || workbenchTabElement?.dataset.workbenchTabId;
       if (!id || !runtimeRef.current.getTab(id)) return;
       const payload = { id, source: surface } satisfies CrossSurfaceDrag;
       activeCrossSurfaceDrag = payload;
-      root.dataset.workbenchDndStage = `source:${id}`;
       document.documentElement.classList.add("workbench-tab-dragging");
       if (event.dataTransfer) {
         event.dataTransfer.setData(WORKBENCH_TAB_MIME, JSON.stringify(payload));
@@ -90,22 +80,63 @@ export function WorkbenchSurfaceView({
       }
     };
 
-    const bridgeExternalPanelDrag = (event: DragEvent) => {
-      if (!activeCrossSurfaceDrag || !(event.target instanceof Element)) return;
-      const destinationRoot = event.target.closest<HTMLElement>("[data-workbench-surface]");
-      const destination = destinationRoot?.dataset.workbenchSurface;
-      if (!destination || destination === activeCrossSurfaceDrag.source) return;
-      if (destinationRoot) destinationRoot.dataset.workbenchDndStage = `bridged:${activeCrossSurfaceDrag.id}`;
-      transfer.clearData(PanelTransfer.prototype);
+    const destinationFor = (event: DragEvent): WorkbenchDropTarget => {
+      const target = event.target instanceof Element ? event.target : null;
+      const tabElement = target?.closest<HTMLElement>(".dv-tab");
+      const referencePanelId =
+        tabElement?.dataset.tabPanelId ||
+        tabElement?.querySelector<HTMLElement>("[data-workbench-tab-id]")?.dataset.workbenchTabId;
+      if (referencePanelId) {
+        return { referencePanelId, direction: "within" };
+      }
+
+      const dock = root.querySelector<HTMLElement>(".workbench-dockview");
+      const rect = dock?.getBoundingClientRect() ?? root.getBoundingClientRect();
+      const edgeX = Math.min(36, rect.width * 0.12);
+      const edgeY = Math.min(36, rect.height * 0.12);
+      let direction: WorkbenchDropTarget["direction"] = "within";
+      if (event.clientX <= rect.left + edgeX) direction = "left";
+      else if (event.clientX >= rect.right - edgeX) direction = "right";
+      else if (event.clientY <= rect.top + edgeY) direction = "above";
+      else if (event.clientY >= rect.bottom - edgeY) direction = "below";
+
+      const activeId = Array.from(root.querySelectorAll<HTMLElement>(".dv-tab.dv-active-tab"))
+        .map((element) => element.dataset.tabPanelId || element.querySelector<HTMLElement>("[data-workbench-tab-id]")?.dataset.workbenchTabId)
+        .find((id): id is string => Boolean(id));
+      return { referencePanelId: activeId, direction };
     };
 
-    document.addEventListener("dragstart", beginPanelDrag, true);
-    document.addEventListener("dragenter", bridgeExternalPanelDrag, true);
-    document.addEventListener("dragover", bridgeExternalPanelDrag, true);
+    const isCrossRootDrag = (event: DragEvent) => {
+      const payload = activeCrossSurfaceDrag ?? dragPayload(event);
+      return payload && payload.source !== surface ? payload : null;
+    };
+
+    const acceptCrossRootDrag = (event: DragEvent) => {
+      const payload = isCrossRootDrag(event);
+      if (!payload) return;
+      event.preventDefault();
+      event.stopPropagation();
+      if (event.dataTransfer) event.dataTransfer.dropEffect = "move";
+    };
+
+    const dropCrossRootTab = (event: DragEvent) => {
+      const payload = isCrossRootDrag(event);
+      if (!payload) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const moved = runtimeRef.current.transferTab(payload.id, surface, destinationFor(event));
+      if (moved) activeCrossSurfaceDrag = null;
+    };
+
+    root.addEventListener("dragstart", beginPanelDrag, true);
+    root.addEventListener("dragenter", acceptCrossRootDrag, true);
+    root.addEventListener("dragover", acceptCrossRootDrag, true);
+    root.addEventListener("drop", dropCrossRootTab, true);
     return () => {
-      document.removeEventListener("dragstart", beginPanelDrag, true);
-      document.removeEventListener("dragenter", bridgeExternalPanelDrag, true);
-      document.removeEventListener("dragover", bridgeExternalPanelDrag, true);
+      root.removeEventListener("dragstart", beginPanelDrag, true);
+      root.removeEventListener("dragenter", acceptCrossRootDrag, true);
+      root.removeEventListener("dragover", acceptCrossRootDrag, true);
+      root.removeEventListener("drop", dropCrossRootTab, true);
     };
   }, [surface]);
 
@@ -229,53 +260,10 @@ export function WorkbenchSurfaceView({
         defaultRenderer="always"
         rightHeaderActionsComponent={HeaderActions}
         getTabContextMenuItems={tabContextMenuItems}
-        onDidDrop={(event: any) => {
-          const dockviewPanelId = event.getData?.()?.panelId;
-          const payload = event.nativeEvent instanceof DragEvent
-            ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
-            : activeCrossSurfaceDrag;
-          const id = activeCrossSurfaceDrag?.id
-            ?? (typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id);
-          if (!id || !runtimeRef.current.getTab(id)) return;
-          if (rootRef.current) rootRef.current.dataset.workbenchDndStage = `dropped:${id}`;
-          const referencePanelId = event.group?.activePanel?.id ?? event.panel?.id;
-          const moved = runtimeRef.current.transferTab(id, surface, {
-            referencePanelId,
-            direction: dropDirection(event.position),
-          });
-          if (rootRef.current) rootRef.current.dataset.workbenchDndStage = `${moved ? "moved" : "move-failed"}:${id}`;
-          if (moved) activeCrossSurfaceDrag = null;
-        }}
         onReady={(event: any) => {
           const api = event.api;
           onReady(surface, api);
 
-          api.onWillDragPanel?.((event: any) => {
-            const tab = paramsOf(event.panel);
-            if (!tab) return;
-            const payload = { id: tab.id, source: surface } satisfies CrossSurfaceDrag;
-            activeCrossSurfaceDrag = payload;
-            if (event.nativeEvent instanceof DragEvent && event.nativeEvent.dataTransfer) {
-              event.nativeEvent.dataTransfer.setData(WORKBENCH_TAB_MIME, JSON.stringify(payload));
-              event.nativeEvent.dataTransfer.effectAllowed = "move";
-            }
-          });
-          api.onUnhandledDragOver?.((event: any) => {
-            const dockviewPanelId = event.getData?.()?.panelId;
-            const payload = event.nativeEvent instanceof DragEvent
-              ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
-              : activeCrossSurfaceDrag;
-            const id = activeCrossSurfaceDrag?.id
-              ?? (typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id);
-            if (
-              id &&
-              activeCrossSurfaceDrag?.source !== surface &&
-              runtimeRef.current.getTab(id)
-            ) {
-              if (rootRef.current) rootRef.current.dataset.workbenchDndStage = `accepted:${id}`;
-              event.accept();
-            }
-          });
           let restored = false;
           if (restoredLayout) {
             try {
