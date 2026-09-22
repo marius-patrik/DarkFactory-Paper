@@ -45,6 +45,12 @@ jobs:
       - name: Validate generic web workbench
         run: bun run --cwd web check
 
+      - name: Install Chromium for browser acceptance
+        run: cd web && bunx playwright install --with-deps chromium
+
+      - name: Run browser acceptance
+        run: bun run --cwd web acceptance
+
       - name: Validate Make web target
         if: github.event_name != 'push'
         run: make web-check
