@@ -51,10 +51,12 @@ test("root regions resize continuously and persist through reload and hide/show"
   await page.mouse.move(box.x + box.width / 2 + 54, box.y + box.height / 2, { steps: 6 });
   await page.mouse.up();
 
+  await expect.poll(async () => shell.evaluate((element) =>
+    Number.parseFloat(getComputedStyle(element).getPropertyValue("--primary-size")),
+  )).toBeGreaterThan(before + 35);
   const resized = await shell.evaluate((element) =>
     Number.parseFloat(getComputedStyle(element).getPropertyValue("--primary-size")),
   );
-  expect(resized).toBeGreaterThan(before + 35);
 
   await page.getByTitle(/Toggle Primary Sidebar/).click();
   await expect(separator).toBeHidden();
@@ -119,7 +121,7 @@ test("anonymous public repository and browser navigation work in Chromium", asyn
   await expect(tab(page, "main", "Browser")).toBeVisible();
 
   const browser = surface(page, "main").locator(".browser-tab");
-  const location = browser.getByLabel("URL");
+  const location = browser.getByRole("textbox", { name: "URL" });
   await location.fill("https://example.com");
   await location.press("Enter");
   await expect(browser.getByRole("button", { name: "Back" })).toBeDisabled();
