@@ -483,7 +483,7 @@ MCP odděluje klientskou AI aplikaci od serverů poskytujících nástroje a dal
 
 Harness doplňuje modelovou inferenci o kontinuitu běhu a rozhraní pro pozorování a změnu externího prostředí.
 
-Tím vzniká agentní runtime schopný jednat, ale samotné mechanismy ještě neurčují strategii práce. Výběr kontextu, řízení chování a rozdělování práce jsou už návrhovými rozhodnutími Agentického inženýrství.
+Tím vzniká stavový agentní systém schopný jednat, ale samotné mechanismy ještě neurčují strategii práce. Výběr kontextu, řízení chování a rozdělování práce jsou už návrhovými rozhodnutími Agentického inženýrství.
 
 ### 2.5 Agentické inženýrství
 
