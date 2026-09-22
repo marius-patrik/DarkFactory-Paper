@@ -88,7 +88,7 @@
           "anchor": "section-ai_assisted_development_intro"
         },
         {
-          "title": "2.2.2 Specifikace a plánování",
+          "title": "2.2.2 Zadání a způsob práce",
           "level": 4,
           "anchor": "section-ai_assisted_specification"
         },
@@ -128,7 +128,7 @@
           "anchor": "concept-pull_request"
         },
         {
-          "title": "2.2.4 Ověřování kvality",
+          "title": "2.2.4 Kvalita a ověřování",
           "level": 4,
           "anchor": "section-ai_assisted_quality_verification"
         },
@@ -153,7 +153,7 @@
           "anchor": "section-ai_assisted_development_conclusion"
         },
         {
-          "title": "2.3 Model",
+          "title": "2.3 Jazykový model a inference",
           "level": 3,
           "anchor": "section-model"
         },
@@ -670,7 +670,7 @@
           "anchor": "section-ai_assisted_development_intro"
         },
         {
-          "title": "2.2.2 Specifikace a plánování",
+          "title": "2.2.2 Zadání a způsob práce",
           "level": 4,
           "anchor": "section-ai_assisted_specification"
         },
@@ -710,7 +710,7 @@
           "anchor": "concept-pull_request"
         },
         {
-          "title": "2.2.4 Ověřování kvality",
+          "title": "2.2.4 Kvalita a ověřování",
           "level": 4,
           "anchor": "section-ai_assisted_quality_verification"
         },
@@ -735,7 +735,7 @@
           "anchor": "section-ai_assisted_development_conclusion"
         },
         {
-          "title": "2.3 Model",
+          "title": "2.3 Jazykový model a inference",
           "level": 3,
           "anchor": "section-model"
         },
