@@ -27,7 +27,7 @@ async function dragTab(
   });
 
   await expect.poll(async () => surface(page, from).getAttribute("data-workbench-dnd-stage")).toMatch(/source/);
-  await expect.poll(async () => surface(page, to).getAttribute("data-workbench-dnd-stage")).toMatch(/accepted|drop|moved|move-failed/);
+  await expect(surface(page, to)).toHaveAttribute("data-workbench-dnd-stage", /^moved:/);
   await expect(tab(page, to, label)).toBeVisible();
   await expect(tab(page, from, label)).toHaveCount(0);
 }
