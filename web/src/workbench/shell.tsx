@@ -476,13 +476,25 @@ export function WorkbenchShell() {
       if (!session || session.pointerId !== event.pointerId) return;
       finishResize();
     };
+    const mouseMove = (event: MouseEvent) => {
+      if (!resizeRef.current) return;
+      event.preventDefault();
+      applyResize(event.clientX, event.clientY);
+    };
+    const mouseFinish = () => {
+      if (resizeRef.current) finishResize();
+    };
     window.addEventListener("pointermove", move, { passive: false });
     window.addEventListener("pointerup", finish);
     window.addEventListener("pointercancel", finish);
+    window.addEventListener("mousemove", mouseMove, { passive: false });
+    window.addEventListener("mouseup", mouseFinish);
     return () => {
       window.removeEventListener("pointermove", move);
       window.removeEventListener("pointerup", finish);
       window.removeEventListener("pointercancel", finish);
+      window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("mouseup", mouseFinish);
     };
   }, [applyResize, finishResize, resizeKind]);
 
