@@ -16,18 +16,15 @@ async function dragTab(
   const target = surface(page, to).locator(".workbench-dockview");
   await expect(source).toBeVisible();
   await expect(target).toBeVisible();
-  const sourceBox = await source.boundingBox();
   const targetBox = await target.boundingBox();
-  if (!sourceBox || !targetBox) throw new Error(`missing drag geometry for ${from} -> ${to}`);
+  if (!targetBox) throw new Error(`missing drag geometry for ${from} -> ${to}`);
 
-  await page.mouse.move(sourceBox.x + sourceBox.width / 2, sourceBox.y + sourceBox.height / 2);
-  await page.mouse.down();
-  await page.mouse.move(
-    targetBox.x + Math.max(20, Math.min(targetBox.width - 20, targetBox.width / 2)),
-    targetBox.y + Math.max(20, Math.min(targetBox.height - 20, targetBox.height / 2)),
-    { steps: 14 },
-  );
-  await page.mouse.up();
+  await source.dragTo(target, {
+    targetPosition: {
+      x: Math.max(20, Math.min(targetBox.width - 20, targetBox.width / 2)),
+      y: Math.max(20, Math.min(targetBox.height - 20, targetBox.height / 2)),
+    },
+  });
 
   await expect(tab(page, to, label)).toBeVisible();
   await expect(tab(page, from, label)).toHaveCount(0);
