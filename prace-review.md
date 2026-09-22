@@ -36,7 +36,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
   1. [2.1 Úvod](#section-theory_introduction)
   2. [2.2 AI-asistovaný vývoj](#section-ai_assisted_development)
     1. [2.2.1 Úvod](#section-ai_assisted_development_intro)
-    2. [2.2.2 Zadání a způsob práce](#section-ai_assisted_specification)
+    2. [2.2.2 Specifikace a plánování](#section-ai_assisted_specification)
       1. [Vibe Coding](#concept-vibe_coding)
       2. [Vývoj řízený specifikací (Spec-Driven Development)](#concept-spec_driven_development)
       3. [Plánování (Planning)](#concept-planning)
@@ -44,12 +44,12 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
       1. [Správa verzí (Version Control)](#concept-version_control)
       2. [Větev (Branch)](#concept-branch)
       3. [Pull Request](#concept-pull_request)
-    4. [2.2.4 Kvalita a ověřování](#section-ai_assisted_quality_verification)
+    4. [2.2.4 Ověřování kvality](#section-ai_assisted_quality_verification)
       1. [Slop](#concept-slop)
       2. [Průběžná integrace (CI)](#concept-continuous_integration)
       3. [Integrační test (Integration Test)](#concept-integration_test)
     5. [2.2.5 Závěr](#section-ai_assisted_development_conclusion)
-  3. [2.3 Jazykový model a inference](#section-model)
+  3. [2.3 Model](#section-model)
     1. [2.3.1 Úvod](#section-model_inference_intro)
     2. [2.3.2 Jazykový model](#section-language_model_group)
       1. [Velký jazykový model (LLM)](#concept-language_model)
@@ -72,7 +72,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
       2. [Agentní sezení (Session)](#concept-agent_session)
       3. [Přepis (Transcript)](#concept-transcript)
       4. [Stav (State)](#concept-state)
-    3. [2.4.3 Nástroje a prostředí](#section-harness_tools_environment)
+    3. [2.4.3 Prostředí a nástroje](#section-harness_tools_environment)
       1. [Prostředí agenta (Agent Environment)](#concept-environment)
       2. [Nástroje (Tools)](#concept-tools)
       3. [Vyvolávání nástrojů (Tool Calling)](#concept-tool_calling)
@@ -221,13 +221,13 @@ AI ve vývoji softwaru posouvá část práce od přímého psaní k zadávání
 
 Tato část sleduje tři důsledky tohoto posunu: způsob formulace práce, proces řízení změny a nezávislé ověření její kvality.
 
-#### 2.2.2 Zadání a způsob práce
+#### 2.2.2 Specifikace a plánování
 
 ##### Vibe Coding
 
 Způsob tvorby softwaru, při kterém člověk iteruje pomocí pokynů v přirozeném jazyce bez průběžné kontroly vygenerovaného kódu. <sup><span id="loc-10">(</span><a href="#loc-72" role="doc-biblioref">6</a>)</sup>
 
-Termín zavedl Andrej Karpathy v roce 2025 pro styl práce, ve kterém vývojář převážně přijímá a směruje modelový výstup místo detailního čtení kódu. <sup>(<a href="#loc-72" role="doc-biblioref">6</a>)</sup> <sup><span id="loc-11">(</span><a href="#loc-73" role="doc-biblioref">7</a>)</sup>
+Termín zavedl Andrej Karpathy v roce 2025. V této práci slouží jako kontrast k postupům, které před delegováním práce explicitně formulují specifikaci, plán a podmínky ověření. <sup>(<a href="#loc-72" role="doc-biblioref">6</a>)</sup> <sup><span id="loc-11">(</span><a href="#loc-73" role="doc-biblioref">7</a>)</sup>
 
 Tweet Andreje Karpathyho z 2. února 2025, ve kterém popsal původní význam Vibe Coding.
 
@@ -267,7 +267,7 @@ Návrh na sloučení změn z jedné větve do jiné, kolem kterého GitHub soust
 
 Pull request zpřístupňuje diff navržené změny a její stav před integrací do cílové větve. <sup>(<a href="#loc-79" role="doc-biblioref">13</a>)</sup>
 
-#### 2.2.4 Kvalita a ověřování
+#### 2.2.4 Ověřování kvality
 
 ##### Slop
 
@@ -293,7 +293,7 @@ Delegování práce AI nezmenšuje potřebu softwarově-inženýrských kontrol;
 
 Tento požadavek vede k otázce, co samotný model skutečně provádí a které schopnosti musí dodat okolní systém.
 
-### 2.3 Jazykový model a inference
+### 2.3 Model
 
 #### 2.3.1 Úvod
 
@@ -349,7 +349,7 @@ Inferenční engine zajišťuje praktické provedení modelu, například pláno
 
 Maximální rozsah tokenové sekvence dostupný modelu v jednom inferenčním běhu. <sup><span id="loc-27">(</span><a href="#loc-87" role="doc-biblioref">21</a>)</sup>
 
-Do aktivního kontextu se společně vkládají instrukce, uživatelské vstupy, historie a výsledky nástrojů. Samotná nominální délka okna nezaručuje, že model všechny vložené informace využije stejně spolehlivě. <sup>(<a href="#loc-87" role="doc-biblioref">21</a>)</sup>
+Do aktivního kontextu mohou vstupovat instrukce, uživatelský vstup i další data předaná systému pro daný inferenční běh. Samotná nominální délka okna nezaručuje, že model všechny vložené informace využije stejně spolehlivě. <sup>(<a href="#loc-87" role="doc-biblioref">21</a>)</sup>
 
 ##### Mezipaměť klíčů a hodnot (KV Cache)
 
@@ -415,7 +415,7 @@ Persistovaná reprezentace aktuálně platných pracovních skutečností a ří
 
 State odpovídá na otázku, co je pro další krok právě platné; na rozdíl od [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> nemusí zachovávat úplnou historii předchozích událostí. <sup>(<a href="#loc-68" role="doc-biblioref">2</a>)</sup>
 
-#### 2.4.3 Nástroje a prostředí
+#### 2.4.3 Prostředí a nástroje
 
 ##### Prostředí agenta (Agent Environment)
 

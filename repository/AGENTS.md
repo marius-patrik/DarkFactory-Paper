@@ -53,7 +53,7 @@ Závěr may synthesize a relationship visible only after reading the whole secti
 #### 2.2 AI-asistovaný vývoj
 
 - 2.2.1 Úvod
-- 2.2.2 Zadání a způsob práce
+- 2.2.2 Specifikace a plánování
   - Vibe Coding
   - Vývoj řízený specifikací (Spec-Driven Development)
   - Plánování (Planning)
@@ -61,7 +61,7 @@ Závěr may synthesize a relationship visible only after reading the whole secti
   - Správa verzí (Version Control)
   - Větev (Branch)
   - Pull Request
-- 2.2.4 Kvalita a ověřování
+- 2.2.4 Ověřování kvality
   - Slop
   - Průběžná integrace (CI)
   - Integrační test (Integration Test)
@@ -69,7 +69,7 @@ Závěr may synthesize a relationship visible only after reading the whole secti
 
 No standalone Software Engineering article.
 
-#### 2.3 Jazykový model a inference
+#### 2.3 Model
 
 - 2.3.1 Úvod
 - 2.3.2 Jazykový model
@@ -99,7 +99,7 @@ Harness is owned by the numbered section itself; there is no duplicate Harness a
   - Agentní sezení (Session)
   - Přepis (Transcript)
   - Stav (State)
-- 2.4.3 Nástroje a prostředí
+- 2.4.3 Prostředí a nástroje
   - Prostředí agenta (Agent Environment)
   - Nástroje (Tools)
   - Vyvolávání nástrojů (Tool Calling)

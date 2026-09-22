@@ -88,7 +88,7 @@
           "anchor": "section-ai_assisted_development_intro"
         },
         {
-          "title": "2.2.2 Zadání a způsob práce",
+          "title": "2.2.2 Specifikace a plánování",
           "level": 4,
           "anchor": "section-ai_assisted_specification"
         },
@@ -128,7 +128,7 @@
           "anchor": "concept-pull_request"
         },
         {
-          "title": "2.2.4 Kvalita a ověřování",
+          "title": "2.2.4 Ověřování kvality",
           "level": 4,
           "anchor": "section-ai_assisted_quality_verification"
         },
@@ -153,7 +153,7 @@
           "anchor": "section-ai_assisted_development_conclusion"
         },
         {
-          "title": "2.3 Jazykový model a inference",
+          "title": "2.3 Model",
           "level": 3,
           "anchor": "section-model"
         },
@@ -268,7 +268,7 @@
           "anchor": "concept-state"
         },
         {
-          "title": "2.4.3 Nástroje a prostředí",
+          "title": "2.4.3 Prostředí a nástroje",
           "level": 4,
           "anchor": "section-harness_tools_environment"
         },
@@ -670,7 +670,7 @@
           "anchor": "section-ai_assisted_development_intro"
         },
         {
-          "title": "2.2.2 Zadání a způsob práce",
+          "title": "2.2.2 Specifikace a plánování",
           "level": 4,
           "anchor": "section-ai_assisted_specification"
         },
@@ -710,7 +710,7 @@
           "anchor": "concept-pull_request"
         },
         {
-          "title": "2.2.4 Kvalita a ověřování",
+          "title": "2.2.4 Ověřování kvality",
           "level": 4,
           "anchor": "section-ai_assisted_quality_verification"
         },
@@ -735,7 +735,7 @@
           "anchor": "section-ai_assisted_development_conclusion"
         },
         {
-          "title": "2.3 Jazykový model a inference",
+          "title": "2.3 Model",
           "level": 3,
           "anchor": "section-model"
         },
@@ -850,7 +850,7 @@
           "anchor": "concept-state"
         },
         {
-          "title": "2.4.3 Nástroje a prostředí",
+          "title": "2.4.3 Prostředí a nástroje",
           "level": 4,
           "anchor": "section-harness_tools_environment"
         },
