@@ -1,9 +1,25 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+  type CSSProperties,
+  type PointerEvent as ReactPointerEvent,
+} from "react";
 import { GitBranch, PanelBottom, PanelLeft, PanelRight, UserRound } from "lucide-react";
 import { useWorkbenchSettings, type AppearanceMode } from "@/settings";
 import { useWorkspace } from "@/workspace/context";
 import { useWorkbenchShortcuts } from "./commands";
-import type { PersistedWorkbench, SplitDirection, WorkbenchSurface, WorkbenchTab, WorkbenchTabType } from "./model";
+import type {
+  PersistedWorkbench,
+  SplitDirection,
+  WorkbenchDropTarget,
+  WorkbenchRootSizes,
+  WorkbenchSurface,
+  WorkbenchTab,
+  WorkbenchTabType,
+} from "./model";
 import { createWorkbenchTab, tabDefinition } from "./registry";
 import { loadWorkbench, saveWorkbench } from "./persistence";
 import { Omnibar, type OmnibarControl } from "./omnibar";
@@ -11,6 +27,47 @@ import { WorkbenchRuntimeContext, type WorkbenchRuntime } from "./runtime";
 import { WorkbenchSurfaceView } from "./surface";
 
 const SURFACES: WorkbenchSurface[] = ["primary", "main", "secondary", "panel"];
+const RESIZER_SIZE = 4;
+const MAIN_MIN_WIDTH = 300;
+const MAIN_MIN_HEIGHT = 180;
+const SIDEBAR_MIN = 180;
+const SIDEBAR_MAX = 520;
+const PANEL_MIN = 110;
+const PANEL_MAX = 520;
+
+type ResizeKind = keyof WorkbenchRootSizes;
+
+type ResizeSession = {
+  kind: ResizeKind;
+  pointerId: number;
+  startX: number;
+  startY: number;
+  startSize: number;
+};
+
+function clamp(value: number, minimum: number, maximum: number) {
+  if (maximum <= minimum) return maximum;
+  return Math.min(maximum, Math.max(minimum, value));
+}
+
+function visibleSizes(
+  sizes: WorkbenchRootSizes,
+  visibility: Record<WorkbenchSurface, boolean>,
+  viewport: { width: number; height: number },
+) {
+  let primary = visibility.primary ? sizes.primary : 0;
+  let secondary = visibility.secondary ? sizes.secondary : 0;
+  const verticalHandles = (visibility.primary ? RESIZER_SIZE : 0) + (visibility.secondary ? RESIZER_SIZE : 0);
+  const sideBudget = Math.max(0, viewport.width - MAIN_MIN_WIDTH - verticalHandles);
+  if (primary + secondary > sideBudget && primary + secondary > 0) {
+    const scale = sideBudget / (primary + secondary);
+    primary *= scale;
+    secondary *= scale;
+  }
+  const panelBudget = Math.max(0, viewport.height - 36 - 24 - MAIN_MIN_HEIGHT - (visibility.panel ? RESIZER_SIZE : 0));
+  const panel = visibility.panel ? Math.min(sizes.panel, panelBudget) : 0;
+  return { primary, secondary, panel };
+}
 
 function paramsOf(panel: any): WorkbenchTab | null {
   const params = panel?.api?.getParameters?.() ?? panel?.params;
@@ -69,15 +126,23 @@ export function WorkbenchShell() {
     secondary: initial.surfaces.secondary.visible,
     panel: initial.surfaces.panel.visible,
   }));
+  const [sizes, setSizes] = useState<WorkbenchRootSizes>(() => ({ ...initial.sizes }));
+  const sizesRef = useRef(sizes);
+  sizesRef.current = sizes;
+  const [viewport, setViewport] = useState(() => ({ width: window.innerWidth, height: window.innerHeight }));
+  const [resizeKind, setResizeKind] = useState<ResizeKind | null>(null);
+  const resizeRef = useRef<ResizeSession | null>(null);
   const apis = useRef(new Map<WorkbenchSurface, any>());
+  const layoutMutationRef = useRef(false);
   const omnibarRef = useRef<OmnibarControl>(null);
   const activeSurfaceRef = useRef<WorkbenchSurface | null>(null);
   const [activeTab, setActiveTab] = useState<WorkbenchTab | null>(null);
 
-  const persist = useCallback((theme: AppearanceMode = settings.theme, nextVisibility = visibility) => {
+  const persist = useCallback((theme: AppearanceMode = settings.theme, nextVisibility = visibility, nextSizes = sizesRef.current) => {
     const state: PersistedWorkbench = {
-      version: 1,
+      version: 2,
       theme,
+      sizes: { ...nextSizes },
       surfaces: {
         primary: { visible: nextVisibility.primary, layout: apis.current.get("primary")?.toJSON?.() ?? initial.surfaces.primary.layout },
         main: { visible: true, layout: apis.current.get("main")?.toJSON?.() ?? initial.surfaces.main.layout },
@@ -92,6 +157,12 @@ export function WorkbenchShell() {
     document.documentElement.dataset.theme = settings.theme;
     persist(settings.theme);
   }, [persist, settings.theme]);
+
+  useEffect(() => {
+    const handleResize = () => setViewport({ width: window.innerWidth, height: window.innerHeight });
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const registerSurface = useCallback((surface: WorkbenchSurface, api: any) => {
     apis.current.set(surface, api);
@@ -162,18 +233,78 @@ export function WorkbenchShell() {
     persist();
   }, [persist, setSurfaceVisible]);
 
+  const transferTab = useCallback((
+    id: string,
+    source: WorkbenchSurface,
+    target: WorkbenchSurface,
+    drop: WorkbenchDropTarget,
+  ) => {
+    if (source === target) return false;
+    const sourceApi = apis.current.get(source);
+    const targetApi = apis.current.get(target);
+    const sourcePanel = sourceApi?.getPanel?.(id);
+    const tab = sourcePanel ? paramsOf(sourcePanel) : null;
+    if (!sourceApi || !targetApi || !sourcePanel || !tab) return false;
+
+    const wasActive = sourceApi.activePanel?.id === id;
+    const referencePanel = drop.referencePanelId && targetApi.getPanel?.(drop.referencePanelId)
+      ? drop.referencePanelId
+      : undefined;
+    const position = referencePanel
+      ? { referencePanel, direction: drop.direction }
+      : drop.direction === "within"
+        ? undefined
+        : { direction: drop.direction };
+
+    layoutMutationRef.current = true;
+    let created: any = null;
+    try {
+      if (target !== "main") setSurfaceVisible(target, true);
+      created = targetApi.addPanel({
+        id: tab.id,
+        component: "workbench",
+        tabComponent: "workbenchTab",
+        title: tab.title,
+        params: tab,
+        renderer: "always",
+        inactive: !wasActive,
+        ...(position ? { position } : {}),
+      });
+      if (!created) return false;
+      if (wasActive) created.api?.setActive?.();
+      sourceApi.removePanel(sourcePanel);
+      if (wasActive) {
+        activeSurfaceRef.current = target;
+        setActiveTab(tab);
+      }
+      return true;
+    } catch {
+      if (created && sourceApi.getPanel?.(id)) {
+        try {
+          targetApi.removePanel(created);
+        } catch {
+        }
+      }
+      return false;
+    } finally {
+      layoutMutationRef.current = false;
+      queueMicrotask(() => persist());
+    }
+  }, [persist, setSurfaceVisible]);
+
   const moveTab = useCallback((id: string, target: WorkbenchSurface) => {
     const found = locate(id);
+    if (!found) return;
+    if (found.surface === target) {
+      found.panel.api?.setActive?.();
+      return;
+    }
     const targetApi = apis.current.get(target);
-    const tab = found ? paramsOf(found.panel) : null;
-    if (!found || !targetApi || !tab) return;
-    if (found.surface === target) { found.panel.api?.setActive?.(); return; }
-    found.api.removePanel(found.panel);
-    if (target !== "main") setSurfaceVisible(target, true);
-    const panel = targetApi.addPanel({ id: tab.id, component: "workbench", tabComponent: "workbenchTab", title: tab.title, params: tab, renderer: "always" });
-    panel.api?.setActive?.();
-    persist();
-  }, [locate, persist, setSurfaceVisible]);
+    transferTab(id, found.surface, target, {
+      referencePanelId: targetApi?.activePanel?.id,
+      direction: "within",
+    });
+  }, [locate, transferTab]);
 
   const splitTab = useCallback((id: string, direction: SplitDirection) => {
     const found = locate(id);
@@ -235,15 +366,18 @@ export function WorkbenchShell() {
     setTheme,
     openTab,
     moveTab,
+    transferTab,
     splitTab,
     closeTab,
     setPinned,
     updateTabState,
     toggleSurface,
     setSurfaceVisible,
-    layoutChanged: () => persist(),
+    layoutChanged: () => {
+      if (!layoutMutationRef.current) persist();
+    },
     getTab,
-  }), [settings, activeTab, focusOmnibar, setTheme, openTab, moveTab, splitTab, closeTab, setPinned, updateTabState, toggleSurface, setSurfaceVisible, persist, getTab]);
+  }), [settings, activeTab, focusOmnibar, setTheme, openTab, moveTab, transferTab, splitTab, closeTab, setPinned, updateTabState, toggleSurface, setSurfaceVisible, persist, getTab]);
 
   const shortcutHandlers = useMemo(() => ({
     togglePrimary: () => toggleSurface("primary"),
@@ -274,9 +408,66 @@ export function WorkbenchShell() {
     ],
   }), []);
 
+  const effective = useMemo(() => visibleSizes(sizes, visibility, viewport), [sizes, visibility, viewport]);
+  const shellStyle = {
+    "--primary-size": `${effective.primary}px`,
+    "--secondary-size": `${effective.secondary}px`,
+    "--panel-size": `${effective.panel}px`,
+  } as CSSProperties;
+
+  const beginResize = useCallback((kind: ResizeKind, event: ReactPointerEvent<HTMLDivElement>) => {
+    event.preventDefault();
+    event.currentTarget.setPointerCapture(event.pointerId);
+    resizeRef.current = {
+      kind,
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      startSize: sizesRef.current[kind],
+    };
+    setResizeKind(kind);
+  }, []);
+
+  const continueResize = useCallback((event: ReactPointerEvent<HTMLDivElement>) => {
+    const session = resizeRef.current;
+    if (!session || session.pointerId !== event.pointerId) return;
+    event.preventDefault();
+    const handles = (visibility.primary ? RESIZER_SIZE : 0) + (visibility.secondary ? RESIZER_SIZE : 0);
+    let nextSize = session.startSize;
+    if (session.kind === "primary") {
+      const other = visibility.secondary ? effective.secondary : 0;
+      const maximum = Math.min(SIDEBAR_MAX, Math.max(0, viewport.width - MAIN_MIN_WIDTH - other - handles));
+      nextSize = clamp(session.startSize + event.clientX - session.startX, Math.min(SIDEBAR_MIN, maximum), maximum);
+    } else if (session.kind === "secondary") {
+      const other = visibility.primary ? effective.primary : 0;
+      const maximum = Math.min(SIDEBAR_MAX, Math.max(0, viewport.width - MAIN_MIN_WIDTH - other - handles));
+      nextSize = clamp(session.startSize + session.startX - event.clientX, Math.min(SIDEBAR_MIN, maximum), maximum);
+    } else {
+      const maximum = Math.min(PANEL_MAX, Math.max(0, viewport.height - 36 - 24 - MAIN_MIN_HEIGHT - RESIZER_SIZE));
+      nextSize = clamp(session.startSize + session.startY - event.clientY, Math.min(PANEL_MIN, maximum), maximum);
+    }
+    const next = { ...sizesRef.current, [session.kind]: Math.round(nextSize) };
+    sizesRef.current = next;
+    setSizes(next);
+  }, [effective.primary, effective.secondary, viewport, visibility.primary, visibility.secondary]);
+
+  const endResize = useCallback((event: ReactPointerEvent<HTMLDivElement>) => {
+    const session = resizeRef.current;
+    if (!session || session.pointerId !== event.pointerId) return;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    resizeRef.current = null;
+    setResizeKind(null);
+    persist(settings.theme, visibility, sizesRef.current);
+  }, [persist, settings.theme, visibility]);
+
+  const resizeClass = resizeKind ? ` root-resizing root-resizing-${resizeKind === "panel" ? "row" : "column"}` : "";
+
   return (
     <WorkbenchRuntimeContext.Provider value={runtime}>
-      <div className={`workbench-shell${visibility.primary ? "" : " primary-collapsed"}${visibility.secondary ? "" : " secondary-collapsed"}${visibility.panel ? "" : " panel-collapsed"}`}>
+      <div
+        className={`workbench-shell${visibility.primary ? "" : " primary-collapsed"}${visibility.secondary ? "" : " secondary-collapsed"}${visibility.panel ? "" : " panel-collapsed"}${resizeClass}`}
+        style={shellStyle}
+      >
         <header className="workbench-header">
           <div className="workspace-identity">
             <button type="button" className="workspace-repository-button" onClick={() => workspace.setDialogOpen(true)}>
@@ -307,7 +498,7 @@ export function WorkbenchShell() {
               type="button"
               className="account-placeholder"
               onClick={() => workspace.user ? workspace.signOut() : workspace.setDialogOpen(true)}
-              title={workspace.user ? "Sign out" : "Connect GitHub account"}
+              title={workspace.user ? "Sign out" : "Sign in with GitHub"}
             >
               {workspace.user ? <img src={workspace.user.avatar_url} alt="" /> : <UserRound size={14} />}
               <span>{workspace.user?.login || "Sign in"}</span>
@@ -316,9 +507,42 @@ export function WorkbenchShell() {
         </header>
         <div className="workbench-center">
           <aside className="root-surface root-primary"><WorkbenchSurfaceView surface="primary" restoredLayout={initial.surfaces.primary.layout} defaultTabs={defaults.primary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
+          <div
+            className="root-resizer root-resizer-column root-resizer-primary"
+            role="separator"
+            aria-label="Resize Primary Sidebar"
+            aria-orientation="vertical"
+            aria-valuenow={Math.round(effective.primary)}
+            onPointerDown={(event) => beginResize("primary", event)}
+            onPointerMove={continueResize}
+            onPointerUp={endResize}
+            onPointerCancel={endResize}
+          />
           <main className="root-surface root-main"><WorkbenchSurfaceView surface="main" restoredLayout={initial.surfaces.main.layout} defaultTabs={defaults.main} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></main>
+          <div
+            className="root-resizer root-resizer-column root-resizer-secondary"
+            role="separator"
+            aria-label="Resize Secondary Sidebar"
+            aria-orientation="vertical"
+            aria-valuenow={Math.round(effective.secondary)}
+            onPointerDown={(event) => beginResize("secondary", event)}
+            onPointerMove={continueResize}
+            onPointerUp={endResize}
+            onPointerCancel={endResize}
+          />
           <aside className="root-surface root-secondary"><WorkbenchSurfaceView surface="secondary" restoredLayout={initial.surfaces.secondary.layout} defaultTabs={defaults.secondary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
         </div>
+        <div
+          className="root-resizer root-resizer-row root-resizer-panel"
+          role="separator"
+          aria-label="Resize Panel"
+          aria-orientation="horizontal"
+          aria-valuenow={Math.round(effective.panel)}
+          onPointerDown={(event) => beginResize("panel", event)}
+          onPointerMove={continueResize}
+          onPointerUp={endResize}
+          onPointerCancel={endResize}
+        />
         <section className="root-surface root-panel"><WorkbenchSurfaceView surface="panel" restoredLayout={initial.surfaces.panel.layout} defaultTabs={defaults.panel} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></section>
         <footer className="workbench-statusbar">
           <span className="workbench-status-workspace">
