@@ -45,5 +45,13 @@ jobs:
       - name: Validate generic web workbench
         run: bun run --cwd web check
 
+      - name: Validate Make web target
+        if: github.event_name == 'workflow_dispatch'
+        run: make web-check
+
       - name: Validate canonical repository contract
         run: make ci BOOK=DarkFactory
+
+      - name: Validate canonical Pages/site target
+        if: github.event_name == 'workflow_dispatch'
+        run: make site BOOK=DarkFactory
