@@ -7,7 +7,7 @@ import {
 } from "dockview-react";
 import { EmptyWorkbench } from "./empty-workbench";
 import { LauncherButton } from "./launcher";
-import type { WorkbenchSurface, WorkbenchTab } from "./model";
+import type { WorkbenchDropTarget, WorkbenchSurface, WorkbenchTab } from "./model";
 import { WorkbenchPanel } from "./registry";
 import { useWorkbenchRuntime } from "./runtime";
 
