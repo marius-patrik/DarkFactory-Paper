@@ -1,5 +1,5 @@
 import type { AppearanceMode } from "@/settings";
-import type { PersistedWorkbench, WorkbenchRootSizes, WorkbenchSurface } from "./model";
+import type { PersistedWorkbench, WorkbenchRootSizes, WorkbenchSurface, WorkbenchSurfaceState } from "./model";
 
 const STORAGE_KEY = "workbench-layout-v2";
 const LEGACY_STORAGE_KEY = "workbench-layout-v1";
