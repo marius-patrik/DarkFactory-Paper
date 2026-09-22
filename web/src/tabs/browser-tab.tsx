@@ -35,10 +35,6 @@ export function BrowserTab({
   updateState: (patch: Record<string, unknown>) => void;
 }) {
   const incoming = useMemo(() => browserState(tab), [tab]);
-  const incomingKey = useMemo(
-    () => JSON.stringify([incoming.history, incoming.index]),
-    [incoming],
-  );
   const [history, setHistory] = useState<string[]>(incoming.history);
   const [index, setIndex] = useState(incoming.index);
   const current = history[index] ?? "about:blank";
@@ -52,7 +48,7 @@ export function BrowserTab({
   useEffect(() => {
     setHistory(incoming.history);
     setIndex(incoming.index);
-  }, [incomingKey]);
+  }, [incoming.history, incoming.index]);
 
   useEffect(() => {
     setDraft(current === "about:blank" ? "" : current);
