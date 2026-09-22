@@ -2,6 +2,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import {
   DockviewDefaultTab,
   DockviewReact,
+  LocalSelectionTransfer,
+  PanelTransfer,
   themeAbyss,
   themeLight
 } from "dockview-react";
@@ -173,7 +175,14 @@ export function WorkbenchSurfaceView({
   };
 
   return (
-    <div className={`workbench-surface workbench-surface-${surface}`} data-workbench-surface={surface}>
+    <div
+      className={`workbench-surface workbench-surface-${surface}`}
+      data-workbench-surface={surface}
+      onDragEnterCapture={() => {
+        if (!activeCrossSurfaceDrag || activeCrossSurfaceDrag.source === surface) return;
+        LocalSelectionTransfer.getInstance<PanelTransfer>().clearData(PanelTransfer.prototype);
+      }}
+    >
       <DockviewReact
         className="workbench-dockview"
         theme={{ ...dockTheme, tabAnimation: "smooth" as const }}
