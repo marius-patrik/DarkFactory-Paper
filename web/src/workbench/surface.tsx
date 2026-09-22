@@ -19,6 +19,34 @@ function paramsOf(panel: any): WorkbenchTab | null {
     : null;
 }
 
+const WORKBENCH_TAB_MIME = "application/x-github-workbench-tab";
+
+type CrossSurfaceDrag = {
+  id: string;
+  source: WorkbenchSurface;
+};
+
+function dragPayload(event: DragEvent): CrossSurfaceDrag | null {
+  const raw = event.dataTransfer?.getData(WORKBENCH_TAB_MIME);
+  if (!raw) return null;
+  try {
+    const parsed = JSON.parse(raw) as Partial<CrossSurfaceDrag>;
+    if (
+      typeof parsed.id === "string" &&
+      (parsed.source === "primary" || parsed.source === "main" || parsed.source === "secondary" || parsed.source === "panel")
+    ) return parsed as CrossSurfaceDrag;
+  } catch {
+  }
+  return null;
+}
+
+function dropDirection(position: unknown) {
+  if (position === "left" || position === "right") return position;
+  if (position === "top") return "above";
+  if (position === "bottom") return "below";
+  return "within";
+}
+
 export function WorkbenchSurfaceView({
   surface,
   restoredLayout,
@@ -148,6 +176,33 @@ export function WorkbenchSurfaceView({
         onReady={(event: any) => {
           const api = event.api;
           onReady(surface, api);
+
+          api.onWillDragPanel?.((event: any) => {
+            if (!(event.nativeEvent instanceof DragEvent)) return;
+            const tab = paramsOf(event.panel);
+            if (!tab || !event.nativeEvent.dataTransfer) return;
+            event.nativeEvent.dataTransfer.setData(
+              WORKBENCH_TAB_MIME,
+              JSON.stringify({ id: tab.id, source: surface } satisfies CrossSurfaceDrag),
+            );
+            event.nativeEvent.dataTransfer.effectAllowed = "move";
+          });
+          api.onUnhandledDragOver?.((event: any) => {
+            if (!(event.nativeEvent instanceof DragEvent)) return;
+            const payload = dragPayload(event.nativeEvent);
+            if (payload && payload.source !== surface) event.accept();
+          });
+          api.onDidDrop?.((event: any) => {
+            if (!(event.nativeEvent instanceof DragEvent)) return;
+            const payload = dragPayload(event.nativeEvent);
+            if (!payload || payload.source === surface) return;
+            const referencePanelId = event.group?.activePanel?.id ?? event.panel?.id;
+            runtimeRef.current.transferTab(payload.id, payload.source, surface, {
+              referencePanelId,
+              direction: dropDirection(event.position),
+            });
+          });
+
           let restored = false;
           if (restoredLayout) {
             try {
