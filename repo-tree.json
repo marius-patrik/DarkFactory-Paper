@@ -297,6 +297,31 @@
               ]
             },
             {
+              "name": "github",
+              "path": "web/src/github",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "auth.ts",
+                  "path": "web/src/github/auth.ts",
+                  "type": "file",
+                  "source": "repository/web/src/github/auth.ts"
+                },
+                {
+                  "name": "client.ts",
+                  "path": "web/src/github/client.ts",
+                  "type": "file",
+                  "source": "repository/web/src/github/client.ts"
+                },
+                {
+                  "name": "config.ts",
+                  "path": "web/src/github/config.ts",
+                  "type": "file",
+                  "source": "repository/web/src/github/config.ts"
+                }
+              ]
+            },
+            {
               "name": "lib",
               "path": "web/src/lib",
               "type": "directory",
@@ -438,6 +463,43 @@
               ]
             },
             {
+              "name": "workspace",
+              "path": "web/src/workspace",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "context.tsx",
+                  "path": "web/src/workspace/context.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workspace/context.tsx"
+                },
+                {
+                  "name": "languages.ts",
+                  "path": "web/src/workspace/languages.ts",
+                  "type": "file",
+                  "source": "repository/web/src/workspace/languages.ts"
+                },
+                {
+                  "name": "model.ts",
+                  "path": "web/src/workspace/model.ts",
+                  "type": "file",
+                  "source": "repository/web/src/workspace/model.ts"
+                },
+                {
+                  "name": "repository-dialog.tsx",
+                  "path": "web/src/workspace/repository-dialog.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workspace/repository-dialog.tsx"
+                },
+                {
+                  "name": "storage.ts",
+                  "path": "web/src/workspace/storage.ts",
+                  "type": "file",
+                  "source": "repository/web/src/workspace/storage.ts"
+                }
+              ]
+            },
+            {
               "name": "app.tsx",
               "path": "web/src/app.tsx",
               "type": "file",
@@ -448,6 +510,12 @@
               "path": "web/src/compiled-artifact.tsx",
               "type": "file",
               "source": "repository/web/src/compiled-artifact.tsx"
+            },
+            {
+              "name": "env.d.ts",
+              "path": "web/src/env.d.ts",
+              "type": "file",
+              "source": "repository/web/src/env.d.ts"
             },
             {
               "name": "main.tsx",
