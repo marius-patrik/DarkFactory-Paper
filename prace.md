@@ -216,7 +216,7 @@ Při generování dalšího tokenu lze uložené klíče a hodnoty předchozí s
 
 #### Degradace kontextu (Context Rot)
 
-V této práci označuje Context Rot pokles spolehlivosti, s níž model využívá relevantní informace v dlouhém nebo zahlceném kontextu. <sup>(<a href="#loc-96" role="doc-biblioref">16</a>)</sup>
+Degradace kontextu (Context Rot) označuje pokles spolehlivosti, s níž model využívá relevantní informace při růstu délky nebo informačního zatížení vstupního kontextu. <sup>(<a href="#loc-96" role="doc-biblioref">16</a>)</sup>
 
 Experimenty s dlouhým kontextem ukazují, že výkon může záviset na poloze relevantní informace a klesat, když je umístěna uvnitř dlouhého vstupu. <sup>(<a href="#loc-96" role="doc-biblioref">16</a>)</sup> *Praktický význam:* Degradace kontextu znamená, že pouhé zvětšování historie nemusí zachovat kvalitu rozhodování; agentní systém proto potřebuje selekci, sumarizaci nebo kompakci. Modelová vrstva poskytuje inferenční výstup, nikoli kontinuitu dlouhotrvající úlohy ani provedení účinků v externím prostředí. Přechod od izolovaného modelového volání k systému schopnému dlouhodobě jednat proto vyžaduje další vrstvu: Harness.
 
@@ -701,7 +701,7 @@ V této práci označují řídicí smyčky, které opakují jednání podle exp
 
 [**Degradace kontextu (Context Rot)**](#concept-context_rot)
 
-V této práci označuje Context Rot pokles spolehlivosti, s níž model využívá relevantní informace v dlouhém nebo zahlceném kontextu. <sup>(<a href="#loc-96" role="doc-biblioref">16</a>)</sup>
+Degradace kontextu (Context Rot) označuje pokles spolehlivosti, s níž model využívá relevantní informace při růstu délky nebo informačního zatížení vstupního kontextu. <sup>(<a href="#loc-96" role="doc-biblioref">16</a>)</sup>
 
 [**Dovednosti (Skills)**](#concept-skills)
 
