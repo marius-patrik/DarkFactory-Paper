@@ -150,3 +150,13 @@
 .workspace-auth-status.status-expired {
   color: var(--text);
 }
+
+
+.empty-workbench {
+  pointer-events: none;
+}
+
+.empty-workbench-card,
+.empty-workbench-card * {
+  pointer-events: auto;
+}
