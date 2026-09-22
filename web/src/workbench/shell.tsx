@@ -72,7 +72,11 @@ function visibleSizes(
 }
 
 function paramsOf(panel: any): WorkbenchTab | null {
-  const params = panel?.api?.getParameters?.() ?? panel?.params;
+  const apiParams = panel?.api?.getParameters?.();
+  const params =
+    apiParams && typeof apiParams.id === "string" && typeof apiParams.type === "string"
+      ? apiParams
+      : panel?.params;
   return params && typeof params.id === "string" && typeof params.type === "string" ? params as WorkbenchTab : null;
 }
 
