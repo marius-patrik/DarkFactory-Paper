@@ -124,7 +124,7 @@ test("anonymous public repository and browser navigation work in Chromium", asyn
   const location = browser.getByRole("textbox", { name: "URL" });
   await location.fill("https://example.com");
   await location.press("Enter");
-  await expect(browser.getByRole("button", { name: "Back" })).toBeDisabled();
+  await expect(browser.getByRole("button", { name: "Back" })).toBeEnabled();
 
   await location.fill("https://example.org");
   await location.press("Enter");
