@@ -32,7 +32,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
     2. [1.3.2 Dílčí cíle](#section-subgoals)
   4. [1.4 Výzkumné otázky](#section-research_questions)
   5. [1.5 Metodika](#section-methodology)
-6. [2 Teoretická část: Agentní vývoj softwaru](#section-theory)
+6. [2 Teoretická část: Agentické systémy ve vývoji softwaru](#section-theory)
   1. [2.1 Úvod](#section-theory_introduction)
   2. [2.2 AI-asistovaný vývoj](#section-ai_assisted_development)
     1. [2.2.1 Úvod](#section-ai_assisted_development_intro)
@@ -201,7 +201,7 @@ Praktická část používá zdrojový kód, typované kontrakty, testy, workflo
 
 Práce neprovádí statistický benchmark obecné výkonnosti agentních systémů. Odpovědi na výzkumné otázky jsou omezeny na tvrzení podporovaná konkrétními reprodukovatelnými důkazy.
 
-## 2 Teoretická část: Agentní vývoj softwaru
+## 2 Teoretická část: Agentické systémy ve vývoji softwaru
 
 Vymezení konceptů potřebných pro pochopení současného agentního vývoje softwaru.
 
