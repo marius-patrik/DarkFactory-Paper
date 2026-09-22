@@ -81,6 +81,7 @@ export function WorkbenchSurfaceView({
       if (!id || !runtimeRef.current.getTab(id)) return;
       const payload = { id, source: surface } satisfies CrossSurfaceDrag;
       activeCrossSurfaceDrag = payload;
+      document.documentElement.classList.add("workbench-tab-dragging");
       if (event.dataTransfer) {
         event.dataTransfer.setData(WORKBENCH_TAB_MIME, JSON.stringify(payload));
         event.dataTransfer.effectAllowed = "move";
@@ -95,9 +96,11 @@ export function WorkbenchSurfaceView({
     };
 
     document.addEventListener("dragstart", beginPanelDrag, true);
+    document.addEventListener("dragenter", bridgeExternalPanelDrag, true);
     document.addEventListener("dragover", bridgeExternalPanelDrag, true);
     return () => {
       document.removeEventListener("dragstart", beginPanelDrag, true);
+      document.removeEventListener("dragenter", bridgeExternalPanelDrag, true);
       document.removeEventListener("dragover", bridgeExternalPanelDrag, true);
     };
   }, [surface]);
@@ -105,6 +108,7 @@ export function WorkbenchSurfaceView({
   useEffect(() => {
     const clearDrag = () => {
       activeCrossSurfaceDrag = null;
+      document.documentElement.classList.remove("workbench-tab-dragging");
     };
     window.addEventListener("dragend", clearDrag);
     return () => window.removeEventListener("dragend", clearDrag);
