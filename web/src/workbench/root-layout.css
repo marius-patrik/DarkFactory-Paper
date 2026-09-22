@@ -175,6 +175,7 @@
 }
 
 
+.workbench-surface .dv-watermark-container,
 .workbench-surface .dv-watermark {
   pointer-events: none;
 }
