@@ -76,8 +76,9 @@ export function WorkbenchSurfaceView({
     const beginPanelDrag = (event: DragEvent) => {
       const root = rootRef.current;
       if (!root || !(event.target instanceof Element) || !root.contains(event.target)) return;
-      const tabElement = event.target.closest<HTMLElement>(".dv-tab[data-tab-panel-id]");
-      const id = tabElement?.dataset.tabPanelId;
+      const tabElement = event.target.closest<HTMLElement>(".dv-tab");
+      const workbenchTabElement = tabElement?.querySelector<HTMLElement>("[data-workbench-tab-id]");
+      const id = tabElement?.dataset.tabPanelId || workbenchTabElement?.dataset.workbenchTabId;
       if (!id || !runtimeRef.current.getTab(id)) return;
       const payload = { id, source: surface } satisfies CrossSurfaceDrag;
       activeCrossSurfaceDrag = payload;
@@ -121,7 +122,7 @@ export function WorkbenchSurfaceView({
   const tabComponents = useMemo(() => ({
     workbenchTab: (props: any) => {
       const tab = props.params as WorkbenchTab;
-      return <DockviewDefaultTab {...props} hideClose={Boolean(tab?.pinned)} />;
+      return <DockviewDefaultTab {...props} data-workbench-tab-id={tab?.id} hideClose={Boolean(tab?.pinned)} />;
     },
   }), []);
   const HeaderActions = useMemo(() => () => <LauncherButton surface={surface} />, [surface]);
