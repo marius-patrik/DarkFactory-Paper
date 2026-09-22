@@ -452,6 +452,7 @@ export function WorkbenchShell() {
   }, [persist, settings.theme, visibility]);
 
   const beginResize = useCallback((kind: ResizeKind, event: ReactPointerEvent<HTMLElement>) => {
+    if (event.pointerType === "mouse") return;
     event.preventDefault();
     const target = event.currentTarget;
     const pointerId = event.pointerId;
