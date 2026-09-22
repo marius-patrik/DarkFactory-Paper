@@ -45,145 +45,151 @@
       ]
     },
     {
-      "name": "DarkFactory",
-      "path": "DarkFactory",
+      "name": "paper",
+      "path": "paper",
       "type": "directory",
       "children": [
         {
           "name": "bib",
-          "path": "DarkFactory/bib",
+          "path": "paper/bib",
           "type": "directory",
           "children": [
             {
               "name": "references.bib",
-              "path": "DarkFactory/bib/references.bib",
+              "path": "paper/bib/references.bib",
               "type": "file",
-              "source": "repository/DarkFactory/bib/references.bib"
+              "source": "repository/paper/bib/references.bib"
             }
           ]
         },
         {
           "name": "data",
-          "path": "DarkFactory/data",
+          "path": "paper/data",
           "type": "directory",
           "children": [
             {
               "name": "phase2-evidence.json",
-              "path": "DarkFactory/data/phase2-evidence.json",
+              "path": "paper/data/phase2-evidence.json",
               "type": "file",
-              "source": "repository/DarkFactory/data/phase2-evidence.json"
+              "source": "repository/paper/data/phase2-evidence.json"
             }
           ]
         },
         {
           "name": "fonts",
-          "path": "DarkFactory/fonts",
+          "path": "paper/fonts",
           "type": "directory",
           "children": [
             {
               "name": "Caladea-Bold.ttf",
-              "path": "DarkFactory/fonts/Caladea-Bold.ttf",
+              "path": "paper/fonts/Caladea-Bold.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Caladea-Bold.ttf"
+              "source": "repository/paper/fonts/Caladea-Bold.ttf"
             },
             {
               "name": "Caladea-BoldItalic.ttf",
-              "path": "DarkFactory/fonts/Caladea-BoldItalic.ttf",
+              "path": "paper/fonts/Caladea-BoldItalic.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Caladea-BoldItalic.ttf"
+              "source": "repository/paper/fonts/Caladea-BoldItalic.ttf"
             },
             {
               "name": "Caladea-Italic.ttf",
-              "path": "DarkFactory/fonts/Caladea-Italic.ttf",
+              "path": "paper/fonts/Caladea-Italic.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Caladea-Italic.ttf"
+              "source": "repository/paper/fonts/Caladea-Italic.ttf"
             },
             {
               "name": "Caladea-Regular.ttf",
-              "path": "DarkFactory/fonts/Caladea-Regular.ttf",
+              "path": "paper/fonts/Caladea-Regular.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Caladea-Regular.ttf"
+              "source": "repository/paper/fonts/Caladea-Regular.ttf"
             },
             {
               "name": "Carlito-Bold.ttf",
-              "path": "DarkFactory/fonts/Carlito-Bold.ttf",
+              "path": "paper/fonts/Carlito-Bold.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Carlito-Bold.ttf"
+              "source": "repository/paper/fonts/Carlito-Bold.ttf"
             },
             {
               "name": "Carlito-BoldItalic.ttf",
-              "path": "DarkFactory/fonts/Carlito-BoldItalic.ttf",
+              "path": "paper/fonts/Carlito-BoldItalic.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Carlito-BoldItalic.ttf"
+              "source": "repository/paper/fonts/Carlito-BoldItalic.ttf"
             },
             {
               "name": "Carlito-Italic.ttf",
-              "path": "DarkFactory/fonts/Carlito-Italic.ttf",
+              "path": "paper/fonts/Carlito-Italic.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Carlito-Italic.ttf"
+              "source": "repository/paper/fonts/Carlito-Italic.ttf"
             },
             {
               "name": "Carlito-Regular.ttf",
-              "path": "DarkFactory/fonts/Carlito-Regular.ttf",
+              "path": "paper/fonts/Carlito-Regular.ttf",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/Carlito-Regular.ttf"
+              "source": "repository/paper/fonts/Carlito-Regular.ttf"
             },
             {
               "name": "README.md",
-              "path": "DarkFactory/fonts/README.md",
+              "path": "paper/fonts/README.md",
               "type": "file",
-              "source": "repository/DarkFactory/fonts/README.md"
+              "source": "repository/paper/fonts/README.md"
             }
           ]
         },
         {
           "name": "img",
-          "path": "DarkFactory/img",
+          "path": "paper/img",
           "type": "directory",
           "children": [
             {
               "name": "components-darkfactory.svg",
-              "path": "DarkFactory/img/components-darkfactory.svg",
+              "path": "paper/img/components-darkfactory.svg",
               "type": "file",
-              "source": "repository/DarkFactory/img/components-darkfactory.svg"
+              "source": "repository/paper/img/components-darkfactory.svg"
             },
             {
               "name": "docs-pipeline.svg",
-              "path": "DarkFactory/img/docs-pipeline.svg",
+              "path": "paper/img/docs-pipeline.svg",
               "type": "file",
-              "source": "repository/DarkFactory/img/docs-pipeline.svg"
+              "source": "repository/paper/img/docs-pipeline.svg"
             },
             {
               "name": "lifecycle-darkfactory.svg",
-              "path": "DarkFactory/img/lifecycle-darkfactory.svg",
+              "path": "paper/img/lifecycle-darkfactory.svg",
               "type": "file",
-              "source": "repository/DarkFactory/img/lifecycle-darkfactory.svg"
+              "source": "repository/paper/img/lifecycle-darkfactory.svg"
             },
             {
               "name": "logo.jpeg",
-              "path": "DarkFactory/img/logo.jpeg",
+              "path": "paper/img/logo.jpeg",
               "type": "file",
-              "source": "repository/DarkFactory/img/logo.jpeg"
+              "source": "repository/paper/img/logo.jpeg"
             },
             {
               "name": "react-loop.svg",
-              "path": "DarkFactory/img/react-loop.svg",
+              "path": "paper/img/react-loop.svg",
               "type": "file",
-              "source": "repository/DarkFactory/img/react-loop.svg"
+              "source": "repository/paper/img/react-loop.svg"
             },
             {
               "name": "vector-embedding-3d.svg",
-              "path": "DarkFactory/img/vector-embedding-3d.svg",
+              "path": "paper/img/vector-embedding-3d.svg",
               "type": "file",
-              "source": "repository/DarkFactory/img/vector-embedding-3d.svg"
+              "source": "repository/paper/img/vector-embedding-3d.svg"
             },
             {
               "name": "vector-embedding-queen.svg",
-              "path": "DarkFactory/img/vector-embedding-queen.svg",
+              "path": "paper/img/vector-embedding-queen.svg",
               "type": "file",
-              "source": "repository/DarkFactory/img/vector-embedding-queen.svg"
+              "source": "repository/paper/img/vector-embedding-queen.svg"
             }
           ]
+        },
+        {
+          "name": "PAPER.typ",
+          "path": "paper/PAPER.typ",
+          "type": "file",
+          "source": "repository/paper/PAPER.typ"
         }
       ]
     },
@@ -396,6 +402,12 @@
           "source": "repository/web/package.json"
         },
         {
+          "name": "PLAN.md",
+          "path": "web/PLAN.md",
+          "type": "file",
+          "source": "repository/web/PLAN.md"
+        },
+        {
           "name": "rsbuild.config.ts",
           "path": "web/rsbuild.config.ts",
           "type": "file",
@@ -445,18 +457,6 @@
       "type": "submodule",
       "source": null,
       "url": "https://github.com/marius-patrik/DarkFactory.git"
-    },
-    {
-      "name": "IDE_PLAN.md",
-      "path": "IDE_PLAN.md",
-      "type": "file",
-      "source": "repository/IDE_PLAN.md"
-    },
-    {
-      "name": "main.typ",
-      "path": "main.typ",
-      "type": "file",
-      "source": "repository/main.typ"
     },
     {
       "name": "Makefile",
