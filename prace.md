@@ -26,12 +26,12 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
 4. [Klíčová slova (Keywords)](#loc-4)
 5. [1 Úvod](#section-thesis_introduction)
   1. [1.1 Motivace a vymezení problému](#section-motivation_problem_definition)
-  2. [1.2 Východisko a argument práce](#section-thesis_argument)
-  3. [1.3 Cíle práce](#section-thesis_objectives)
+  2. [1.2 Argument](#section-thesis_argument)
+  3. [1.3 Cíle](#section-thesis_objectives)
     1. [1.3.1 Hlavní cíl](#section-main_goal)
     2. [1.3.2 Dílčí cíle](#section-subgoals)
   4. [1.4 Výzkumné otázky](#section-research_questions)
-  5. [1.5 Metodika práce](#section-methodology)
+  5. [1.5 Metodika](#section-methodology)
 6. [2 Teoretická část: Agentní vývoj softwaru](#section-theory)
   1. [2.1 Úvod](#section-theory_introduction)
   2. [2.2 AI-asistovaný vývoj](#section-ai_assisted_development)
@@ -152,15 +152,15 @@ Rozšíření generativní AI zároveň vytváří praktický důvod tyto systé
 
 DarkFactory slouží jako konkrétní artefakt, na kterém práce zkoumá oddělení modelu, trvalého stavu, prostředí, nástrojů a kontrolních mechanismů.
 
-### 1.2 Východisko a argument práce
+### 1.2 Argument
 
 Rostoucí schopnosti jazykových modelů mění vývoj softwaru od dílčí asistence k delegování stále delších a samostatnějších pracovních úloh.
 
 Argument práce postupuje v jedné návaznosti: jak AI mění způsob zadávání, provádění a ověřování softwarové práce; co samotný model skutečně je a dokáže; co kolem něj přidává Harness; jak Agentické inženýrství tyto mechanismy záměrně skládá a omezuje; jak je realizuje DarkFactory; a co o výsledku skutečně ukazují dostupné důkazy.
 
-### 1.3 Cíle práce
+### 1.3 Cíle
 
-Tato část stanovuje hlavní a dílčí cíle práce.
+Tato část stanovuje hlavní a dílčí cíle.
 
 Cíle vymezují, jaký artefakt má být navržen a které jeho vlastnosti mají být technicky ověřeny. Výzkumné otázky jsou odděleny do následující samostatné části.
 
@@ -189,7 +189,7 @@ Dílčí cíle oddělují teoretické vymezení, konstrukci artefaktu a jednotli
 
 O1 sleduje řízenou autonomii, O2 odolnost provádění a O3 kontinuitu stavu přes hranice jednotlivých modelových kontextů a běhů. Otázky jsou záměrně formulovány tak, aby na ně bylo možné odpovědět konkrétními architektonickými prvky a reprodukovatelnými důkazy z implementace.
 
-### 1.5 Metodika práce
+### 1.5 Metodika
 
 Práce používá konstrukční přístup odpovídající design science: vymezuje problém a cíle řešení, navrhuje a implementuje artefakt DarkFactory a následně jej vyhodnocuje pomocí reprodukovatelných technických důkazů. <sup><span id="loc-8">(</span><a href="#loc-70" role="doc-biblioref">4</a>)</sup> <sup><span id="loc-9">(</span><a href="#loc-71" role="doc-biblioref">5</a>)</sup>
 
