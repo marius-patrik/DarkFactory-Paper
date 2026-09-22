@@ -415,7 +415,7 @@ export function WorkbenchShell() {
     "--panel-size": `${effective.panel}px`,
   } as CSSProperties;
 
-  const beginResize = useCallback((kind: ResizeKind, event: ReactPointerEvent<HTMLDivElement>) => {
+  const beginResize = useCallback((kind: ResizeKind, event: ReactPointerEvent<HTMLElement>) => {
     event.preventDefault();
     event.currentTarget.setPointerCapture(event.pointerId);
     resizeRef.current = {
@@ -428,7 +428,7 @@ export function WorkbenchShell() {
     setResizeKind(kind);
   }, []);
 
-  const continueResize = useCallback((event: ReactPointerEvent<HTMLDivElement>) => {
+  const continueResize = useCallback((event: ReactPointerEvent<HTMLElement>) => {
     const session = resizeRef.current;
     if (!session || session.pointerId !== event.pointerId) return;
     event.preventDefault();
@@ -451,7 +451,7 @@ export function WorkbenchShell() {
     setSizes(next);
   }, [effective.primary, effective.secondary, viewport, visibility.primary, visibility.secondary]);
 
-  const endResize = useCallback((event: ReactPointerEvent<HTMLDivElement>) => {
+  const endResize = useCallback((event: ReactPointerEvent<HTMLElement>) => {
     const session = resizeRef.current;
     if (!session || session.pointerId !== event.pointerId) return;
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
