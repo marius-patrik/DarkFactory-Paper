@@ -5,6 +5,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import { GitBranch, PanelBottom, PanelLeft, PanelRight, UserRound } from "lucide-react";
@@ -236,16 +237,17 @@ export function WorkbenchShell() {
 
   const transferTab = useCallback((
     id: string,
-    source: WorkbenchSurface,
     target: WorkbenchSurface,
     drop: WorkbenchDropTarget,
   ) => {
-    if (source === target) return false;
-    const sourceApi = apis.current.get(source);
+    const found = locate(id);
+    if (!found || found.surface === target) return false;
+    const source = found.surface;
+    const sourceApi = found.api;
+    const sourcePanel = found.panel;
     const targetApi = apis.current.get(target);
-    const sourcePanel = sourceApi?.getPanel?.(id);
-    const tab = sourcePanel ? paramsOf(sourcePanel) : null;
-    if (!sourceApi || !targetApi || !sourcePanel || !tab) return false;
+    const tab = paramsOf(sourcePanel);
+    if (!targetApi || !tab) return false;
 
     const wasActive = sourceApi.activePanel?.id === id;
     const referencePanel = drop.referencePanelId && targetApi.getPanel?.(drop.referencePanelId)
@@ -291,7 +293,7 @@ export function WorkbenchShell() {
       layoutMutationRef.current = false;
       queueMicrotask(() => persist());
     }
-  }, [persist, setSurfaceVisible]);
+  }, [locate, persist, setSurfaceVisible]);
 
   const moveTab = useCallback((id: string, target: WorkbenchSurface) => {
     const found = locate(id);
@@ -301,7 +303,7 @@ export function WorkbenchShell() {
       return;
     }
     const targetApi = apis.current.get(target);
-    transferTab(id, found.surface, target, {
+    transferTab(id, target, {
       referencePanelId: targetApi?.activePanel?.id,
       direction: "within",
     });
@@ -430,6 +432,19 @@ export function WorkbenchShell() {
     setResizeKind(kind);
   }, []);
 
+  const beginMouseResize = useCallback((kind: ResizeKind, event: ReactMouseEvent<HTMLElement>) => {
+    event.preventDefault();
+    resizeRef.current = {
+      kind,
+      pointerId: -1,
+      target: event.currentTarget,
+      startX: event.clientX,
+      startY: event.clientY,
+      startSize: sizesRef.current[kind],
+    };
+    setResizeKind(kind);
+  }, []);
+
   const applyResize = useCallback((clientX: number, clientY: number) => {
     const session = resizeRef.current;
     if (!session) return;
@@ -455,7 +470,7 @@ export function WorkbenchShell() {
   const finishResize = useCallback(() => {
     const session = resizeRef.current;
     if (!session) return;
-    if (session.target.hasPointerCapture(session.pointerId)) {
+    if (session.pointerId >= 0 && session.target.hasPointerCapture(session.pointerId)) {
       session.target.releasePointerCapture(session.pointerId);
     }
     resizeRef.current = null;
@@ -551,6 +566,7 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.primary)}
             onPointerDown={(event) => beginResize("primary", event)}
+            onMouseDown={(event) => beginMouseResize("primary", event)}
           />
           <main className="root-surface root-main"><WorkbenchSurfaceView surface="main" restoredLayout={initial.surfaces.main.layout} defaultTabs={defaults.main} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></main>
           <hr
@@ -559,6 +575,7 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.secondary)}
             onPointerDown={(event) => beginResize("secondary", event)}
+            onMouseDown={(event) => beginMouseResize("secondary", event)}
           />
           <aside className="root-surface root-secondary"><WorkbenchSurfaceView surface="secondary" restoredLayout={initial.surfaces.secondary.layout} defaultTabs={defaults.secondary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
         </div>
@@ -568,6 +585,7 @@ export function WorkbenchShell() {
           aria-orientation="horizontal"
           aria-valuenow={Math.round(effective.panel)}
           onPointerDown={(event) => beginResize("panel", event)}
+          onMouseDown={(event) => beginMouseResize("panel", event)}
         />
         <section className="root-surface root-panel"><WorkbenchSurfaceView surface="panel" restoredLayout={initial.surfaces.panel.layout} defaultTabs={defaults.panel} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></section>
         <footer className="workbench-statusbar">
