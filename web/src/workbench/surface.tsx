@@ -73,6 +73,7 @@ export function WorkbenchSurfaceView({
       if (!id || !runtimeRef.current.getTab(id)) return;
       const payload = { id, source: surface } satisfies CrossSurfaceDrag;
       activeCrossSurfaceDrag = payload;
+      root.dataset.workbenchDndStage = `source:${id}`;
       document.documentElement.classList.add("workbench-tab-dragging");
       if (event.dataTransfer) {
         event.dataTransfer.setData(WORKBENCH_TAB_MIME, JSON.stringify(payload));
@@ -116,6 +117,7 @@ export function WorkbenchSurfaceView({
       if (!payload) return;
       event.preventDefault();
       event.stopPropagation();
+      root.dataset.workbenchDndStage = `accepted:${payload.id}`;
       if (event.dataTransfer) event.dataTransfer.dropEffect = "move";
     };
 
@@ -124,7 +126,9 @@ export function WorkbenchSurfaceView({
       if (!payload) return;
       event.preventDefault();
       event.stopPropagation();
+      root.dataset.workbenchDndStage = `drop:${payload.id}`;
       const moved = runtimeRef.current.transferTab(payload.id, surface, destinationFor(event));
+      root.dataset.workbenchDndStage = `${moved ? "moved" : "move-failed"}:${payload.id}`;
       if (moved) activeCrossSurfaceDrag = null;
     };
 
