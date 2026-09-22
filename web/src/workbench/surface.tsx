@@ -163,7 +163,7 @@ export function WorkbenchSurfaceView({
   };
 
   return (
-    <div className={`workbench-surface workbench-surface-${surface}`}>
+    <div className={`workbench-surface workbench-surface-${surface}`} data-workbench-surface={surface}>
       <DockviewReact
         className="workbench-dockview"
         theme={{ ...dockTheme, tabAnimation: "smooth" as const }}
