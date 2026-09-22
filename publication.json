@@ -1,13 +1,13 @@
 {
-  "commit": "f366cf294c8e0c18e47e0c70bf477603b4f4d75e",
+  "commit": "c10cb4eb2b6084aaebb8431c2176db29ff77692a",
   "book": "DarkFactory",
-  "work_title": "DarkFactory",
+  "work_title": "AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory",
   "default_template": "gjkt-odborna-prace",
   "templates": [
     "gjkt-odborna-prace"
   ],
   "publication": {
-    "title": "DarkFactory",
+    "title": "AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory",
     "final": "prace.pdf",
     "review": "prace-review.pdf",
     "artifacts": {
