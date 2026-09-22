@@ -370,6 +370,36 @@
                   "source": "repository/web/src/tabs/explorer-tab.tsx"
                 },
                 {
+                  "name": "github-actions-tabs.tsx",
+                  "path": "web/src/tabs/github-actions-tabs.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/github-actions-tabs.tsx"
+                },
+                {
+                  "name": "github-issues-tabs.tsx",
+                  "path": "web/src/tabs/github-issues-tabs.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/github-issues-tabs.tsx"
+                },
+                {
+                  "name": "github-pr-tabs.tsx",
+                  "path": "web/src/tabs/github-pr-tabs.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/github-pr-tabs.tsx"
+                },
+                {
+                  "name": "github-repo-tabs.tsx",
+                  "path": "web/src/tabs/github-repo-tabs.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/github-repo-tabs.tsx"
+                },
+                {
+                  "name": "github-tab-common.tsx",
+                  "path": "web/src/tabs/github-tab-common.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/github-tab-common.tsx"
+                },
+                {
                   "name": "output-tab.tsx",
                   "path": "web/src/tabs/output-tab.tsx",
                   "type": "file",
