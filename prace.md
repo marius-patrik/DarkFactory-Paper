@@ -14,7 +14,7 @@ This thesis examines the use of agentic artificial intelligence in software deve
 
 ## Klíčová slova (Keywords)
 
-Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Orchestrátor (Orchestrator), Pluginy (Plugins), Plán DarkFactory (Planning), Plánování (Planning), Požadavek (Request), Pracovní graf (Workflow Graph), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Skripty (Scripts), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Tokenizér (Tokenizer), Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
+Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Orchestrátor (Orchestrator), Pluginy (Plugins), Plán DarkFactory (Planning), Plánování (Planning), Požadavek (Request), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Skripty (Scripts), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Tokenizér (Tokenizer), Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
 
 ## Obsah
 
@@ -103,7 +103,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
       1. [Subagent](#concept-subagent)
       2. [Orchestrátor (Orchestrator)](#concept-orchestrator)
       3. [Předání řízení (Handoff)](#concept-handoff)
-      4. [Pracovní graf (Workflow Graph)](#concept-workflow_graphs)
+      4. [Graf pracovního postupu (Workflow Graph)](#concept-workflow_graphs)
     5. [2.5.5 Závěr](#section-agentic_engineering_conclusion)
 7. [3 Praktická část](#section-practical)
   1. [3.1 Úvod](#section-practical_introduction)
@@ -612,7 +612,7 @@ Vzor koordinace, při kterém aktivní agent předá další řízení specializ
 
 Handoff se liší od centralizované orchestrace tím, že specialista není pouze zavolán jako dílčí pracovní jednotka a vrácen orchestrátoru, ale přebírá aktivní pokračování interakce nebo úlohy. <sup>(<a href="#loc-110" role="doc-biblioref">44</a>)</sup>
 
-##### Pracovní graf (Workflow Graph)
+##### Graf pracovního postupu (Workflow Graph)
 
 Explicitní grafová reprezentace vícefázového workflow, v níž uzly představují dílčí práci a hrany určují přechody nebo závislosti mezi kroky. <sup>(<a href="#loc-111" role="doc-biblioref">45</a>)</sup>
 
@@ -891,6 +891,10 @@ Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načít
 
 Závěrečná kontrola, která před integrací ověřuje soulad implementace s aktuálním schváleným Planningem a případnými schválenými změnami rozsahu.
 
+[**Graf pracovního postupu (Workflow Graph)**](#concept-workflow_graphs)
+
+Explicitní grafová reprezentace vícefázového workflow, v níž uzly představují dílčí práci a hrany určují přechody nebo závislosti mezi kroky. <sup>(<a href="#loc-111" role="doc-biblioref">45</a>)</sup>
+
 [**Guardrail**](#concept-guardrail)
 
 V této práci označuje Guardrail programově vynucenou kontrolu, která může před pokračováním běhu validovat nebo zablokovat vstup, výstup či použití nástroje. <sup>(<a href="#loc-108" role="doc-biblioref">42</a>)</sup>
@@ -958,10 +962,6 @@ Převod požadavku na explicitní kroky, závislosti a podmínky ověření pře
 [**Požadavek (Request)**](#concept-darkfactory_request)
 
 Trvale evidovaná jednotka práce, která zachovává původní zadání a stav doručení před zahájením implementace.
-
-[**Pracovní graf (Workflow Graph)**](#concept-workflow_graphs)
-
-Explicitní grafová reprezentace vícefázového workflow, v níž uzly představují dílčí práci a hrany určují přechody nebo závislosti mezi kroky. <sup>(<a href="#loc-111" role="doc-biblioref">45</a>)</sup>
 
 [**Prompt Injection**](#concept-prompt_injection)
 
