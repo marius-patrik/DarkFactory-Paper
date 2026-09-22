@@ -170,11 +170,11 @@ DarkFactory je implementační artefakt této architektury. Splnění cíle se p
 
 #### 1.3.2 Dílčí cíle
 
-- Vymezit teoretické mechanismy Software Engineering, Modelu, Harnessu a Agentic Engineering potřebné pro dlouhotrvající agentní vývoj softwaru.
-- Navrhnout a implementovat DarkFactory s explicitním stavem běhu, odděleným prostředím, capability rozhraním, GitHub control plane a oddělenými hranicemi lidské a strojové identity.
-- Implementovat mechanismy řízeného životního cyklu požadavku: Planning, deterministické ověření, review/fix, Final Alignment, integraci a obnovu přerušeného běhu.
+- Vymezit teoretické mechanismy AI-asistovaného vývoje, jazykového modelu a inference, Harnessu a Agentického inženýrství potřebné pro dlouhotrvající agentní vývoj softwaru.
+- Navrhnout a implementovat DarkFactory s explicitním stavem běhu, odděleným prostředím, rozšiřitelným capability rozhraním, GitHubem jako řídicí vrstvou a oddělenými hranicemi lidské a strojové identity.
+- Implementovat mechanismy řízeného životního cyklu změny: plánování, deterministické ověření, smyčku revize a opravy, finální kontrolu souladu, integraci a obnovu přerušeného běhu.
 - Ověřit implementované mechanismy automatickými testy a CI nad konkrétním commitem.
-- Ověřit přenositelnost vybraných částí řešení na konkrétních cílových repozitářích a samostatně vyhodnotit, zda existuje důkaz celého živého end-to-end Request lifecycle.
+- Ověřit přenositelnost vybraných částí řešení na konkrétních cílových repozitářích a samostatně vyhodnotit, zda existuje důkaz úplného živého životního cyklu změny.
 - Vztáhnout zjištěné výsledky a jejich omezení přímo k výzkumným otázkám.
 
 Dílčí cíle oddělují teoretické vymezení, konstrukci artefaktu a jednotlivé úrovně jeho ověření. Nesplněná nebo neprokázaná úroveň evaluace proto nemusí být nahrazena silnějším tvrzením z jiné vrstvy důkazů.
@@ -191,11 +191,11 @@ O1 sleduje řízenou autonomii, O2 odolnost provádění a O3 kontinuitu stavu p
 
 Práce používá konstrukční přístup odpovídající design science: vymezuje problém a cíle řešení, navrhuje a implementuje artefakt DarkFactory a následně jej vyhodnocuje pomocí reprodukovatelných technických důkazů. <sup><span id="loc-8">(</span><a href="#loc-70" role="doc-biblioref">4</a>)</sup> <sup><span id="loc-9">(</span><a href="#loc-71" role="doc-biblioref">5</a>)</sup>
 
-Teoretická část vychází z odborných článků, standardů, protokolových specifikací a primární dokumentace současných agentních systémů. Jednotlivé mechanismy jsou rozděleny do samostatných konceptů, aby bylo možné oddělit vlastnosti [***Velký jazykový model (LLM)***](#concept-language_model)<sup>*</sup>, harnessu a technik Agentic Engineering.
+Teoretická část vychází z odborných článků, standardů, protokolových specifikací a primární dokumentace současných agentních systémů. Jednotlivé mechanismy jsou rozděleny do samostatných konceptů, aby bylo možné oddělit vlastnosti [***Velký jazykový model (LLM)***](#concept-language_model)<sup>*</sup>, mechanismy Harnessu a postupy Agentického inženýrství.
 
 Předmětem práce není trénování neuronových sítí, optimalizace vah ani matematický rozbor učení modelu. [***Velký jazykový model (LLM)***](#concept-language_model)<sup>*</sup> je chápán jako hotová inferenční komponenta a je popsán pouze v rozsahu potřebném pro vysvětlení architektury okolního systému.
 
-Praktická část používá zdrojový kód, typované kontrakty, testy, workflow a generované artefakty DarkFactory jako primární důkaz skutečné implementace. Evaluace rozlišuje architektonický důkaz, automatizované funkční testy, CI nad konkrétním commitem a provozní ověření na konkrétních cílových repozitářích. Tvrzení o kompletním produkčním Request lifecycle je přijato pouze tehdy, pokud existuje reprodukovatelný živý průchod od schválení Planningu po merge a rekonciliaci; aktuální absence tohoto důkazu je uvedena jako omezení, nikoli nahrazena architektonickým předpokladem.
+Praktická část používá zdrojový kód, typované kontrakty, testy, pracovní postupy a generované artefakty DarkFactory jako primární důkaz skutečné implementace. Evaluace rozlišuje architektonický důkaz, automatizované funkční testy, CI nad konkrétním commitem a provozní ověření na konkrétních cílových repozitářích. Tvrzení o úplném produkčním životním cyklu změny je přijato pouze tehdy, pokud existuje reprodukovatelný živý průchod od schválení plánu po sloučení změny a rekonciliaci; aktuální absence tohoto důkazu je uvedena jako omezení, nikoli nahrazena architektonickým předpokladem.
 
 Práce neprovádí statistický benchmark obecné výkonnosti agentních systémů. Odpovědi na výzkumné otázky jsou omezeny na tvrzení podporovaná konkrétními reprodukovatelnými důkazy.
 
@@ -363,9 +363,9 @@ Experimenty s dlouhým kontextem ukazují, že výkon může záviset na poloze 
 
 #### 2.3.4 Závěr
 
-Modelová vrstva převádí vstupní sekvenci na další výstup prostřednictvím inference omezené dostupným kontextem a běhovými prostředky.
+Modelová vrstva poskytuje inferenční výstup, nikoli kontinuitu dlouhotrvající úlohy ani provedení účinků v externím prostředí.
 
-Pro delší autonomní práci nestačí samotná inference: s rostoucím kontextem se zhoršuje spolehlivé využití relevantních informací a systém musí mimo model udržovat kontinuitu úlohy i skutečné účinky. Tuto hranici přebírá Harness.
+Přechod od izolovaného modelového volání k systému schopnému dlouhodobě jednat proto vyžaduje další vrstvu. Tuto hranici přebírá Harness.
 
 ### 2.4 Harness
 
@@ -665,7 +665,7 @@ DarkFactory používá kanonické stavy Backlog, ToDo, In Progress, Blocked, Don
 
 Přerušený životní cyklus se nevrací automaticky na začátek; pokračování musí navázat na poslední potvrzený stav změny.
 
-Konkrétní Recovery mechanismus patří do kanonické autogenerated dokumentace DarkFactory v části 3.2. Z pohledu životního cyklu je podstatné pouze to, že obnovení nesmí znovu provést již potvrzený účinek ani přijmout stav, jehož původ nebo aktuálnost už nelze doložit. <sup>(<a href="#loc-112" role="doc-biblioref">46</a>)</sup>
+Konkrétní mechanismus obnovy patří do kanonické automaticky generované dokumentace DarkFactory v části 3.2. Z pohledu životního cyklu je podstatné pouze to, že obnovení nesmí znovu provést již potvrzený účinek ani přijmout stav, jehož původ nebo aktuálnost už nelze doložit. <sup>(<a href="#loc-112" role="doc-biblioref">46</a>)</sup>
 
 #### 3.3.7 Závěr
 
