@@ -11,7 +11,6 @@
 #let liu2024 = <liu2024>
 #let dao2022 = <dao2022>
 #let ainslie2023 = <ainslie2023>
-#let wang2024survey = <wang2024survey>
 #let schick2023toolformer = <schick2023toolformer>
 #let lewis2020rag = <lewis2020rag>
 #let jiang2023llmlingua = <jiang2023llmlingua>
@@ -22,14 +21,10 @@
 #let wu2023autogen = <wu2023autogen>
 #let sommerville2016 = <sommerville2016>
 #let anthropic2024tooluse = <anthropic2024tooluse>
-#let openai_codex_app = <openai-codex-app>
-#let anthropic_claude_code = <anthropic-claude-code>
-#let anthropic_claude_desktop = <anthropic-claude-desktop>
 #let karpathy2025vibecoding = <karpathy2025vibecoding>
 #let willison2025vibecoding = <willison2025vibecoding>
 #let cambridge2026aislop = <cambridge2026aislop>
 #let agent_skills_spec = <agentskills-spec>
-#let json_schema_2020 = <json-schema2020>
 #let openai_structured_outputs = <openai2024structuredoutputs>
 #let anthropic_code_execution = <anthropic2026codeexecution>
 #let fowler2025sdd = <fowler2025sdd>
@@ -41,16 +36,12 @@
 #let claude_code_mcp = <claude-code-mcp>
 #let github_branches = <github-branches>
 #let github_pull_requests = <github-pull-requests>
-#let docker_containers_docs = <docker-containers-docs>
 #let anthropic_context_engineering = <anthropic-context-engineering>
 #let anthropic_harness_design = <anthropic-harness-design>
 #let anthropic_managed_agents = <anthropic-managed-agents>
 #let owasp_prompt_injection = <owasp-prompt-injection>
 #let openai_prompt_injection = <openai-prompt-injection>
 #let openai_agent_orchestration = <openai-agent-orchestration>
-#let autogen_swarm = <autogen-swarm>
-#let networkx_dag = <networkx-dag>
-#let oci_runtime_spec = <oci-runtime-spec>
 #let hevner2004designscience = <hevner2004designscience>
 #let peffers2007dsrm = <peffers2007dsrm>
 #let microsoft_ai_diffusion_2026 = <microsoft-ai-diffusion-2026>
@@ -70,6 +61,7 @@
 #let darkfactory_paper_release_35617820286 = <darkfactory-paper-release-35617820286>
 #let darkfactory_request_359 = <darkfactory-request-359>
 
+#let vllm_inference_engine = <vllm-inference-engine>
 #let bib = (
   darkfactory: darkfactory,
   humble2010: humble2010,
@@ -81,7 +73,6 @@
   liu2024: liu2024,
   dao2022: dao2022,
   ainslie2023: ainslie2023,
-  wang2024survey: wang2024survey,
   schick2023toolformer: schick2023toolformer,
   lewis2020rag: lewis2020rag,
   jiang2023llmlingua: jiang2023llmlingua,
@@ -92,14 +83,10 @@
   wu2023autogen: wu2023autogen,
   sommerville2016: sommerville2016,
   anthropic2024tooluse: anthropic2024tooluse,
-  openai_codex_app: openai_codex_app,
-  anthropic_claude_code: anthropic_claude_code,
-  anthropic_claude_desktop: anthropic_claude_desktop,
   karpathy2025vibecoding: karpathy2025vibecoding,
   willison2025vibecoding: willison2025vibecoding,
   cambridge2026aislop: cambridge2026aislop,
   agent_skills_spec: agent_skills_spec,
-  json_schema_2020: json_schema_2020,
   openai_structured_outputs: openai_structured_outputs,
   anthropic_code_execution: anthropic_code_execution,
   fowler2025sdd: fowler2025sdd,
@@ -111,16 +98,12 @@
   claude_code_mcp: claude_code_mcp,
   github_branches: github_branches,
   github_pull_requests: github_pull_requests,
-  docker_containers_docs: docker_containers_docs,
   anthropic_context_engineering: anthropic_context_engineering,
   anthropic_harness_design: anthropic_harness_design,
   anthropic_managed_agents: anthropic_managed_agents,
   owasp_prompt_injection: owasp_prompt_injection,
   openai_prompt_injection: openai_prompt_injection,
   openai_agent_orchestration: openai_agent_orchestration,
-  autogen_swarm: autogen_swarm,
-  networkx_dag: networkx_dag,
-  oci_runtime_spec: oci_runtime_spec,
   hevner2004designscience: hevner2004designscience,
   peffers2007dsrm: peffers2007dsrm,
   microsoft_ai_diffusion_2026: microsoft_ai_diffusion_2026,
@@ -139,4 +122,5 @@
   darkfactory_paper_deploy_35617820271: darkfactory_paper_deploy_35617820271,
   darkfactory_paper_release_35617820286: darkfactory_paper_release_35617820286,
   darkfactory_request_359: darkfactory_request_359,
+  vllm_inference_engine: vllm_inference_engine,
 )
