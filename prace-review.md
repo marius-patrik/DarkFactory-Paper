@@ -14,7 +14,7 @@ This thesis examines the use of agentic artificial intelligence in software deve
 
 ## Klíčová slova (Keywords)
 
-Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Orchestrátor (Orchestrator), Pluginy (Plugins), Plán DarkFactory (Planning), Plánování (Planning), Požadavek (Request), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Skripty (Scripts), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Tokenizér (Tokenizer), Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
+Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Orchestrátor (Orchestrator), Plán DarkFactory (Planning), Plánování (Planning), Požadavek (Request), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
 
 ## Obsah
 
@@ -54,7 +54,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
     2. [2.3.2 Jazykový model](#section-language_model_group)
       1. [Velký jazykový model (LLM)](#concept-language_model)
       2. [Transformer](#concept-transformer)
-      3. [Tokenizér (Tokenizer)](#concept-tokenizer)
+      3. [Tokenizér](#concept-tokenizer)
       4. [Token](#concept-token)
       5. [Vektorová reprezentace (Embedding)](#concept-embedding)
     3. [2.3.3 Inference](#section-model_inference)
@@ -80,8 +80,8 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
       5. [Izolované prostředí (Sandbox)](#concept-sandbox)
     4. [2.4.4 Dovednosti a rozšíření](#section-harness_skills_extensions)
       1. [Dovednosti (Skills)](#concept-skills)
-      2. [Pluginy (Plugins)](#concept-plugins)
-      3. [Skripty (Scripts)](#concept-scripts)
+      2. [Plugin](#concept-plugins)
+      3. [Skript](#concept-scripts)
       4. [Hooks](#concept-hooks)
       5. [MCP](#concept-mcp)
     5. [2.4.5 Závěr](#section-harness_conclusion)
@@ -315,7 +315,7 @@ Architektura neuronové sítě založená na mechanismu pozornosti, který model
 
 Při autoregresivním generování dekodér z dosavadní sekvence vytváří reprezentaci použitou k odhadu následujícího tokenu. <sup>(<a href="#loc-83" role="doc-biblioref">17</a>)</sup>
 
-##### Tokenizér (Tokenizer)
+##### Tokenizér
 
 Komponenta, která převádí vstup na posloupnost tokenů a jejich identifikátorů a provádí odpovídající zpětné dekódování. <sup><span id="loc-23">(</span><a href="#loc-84" role="doc-biblioref">18</a>)</sup>
 
@@ -455,13 +455,13 @@ Znovupoužitelný balíček instrukcí a volitelných zdrojů, který se načít
 
 Agent Skill je definován souborem `SKILL.md` s YAML frontmatterem a instrukcemi v Markdownu; může odkazovat na doplňující skripty, reference nebo další zdroje načítané podle potřeby. <sup>(<a href="#loc-97" role="doc-biblioref">31</a>)</sup>
 
-##### Pluginy (Plugins)
+##### Plugin
 
 Distribuovatelné rozšíření, které do hostitelského agentního prostředí přidává další chování nebo integrace. <sup><span id="loc-38">(</span><a href="#loc-98" role="doc-biblioref">32</a>)</sup>
 
 Konkrétní platforma může plugin použít jako obal pro různé druhy rozšíření, například skills, hooks, agenty nebo konfiguraci externích integrací. Plugin zde proto označuje způsob balení a distribuce, nikoli nadřazenou kategorii všech mechanismů Harnessu. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
 
-##### Skripty (Scripts)
+##### Skript
 
 Spustitelné soubory nebo posloupnosti příkazů používané k deterministickému provedení opakovatelné operace. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
 
@@ -912,10 +912,6 @@ Rozhraní, kterým agent vyvolává operace mimo samotnou textovou inferenci, na
 
 Koordinační role nebo komponenta, která rozhoduje, kterému specializovanému agentovi předat dílčí práci a jak jeho výsledek začlenit do pokračujícího běhu. <sup>(<a href="#loc-110" role="doc-biblioref">44</a>)</sup>
 
-[**Pluginy (Plugins)**](#concept-plugins)
-
-Distribuovatelné rozšíření, které do hostitelského agentního prostředí přidává další chování nebo integrace. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
-
 [**Plán DarkFactory (Planning)**](#concept-darkfactory_planning)
 
 Verzovaný a revidovaný plánovací artefakt, který převádí konkrétní Request a aktuální stav repozitáře na závazný rámec implementace a ověření.
@@ -964,10 +960,6 @@ Architektura, ve které systém před generováním vyhledá relevantní informa
 
 Sjednocení trvalého stavu Requestu, pull requestu, projektu a souvisejících workflow po dokončení nebo změně životního cyklu.
 
-[**Skripty (Scripts)**](#concept-scripts)
-
-Spustitelné soubory nebo posloupnosti příkazů používané k deterministickému provedení opakovatelné operace. <sup>(<a href="#loc-98" role="doc-biblioref">32</a>)</sup>
-
 [**Slop**](#concept-slop)
 
 Neformální označení pro nekvalitní digitální obsah, zejména obsah vytvořený umělou inteligencí. <sup>(<a href="#loc-80" role="doc-biblioref">14</a>)</sup>
@@ -999,10 +991,6 @@ Systémová instrukční vrstva, která vymezuje roli, pravidla a výchozí způ
 [**Token**](#concept-token)
 
 Diskrétní jednotka vstupní nebo výstupní sekvence reprezentovaná identifikátorem ve slovníku tokenizéru. <sup>(<a href="#loc-84" role="doc-biblioref">18</a>)</sup>
-
-[**Tokenizér (Tokenizer)**](#concept-tokenizer)
-
-Komponenta, která převádí vstup na posloupnost tokenů a jejich identifikátorů a provádí odpovídající zpětné dekódování. <sup>(<a href="#loc-84" role="doc-biblioref">18</a>)</sup>
 
 [**Transformer**](#concept-transformer)
 
