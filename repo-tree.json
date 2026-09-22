@@ -217,12 +217,6 @@
           "source": "repository/scripts/check_build.py"
         },
         {
-          "name": "consolidate_paper.py",
-          "path": "scripts/consolidate_paper.py",
-          "type": "file",
-          "source": "repository/scripts/consolidate_paper.py"
-        },
-        {
           "name": "fetch_external_assets.py",
           "path": "scripts/fetch_external_assets.py",
           "type": "file",

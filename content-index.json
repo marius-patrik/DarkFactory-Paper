@@ -33,32 +33,22 @@
           "anchor": "section-thesis_introduction"
         },
         {
-          "title": "2 Jazykový model",
+          "title": "2 Teoretická část",
           "level": 2,
-          "anchor": "section-model"
+          "anchor": "section-theory"
         },
         {
-          "title": "3 Harness",
+          "title": "3 Praktická část",
           "level": 2,
-          "anchor": "section-harness"
+          "anchor": "section-practical"
         },
         {
-          "title": "4 AI-asistovaný vývoj a agentické inženýrství",
-          "level": 2,
-          "anchor": "section-agentic_engineering"
-        },
-        {
-          "title": "5 DarkFactory",
-          "level": 2,
-          "anchor": "section-darkfactory"
-        },
-        {
-          "title": "6 Vyhodnocení",
+          "title": "4 Výsledky a diskuse",
           "level": 2,
           "anchor": "section-evaluation"
         },
         {
-          "title": "7 Závěr",
+          "title": "5 Závěr",
           "level": 2,
           "anchor": "section-conclusion"
         },
@@ -115,32 +105,22 @@
           "anchor": "section-thesis_introduction"
         },
         {
-          "title": "2 Jazykový model",
+          "title": "2 Teoretická část",
           "level": 2,
-          "anchor": "section-model"
+          "anchor": "section-theory"
         },
         {
-          "title": "3 Harness",
+          "title": "3 Praktická část",
           "level": 2,
-          "anchor": "section-harness"
+          "anchor": "section-practical"
         },
         {
-          "title": "4 AI-asistovaný vývoj a agentické inženýrství",
-          "level": 2,
-          "anchor": "section-agentic_engineering"
-        },
-        {
-          "title": "5 DarkFactory",
-          "level": 2,
-          "anchor": "section-darkfactory"
-        },
-        {
-          "title": "6 Vyhodnocení",
+          "title": "4 Výsledky a diskuse",
           "level": 2,
           "anchor": "section-evaluation"
         },
         {
-          "title": "7 Závěr",
+          "title": "5 Závěr",
           "level": 2,
           "anchor": "section-conclusion"
         },
