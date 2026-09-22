@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   DockviewDefaultTab,
   DockviewReact,
@@ -24,6 +24,8 @@ type CrossSurfaceDrag = {
   id: string;
   source: WorkbenchSurface;
 };
+
+let activeCrossSurfaceDrag: CrossSurfaceDrag | null = null;
 
 function dragPayload(event: DragEvent): CrossSurfaceDrag | null {
   const raw = event.dataTransfer?.getData(WORKBENCH_TAB_MIME);
@@ -64,6 +66,14 @@ export function WorkbenchSurfaceView({
   runtimeRef.current = runtime;
   const [panelCount, setPanelCount] = useState(0);
   const initialized = useRef(false);
+
+  useEffect(() => {
+    const clearDrag = () => {
+      activeCrossSurfaceDrag = null;
+    };
+    window.addEventListener("dragend", clearDrag);
+    return () => window.removeEventListener("dragend", clearDrag);
+  }, []);
 
   const components = useMemo(() => ({ workbench: (props: any) => <WorkbenchPanel props={props} /> }), []);
   const tabComponents = useMemo(() => ({
@@ -177,29 +187,32 @@ export function WorkbenchSurfaceView({
           onReady(surface, api);
 
           api.onWillDragPanel?.((event: any) => {
-            if (!(event.nativeEvent instanceof DragEvent)) return;
             const tab = paramsOf(event.panel);
-            if (!tab || !event.nativeEvent.dataTransfer) return;
-            event.nativeEvent.dataTransfer.setData(
-              WORKBENCH_TAB_MIME,
-              JSON.stringify({ id: tab.id, source: surface } satisfies CrossSurfaceDrag),
-            );
-            event.nativeEvent.dataTransfer.effectAllowed = "move";
+            if (!tab) return;
+            const payload = { id: tab.id, source: surface } satisfies CrossSurfaceDrag;
+            activeCrossSurfaceDrag = payload;
+            if (event.nativeEvent instanceof DragEvent && event.nativeEvent.dataTransfer) {
+              event.nativeEvent.dataTransfer.setData(WORKBENCH_TAB_MIME, JSON.stringify(payload));
+              event.nativeEvent.dataTransfer.effectAllowed = "move";
+            }
           });
           api.onUnhandledDragOver?.((event: any) => {
-            if (!(event.nativeEvent instanceof DragEvent)) return;
-            const payload = dragPayload(event.nativeEvent);
+            const payload = event.nativeEvent instanceof DragEvent
+              ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
+              : activeCrossSurfaceDrag;
             if (payload && payload.source !== surface) event.accept();
           });
           api.onDidDrop?.((event: any) => {
-            if (!(event.nativeEvent instanceof DragEvent)) return;
-            const payload = dragPayload(event.nativeEvent);
+            const payload = event.nativeEvent instanceof DragEvent
+              ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
+              : activeCrossSurfaceDrag;
             if (!payload || payload.source === surface) return;
             const referencePanelId = event.group?.activePanel?.id ?? event.panel?.id;
-            runtimeRef.current.transferTab(payload.id, payload.source, surface, {
+            const moved = runtimeRef.current.transferTab(payload.id, payload.source, surface, {
               referencePanelId,
               direction: dropDirection(event.position),
             });
+            if (moved) activeCrossSurfaceDrag = null;
           });
 
           let restored = false;
