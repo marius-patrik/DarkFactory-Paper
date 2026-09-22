@@ -32,11 +32,15 @@
 .root-resizer {
   position: relative;
   z-index: 50;
+  display: block;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   border: 0;
   min-width: 0;
   min-height: 0;
+  pointer-events: auto;
   touch-action: none;
   background: transparent;
 }
