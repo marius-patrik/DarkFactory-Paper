@@ -5,6 +5,7 @@ import {
   useRef,
   useState,
   type CSSProperties,
+  type MouseEvent as ReactMouseEvent,
   type PointerEvent as ReactPointerEvent,
 } from "react";
 import { GitBranch, PanelBottom, PanelLeft, PanelRight, UserRound } from "lucide-react";
@@ -485,6 +486,39 @@ export function WorkbenchShell() {
     target.addEventListener("pointercancel", finish);
   }, [applyResize, finishResize]);
 
+  const beginMouseResize = useCallback((kind: ResizeKind, event: ReactMouseEvent<HTMLElement>) => {
+    if (resizeRef.current) return;
+    event.preventDefault();
+    const target = event.currentTarget;
+    resizeRef.current = {
+      kind,
+      pointerId: -1,
+      target,
+      startX: event.clientX,
+      startY: event.clientY,
+      startSize: sizesRef.current[kind],
+    };
+    setResizeKind(kind);
+
+    const move = (nativeEvent: MouseEvent) => {
+      if (!resizeRef.current) return;
+      nativeEvent.preventDefault();
+      applyResize(nativeEvent.clientX, nativeEvent.clientY);
+    };
+    const finish = () => {
+      target.removeEventListener("mousemove", move);
+      target.removeEventListener("mouseup", finish);
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", finish);
+      finishResize();
+    };
+
+    target.addEventListener("mousemove", move, { passive: false });
+    target.addEventListener("mouseup", finish);
+    window.addEventListener("mousemove", move, { passive: false });
+    window.addEventListener("mouseup", finish);
+  }, [applyResize, finishResize]);
+
   const resizeClass = resizeKind ? ` root-resizing root-resizing-${resizeKind === "panel" ? "row" : "column"}` : "";
 
   return (
@@ -538,6 +572,7 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.primary)}
             onPointerDown={(event) => beginResize("primary", event)}
+            onMouseDown={(event) => beginMouseResize("primary", event)}
           />
           <main className="root-surface root-main"><WorkbenchSurfaceView surface="main" restoredLayout={initial.surfaces.main.layout} defaultTabs={defaults.main} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></main>
           <hr
@@ -546,6 +581,7 @@ export function WorkbenchShell() {
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.secondary)}
             onPointerDown={(event) => beginResize("secondary", event)}
+            onMouseDown={(event) => beginMouseResize("secondary", event)}
           />
           <aside className="root-surface root-secondary"><WorkbenchSurfaceView surface="secondary" restoredLayout={initial.surfaces.secondary.layout} defaultTabs={defaults.secondary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
         </div>
@@ -555,6 +591,7 @@ export function WorkbenchShell() {
           aria-orientation="horizontal"
           aria-valuenow={Math.round(effective.panel)}
           onPointerDown={(event) => beginResize("panel", event)}
+          onMouseDown={(event) => beginMouseResize("panel", event)}
         />
         <section className="root-surface root-panel"><WorkbenchSurfaceView surface="panel" restoredLayout={initial.surfaces.panel.layout} defaultTabs={defaults.panel} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></section>
         <footer className="workbench-statusbar">
