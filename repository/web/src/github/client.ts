@@ -45,6 +45,22 @@ export type GithubRef = {
   kind: "branch" | "tag";
 };
 
+export type GithubGitRef = {
+  ref: string;
+  object: { sha: string; type: string; url: string };
+};
+
+export type GithubCreatedBlob = { sha: string };
+export type GithubCreatedTree = { sha: string; tree: GithubTreeEntry[] };
+export type GithubCreatedCommit = { sha: string; tree: { sha: string } };
+
+export type GithubTreeMutation = {
+  path: string;
+  mode: string;
+  type: "blob";
+  sha: string | null;
+};
+
 async function githubFetch<T>(path: string, token: string | null, init?: RequestInit): Promise<T> {
   const response = await fetch(path.startsWith("http") ? path : `https://api.github.com${path}`, {
     ...init,
@@ -84,11 +100,42 @@ export function getGithubCommit(fullName: string, ref: string, token: string | n
   );
 }
 
-export function getGithubTree(fullName: string, ref: string, token: string | null) {
+async function getGithubTreeNode(fullName: string, sha: string, token: string | null) {
   return githubFetch<GithubTree>(
+    `/repos/${fullName}/git/trees/${encodeURIComponent(sha)}`,
+    token,
+  );
+}
+
+async function walkGithubTree(
+  fullName: string,
+  sha: string,
+  token: string | null,
+  prefix = "",
+): Promise<GithubTreeEntry[]> {
+  const node = await getGithubTreeNode(fullName, sha, token);
+  const entries: GithubTreeEntry[] = [];
+  for (const entry of node.tree) {
+    const path = prefix ? `${prefix}/${entry.path}` : entry.path;
+    entries.push({ ...entry, path });
+    if (entry.type === "tree") {
+      entries.push(...await walkGithubTree(fullName, entry.sha, token, path));
+    }
+  }
+  return entries;
+}
+
+export async function getGithubTree(fullName: string, ref: string, token: string | null) {
+  const recursive = await githubFetch<GithubTree>(
     `/repos/${fullName}/git/trees/${encodeURIComponent(ref)}?recursive=1`,
     token,
   );
+  if (!recursive.truncated) return recursive;
+  return {
+    sha: recursive.sha,
+    truncated: false,
+    tree: await walkGithubTree(fullName, recursive.sha, token),
+  } satisfies GithubTree;
 }
 
 export async function listGithubRefs(fullName: string, token: string | null) {
@@ -108,17 +155,115 @@ export async function listGithubRefs(fullName: string, token: string | null) {
   ];
 }
 
-function decodeBase64Utf8(content: string) {
-  const binary = atob(content.replace(/\n/g, ""));
-  const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+export async function getGithubBlob(fullName: string, sha: string, token: string | null) {
+  const bytes = await getGithubBlobBytes(fullName, sha, token);
   return new TextDecoder().decode(bytes);
 }
 
-export async function getGithubBlob(fullName: string, sha: string, token: string | null) {
+
+function encodedRefPath(branch: string) {
+  return branch.split("/").map(encodeURIComponent).join("/");
+}
+
+function requireToken(token: string | null) {
+  if (!token) throw new Error("A GitHub token is required for remote writes.");
+  return token;
+}
+
+export function getGithubBranchRef(fullName: string, branch: string, token: string | null) {
+  return githubFetch<GithubGitRef>(
+    `/repos/${fullName}/git/ref/heads/${encodedRefPath(branch)}`,
+    token,
+  );
+}
+
+export function createGithubBlob(fullName: string, content: string, token: string | null) {
+  return githubFetch<GithubCreatedBlob>(
+    `/repos/${fullName}/git/blobs`,
+    requireToken(token),
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content, encoding: "utf-8" }),
+    },
+  );
+}
+
+export function createGithubTree(
+  fullName: string,
+  baseTree: string,
+  tree: GithubTreeMutation[],
+  token: string | null,
+) {
+  return githubFetch<GithubCreatedTree>(
+    `/repos/${fullName}/git/trees`,
+    requireToken(token),
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ base_tree: baseTree, tree }),
+    },
+  );
+}
+
+export function createGithubCommit(
+  fullName: string,
+  message: string,
+  tree: string,
+  parents: string[],
+  token: string | null,
+) {
+  return githubFetch<GithubCreatedCommit>(
+    `/repos/${fullName}/git/commits`,
+    requireToken(token),
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, tree, parents }),
+    },
+  );
+}
+
+export function updateGithubBranchRef(
+  fullName: string,
+  branch: string,
+  sha: string,
+  token: string | null,
+) {
+  return githubFetch<GithubGitRef>(
+    `/repos/${fullName}/git/refs/heads/${encodedRefPath(branch)}`,
+    requireToken(token),
+    {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sha, force: false }),
+    },
+  );
+}
+
+export function createGithubBranchRef(
+  fullName: string,
+  branch: string,
+  sha: string,
+  token: string | null,
+) {
+  return githubFetch<GithubGitRef>(
+    `/repos/${fullName}/git/refs`,
+    requireToken(token),
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ref: `refs/heads/${branch}`, sha }),
+    },
+  );
+}
+
+export async function getGithubBlobBytes(fullName: string, sha: string, token: string | null) {
   const payload = await githubFetch<{ content: string; encoding: string }>(
     `/repos/${fullName}/git/blobs/${sha}`,
     token,
   );
   if (payload.encoding !== "base64") throw new Error(`Unsupported GitHub blob encoding: ${payload.encoding}`);
-  return decodeBase64Utf8(payload.content);
+  const binary = atob(payload.content.replace(/\n/g, ""));
+  return Uint8Array.from(binary, (character) => character.charCodeAt(0));
 }

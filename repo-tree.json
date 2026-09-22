@@ -346,6 +346,12 @@
                   "source": "repository/web/src/tabs/browser-tab.tsx"
                 },
                 {
+                  "name": "diff-tab.tsx",
+                  "path": "web/src/tabs/diff-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/diff-tab.tsx"
+                },
+                {
                   "name": "document-tab.tsx",
                   "path": "web/src/tabs/document-tab.tsx",
                   "type": "file",
@@ -472,6 +478,12 @@
                   "path": "web/src/workspace/context.tsx",
                   "type": "file",
                   "source": "repository/web/src/workspace/context.tsx"
+                },
+                {
+                  "name": "export.ts",
+                  "path": "web/src/workspace/export.ts",
+                  "type": "file",
+                  "source": "repository/web/src/workspace/export.ts"
                 },
                 {
                   "name": "languages.ts",
