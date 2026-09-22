@@ -197,18 +197,22 @@ export function WorkbenchSurfaceView({
             }
           });
           api.onUnhandledDragOver?.((event: any) => {
+            const dockviewPanelId = event.getData?.()?.panelId;
             const payload = event.nativeEvent instanceof DragEvent
               ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
               : activeCrossSurfaceDrag;
-            if (payload && payload.source !== surface) event.accept();
+            const id = typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id;
+            if (id && runtimeRef.current.getTab(id)) event.accept();
           });
           api.onDidDrop?.((event: any) => {
+            const dockviewPanelId = event.getData?.()?.panelId;
             const payload = event.nativeEvent instanceof DragEvent
               ? dragPayload(event.nativeEvent) ?? activeCrossSurfaceDrag
               : activeCrossSurfaceDrag;
-            if (!payload || payload.source === surface) return;
+            const id = typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id;
+            if (!id || !runtimeRef.current.getTab(id)) return;
             const referencePanelId = event.group?.activePanel?.id ?? event.panel?.id;
-            const moved = runtimeRef.current.transferTab(payload.id, payload.source, surface, {
+            const moved = runtimeRef.current.transferTab(id, surface, {
               referencePanelId,
               direction: dropDirection(event.position),
             });
