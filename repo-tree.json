@@ -1273,16 +1273,16 @@
       "source": "repository/AGENTS.md"
     },
     {
+      "name": "BACKLOG.md",
+      "path": "BACKLOG.md",
+      "type": "file",
+      "source": "repository/BACKLOG.md"
+    },
+    {
       "name": "books.typ",
       "path": "books.typ",
       "type": "file",
       "source": "repository/books.typ"
-    },
-    {
-      "name": "consolidated.typ",
-      "path": "consolidated.typ",
-      "type": "file",
-      "source": "repository/consolidated.typ"
     },
     {
       "name": "darkfactory",
@@ -1290,12 +1290,6 @@
       "type": "submodule",
       "source": null,
       "url": "https://github.com/marius-patrik/DarkFactory.git"
-    },
-    {
-      "name": "FUTURE_TODO.md",
-      "path": "FUTURE_TODO.md",
-      "type": "file",
-      "source": "repository/FUTURE_TODO.md"
     },
     {
       "name": "IDE_PLAN.md",
