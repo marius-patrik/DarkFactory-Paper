@@ -342,6 +342,19 @@
           ]
         },
         {
+          "name": "data",
+          "path": "DarkFactory/data",
+          "type": "directory",
+          "children": [
+            {
+              "name": "phase2-evidence.json",
+              "path": "DarkFactory/data/phase2-evidence.json",
+              "type": "file",
+              "source": "repository/DarkFactory/data/phase2-evidence.json"
+            }
+          ]
+        },
+        {
           "name": "fonts",
           "path": "DarkFactory/fonts",
           "type": "directory",
@@ -524,6 +537,12 @@
               ]
             },
             {
+              "name": "benchmark.typ",
+              "path": "DarkFactory/language-models/benchmark.typ",
+              "type": "file",
+              "source": "repository/DarkFactory/language-models/benchmark.typ"
+            },
+            {
               "name": "index.typ",
               "path": "DarkFactory/language-models/index.typ",
               "type": "file",
@@ -654,6 +673,12 @@
                   "path": "DarkFactory/manuscript/introduction/motivation",
                   "type": "directory",
                   "children": [
+                    {
+                      "name": "evidence.typ",
+                      "path": "DarkFactory/manuscript/introduction/motivation/evidence.typ",
+                      "type": "file",
+                      "source": "repository/DarkFactory/manuscript/introduction/motivation/evidence.typ"
+                    },
                     {
                       "name": "index.typ",
                       "path": "DarkFactory/manuscript/introduction/motivation/index.typ",
@@ -1029,6 +1054,12 @@
           "path": "scripts/preview_server.py",
           "type": "file",
           "source": "repository/scripts/preview_server.py"
+        },
+        {
+          "name": "render_phase2_evidence.py",
+          "path": "scripts/render_phase2_evidence.py",
+          "type": "file",
+          "source": "repository/scripts/render_phase2_evidence.py"
         }
       ]
     },
