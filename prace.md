@@ -14,7 +14,7 @@ This thesis examines the use of agentic artificial intelligence in software deve
 
 ## Klíčová slova (Keywords)
 
-Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Orchestrátor (Orchestrator), Plán DarkFactory (Planning), Plánování (Planning), Požadavek (Request), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
+Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Plán DarkFactory (Planning), Plánování (Planning), Požadavek (Request), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
 
 ## Obsah
 
@@ -101,7 +101,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
       3. [Člověk ve smyčce (HITL)](#concept-human_in_the_loop)
     4. [2.5.4 Orchestrace agentů](#section-agentic_orchestration)
       1. [Subagent](#concept-subagent)
-      2. [Orchestrátor (Orchestrator)](#concept-orchestrator)
+      2. [Orchestrátor](#concept-orchestrator)
       3. [Předání řízení (Handoff)](#concept-handoff)
       4. [Graf pracovního postupu (Workflow Graph)](#concept-workflow_graphs)
     5. [2.5.5 Závěr](#section-agentic_engineering_conclusion)
@@ -565,7 +565,7 @@ Specializovaná agentní instance, které jiný agent nebo orchestrátor deleguj
 
 Subagent umožňuje oddělit roli, instrukce a pracovní kontext dílčí úlohy od koordinujícího běhu a následně vrátit výsledek zpět nadřazené orchestrace. <sup><span id="loc-51">(</span><a href="#loc-111" role="doc-biblioref">45</a>)</sup> <sup>(<a href="#loc-110" role="doc-biblioref">44</a>)</sup>
 
-##### Orchestrátor (Orchestrator)
+##### Orchestrátor
 
 Koordinační role nebo komponenta, která rozhoduje, kterému specializovanému agentovi předat dílčí práci a jak jeho výsledek začlenit do pokračujícího běhu. <sup>(<a href="#loc-110" role="doc-biblioref">44</a>)</sup>
 
@@ -907,10 +907,6 @@ Mezipaměť dříve vypočtených klíčů a hodnot v pozornostních vrstvách t
 [**Nástroje (Tools)**](#concept-tools)
 
 Rozhraní, kterým agent vyvolává operace mimo samotnou textovou inferenci, například čtení dat, volání API nebo změnu stavu systému. <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
-
-[**Orchestrátor (Orchestrator)**](#concept-orchestrator)
-
-Koordinační role nebo komponenta, která rozhoduje, kterému specializovanému agentovi předat dílčí práci a jak jeho výsledek začlenit do pokračujícího běhu. <sup>(<a href="#loc-110" role="doc-biblioref">44</a>)</sup>
 
 [**Plán DarkFactory (Planning)**](#concept-darkfactory_planning)
 
