@@ -382,6 +382,12 @@
                   "source": "repository/web/src/tabs/problems-tab.tsx"
                 },
                 {
+                  "name": "resource-view.tsx",
+                  "path": "web/src/tabs/resource-view.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/resource-view.tsx"
+                },
+                {
                   "name": "search-tab.tsx",
                   "path": "web/src/tabs/search-tab.tsx",
                   "type": "file",
