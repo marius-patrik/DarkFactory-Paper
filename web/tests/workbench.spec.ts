@@ -79,22 +79,24 @@ test("tabs move across all root Dockview surfaces and recover after reload", asy
   await dragTab(page, "primary", "Explorer", "main");
   await dragTab(page, "main", "Explorer", "secondary");
   await dragTab(page, "secondary", "Explorer", "panel");
-  await dragTab(page, "panel", "Explorer", "main");
 
-  const launcher = surface(page, "main").getByRole("button", { name: "Open tab launcher" });
-  await launcher.click();
-  await page.getByRole("menuitem", { name: "Browser", exact: true }).click();
+  await surface(page, "main").getByRole("button", { name: "Browser", exact: true }).click();
   await expect(tab(page, "main", "Browser")).toBeVisible();
 
-  await tab(page, "main", "Explorer").dragTo(tab(page, "main", "Browser"));
+  await tab(page, "panel", "Explorer").dragTo(tab(page, "main", "Browser"));
   await expect(tab(page, "main", "Explorer")).toBeVisible();
+  await expect(tab(page, "panel", "Explorer")).toHaveCount(0);
+
+  await dragTab(page, "main", "Explorer", "panel");
 
   const mainDock = surface(page, "main").locator(".workbench-dockview");
   const dockBox = await mainDock.boundingBox();
   if (!dockBox) throw new Error("main Dockview is not visible");
-  await tab(page, "main", "Explorer").dragTo(mainDock, {
+  await tab(page, "panel", "Explorer").dragTo(mainDock, {
     targetPosition: { x: Math.max(4, dockBox.width - 8), y: Math.max(20, dockBox.height / 2) },
   });
+  await expect(tab(page, "main", "Explorer")).toBeVisible();
+  await expect(tab(page, "panel", "Explorer")).toHaveCount(0);
   await expect(surface(page, "main").locator(".dv-groupview")).toHaveCount(2);
 
   await page.reload();
@@ -105,7 +107,7 @@ test("tabs move across all root Dockview surfaces and recover after reload", asy
 
 test("anonymous public repository and browser navigation work in Chromium", async ({ page }) => {
   await page.getByRole("button", { name: /Open Repository/ }).first().click();
-  await page.getByLabel("Repository").fill("marius-patrik/DarkFactory-Paper");
+  await page.getByRole("textbox", { name: "Repository" }).fill("marius-patrik/DarkFactory-Paper");
   await page.getByRole("button", { name: "Open", exact: true }).click();
   await expect(page.locator(".workspace-repository-button")).toContainText("marius-patrik/DarkFactory-Paper", {
     timeout: 20_000,
