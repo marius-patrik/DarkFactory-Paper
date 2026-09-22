@@ -81,6 +81,7 @@ export function WorkbenchSurfaceView({
       if (!id || !runtimeRef.current.getTab(id)) return;
       const payload = { id, source: surface } satisfies CrossSurfaceDrag;
       activeCrossSurfaceDrag = payload;
+      root.dataset.workbenchDndStage = `source:${id}`;
       document.documentElement.classList.add("workbench-tab-dragging");
       if (event.dataTransfer) {
         event.dataTransfer.setData(WORKBENCH_TAB_MIME, JSON.stringify(payload));
@@ -90,8 +91,10 @@ export function WorkbenchSurfaceView({
 
     const bridgeExternalPanelDrag = (event: DragEvent) => {
       if (!activeCrossSurfaceDrag || !(event.target instanceof Element)) return;
-      const destination = event.target.closest<HTMLElement>("[data-workbench-surface]")?.dataset.workbenchSurface;
+      const destinationRoot = event.target.closest<HTMLElement>("[data-workbench-surface]");
+      const destination = destinationRoot?.dataset.workbenchSurface;
       if (!destination || destination === activeCrossSurfaceDrag.source) return;
+      if (destinationRoot) destinationRoot.dataset.workbenchDndStage = `bridged:${activeCrossSurfaceDrag.id}`;
       transfer.clearData(PanelTransfer.prototype);
     };
 
@@ -233,11 +236,13 @@ export function WorkbenchSurfaceView({
           const id = activeCrossSurfaceDrag?.id
             ?? (typeof dockviewPanelId === "string" ? dockviewPanelId : payload?.id);
           if (!id || !runtimeRef.current.getTab(id)) return;
+          if (rootRef.current) rootRef.current.dataset.workbenchDndStage = `dropped:${id}`;
           const referencePanelId = event.group?.activePanel?.id ?? event.panel?.id;
           const moved = runtimeRef.current.transferTab(id, surface, {
             referencePanelId,
             direction: dropDirection(event.position),
           });
+          if (rootRef.current) rootRef.current.dataset.workbenchDndStage = `${moved ? "moved" : "move-failed"}:${id}`;
           if (moved) activeCrossSurfaceDrag = null;
         }}
         onReady={(event: any) => {
@@ -265,7 +270,10 @@ export function WorkbenchSurfaceView({
               id &&
               activeCrossSurfaceDrag?.source !== surface &&
               runtimeRef.current.getTab(id)
-            ) event.accept();
+            ) {
+              if (rootRef.current) rootRef.current.dataset.workbenchDndStage = `accepted:${id}`;
+              event.accept();
+            }
           });
           let restored = false;
           if (restoredLayout) {
