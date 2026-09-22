@@ -335,6 +335,25 @@
               ]
             },
             {
+              "name": "renderers",
+              "path": "web/src/renderers",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "capabilities.ts",
+                  "path": "web/src/renderers/capabilities.ts",
+                  "type": "file",
+                  "source": "repository/web/src/renderers/capabilities.ts"
+                },
+                {
+                  "name": "registry.tsx",
+                  "path": "web/src/renderers/registry.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/renderers/registry.tsx"
+                }
+              ]
+            },
+            {
               "name": "tabs",
               "path": "web/src/tabs",
               "type": "directory",
