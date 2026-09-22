@@ -35,6 +35,7 @@ async function dragTab(
     },
   });
   await expect.poll(async () => Number(await target.getAttribute("data-acceptance-drag-events") || "0")).toBeGreaterThan(0);
+  await expect.poll(async () => await surface(page, to).getAttribute("data-workbench-dnd-stage")).toMatch(/accepted|dropped|moved|move-failed/);
   await expect(tab(page, to, label)).toBeVisible();
   await expect(tab(page, from, label)).toHaveCount(0);
 }
