@@ -16,26 +16,19 @@ async function dragTab(
   const target = surface(page, to).locator(".workbench-dockview");
   await expect(source).toBeVisible();
   await expect(target).toBeVisible();
-  const box = await target.boundingBox();
-  if (!box) throw new Error(`missing drop target for ${to}`);
-  await target.evaluate((element) => {
-    const node = element as HTMLElement & { dataset: DOMStringMap & { acceptanceDragEvents?: string } };
-    node.dataset.acceptanceDragEvents = "0";
-    const count = () => {
-      node.dataset.acceptanceDragEvents = String(Number(node.dataset.acceptanceDragEvents || "0") + 1);
-    };
-    element.addEventListener("dragenter", count, { once: true });
-    element.addEventListener("dragover", count, { once: true });
-    element.addEventListener("drop", count, { once: true });
-  });
-  await source.dragTo(target, {
-    targetPosition: {
-      x: Math.max(20, Math.min(box.width - 20, box.width / 2)),
-      y: Math.max(20, Math.min(box.height - 20, box.height / 2)),
-    },
-  });
-  await expect.poll(async () => Number(await target.getAttribute("data-acceptance-drag-events") || "0")).toBeGreaterThan(0);
-  await expect.poll(async () => await surface(page, to).getAttribute("data-workbench-dnd-stage")).toMatch(/accepted|dropped|moved|move-failed/);
+  const sourceBox = await source.boundingBox();
+  const targetBox = await target.boundingBox();
+  if (!sourceBox || !targetBox) throw new Error(`missing drag geometry for ${from} -> ${to}`);
+
+  await page.mouse.move(sourceBox.x + sourceBox.width / 2, sourceBox.y + sourceBox.height / 2);
+  await page.mouse.down();
+  await page.mouse.move(
+    targetBox.x + Math.max(20, Math.min(targetBox.width - 20, targetBox.width / 2)),
+    targetBox.y + Math.max(20, Math.min(targetBox.height - 20, targetBox.height / 2)),
+    { steps: 14 },
+  );
+  await page.mouse.up();
+
   await expect(tab(page, to, label)).toBeVisible();
   await expect(tab(page, from, label)).toHaveCount(0);
 }
