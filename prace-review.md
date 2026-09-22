@@ -14,7 +14,7 @@ This thesis examines the use of agentic artificial intelligence in software deve
 
 ## Klíčová slova (Keywords)
 
-Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Plán DarkFactory (Planning), Plánování (Planning), Požadavek (Request), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
+Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goal Loops), Degradace kontextu (Context Rot), Deterministické ověření (Deterministic Verification), Dovednosti (Skills), Finální kontrola souladu (Final Alignment), Graf pracovního postupu (Workflow Graph), Guardrail, Harness, Hooks, Inferenční engine (Inference Engine), Integrační test (Integration Test), Izolované prostředí (Sandbox), Kompakce kontextu (Context Compaction), Kontextové inženýrství (Context Engineering), Kontextové okno (Context Window), MCP, Mezipaměť klíčů a hodnot (KV Cache), Nástroje (Tools), Plánování (Planning), Požadavek (Request), Prompt Injection, Promptové inženýrství (Prompt Engineering), Prostředí agenta (Agent Environment), Průběžná integrace (CI), Pull Request, Předání řízení (Handoff), Přepis (Transcript), RAG, Rekonciliace stavu (Reconciliation), Slop, Smyčka revize a opravy (Review/Fix Loop), Spouštění kódu (Code Execution), Správa verzí (Version Control), Stav (State), Subagent, Systémový prompt (System Prompt), Token, Transformer, Vektorová reprezentace (Embedding), Velký jazykový model (LLM), Vibe Coding, Vkládání kontextu (Context Injection), Vyvolávání nástrojů (Tool Calling), Vývoj řízený specifikací (Spec-Driven Development), Větev (Branch), Člověk ve smyčce (HITL)
 
 ## Obsah
 
@@ -112,7 +112,7 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
     1. [3.3.1 Úvod](#section-change_lifecycle_intro)
     2. [3.3.2 Zadání a plán](#section-change_request_plan)
       1. [Požadavek (Request)](#concept-darkfactory_request)
-      2. [Plán DarkFactory (Planning)](#concept-darkfactory_planning)
+      2. [Plán DarkFactory](#concept-darkfactory_planning)
     3. [3.3.3 Implementace](#section-change_implementation)
     4. [3.3.4 Ověření a revize](#section-change_verification_review)
       1. [Deterministické ověření (Deterministic Verification)](#concept-deterministic_verification)
@@ -615,7 +615,7 @@ Pořadí odděluje zadání a plán, provedení změny, její ověření a reviz
 
 První fáze odděluje původní záměr od závazného rámce, podle kterého bude změna provedena a později posouzena.
 
-[***Požadavek (Request)***](#concept-darkfactory_request)<sup>*</sup> zachovává zdrojový záměr, zatímco [***Plán DarkFactory (Planning)***](#concept-darkfactory_planning)<sup>*</sup> z něj vytváří schválený pracovní kontrakt pro následující fáze. Smyslem oddělení je zabránit tomu, aby implementace sama průběžně měnila kritéria, podle kterých bude hodnocena. <sup><span id="loc-52">(</span><a href="#loc-112" role="doc-biblioref">46</a>)</sup>
+[***Požadavek (Request)***](#concept-darkfactory_request)<sup>*</sup> zachovává zdrojový záměr, zatímco [***Plán DarkFactory***](#concept-darkfactory_planning)<sup>*</sup> z něj vytváří schválený pracovní kontrakt pro následující fáze. Smyslem oddělení je zabránit tomu, aby implementace sama průběžně měnila kritéria, podle kterých bude hodnocena. <sup><span id="loc-52">(</span><a href="#loc-112" role="doc-biblioref">46</a>)</sup>
 
 ##### Požadavek (Request)
 
@@ -623,7 +623,7 @@ Trvale evidovaná jednotka práce, která zachovává původní zadání a stav 
 
 DarkFactory váže řízenou práci na Request reprezentovaný v GitHubu a používá jeho verzi, acceptance criteria a vztahy jako vstup do Planning a následného životního cyklu.
 
-##### Plán DarkFactory (Planning)
+##### Plán DarkFactory
 
 Verzovaný a revidovaný plánovací artefakt, který převádí konkrétní Request a aktuální stav repozitáře na závazný rámec implementace a ověření.
 
@@ -907,10 +907,6 @@ Mezipaměť dříve vypočtených klíčů a hodnot v pozornostních vrstvách t
 [**Nástroje (Tools)**](#concept-tools)
 
 Rozhraní, kterým agent vyvolává operace mimo samotnou textovou inferenci, například čtení dat, volání API nebo změnu stavu systému. <sup>(<a href="#loc-67" role="doc-biblioref">1</a>)</sup>
-
-[**Plán DarkFactory (Planning)**](#concept-darkfactory_planning)
-
-Verzovaný a revidovaný plánovací artefakt, který převádí konkrétní Request a aktuální stav repozitáře na závazný rámec implementace a ověření.
 
 [**Plánování (Planning)**](#concept-planning)
 
