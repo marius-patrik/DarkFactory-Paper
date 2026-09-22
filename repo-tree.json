@@ -451,6 +451,12 @@
               "source": "repository/DarkFactory/img/react-loop.svg"
             },
             {
+              "name": "vector-embedding-3d.svg",
+              "path": "DarkFactory/img/vector-embedding-3d.svg",
+              "type": "file",
+              "source": "repository/DarkFactory/img/vector-embedding-3d.svg"
+            },
+            {
               "name": "vector-embedding-queen.svg",
               "path": "DarkFactory/img/vector-embedding-queen.svg",
               "type": "file",
@@ -1044,6 +1050,12 @@
           "source": "repository/scripts/check_build.py"
         },
         {
+          "name": "consolidate_paper.py",
+          "path": "scripts/consolidate_paper.py",
+          "type": "file",
+          "source": "repository/scripts/consolidate_paper.py"
+        },
+        {
           "name": "fetch_external_assets.py",
           "path": "scripts/fetch_external_assets.py",
           "type": "file",
@@ -1267,6 +1279,12 @@
       "source": "repository/books.typ"
     },
     {
+      "name": "consolidated.typ",
+      "path": "consolidated.typ",
+      "type": "file",
+      "source": "repository/consolidated.typ"
+    },
+    {
       "name": "darkfactory",
       "path": "darkfactory",
       "type": "submodule",
@@ -1314,6 +1332,12 @@
       "path": "review.typ",
       "type": "file",
       "source": "repository/review.typ"
+    },
+    {
+      "name": "SCHOOL_RULES.md",
+      "path": "SCHOOL_RULES.md",
+      "type": "file",
+      "source": "repository/SCHOOL_RULES.md"
     },
     {
       "name": "typst.toml",

@@ -9,7 +9,6 @@
 #let anthropic_prompt = <anthropic-prompt>
 #let yao2022 = <yao2022>
 #let liu2024 = <liu2024>
-#let dao2022 = <dao2022>
 #let ainslie2023 = <ainslie2023>
 #let schick2023toolformer = <schick2023toolformer>
 #let lewis2020rag = <lewis2020rag>
@@ -18,6 +17,9 @@
 #let mosqueira2023human = <mosqueira2023human>
 #let sennrich2016bpe = <sennrich2016bpe>
 #let mikolov2013word2vec = <mikolov2013word2vec>
+#let mikolov2013linguistic = <mikolov2013linguistic>
+#let mikolov2013compositionality = <mikolov2013compositionality>
+#let kwon2023pagedattention = <kwon2023pagedattention>
 #let wu2023autogen = <wu2023autogen>
 #let sommerville2016 = <sommerville2016>
 #let anthropic2024tooluse = <anthropic2024tooluse>
@@ -82,7 +84,6 @@
   anthropic_prompt: anthropic_prompt,
   yao2022: yao2022,
   liu2024: liu2024,
-  dao2022: dao2022,
   ainslie2023: ainslie2023,
   schick2023toolformer: schick2023toolformer,
   lewis2020rag: lewis2020rag,
@@ -91,6 +92,9 @@
   mosqueira2023human: mosqueira2023human,
   sennrich2016bpe: sennrich2016bpe,
   mikolov2013word2vec: mikolov2013word2vec,
+  mikolov2013linguistic: mikolov2013linguistic,
+  mikolov2013compositionality: mikolov2013compositionality,
+  kwon2023pagedattention: kwon2023pagedattention,
   wu2023autogen: wu2023autogen,
   sommerville2016: sommerville2016,
   anthropic2024tooluse: anthropic2024tooluse,
