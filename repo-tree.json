@@ -91,12 +91,6 @@
                   "type": "directory",
                   "children": [
                     {
-                      "name": "skill-md-format.typ",
-                      "path": "DarkFactory/agentic-engineering/agent-harness/skills/skill-md-format.typ",
-                      "type": "file",
-                      "source": "repository/DarkFactory/agentic-engineering/agent-harness/skills/skill-md-format.typ"
-                    },
-                    {
                       "name": "skills.typ",
                       "path": "DarkFactory/agentic-engineering/agent-harness/skills/skills.typ",
                       "type": "file",
