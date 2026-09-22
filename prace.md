@@ -315,7 +315,7 @@ Při autoregresivním generování dekodér z dosavadní sekvence vytváří rep
 
 Velký neuronový jazykový model trénovaný na rozsáhlých textových datech pro predikci a generování posloupností tokenů. <sup><span id="loc-22">(</span><a href="#loc-82" role="doc-biblioref">17</a>)</sup>
 
-Současné LLM typicky používají architekturu [***Transformer***](#concept-transformer)<sup>*</sup>, která při autoregresivním generování odhaduje další token z předchozí sekvence. <sup>(<a href="#loc-81" role="doc-biblioref">16</a>)</sup> Práci s nástroji, stavem a prostředím zajišťuje okolní agentní runtime nebo harness, nikoli samotná textová inference. <sup>(<a href="#loc-66" role="doc-biblioref">1</a>)</sup>
+Současné LLM typicky používají architekturu [***Transformer***](#concept-transformer)<sup>*</sup>, která při autoregresivním generování odhaduje další token z předchozí sekvence. <sup>(<a href="#loc-81" role="doc-biblioref">16</a>)</sup>
 
 ##### Tokenizér (Tokenizer)
 
@@ -345,7 +345,7 @@ V jazykovém modelu embedding převádí identifikátory tokenů na spojité vek
 
 Běhová vrstva, která načte jazykový model a provádí jeho inferenci nad vstupními tokeny. <sup><span id="loc-26">(</span><a href="#loc-85" role="doc-biblioref">20</a>)</sup>
 
-Inferenční engine zajišťuje praktické provedení modelu, například plánování požadavků, správu výpočetních prostředků a práci s mezipamětí během generování. Nezajišťuje agentní stav, nástroje ani dlouhodobé řízení úlohy; ty patří až do vrstvy Harness. <sup>(<a href="#loc-85" role="doc-biblioref">20</a>)</sup>
+Inferenční engine zajišťuje praktické provedení modelu, například plánování inferenčních požadavků, správu výpočetních prostředků a práci s mezipamětí během generování. <sup>(<a href="#loc-85" role="doc-biblioref">20</a>)</sup>
 
 ##### Kontextové okno (Context Window)
 
@@ -401,21 +401,21 @@ ReAct formalizuje střídání rozhodnutí, akce a pozorování výsledku; nové
 
 ##### Agentní sezení (Session)
 
-Persistovaná jednotka agentní interakce, která umožňuje navazovat na předchozí průběh mezi jednotlivými běhy. <sup><span id="loc-32">(</span><a href="#loc-91" role="doc-biblioref">26</a>)</sup>
+Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup><span id="loc-32">(</span><a href="#loc-91" role="doc-biblioref">26</a>)</sup>
 
-Session uchovává historii nebo záznam událostí mimo aktuální modelový kontext a při pokračování z něj lze znovu sestavit relevantní vstup. <sup>(<a href="#loc-91" role="doc-biblioref">26</a>)</sup> <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup> V této práci Session zastřešuje jednotlivé tahy, jejich transcript a stav potřebný pro pokračování.
+Session je vlastníkem identity a hranice pokračujícího běhu; jeho historický průběh vlastní [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> a aktuální pracovní skutečnosti [***Stav (State)***](#concept-state)<sup>*</sup>. <sup>(<a href="#loc-91" role="doc-biblioref">26</a>)</sup> <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
 ##### Přepis (Transcript)
 
-Uspořádaný historický záznam událostí nebo položek vzniklých během Session, například zpráv, tahů a výsledků nástrojů. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
+Uspořádaný historický záznam událostí vzniklých během [***Agentní sezení (Session)***](#concept-agent_session)<sup>*</sup>, například zpráv, akcí a výsledků nástrojů. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
-Transcript odpovídá na otázku, co se během běhu stalo. Není totožný se State, který zachovává aktuální pracovní skutečnosti, ani s aktivním kontextem, který obsahuje pouze informace právě předané modelu. Persistovaný transcript lze při pokračování použít k rekonstrukci potřebného kontextu. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
+Transcript odpovídá na otázku, co se během běhu stalo. Je historickým záznamem, nikoli reprezentací právě platného pracovního stavu. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
 ##### Stav (State)
 
-Persistovaná reprezentace aktuálních skutečností a řídicích údajů, které musí harness zachovat mezi jednotlivými kroky běhu. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
+Persistovaná reprezentace aktuálně platných pracovních skutečností a řídicích údajů běhu. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
-State odpovídá na otázku, co je pro pokračování právě platné. Nemusí obsahovat úplnou historii Transcriptu a nemusí být celý předán modelu; Context Engineering vybírá, která část dostupného stavu a historie vstoupí do aktivního kontextu. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
+State odpovídá na otázku, co je pro další krok právě platné; na rozdíl od [***Přepis (Transcript)***](#concept-transcript)<sup>*</sup> nemusí zachovávat úplnou historii předchozích událostí. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
 #### 2.4.3 Nástroje a prostředí
 
@@ -423,7 +423,7 @@ State odpovídá na otázku, co je pro pokračování právě platné. Nemusí o
 
 Vnější prostředí, které agent prostřednictvím harnessu pozoruje a mění, například pracovní soubory, procesy, síťové služby a další systémové prostředky. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
-Environment představuje skutečný stav světa mimo model: změna souboru nebo spuštění procesu mění prostředí, nikoli pouze textový kontext. Harness určuje, které části prostředí jsou dostupné a jakými rozhraními na ně může agent působit. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
+Změna souboru nebo spuštění procesu mění stav prostředí mimo modelový kontext. Přístup k těmto účinkům zprostředkovávají [***Nástroje (Tools)***](#concept-tools)<sup>*</sup> a jejich bezpečnostní hranice. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
 ##### Nástroje (Tools)
 
@@ -869,7 +869,7 @@ Abecední přehled klíčových pojmů použitých v práci. Názvy a definice j
 
 [**Agentní sezení (Session)**](#concept-agent_session)
 
-Persistovaná jednotka agentní interakce, která umožňuje navazovat na předchozí průběh mezi jednotlivými běhy. <sup>(<a href="#loc-91" role="doc-biblioref">26</a>)</sup>
+Persistovaná jednotka, která vymezuje jeden souvislý agentní běh a umožňuje jeho pozdější pokračování. <sup>(<a href="#loc-91" role="doc-biblioref">26</a>)</sup>
 
 [**Agentní smyčka (Agent Loop)**](#concept-agent_loop)
 
@@ -993,7 +993,7 @@ Vzor koordinace, při kterém aktivní agent předá další řízení specializ
 
 [**Přepis (Transcript)**](#concept-transcript)
 
-Uspořádaný historický záznam událostí nebo položek vzniklých během Session, například zpráv, tahů a výsledků nástrojů. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
+Uspořádaný historický záznam událostí vzniklých během [***Agentní sezení (Session)***](#concept-agent_session)<sup>*</sup>, například zpráv, akcí a výsledků nástrojů. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
 [**RAG**](#concept-rag)
 
@@ -1025,7 +1025,7 @@ Systém pro zaznamenávání historie změn souborů a práci s oddělenými lin
 
 [**Stav (State)**](#concept-state)
 
-Persistovaná reprezentace aktuálních skutečností a řídicích údajů, které musí harness zachovat mezi jednotlivými kroky běhu. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
+Persistovaná reprezentace aktuálně platných pracovních skutečností a řídicích údajů běhu. <sup>(<a href="#loc-67" role="doc-biblioref">2</a>)</sup>
 
 [**Subagent**](#concept-subagent)
 
