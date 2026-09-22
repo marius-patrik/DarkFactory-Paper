@@ -173,3 +173,8 @@
 .workbench-tab-dragging .empty-workbench * {
   pointer-events: none !important;
 }
+
+
+.workbench-surface .dv-watermark {
+  pointer-events: none;
+}
