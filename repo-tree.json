@@ -253,6 +253,25 @@
           "type": "directory",
           "children": [
             {
+              "name": "capabilities",
+              "path": "web/src/capabilities",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "monaco.ts",
+                  "path": "web/src/capabilities/monaco.ts",
+                  "type": "file",
+                  "source": "repository/web/src/capabilities/monaco.ts"
+                },
+                {
+                  "name": "registry.ts",
+                  "path": "web/src/capabilities/registry.ts",
+                  "type": "file",
+                  "source": "repository/web/src/capabilities/registry.ts"
+                }
+              ]
+            },
+            {
               "name": "components",
               "path": "web/src/components",
               "type": "directory",
