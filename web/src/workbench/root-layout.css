@@ -167,3 +167,9 @@
 .empty-workbench-card button {
   pointer-events: auto;
 }
+
+
+.workbench-tab-dragging .empty-workbench,
+.workbench-tab-dragging .empty-workbench * {
+  pointer-events: none !important;
+}
