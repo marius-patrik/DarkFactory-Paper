@@ -52,8 +52,8 @@ Agentní sezení (Session), Agentní smyčka (Agent Loop), Cílené smyčky (Goa
   3. [2.3 Jazykový model a inference](#section-model)
     1. [2.3.1 Úvod](#section-model_inference_intro)
     2. [2.3.2 Jazykový model](#section-language_model_group)
-      1. [Transformer](#concept-transformer)
-      2. [Velký jazykový model (LLM)](#concept-language_model)
+      1. [Velký jazykový model (LLM)](#concept-language_model)
+      2. [Transformer](#concept-transformer)
       3. [Tokenizér (Tokenizer)](#concept-tokenizer)
       4. [Token](#concept-token)
       5. [Vektorová reprezentace (Embedding)](#concept-embedding)
@@ -303,17 +303,17 @@ Cílem je vymezit hranici modelové vrstvy: končí vytvořením výstupu nad ak
 
 #### 2.3.2 Jazykový model
 
-##### Transformer
-
-Architektura neuronové sítě založená na mechanismu pozornosti, který modeluje vztahy mezi prvky sekvence. <sup><span id="loc-21">(</span><a href="#loc-82" role="doc-biblioref">16</a>)</sup>
-
-Při autoregresivním generování dekodér z dosavadní sekvence vytváří reprezentaci použitou k odhadu následujícího tokenu. <sup>(<a href="#loc-82" role="doc-biblioref">16</a>)</sup>
-
 ##### Velký jazykový model (LLM)
 
-Velký neuronový jazykový model trénovaný na rozsáhlých textových datech pro predikci a generování posloupností tokenů. <sup><span id="loc-22">(</span><a href="#loc-83" role="doc-biblioref">17</a>)</sup>
+Velký neuronový jazykový model trénovaný na rozsáhlých textových datech pro predikci a generování posloupností tokenů. <sup><span id="loc-21">(</span><a href="#loc-82" role="doc-biblioref">16</a>)</sup>
 
-Současné LLM typicky používají architekturu [***Transformer***](#concept-transformer)<sup>*</sup>, která při autoregresivním generování odhaduje další token z předchozí sekvence. <sup>(<a href="#loc-82" role="doc-biblioref">16</a>)</sup>
+Současné LLM typicky používají architekturu [***Transformer***](#concept-transformer)<sup>*</sup>, která při autoregresivním generování odhaduje další token z předchozí sekvence. <sup><span id="loc-22">(</span><a href="#loc-83" role="doc-biblioref">17</a>)</sup>
+
+##### Transformer
+
+Architektura neuronové sítě založená na mechanismu pozornosti, který modeluje vztahy mezi prvky sekvence. <sup>(<a href="#loc-83" role="doc-biblioref">17</a>)</sup>
+
+Při autoregresivním generování dekodér z dosavadní sekvence vytváří reprezentaci použitou k odhadu následujícího tokenu. <sup>(<a href="#loc-83" role="doc-biblioref">17</a>)</sup>
 
 ##### Tokenizér (Tokenizer)
 
@@ -803,8 +803,8 @@ Rozsah závěru je omezen provedenými důkazy: práce neprokazuje obecnou přev
 - [13.](#loc-18) GITHUB. About pull requests | GitHub Docs. Online. 2026. [Accessed 21 září 2026]. Available from: [https://docs.github.com/en/pull-requests/get-started/about-pull-requests](https://docs.github.com/en/pull-requests/get-started/about-pull-requests)
 - [14.](#loc-19) CAMBRIDGE UNIVERSITY PRESS. AI slop. Online. 2026. [Accessed 20 září 2026]. Available from: [https://dictionary.cambridge.org/dictionary/english/ai-slop](https://dictionary.cambridge.org/dictionary/english/ai-slop)
 - [15.](#loc-20) HUMBLE, Jez a FARLEY, David. *Continuous Delivery: Reliable Software Releases through Build, Test, and Deployment Automation.*Boston : Addison-Wesley, 2010. ISBN 978-0-321-60191-9.
-- [16.](#loc-21) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
-- [17.](#loc-22) BROWN, Tom B., MANN, Benjamin, RYDER, Nick, SUBBIAH, Melanie, KAPLAN, Jared, DHARIWAL, Prafulla, NEELAKANTAN, Arvind, SHYAM, Pranav, SASTRY, Girish, ASKELL, Amanda, HERBERT-VOSS, Ariel, KRUEGER, Gretchen, HENIGHAN, Tom, CHILD, Rewon, RAMESH, Aditya, ZIEGLER, Daniel M., WU, Jeffrey, WINTER, Clemens, HESSE, Christopher, CHEN, Mark, SIGLER, Eric, LITWIN, Mateusz, GRAY, Scott, CHESS, Benjamin, CLARK, Jack, BERNER, Christopher, MCCANDLISH, Sam, RADFORD, Alec, SUTSKEVER, Ilya a AMODEI, Dario. Language Models are Few-Shot Learners. *Advances in Neural Information Processing Systems.* Online. 2020. Vol. 33. Available from: [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
+- [16.](#loc-21) BROWN, Tom B., MANN, Benjamin, RYDER, Nick, SUBBIAH, Melanie, KAPLAN, Jared, DHARIWAL, Prafulla, NEELAKANTAN, Arvind, SHYAM, Pranav, SASTRY, Girish, ASKELL, Amanda, HERBERT-VOSS, Ariel, KRUEGER, Gretchen, HENIGHAN, Tom, CHILD, Rewon, RAMESH, Aditya, ZIEGLER, Daniel M., WU, Jeffrey, WINTER, Clemens, HESSE, Christopher, CHEN, Mark, SIGLER, Eric, LITWIN, Mateusz, GRAY, Scott, CHESS, Benjamin, CLARK, Jack, BERNER, Christopher, MCCANDLISH, Sam, RADFORD, Alec, SUTSKEVER, Ilya a AMODEI, Dario. Language Models are Few-Shot Learners. *Advances in Neural Information Processing Systems.* Online. 2020. Vol. 33. Available from: [https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
+- [17.](#loc-22) VASWANI, Ashish, SHAZEER, Noam, PARMAR, Niki, USZKOREIT, Jakob, JONES, Llion, GOMEZ, Aidan N., KAISER, Łukasz a POLOSUKHIN, Illia. Attention Is All You Need. *arXiv preprint arXiv:1706.03762.* Online. 2017. Available from: [https://arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
 - [18.](#loc-23) SENNRICH, Rico, HADDOW, Barry a BIRCH, Alexandra. Neural Machine Translation of Rare Words with Subword Units. *Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers).* Online. 2016. P. 1715–1725. Available from: [https://aclanthology.org/P16-1162/](https://aclanthology.org/P16-1162/)
 - [19.](#loc-24) MIKOLOV, Tomas, CHEN, Kai, CORRADO, Greg a DEAN, Jeffrey. Efficient Estimation of Word Representations in Vector Space. *arXiv preprint arXiv:1301.3781.* Online. 2013. Available from: [https://arxiv.org/abs/1301.3781](https://arxiv.org/abs/1301.3781)
 - [20.](#loc-26) VLLM PROJECT. vLLM: A High-Throughput and Memory-Efficient Inference Engine for LLMs. Online. 2026. [Accessed 22 září 2026]. Available from: [https://docs.vllm.ai/en/stable/api/vllm/](https://docs.vllm.ai/en/stable/api/vllm/)
@@ -1041,7 +1041,7 @@ Komponenta, která převádí vstup na posloupnost tokenů a jejich identifikát
 
 [**Transformer**](#concept-transformer)
 
-Architektura neuronové sítě založená na mechanismu pozornosti, který modeluje vztahy mezi prvky sekvence. <sup>(<a href="#loc-82" role="doc-biblioref">16</a>)</sup>
+Architektura neuronové sítě založená na mechanismu pozornosti, který modeluje vztahy mezi prvky sekvence. <sup>(<a href="#loc-83" role="doc-biblioref">17</a>)</sup>
 
 [**Vektorová reprezentace (Embedding)**](#concept-embedding)
 
@@ -1049,7 +1049,7 @@ Vícerozměrná vektorová reprezentace diskrétních prvků, v níž geometrick
 
 [**Velký jazykový model (LLM)**](#concept-language_model)
 
-Velký neuronový jazykový model trénovaný na rozsáhlých textových datech pro predikci a generování posloupností tokenů. <sup>(<a href="#loc-83" role="doc-biblioref">17</a>)</sup>
+Velký neuronový jazykový model trénovaný na rozsáhlých textových datech pro predikci a generování posloupností tokenů. <sup>(<a href="#loc-82" role="doc-biblioref">16</a>)</sup>
 
 [**Vibe Coding**](#concept-vibe_coding)
 

@@ -168,14 +168,14 @@
           "anchor": "section-language_model_group"
         },
         {
-          "title": "Transformer",
-          "level": 5,
-          "anchor": "concept-transformer"
-        },
-        {
           "title": "Velký jazykový model (LLM)",
           "level": 5,
           "anchor": "concept-language_model"
+        },
+        {
+          "title": "Transformer",
+          "level": 5,
+          "anchor": "concept-transformer"
         },
         {
           "title": "Tokenizér (Tokenizer)",
@@ -750,14 +750,14 @@
           "anchor": "section-language_model_group"
         },
         {
-          "title": "Transformer",
-          "level": 5,
-          "anchor": "concept-transformer"
-        },
-        {
           "title": "Velký jazykový model (LLM)",
           "level": 5,
           "anchor": "concept-language_model"
+        },
+        {
+          "title": "Transformer",
+          "level": 5,
+          "anchor": "concept-transformer"
         },
         {
           "title": "Tokenizér (Tokenizer)",
