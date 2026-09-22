@@ -70,7 +70,7 @@ export function WorkbenchSurfaceView({
       const tabElement = event.target.closest<HTMLElement>(".dv-tab");
       const workbenchTabElement = tabElement?.querySelector<HTMLElement>("[data-workbench-tab-id]");
       const id = tabElement?.dataset.tabPanelId || workbenchTabElement?.dataset.workbenchTabId;
-      if (!id || !runtimeRef.current.getTab(id)) return;
+      if (!id) return;
       const payload = { id, source: surface } satisfies CrossSurfaceDrag;
       activeCrossSurfaceDrag = payload;
       root.dataset.workbenchDndStage = `source:${id}`;
