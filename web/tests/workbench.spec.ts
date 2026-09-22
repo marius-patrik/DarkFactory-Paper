@@ -18,12 +18,23 @@ async function dragTab(
   await expect(target).toBeVisible();
   const box = await target.boundingBox();
   if (!box) throw new Error(`missing drop target for ${to}`);
+  await target.evaluate((element) => {
+    const node = element as HTMLElement & { dataset: DOMStringMap & { acceptanceDragEvents?: string } };
+    node.dataset.acceptanceDragEvents = "0";
+    const count = () => {
+      node.dataset.acceptanceDragEvents = String(Number(node.dataset.acceptanceDragEvents || "0") + 1);
+    };
+    element.addEventListener("dragenter", count, { once: true });
+    element.addEventListener("dragover", count, { once: true });
+    element.addEventListener("drop", count, { once: true });
+  });
   await source.dragTo(target, {
     targetPosition: {
       x: Math.max(20, Math.min(box.width - 20, box.width / 2)),
       y: Math.max(20, Math.min(box.height - 20, box.height / 2)),
     },
   });
+  await expect.poll(async () => Number(await target.getAttribute("data-acceptance-drag-events") || "0")).toBeGreaterThan(0);
   await expect(tab(page, to, label)).toBeVisible();
   await expect(tab(page, from, label)).toHaveCount(0);
 }
@@ -48,6 +59,7 @@ test("root regions resize continuously and persist through reload and hide/show"
 
   await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
   await page.mouse.down();
+  await expect(shell).toHaveClass(/root-resizing/);
   await page.mouse.move(box.x + box.width / 2 + 54, box.y + box.height / 2, { steps: 6 });
   await page.mouse.up();
 
