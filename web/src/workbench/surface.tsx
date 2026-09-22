@@ -71,16 +71,35 @@ export function WorkbenchSurfaceView({
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const bridgeExternalPanelDrag = (event: DragEvent) => {
+    const transfer = LocalSelectionTransfer.getInstance<PanelTransfer>();
+
+    const beginPanelDrag = (event: DragEvent) => {
       const root = rootRef.current;
-      if (!root || !(event.target instanceof Node) || !root.contains(event.target)) return;
-      const payload = activeCrossSurfaceDrag ?? dragPayload(event);
-      if (!payload || payload.source === surface) return;
+      if (!root || !(event.target instanceof Element) || !root.contains(event.target)) return;
+      const tabElement = event.target.closest<HTMLElement>(".dv-tab[data-tab-panel-id]");
+      const id = tabElement?.dataset.tabPanelId;
+      if (!id || !runtimeRef.current.getTab(id)) return;
+      const payload = { id, source: surface } satisfies CrossSurfaceDrag;
       activeCrossSurfaceDrag = payload;
-      LocalSelectionTransfer.getInstance<PanelTransfer>().clearData(PanelTransfer.prototype);
+      if (event.dataTransfer) {
+        event.dataTransfer.setData(WORKBENCH_TAB_MIME, JSON.stringify(payload));
+        event.dataTransfer.effectAllowed = "move";
+      }
     };
+
+    const bridgeExternalPanelDrag = (event: DragEvent) => {
+      if (!activeCrossSurfaceDrag || !(event.target instanceof Element)) return;
+      const destination = event.target.closest<HTMLElement>("[data-workbench-surface]")?.dataset.workbenchSurface;
+      if (!destination || destination === activeCrossSurfaceDrag.source) return;
+      transfer.clearData(PanelTransfer.prototype);
+    };
+
+    document.addEventListener("dragstart", beginPanelDrag, true);
     document.addEventListener("dragover", bridgeExternalPanelDrag, true);
-    return () => document.removeEventListener("dragover", bridgeExternalPanelDrag, true);
+    return () => {
+      document.removeEventListener("dragstart", beginPanelDrag, true);
+      document.removeEventListener("dragover", bridgeExternalPanelDrag, true);
+    };
   }, [surface]);
 
   useEffect(() => {
