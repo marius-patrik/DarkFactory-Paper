@@ -1,298 +1,272 @@
 # DarkFactory-Paper — Completion Plan
 
-This file contains only the remaining execution path to the final **Odborná práce**.
+This file contains only the remaining path to the final **Odborná práce**.
 
-Durable manuscript rules live in `AGENTS.md`.
-Recovered school-format rules live in `SCHOOL_RULES.md`.
-Unpromoted future requests live in `BACKLOG.md`.
-The generic IDE workstream is separate in `web/PLAN.md`.
+- Thesis source: `paper/PAPER.typ`
+- Durable manuscript rules: `AGENTS.md`
+- School contract: `SCHOOL_RULES.md`
+- Backlog: `BACKLOG.md`
+- Independent IDE lane: `web/PLAN.md`
 
-## Canonical source architecture
+## Source contract
 
-The thesis has been fully consolidated.
+`paper/PAPER.typ` is the only authored Typst manuscript source.
 
-**`main.typ` is the single canonical authored Typst source of the thesis.**
+Supporting resources may live in:
+- `paper/bib/`
+- `paper/data/`
+- `paper/img/`
+- `paper/fonts/`
 
-There is no modular manuscript/schema/manifest source tree anymore.
+Do not recreate a schema/manifest/concept-file manuscript architecture or another authored thesis `.typ`.
 
-Current repository contract:
-
-```text
-main.typ                         canonical thesis source
-DarkFactory/bib/                 bibliography data
-DarkFactory/data/                checked-in evidence data
-DarkFactory/img/                 figures/assets
-DarkFactory/fonts/               publication fonts
-scripts/                         build/export/validation helpers
-web/                             generic review/IDE application
-```
-
-Rules:
-
-- all thesis prose, structure, semantic articles, review helpers, template logic, front matter, back matter, and Typst publication logic are edited directly in `main.typ`;
-- do not recreate `DarkFactory/index.typ`, schema files, concept files, section manifests, template modules, or another parallel authored Typst tree;
-- do not regenerate `main.typ` from retired modular sources;
-- bibliography/data/assets remain external where appropriate and may be referenced by `main.typ`;
-- generated PDF/HTML/Markdown/review outputs remain artifacts, not authored sources;
-- a future decomposition is out of scope unless explicitly requested.
-
-The consolidation landed at `de82d8ac72bd6f0afee5b64e8dd019432b22b699`, and CI, Deploy Documentation, and Release all passed on that exact commit.
-
-## Working mode
-
-Implementation is delegated task-by-task to side agents.
-
-Every task must:
-- start from latest `main`;
-- read `AGENTS.md`, `PLAN.md`, and `SCHOOL_RULES.md`;
-- treat `main.typ` as the only thesis Typst source;
-- preserve accepted sourced content unless a concrete defect is found;
-- use primary/original or first-party technical sources for factual claims;
-- run relevant builds/validation;
-- commit its work;
-- report SHA, changed files, validation, PDF inspection, and unresolved issues.
-
-The coordinating session owns `PLAN.md`.
+Generated PDF/HTML/Markdown/review/site artifacts are outputs, not sources.
 
 ## Work title
 
 **AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory**
 
-## Central argument
+## Thesis argument
 
-The introduction must establish one coherent argument:
+The manuscript follows one causal argument:
 
-**AI adoption is rapidly expanding → actual coding-agent use remains a small fraction of overall generative-AI use → practices such as Vibe Coding show that access to capable systems is not equivalent to disciplined engineering → model capability is also advancing rapidly → effective and reliable use therefore requires deliberate Agentic Engineering around the model and harness.**
+**rapid AI adoption → coding agents remain a small subset of overall use → practices such as Vibe Coding show that access to capable AI is not equivalent to disciplined engineering → model capability is improving rapidly → a harness turns model inference into an agentic runtime → Agentic Engineering is required to use those capabilities deliberately and reliably → DarkFactory realizes those practices → evaluation tests the resulting system and workflow.**
 
-This leads directly to the work structure:
+Do not claim that most coding-agent users are vibe coding unless representative evidence supports that exact population-level claim.
 
-- the **theoretical part** explains how modern agentic systems operate;
-- the **practical part** explains how to use them effectively for software engineering;
-- **DarkFactory** is the concrete harness in which those practices are implemented;
-- **Results and discussion** evaluate the implementation and practices.
-
-Do not claim that “most coding-agent users are vibe coding” unless representative evidence actually supports that population-level statement.
-
-## Canonical macrostructure
+## Canonical hierarchy
 
 1. **Úvod**
+   - 1.1 Motivace a vymezení problému
+   - 1.2 Východisko a argument práce
+   - 1.3 Cíle
+     - 1.3.1 Hlavní cíl
+     - 1.3.2 Dílčí cíle
+   - 1.4 Výzkumné otázky
+   - 1.5 Metodika
+   - 1.6 Struktura práce
 2. **Teoretická část**
+   - 2.1 Jazykový model
+     - 2.1.1 Architektura a reprezentace
+     - 2.1.2 Inference
+   - 2.2 Harness
+     - 2.2.1 Smyčka a stav
+     - 2.2.2 Prostředí a nástroje
+     - 2.2.3 Rozšíření
 3. **Praktická část**
+   - 3.1 Agentické inženýrství
+     - 3.1.1 Zadání a způsob práce
+     - 3.1.2 Řízení změny
+     - 3.1.3 Kvalita a ověřování
+     - 3.1.4 Instrukce a kontext
+     - 3.1.5 Řízení agentního chování
+     - 3.1.6 Orchestrace agentů
+   - 3.2 DarkFactory
 4. **Výsledky a diskuse**
+   - 4.1 Ověření mechanismů
+   - 4.2 Ověření systému
+   - 4.3 Ověření na repozitářích
+   - 4.4 Výzkumné otázky
+   - 4.5 Diskuse a omezení
 5. **Závěr**
 
-Appendices follow where applicable.
+Semantic concept headings are visible but unnumbered and excluded from the printed Contents.
 
-## Target hierarchy
+## Article contract
 
-### 1 Úvod
-- **1.1 Motivace a vymezení problému** — Gradually + Vibe Coding + Epoch + Artificial Analysis + bridge to Agentic Engineering.
-- **1.2 Východisko a argument práce**
-- **1.3 Cíle**
-  - **1.3.1 Hlavní cíl**
-  - **1.3.2 Dílčí cíle**
-- **1.4 Výzkumné otázky**
-- **1.5 Metodika**
-- **1.6 Struktura práce**
+For theory and practical-methodology concepts, use:
 
-### 2 Teoretická část
+**definition → mechanism/description → real sourced example(s) → practical implication**
 
-Theory contains only concepts required to understand **how agentic systems operate**.
-
-#### 2.1 Jazykový model
-- **2.1.1 Architektura a reprezentace** — LLM, Transformer, Tokenizér, Token, Embedding.
-- **2.1.2 Inference** — Model Provider, Inference Engine, Temperature, Context Window, KV Cache, Context Rot.
-
-The completed Model/Inference prose and embedding figures are accepted. Do not rewrite them merely because their hierarchy changes.
-
-The Artificial Analysis benchmark moves to 1.1.
-
-#### 2.2 Harness
-- **2.2.1 Smyčka a stav**
-- **2.2.2 Prostředí a nástroje**
-- **2.2.3 Rozšíření**
-
-### 3 Praktická část
-
-#### 3.1 Agentické inženýrství
-- **3.1.1 Zadání a způsob práce**
-- **3.1.2 Řízení změny**
-- **3.1.3 Kvalita a ověřování**
-- **3.1.4 Instrukce a kontext**
-- **3.1.5 Řízení agentního chování**
-- **3.1.6 Orchestrace agentů**
-
-Vibe Coding is not a standalone article here.
-
-#### 3.2 DarkFactory
-
-Canonical generated DarkFactory documentation becomes the primary architecture/system-description content. Do not maintain a parallel manual lifecycle/architecture narrative.
-
-### 4 Výsledky a diskuse
-- **4.1 Ověření mechanismů**
-- **4.2 Ověření systému**
-- **4.3 Ověření na repozitářích**
-- **4.4 Výzkumné otázky**
-- **4.5 Diskuse a omezení**
-
-### 5 Závěr
-
-Return explicitly to objectives and research questions. No new factual material.
-
-## Single-file semantic/article contract
-
-The old schema types are retired, but the semantic writing contract remains.
-
-Within `main.typ`, every semantic article should read in this order:
-
-1. concise definition;
-2. description/mechanism;
-3. real sourced example(s) where defensible;
-4. practical implication.
-
-Presentation:
-
-**unnumbered article heading → definition → description → examples/visuals → practical**
-
-Structural headings are numbered and appear in school Contents.
-Semantic article headings remain unnumbered and excluded from school Contents.
-
-Do not reintroduce schema/manifests merely to encode this structure.
-
-## Source rules
-
+Requirements:
+- one semantic owner for each concept/claim;
+- claim-local citations;
+- original paper/specification or first-party documentation where available;
+- real example where defensible;
 - no self-referential definitions such as “v této práci označuje…”;
-- original papers/specifications and first-party documentation preferred;
-- factual/mechanistic claims require claim-local citations;
-- time-sensitive evidence keeps version/date provenance;
-- DarkFactory behavior comes from current code/docs/tests/workflows;
-- never generalize a survey beyond its population.
+- no duplicated definition across Theory and Practical;
+- no invented product behavior, benchmark values, API behavior, or empirical claims.
 
 ## Evidence ownership
 
-**Introduction:** Gradually, Vibe Coding, Epoch, Artificial Analysis benchmark.
+**Introduction**
+- Gradually adoption/coding-agent evidence
+- Vibe Coding motivation/baseline
+- Epoch ECI capability trend
+- Artificial Analysis v4.3.2 benchmark
 
-**Theory:** model, representation, inference, harness mechanisms.
+**Theory**
+- model/representation/inference
+- harness mechanisms
 
-**Practical:** Agentic Engineering practices and DarkFactory implementation.
+**Practical**
+- Agentic Engineering practices
+- DarkFactory implementation
 
-**Results and discussion:** observed evaluation evidence, interpretation, limitations, RQ answers.
+**Results and discussion**
+- observed evidence
+- interpretation
+- limitations
+- research-question answers
 
-## Locked content contracts
+## Locked content
 
-### Embedding
-Preserve the accepted 2D/3D pedagogical figures and caveats.
+### Model / inference
+Treat 2.1 as stable unless a concrete factual/source/build defect is found.
 
-### Agent Loop
-Use ReAct:
+Preserve:
+- sourced examples and practical implications;
+- 2D embedding relation `král − muž + žena ≈ královna`;
+- axes **Pohlaví** and **Královský status**;
+- 3D pedagogical analogy visualization;
+- explicit caveat that shown axes are explanatory projections rather than literal learned dimensions.
+
+### Harness
+Agent Loop uses the ReAct cycle:
+
 **Model → Akce → Nástroj/prostředí → Pozorování → Model**
+
 with optional **Model → Výsledek**.
 
-### State
-State denotes persisted current facts/control data. Do not personify it.
+State means persisted currently valid facts/control data. Do not personify it.
 
-### Harness source/example directions
-Use direct/original sources for Agent Loop, Tools, Tool Calling, Code Execution, Sandbox, Skills, Plugin, Script, Hooks, MCP, .agents/, and .claude/.
+Use direct/original source + concrete example for Agent Loop, Session, Transcript, State, Environment, Tools, Tool Calling, Code Execution, Sandbox, Skills, Plugin, Script, Hooks, MCP, `.agents/`, and `.claude/`.
 
-### Workflow Graph / Swarm
-These live under Practical / Agentic Engineering orchestration.
+### Practical orchestration
+Workflow Graph and Swarm belong under Practical / Agentic Engineering, not Theory.
 
-## School compliance
+### DarkFactory
+Generated/current DarkFactory documentation is the architecture/system-description authority for 3.2. Do not build a competing manual architecture narrative.
+
+## School contract
 
 Use `SCHOOL_RULES.md`.
 
-Do not substitute IVT maturita-topic rules for the Odborná-práce guide.
+Do not substitute IVT maturita-topic requirements for Odborná-práce rules.
 
-The remaining direct-text guide audit is mandatory before final submission.
+A direct-text audit of the school guide may run independently of manuscript editing and must be complete before the final publication phase.
 
-## Remaining execution order
+## Remaining execution
 
-### Phase B — Single-file cleanup + structural migration + introduction evidence move — ACTIVE NOW
+### Phase 1 — Complete Theory: Harness — NEXT
 
-All thesis edits happen directly in `main.typ`.
+Finish 2.2 in one pass.
 
-First retire transitional consolidation machinery:
-- delete `scripts/consolidate_paper.py`;
-- remove `make consolidate` and related help/phony entries;
-- remove validator/build assumptions that expect deleted modular Typst sources;
-- ensure no workflow/docs describe `main.typ` as generated.
-
-Then implement the hierarchy directly in `main.typ`:
-
-1. Úvod
-2. Teoretická část
-3. Praktická část
-4. Výsledky a diskuse
-5. Závěr
-
-Tasks:
-- preserve completed Model/Inference content and embedding figures in substance;
-- add Theory/Practical structural wrappers;
-- move Jazykový model and Harness under Theory;
-- move Agentic Engineering and DarkFactory under Practical;
-- rename/restructure Vyhodnocení to Výsledky a diskuse;
-- remove standalone Vibe Coding from Practical;
-- integrate its sourced material into 1.1 and/or 1.5;
-- move the accepted Artificial Analysis v4.3.2 benchmark into 1.1 without changing rows;
-- preserve Gradually + Epoch in 1.1;
-- rewrite 1.1 into the coherent adoption → coding agents → Vibe Coding → capability → Agentic Engineering argument;
-- add 1.6 Struktura práce;
-- preserve unnumbered semantic article treatment;
-- update validation and web structure extraction for the new hierarchy.
+Scope:
+- rewrite/finalize Harness framing and all 2.2 semantic articles;
+- add direct source + concrete example to every concept where defensible;
+- correct State/Session/Transcript boundaries;
+- finalize the ReAct diagram;
+- add real, properly sourced harness-interface examples/screenshots where useful;
+- ensure `.agents/` and `.claude/` are accurately sourced;
+- perform the **2.2 source, ownership, duplication, and bibliography audit in the same pass**;
+- preserve 2.1 unless a concrete defect is found.
 
 Exit:
-- exactly one authored Typst source remains: `main.typ`;
-- obsolete consolidation machinery is gone;
-- rendered hierarchy is exactly 1–5;
-- evidence ownership is correct;
-- no duplicated Vibe Coding/benchmark content;
-- all builds green.
+- every 2.2 article satisfies the article contract;
+- Theory cleanly explains model → inference → harness;
+- no Agentic Engineering methodology is taught inside Theory;
+- no additional Harness cleanup pass is required later.
 
-### Phase C — Harness theory rewrite
+### Phase 2 — Complete Practical: Agentic Engineering
 
-Rewrite/finalize Harness under 2.2 directly in `main.typ`.
+Finish 3.1 in one pass.
 
-### Phase D — Practical Agentic Engineering rewrite
+Scope:
+- rewrite the six practical subsections as a coherent engineering methodology rather than a glossary;
+- source definitions, mechanisms, and real examples;
+- keep AGENTS.md and CLAUDE.md distinct;
+- cover context engineering, verification, behavior control, and orchestration without redefining Theory concepts;
+- ground Workflow Graph and Swarm in current first-party sources;
+- perform the **3.1 source, ownership, duplication, and bibliography audit in the same pass**.
 
-Rewrite 3.1 directly in `main.typ` as a practical methodology and deduplicate mechanisms already explained in Theory.
+Exit:
+- 3.1 reads as an actionable, literature-backed methodology;
+- concepts owned by Theory are referenced rather than redefined;
+- no separate Practical source/dedup pass is required.
 
-### Phase E — Theory/practice source and ownership audit
+### Phase 3 — Integrate DarkFactory and pin implementation evidence
 
-For every semantic article in `main.typ`: one owner, direct source, claim-local citation, cited example where defensible, practical implication, no duplicated definition.
+Complete 3.2 and prepare evaluation inputs in one pass.
 
-### Phase F — Finalize Introduction, goals, RQs and methodology
+Scope:
+- pin the exact DarkFactory revision;
+- generate/fetch the canonical DarkFactory documentation;
+- integrate the canonical architecture/system description into 3.2;
+- connect 3.1 practices to their concrete DarkFactory realization where useful;
+- avoid parallel manual lifecycle/architecture prose;
+- pin target repository revisions, workflow runs, docs snapshot, and other implementation evidence needed by Chapter 4;
+- produce an internal evidence map from planned research questions/results sections to concrete artifacts.
 
-Finalize 1.1–1.6 and map RQs directly to actual evidence.
+Exit:
+- 3.2 is complete and reproducible;
+- implementation/evaluation evidence is pinned before Results writing begins.
 
-### Phase G — Integrate generated DarkFactory docs into 3.2
+### Phase 4 — Research frame + Results and discussion
 
-Pin the DarkFactory revision and insert/translate canonical generated documentation into the 3.2 region of `main.typ`. Avoid parallel manual architecture prose.
+Align the research frame to the actual implementation/evidence, then write the evaluation without another separate framing pass.
 
-### Phase H — Evidence pinning + Results and discussion
+Scope:
+- finalize 1.2–1.6, including goals, subgoals, RQs, methodology, and structure;
+- change 1.1 only where required for consistency;
+- ensure every RQ maps to collected evidence;
+- write 4.1–4.5 from the pinned evidence;
+- answer RQs explicitly;
+- separate observed results from interpretation and limitations;
+- do not use Chapter 4 to re-explain architecture.
 
-Pin implementation/evidence revisions and write 4.1–4.5.
+Exit:
+- introduction/research frame and evaluation are mutually consistent;
+- every RQ is answerable and answered.
 
-### Phase I — Thesis-wide final alignment
+### Phase 5 — Thesis-wide closure
 
-Align intro ↔ theory ↔ practical ↔ DarkFactory ↔ results ↔ RQs/conclusion. Finalize annotations, keywords, encyclopedia/index, bibliography.
+Perform one final editorial/source pass rather than separate cleanup waves.
 
-### Phase J — Odborná-práce publication QA
+Scope:
+- deduplicate across Introduction / Theory / Practical / DarkFactory / Results;
+- audit factual claims and citations;
+- remove unused bibliography records;
+- finalize Chapter 5 Závěr;
+- finalize Czech/English annotation material as required by the school contract;
+- finalize keywords;
+- finalize encyclopedia/index/back matter;
+- verify terminology and cross-references;
+- ensure no new factual material appears only in Conclusion.
 
-Complete the direct-text guide audit, then final typography/layout/submission QA and same-head CI/Deploy/Release validation.
+Exit:
+- manuscript content is substantively final;
+- only publication/school-format defects remain.
+
+### Phase 6 — Odborná-práce publication QA
+
+First complete/consume the direct-text school-guide audit.
+
+Then:
+- apply exact title-page, declaration, annotation, bibliography, pagination, typography, figures/tables, appendices, and submission rules;
+- validate source/output paths after the single-file repository refactor;
+- generate every required submission artifact confirmed by the guide;
+- run final PDF/HTML/Markdown/review/site builds;
+- inspect the final PDF page by page;
+- fix presentation-only defects;
+- require CI, Deploy Documentation, and Release green on the same final head.
+
+Exit:
+- school compliance is verified against the actual Odborná-práce guide;
+- all canonical artifacts and publication workflows are green on one final commit.
 
 ## Final gate
 
-Complete only when:
-- `main.typ` is the sole authored thesis Typst source;
-- no retired consolidation/schema/manifest architecture remains;
-- introduction contains the coherent adoption → coding agents → Vibe Coding → capability → Agentic Engineering argument;
-- benchmark lives in Introduction;
-- explicit Theory and Practical sections are restored;
+The work is complete only when:
+- `paper/PAPER.typ` is the sole authored thesis Typst source;
+- the canonical 1–5 hierarchy is intact;
+- Introduction owns adoption/capability/Vibe Coding evidence;
 - Theory contains model/inference/harness mechanisms only;
 - Practical contains Agentic Engineering and DarkFactory;
-- Results and discussion report observed evidence;
-- external factual claims are sourced;
-- generated DarkFactory docs are the architecture authority;
-- goals/RQs/results/conclusion align;
-- school contract is satisfied;
-- publication workflows are green on one final head.
+- DarkFactory documentation is the architecture authority;
+- Results answer the research questions from pinned evidence;
+- every externally factual claim is sourced;
+- semantic duplication is eliminated;
+- Conclusion, annotations, keywords, index, and bibliography are final;
+- the actual Odborná-práce school contract is satisfied;
+- final CI, Deploy Documentation, and Release are green on the same head.

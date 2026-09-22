@@ -310,6 +310,134 @@
               ]
             },
             {
+              "name": "tabs",
+              "path": "web/src/tabs",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "browser-tab.tsx",
+                  "path": "web/src/tabs/browser-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/browser-tab.tsx"
+                },
+                {
+                  "name": "document-tab.tsx",
+                  "path": "web/src/tabs/document-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/document-tab.tsx"
+                },
+                {
+                  "name": "editor-tab.tsx",
+                  "path": "web/src/tabs/editor-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/editor-tab.tsx"
+                },
+                {
+                  "name": "explorer-tab.tsx",
+                  "path": "web/src/tabs/explorer-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/explorer-tab.tsx"
+                },
+                {
+                  "name": "output-tab.tsx",
+                  "path": "web/src/tabs/output-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/output-tab.tsx"
+                },
+                {
+                  "name": "problems-tab.tsx",
+                  "path": "web/src/tabs/problems-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/problems-tab.tsx"
+                },
+                {
+                  "name": "search-tab.tsx",
+                  "path": "web/src/tabs/search-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/search-tab.tsx"
+                },
+                {
+                  "name": "source-control-tab.tsx",
+                  "path": "web/src/tabs/source-control-tab.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/source-control-tab.tsx"
+                },
+                {
+                  "name": "tab-shell.tsx",
+                  "path": "web/src/tabs/tab-shell.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/tabs/tab-shell.tsx"
+                }
+              ]
+            },
+            {
+              "name": "workbench",
+              "path": "web/src/workbench",
+              "type": "directory",
+              "children": [
+                {
+                  "name": "commands.ts",
+                  "path": "web/src/workbench/commands.ts",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/commands.ts"
+                },
+                {
+                  "name": "empty-workbench.tsx",
+                  "path": "web/src/workbench/empty-workbench.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/empty-workbench.tsx"
+                },
+                {
+                  "name": "launcher.tsx",
+                  "path": "web/src/workbench/launcher.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/launcher.tsx"
+                },
+                {
+                  "name": "model.ts",
+                  "path": "web/src/workbench/model.ts",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/model.ts"
+                },
+                {
+                  "name": "omnibar.tsx",
+                  "path": "web/src/workbench/omnibar.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/omnibar.tsx"
+                },
+                {
+                  "name": "persistence.ts",
+                  "path": "web/src/workbench/persistence.ts",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/persistence.ts"
+                },
+                {
+                  "name": "registry.tsx",
+                  "path": "web/src/workbench/registry.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/registry.tsx"
+                },
+                {
+                  "name": "runtime.tsx",
+                  "path": "web/src/workbench/runtime.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/runtime.tsx"
+                },
+                {
+                  "name": "shell.tsx",
+                  "path": "web/src/workbench/shell.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/shell.tsx"
+                },
+                {
+                  "name": "surface.tsx",
+                  "path": "web/src/workbench/surface.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/surface.tsx"
+                }
+              ]
+            },
+            {
               "name": "app.tsx",
               "path": "web/src/app.tsx",
               "type": "file",
@@ -352,12 +480,6 @@
               "source": "repository/web/src/settings.ts"
             },
             {
-              "name": "viewer-tabs.tsx",
-              "path": "web/src/viewer-tabs.tsx",
-              "type": "file",
-              "source": "repository/web/src/viewer-tabs.tsx"
-            },
-            {
               "name": "viewer-ui.tsx",
               "path": "web/src/viewer-ui.tsx",
               "type": "file",
@@ -370,10 +492,10 @@
               "source": "repository/web/src/viewer.css"
             },
             {
-              "name": "workspace.tsx",
-              "path": "web/src/workspace.tsx",
+              "name": "workbench.css",
+              "path": "web/src/workbench.css",
               "type": "file",
-              "source": "repository/web/src/workspace.tsx"
+              "source": "repository/web/src/workbench.css"
             }
           ]
         },
