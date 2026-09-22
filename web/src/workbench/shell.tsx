@@ -507,9 +507,8 @@ export function WorkbenchShell() {
         </header>
         <div className="workbench-center">
           <aside className="root-surface root-primary"><WorkbenchSurfaceView surface="primary" restoredLayout={initial.surfaces.primary.layout} defaultTabs={defaults.primary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
-          <div
+          <hr
             className="root-resizer root-resizer-column root-resizer-primary"
-            role="separator"
             aria-label="Resize Primary Sidebar"
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.primary)}
@@ -519,9 +518,8 @@ export function WorkbenchShell() {
             onPointerCancel={endResize}
           />
           <main className="root-surface root-main"><WorkbenchSurfaceView surface="main" restoredLayout={initial.surfaces.main.layout} defaultTabs={defaults.main} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></main>
-          <div
+          <hr
             className="root-resizer root-resizer-column root-resizer-secondary"
-            role="separator"
             aria-label="Resize Secondary Sidebar"
             aria-orientation="vertical"
             aria-valuenow={Math.round(effective.secondary)}
@@ -532,9 +530,8 @@ export function WorkbenchShell() {
           />
           <aside className="root-surface root-secondary"><WorkbenchSurfaceView surface="secondary" restoredLayout={initial.surfaces.secondary.layout} defaultTabs={defaults.secondary} onReady={registerSurface} onActiveTabChange={handleActiveTabChange} /></aside>
         </div>
-        <div
+        <hr
           className="root-resizer root-resizer-row root-resizer-panel"
-          role="separator"
           aria-label="Resize Panel"
           aria-orientation="horizontal"
           aria-valuenow={Math.round(effective.panel)}
