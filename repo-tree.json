@@ -512,12 +512,6 @@
               "source": "repository/web/src/compiled-artifact.tsx"
             },
             {
-              "name": "env.d.ts",
-              "path": "web/src/env.d.ts",
-              "type": "file",
-              "source": "repository/web/src/env.d.ts"
-            },
-            {
               "name": "main.tsx",
               "path": "web/src/main.tsx",
               "type": "file",
