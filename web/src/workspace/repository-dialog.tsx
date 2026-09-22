@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Github, X } from "lucide-react";
+import { LogIn, X } from "lucide-react";
 import {
   beginGithubSignIn,
   getGithubAuthConfiguration,
@@ -94,7 +94,7 @@ export function RepositoryDialog() {
                   disabled={workspace.loading || !authConfig.configured}
                   onClick={() => void signIn()}
                 >
-                  <Github size={15} />
+                  <LogIn size={15} />
                   <span>Sign in with GitHub</span>
                 </button>
                 <p className="workspace-help">
