@@ -20,6 +20,7 @@ async function dragTab(
   if (!targetBox) throw new Error(`missing drag geometry for ${from} -> ${to}`);
 
   await source.dragTo(target, {
+    force: true,
     targetPosition: {
       x: Math.max(20, Math.min(targetBox.width - 20, targetBox.width / 2)),
       y: Math.max(20, Math.min(targetBox.height - 20, targetBox.height / 2)),
@@ -100,6 +101,7 @@ test("tabs move across all root Dockview surfaces and recover after reload", asy
   const dockBox = await mainDock.boundingBox();
   if (!dockBox) throw new Error("main Dockview is not visible");
   await tab(page, "panel", "Explorer").dragTo(mainDock, {
+    force: true,
     targetPosition: { x: Math.max(4, dockBox.width - 8), y: Math.max(20, dockBox.height / 2) },
   });
   await expect(tab(page, "main", "Explorer")).toBeVisible();
