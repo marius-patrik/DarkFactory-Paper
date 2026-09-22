@@ -247,15 +247,15 @@ Specifikace odděluje požadované chování a omezení od konkrétní implement
 
 Převod požadavku na explicitní kroky, závislosti a podmínky ověření před prováděním změn. <sup><span id="loc-15">(</span><a href="#loc-76" role="doc-biblioref">10</a>)</sup>
 
-Plán rozděluje práci na kontrolovatelné části a určuje, podle jakých podmínek lze posoudit jejich dokončení. Závislosti mezi částmi práce lze reprezentovat například pomocí DAG. <sup>(<a href="#loc-76" role="doc-biblioref">10</a>)</sup>
+Plán rozděluje práci na kontrolovatelné části, určuje jejich pořadí a stanovuje podmínky, podle kterých lze posoudit dokončení. <sup>(<a href="#loc-76" role="doc-biblioref">10</a>)</sup>
 
 #### 2.2.3 Řízení změny
 
 ##### Správa verzí (Version Control)
 
-Systém pro zaznamenávání historie změn souborů a práci s oddělenými liniemi vývoje. <sup><span id="loc-16">(</span><a href="#loc-77" role="doc-biblioref">11</a>)</sup>
+Systém pro zaznamenávání a porovnávání historie změn souborů v čase. <sup><span id="loc-16">(</span><a href="#loc-77" role="doc-biblioref">11</a>)</sup>
 
-Historie commitů umožňuje změny porovnávat, vracet a slučovat; větve umožňují oddělit souběžnou práci před integrací. <sup>(<a href="#loc-77" role="doc-biblioref">11</a>)</sup>
+Uložená historie umožňuje identifikovat původ změny, vracet se k předchozím stavům a slučovat samostatně vzniklé změny. <sup>(<a href="#loc-77" role="doc-biblioref">11</a>)</sup>
 
 ##### Větev (Branch)
 
@@ -1021,7 +1021,7 @@ Nástrojová schopnost umožňující vykonat program nebo příkaz a vrátit je
 
 [**Správa verzí (Version Control)**](#concept-version_control)
 
-Systém pro zaznamenávání historie změn souborů a práci s oddělenými liniemi vývoje. <sup>(<a href="#loc-77" role="doc-biblioref">11</a>)</sup>
+Systém pro zaznamenávání a porovnávání historie změn souborů v čase. <sup>(<a href="#loc-77" role="doc-biblioref">11</a>)</sup>
 
 [**Stav (State)**](#concept-state)
 
