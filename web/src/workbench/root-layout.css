@@ -156,7 +156,10 @@
   pointer-events: none;
 }
 
-.empty-workbench-card,
-.empty-workbench-card * {
+.empty-workbench-card {
+  pointer-events: none;
+}
+
+.empty-workbench-card button {
   pointer-events: auto;
 }
