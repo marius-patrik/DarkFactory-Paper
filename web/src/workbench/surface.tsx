@@ -68,6 +68,20 @@ export function WorkbenchSurfaceView({
   runtimeRef.current = runtime;
   const [panelCount, setPanelCount] = useState(0);
   const initialized = useRef(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const bridgeExternalPanelDrag = (event: DragEvent) => {
+      const root = rootRef.current;
+      if (!root || !(event.target instanceof Node) || !root.contains(event.target)) return;
+      const payload = activeCrossSurfaceDrag ?? dragPayload(event);
+      if (!payload || payload.source === surface) return;
+      activeCrossSurfaceDrag = payload;
+      LocalSelectionTransfer.getInstance<PanelTransfer>().clearData(PanelTransfer.prototype);
+    };
+    document.addEventListener("dragover", bridgeExternalPanelDrag, true);
+    return () => document.removeEventListener("dragover", bridgeExternalPanelDrag, true);
+  }, [surface]);
 
   useEffect(() => {
     const clearDrag = () => {
@@ -176,12 +190,9 @@ export function WorkbenchSurfaceView({
 
   return (
     <div
+      ref={rootRef}
       className={`workbench-surface workbench-surface-${surface}`}
       data-workbench-surface={surface}
-      onDragEnterCapture={() => {
-        if (!activeCrossSurfaceDrag || activeCrossSurfaceDrag.source === surface) return;
-        LocalSelectionTransfer.getInstance<PanelTransfer>().clearData(PanelTransfer.prototype);
-      }}
     >
       <DockviewReact
         className="workbench-dockview"
