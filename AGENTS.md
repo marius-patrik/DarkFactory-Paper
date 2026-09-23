@@ -298,7 +298,6 @@ The authored manuscript is:
 Supporting material may live under:
 
 - `bib/`;
-- `data/`;
 - `img/`;
 - `fonts/`.
 
@@ -386,7 +385,6 @@ The practical chapter and evaluation must reference one explicitly pinned DarkFa
 The following must agree on that revision:
 
 - `darkfactory` submodule;
-- evidence manifest;
 - manuscript implementation claims;
 - Results evidence.
 
@@ -412,82 +410,11 @@ Intended architecture is distinguished from implemented behavior whenever they d
 
 ### Evidence requirements
 
-Use a stable evidence manifest under `data/`, preferably:
+DarkFactory implementation evidence is taken directly from the pinned `darkfactory` submodule, its source/tests/workflows, and the corresponding bibliography reference. Do not maintain a second manifest that duplicates the gitlink revision.
 
-`data/darkfactory-evidence.json`
+The Gradually adoption figure is generated deterministically by `scripts/evidence.ts`. Its source provenance belongs in `bib/references.bib` and the manuscript citation; its rendering values live beside the single rendering consumer.
 
-The evidence model must record enough provenance to reproduce or inspect important claims, including:
-
-- repository;
-- ref/branch where relevant;
-- exact SHA;
-- workflow/run identifier;
-- source/test paths;
-- evidence category;
-- result/status;
-- research-question/result mapping;
-- known limitation.
-
-Evidence should support the manuscript rather than duplicate prose.
-
-### Figure and data requirements
-
-The intended core explanatory visuals currently include:
-
-- the Gradually adoption figure for motivation/context;
-- the ReAct loop for the harness execution cycle;
-- the simple king/queen embedding diagram for the lightweight embedding example.
-
-The 3D embedding diagram is not part of the intended final visual set.
-
-Other figures remain justified only when they materially improve the final paper.
-
-Figures and tables must materially improve explanation or evidence presentation.
-
-Each final visual must have:
-
-- a clear purpose;
-- traceable source/provenance;
-- an accurate caption;
-- consistency with the evaluated revision where implementation-specific.
-
-Generated figures must be deterministic from checked-in data or verified source inputs.
-
-### Typst/source requirements
-
-The manuscript source should remain simple enough to read and edit directly.
-
-It may contain:
-
-- prose;
-- headings;
-- citations;
-- figures/tables;
-- small presentation helpers.
-
-Content architecture should not depend on a separate semantic term registry or glossary model.
-
-Formatting helpers must serve presentation rather than determine manuscript semantics.
-
-### School-compliance requirements
-
-The final publication must comply with the verified school contract recorded in this file.
-
-Before submission, direct guide-text verification must settle all remaining uncertain requirements, including:
-
-- declaration;
-- annotation/abstract;
-- keywords;
-- bibliography wording;
-- title-page fields;
-- pagination;
-- work-range/count requirements;
-- figures/tables;
-- appendices;
-- submission artifacts;
-- length requirements;
-- similarity/plagiarism requirements;
-- typography.
+Important implementation/evaluation claims must remain traceable to the exact source, test, workflow, or cited external source that supports them.
 
 ### Publication requirements
 
@@ -626,7 +553,7 @@ The product is ready for final submission/release when:
 #### Evidence
 
 - DarkFactory revision is pinned;
-- evidence manifest is complete;
+- DarkFactory implementation claims are traceable to the pinned submodule and cited sources;
 - important implementation/evaluation claims are traceable;
 - implementation-specific figures match the pinned system.
 
@@ -660,7 +587,7 @@ This section is the live current/next work queue. Keep it short and current.
 
 #### DarkFactory evidence and manuscript verification
 
-- verify that the `darkfactory` gitlink, evidence data, bibliography reference, manuscript claims, and figures all describe the same evaluated revision `e9c10221b40589512d262a0edb95f709b923150c`;
+- verify that the `darkfactory` gitlink, bibliography reference, manuscript claims, and figures all describe the same evaluated revision `e9c10221b40589512d262a0edb95f709b923150c`;
 - preserve the distinction between the production GitHub Actions/Python controller path and the co-located TypeScript declarative graph engine;
 - complete any missing methodology/run provenance needed to reproduce the stated structural findings;
 - audit every DarkFactory-specific claim against source/tests/workflows at the pinned revision.
@@ -710,7 +637,6 @@ Primary files:
 - `index.typ`
 - `bib/references.bib`
 - `img/**`
-- `data/**`
 
 #### A1. Establish the manuscript architecture
 
@@ -805,7 +731,6 @@ Before writing practical claims:
 
 - update/fetch the submodule;
 - choose one merged canonical DarkFactory revision;
-- record that SHA in the evidence manifest;
 - read its generated documentation, source, tests, workflows, package boundaries, and configuration;
 - derive the practical chapter structure from the implementation.
 
@@ -813,19 +738,9 @@ The practical chapter should explain the architectural decisions that realize th
 
 #### A4. Rebuild Results and discussion from evidence
 
-Use a reproducible evidence manifest under `data/`.
+Use the pinned `darkfactory` submodule, source/tests/workflows, and cited external sources directly. Record provenance in the manuscript/bibliography where it is needed to support reproducibility rather than maintaining a parallel evidence database.
 
-The manifest should contain at least:
-
-- DarkFactory repository/ref/SHA;
-- target repository/ref/SHA where external repository evidence is used;
-- CI/workflow run IDs;
-- source/test paths supporting implementation claims;
-- evidence category;
-- research-question mapping;
-- evidence limitations.
-
-Results should be generated from verified evidence, then interpreted in prose.
+Results should be derived from verified evidence, then interpreted in prose.
 
 #### A5. Write the framing last
 
@@ -884,7 +799,7 @@ The source should be easy to read as a manuscript file without understanding a s
 Primary files:
 
 - `darkfactory`
-- `data/evidence.json`
+- `bib/references.bib`
 - `img/darkfactory-pipeline.svg`
 - `img/darkfactory-architecture.svg`
 - `img/generated/gradually-ai-usage-2026.svg`
@@ -892,14 +807,14 @@ Primary files:
 
 Established invariants:
 
-- the `darkfactory` gitlink and `data/evidence.json` must identify the same evaluated revision;
-- the evidence script validates that revision before publication;
-- the Gradually dataset is retained because it deterministically generates a figure used by the manuscript;
-- evidence datasets and generated figures that are no longer used by the manuscript are removed rather than retained as historical Phase 2 material;
-- the two DarkFactory diagrams must describe the pinned implementation and are part of the current manuscript;
+- the `darkfactory` gitlink is the authoritative evaluated implementation revision;
+- DarkFactory-specific claims and figures must match that pinned revision;
+- source provenance belongs in `bib/references.bib` and claim-local citations;
+- the Gradually dataset lives in `scripts/evidence.ts` because that script is its only consumer;
+- generated figures that are no longer used by the manuscript are removed rather than retained historically;
 - generated evidence must be deterministic.
 
-Do not reintroduce phase-numbered evidence filenames or unused evidence snapshots.
+Do not introduce a second evidence manifest or phase-numbered evidence files that duplicate authoritative repository state.
 
 ### Workstream D — Root Bun publication workspace
 
@@ -1017,7 +932,6 @@ Deliver as a PR for review.
 Begins from a stable DarkFactory revision.
 
 - pin submodule;
-- build evidence manifest;
 - validate architecture;
 - write Practical;
 - refresh Results.
@@ -1089,11 +1003,10 @@ Items move to the **Current queue** section of this file when their prerequisite
 Prerequisite: paper foundation accepted and a stable DarkFactory revision selected.
 
 - pin the `darkfactory` submodule to the canonical evaluated revision;
-- replace phase-labelled evidence data with a stable evidence manifest;
 - validate implementation-specific architecture figures against the pinned revision;
 - write the practical DarkFactory chapter from source/docs/tests/workflows/configuration;
 - rebuild Results and discussion from that evidence;
-- ensure manuscript, evidence manifest, submodule SHA, and CI provenance agree.
+- ensure manuscript, bibliography reference, figures, submodule SHA, and CI provenance agree.
 
 ### School-guide reconciliation
 
@@ -1128,7 +1041,7 @@ Prerequisite: manuscript, evidence, web workbench, and publication pipeline acce
 - clean-checkout build validation;
 - Pages validation;
 - release artifact validation from the same accepted commit;
-- remove unused assets/data/scripts/workflows;
+- remove unused assets/scripts/workflows;
 - publish the canonical final release.
 
 # Repository instructions — DarkFactory-Paper
@@ -1147,7 +1060,6 @@ Update the owning document when a durable decision changes. Do not recreate sepa
 Supporting resources may live in:
 
 - `bib/`
-- `data/`
 - `img/`
 - `fonts/`
 
@@ -1181,7 +1093,7 @@ All DarkFactory-specific claims must refer to the single evaluated revision:
 
 `e9c10221b40589512d262a0edb95f709b923150c`
 
-The `darkfactory` submodule, gitlink, evidence manifest, bibliography URL, manuscript, figures, and Results must agree on that revision. Use only the bibliography key `darkfactory-e9c10221` for DarkFactory implementation claims.
+The `darkfactory` submodule/gitlink, bibliography URL, manuscript, figures, and Results must agree on that revision. Use only the bibliography key `darkfactory-e9c10221` for DarkFactory implementation claims.
 
 Do not conflate the production GitHub Actions/Python controller path with the co-located TypeScript declarative graph engine; describe their relationship exactly as implemented at the pinned revision.
 
