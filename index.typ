@@ -161,11 +161,11 @@ Vektorové reprezentace, označované jako #strong[embeddingy], zachycují séma
 Kompakce po překročení stanoveného limitu nahrazuje starší průběh strukturovaným souhrnem klíčových rozhodnutí a dosažených výsledků. Do dalšího volání tak není nutné vkládat celý přepis předchozí interakce @anthropic-context-engineering.
 
 #heading(level: 2)[Agent a harness]
-Zásadní rozdíl mezi konverzačním chatbotem a autonomním agentem nespočívá v architektuře použitého modelu, nýbrž v míře delegace provádění. Chatbot setrvává v roli externího rádce: uživatel musí manuálně kopírovat úryvky kódu, dodávat kontext a spouštět navržené příkazy. Agent naproti tomu prostřednictvím harnessu získává přímý přístup k nástrojům repozitáře. Sám prochází souborovou strukturu, upravuje kód, spouští testy a na základě chybových výstupů samostatně koriguje své změny @anthropic2024tooluse @openai-agents-sandbox. Tento posun transformuje roli člověka z přímého vykonavatele na dohlížejícího architekta.
+Pro tuto práci je praktickou hranicí mezi konverzačním chatbotem a agentem míra delegovaného provádění. V běžném chatovém režimu model především vrací text a uživatel zůstává vykonavatelem navržených kroků. Agent naproti tomu prostřednictvím harnessu získává řízený přístup k nástrojům a prostředí: může procházet soubory, upravovat kód, spouštět testy a používat jejich výstupy v dalších krocích @anthropic2024tooluse @openai-agents-sandbox. Role člověka se tím může posunout od provádění jednotlivých kroků k zadání, omezení a revizi delegované práce.
 
 #heading(level: 3)[Smyčka]
 
-Základním mechanismem agentického systému je iterativní řídicí smyčka. Na rozdíl od jednorázové generace odpovědi u chatbota probíhá interakce v cyklu podle vzoru #strong[ReAct] (*Reasoning and Acting*) @yao2022. Model v každém kroku analyzuje aktuální stav kontextu, zformuluje vnitřní uvažování a navrhne konkrétní volání nástroje ve formě strukturovaného požadavku. Harness tuto akci provede v prostředí projektu, zachytí výsledek a vrátí jej modelu jako nové pozorování. Smyčka pokračuje, dokud model nedosáhne cíle nebo nenarazí na bezpečnostní limit kroků či tokenů; její průběh znázorňuje @fig-react-loop.
+Základním mechanismem agentického systému je iterativní řídicí smyčka. Na rozdíl od jednorázové generace odpovědi může interakce probíhat v cyklu podle vzoru #strong[ReAct] (*Reasoning and Acting*) @yao2022. Model v každém kroku na základě aktuálního kontextu zvolí další akci nebo volání nástroje ve strukturovaném požadavku. Harness tuto akci provede v prostředí projektu, zachytí výsledek a vrátí jej modelu jako nové pozorování. Smyčka pokračuje do splnění podmínky ukončení nebo do dosažení limitu běhu; její princip znázorňuje @fig-react-loop.
 
 #figure(
   image("img/react-loop.svg", width: 75%),
@@ -193,9 +193,9 @@ Rozsáhlou úlohu lze rozdělit do více agentních běhů, pokud mají podúloh
 
 Více agentů samo o sobě nezaručuje lepší výsledek. Paralelizace přináší užitek jen tehdy, když jsou omezeny vzájemné závislosti a koordinátor dokáže odhalit konflikty, ověřit dílčí výstupy a posoudit sloučený výsledek vůči společným podmínkám přijetí. Orchestrace proto zahrnuje nejen rozdělení práce, ale také správu kontextu, pořadí kroků, sdíleného stavu a integračních kontrol.
 
-#strong[Goal loop] tvoří nadřazenou řídicí smyčku vůči jednotlivým cyklům agentní smyčky: když model ve standardní smyčce ReAct označí svůj krok za dokončený, harness porovná dosažený stav s cílem a podmínkami přijetí a rozhodne, zda běh ukončit, nebo úlohu vrátit agentovi k další iteraci či změně strategie @yao2022 @anthropic-harness-design.
+Termín #strong[Goal loop] v této práci označuje nadřazenou řídicí smyčku nad jednotlivými agentními kroky: po dílčím dokončení harness porovná pozorovaný stav s cílem a podmínkami přijetí a podle výsledku běh ukončí, nebo zahájí další iteraci či změnu strategie. Jde o inženýrské zobecnění iterativního agentního cyklu a harnessové evaluace, nikoli o samostatný standardizovaný protokol @yao2022 @anthropic-harness-design.
 
-Princip #strong[human-in-the-loop] (#strong[HITL]) doplňuje automatizované smyčky o kontrolní brány, v nichž je vyžadováno explicitní lidské rozhodnutí, například schválení specifikace, potvrzení implementačního plánu nebo přijetí výsledného diffu. Vývojář tak nadále odpovídá za záměr, architekturu a integraci, zatímco agent provádí ohraničenou implementační práci. Začlenění změn do hlavní větve vyžaduje vedle technického ověření v CI také lidskou revizi a převzetí odpovědnosti za výsledek @github-branches @github-pull-requests.
+Princip #strong[human-in-the-loop] (#strong[HITL]) doplňuje automatizované smyčky o kontrolní brány, v nichž je vyžadováno explicitní lidské rozhodnutí, například schválení specifikace, potvrzení implementačního plánu nebo přijetí výsledného diffu. Vývojář tak může ponechat agentovi ohraničenou implementační práci a současně si zachovat odpovědnost za záměr a integraci. V repozitářovém workflow lze lidskou revizi a technické kontroly vynutit jako podmínky před začleněním pull requestu do chráněné hlavní větve @github-branches @github-pull-requests.
 
 #pagebreak(weak: true)
 #align(center)[
