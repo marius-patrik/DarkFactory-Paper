@@ -254,7 +254,7 @@ test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-ou
 
   await page.goto(`/?code=test-code&state=${encodeURIComponent(transaction.state)}`);
   await expect(page.getByTitle("Sign out")).toContainText("octocat");
-  await expect(page.getByRole("status")).toContainText("completed successfully");
+  await expect(page.locator(".workspace-auth-status")).toContainText("completed successfully");
 
   await page.getByRole("button", { name: "Close" }).click();
   await page.getByTitle("Sign out").click();
@@ -262,7 +262,7 @@ test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-ou
   expect(await page.evaluate(() => sessionStorage.getItem("workbench-github-token"))).toBeNull();
 
   await page.goto("/?error=access_denied&error_description=Denied");
-  await expect(page.getByRole("status")).toContainText("Denied");
+  await expect(page.locator(".workspace-auth-status")).toContainText("Denied");
 
   await page.goto("/");
   await page.evaluate(() => {
@@ -274,7 +274,7 @@ test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-ou
     }));
   });
   await page.goto("/?code=expired&state=expired-state");
-  await expect(page.getByRole("status")).toContainText("expired");
+  await expect(page.locator(".workspace-auth-status")).toContainText("expired");
 });
 
 test("authenticated private repo supports dirty edits, staging, local commit, push, and divergence", async ({ page }) => {
@@ -341,23 +341,27 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await expect(page.getByRole("button", { name: /hello · function · line 1/ })).toBeVisible();
   await omnibar.press("Enter");
 
-  await omnibar.click();
+  await page.keyboard.press("Control+p");
+  await expect(omnibar).toBeFocused();
   await omnibar.fill("#7");
   const issueResult = page.locator(".omnibar-results button").filter({ hasText: "Private issue" }).first();
   await expect(issueResult).toBeVisible();
   await issueResult.click();
   await expect(surface(page, "main").getByText("#7 Private issue", { exact: true }).last()).toBeVisible();
 
+  await page.keyboard.press("Control+p");
   await omnibar.fill(`commit:${BASE_SHA.slice(0, 7)}`);
   await expect(page.getByRole("button", { name: /Base commit/ })).toBeVisible();
   await omnibar.press("Enter");
   await expect(surface(page, "main").getByText(BASE_SHA)).toBeVisible();
 
+  await page.keyboard.press("Control+p");
   await omnibar.fill("run:12");
   await expect(page.getByRole("button", { name: /Run #12/ })).toBeVisible();
   await omnibar.press("Enter");
   await expect(surface(page, "main").getByText("Validate private repository")).toBeVisible();
 
+  await page.keyboard.press("Control+p");
   await omnibar.fill("release:v1.0.0");
   await expect(page.getByRole("button", { name: /v1.0.0/ })).toBeVisible();
   await omnibar.press("Enter");
