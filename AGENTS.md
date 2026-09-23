@@ -449,7 +449,6 @@ It should verify, as appropriate:
 
 - successful Typst compilation;
 - bibliography/citation and asset resolution through compilation;
-- deterministic evidence generation used by the manuscript;
 - canonical PDF/Markdown output presence;
 - generic web lint/typecheck/build correctness;
 - Chromium acceptance;
@@ -512,7 +511,7 @@ A canonical release must:
 
 ### Repository quality requirements
 
-The final repository should contain only active product code, data, assets, documentation, and automation.
+The final repository should contain only active product code, assets, documentation, and automation.
 
 Coordination ownership is:
 
@@ -757,7 +756,7 @@ This ensures the front/back framing describes the paper that actually exists.
 
 #### A6. Curate sources and visuals
 
-For every bibliography entry, figure, and data file:
+For every bibliography entry and figure:
 
 - identify the claim or argument it supports;
 - keep it only if that contribution remains in the paper;
@@ -966,7 +965,7 @@ After all review PRs are accepted.
 - inspect final PDF page by page;
 - validate Pages;
 - validate release assets from one final commit;
-- keep the final repository free of unused paper assets, data, scripts, and workflow paths.
+- keep the final repository free of unused paper assets, scripts, and workflow paths.
 
 ### Review gates
 
