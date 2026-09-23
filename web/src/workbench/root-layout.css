@@ -198,3 +198,23 @@
 .workbench-tab-dragging .workbench-surface-empty .workbench-dockview {
   pointer-events: auto;
 }
+
+
+.workbench-surface-empty .workbench-dockview,
+.workbench-surface-empty .workbench-dockview * {
+  pointer-events: none !important;
+}
+
+.workbench-surface-empty .empty-workbench {
+  z-index: 1000;
+  pointer-events: auto !important;
+}
+
+.workbench-surface-empty .empty-workbench * {
+  pointer-events: auto !important;
+}
+
+.workbench-tab-dragging .workbench-surface-empty .empty-workbench,
+.workbench-tab-dragging .workbench-surface-empty .empty-workbench * {
+  pointer-events: none !important;
+}
