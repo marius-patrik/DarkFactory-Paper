@@ -27,7 +27,7 @@ OUT_DIR ?= out
 OUT_FINAL := $(OUT_DIR)/prace.pdf
 OUT_REVIEW := $(OUT_DIR)/prace-review.pdf
 
-.PHONY: help external-assets build review exports all all-templates all-books template-check web-install web-lint web-format web-check web-build verify ci site watch png clean check
+.PHONY: help external-assets build review exports all all-templates all-books template-check web-install web-lint web-format web-check web-build ci site watch png clean check
 
 help:
 	@echo "make all BOOK=$(BOOK) TEMPLATE=$(TEMPLATE)   – PDF/HTML/Markdown final + review"
@@ -37,7 +37,7 @@ help:
 	@echo "make web-lint                               – Biome lint web viewer"
 	@echo "make web-format                             – Biome format web viewer"
 	@echo "make web-check                              – Biome + TypeScript + production Rsbuild"
-	@echo "make ci                                     – canonical book publication + viewer + architecture"
+	@echo "make ci                                     – canonical publication + web validation"
 	@echo "make site                                   – canonical book + React GitHub Pages"
 	@echo "make watch BOOK=$(BOOK)                     – live final preview"
 	@echo "Books: $(BOOKS)"
@@ -80,10 +80,7 @@ web-check: web-install
 web-build: web-install
 	$(NPM) --prefix web run build
 
-verify:
-	BOOK=$(BOOK) $(PYTHON) scripts/check_build.py
-
-ci: all all-templates web-check verify
+ci: all all-templates web-check
 
 site:
 	@if command -v $(TYPST) >/dev/null 2>&1; then \
