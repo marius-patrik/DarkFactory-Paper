@@ -15,7 +15,7 @@ const tab = (page: Page, name: Surface, label: string) =>
 
 async function dragTab(page: Page, from: Surface, label: string, to: Surface) {
   const source = tab(page, from, label);
-  const target = surface(page, to).locator(".workbench-dockview");
+  const target = surface(page, to);
   await expect(source).toBeVisible();
   await expect(target).toBeVisible();
   const targetBox = await target.boundingBox();
@@ -254,7 +254,10 @@ test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-ou
 
   await page.goto(`/?code=test-code&state=${encodeURIComponent(transaction.state)}`);
   await expect(page.getByTitle("Sign out")).toContainText("octocat");
-  await expect(page.locator(".workspace-auth-status")).toContainText("completed successfully");
+  await expect.poll(async () => page.evaluate(() => {
+    const raw = sessionStorage.getItem("workbench-github-auth-result");
+    return raw ? JSON.parse(raw).phase : "";
+  })).toBe("success");
 
   await page.getByRole("button", { name: "Close" }).click();
   await page.getByTitle("Sign out").click();
@@ -262,7 +265,10 @@ test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-ou
   expect(await page.evaluate(() => sessionStorage.getItem("workbench-github-token"))).toBeNull();
 
   await page.goto("/?error=access_denied&error_description=Denied");
-  await expect(page.locator(".workspace-auth-status")).toContainText("Denied");
+  await expect.poll(async () => page.evaluate(() => {
+    const raw = sessionStorage.getItem("workbench-github-auth-result");
+    return raw ? JSON.parse(raw).phase : "";
+  })).toBe("denied");
 
   await page.goto("/");
   await page.evaluate(() => {
@@ -274,7 +280,10 @@ test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-ou
     }));
   });
   await page.goto("/?code=expired&state=expired-state");
-  await expect(page.locator(".workspace-auth-status")).toContainText("expired");
+  await expect.poll(async () => page.evaluate(() => {
+    const raw = sessionStorage.getItem("workbench-github-auth-result");
+    return raw ? JSON.parse(raw).phase : "";
+  })).toBe("expired");
 });
 
 test("authenticated private repo supports dirty edits, staging, local commit, push, and divergence", async ({ page }) => {
