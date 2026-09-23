@@ -328,6 +328,9 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await openCommand(page, "Open Actions");
   await expect(surface(page, "main").getByText("Validate private repository", { exact: true }).last()).toBeVisible();
 
+  await openFromLauncher(page, "Projects");
+  await expect(surface(page, "main").getByText("#1 Private project", { exact: true })).toBeVisible();
+
   await openFromLauncher(page, "Branches & Tags");
   await expect(surface(page, "main").getByText("main", { exact: true }).last()).toBeVisible();
   await expect(surface(page, "main").getByText("v1.0.0", { exact: true }).last()).toBeVisible();
@@ -355,6 +358,17 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await expect(issueResult).toBeVisible();
   await issueResult.click();
   await expect(surface(page, "main").getByText("#7 Private issue", { exact: true }).last()).toBeVisible();
+
+  await page.keyboard.press("Control+p");
+  await omnibar.fill("branch:feature");
+  await expect(page.locator(".omnibar-results button").filter({ hasText: "feature" }).first()).toBeVisible();
+  await omnibar.press("Escape");
+
+  await page.keyboard.press("Control+p");
+  await omnibar.fill("project:1");
+  await expect(page.locator(".omnibar-results button").filter({ hasText: "Private project" }).first()).toBeVisible();
+  await omnibar.press("Enter");
+  await expect(surface(page, "main").getByText("#1 Private project", { exact: true }).last()).toBeVisible();
 
   await page.keyboard.press("Control+p");
   await omnibar.fill(`commit:${BASE_SHA.slice(0, 7)}`);
