@@ -43,3 +43,12 @@ jobs:
 
       - name: Assemble Pages output
         run: bun run site:assemble
+
+      - name: Upload generated publication for audit
+        uses: actions/upload-artifact@v4
+        with:
+          name: publication-audit
+          path: |
+            ODBORNA_PRACE.pdf
+            README.md
+            img/generated/gradually-ai-usage-2026.svg

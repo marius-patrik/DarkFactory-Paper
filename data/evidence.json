@@ -1,0 +1,52 @@
+{
+  "darkfactory": {
+    "repository": "marius-patrik/DarkFactory",
+    "evaluated_revision": "e9c10221b40589512d262a0edb95f709b923150c",
+    "evaluated_ci_run": "35616745304",
+    "implementation_scope": "mixed snapshot: production GitHub Actions/Python controller path plus co-located TypeScript harness/declarative graph; structural analysis only, not end-to-end operational evaluation"
+  },
+  "gradually": {
+    "source": "Finn Hillebrandt, How Many People Use AI? Facts & Figures 2026, Gradually AI",
+    "published": "2026-08-23",
+    "snapshot": "2026-08",
+    "world_population": 8300000000,
+    "dot_count": 2500,
+    "people_per_dot_approx": 3300000,
+    "categories": [
+      {
+        "key": "never",
+        "label_cs": "Nikdy vědomě nepoužili generativní AI",
+        "people_approx": 5900000000,
+        "share_percent": 71,
+        "dots": 1771
+      },
+      {
+        "key": "free",
+        "label_cs": "Bezplatné AI chatboty jako nejvyšší kategorie",
+        "people_approx": 2300000000,
+        "share_percent": 28,
+        "dots": 696
+      },
+      {
+        "key": "paid",
+        "label_cs": "Placené AI předplatné jako nejvyšší kategorie",
+        "people_approx": 80000000,
+        "share_percent": 1,
+        "dots": 24
+      },
+      {
+        "key": "coding",
+        "label_cs": "AI coding agents jako nejvyšší kategorie",
+        "people_approx": 30000000,
+        "share_percent": 0.36,
+        "dots": 9,
+        "estimate_range_people": [
+          25000000,
+          35000000
+        ],
+        "estimate_kind": "editorial deduplicated midpoint"
+      }
+    ],
+    "source_url": "https://www.gradually.ai/en/how-many-people-use-ai/"
+  }
+}

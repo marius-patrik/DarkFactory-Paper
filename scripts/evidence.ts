@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
-const DATA = join("data", "phase2-evidence.json");
+const DATA = join("data", "evidence.json");
 const OUTPUT = join("img", "generated", "gradually-ai-usage-2026.svg");
 
 type Category = {
@@ -12,6 +12,12 @@ type Category = {
 };
 
 type Evidence = {
+  darkfactory: {
+    repository: string;
+    evaluated_revision: string;
+    evaluated_ci_run: string;
+    implementation_scope: string;
+  };
   gradually: {
     dot_count: number;
     categories: Category[];
@@ -46,8 +52,32 @@ function text(
   );
 }
 
+async function gitlinkRevision() {
+  const process = Bun.spawn(["git", "rev-parse", "HEAD:darkfactory"], {
+    stdout: "pipe",
+    stderr: "pipe",
+  });
+  const [exitCode, stdout, stderr] = await Promise.all([
+    process.exited,
+    new Response(process.stdout).text(),
+    new Response(process.stderr).text(),
+  ]);
+  if (exitCode !== 0) {
+    throw new Error("could not resolve darkfactory gitlink: " + stderr.trim());
+  }
+  return stdout.trim();
+}
+
 export async function renderEvidence() {
   const payload = JSON.parse(await readFile(DATA, "utf8")) as Evidence;
+  const pinnedRevision = await gitlinkRevision();
+  if (payload.darkfactory.evaluated_revision !== pinnedRevision) {
+    throw new Error(
+      "DarkFactory evidence revision " + payload.darkfactory.evaluated_revision +
+      " does not match gitlink " + pinnedRevision,
+    );
+  }
+
   const categories = payload.gradually.categories;
   const dotCount = categories.reduce((total, item) => total + item.dots, 0);
 
@@ -154,5 +184,5 @@ export async function renderEvidence() {
 
 if (import.meta.main) {
   await renderEvidence();
-  console.log("ok: rendered " + OUTPUT);
+  console.log("ok: validated pinned evidence and rendered " + OUTPUT);
 }

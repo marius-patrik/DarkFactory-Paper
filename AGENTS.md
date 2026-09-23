@@ -879,44 +879,27 @@ Actions:
 
 The source should be easy to read as a manuscript file without understanding a secondary semantic framework.
 
-### Workstream C — Rebuild evidence support
+### Workstream C — Evidence support
 
 Primary files:
 
 - `darkfactory`
-- `data/**`
-- `img/components-darkfactory.svg`
-- `img/lifecycle-darkfactory.svg`
-- `img/docs-pipeline.svg`
-- evidence-related scripts under `scripts/`
+- `data/evidence.json`
+- `img/darkfactory-pipeline.svg`
+- `img/darkfactory-architecture.svg`
+- `img/generated/gradually-ai-usage-2026.svg`
+- `scripts/evidence.ts`
 
-#### C1. Pin DarkFactory
+Established invariants:
 
-Select the exact DarkFactory revision used by the paper and update the submodule pointer.
+- the `darkfactory` gitlink and `data/evidence.json` must identify the same evaluated revision;
+- the evidence script validates that revision before publication;
+- the Gradually dataset is retained because it deterministically generates a figure used by the manuscript;
+- evidence datasets and generated figures that are no longer used by the manuscript are removed rather than retained as historical Phase 2 material;
+- the two DarkFactory diagrams must describe the pinned implementation and are part of the current manuscript;
+- generated evidence must be deterministic.
 
-The paper and evidence manifest must agree on that SHA.
-
-#### C2. Replace phase-labelled evidence data with a stable evidence model
-
-Use a stable filename such as:
-
-`data/darkfactory-evidence.json`
-
-Model evidence by meaning, not implementation phase number.
-
-#### C3. Validate architecture figures
-
-For each DarkFactory figure:
-
-- compare it with the pinned implementation;
-- regenerate/rewrite it from verified architecture where useful;
-- otherwise omit it from the final paper.
-
-#### C4. Make evidence rendering deterministic
-
-If generated evidence figures remain useful, provide one clearly named script whose input is the evidence manifest and whose output is deterministic.
-
-Avoid phase-numbered script names.
+Do not reintroduce phase-numbered evidence filenames or unused evidence snapshots.
 
 ### Workstream D — Root Bun publication workspace
 
