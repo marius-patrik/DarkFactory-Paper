@@ -345,7 +345,7 @@ export async function installPublicGithubMock(page: Page) {
     permissions: { pull: true },
   };
 
-  await page.route(`https://api.github.com/repos/${MOCK_PUBLIC_REPOSITORY}**`, async (route) => {
+  await page.route("https://api.github.com/**", async (route) => {
     const request = route.request();
     authorizationHeaders.push(request.headers()["authorization"]);
     const url = new URL(request.url());
