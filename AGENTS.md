@@ -568,9 +568,9 @@ GitHub Pages should publish:
 
 - the generic web workbench;
 - `ODBORNA_PRACE.pdf`;
-- generated `README.md`;
-- required publication images;
-- lightweight publication metadata.
+- generated `README.md`.
+
+The Markdown publication embeds its figure data, so Pages does not need a second copied image tree or a manuscript-specific publication manifest.
 
 The published site must be usable from a clean deployment of the same commit.
 
@@ -984,7 +984,7 @@ Keep exactly these product automation responsibilities:
 #### Pages
 
 - build from `main`;
-- publish the generic workbench with `ODBORNA_PRACE.pdf`, generated `README.md`, required images, and lightweight publication metadata.
+- publish the generic workbench with `ODBORNA_PRACE.pdf` and generated `README.md`.
 
 #### Release
 
