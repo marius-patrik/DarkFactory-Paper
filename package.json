@@ -8,9 +8,9 @@
   ],
   "scripts": {
     "publication": "bun scripts/publication.ts",
-    "web:build": "bun --cwd web run build",
-    "web:check": "bun --cwd web run check",
-    "web:acceptance": "bun --cwd web run acceptance",
+    "web:build": "bun run --cwd web build",
+    "web:check": "bun run --cwd web check",
+    "web:acceptance": "bun run --cwd web acceptance",
     "build": "bun run publication && bun run web:build",
     "check": "bun run publication && bun run web:check",
     "site:assemble": "bun scripts/site.ts",
