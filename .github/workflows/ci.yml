@@ -50,15 +50,6 @@ jobs:
       - name: Assemble Pages output
         run: bun run site:assemble
 
-      - name: Upload final-review publication
-        uses: actions/upload-artifact@v4
-        with:
-          name: final-review-publication
-          path: |
-            ODBORNA_PRACE.pdf
-            README.md
-
-
       - name: Commit generated publication
         if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
         env:
