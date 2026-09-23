@@ -575,38 +575,6 @@ The product is ready for final submission/release when:
 
 ---
 
-## Current action queue
-
-This section contains only work that still gates final acceptance.
-
-### In flight — final integration PR
-
-- regenerate `ODBORNA_PRACE.pdf` and generated `README.md` from the reconciled manuscript and figures through CI;
-- verify the regenerated paper still exceeds the 18,000-character school minimum and keeps both annotations within the recommended 150–250-word range;
-- re-inspect the regenerated PDF page by page for clipping, pagination, headings, figures, bibliography, and front/back matter;
-- require the canonical CI, Chromium acceptance, and site assembly to pass on the exact final PR head.
-
-### After merge
-
-1. verify the `main` CI and Deploy Documentation runs for the merge commit;
-2. verify the live Pages deployment is reachable and serves the accepted PDF/README;
-3. publish the final release from that exact merge commit using an explicitly chosen release tag.
-
-### Completed acceptance facts
-
-- the `darkfactory` gitlink, bibliography reference, manuscript implementation claims, and DarkFactory figures use the single evaluated revision `e9c10221b40589512d262a0edb95f709b923150c`;
-- the production GitHub Actions/Python controller path is explicitly distinguished from the co-located TypeScript declarative graph engine;
-- DarkFactory claims were audited against the pinned workflow, runner, graph/state implementation, quota-resume implementation, and relevant tests;
-- the bibliography and image inventories contain no unused entries;
-- the public GJKT materials were rechecked on 2026-09-23 and did not surface a newer general expert-paper guide than the verified 2024 guide;
-- the pre-final generated PDF was inspected end to end: 19 A4 pages, searchable text, embedded fonts, no obvious clipping/overlap, and compliant front/back matter structure.
-
-### Coordination hygiene
-
-Keep this queue short. Remove a gate when it is completed instead of preserving phase history.
-
----
-
 # Repository instructions — DarkFactory-Paper
 
 ## Governing document
