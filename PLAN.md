@@ -217,7 +217,6 @@ Primary files:
 - `Makefile`
 - `scripts/build_review.py`
 - `scripts/build_web_exports.py`
-- `scripts/check_build.py`
 - `scripts/build_site.py`
 - `scripts/fetch_external_assets.py`
 - `scripts/render_phase2_evidence.py`
@@ -259,19 +258,18 @@ Git comparison/review belongs primarily to the IDE/workbench rather than requiri
 - localize required assets;
 - contain no thesis semantic taxonomy assumptions.
 
-### D4. Rewrite build validation around the final contract
+### D4. Keep validation executable and product-facing
 
-`scripts/check_build.py` should validate:
-- canonical source exists;
-- expected top-level document structure;
-- bibliography/citations resolve;
-- referenced assets exist;
-- generated artifacts exist;
-- no manuscript-only semantic registry is required;
-- evidence manifest has required provenance;
-- DarkFactory SHA in evidence matches the submodule when the practical/evidence phase is complete.
+Do not maintain a source-text contract validator for repository architecture or manuscript prose.
 
-Avoid validation rules that encode individual terms or prose choices.
+Validation should come from the commands that exercise the actual product:
+- Typst compilation must succeed;
+- web exports must generate successfully and resolve their required assets;
+- web lint, typechecking, production build, and browser tests must pass;
+- evidence/provenance checks should operate on structured evidence data when that phase is complete;
+- site and release generation must succeed from the accepted revision.
+
+Do not gate CI on substring checks for implementation details, prose wording, headings, dependency names, or retired architecture markers.
 
 ### D5. Align site generation with the generic IDE
 
@@ -377,7 +375,7 @@ Active until the theoretical and editorial foundation is stable enough that late
 - curate bibliography/figures alongside the rewrite;
 - establish clean academic typography using the heading pagination and paragraph rhythm defined in PRD;
 - keep Practical as a clean DarkFactory boundary until evidence is pinned;
-- keep validators editorially generic rather than hard-coding level-2/3 prose structure;
+- validate the manuscript through real compilation and review rather than source-text prose contracts;
 - re-read the generated PDF end-to-end before accepting the phase.
 
 Deliver as a PR for review.
@@ -411,7 +409,7 @@ Can overlap with Phases 1–3 where file ownership is independent.
 - align site manifest/content index;
 - establish canonical artifact set;
 - add compiled single-file Typst generation if required;
-- make validators test the final repository contract.
+- make CI validate the final repository through real builds, tests, exports, and provenance checks.
 
 Deliver as a PR for review.
 
