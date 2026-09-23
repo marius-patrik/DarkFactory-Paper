@@ -368,7 +368,7 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await omnibar.fill("run:12");
   await expect(page.getByRole("button", { name: /Run #12/ })).toBeVisible();
   await omnibar.press("Enter");
-  await expect(surface(page, "main").getByText("Validate private repository")).toBeVisible();
+  await expect(surface(page, "main").getByText("Validate private repository", { exact: true }).last()).toBeVisible();
 
   await page.keyboard.press("Control+p");
   await omnibar.fill("release:v1.0.0");
