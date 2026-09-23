@@ -7,19 +7,20 @@ const OUTPUT = join("img", "generated", "gradually-ai-usage-2026.svg");
 type Category = {
   key: "never" | "free" | "paid" | "coding";
   label_cs: string;
+  people_approx: number;
   share_percent: number;
   dots: number;
+  estimate_range_people?: [number, number];
 };
 
 type Evidence = {
   darkfactory: {
-    repository: string;
     evaluated_revision: string;
-    evaluated_ci_run: string;
-    implementation_scope: string;
   };
   gradually: {
+    world_population: number;
     dot_count: number;
+    people_per_dot_approx: number;
     categories: Category[];
   };
 };
@@ -97,12 +98,14 @@ export async function renderEvidence() {
     paid: "#44403c",
     coding: "#111827",
   } as const;
-  const people = {
-    never: "≈ 5,9 mld.",
-    free: "≈ 2,3 mld.",
-    paid: "≈ 80 mil.",
-    coding: "≈ 30 mil.",
-  } as const;
+  const approximatePeople = (value: number) => {
+    const divisor = value >= 1_000_000_000 ? 1_000_000_000 : 1_000_000;
+    const unit = divisor === 1_000_000_000 ? "mld." : "mil.";
+    const scaled = value / divisor;
+    const digits = Number.isInteger(scaled) ? 0 : 1;
+    return "≈ " + scaled.toFixed(digits).replace(".", ",") + " " + unit;
+  };
+  const percentage = (value: number) => String(value).replace(".", ",") + " %";
 
   const width = 1000;
   const height = 560;
@@ -138,8 +141,24 @@ export async function renderEvidence() {
   });
 
   const legendX = 545;
-  parts.push(text(legendX, 42, "8,3 mld. lidí = 2 500 bodů", 22, "bold"));
-  parts.push(text(legendX, 70, "1 bod ≈ 3,3 mil. lidí", 17));
+  parts.push(
+    text(
+      legendX,
+      42,
+      (payload.gradually.world_population / 1_000_000_000).toFixed(1).replace(".", ",") +
+        " mld. lidí = " + payload.gradually.dot_count.toLocaleString("cs-CZ") + " bodů",
+      22,
+      "bold",
+    ),
+  );
+  parts.push(
+    text(
+      legendX,
+      70,
+      "1 bod " + approximatePeople(payload.gradually.people_per_dot_approx),
+      17,
+    ),
+  );
 
   let y = 120;
   for (const item of categories) {
@@ -151,14 +170,12 @@ export async function renderEvidence() {
       '" stroke-width="1"/>',
     );
     parts.push(text(legendX + 25, y, item.label_cs, 16, item.key === "coding" ? "bold" : "normal"));
-    const share = item.key === "coding"
-      ? "0,36 %"
-      : String(item.share_percent).replace(".", ",") + " %";
     parts.push(
       text(
         legendX + 25,
         y + 24,
-        people[item.key] + " · " + share + " · " + item.dots + " bodů",
+        approximatePeople(item.people_approx) + " · " + percentage(item.share_percent) +
+          " · " + item.dots + " bodů",
         15,
       ),
     );
@@ -167,11 +184,18 @@ export async function renderEvidence() {
 
   parts.push(text(legendX, 485, "Kategorie se nepřekrývají; člověk je zařazen", 14));
   parts.push(text(legendX, 505, "podle nejpokročilejší použité kategorie.", 14));
+  const coding = categories.find((item) => item.key === "coding");
+  if (!coding?.estimate_range_people) {
+    throw new Error("Coding-agent estimate range is missing");
+  }
+  const [estimateLow, estimateHigh] = coding.estimate_range_people;
   parts.push(
     text(
       legendX,
       535,
-      "Coding agents: redakční deduplikovaný odhad (25–35 mil.).",
+      "Coding agents: redakční deduplikovaný odhad (" +
+        Math.round(estimateLow / 1_000_000) + "–" +
+        Math.round(estimateHigh / 1_000_000) + " mil.).",
       14,
       "bold",
     ),
