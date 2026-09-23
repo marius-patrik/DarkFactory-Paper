@@ -3,7 +3,10 @@ import {
   DockviewDefaultTab,
   DockviewReact,
   themeAbyss,
-  themeLight
+  themeLight,
+  type BuiltInContextMenuItem,
+  type GetTabContextMenuItemsParams,
+  type ReactContextMenuItemConfig,
 } from "dockview-react";
 import { EmptyWorkbench } from "./empty-workbench";
 import { LauncherButton } from "./launcher";
@@ -167,7 +170,9 @@ export function WorkbenchSurfaceView({
   const HeaderActions = useMemo(() => () => <LauncherButton surface={surface} />, [surface]);
   const dockTheme = runtime.settings.theme === "light" ? themeLight : themeAbyss;
 
-  const tabContextMenuItems = (params: any) => {
+  const tabContextMenuItems = (
+    params: GetTabContextMenuItemsParams,
+  ): (BuiltInContextMenuItem | ReactContextMenuItemConfig)[] => {
     const tab = paramsOf(params.panel);
     if (!tab) return [];
 
@@ -184,7 +189,7 @@ export function WorkbenchSurfaceView({
       (typeof tab.state.path === "string" ? tab.state.path : "") ||
       (typeof tab.state.url === "string" ? tab.state.url : "");
 
-    const items: any[] = [
+    const items: (BuiltInContextMenuItem | ReactContextMenuItemConfig)[] = [
       {
         label: tab.pinned ? "Unpin" : "Pin",
         action: () => runtimeRef.current.setPinned(tab.id, !tab.pinned),
