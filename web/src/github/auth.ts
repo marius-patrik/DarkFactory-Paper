@@ -99,14 +99,9 @@ export function getGithubAuthResult(): GithubAuthResult {
   return { phase: "signed-out" };
 }
 
-function publicEnv(name: "PUBLIC_GITHUB_OAUTH_CLIENT_ID" | "PUBLIC_GITHUB_AUTH_BROKER_URL") {
-  const env = (import.meta as unknown as { env?: Record<string, string | undefined> }).env;
-  return env?.[name]?.trim() ?? "";
-}
-
 export function getGithubAuthConfiguration(): GithubAuthConfiguration {
-  const clientId = publicEnv("PUBLIC_GITHUB_OAUTH_CLIENT_ID");
-  const brokerUrl = publicEnv("PUBLIC_GITHUB_AUTH_BROKER_URL");
+  const clientId = import.meta.env.PUBLIC_GITHUB_OAUTH_CLIENT_ID?.trim() ?? "";
+  const brokerUrl = import.meta.env.PUBLIC_GITHUB_AUTH_BROKER_URL?.trim() ?? "";
   return { clientId, brokerUrl, configured: Boolean(clientId && brokerUrl) };
 }
 
