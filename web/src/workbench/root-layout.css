@@ -227,3 +227,10 @@
 .workbench-surface-empty .empty-workbench {
   visibility: visible;
 }
+
+
+.workbench-surface-empty .workbench-dockview,
+.workbench-surface-empty .workbench-dockview * {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
