@@ -99,7 +99,10 @@ export function WorkbenchSurfaceView({
       }
 
       const dock = root.querySelector<HTMLElement>(".workbench-dockview");
-      const rect = dock?.getBoundingClientRect() ?? root.getBoundingClientRect();
+      const dockRect = dock?.getBoundingClientRect();
+      const rect = dockRect && dockRect.width > 0 && dockRect.height > 0
+        ? dockRect
+        : root.getBoundingClientRect();
       const edgeX = Math.min(36, rect.width * 0.12);
       const edgeY = Math.min(36, rect.height * 0.12);
       let direction: WorkbenchDropTarget["direction"] = "within";
@@ -259,14 +262,17 @@ export function WorkbenchSurfaceView({
     return items;
   };
 
+  const mainEmpty = surface === "main" && panelCount === 0;
+
   return (
     <div
       ref={rootRef}
-      className={`workbench-surface workbench-surface-${surface}${surface === "main" && panelCount === 0 ? " workbench-surface-empty" : ""}`}
+      className={`workbench-surface workbench-surface-${surface}${mainEmpty ? " workbench-surface-empty" : ""}`}
       data-workbench-surface={surface}
     >
-      <DockviewReact
-        className="workbench-dockview"
+      <div className={`workbench-dockview-host${mainEmpty ? " workbench-dockview-host-empty" : ""}`}>
+        <DockviewReact
+          className="workbench-dockview"
         theme={{ ...dockTheme, tabAnimation: "smooth" as const }}
         components={components}
         tabComponents={tabComponents}
@@ -306,8 +312,9 @@ export function WorkbenchSurfaceView({
             runtimeRef.current.layoutChanged();
           });
         }}
-      />
-      {surface === "main" && panelCount === 0 && <EmptyWorkbench />}
+        />
+      </div>
+      {mainEmpty && <EmptyWorkbench />}
     </div>
   );
 }
