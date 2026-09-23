@@ -189,3 +189,12 @@
 .workbench-tab-dragging .workbench-surface-empty .workbench-dockview {
   pointer-events: auto;
 }
+
+
+.workbench-surface-empty .workbench-dockview {
+  pointer-events: none;
+}
+
+.workbench-tab-dragging .workbench-surface-empty .workbench-dockview {
+  pointer-events: auto;
+}
