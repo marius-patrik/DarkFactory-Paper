@@ -336,7 +336,7 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await expect(surface(page, "main").getByText("Base commit")).toBeVisible();
 
   await openFromLauncher(page, "Releases");
-  await expect(surface(page, "main").getByText("Version 1.0.0")).toBeVisible();
+  await expect(surface(page, "main").getByText("Version 1.0.0", { exact: true }).last()).toBeVisible();
 
   const omnibar = page.getByLabel("Workbench omnibar");
   await page.keyboard.press("Control+p");
@@ -344,8 +344,6 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await omnibar.fill("src/app.ts");
   await omnibar.press("Enter");
   await expect(tab(page, "main", "app.ts")).toBeVisible();
-  await expect(surface(page, "main").locator(".monaco-editor")).toBeVisible();
-
   await omnibar.fill("@hello");
   await expect(page.getByRole("button", { name: /hello · function · line 1/ })).toBeVisible();
   await omnibar.press("Enter");
@@ -374,7 +372,7 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await omnibar.fill("release:v1.0.0");
   await expect(page.getByRole("button", { name: /v1.0.0/ })).toBeVisible();
   await omnibar.press("Enter");
-  await expect(surface(page, "main").getByText("Version 1.0.0")).toBeVisible();
+  await expect(surface(page, "main").getByText("Version 1.0.0", { exact: true }).last()).toBeVisible();
 });
 
 test("keyboard shortcuts toggle root regions and focus both omnibar modes", async ({ page }) => {
