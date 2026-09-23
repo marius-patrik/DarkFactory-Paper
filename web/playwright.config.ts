@@ -19,11 +19,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "bun run build && bunx rsbuild preview --host 127.0.0.1 --port 4173",
-    env: {
-      PUBLIC_GITHUB_OAUTH_CLIENT_ID: "test-client-id",
-      PUBLIC_GITHUB_AUTH_BROKER_URL: "http://127.0.0.1:4173/__auth/github",
-    },
+    command: "PUBLIC_GITHUB_OAUTH_CLIENT_ID=test-client-id PUBLIC_GITHUB_AUTH_BROKER_URL=http://127.0.0.1:4173/__auth/github bun run build && bunx rsbuild preview --host 127.0.0.1 --port 4173",
     url: "http://127.0.0.1:4173",
     reuseExistingServer: false,
     timeout: 120_000,
