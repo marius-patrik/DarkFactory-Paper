@@ -165,7 +165,7 @@ Explain these as parts of the harness/runtime rather than as isolated glossary e
 
 - **Tools** — callable actions through which the agent reads, edits, executes, tests, searches, or otherwise affects its environment.
 - **Skills** — reusable task-specific instructions, scripts, and resources that can be made available when relevant.
-- **Hooks** — deterministic lifecycle handlers that enforce or trigger behavior around events such as tool execution, validation, or completion.
+- **Hooks** — lifecycle handlers that enforce or trigger behavior around events such as tool execution, validation, or completion.
 - **MCP** — a standardized protocol for connecting the harness to external tools and data sources.
 - **State and context management** — persistence of the development process outside any one inference call and selection of information for the next decision.
 - **Verification and observation** — real execution feedback such as tests, compilers, linters, CI, and repository state.
@@ -258,7 +258,7 @@ Evidence should address, where supported:
 - persistent state across inference boundaries;
 - controlled external effects;
 - bounded permissions and scope;
-- deterministic verification;
+- machine-verifiable checks and their boundary relative to model-mediated review;
 - interruption and recovery;
 - integration of agent-produced changes;
 - orchestration without loss of integration control.
