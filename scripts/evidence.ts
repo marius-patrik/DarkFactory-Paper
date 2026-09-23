@@ -1,28 +1,52 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
-const DATA = join("data", "evidence.json");
 const OUTPUT = join("img", "generated", "gradually-ai-usage-2026.svg");
 
 type Category = {
   key: "never" | "free" | "paid" | "coding";
-  label_cs: string;
-  people_approx: number;
-  share_percent: number;
+  label: string;
+  people: number;
+  share: number;
   dots: number;
-  estimate_range_people?: [number, number];
+  estimateRange?: [number, number];
 };
 
-type Evidence = {
-  darkfactory: {
-    evaluated_revision: string;
-  };
-  gradually: {
-    world_population: number;
-    dot_count: number;
-    people_per_dot_approx: number;
-    categories: Category[];
-  };
+const gradually = {
+  worldPopulation: 8_300_000_000,
+  dotCount: 2_500,
+  peoplePerDotApprox: 3_300_000,
+  categories: [
+    {
+      key: "never",
+      label: "Nikdy vědomě nepoužili generativní AI",
+      people: 5_900_000_000,
+      share: 71,
+      dots: 1_771,
+    },
+    {
+      key: "free",
+      label: "Bezplatné AI chatboty jako nejvyšší kategorie",
+      people: 2_300_000_000,
+      share: 28,
+      dots: 696,
+    },
+    {
+      key: "paid",
+      label: "Placené AI předplatné jako nejvyšší kategorie",
+      people: 80_000_000,
+      share: 1,
+      dots: 24,
+    },
+    {
+      key: "coding",
+      label: "AI coding agents jako nejvyšší kategorie",
+      people: 30_000_000,
+      share: 0.36,
+      dots: 9,
+      estimateRange: [25_000_000, 35_000_000] as [number, number],
+    },
+  ] satisfies Category[],
 };
 
 function escapeXml(value: string) {
@@ -53,36 +77,21 @@ function text(
   );
 }
 
-async function gitlinkRevision() {
-  const process = Bun.spawn(["git", "rev-parse", "HEAD:darkfactory"], {
-    stdout: "pipe",
-    stderr: "pipe",
-  });
-  const [exitCode, stdout, stderr] = await Promise.all([
-    process.exited,
-    new Response(process.stdout).text(),
-    new Response(process.stderr).text(),
-  ]);
-  if (exitCode !== 0) {
-    throw new Error("could not resolve darkfactory gitlink: " + stderr.trim());
-  }
-  return stdout.trim();
+function approximatePeople(value: number) {
+  const divisor = value >= 1_000_000_000 ? 1_000_000_000 : 1_000_000;
+  const unit = divisor === 1_000_000_000 ? "mld." : "mil.";
+  const scaled = value / divisor;
+  const digits = Number.isInteger(scaled) ? 0 : 1;
+  return "≈ " + scaled.toFixed(digits).replace(".", ",") + " " + unit;
+}
+
+function percentage(value: number) {
+  return String(value).replace(".", ",") + " %";
 }
 
 export async function renderEvidence() {
-  const payload = JSON.parse(await readFile(DATA, "utf8")) as Evidence;
-  const pinnedRevision = await gitlinkRevision();
-  if (payload.darkfactory.evaluated_revision !== pinnedRevision) {
-    throw new Error(
-      "DarkFactory evidence revision " + payload.darkfactory.evaluated_revision +
-      " does not match gitlink " + pinnedRevision,
-    );
-  }
-
-  const categories = payload.gradually.categories;
-  const dotCount = categories.reduce((total, item) => total + item.dots, 0);
-
-  if (dotCount !== payload.gradually.dot_count || dotCount !== 2500) {
+  const dotCount = gradually.categories.reduce((total, item) => total + item.dots, 0);
+  if (dotCount !== gradually.dotCount || dotCount !== 2_500) {
     throw new Error("Gradually evidence dot count is inconsistent");
   }
 
@@ -98,14 +107,6 @@ export async function renderEvidence() {
     paid: "#44403c",
     coding: "#111827",
   } as const;
-  const approximatePeople = (value: number) => {
-    const divisor = value >= 1_000_000_000 ? 1_000_000_000 : 1_000_000;
-    const unit = divisor === 1_000_000_000 ? "mld." : "mil.";
-    const scaled = value / divisor;
-    const digits = Number.isInteger(scaled) ? 0 : 1;
-    return "≈ " + scaled.toFixed(digits).replace(".", ",") + " " + unit;
-  };
-  const percentage = (value: number) => String(value).replace(".", ",") + " %";
 
   const width = 1000;
   const height = 560;
@@ -115,7 +116,7 @@ export async function renderEvidence() {
   const radius = 3.25;
   const categoryByIndex: Category["key"][] = [];
 
-  for (const item of categories) {
+  for (const item of gradually.categories) {
     categoryByIndex.push(...Array.from({ length: item.dots }, () => item.key));
   }
 
@@ -145,8 +146,8 @@ export async function renderEvidence() {
     text(
       legendX,
       42,
-      (payload.gradually.world_population / 1_000_000_000).toFixed(1).replace(".", ",") +
-        " mld. lidí = " + payload.gradually.dot_count.toLocaleString("cs-CZ") + " bodů",
+      (gradually.worldPopulation / 1_000_000_000).toFixed(1).replace(".", ",") +
+        " mld. lidí = " + gradually.dotCount.toLocaleString("cs-CZ") + " bodů",
       22,
       "bold",
     ),
@@ -155,13 +156,13 @@ export async function renderEvidence() {
     text(
       legendX,
       70,
-      "1 bod " + approximatePeople(payload.gradually.people_per_dot_approx) + " lidí",
+      "1 bod " + approximatePeople(gradually.peoplePerDotApprox) + " lidí",
       17,
     ),
   );
 
   let y = 120;
-  for (const item of categories) {
+  for (const item of gradually.categories) {
     parts.push(
       '<circle cx="' + (legendX + 7) +
       '" cy="' + (y - 5) +
@@ -169,12 +170,20 @@ export async function renderEvidence() {
       '" stroke="' + strokes[item.key] +
       '" stroke-width="1"/>',
     );
-    parts.push(text(legendX + 25, y, item.label_cs, 16, item.key === "coding" ? "bold" : "normal"));
+    parts.push(
+      text(
+        legendX + 25,
+        y,
+        item.label,
+        16,
+        item.key === "coding" ? "bold" : "normal",
+      ),
+    );
     parts.push(
       text(
         legendX + 25,
         y + 24,
-        approximatePeople(item.people_approx) + " · " + percentage(item.share_percent) +
+        approximatePeople(item.people) + " · " + percentage(item.share) +
           " · " + item.dots + " bodů",
         15,
       ),
@@ -184,11 +193,12 @@ export async function renderEvidence() {
 
   parts.push(text(legendX, 485, "Kategorie se nepřekrývají; člověk je zařazen", 14));
   parts.push(text(legendX, 505, "podle nejpokročilejší použité kategorie.", 14));
-  const coding = categories.find((item) => item.key === "coding");
-  if (!coding?.estimate_range_people) {
+
+  const coding = gradually.categories.find((item) => item.key === "coding");
+  if (!coding?.estimateRange) {
     throw new Error("Coding-agent estimate range is missing");
   }
-  const [estimateLow, estimateHigh] = coding.estimate_range_people;
+  const [estimateLow, estimateHigh] = coding.estimateRange;
   parts.push(
     text(
       legendX,
@@ -208,5 +218,5 @@ export async function renderEvidence() {
 
 if (import.meta.main) {
   await renderEvidence();
-  console.log("ok: validated pinned evidence and rendered " + OUTPUT);
+  console.log("ok: rendered " + OUTPUT);
 }
