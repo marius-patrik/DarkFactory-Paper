@@ -219,7 +219,7 @@ Princip #strong[human-in-the-loop] (#strong[HITL]) doplňuje automatizované smy
 Praktická část navazuje na teoretická východiska o harnessu a Agentickém inženýrství. Zkoumá, jak jsou principy řízeného provádění, ohraničení kontextu a verifikace realizovány ve zdrojovém kódu DarkFactory. Jediným referenčním bodem je commit `e9c10221b40589512d262a0edb95f709b923150c`; gitlink submodulu, bibliografický odkaz, praktická tvrzení i implementační diagramy odkazují na tuto revizi @darkfactory-e9c10221.
 
 Analýza se zaměřuje na čtyři klíčové inženýrské dimenze odvozené z teoretické části:
-1. *Izolace běhového prostředí a oprávnění:* mechanismus hermetického oddělení agenta od hostitelského CI systému, montování pracovního stromu repozitáře a injektování autentizačních tajemství s minimálními právy.
+1. *Izolace běhového prostředí a oprávnění:* kontejnerizované oddělení agentního procesu od hostitelského shellu CI, explicitní připojení pracovního stromu a předávání autentizačních údajů pouze do kroků, které je používají.
 2. *Dekompozice úlohy a fázované řízení (HITL):* rozdělení životního cyklu požadavku do diskrétních stavů (interpretace, plánování, implementace) a začlenění formálních schvalovacích bran člověkem.
 3. *Automatizovaná verifikace a seberevize:* spuštění dostupných formátovacích nástrojů a deklarovaných testovacích sad, předání chybového výstupu jednomu opravnému kroku a kontrola změněných souborů a diffu vůči schválenému plánu.
 4. *Perzistence stavu a zotavení:* serializace parametrů běhu (checkpointing), záchyt výpadků kvót externích API (HTTP 429) a procedura obnovení rozpracované úlohy příkazem /resume.
@@ -261,7 +261,7 @@ Po validaci vstupu workflow sestaví obraz Docker podle `docker/Dockerfile.agent
 
 #heading(level: 3)[Serializace stavu, checkpointing a obnova]
 
-V distribuovaném prostředí automatizovaných pipeline představují limity zdrojů (GitHub Actions timeout, kvóty externích poskytovatelů LLM či síťové výpadky) zásadní výzvu pro spolehlivost. DarkFactory tento problém řeší explicitní serializací stavu běhu (checkpointing).
+V distribuovaném prostředí automatizovaných pipeline mohou běh přerušit limity externích služeb nebo jiné provozní chyby. Hodnocená produkční cesta explicitně řeší jeden konkrétní případ: úplné vyčerpání dostupné modelové řady kvůli kvótě, při němž vytvoří checkpoint pro pozdější obnovení.
 
 Pythonovský runner nezapisuje checkpoint průběžně po každém kroku. Pokud se vyčerpají všechny dostupné modelové pokusy, uloží `.antigravity_checkpoint.json` s identifikátorem položky, větví a dosud dokončenými kroky, případné rozpracované změny commitne na pracovní větev, položku označí jako blokovanou a zapíše čas obnovení. Samostatný workflow `quota-resume.yml` provádí každých 15 minut sweep zralých záznamů; alternativou je příkaz `/resume`. Deklarativní grafové jádro ukládá svůj `RunState` odděleně do souboru `.df` atomickou náhradou. Jde tedy o dva rozdílné mechanismy perzistence v témže snapshotu @darkfactory-e9c10221.
 
@@ -284,7 +284,7 @@ Při úplném vyčerpání modelové řady runner uloží quota checkpoint, ozna
 Pinovaný snapshot dokládá mechanismy trvalého stavu, oprávnění, izolace změn, automatických kontrol a obnovy. Neměří však účinnost jednotlivých postupů Agentického inženýrství, kvalitu práce s kontextem ani provozní úspěšnost orchestrace. Následující interpretace jsou proto omezeny na strukturální vlastnosti revize `e9c10221`.
 
 #strong[Dělba odpovědnosti mezi modelem a harnessem.]
-Jazykový model sám o sobě postrádá pojem o čase, kauzalitě i stavu vývojového prostředí; funguje jako stochastický generátor návrhů. Výsledky ukazují, že skutečnou páteř autonomního systému tvoří deterministický harness — v tomto případě GitHub Actions workflow a pythonovský runner. Právě harness zodpovídá za přípravu izolovaného prostředí, vynucování kroků, orámování kontextu a interpretaci návratových kódů. Model tedy nepředstavuje samostatnou autonomní entitu, nýbrž výpočetní modul zasazený do přísně strukturovaného algoritmického rámce @anthropic-harness-design.
+Samostatné volání jazykového modelu nemá bez dodaného kontextu a nástrojů trvalý přístup ke stavu vývojového prostředí. Hodnocený systém proto rozděluje odpovědnost mezi model a řídicí vrstvu: GitHub Actions a pythonovský runner připravují prostředí, určují pořadí fází, předávají nástrojové výstupy a vykonávají automatické kontroly, zatímco model zajišťuje interpretaci, implementační návrhy, opravy a části revize. Harness zde není čistě deterministický; kombinuje deterministické mechanismy s modelovými kroky v explicitně řízeném procesu @anthropic-harness-design @darkfactory-e9c10221.
 
 #strong[Architektonický kompromis: autonomie vs. správa.]
 Produkční cesta kombinuje dvě lidská schválení před implementací s automatickým spuštěním testů, scope kontrolou, modelovou seberevizí, kontrolou souladu s plánem a následnou lidskou revizí pull requestu. Deklarativní graf v témže snapshotu navíc modeluje samostatné deviation a merge gates. Tato vícevrstvá kontrola omezuje riziko driftu zadání a změn mimo schválený rozsah, nezaručuje však jejich odstranění. Cenou je více přerušení autonomie a závislost na lidských rozhodnutích @darkfactory-e9c10221 @anthropic-managed-agents.
