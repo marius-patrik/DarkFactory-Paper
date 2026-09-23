@@ -179,3 +179,13 @@
 .workbench-surface .dv-watermark {
   pointer-events: none;
 }
+
+
+.workbench-surface-empty .workbench-dockview .dv-view-container,
+.workbench-surface-empty .workbench-dockview .dv-tabs-and-actions-container {
+  pointer-events: none;
+}
+
+.workbench-tab-dragging .workbench-surface-empty .workbench-dockview {
+  pointer-events: auto;
+}
