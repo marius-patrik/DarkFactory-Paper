@@ -139,7 +139,8 @@ export function WorkbenchSurfaceView({
       root.dataset.workbenchDndStage = `drop:${payload.id}`;
       const moved = runtimeRef.current.transferTab(payload.id, surface, destinationFor(event));
       root.dataset.workbenchDndStage = `${moved ? "moved" : "move-failed"}:${payload.id}`;
-      if (moved) activeCrossSurfaceDrag = null;
+      activeCrossSurfaceDrag = null;
+      document.documentElement.classList.remove("workbench-tab-dragging");
     };
 
     root.addEventListener("dragstart", beginPanelDrag, true);
