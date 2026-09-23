@@ -65,7 +65,7 @@
   ],
 )
 
-#set document(title: meta.title, author: meta.author)
+#set document(title: meta.title, author: meta.author, date: none)
 #set text(font: PISMO, size: 12pt, lang: "cs", hyphenate: true)
 
 // ── title page ──────────────────────────────────────────
