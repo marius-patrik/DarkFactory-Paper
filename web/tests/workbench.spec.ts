@@ -75,12 +75,12 @@ async function stageAndCommit(page: Page, message: string) {
   await tab(page, "primary", "Source Control").click();
   const row = surface(page, "primary").locator(".scm-change-row").filter({ hasText: "README.md" });
   await expect(row).toBeVisible();
-  await row.getByTitle("Stage").click();
-  await expect(row.getByTitle("Unstage")).toBeVisible();
+  await row.getByTitle("Stage", { exact: true }).click();
+  await expect(row.getByTitle("Unstage", { exact: true })).toBeVisible();
 
-  await row.getByTitle("Unstage").click();
-  await expect(row.getByTitle("Stage")).toBeVisible();
-  await row.getByTitle("Stage").click();
+  await row.getByTitle("Unstage", { exact: true }).click();
+  await expect(row.getByTitle("Stage", { exact: true })).toBeVisible();
+  await row.getByTitle("Stage", { exact: true }).click();
 
   const messageBox = surface(page, "primary").getByLabel("Commit message");
   await messageBox.fill(message);
@@ -193,7 +193,10 @@ test("anonymous public repository and Browser history/reload/blocked fallback wo
   await page.route("https://example.org/**", (route) =>
     route.fulfill({ status: 200, contentType: "text/html", body: "<html><body>example org</body></html>" }),
   );
-  await page.route("https://blocked.example/**", (route) => route.abort("failed"));
+  await page.route("https://blocked.example/**", async (route) => {
+    await new Promise((resolve) => setTimeout(resolve, 12_000));
+    await route.abort("failed");
+  });
 
   await page.getByRole("button", { name: /Open Repository/ }).first().click();
   await page.getByRole("textbox", { name: "Repository" }).fill("marius-patrik/DarkFactory-Paper");
@@ -221,7 +224,7 @@ test("anonymous public repository and Browser history/reload/blocked fallback wo
 
   await location.fill("https://blocked.example");
   await location.press("Enter");
-  await expect(browser.getByText("This page could not be embedded.")).toBeVisible();
+  await expect(browser.getByText(/may block iframes/i)).toBeVisible({ timeout: 12_000 });
   await expect(browser.getByRole("link", { name: "Open externally" })).toHaveAttribute("href", /blocked\.example/);
 });
 
@@ -308,7 +311,7 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await openPrivateRepository(page);
 
   await openCommand(page, "Open Issues");
-  await expect(surface(page, "main").getByText("Private issue")).toBeVisible();
+  await expect(surface(page, "main").getByText("#7 Private issue", { exact: true }).last()).toBeVisible();
 
   await openCommand(page, "Open Pull Requests");
   await expect(surface(page, "main").getByText("Private pull request")).toBeVisible();
