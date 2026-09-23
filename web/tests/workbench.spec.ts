@@ -193,6 +193,7 @@ test("anonymous public repository and Browser history/reload/blocked fallback wo
   await page.route("https://example.org/**", (route) =>
     route.fulfill({ status: 200, contentType: "text/html", body: "<html><body>example org</body></html>" }),
   );
+  await page.route("https://blocked.example/**", (route) => route.abort("failed"));
 
   await page.getByRole("button", { name: /Open Repository/ }).first().click();
   await page.getByRole("textbox", { name: "Repository" }).fill("marius-patrik/DarkFactory-Paper");
@@ -217,11 +218,11 @@ test("anonymous public repository and Browser history/reload/blocked fallback wo
 
   await expect(browser.getByRole("button", { name: "Reload" })).toBeVisible();
   await browser.getByRole("button", { name: "Reload" }).click();
-  const frame = browser.locator("iframe");
-  await expect(frame).toBeVisible();
-  await frame.evaluate((element) => element.dispatchEvent(new Event("error")));
+
+  await location.fill("https://blocked.example");
+  await location.press("Enter");
   await expect(browser.getByText("This page could not be embedded.")).toBeVisible();
-  await expect(browser.getByRole("link", { name: "Open externally" })).toHaveAttribute("href", /example\.com/);
+  await expect(browser.getByRole("link", { name: "Open externally" })).toHaveAttribute("href", /blocked\.example/);
 });
 
 test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-out", async ({ page }) => {
@@ -278,6 +279,7 @@ test("authenticated private repo supports dirty edits, staging, local commit, pu
   await seedAuthenticatedSession(page);
   await openPrivateRepository(page);
 
+  await tab(page, "primary", "Explorer").click();
   await surface(page, "primary").getByTitle("README.md").click();
   await expect(tab(page, "main", "README.md")).toBeVisible();
   await editActiveMonaco(page, "# Changed in browser\n");
