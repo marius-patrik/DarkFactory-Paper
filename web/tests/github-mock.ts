@@ -1,6 +1,7 @@
 import type { Page, Route } from "@playwright/test";
 
 export const MOCK_REPOSITORY = "acme/private";
+export const MOCK_PUBLIC_REPOSITORY = "acme/public";
 export const BASE_SHA = "1111111111111111111111111111111111111111";
 const BASE_TREE = "2222222222222222222222222222222222222222";
 const README_BLOB = "3333333333333333333333333333333333333333";
@@ -329,4 +330,49 @@ export async function installGithubMock(page: Page): Promise<GithubMock> {
       commits.set(sha, commit(sha, BASE_TREE, "Remote divergence"));
     },
   };
+}
+
+
+export async function installPublicGithubMock(page: Page) {
+  const authorizationHeaders: Array<string | undefined> = [];
+  const publicRepository = {
+    ...repository,
+    id: 43,
+    name: "public",
+    full_name: MOCK_PUBLIC_REPOSITORY,
+    private: false,
+    html_url: "https://github.com/acme/public",
+    permissions: { pull: true },
+  };
+
+  await page.route(`https://api.github.com/repos/${MOCK_PUBLIC_REPOSITORY}**`, async (route) => {
+    const request = route.request();
+    authorizationHeaders.push(request.headers()["authorization"]);
+    const url = new URL(request.url());
+    const path = url.pathname;
+    const method = request.method();
+
+    if (path === `/repos/${MOCK_PUBLIC_REPOSITORY}` && method === "GET") {
+      return json(route, publicRepository);
+    }
+    if (path === `/repos/${MOCK_PUBLIC_REPOSITORY}/commits/main` && method === "GET") {
+      return json(route, {
+        ...commit(BASE_SHA),
+        html_url: `https://github.com/acme/public/commit/${BASE_SHA}`,
+      });
+    }
+    if (path === `/repos/${MOCK_PUBLIC_REPOSITORY}/git/trees/${BASE_TREE}` && method === "GET") {
+      return json(route, tree(BASE_TREE));
+    }
+    if (path === `/repos/${MOCK_PUBLIC_REPOSITORY}/branches` && method === "GET") {
+      return json(route, [{ name: "main", commit: { sha: BASE_SHA } }]);
+    }
+    if (path === `/repos/${MOCK_PUBLIC_REPOSITORY}/tags` && method === "GET") {
+      return json(route, []);
+    }
+
+    return json(route, { message: `Unhandled public test GitHub endpoint: ${method} ${path}` }, 501);
+  });
+
+  return { authorizationHeaders };
 }
