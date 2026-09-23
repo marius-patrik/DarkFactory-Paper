@@ -6,7 +6,6 @@ web/package-lock.json
 
 *.pdf
 !/ODBORNA_PRACE.pdf
-!paper/img/*.pdf
 
 .DS_Store
 Thumbs.db
