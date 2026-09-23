@@ -1,199 +1,457 @@
-# DarkFactory-Paper — Completion Plan
+# DarkFactory-Paper — Execution Plan
 
-This file contains only the **current active thesis execution path**. Deferred closure and publication work lives in `BACKLOG.md`.
+`GOAL.md` defines the quality objective for the finished academic paper.
 
-- Thesis source: `paper/PAPER.typ`
-- Durable manuscript rules: `AGENTS.md`
-- School contract: `SCHOOL_RULES.md`
-- Backlog: `BACKLOG.md`
-- Independent IDE lane: `web/PLAN.md`
+`PRD.md` defines the finished product contract.
 
-## Source contract
+This file defines the concrete repository work and sequencing required to satisfy the goal and product contract.
 
-`paper/PAPER.typ` is the only authored Typst manuscript source.
+`TODO.md` tracks the current/next actionable queue.
 
-Supporting resources may live in:
-- `paper/bib/`
-- `paper/data/`
-- `paper/img/`
-- `paper/fonts/`
+`BACKLOG.md` tracks accepted work that is intentionally deferred until its prerequisite or phase gate is reached.
 
-Do not recreate a schema/manifest/concept-file manuscript architecture or another authored thesis `.typ`.
+## Workstream A — Build the paper from the argument
 
-Generated PDF/HTML/Markdown/review/site artifacts are outputs, not sources.
+Primary files:
+- `paper/PAPER.typ`
+- `paper/bib/references.bib`
+- `paper/img/**`
+- `paper/data/**`
 
-## Work title
+### A1. Establish the manuscript architecture
 
-**AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory**
+Use this high-level structure as the working frame:
 
-## Thesis argument
+1. Úvod
+2. Teoretická část
+   - Jazykový model
+   - Harness
+   - Agentické inženýrství
+3. Praktická část
+   - DarkFactory
+4. Výsledky a diskuse
+5. Závěr
 
-The manuscript follows one causal argument:
+Use lower-level headings only where the argument genuinely benefits from them.
 
-**rapid AI adoption → coding agents remain a small subset of overall use → practices such as Vibe Coding show that access to capable AI is not equivalent to disciplined engineering → model capability is improving rapidly → a harness turns model inference into an agentic runtime → Agentic Engineering is required to use those capabilities deliberately and reliably → DarkFactory realizes those practices → evaluation tests the resulting system and workflow.**
+The final detailed structure is judged by reading flow, not by preserving a terminology taxonomy.
 
-Do not claim that most coding-agent users are vibe coding unless representative evidence supports that exact population-level claim.
+### A2. Rebuild the paper around the engineering transition
 
-## Canonical hierarchy
+Use the thesis direction in `PRD.md` as the intellectual spine.
 
-1. **Úvod**
-   - 1.1 Motivace a vymezení problému
-   - 1.2 Východisko a argument práce
-   - 1.3 Cíle
-     - 1.3.1 Hlavní cíl
-     - 1.3.2 Dílčí cíle
-   - 1.4 Výzkumné otázky
-   - 1.5 Metodika
-   - 1.6 Struktura práce
-2. **Teoretická část**
-   - 2.1 Jazykový model
-     - 2.1.1 Architektura a reprezentace
-     - 2.1.2 Inference
-   - 2.2 Harness
-     - 2.2.1 Smyčka a stav
-     - 2.2.2 Prostředí a nástroje
-     - 2.2.3 Rozšíření
-3. **Praktická část**
-   - 3.1 Agentické inženýrství
-     - 3.1.1 Zadání a způsob práce
-     - 3.1.2 Řízení změny
-     - 3.1.3 Kvalita a ověřování
-     - 3.1.4 Instrukce a kontext
-     - 3.1.5 Řízení agentního chování
-     - 3.1.6 Orchestrace agentů
-   - 3.2 DarkFactory
-4. **Výsledky a diskuse**
-   - 4.1 Ověření mechanismů
-   - 4.2 Ověření systému
-   - 4.3 Ověření na repozitářích
-   - 4.4 Výzkumné otázky
-   - 4.5 Diskuse a omezení
-5. **Závěr**
+The paper should establish, with only the necessary historical context, the progression:
 
-Semantic concept headings are visible but unnumbered and excluded from the printed Contents.
+**IDE-centered development → code completion → integrated chat → integrated agents → agent-first/ADE-style development**
 
-## Article contract
+Use that progression to motivate the larger transition:
 
-For theory and practical-methodology concepts, use:
+**software engineering → Agentic Engineering**
 
-**definition → mechanism/description → real sourced example(s) → practical implication**
+and:
 
-Requirements:
-- one semantic owner for each concept/claim;
-- claim-local citations;
-- original paper/specification or first-party documentation where available;
-- real example where defensible;
-- no self-referential definitions such as “v této práci označuje…”;
-- no duplicated definition across Theory and Practical;
-- no invented product behavior, benchmark values, API behavior, or empirical claims.
+**IDE-centered execution → harness-centered execution**
 
-## Evidence ownership
+Make the chatbot → agent boundary explicit:
+- chatbot: conversational output while the human remains the executor;
+- coding agent: iterative repository/environment interaction through a harness, with tools, state, observations, controlled effects, verification, and continuation toward an acceptance condition.
 
-**Introduction**
-- Gradually adoption/coding-agent evidence
-- Vibe Coding motivation/baseline
-- Epoch ECI capability trend
-- Artificial Analysis v4.3.2 benchmark
+Use that transition to introduce the concrete agent capability surface without turning it into a glossary:
+- Tools;
+- Skills;
+- Hooks;
+- MCP;
+- state/context management;
+- execution observations and verification;
+- orchestration.
 
-**Theory**
-- model/representation/inference
-- harness mechanisms
+The theory should then explain only what is needed to support that argument:
+- the relevant boundary of model inference;
+- why delegated work requires a persistent execution environment;
+- how a harness integrates state, tools, environment, effects, observations, verification, recovery, and orchestration;
+- how Agentic Engineering improves AI-assisted software engineering through prompt/context engineering, explicit goals and acceptance criteria, goal loops, tool/harness design, verification feedback, and orchestration.
 
-**Practical**
-- Agentic Engineering practices
-- DarkFactory implementation
+Agentic Engineering coverage should be practice-centered rather than definition-centered:
+- prompt engineering;
+- context engineering;
+- explicit specifications, constraints, and acceptance criteria;
+- goal loops driven by observations and verification;
+- tool/harness engineering, including Skills, Hooks, MCP, permissions, and state;
+- verification and feedback loops;
+- multi-agent orchestration, including coordinator/subagent patterns, parallel workers, swarms, and graphs/workflows where useful;
+- human supervision, review, and integration.
 
-**Results and discussion**
-- observed evidence
-- interpretation
-- limitations
-- research-question answers
+The paper should explain how these practices increase the efficiency and controllability of AI-assisted software engineering. Do not present them as isolated glossary entries or imply that maximum autonomy is the goal.
 
-## Locked content
+Current theory/visual acceptance decisions:
+- keep tokenization conceptual and omit BPE-specific exposition;
+- keep the embedding treatment to a concise king/queen example plus `paper/img/vector-embedding-queen.svg`;
+- do not use the previous 3D embedding diagram;
+- keep Gradually;
+- keep ReAct;
+- allow workflow graphs for agent workflow planning without DAG-specific discussion;
+- keep Vibe Coding and Prompt Injection outside the thesis.
 
-### Model / inference
-Treat 2.1 as stable unless a concrete factual/source/build defect is found.
+Do not turn the historical progression into a product catalogue.
 
-Preserve:
-- sourced examples and practical implications;
-- 2D embedding relation `král − muž + žena ≈ královna`;
-- axes **Pohlaví** and **Královský status**;
-- 3D pedagogical analogy visualization;
-- explicit caveat that shown axes are explanatory projections rather than literal learned dimensions.
+Do not organize the theory as a terminology taxonomy.
 
-### Harness
-Agent Loop uses the ReAct cycle:
+The conceptual emphasis should remain on the changing architecture of software development.
 
-**Model → Akce → Nástroj/prostředí → Pozorování → Model**
+### A3. Build the practical DarkFactory chapter from implementation truth
 
-with optional **Model → Výsledek**.
+Use the `darkfactory` submodule as the local evidence source after pinning it to the selected canonical DarkFactory revision.
 
-State means persisted currently valid facts/control data. Do not personify it.
+Before writing practical claims:
+- update/fetch the submodule;
+- choose one merged canonical DarkFactory revision;
+- record that SHA in the evidence manifest;
+- read its generated documentation, source, tests, workflows, package boundaries, and configuration;
+- derive the practical chapter structure from the implementation.
 
-Use direct/original source + concrete example for Agent Loop, Session, Transcript, State, Environment, Tools, Tool Calling, Code Execution, Sandbox, Skills, Plugin, Script, Hooks, MCP, `.agents/`, and `.claude/`.
+The practical chapter should explain the architectural decisions that realize the theory, rather than enumerate files/packages.
 
-### Practical / Agentic Engineering
-Treat §3.1 as stable unless a concrete factual/source/build defect is found.
+### A4. Rebuild Results and discussion from evidence
 
-Workflow Graph and Swarm belong under Practical / Agentic Engineering, not Theory.
+Use a reproducible evidence manifest under `paper/data/`.
 
-### DarkFactory
-Generated/current DarkFactory documentation is the architecture/system-description authority for 3.2. Do not build a competing manual architecture narrative.
+The manifest should contain at least:
+- DarkFactory repository/ref/SHA;
+- target repository/ref/SHA where external repository evidence is used;
+- CI/workflow run IDs;
+- source/test paths supporting implementation claims;
+- evidence category;
+- research-question mapping;
+- evidence limitations.
 
-## School contract
+Results should be generated from verified evidence, then interpreted in prose.
 
-Use `SCHOOL_RULES.md` for any school-sensitive decision.
+### A5. Write the framing last
 
-Do not substitute IVT maturita-topic requirements for Odborná-práce rules.
+After Theory, DarkFactory, and Results are stable:
+- rewrite the Introduction;
+- finalize the explanatory objective and concrete practical evaluation objective;
+- finalize methodology;
+- rewrite Conclusion;
+- rewrite Czech annotation/English abstract;
+- finalize concise keywords.
 
-Final school-guide audit and publication QA are deferred in `BACKLOG.md`.
+This ensures the front/back framing describes the paper that actually exists.
 
-## Remaining execution
+### A6. Curate sources and visuals
 
-### Phase 1 — Integrate DarkFactory and pin implementation evidence — NEXT
+For every bibliography entry, figure, and data file:
+- identify the claim or argument it supports;
+- keep it only if that contribution remains in the paper;
+- prefer original research/specifications and first-party technical documentation;
+- keep figures only when they communicate evidence/mechanism more effectively than prose.
 
-Complete 3.2 and prepare evaluation inputs in one pass.
+The final visual set should be intentionally small.
 
-Scope:
-- pin the exact DarkFactory revision;
-- generate/fetch the canonical DarkFactory documentation;
-- integrate the canonical architecture/system description into 3.2;
-- connect 3.1 practices to their concrete DarkFactory realization where useful;
-- avoid parallel manual lifecycle/architecture prose;
-- pin target repository revisions, workflow runs, docs snapshot, and other implementation evidence needed by Chapter 4;
-- produce an internal evidence map from planned research questions/results sections to concrete artifacts.
+## Workstream B — Simplify the Typst source
 
-Exit:
-- 3.2 is complete and reproducible;
-- implementation/evaluation evidence is pinned before Results writing begins.
+Primary file:
+- `paper/PAPER.typ`
 
-### Phase 2 — Research frame + Results and discussion
+Target:
+- manuscript content;
+- citations;
+- figures/tables;
+- small presentation helpers.
 
-Align the research frame to the actual implementation/evidence, then write the evaluation without another separate framing pass.
+Actions:
+- express document structure directly with headings;
+- express terminology directly in prose;
+- use direct bibliography labels where practical;
+- keep only formatting helpers that make the source clearer;
+- keep review/comparison behavior outside the manuscript content model;
+- keep paragraphs normally breakable;
+- follow PRD heading pagination, keeping parent-only Theory and Practical headings with their first subsection;
+- use a visible first-line paragraph indent as the authorial target;
+- make inter-paragraph spacing materially larger than intra-paragraph line spacing;
+- keep the first-line-indent / paragraph-spacing school-rule conflict explicit until direct guide reconciliation;
+- use conventional academic typography.
 
-Scope:
-- finalize 1.2–1.6, including goals, subgoals, RQs, methodology, and structure;
-- change 1.1 only where required for consistency;
-- ensure every RQ maps to collected evidence;
-- write 4.1–4.5 from the pinned evidence;
-- answer RQs explicitly;
-- separate observed results from interpretation and limitations;
-- do not use Chapter 4 to re-explain architecture.
+The source should be easy to read as a manuscript file without understanding a secondary semantic framework.
 
-Exit:
-- introduction/research frame and evaluation are mutually consistent;
-- every RQ is answerable and answered.
+## Workstream C — Rebuild evidence support
 
-## Current-plan exit
+Primary files:
+- `darkfactory`
+- `paper/data/**`
+- `paper/img/components-darkfactory.svg`
+- `paper/img/lifecycle-darkfactory.svg`
+- `paper/img/docs-pipeline.svg`
+- evidence-related scripts under `scripts/`
 
-The active plan ends after Phase 2.
+### C1. Pin DarkFactory
 
-At that checkpoint:
-- Theory is complete;
-- Practical Agentic Engineering is complete;
-- DarkFactory is integrated from canonical documentation;
-- implementation/evaluation evidence is pinned;
-- goals, methodology, and research questions are aligned to the evidence;
-- Results and discussion are written and answer the research questions.
+Select the exact DarkFactory revision used by the paper and update the submodule pointer.
 
-Thesis-wide closure, encyclopedia removal, final annotations/keywords/bibliography cleanup, and Odborná-práce publication QA remain deferred in `BACKLOG.md`.
+The paper and evidence manifest must agree on that SHA.
+
+### C2. Replace phase-labelled evidence data with a stable evidence model
+
+Use a stable filename such as:
+
+`paper/data/darkfactory-evidence.json`
+
+Model evidence by meaning, not implementation phase number.
+
+### C3. Validate architecture figures
+
+For each DarkFactory figure:
+- compare it with the pinned implementation;
+- regenerate/rewrite it from verified architecture where useful;
+- otherwise omit it from the final paper.
+
+### C4. Make evidence rendering deterministic
+
+If generated evidence figures remain useful, provide one clearly named script whose input is the evidence manifest and whose output is deterministic.
+
+Avoid phase-numbered script names.
+
+## Workstream D — Simplify publication/build tooling
+
+Primary files:
+- `Makefile`
+- `scripts/build_review.py`
+- `scripts/build_web_exports.py`
+- `scripts/check_build.py`
+- `scripts/build_site.py`
+- `scripts/fetch_external_assets.py`
+- `scripts/render_phase2_evidence.py`
+- `scripts/preview_server.py`
+
+### D1. Make the paper root explicit
+
+The canonical manuscript is `paper/PAPER.typ`.
+
+Simplify the Makefile around that contract.
+
+Keep only indirection that still supports a real output.
+
+Target commands should remain simple:
+- build the paper;
+- export web formats;
+- validate;
+- build the site;
+- clean.
+
+### D2. Make final publication the canonical artifact
+
+Canonical paper outputs:
+- PDF;
+- HTML;
+- Markdown;
+- source/project archive;
+- compiled single-file Typst artifact if the release contract requires it.
+
+A separate review publication should exist only if a real consumer still requires it.
+
+Git comparison/review belongs primarily to the IDE/workbench rather than requiring a second semantic manuscript.
+
+### D3. Simplify web exports
+
+`scripts/build_web_exports.py` should:
+- compile canonical HTML from the same paper source;
+- derive Markdown deterministically;
+- localize required assets;
+- contain no thesis semantic taxonomy assumptions.
+
+### D4. Rewrite build validation around the final contract
+
+`scripts/check_build.py` should validate:
+- canonical source exists;
+- expected top-level document structure;
+- bibliography/citations resolve;
+- referenced assets exist;
+- generated artifacts exist;
+- no manuscript-only semantic registry is required;
+- evidence manifest has required provenance;
+- DarkFactory SHA in evidence matches the submodule when the practical/evidence phase is complete.
+
+Avoid validation rules that encode individual terms or prose choices.
+
+### D5. Align site generation with the generic IDE
+
+`scripts/build_site.py` should publish:
+- the current generic web app;
+- canonical paper artifacts;
+- repository source tree;
+- a simple publication manifest;
+- a heading/content index derived from actual structural headings.
+
+The site generator should use the final thesis title and should not require level-4 semantic articles or a second review manuscript.
+
+### D6. Simplify figure/data generation
+
+`scripts/fetch_external_assets.py` should fetch only externally sourced assets still used by the paper, with explicit provenance.
+
+Consolidate deterministic locally rendered figures into clearly named build scripts.
+
+Retire phase-numbered generators once their data model is stable.
+
+## Workstream E — Direct school-guide reconciliation
+
+Primary files:
+- `SCHOOL_RULES.md`
+- `paper/PAPER.typ`
+
+Read the school PDF directly and resolve:
+- title-page content;
+- declaration wording;
+- Czech/English annotation requirements;
+- keywords;
+- bibliography heading;
+- page numbering;
+- work-range/word/character-count requirement;
+- figure/table lists;
+- appendices;
+- submission artifacts;
+- page/word limits;
+- similarity/plagiarism requirements;
+- typography details.
+
+Then encode only verified requirements in `SCHOOL_RULES.md` and the Typst presentation layer.
+
+## Workstream F — Generic IDE completion
+
+Authority:
+- `web/PLAN.md`
+
+Keep this work independent from manuscript content.
+
+Complete:
+- guided GitHub authentication;
+- cross-surface tab drag/drop;
+- draggable/persistent root sidebar/panel sizing;
+- real-browser acceptance;
+- generic workbench validation.
+
+Typst editing remains source editing through Monaco.
+
+Canonical paper compilation remains a repository pipeline responsibility.
+
+## Workstream G — Workflow and release cleanup
+
+Primary files:
+- `.github/workflows/ci.yml`
+- `.github/workflows/deploy-docs.yml`
+- `.github/workflows/release.yml`
+- `.github/workflows/agent.yml`
+
+Final workflow responsibilities:
+
+### CI
+Validate:
+- paper build;
+- exports;
+- evidence/provenance;
+- generic web build/tests;
+- repository consistency.
+
+### Pages
+Publish:
+- generic IDE/site;
+- canonical paper artifacts;
+- publication/repository metadata required by the IDE.
+
+### Release
+Publish the canonical submission/publication artifact set tied to an exact commit SHA.
+
+### Automation surface
+Keep only repository-triggered automation that serves the final product.
+
+Use minimal permissions and simple triggers.
+
+## Execution order
+
+### Phase 1 — Paper foundation
+Active until the theoretical and editorial foundation is stable enough that later work can focus on DarkFactory evidence rather than redesigning the thesis argument.
+
+- rewrite the paper around the IDE → harness and Software Engineering → Agentic Engineering transition;
+- use only light, sourced history for IDE → completion → chat → agents → agent-first/ADE development;
+- keep model theory proportionate to the runtime/engineering argument;
+- simplify `paper/PAPER.typ`;
+- curate bibliography/figures alongside the rewrite;
+- establish clean academic typography using the heading pagination and paragraph rhythm defined in PRD;
+- keep Practical as a clean DarkFactory boundary until evidence is pinned;
+- keep validators editorially generic rather than hard-coding level-2/3 prose structure;
+- re-read the generated PDF end-to-end before accepting the phase.
+
+Deliver as a PR for review.
+
+### Phase 2 — DarkFactory evidence + Practical
+Begins from a stable DarkFactory revision.
+
+- pin submodule;
+- build evidence manifest;
+- validate architecture;
+- write Practical;
+- refresh Results.
+
+Deliver as a PR for review.
+
+### Phase 3 — Framing + school reconciliation
+After the body/evidence are stable.
+
+- finalize Introduction/objectives/RQs/methodology;
+- finalize Conclusion;
+- finalize abstract/annotation/keywords;
+- complete direct guide audit;
+- finalize typography/front/back matter.
+
+Deliver as a PR for review.
+
+### Phase 4 — Publication pipeline
+Can overlap with Phases 1–3 where file ownership is independent.
+
+- simplify Makefile/scripts;
+- align site manifest/content index;
+- establish canonical artifact set;
+- add compiled single-file Typst generation if required;
+- make validators test the final repository contract.
+
+Deliver as a PR for review.
+
+### Phase 5 — IDE + workflows
+Runs independently where possible.
+
+- finish `web/PLAN.md`;
+- simplify CI/Pages/Release workflows around the final commands/artifacts;
+- keep paper and IDE validation in one canonical CI gate.
+
+Deliver as a PR for review.
+
+### Phase 6 — Final integration
+After all review PRs are accepted.
+
+- re-read the final paper end-to-end;
+- verify every factual claim/citation/evidence link;
+- verify DarkFactory SHA/provenance;
+- run the complete build/site/release matrix;
+- inspect final PDF page by page;
+- validate Pages;
+- validate release assets from one final commit;
+- keep the final repository free of unused paper assets, data, scripts, and workflow paths.
+
+## Review gates
+
+Every implementation phase ends in an open PR.
+
+Workers do not merge their own PRs.
+
+A PR is ready for review only when its relevant validation passes and its diff contains only its owned workstream.
+
+## Canonical validation target
+
+The final repository should support a small, obvious command surface that covers:
+
+- canonical publication build;
+- repository validation;
+- generic web validation;
+- Pages build;
+- release artifact generation.
+
+The exact command names may be simplified during Workstream D, but CI and documentation must use the same canonical commands.

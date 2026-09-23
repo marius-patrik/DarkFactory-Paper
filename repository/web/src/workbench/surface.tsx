@@ -1,5 +1,13 @@
 import { useMemo, useRef, useState } from "react";
-import { DockviewDefaultTab, DockviewReact, themeAbyss, themeLight } from "dockview-react";
+import {
+  DockviewDefaultTab,
+  DockviewReact,
+  themeAbyss,
+  themeLight,
+  type BuiltInContextMenuItem,
+  type GetTabContextMenuItemsParams,
+  type ReactContextMenuItemConfig,
+} from "dockview-react";
 import { EmptyWorkbench } from "./empty-workbench";
 import { LauncherButton } from "./launcher";
 import type { WorkbenchSurface, WorkbenchTab } from "./model";
@@ -42,6 +50,95 @@ export function WorkbenchSurfaceView({
   const HeaderActions = useMemo(() => () => <LauncherButton surface={surface} />, [surface]);
   const dockTheme = runtime.settings.theme === "light" ? themeLight : themeAbyss;
 
+  const tabContextMenuItems = (
+    params: GetTabContextMenuItemsParams,
+  ): (BuiltInContextMenuItem | ReactContextMenuItemConfig)[] => {
+    const tab = paramsOf(params.panel);
+    if (!tab) return [];
+
+    const groupPanels = (params.api?.panels ?? []).filter(
+      (candidate: any) => candidate.api?.group?.id === params.group?.id,
+    );
+    const hasProtectedPeer = groupPanels.some((candidate: any) => {
+      if (candidate.id === params.panel.id) return false;
+      return paramsOf(candidate)?.pinned === true;
+    });
+
+    const resource =
+      tab.resource ||
+      (typeof tab.state.path === "string" ? tab.state.path : "") ||
+      (typeof tab.state.url === "string" ? tab.state.url : "");
+
+    const items: (BuiltInContextMenuItem | ReactContextMenuItemConfig)[] = [
+      {
+        label: tab.pinned ? "Unpin" : "Pin",
+        action: () => runtimeRef.current.setPinned(tab.id, !tab.pinned),
+      },
+      {
+        label: "Move to Primary Sidebar",
+        action: () => runtimeRef.current.moveTab(tab.id, "primary"),
+      },
+      {
+        label: "Move to Main",
+        action: () => runtimeRef.current.moveTab(tab.id, "main"),
+      },
+      {
+        label: "Move to Secondary Sidebar",
+        action: () => runtimeRef.current.moveTab(tab.id, "secondary"),
+      },
+      {
+        label: "Move to Panel",
+        action: () => runtimeRef.current.moveTab(tab.id, "panel"),
+      },
+      {
+        label: "Split Right",
+        action: () => runtimeRef.current.splitTab(tab.id, "right"),
+      },
+      {
+        label: "Split Down",
+        action: () => runtimeRef.current.splitTab(tab.id, "below"),
+      },
+    ];
+
+    if (tab.type === "editor" || tab.type === "document") {
+      const renderer = tab.state.renderer === "browser" ? "browser" : "editor";
+      items.push({
+        label: renderer === "browser" ? "Open in Editor Renderer" : "Open in Browser Renderer",
+        action: () => runtimeRef.current.updateTabState(tab.id, {
+          renderer: renderer === "browser" ? "editor" : "browser",
+        }),
+      });
+    }
+
+    if (resource) {
+      items.push({
+        label: tab.type === "browser" ? "Copy URL" : "Copy Resource Path",
+        action: () => {
+          void navigator.clipboard.writeText(resource).catch(() => {
+            window.prompt(tab.type === "browser" ? "Copy URL" : "Copy resource path", resource);
+          });
+        },
+      });
+    }
+
+    items.push("separator");
+
+    if (!hasProtectedPeer) {
+      items.push("closeOthers", "closeRight");
+    }
+
+    items.push(
+      {
+        label: "Close",
+        disabled: tab.pinned,
+        action: () => runtimeRef.current.closeTab(tab.id),
+      },
+      "separator",
+      "maximize",
+    );
+    return items;
+  };
+
   return (
     <div className={`workbench-surface workbench-surface-${surface}`}>
       <DockviewReact
@@ -51,6 +148,7 @@ export function WorkbenchSurfaceView({
         tabComponents={tabComponents}
         defaultRenderer="always"
         rightHeaderActionsComponent={HeaderActions}
+        getTabContextMenuItems={tabContextMenuItems}
         onReady={(event: any) => {
           const api = event.api;
           onReady(surface, api);

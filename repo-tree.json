@@ -148,6 +148,12 @@
               "source": "repository/paper/img/components-darkfactory.svg"
             },
             {
+              "name": "darkfactory-python-pipeline.svg",
+              "path": "paper/img/darkfactory-python-pipeline.svg",
+              "type": "file",
+              "source": "repository/paper/img/darkfactory-python-pipeline.svg"
+            },
+            {
               "name": "docs-pipeline.svg",
               "path": "paper/img/docs-pipeline.svg",
               "type": "file",
@@ -729,6 +735,12 @@
       "url": "https://github.com/marius-patrik/DarkFactory.git"
     },
     {
+      "name": "GOAL.md",
+      "path": "GOAL.md",
+      "type": "file",
+      "source": "repository/GOAL.md"
+    },
+    {
       "name": "Makefile",
       "path": "Makefile",
       "type": "file",
@@ -741,6 +753,12 @@
       "source": "repository/PLAN.md"
     },
     {
+      "name": "PRD.md",
+      "path": "PRD.md",
+      "type": "file",
+      "source": "repository/PRD.md"
+    },
+    {
       "name": "README.md",
       "path": "README.md",
       "type": "file",
@@ -751,6 +769,12 @@
       "path": "SCHOOL_RULES.md",
       "type": "file",
       "source": "repository/SCHOOL_RULES.md"
+    },
+    {
+      "name": "TODO.md",
+      "path": "TODO.md",
+      "type": "file",
+      "source": "repository/TODO.md"
     },
     {
       "name": "typst.toml",

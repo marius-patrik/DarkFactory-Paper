@@ -1,126 +1,74 @@
-# Repository instructions — AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory
+# Repository instructions — DarkFactory-Paper
 
-`paper/PAPER.typ` is the **single canonical authored Typst source** of the thesis.
+`GOAL.md` defines the quality objective for the finished academic paper.
 
-`PLAN.md` owns active sequencing.
-`SCHOOL_RULES.md` owns the recovered Odborná-práce compliance contract.
+`PRD.md` defines the finished repository/publication product contract.
 
-## Source architecture
+`PLAN.md` defines the roadmap, workstreams, sequencing, and phase gates.
 
-Do not recreate the retired modular Typst architecture.
+`TODO.md` defines the current/next actionable queue.
 
-The only authored thesis Typst file is `paper/PAPER.typ`.
+`BACKLOG.md` records accepted work that is intentionally deferred.
 
-External supporting resources may remain in:
+`SCHOOL_RULES.md` defines the school-compliance contract and unresolved compliance conflicts.
+
+`web/PLAN.md` defines the independent generic IDE workstream.
+
+## Thesis source
+
+`paper/PAPER.typ` is the single canonical authored thesis source.
+
+Supporting resources may live in:
 - `paper/bib/`
 - `paper/data/`
 - `paper/img/`
 - `paper/fonts/`
 
-There must be no parallel schema/manifests/concept/template tree that independently owns thesis prose or structure.
+Keep manuscript ownership singular: one authored Typst source plus supporting resources.
 
-Edit `paper/PAPER.typ` directly.
+## Editorial rule
 
-## Canonical title
+Optimize the manuscript for the final-paper quality standard in `GOAL.md` and the thesis-specific direction in `PRD.md`, including the chatbot-to-agent boundary, the IDE-to-harness shift, and Agentic Engineering as the practices that make AI-assisted software engineering effective, efficient, controlled, and scalable.
 
-**AI-asistovaný softwarový vývoj – Agentické inženýrství a harness DarkFactory**
+Treat available prose, terminology, figures, citations, and evidence as material for the final argument rather than as a structure that must be preserved.
 
-## Canonical hierarchy
+Use:
+- connected academic prose;
+- meaningful structural headings;
+- concise explanation;
+- rigorous claim-local citations;
+- original research/specifications and first-party documentation where appropriate;
+- verified DarkFactory implementation evidence for practical claims.
 
-1. **Úvod**
-   - 1.1 Motivace a vymezení problému
-   - 1.2 Východisko a argument práce
-   - 1.3 Cíle
-   - 1.4 Výzkumné otázky
-   - 1.5 Metodika
-   - 1.6 Struktura práce
-2. **Teoretická část**
-   - 2.1 Jazykový model
-     - 2.1.1 Architektura a reprezentace
-     - 2.1.2 Inference
-   - 2.2 Harness
-     - 2.2.1 Smyčka a stav
-     - 2.2.2 Prostředí a nástroje
-     - 2.2.3 Rozšíření
-3. **Praktická část**
-   - 3.1 Agentické inženýrství
-   - 3.2 DarkFactory
-4. **Výsledky a diskuse**
-5. **Závěr**
+When explaining the transition to coding agents, connect capabilities such as Tools, Skills, Hooks, MCP, persistent state, verification, and orchestration to the harness/runtime instead of presenting them as a terminology catalogue.
 
-## Evidence ownership
+When explaining Agentic Engineering, focus on practices: prompt/context engineering, explicit goals and acceptance criteria, iterative goal loops, tool/harness design, verification feedback, multi-agent orchestration (including subagents, parallel workers, swarms, and graph/workflow execution where relevant), and human review/integration.
 
-Introduction owns Gradually, Vibe Coding, Epoch, and the Artificial Analysis benchmark.
+Use:
+- `GOAL.md` for the final-paper quality standard;
+- `PRD.md` for durable product/thesis requirements;
+- `PLAN.md` for roadmap, sequencing, and workstream ownership;
+- `TODO.md` for current/next actionable work;
+- `BACKLOG.md` for deferred accepted work.
 
-Theory owns model/representation/inference/harness mechanisms.
+When a durable decision changes, update the owning document rather than duplicating it elsewhere. Keep `README.md` aligned with this document model.
 
-Practical owns Agentic Engineering practices and DarkFactory.
+## Practical evidence
 
-Results and discussion own evaluation evidence and interpretation.
+DarkFactory-specific claims must be tied to one pinned canonical DarkFactory revision and reproducible evidence.
 
-Vibe Coding is not a standalone Practical article.
-
-## Semantic article contract
-
-The old schema implementation is retired, but the writing contract remains.
-
-Each semantic article in `paper/PAPER.typ` should contain:
-1. concise definition;
-2. mechanism/description;
-3. real sourced example(s) where defensible;
-4. practical implication.
-
-Structural headings are numbered and included in school Contents.
-Semantic article headings remain unnumbered and excluded from school Contents.
-
-Do not recreate schema/manifests to encode this.
-
-## Source rules
-
-Prefer original papers/specifications and first-party technical documentation.
-
-External factual/mechanistic claims require claim-local citations.
-
-Avoid self-referential definitions such as “v této práci označuje…”.
-
-Do not generalize survey findings beyond their measured population.
-
-DarkFactory-specific claims must come from current code/docs/tests/workflows.
-
-## Locked content constraints
-
-- Preserve accepted 2D/3D embedding figures and caveats.
-- Agent Loop uses the ReAct cycle: **Model → Akce → Nástroj/prostředí → Pozorování → Model**, optionally Model → Výsledek.
-- State is persisted current facts/control data; do not personify it.
-- Use direct/original sources for Harness mechanisms.
-- Workflow Graph / Swarm belong in Practical / Agentic Engineering orchestration.
+The `darkfactory` submodule, evidence manifest, manuscript, and Results must agree on the evaluated revision.
 
 ## School compliance
 
 Use `SCHOOL_RULES.md`.
 
-Do not import IVT maturita-topic formatting requirements as Odborná-práce rules unless independently present in the actual guide.
+Resolve unverified school-sensitive requirements from the direct guide text before final publication.
 
-## Build and validation
+## Validation and review
 
-Canonical checks:
+Use the canonical commands defined by the repository build system and keep CI/documentation aligned with those commands.
 
-```bash
-make all BOOK=DarkFactory
-make ci BOOK=DarkFactory
-```
+Every substantial implementation phase ends in an open pull request for review.
 
-Validation operates against `paper/PAPER.typ`, not deleted modular sources.
-
-Eventually validate:
-- exactly one authored thesis Typst source;
-- exact top-level 1–5 hierarchy;
-- correct Theory/Practical nesting;
-- semantic articles unnumbered/excluded from Contents;
-- Vibe Coding owned by Introduction;
-- benchmark owned by Introduction;
-- bibliography/data/assets resolve;
-- no duplicate architecture narrative;
-- school rules from `SCHOOL_RULES.md`.
-
-Keep README, AGENTS and PLAN synchronized with this single-file architecture.
+Workers do not merge their own pull requests.

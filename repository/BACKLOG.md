@@ -1,62 +1,62 @@
 # Backlog
 
-This file is a parking lot for requests that are not part of the active thesis plan or the IDE workstream.
+This file contains **accepted work that is intentionally deferred**.
 
-## Rules
+Items move to `TODO.md` when their prerequisite is satisfied or they become the next actionable work. Do not implement backlog items opportunistically in unrelated PRs.
 
-- `PLAN.md` is the active thesis execution plan.
-- `web/PLAN.md` is the separate generic IDE workstream plan.
-- `SCHOOL_RULES.md` is the recovered Odborná-práce compliance contract.
-- Items here are inactive until explicitly promoted.
+## DarkFactory evidence and Practical
 
-## Requests
+Prerequisite: paper foundation accepted and a stable DarkFactory revision selected.
 
-### Remove encyclopedia / term index
+- pin the `darkfactory` submodule to the canonical evaluated revision;
+- replace phase-labelled evidence data with a stable evidence manifest;
+- validate implementation-specific architecture figures against the pinned revision;
+- write the practical DarkFactory chapter from source/docs/tests/workflows/configuration;
+- rebuild Results and discussion from that evidence;
+- ensure manuscript, evidence manifest, submodule SHA, and CI provenance agree.
 
-- Remove the **Encyklopedie / rejstřík pojmů** section from the thesis entirely.
-- The final manuscript should not contain a standalone encyclopedia/glossary/index-of-terms section.
-- Remove its heading, generated entries, navigation/index references, and any back-matter plumbing used only for it.
-- Preserve ordinary front-matter keywords and normal term usage in the manuscript.
-- Do not replace it with another glossary unless explicitly requested.
-- Reconcile TOC/web structure/back matter and validators when promoted.
+## School-guide reconciliation
 
-### Thesis-wide closure
+Prerequisite: stable paper body and direct access to the authoritative guide.
 
-Deferred final manuscript-content pass after the active plan reaches its current-plan exit.
+Resolve from the guide itself:
+- title-page requirements;
+- declaration wording;
+- annotation/abstract and keyword requirements;
+- bibliography heading;
+- pagination;
+- length/work-range rules;
+- figure/table lists;
+- appendices;
+- submission artifacts;
+- similarity/plagiarism requirements;
+- typography details.
 
-Scope:
-- deduplicate across Introduction / Theory / Practical / DarkFactory / Results;
-- audit factual claims and citations;
-- remove unused bibliography records;
-- finalize Chapter 5 Závěr;
-- finalize Czech/English annotation material as required by the school contract;
-- finalize keywords;
-- **remove the encyclopedia / term-index section rather than finalizing it**;
-- finalize remaining back matter;
-- verify terminology and cross-references;
-- ensure no new factual material appears only in Conclusion.
+Explicit conflict to resolve:
+- current working school contract says **no first-line indent** and **8 pt paragraph spacing**;
+- current authorial presentation target requests a visible first-line indent and substantially larger inter-paragraph spacing.
 
-Exit when promoted:
-- manuscript content is substantively final;
-- only publication/school-format defects remain.
+## Publication pipeline
 
-### Odborná-práce publication QA
+Can move to TODO when file ownership does not conflict with active manuscript/web work.
 
-Deferred final publication/compliance phase.
+- simplify Makefile and publication scripts around `paper/PAPER.typ`;
+- remove unnecessary review-publication machinery if no real consumer remains;
+- keep HTML/Markdown exports deterministic;
+- simplify site metadata/content indexing around actual headings;
+- replace phase-numbered evidence/figure generation with stable naming;
+- align validation with durable product invariants;
+- align CI/Pages/Release with the final artifact contract.
 
-Before implementation:
-- complete the direct-text audit of the actual Odborná-práce school guide;
-- reconcile `SCHOOL_RULES.md` with the verified guide text.
+## Final delivery
 
-Then:
-- apply exact title-page, declaration, annotation, bibliography, pagination, typography, figures/tables, appendices, and submission rules;
-- validate source/output paths;
-- generate every required submission artifact confirmed by the guide;
-- run final PDF/HTML/Markdown/review/site builds;
-- inspect the final PDF page by page;
-- fix presentation-only defects;
-- require CI, Deploy Documentation, and Release green on the same final head.
+Prerequisite: manuscript, evidence, web workbench, and publication pipeline accepted.
 
-Exit when promoted:
-- school compliance is verified against the actual Odborná-práce guide;
-- all canonical artifacts and publication workflows are green on one final commit.
+- final end-to-end manuscript edit;
+- page-by-page PDF inspection;
+- complete citation/evidence provenance audit;
+- clean-checkout build validation;
+- Pages validation;
+- release artifact validation from the same accepted commit;
+- remove unused assets/data/scripts/workflows;
+- publish the canonical final release.
