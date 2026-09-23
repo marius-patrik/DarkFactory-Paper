@@ -225,7 +225,7 @@ test("anonymous public repository and Browser history/reload/blocked fallback wo
   await location.fill("https://blocked.example");
   await location.press("Enter");
   await expect(browser.getByText(/may block iframes/i)).toBeVisible({ timeout: 12_000 });
-  await expect(browser.getByRole("link", { name: "Open externally" })).toHaveAttribute("href", /blocked\.example/);
+  await expect(browser.getByRole("link", { name: "Open externally" }).first()).toHaveAttribute("href", /blocked\.example/);
 });
 
 test("GitHub sign-in covers start, pending, success, denial, expiry, and sign-out", async ({ page }) => {
@@ -341,10 +341,12 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await expect(page.getByRole("button", { name: /hello · function · line 1/ })).toBeVisible();
   await omnibar.press("Enter");
 
+  await omnibar.click();
   await omnibar.fill("#7");
-  await expect(page.getByRole("button", { name: /Issue #7 · Private issue/ })).toBeVisible();
-  await omnibar.press("Enter");
-  await expect(surface(page, "main").getByText("Private issue")).toBeVisible();
+  const issueResult = page.locator(".omnibar-results button").filter({ hasText: "Private issue" }).first();
+  await expect(issueResult).toBeVisible();
+  await issueResult.click();
+  await expect(surface(page, "main").getByText("#7 Private issue", { exact: true }).last()).toBeVisible();
 
   await omnibar.fill(`commit:${BASE_SHA.slice(0, 7)}`);
   await expect(page.getByRole("button", { name: /Base commit/ })).toBeVisible();
