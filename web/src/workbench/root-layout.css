@@ -156,85 +156,21 @@
 }
 
 
-.empty-workbench {
-  pointer-events: auto;
-}
-
-.empty-workbench-card {
-  pointer-events: auto;
-}
-
+.empty-workbench,
+.empty-workbench-card,
 .empty-workbench-card button {
   pointer-events: auto;
 }
-
 
 .workbench-tab-dragging .empty-workbench,
 .workbench-tab-dragging .empty-workbench * {
   pointer-events: none !important;
 }
 
-
 .workbench-surface .dv-watermark-container,
 .workbench-surface .dv-watermark {
   pointer-events: none;
 }
-
-
-.workbench-surface-empty .workbench-dockview .dv-view-container,
-.workbench-surface-empty .workbench-dockview .dv-tabs-and-actions-container {
-  pointer-events: none;
-}
-
-.workbench-tab-dragging .workbench-surface-empty .workbench-dockview {
-  pointer-events: auto;
-}
-
-
-.workbench-surface-empty .workbench-dockview {
-  pointer-events: none;
-}
-
-.workbench-tab-dragging .workbench-surface-empty .workbench-dockview {
-  pointer-events: auto;
-}
-
-
-.workbench-surface-empty .workbench-dockview,
-.workbench-surface-empty .workbench-dockview * {
-  pointer-events: none !important;
-}
-
-.workbench-surface-empty .empty-workbench {
-  z-index: 1000;
-  pointer-events: auto !important;
-}
-
-.workbench-surface-empty .empty-workbench * {
-  pointer-events: auto !important;
-}
-
-.workbench-tab-dragging .workbench-surface-empty .empty-workbench,
-.workbench-tab-dragging .workbench-surface-empty .empty-workbench * {
-  pointer-events: none !important;
-}
-
-
-.workbench-surface-empty .workbench-dockview {
-  visibility: hidden !important;
-}
-
-.workbench-surface-empty .empty-workbench {
-  visibility: visible;
-}
-
-
-.workbench-surface-empty .workbench-dockview,
-.workbench-surface-empty .workbench-dockview * {
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
-
 
 .workbench-dockview-host {
   width: 100%;
