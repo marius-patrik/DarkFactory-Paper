@@ -155,7 +155,7 @@ export async function renderEvidence() {
     text(
       legendX,
       70,
-      "1 bod " + approximatePeople(payload.gradually.people_per_dot_approx),
+      "1 bod " + approximatePeople(payload.gradually.people_per_dot_approx) + " lidí",
       17,
     ),
   );
