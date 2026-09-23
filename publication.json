@@ -1,9 +1,8 @@
 {
-  "commit": "f8be5c6883852b116db11ea859f3d112fb3aff1a",
-  "source": "paper/PAPER.typ",
+  "commit": "0dbb93545efcff8952d7f538711499bf94c0118a",
+  "source": "index.typ",
   "artifacts": {
-    "pdf": "prace.pdf",
-    "html": "prace.html",
-    "markdown": "prace.md"
+    "pdf": "ODBORNA_PRACE.pdf",
+    "markdown": "README.md"
   }
 }
