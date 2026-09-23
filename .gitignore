@@ -13,4 +13,5 @@ Thumbs.db
 .vscode/
 .idea/
 
-img/generated/
+img/generated/*
+!img/generated/gradually-ai-usage-2026.svg
