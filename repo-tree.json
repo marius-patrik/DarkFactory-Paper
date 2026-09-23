@@ -11,12 +11,6 @@
           "type": "directory",
           "children": [
             {
-              "name": "agent.yml",
-              "path": ".github/workflows/agent.yml",
-              "type": "file",
-              "source": "repository/.github/workflows/agent.yml"
-            },
-            {
               "name": "ci.yml",
               "path": ".github/workflows/ci.yml",
               "type": "file",
@@ -327,6 +321,12 @@
               "type": "directory",
               "children": [
                 {
+                  "name": "auth-controller.tsx",
+                  "path": "web/src/github/auth-controller.tsx",
+                  "type": "file",
+                  "source": "repository/web/src/github/auth-controller.tsx"
+                },
+                {
                   "name": "auth.ts",
                   "path": "web/src/github/auth.ts",
                   "type": "file",
@@ -529,6 +529,12 @@
                   "source": "repository/web/src/workbench/registry.tsx"
                 },
                 {
+                  "name": "root-layout.css",
+                  "path": "web/src/workbench/root-layout.css",
+                  "type": "file",
+                  "source": "repository/web/src/workbench/root-layout.css"
+                },
+                {
                   "name": "runtime.tsx",
                   "path": "web/src/workbench/runtime.tsx",
                   "type": "file",
@@ -654,6 +660,31 @@
           ]
         },
         {
+          "name": "tests",
+          "path": "web/tests",
+          "type": "directory",
+          "children": [
+            {
+              "name": "github-mock.ts",
+              "path": "web/tests/github-mock.ts",
+              "type": "file",
+              "source": "repository/web/tests/github-mock.ts"
+            },
+            {
+              "name": "workbench.spec.ts",
+              "path": "web/tests/workbench.spec.ts",
+              "type": "file",
+              "source": "repository/web/tests/workbench.spec.ts"
+            }
+          ]
+        },
+        {
+          "name": "AUTH.md",
+          "path": "web/AUTH.md",
+          "type": "file",
+          "source": "repository/web/AUTH.md"
+        },
+        {
           "name": "biome.json",
           "path": "web/biome.json",
           "type": "file",
@@ -682,6 +713,12 @@
           "path": "web/PLAN.md",
           "type": "file",
           "source": "repository/web/PLAN.md"
+        },
+        {
+          "name": "playwright.config.ts",
+          "path": "web/playwright.config.ts",
+          "type": "file",
+          "source": "repository/web/playwright.config.ts"
         },
         {
           "name": "rsbuild.config.ts",
