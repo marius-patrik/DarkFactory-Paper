@@ -495,41 +495,40 @@ Before submission, direct guide-text verification must settle all remaining unce
 
 The repository must generate reproducibly from an exact commit:
 
-- canonical PDF;
-- root `README.md` Markdown publication;
-- Markdown publication;
-- repository/source artifact;
-- compiled single-file Typst artifact for canonical release publication.
+- `ODBORNA_PRACE.pdf`;
+- root `README.md` as the generated Markdown publication.
 
-There is no separate review-publication artifact family. Source review and comparison operate on the canonical source and outputs.
+There is no published HTML artifact and no separate review-publication family. Source review and comparison operate on the canonical source and outputs.
 
 #### Build contract
 
-The build system should expose a small, obvious command surface for:
+The repository root is a Bun workspace. Typst remains the manuscript compiler; Bun is the package manager and task runner for publication, web validation, Pages assembly, and release generation.
 
-- publication build;
-- validation;
-- web build;
-- Pages/site build;
-- release artifact generation.
+Canonical commands:
 
-Local documentation and CI must invoke the same canonical commands.
+- `bun run publication` — generate the PDF and root Markdown publication;
+- `bun run check` — build the publication and lint/typecheck/build the web workspace;
+- `bun run web:acceptance` — execute real Chromium acceptance;
+- `bun run site` — build and assemble the deployable site;
+- `bun run clean` — remove generated site/web outputs while preserving tracked canonical publication files.
+
+CI, Pages, Release, and contributor documentation must use this command surface rather than maintain a second orchestration layer.
 
 #### Validation
 
-Automated validation should check product invariants rather than individual prose choices.
+Validation must exercise actual outputs and behavior rather than inspect source spelling.
 
 It should verify, as appropriate:
 
-- canonical source presence;
 - successful Typst compilation;
-- bibliography/citation resolution;
-- asset resolution;
-- expected macrostructure;
-- evidence provenance;
-- DarkFactory revision consistency;
-- canonical output presence;
-- generic web build correctness.
+- bibliography/citation and asset resolution through compilation;
+- deterministic evidence generation used by the manuscript;
+- canonical PDF/Markdown output presence;
+- generic web lint/typecheck/build correctness;
+- Chromium acceptance;
+- Pages assembly.
+
+Do not add source-text substring validators for prose, headings, dependencies, or implementation details.
 
 ### Web workbench requirements
 
@@ -568,9 +567,10 @@ Required checks must correspond to the final repository product rather than inte
 GitHub Pages should publish:
 
 - the generic web workbench;
-- canonical paper artifacts;
-- repository/publication metadata used by the workbench;
-- the structural content index required for navigation.
+- `ODBORNA_PRACE.pdf`;
+- generated `README.md`;
+- required publication images;
+- lightweight publication metadata.
 
 The published site must be usable from a clean deployment of the same commit.
 
@@ -654,67 +654,40 @@ The product is ready for final submission/release when:
 
 ## Current action queue
 
-This file is the **live current/next work queue**.
-
-Keep it short and current. Durable product requirements, roadmap, sequencing, deferred accepted work, and verified school requirements remain in their owning sections of this file.
+This section is the live current/next work queue. Keep it short and current.
 
 ### In flight
 
-#### Author review of the consolidated thesis pass
+#### DarkFactory evidence and manuscript verification
 
-- Review the unstaged `index.typ`, citation changes, DarkFactory diagrams, and canonical PDF before any thesis edit is staged.
-- Confirm the exact-revision distinction between the production Python controller path and the TypeScript declarative graph engine.
-- Confirm the annotation/abstract page, full-size parenthetical citations, and the single canonical artifact family.
-- Complete the methodology with any additional run provenance required by the author; the current claims intentionally stop at structural evidence.
+- verify that the `darkfactory` gitlink, evidence data, bibliography reference, manuscript claims, and figures all describe the same evaluated revision `e9c10221b40589512d262a0edb95f709b923150c`;
+- preserve the distinction between the production GitHub Actions/Python controller path and the co-located TypeScript declarative graph engine;
+- complete any missing methodology/run provenance needed to reproduce the stated structural findings;
+- audit every DarkFactory-specific claim against source/tests/workflows at the pinned revision.
 
-Review requirements retained from the paper-foundation pass:
+#### Final manuscript and school review
 
-- pull/rebase from latest `main` before the next dispatch;
-- explicitly distinguish a chatbot from a coding agent and use that boundary to strengthen the Gradually motivation;
-- use the IDE → completion → chat → agent → agent-first/ADE history to introduce what real coding agents can do;
-- reframe Agentic Engineering specifically as the engineering practices that make AI-assisted software engineering efficient, controlled, repeatable, and scalable;
-- cover prompt engineering, context engineering, explicit goals/specifications/acceptance criteria, goal loops, verification feedback, tool/harness engineering, and human review/integration;
-- cover multi-agent orchestration beyond simple subagents: parallel workers, coordinator patterns, swarms, and graph/workflow-based execution where these materially help explain scalable agentic work;
-- explain Tools, Skills, Hooks, and MCP concisely as capabilities supplied/integrated by the harness, alongside state/context, verification, and orchestration;
-- use the heading pagination defined in the Product and thesis contract section; parent-only Theory and Practical headings share a page with their first subsection;
-- use the school-verified no-indent and 8 pt paragraph-spacing rule;
-- tokenization remains conceptual; BPE-specific exposition is already absent and must stay absent;
-- restore the embedding treatment to one concise king/queen example plus `img/vector-embedding-queen.svg`;
-- do not use the 3D embedding diagram;
-- keep Gradually;
-- keep ReAct;
-- keep the school logo;
-- keep Vibe Coding absent;
-- keep Prompt Injection absent;
-- keep DAG absent;
-- workflow graphs may remain for agent workflow planning;
-- keep validators independent from exact level-2/3 editorial structure;
-- keep the DarkFactory section grounded in the pinned implementation rather than future-work process prose;
-- review the rebuilt Results against the single objective and pinned evidence rather than resurrecting O1/O2/O3;
-- update any future pull-request description after the author accepts the unstaged pass.
+- re-read the generated `ODBORNA_PRACE.pdf` end to end and inspect it page by page;
+- verify title page, declaration, annotations, keywords, contents, page numbering, figure/table treatment, bibliography ordering, citation rendering, paragraph spacing, and heading sizes against the verified school contract;
+- check whether the school has issued a guide newer than the verified 2024 guide before final submission;
+- audit factual claims and bibliography entries thesis-wide and remove unused sources/assets.
 
-#### Generic IDE
+### Next
 
-Wait for the independently dispatched web worker to finish the remaining Generic IDE workstream lane.
-
-Review its PR separately from manuscript work.
-
-### Next after author acceptance
-
-1. Stage only the thesis changes the author has accepted.
-2. Run the complete canonical validation against the accepted diff.
-3. Open or update the review pull request with an accurate description and rendered PDF.
-4. Commit, push, merge, and clean branches only when explicitly requested after review.
+1. Finish evidence/provenance reconciliation.
+2. Finish final manuscript/school review.
+3. Run `bun run check`, `bun run web:acceptance`, and `bun run site` from the accepted revision.
+4. Validate the Pages deployment.
+5. Publish the exact-revision final release only after the manuscript and evidence are accepted.
 
 ### Coordination hygiene
 
-After each worker or review cycle:
+After each review cycle:
 
 - remove completed items from this section;
-- promote newly actionable items from the **Deferred work** section of this file;
-- update the school-compliance section when a verified school requirement changes;
-- update the owning section when a durable product requirement, sequence, or workstream changes;
-- keep this file aligned with the current model; `README.md` is the generated manuscript export.
+- promote newly actionable work from **Deferred work**;
+- update the relevant governing section when a durable product, school, evidence, or sequencing decision changes;
+- keep this file aligned with the repository; `README.md` is generated from `index.typ` and must not become a second hand-authored source.
 
 ---
 
@@ -899,11 +872,10 @@ Actions:
 - keep only formatting helpers that make the source clearer;
 - keep review/comparison behavior outside the manuscript content model;
 - keep paragraphs normally breakable;
-- follow PRD heading pagination, keeping parent-only Theory and Practical headings with their first subsection;
-- use a visible first-line paragraph indent as the authorial target;
-- make inter-paragraph spacing materially larger than intra-paragraph line spacing;
-- keep the first-line-indent / paragraph-spacing school-rule conflict explicit until direct guide reconciliation;
-- use conventional academic typography.
+- follow the verified heading pagination/layout choices recorded in this file;
+- use no first-line paragraph indent;
+- use 8 pt spacing after paragraphs with 1.5 line spacing;
+- use conventional academic typography consistent with the verified school contract.
 
 The source should be easy to read as a manuscript file without understanding a secondary semantic framework.
 
@@ -946,82 +918,27 @@ If generated evidence figures remain useful, provide one clearly named script wh
 
 Avoid phase-numbered script names.
 
-### Workstream D — Simplify publication/build tooling
+### Workstream D — Root Bun publication workspace
 
 Primary files:
 
-- `Makefile`
-- the canonical Typst build
-- `scripts/build_web_exports.py`
-- `scripts/build_site.py`
-- `scripts/fetch_external_assets.py`
+- `package.json`
+- `index.typ`
+- `scripts/publication.ts`
+- `scripts/evidence.ts`
+- `scripts/site.ts`
 
-#### D1. Make the paper root explicit
+The publication architecture is established:
 
-The canonical manuscript is `index.typ`.
+- the repository root is the Bun workspace;
+- `index.typ` is the canonical manuscript;
+- Typst is the document compiler;
+- Bun owns orchestration;
+- `ODBORNA_PRACE.pdf` and generated root `README.md` are the canonical publication artifacts;
+- HTML is an internal temporary conversion format only for Markdown derivation and is not published;
+- no Makefile, Python build layer, duplicate review build, or source-text contract validator is maintained.
 
-Simplify the Makefile around that contract.
-
-Keep only indirection that still supports a real output.
-
-Target commands should remain simple:
-
-- build the paper;
-- generate the root `README.md` Markdown publication;
-- validate;
-- build the site;
-- clean.
-
-#### D2. Make final publication the canonical artifact
-
-Canonical paper outputs:
-
-- PDF;
-- Markdown in root `README.md`;
-- source/project archive;
-- compiled single-file Typst artifact if the release contract requires it.
-
-Do not create a separate review publication.
-
-Git comparison/review belongs primarily to the IDE/workbench rather than requiring a second semantic manuscript.
-
-#### D3. Simplify web exports
-
-`scripts/build_web_exports.py` should:
-
-- use an internal HTML conversion only to derive Markdown; do not publish HTML;
-- derive Markdown deterministically;
-- localize required assets;
-- contain no thesis semantic taxonomy assumptions.
-
-#### D4. Verify canonical outputs
-
-The Makefile's `verify` target checks:
-
-- root PDF exists;
-- generated root README exists.
-
-Avoid validation rules that encode individual terms or prose choices.
-
-#### D5. Align site generation with the generic IDE
-
-`scripts/build_site.py` should publish:
-
-- the current generic web app;
-- canonical paper artifacts;
-- repository source tree;
-- a simple publication manifest;
-- a heading/content index derived from actual structural headings.
-
-The site generator should use the final thesis title and should not require level-4 semantic articles or a second review manuscript.
-
-#### D6. Simplify figure/data generation
-
-`scripts/fetch_external_assets.py` should fetch only externally sourced assets still used by the paper, with explicit provenance.
-
-Consolidate deterministic locally rendered figures into clearly named build scripts.
-
-Retire phase-numbered generators once their data model is stable.
+Keep future changes on this single path. Do not recreate retired compatibility tooling.
 
 ### Workstream E — Direct school-guide reconciliation
 
@@ -1048,62 +965,51 @@ Read the school PDF directly and resolve:
 
 Then encode only verified requirements in the school-compliance section and the Typst presentation layer.
 
-### Workstream F — Generic IDE completion
+### Workstream F — Generic IDE
 
-Authority: Generic IDE workstream section of `AGENTS.md`.
+The generic IDE completion lane is complete and merged.
 
-Keep this work independent from manuscript content.
-
-Complete:
+Preserve:
 
 - guided GitHub authentication;
-- cross-surface tab drag/drop;
-- draggable/persistent root sidebar/panel sizing;
-- real-browser acceptance;
-- generic workbench validation.
+- cross-surface tab movement;
+- draggable and persistent root sidebar/panel sizing;
+- generic repository editing/GitHub workflows;
+- real Chromium acceptance;
+- repository-agnostic behavior.
 
-Typst editing remains source editing through Monaco.
+Typst editing remains source editing through Monaco. Canonical paper compilation remains a repository pipeline responsibility.
 
-Canonical paper compilation remains a repository pipeline responsibility.
-
-### Workstream G — Workflow and release cleanup
+### Workstream G — CI, Pages, and Release
 
 Primary files:
 
 - `.github/workflows/ci.yml`
 - `.github/workflows/deploy-docs.yml`
 - `.github/workflows/release.yml`
-- `.github/workflows/agent.yml`
 
-Final workflow responsibilities:
+Keep exactly these product automation responsibilities:
 
 #### CI
 
-Validate:
-
-- paper build;
-- exports;
-- evidence/provenance;
-- generic web build/tests;
-- repository consistency.
+- install the root Bun workspace;
+- build the canonical publication;
+- lint/typecheck/build the generic web app;
+- run Chromium acceptance;
+- assemble the Pages output.
 
 #### Pages
 
-Publish:
-
-- generic IDE/site;
-- canonical paper artifacts;
-- publication/repository metadata required by the IDE.
+- build from `main`;
+- publish the generic workbench with `ODBORNA_PRACE.pdf`, generated `README.md`, required images, and lightweight publication metadata.
 
 #### Release
 
-Publish the canonical submission/publication artifact set tied to an exact commit SHA.
+- checkout an explicitly requested exact 40-character revision;
+- build the canonical publication from that revision;
+- publish `ODBORNA_PRACE.pdf` and `README.md` under the requested tag.
 
-#### Automation surface
-
-Keep only repository-triggered automation that serves the final product.
-
-Use minimal permissions and simple triggers.
+Do not recreate the retired autonomous-agent workflow or shared DarkFactory pipeline indirection.
 
 ### Execution order
 
@@ -1149,25 +1055,11 @@ Deliver as a PR for review.
 
 #### Phase 4 — Publication pipeline
 
-Can overlap with Phases 1–3 where file ownership is independent.
-
-- simplify Makefile/scripts;
-- align site manifest/content index;
-- establish canonical artifact set;
-- add compiled single-file Typst generation if required;
-- make validators test the final repository contract.
-
-Deliver as a PR for review.
+Complete. The repository uses the root Bun workspace and canonical root PDF/README artifact set.
 
 #### Phase 5 — IDE + workflows
 
-Runs independently where possible.
-
-- finish the Generic IDE workstream;
-- simplify CI/Pages/Release workflows around the final commands/artifacts;
-- keep paper and IDE validation in one canonical CI gate.
-
-Deliver as a PR for review.
+Complete. The generic IDE is merged and CI/Pages/Release use the root Bun/Typst command surface.
 
 #### Phase 6 — Final integration
 
@@ -1192,15 +1084,14 @@ A PR is ready for review only when its relevant validation passes and its diff c
 
 ### Canonical validation target
 
-The final repository should support a small, obvious command surface that covers:
+The canonical command surface is:
 
-- canonical publication build;
-- repository validation;
-- generic web validation;
-- Pages build;
-- release artifact generation.
+- `bun run publication`;
+- `bun run check`;
+- `bun run web:acceptance`;
+- `bun run site`.
 
-The exact command names may be simplified during Workstream D, but CI and documentation must use the same canonical commands.
+CI, Pages, Release, and contributor instructions must stay aligned with these commands.
 
 ---
 
@@ -1243,18 +1134,6 @@ Resolved presentation rule:
 
 - the verified school contract requires **no first-line indent** and **8 pt paragraph spacing**;
 - the manuscript and validators must preserve that rule.
-
-### Publication pipeline
-
-Move into the Current action queue when file ownership does not conflict with active manuscript/web work.
-
-- simplify Makefile and publication scripts around `index.typ`;
-- keep the removed review-publication machinery retired so only the canonical artifacts remain;
-- keep Markdown export deterministic without publishing HTML;
-- simplify site metadata/content indexing around actual headings;
-- replace phase-numbered evidence/figure generation with stable naming;
-- align validation with durable product invariants;
-- align CI/Pages/Release with the final artifact contract.
 
 ### Final delivery
 
