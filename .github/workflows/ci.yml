@@ -56,14 +56,14 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           TARGET_BRANCH: ${{ github.event.pull_request.head.ref || github.ref_name }}
         run: |
-          if git diff --quiet -- ODBORNA_PRACE.pdf README.md img/generated/gradually-ai-usage-2026.svg bun.lock && test -f bun.lock; then
+          if git diff --quiet -- ODBORNA_PRACE.pdf README.md bun.lock && test -f bun.lock; then
             echo "Generated publication is current."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add ODBORNA_PRACE.pdf README.md img/generated/gradually-ai-usage-2026.svg bun.lock
+          git add ODBORNA_PRACE.pdf README.md bun.lock
           git commit -m "chore: regenerate publication"
           git push origin "HEAD:$TARGET_BRANCH"
 
