@@ -185,10 +185,11 @@ export async function installGithubMock(page: Page): Promise<GithubMock> {
     }
 
     if (path === `/repos/${MOCK_REPOSITORY}/commits` && method === "GET") {
-      return json(route, [
+      const items = [
         commits.get(state.remoteHead) ?? commit(state.remoteHead, BASE_TREE, "Remote head"),
-        commit(BASE_SHA, BASE_TREE, "Base commit"),
-      ]);
+      ];
+      if (state.remoteHead !== BASE_SHA) items.push(commit(BASE_SHA, BASE_TREE, "Base commit"));
+      return json(route, items);
     }
 
     if (path.startsWith(`/repos/${MOCK_REPOSITORY}/git/trees/`) && method === "GET") {
