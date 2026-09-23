@@ -157,11 +157,11 @@
 
 
 .empty-workbench {
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .empty-workbench-card {
-  pointer-events: none;
+  pointer-events: auto;
 }
 
 .empty-workbench-card button {
