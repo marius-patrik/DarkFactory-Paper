@@ -2,6 +2,8 @@ import { expect, test, type Page } from "@playwright/test";
 import {
   BASE_SHA,
   installGithubMock,
+  installPublicGithubMock,
+  MOCK_PUBLIC_REPOSITORY,
   MOCK_REPOSITORY,
 } from "./github-mock";
 
@@ -187,6 +189,7 @@ test("tabs move across root Dockview surfaces, existing groups, splits, and relo
 });
 
 test("anonymous public repository and Browser history/reload/blocked fallback work", async ({ page }) => {
+  const publicGithub = await installPublicGithubMock(page);
   await page.route("https://example.com/**", (route) =>
     route.fulfill({ status: 200, contentType: "text/html", body: "<html><body>example</body></html>" }),
   );
@@ -199,11 +202,11 @@ test("anonymous public repository and Browser history/reload/blocked fallback wo
   });
 
   await page.getByRole("button", { name: /Open Repository/ }).first().click();
-  await page.getByRole("textbox", { name: "Repository" }).fill("marius-patrik/DarkFactory-Paper");
+  await page.getByRole("textbox", { name: "Repository" }).fill(MOCK_PUBLIC_REPOSITORY);
   await page.getByRole("button", { name: "Open", exact: true }).click();
-  await expect(page.locator(".workspace-repository-button")).toContainText("marius-patrik/DarkFactory-Paper", {
-    timeout: 20_000,
-  });
+  await expect(page.locator(".workspace-repository-button")).toContainText(MOCK_PUBLIC_REPOSITORY);
+  expect(publicGithub.authorizationHeaders.length).toBeGreaterThan(0);
+  expect(publicGithub.authorizationHeaders.every((header) => header === undefined)).toBe(true);
 
   await openCommand(page, "Open Browser");
   await expect(tab(page, "main", "Browser")).toBeVisible();
