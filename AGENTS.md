@@ -575,6 +575,20 @@ The product is ready for final submission/release when:
 
 ---
 
+## Current action queue
+
+Only final delivery gates remain:
+
+1. require the canonical CI, Chromium acceptance, and site assembly to pass on the exact final PR head;
+2. merge the accepted PR;
+3. verify `main` CI and Deploy Documentation on the merge commit;
+4. verify the live Pages deployment serves the accepted PDF/README;
+5. publish the final release from that exact merge commit using an explicitly chosen release tag.
+
+Remove each item when completed; do not preserve finished phase history.
+
+---
+
 # Repository instructions — DarkFactory-Paper
 
 ## Governing document
