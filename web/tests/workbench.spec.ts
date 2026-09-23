@@ -326,7 +326,7 @@ test("GitHub entity surfaces and omnibar navigate files, symbols, entities, comm
   await expect(surface(page, "main").getByText("Private pull request")).toBeVisible();
 
   await openCommand(page, "Open Actions");
-  await expect(surface(page, "main").getByText("Validate private repository")).toBeVisible();
+  await expect(surface(page, "main").getByText("Validate private repository", { exact: true }).last()).toBeVisible();
 
   await openFromLauncher(page, "Branches & Tags");
   await expect(surface(page, "main").getByText("main", { exact: true }).last()).toBeVisible();
