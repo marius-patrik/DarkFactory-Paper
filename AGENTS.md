@@ -412,7 +412,7 @@ Intended architecture is distinguished from implemented behavior whenever they d
 
 DarkFactory implementation evidence is taken directly from the pinned `darkfactory` submodule, its source/tests/workflows, and the corresponding bibliography reference. Do not maintain a second manifest that duplicates the gitlink revision.
 
-The Gradually adoption figure is generated deterministically by `scripts/evidence.ts`. Its source provenance belongs in `bib/references.bib` and the manuscript citation; its rendering values live beside the single rendering consumer.
+The Gradually adoption figure is stored directly as `img/gradually-ai-usage-2026.svg`. Its source provenance belongs in `bib/references.bib` and the manuscript citation; there is no runtime generator or duplicated data source.
 
 Important implementation/evaluation claims must remain traceable to the exact source, test, workflow, or cited external source that supports them.
 
@@ -802,17 +802,15 @@ Primary files:
 - `bib/references.bib`
 - `img/darkfactory-pipeline.svg`
 - `img/darkfactory-architecture.svg`
-- `img/generated/gradually-ai-usage-2026.svg`
-- `scripts/evidence.ts`
+- `img/gradually-ai-usage-2026.svg`
 
 Established invariants:
 
 - the `darkfactory` gitlink is the authoritative evaluated implementation revision;
 - DarkFactory-specific claims and figures must match that pinned revision;
 - source provenance belongs in `bib/references.bib` and claim-local citations;
-- the Gradually dataset lives in `scripts/evidence.ts` because that script is its only consumer;
+- the Gradually adoption figure is a static manuscript asset; its provenance is the local bibliography citation;
 - generated figures that are no longer used by the manuscript are removed rather than retained historically;
-- generated evidence must be deterministic.
 
 Do not introduce a second evidence manifest or phase-numbered evidence files that duplicate authoritative repository state.
 
@@ -823,7 +821,6 @@ Primary files:
 - `package.json`
 - `index.typ`
 - `scripts/publication.ts`
-- `scripts/evidence.ts`
 - `scripts/site.ts`
 
 The publication architecture is established:
