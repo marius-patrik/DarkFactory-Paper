@@ -78,6 +78,15 @@ const workflowRun = {
   updated_at: "2026-09-22T10:03:00Z",
 };
 
+const project = {
+  id: "PVT_private_1",
+  number: 1,
+  title: "Private project",
+  shortDescription: "Tracked in Projects v2",
+  closed: false,
+  url: "https://github.com/orgs/acme/projects/1",
+};
+
 const release = {
   id: 9,
   tag_name: "v1.0.0",
@@ -160,6 +169,40 @@ export async function installGithubMock(page: Page): Promise<GithubMock> {
     const url = new URL(request.url());
     const path = url.pathname;
     const method = request.method();
+
+    if (path === "/graphql" && method === "POST") {
+      const body = request.postDataJSON() as { query?: string; variables?: Record<string, unknown> };
+      const query = body.query || "";
+      if (query.includes("RepositoryProjects")) {
+        return json(route, { data: { repository: { projectsV2: { nodes: [project] } } } });
+      }
+      if (query.includes("RepositoryProject")) {
+        return json(route, {
+          data: {
+            repository: {
+              projectV2: {
+                ...project,
+                items: {
+                  nodes: [
+                    {
+                      id: "PVTI_issue_7",
+                      type: "ISSUE",
+                      content: {
+                        __typename: "Issue",
+                        number: issue.number,
+                        title: issue.title,
+                        url: issue.html_url,
+                      },
+                    },
+                  ],
+                },
+              },
+            },
+          },
+        });
+      }
+      return json(route, { errors: [{ message: "Unhandled test GraphQL operation" }] }, 400);
+    }
 
     if (path === "/user" && method === "GET") return json(route, user);
     if (path === "/user/repos" && method === "GET") return json(route, [repository]);
