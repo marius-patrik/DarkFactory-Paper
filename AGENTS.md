@@ -4,9 +4,13 @@
 
 `PRD.md` defines the finished repository/publication product contract.
 
-`PLAN.md` defines the concrete execution path.
+`PLAN.md` defines the roadmap, workstreams, sequencing, and phase gates.
 
-`SCHOOL_RULES.md` defines the school-compliance contract.
+`TODO.md` defines the current/next actionable queue.
+
+`BACKLOG.md` records accepted work that is intentionally deferred.
+
+`SCHOOL_RULES.md` defines the school-compliance contract and unresolved compliance conflicts.
 
 `web/PLAN.md` defines the independent generic IDE workstream.
 
@@ -24,7 +28,7 @@ Keep manuscript ownership singular: one authored Typst source plus supporting re
 
 ## Editorial rule
 
-Optimize the manuscript for the final-paper quality standard in `GOAL.md` and the thesis-specific requirements in `PRD.md`.
+Optimize the manuscript for the final-paper quality standard in `GOAL.md` and the thesis-specific direction in `PRD.md`, including the chatbot-to-agent boundary, the IDE-to-harness shift, and Agentic Engineering as the practices that make AI-assisted software engineering effective, efficient, controlled, and scalable.
 
 Treat available prose, terminology, figures, citations, and evidence as material for the final argument rather than as a structure that must be preserved.
 
@@ -36,7 +40,18 @@ Use:
 - original research/specifications and first-party documentation where appropriate;
 - verified DarkFactory implementation evidence for practical claims.
 
-Use `PRD.md` for product requirements and `PLAN.md` for sequencing/file ownership.
+When explaining the transition to coding agents, connect capabilities such as Tools, Skills, Hooks, MCP, persistent state, verification, and orchestration to the harness/runtime instead of presenting them as a terminology catalogue.
+
+When explaining Agentic Engineering, focus on practices: prompt/context engineering, explicit goals and acceptance criteria, iterative goal loops, tool/harness design, verification feedback, multi-agent orchestration (including subagents, parallel workers, swarms, and graph/workflow execution where relevant), and human review/integration.
+
+Use:
+- `GOAL.md` for the final-paper quality standard;
+- `PRD.md` for durable product/thesis requirements;
+- `PLAN.md` for roadmap, sequencing, and workstream ownership;
+- `TODO.md` for current/next actionable work;
+- `BACKLOG.md` for deferred accepted work.
+
+When a durable decision changes, update the owning document rather than duplicating it elsewhere. Keep `README.md` aligned with this document model.
 
 ## Practical evidence
 

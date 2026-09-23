@@ -6,6 +6,10 @@
 
 This file defines the concrete repository work and sequencing required to satisfy the goal and product contract.
 
+`TODO.md` tracks the current/next actionable queue.
+
+`BACKLOG.md` tracks accepted work that is intentionally deferred until its prerequisite or phase gate is reached.
+
 ## Workstream A — Build the paper from the argument
 
 Primary files:
@@ -32,20 +36,67 @@ Use lower-level headings only where the argument genuinely benefits from them.
 
 The final detailed structure is judged by reading flow, not by preserving a terminology taxonomy.
 
-### A2. Rewrite the theoretical foundation
+### A2. Rebuild the paper around the engineering transition
 
-Rebuild the theory from the source material and citations around the minimum knowledge needed to understand DarkFactory.
+Use the thesis direction in `PRD.md` as the intellectual spine.
 
-The intended progression is:
+The paper should establish, with only the necessary historical context, the progression:
 
-- what a language model provides;
-- the relevant limits of inference/context;
-- what a harness adds;
-- how Agentic Engineering turns those mechanisms into a controlled software-development process.
+**IDE-centered development → code completion → integrated chat → integrated agents → agent-first/ADE-style development**
 
-Integrate terminology into ordinary prose.
+Use that progression to motivate the larger transition:
 
-Keep only source-backed mechanisms that contribute to later reasoning.
+**software engineering → Agentic Engineering**
+
+and:
+
+**IDE-centered execution → harness-centered execution**
+
+Make the chatbot → agent boundary explicit:
+- chatbot: conversational output while the human remains the executor;
+- coding agent: iterative repository/environment interaction through a harness, with tools, state, observations, controlled effects, verification, and continuation toward an acceptance condition.
+
+Use that transition to introduce the concrete agent capability surface without turning it into a glossary:
+- Tools;
+- Skills;
+- Hooks;
+- MCP;
+- state/context management;
+- execution observations and verification;
+- orchestration.
+
+The theory should then explain only what is needed to support that argument:
+- the relevant boundary of model inference;
+- why delegated work requires a persistent execution environment;
+- how a harness integrates state, tools, environment, effects, observations, verification, recovery, and orchestration;
+- how Agentic Engineering improves AI-assisted software engineering through prompt/context engineering, explicit goals and acceptance criteria, goal loops, tool/harness design, verification feedback, and orchestration.
+
+Agentic Engineering coverage should be practice-centered rather than definition-centered:
+- prompt engineering;
+- context engineering;
+- explicit specifications, constraints, and acceptance criteria;
+- goal loops driven by observations and verification;
+- tool/harness engineering, including Skills, Hooks, MCP, permissions, and state;
+- verification and feedback loops;
+- multi-agent orchestration, including coordinator/subagent patterns, parallel workers, swarms, and graphs/workflows where useful;
+- human supervision, review, and integration.
+
+The paper should explain how these practices increase the efficiency and controllability of AI-assisted software engineering. Do not present them as isolated glossary entries or imply that maximum autonomy is the goal.
+
+Current theory/visual acceptance decisions:
+- keep tokenization conceptual and omit BPE-specific exposition;
+- keep the embedding treatment to a concise king/queen example plus `paper/img/vector-embedding-queen.svg`;
+- do not use the previous 3D embedding diagram;
+- keep Gradually;
+- keep ReAct;
+- allow workflow graphs for agent workflow planning without DAG-specific discussion;
+- keep Vibe Coding and Prompt Injection outside the thesis.
+
+Do not turn the historical progression into a product catalogue.
+
+Do not organize the theory as a terminology taxonomy.
+
+The conceptual emphasis should remain on the changing architecture of software development.
 
 ### A3. Build the practical DarkFactory chapter from implementation truth
 
@@ -79,7 +130,7 @@ Results should be generated from verified evidence, then interpreted in prose.
 
 After Theory, DarkFactory, and Results are stable:
 - rewrite the Introduction;
-- finalize objectives and research questions;
+- finalize the explanatory objective and concrete practical evaluation objective;
 - finalize methodology;
 - rewrite Conclusion;
 - rewrite Czech annotation/English abstract;
@@ -115,6 +166,10 @@ Actions:
 - keep only formatting helpers that make the source clearer;
 - keep review/comparison behavior outside the manuscript content model;
 - keep paragraphs normally breakable;
+- follow PRD heading pagination, keeping parent-only Theory and Practical headings with their first subsection;
+- use a visible first-line paragraph indent as the authorial target;
+- make inter-paragraph spacing materially larger than intra-paragraph line spacing;
+- keep the first-line-indent / paragraph-spacing school-rule conflict explicit until direct guide reconciliation;
 - use conventional academic typography.
 
 The source should be easy to read as a manuscript file without understanding a secondary semantic framework.
@@ -313,13 +368,17 @@ Use minimal permissions and simple triggers.
 ## Execution order
 
 ### Phase 1 — Paper foundation
-Can begin immediately.
+Active until the theoretical and editorial foundation is stable enough that later work can focus on DarkFactory evidence rather than redesigning the thesis argument.
 
-- rewrite Theory and Agentic Engineering;
+- rewrite the paper around the IDE → harness and Software Engineering → Agentic Engineering transition;
+- use only light, sourced history for IDE → completion → chat → agents → agent-first/ADE development;
+- keep model theory proportionate to the runtime/engineering argument;
 - simplify `paper/PAPER.typ`;
 - curate bibliography/figures alongside the rewrite;
-- establish clean typography;
-- keep Practical as a boundary until evidence is pinned.
+- establish clean academic typography using the heading pagination and paragraph rhythm defined in PRD;
+- keep Practical as a clean DarkFactory boundary until evidence is pinned;
+- keep validators editorially generic rather than hard-coding level-2/3 prose structure;
+- re-read the generated PDF end-to-end before accepting the phase.
 
 Deliver as a PR for review.
 

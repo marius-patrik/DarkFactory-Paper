@@ -4,11 +4,11 @@
 
 **DarkFactory-Paper** is the complete academic publication system for the thesis:
 
-**Agentický vývoj softwaru: návrh a ověření harnessu DarkFactory**
+**Agentický Inženýrství - DarkFactory: pipeline pro automatizaci softwarového vývoje**
 
 The primary product is the thesis itself. The repository also contains the evidence, source, build pipeline, publication outputs, and generic GitHub workbench required to make the work reproducible and reviewable.
 
-`GOAL.md` defines the semantic destination of the thesis.
+`GOAL.md` defines the quality standard for the finished academic paper.
 
 `PLAN.md` defines how the repository is moved toward this product.
 
@@ -38,26 +38,163 @@ The product must provide:
 
 ## Thesis direction
 
-The thesis is about DarkFactory in the context of agentic software development.
+The thesis examines a transition in software development:
 
-Its content should form a coherent progression from the capabilities relevant to modern software-development agents, through the engineering problem that remains around model inference, to harness architecture, Agentic Engineering, DarkFactory as the practical implementation, and evidence-based evaluation.
+**software engineering is becoming Agentic Engineering as implementation work moves from a human directly operating an IDE toward software agents operating through a harness.**
 
-A useful semantic progression is:
+The central proposition is not that the IDE disappears as a user interface. Rather, in agent-first development the **operational center of software work shifts from the IDE to the harness**.
 
-**capability → engineering gap → harness → Agentic Engineering → DarkFactory → evidence → conclusions**
+A conventional IDE integrates the tools a human developer needs to inspect, edit, execute, debug, validate, and version software.
 
-This is a product requirement for the finished thesis, not a requirement to preserve a specific existing section layout.
+A harness performs the corresponding integrating role for a software agent: it supplies context, tools, environment access, persistent state, controlled effects, observations, verification, recovery, and orchestration.
 
-The theory should include only material needed to understand the practical contribution and evaluation.
+The editor therefore increasingly becomes one human-facing interface into a development process whose runtime is the harness.
 
-DarkFactory should be the concrete subject of the practical contribution.
+### Historical progression
 
-Results and discussion should distinguish:
-- direct observations;
-- interpretation;
-- limitations.
+The thesis should establish this transition with a short, sourced historical progression rather than a separate product-history survey:
 
-The conclusion should answer the research problem from the evidence actually established.
+**IDE-centered development → IDE-integrated code completion → IDE-integrated chat assistants → IDE-integrated coding agents → agent-first / ADE-style development**
+
+The purpose of this history is to show how AI moved from assisting individual editing actions to becoming an executor of increasingly complete software-development tasks.
+
+Use representative examples only where they materially demonstrate a stage in that progression.
+
+### Chatbot-to-agent boundary
+
+The motivation should explicitly distinguish ordinary conversational AI use from real coding-agent use.
+
+A chatbot primarily returns conversational output—explanations, suggestions, code snippets, or proposed changes—while the human remains the executor who chooses context, edits files, invokes development tools, observes results, and carries the workflow forward.
+
+A coding agent participates in an iterative execution process. Through a harness it can inspect the repository and environment, choose or follow a bounded plan, invoke tools, cause controlled changes, observe real outputs, update its working state, verify results, and continue toward an acceptance condition.
+
+The Gradually adoption figure should support this distinction: broad generative-AI or chatbot adoption is not equivalent to adoption of coding agents. The comparatively small coding-agent population motivates explaining what changes when AI moves from conversational assistance to delegated execution.
+
+### Agent capability surface
+
+Use the historical chatbot → agent transition as the natural place to introduce the capabilities that make agentic execution possible.
+
+Explain these as parts of the harness/runtime rather than as isolated glossary entries:
+
+- **Tools** — callable actions through which the agent reads, edits, executes, tests, searches, or otherwise affects its environment.
+- **Skills** — reusable task-specific instructions, scripts, and resources that can be made available when relevant.
+- **Hooks** — deterministic lifecycle handlers that enforce or trigger behavior around events such as tool execution, validation, or completion.
+- **MCP** — a standardized protocol for connecting the harness to external tools and data sources.
+- **State and context management** — persistence of the development process outside any one inference call and selection of information for the next decision.
+- **Verification and observation** — real execution feedback such as tests, compilers, linters, CI, and repository state.
+- **Orchestration** — coordination of multiple agent runs or roles when work can be decomposed and later integrated.
+
+The paper should explain enough of this capability surface for a reader familiar only with chatbots to understand what a coding agent can actually do and why the harness, rather than the model alone, is the relevant engineering object.
+
+### Engineering transition
+
+As execution moves from the human developer to agents, the role of the engineer changes.
+
+The human increasingly owns:
+- intent;
+- requirements and constraints;
+- architecture;
+- decomposition;
+- acceptance conditions;
+- supervision;
+- review;
+- integration;
+- accountability.
+
+The agent increasingly performs:
+- repository inspection;
+- planning within delegated scope;
+- code modification;
+- command/tool execution;
+- observation of results;
+- correction;
+- verification;
+- preparation of changes for integration.
+
+This does not remove software engineering. It changes where engineering effort is applied.
+
+**Agentic Engineering is the set of engineering practices that make AI-assisted software engineering efficient, controlled, repeatable, and scalable.**
+
+As AI takes responsibility for larger units of implementation work, those practices increasingly shape the software-engineering process itself. The engineer therefore works not only on the software product, but also on the conditions under which models and agents can perform useful work reliably.
+
+### Agentic Engineering practices
+
+The paper should explain Agentic Engineering through the practices that improve the effectiveness of AI-assisted software engineering, not as a terminology catalogue.
+
+Relevant practices include, where they materially support the argument:
+
+- **Prompt engineering** — shaping instructions, constraints, examples, and output expectations so a model can perform a bounded task effectively.
+- **Context engineering** — selecting, structuring, refreshing, and compacting the information available for each decision rather than treating the context window as passive storage.
+- **Specification and acceptance engineering** — making intent, constraints, negative goals, and completion conditions explicit enough that delegated work can be judged mechanically and by review.
+- **Goal loops** — structuring execution around repeated progress toward an explicit goal or acceptance condition, using observations and verification to decide the next step rather than treating one model response as the unit of work.
+- **Tool and harness engineering** — choosing and constraining the tools, skills, hooks, protocols, permissions, state, and validation surfaces available to the agent.
+- **Verification and feedback loops** — using tests, compilers, linters, CI, repository state, review, and other observations to turn generation into an iterative engineering process.
+- **Multi-agent orchestration** — decomposing work across multiple agents or runs where useful, including coordinator/subagent patterns, parallel workers, swarms, and graph/workflow-based execution when the work can be meaningfully coordinated and integrated.
+- **Human supervision and integration** — deciding where human judgment, review, approval, and accountability remain necessary.
+
+These practices should be introduced as ways to increase useful work per unit of human attention while preserving engineering control. Their purpose is not maximum autonomy; it is effective software engineering with AI assistance.
+
+### Harness and IDE
+
+The paper should make the analogy explicit but technically precise:
+
+**the harness becomes for the agent what the IDE was for the human developer.**
+
+This does not mean that a harness is a graphical IDE.
+
+It means that both serve as the integrating environment around the primary executor:
+
+- the IDE is organized around a human manipulating code and tools;
+- the harness is organized around an agent manipulating a software-development environment.
+
+The harness therefore becomes the development runtime for agentic work.
+
+### DarkFactory
+
+DarkFactory is the concrete system through which the thesis explores this transition.
+
+It should be presented as an implementation of harness-centered software development: a system intended to support the execution, control, verification, persistence, recovery, and orchestration required when agents perform meaningful portions of software-engineering work.
+
+DarkFactory is therefore not merely an example of an AI agent or a wrapper around a model.
+
+It is the practical realization of the thesis's proposed development architecture.
+
+### Evaluation
+
+The evaluation should test the properties required by this development model rather than merely report that workflows ran.
+
+Evidence should address, where supported:
+- continuity of delegated work;
+- persistent state across inference boundaries;
+- controlled external effects;
+- bounded permissions and scope;
+- deterministic verification;
+- interruption and recovery;
+- integration of agent-produced changes;
+- orchestration without loss of integration control.
+
+Results and discussion must distinguish:
+- direct observation;
+- supported interpretation;
+- limitation.
+
+### Semantic spine
+
+The finished paper should read as one transformation:
+
+**human-centered software engineering → AI-assisted development → delegated agentic work → Agentic Engineering practices → harness-centered execution → DarkFactory → evidence**
+
+At the highest level, the argument is:
+
+1. software development is moving from AI assistance toward meaningful delegation;
+2. meaningful delegation changes the role of both the developer and the development environment;
+3. the harness becomes the runtime that integrates the capabilities required by the agent;
+4. Agentic Engineering provides the practices that make increasingly delegated AI-assisted development effective and controllable;
+5. the harness supplies the runtime in which those practices can be executed;
+6. DarkFactory implements this approach;
+7. evaluation establishes which claimed properties are actually demonstrated.
+
+This direction defines the intellectual structure of the thesis without requiring a rigid section-by-section taxonomy.
 
 ## Manuscript requirements
 
@@ -85,7 +222,20 @@ The paper contains the school-level macrostructure:
 4. Výsledky a diskuse
 5. Závěr
 
-The detailed hierarchy is determined by the argument described in `GOAL.md`.
+The detailed hierarchy is determined by the thesis direction and requirements in this PRD, while `GOAL.md` defines the overall final-paper quality bar.
+
+### Presentation requirements
+
+The intended reading rhythm should make major sections visually distinct and paragraphs clearly separated.
+
+Target presentation:
+- every level-1 section begins on a new page;
+- level-2 sections begin on a new page except the first subsection immediately below the parent-only Theory and Practical headings; these share a page with their parent;
+- ordinary prose paragraphs use a visible first-line indent comparable to a conventional tab stop;
+- spacing between paragraphs is materially larger than the spacing between lines within a paragraph;
+- paragraph spacing and first-line indentation should create clear paragraph boundaries without turning the page into a loose web/documentation layout.
+
+The current working school contract in `SCHOOL_RULES.md` still records no first-line indent and 8 pt paragraph spacing. That conflict must be resolved from the direct school guide before final submission. Until then, treat the above as the authorial presentation target and preserve the conflict explicitly rather than silently making the documents disagree.
 
 ### Content quality
 
@@ -95,9 +245,30 @@ The manuscript must:
 - keep theory proportionate to the practical contribution;
 - make DarkFactory the concrete subject of Practical;
 - distinguish factual findings from interpretation;
-- answer its research questions from evidence;
+- assess its stated objectives from evidence; a separate numbered set of research questions is not required;
 - state limitations explicitly;
 - avoid unsupported generalization.
+
+### Theory scope
+
+The theoretical material exists to support the thesis argument and the later DarkFactory analysis, not to provide a general AI textbook.
+
+The model section should establish only the concepts needed to understand the role and boundary of the model inside an agentic development system.
+
+Product decisions for the current theoretical treatment:
+
+- tokenization may be explained conceptually, but Byte-Pair Encoding (BPE) is not required;
+- embeddings should remain a light conceptual example rather than a mathematical detour;
+- retain the simple king/queen embedding example and `paper/img/vector-embedding-queen.svg`;
+- do not use the previous 3D embedding diagram;
+- retain the ReAct loop where it clarifies the reasoning/action/observation execution cycle;
+- retain the Gradually adoption figure as concise motivation/context;
+- workflow graphs may be used to explain agent workflow planning;
+- DAG-specific discussion is not part of the thesis;
+- Vibe Coding is not part of the thesis argument;
+- Prompt Injection is outside the intended theory scope.
+
+These decisions define the intended level and focus without requiring a fixed paragraph or subsection layout.
 
 ### Sources
 
@@ -162,6 +333,15 @@ The evidence model must record enough provenance to reproduce or inspect importa
 Evidence should support the manuscript rather than duplicate prose.
 
 ## Figure and data requirements
+
+The intended core explanatory visuals currently include:
+- the Gradually adoption figure for motivation/context;
+- the ReAct loop for the harness execution cycle;
+- the simple king/queen embedding diagram for the lightweight embedding example.
+
+The 3D embedding diagram is not part of the intended final visual set.
+
+Other figures remain justified only when they materially improve the final paper.
 
 Figures and tables must materially improve explanation or evidence presentation.
 
@@ -299,11 +479,13 @@ A canonical release must:
 The final repository should contain only active product code, data, assets, documentation, and automation.
 
 Coordination ownership is:
-- `GOAL.md` — semantic thesis destination;
+- `GOAL.md` — final-paper quality objective;
 - `PRD.md` — finished product contract;
-- `PLAN.md` — execution;
-- `AGENTS.md` — contributor rules;
-- `SCHOOL_RULES.md` — verified school contract;
+- `PLAN.md` — roadmap, workstreams, sequencing, and phase gates;
+- `TODO.md` — current and next actionable coordination work;
+- `BACKLOG.md` — accepted but intentionally deferred work;
+- `AGENTS.md` — contributor rules and document ownership;
+- `SCHOOL_RULES.md` — verified school contract and unresolved compliance conflicts;
 - `web/PLAN.md` — IDE implementation workstream.
 
 ## Non-goals
