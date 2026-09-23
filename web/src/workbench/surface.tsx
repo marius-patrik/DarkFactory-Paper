@@ -262,7 +262,7 @@ export function WorkbenchSurfaceView({
   return (
     <div
       ref={rootRef}
-      className={`workbench-surface workbench-surface-${surface}`}
+      className={`workbench-surface workbench-surface-${surface}${surface === "main" && panelCount === 0 ? " workbench-surface-empty" : ""}`}
       data-workbench-surface={surface}
     >
       <DockviewReact
