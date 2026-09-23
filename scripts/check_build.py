@@ -152,10 +152,12 @@ require_contract(
     (
         "Agentický Inženýrství - DarkFactory: pipeline pro automatizaci softwarového vývoje",
         "DarkFactory",
-        '#bibliography("bib/references.bib"',
+        '#bibliography("bib/references.bib", style: "iso-690-numeric"',
     ),
     f"{paper_file} manuscript",
 )
+if re.search(r"(?m)^#show\s+cite\b", main_source):
+    fail("numeric citations must use the full-size parenthetical form; citation display overrides are forbidden")
 
 tracked = subprocess.run(
     ["git", "ls-files"],

@@ -1,7 +1,6 @@
 // ─────────────────────────────────────────────────────────────
 //  ODBORNÁ PRÁCE — jediný kanonický zdrojový soubor .typ
 // ─────────────────────────────────────────────────────────────
-
 #let PISMO = ("Caladea", "New Computer Modern")
 
 #let meta = (
@@ -12,6 +11,7 @@
   skola-zkratka: "GJKT",
   mesto: "Hradci Králové",
   rok: 2026,
+  title: "Agentické Inženýrství - DarkFactory: pipeline pro automatizaci softwarového vývoje",
   annotation-cs: [
     Práce zkoumá přechod od konverzační asistence k delegovanému agentnímu vývoji a roli harnessu jako běhového a integračního prostředí coding agenta. Agentické inženýrství vymezuje jako soubor postupů, které činí AI-asistovaný vývoj softwaru účinným, kontrolovaným, opakovatelným a škálovatelným. DarkFactory představuje praktický artefakt tohoto přístupu. Dostupná implementační evidence zatím podporuje pouze vybrané mechanismy; konečné vyhodnocení je podmíněno ověřením jedné pinované revize a reprodukovatelných důkazů.
   ],
@@ -22,7 +22,7 @@
 
 #let nadpis-bez-cisla(text-nadpisu) = heading(numbering: none, outlined: true, bookmarked: false, text-nadpisu)
 
-#set document(title: "Agentický Inženýrství - DarkFactory: pipeline pro automatizaci softwarového vývoje", author: meta.autor)
+#set document(title: meta.title, author: meta.autor)
 #set page(paper: "a4", margin: (top: 2.5cm, bottom: 2.5cm, left: 3cm, right: 2.5cm), footer: none)
 #set text(font: PISMO, size: 12pt, lang: "cs", hyphenate: true)
 #set par(justify: true, leading: 1.5 * 0.65em, spacing: 16pt, first-line-indent: 1.25cm)
@@ -54,7 +54,6 @@
   text(fill: rgb("#222222"), it),
 )
 #show link: set text(fill: rgb("#222222"))
-#show cite: it => super(it)
 #set table(stroke: 0.5pt, inset: (x: 5pt, y: 4pt))
 #set figure(numbering: "1")
 
@@ -65,7 +64,7 @@
   #v(0.5cm)
   #image("img/logo.jpeg", width: 3cm)
   #v(1fr)
-  #text(size: 24pt, weight: "bold", hyphenate: false)[Agentický Inženýrství - DarkFactory: pipeline pro automatizaci softwarového vývoje]
+  #text(size: 24pt, weight: "bold", hyphenate: false)[#meta.title]
   #v(0.7cm)
   #text(size: 15pt, tracking: 2pt)[ODBORNÁ PRÁCE]
   #v(1fr)
@@ -153,7 +152,8 @@ Základním mechanismem agentického systému je iterativní řídicí smyčka. 
 
 #heading(level: 2)[Agentické inženýrství]
 
-Agentické inženýrství (#strong[Agentic Engineering]) představuje soubor postupů pro systematický návrh podmínek, v nichž může jazykový model vykonávat inženýrské úlohy účinně, kontrolovaně, opakovatelně a v souladu s pravidly projektu @anthropic-harness-design @anthropic-managed-agents. Zahrnuje dekompozici úloh, přesné ohraničení kontextu, konstrukci nástrojových rozhraní, verifikační zpětnou vazbu a mechanismy řízené integrace.
+Agentické inženýrství (#strong[Agentic Engineering]) představuje systematický návrh podmínek, v nichž může jazykový model vykonávat inženýrské úlohy účinně, kontrolovaně, opakovatelně a v souladu s pravidly projektu @anthropic-harness-design @anthropic-managed-agents.
+Zahrnuje dekompozici úloh, přesné ohraničení kontextu, konstrukci nástrojových rozhraní, verifikační zpětnou vazbu a mechanismy řízené integrace.
 
 #heading(level: 3)[Zadání a kontext]
 
@@ -179,7 +179,7 @@ Princip #strong[human-in-the-loop] (#strong[HITL]) doplňuje automatizované smy
 
 #heading(level: 2)[Metodika] <practical-first>
 
-Praktická část práce navazuje na teoretická východiska o harnessu a Agentickém inženýrství. Jejím cílem je empiricky ověřit, jakým způsobem jsou principy řízeného provádění, ohraničení kontextu a verifikace realizovány v praxi. Předmětem zkoumání je referenční revize systému DarkFactory @darkfactory-e9c10221, která představuje stabilní implementaci autonomní vývojové pipeline v ekosystému GitHub Actions.
+Praktická část práce navazuje na teoretická východiska o harnessu a Agentickém inženýrství. Jejím cílem je empiricky ověřit, jakým způsobem jsou principy řízeného provádění, ohraničení kontextu a verifikace realizovány v praxi. Předmětem zkoumání je systém DarkFactory @darkfactory-e9c10221, který představuje implementaci autonomní vývojové pipeline v ekosystému GitHub Actions.
 
 Analýza se zaměřuje na čtyři klíčové inženýrské dimenze odvozené z teoretické části:
 1. *Izolace běhového prostředí a oprávnění:* mechanismus hermetického oddělení agenta od hostitelského CI systému, montování pracovního stromu repozitáře a injektování autentizačních tajemství s minimálními právy.
